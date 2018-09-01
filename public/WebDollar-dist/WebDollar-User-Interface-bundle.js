@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 43);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -274,7 +274,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(52)
+var listToStyles = __webpack_require__(55)
 
 /*
 type StyleObject = {
@@ -484,6 +484,58 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
+ * Vue.js v2.5.16
+ * (c) 2014-2018 Evan You
+ * Released under the MIT License.
+ */
+!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define(t):e.Vue=t()}(this,function(){"use strict";var y=Object.freeze({});function M(e){return null==e}function D(e){return null!=e}function S(e){return!0===e}function T(e){return"string"==typeof e||"number"==typeof e||"symbol"==typeof e||"boolean"==typeof e}function P(e){return null!==e&&"object"==typeof e}var r=Object.prototype.toString;function l(e){return"[object Object]"===r.call(e)}function i(e){var t=parseFloat(String(e));return 0<=t&&Math.floor(t)===t&&isFinite(e)}function t(e){return null==e?"":"object"==typeof e?JSON.stringify(e,null,2):String(e)}function F(e){var t=parseFloat(e);return isNaN(t)?e:t}function s(e,t){for(var n=Object.create(null),r=e.split(","),i=0;i<r.length;i++)n[r[i]]=!0;return t?function(e){return n[e.toLowerCase()]}:function(e){return n[e]}}var c=s("slot,component",!0),u=s("key,ref,slot,slot-scope,is");function f(e,t){if(e.length){var n=e.indexOf(t);if(-1<n)return e.splice(n,1)}}var n=Object.prototype.hasOwnProperty;function p(e,t){return n.call(e,t)}function e(t){var n=Object.create(null);return function(e){return n[e]||(n[e]=t(e))}}var o=/-(\w)/g,g=e(function(e){return e.replace(o,function(e,t){return t?t.toUpperCase():""})}),d=e(function(e){return e.charAt(0).toUpperCase()+e.slice(1)}),a=/\B([A-Z])/g,_=e(function(e){return e.replace(a,"-$1").toLowerCase()});var v=Function.prototype.bind?function(e,t){return e.bind(t)}:function(n,r){function e(e){var t=arguments.length;return t?1<t?n.apply(r,arguments):n.call(r,e):n.call(r)}return e._length=n.length,e};function h(e,t){t=t||0;for(var n=e.length-t,r=new Array(n);n--;)r[n]=e[n+t];return r}function m(e,t){for(var n in t)e[n]=t[n];return e}function b(e){for(var t={},n=0;n<e.length;n++)e[n]&&m(t,e[n]);return t}function $(e,t,n){}var O=function(e,t,n){return!1},w=function(e){return e};function C(t,n){if(t===n)return!0;var e=P(t),r=P(n);if(!e||!r)return!e&&!r&&String(t)===String(n);try{var i=Array.isArray(t),o=Array.isArray(n);if(i&&o)return t.length===n.length&&t.every(function(e,t){return C(e,n[t])});if(i||o)return!1;var a=Object.keys(t),s=Object.keys(n);return a.length===s.length&&a.every(function(e){return C(t[e],n[e])})}catch(e){return!1}}function x(e,t){for(var n=0;n<e.length;n++)if(C(e[n],t))return n;return-1}function R(e){var t=!1;return function(){t||(t=!0,e.apply(this,arguments))}}var E="data-server-rendered",k=["component","directive","filter"],A=["beforeCreate","created","beforeMount","mounted","beforeUpdate","updated","beforeDestroy","destroyed","activated","deactivated","errorCaptured"],j={optionMergeStrategies:Object.create(null),silent:!1,productionTip:!1,devtools:!1,performance:!1,errorHandler:null,warnHandler:null,ignoredElements:[],keyCodes:Object.create(null),isReservedTag:O,isReservedAttr:O,isUnknownElement:O,getTagNamespace:$,parsePlatformTagName:w,mustUseProp:O,_lifecycleHooks:A};function N(e,t,n,r){Object.defineProperty(e,t,{value:n,enumerable:!!r,writable:!0,configurable:!0})}var L=/[^\w.$]/;var I,H="__proto__"in{},B="undefined"!=typeof window,U="undefined"!=typeof WXEnvironment&&!!WXEnvironment.platform,V=U&&WXEnvironment.platform.toLowerCase(),z=B&&window.navigator.userAgent.toLowerCase(),K=z&&/msie|trident/.test(z),J=z&&0<z.indexOf("msie 9.0"),q=z&&0<z.indexOf("edge/"),W=(z&&z.indexOf("android"),z&&/iphone|ipad|ipod|ios/.test(z)||"ios"===V),G=(z&&/chrome\/\d+/.test(z),{}.watch),Z=!1;if(B)try{var X={};Object.defineProperty(X,"passive",{get:function(){Z=!0}}),window.addEventListener("test-passive",null,X)}catch(e){}var Y=function(){return void 0===I&&(I=!B&&!U&&"undefined"!=typeof global&&"server"===global.process.env.VUE_ENV),I},Q=B&&window.__VUE_DEVTOOLS_GLOBAL_HOOK__;function ee(e){return"function"==typeof e&&/native code/.test(e.toString())}var te,ne="undefined"!=typeof Symbol&&ee(Symbol)&&"undefined"!=typeof Reflect&&ee(Reflect.ownKeys);te="undefined"!=typeof Set&&ee(Set)?Set:function(){function e(){this.set=Object.create(null)}return e.prototype.has=function(e){return!0===this.set[e]},e.prototype.add=function(e){this.set[e]=!0},e.prototype.clear=function(){this.set=Object.create(null)},e}();var re=$,ie=0,oe=function(){this.id=ie++,this.subs=[]};oe.prototype.addSub=function(e){this.subs.push(e)},oe.prototype.removeSub=function(e){f(this.subs,e)},oe.prototype.depend=function(){oe.target&&oe.target.addDep(this)},oe.prototype.notify=function(){for(var e=this.subs.slice(),t=0,n=e.length;t<n;t++)e[t].update()},oe.target=null;var ae=[];function se(e){oe.target&&ae.push(oe.target),oe.target=e}function ce(){oe.target=ae.pop()}var le=function(e,t,n,r,i,o,a,s){this.tag=e,this.data=t,this.children=n,this.text=r,this.elm=i,this.ns=void 0,this.context=o,this.fnContext=void 0,this.fnOptions=void 0,this.fnScopeId=void 0,this.key=t&&t.key,this.componentOptions=a,this.componentInstance=void 0,this.parent=void 0,this.raw=!1,this.isStatic=!1,this.isRootInsert=!0,this.isComment=!1,this.isCloned=!1,this.isOnce=!1,this.asyncFactory=s,this.asyncMeta=void 0,this.isAsyncPlaceholder=!1},ue={child:{configurable:!0}};ue.child.get=function(){return this.componentInstance},Object.defineProperties(le.prototype,ue);var fe=function(e){void 0===e&&(e="");var t=new le;return t.text=e,t.isComment=!0,t};function pe(e){return new le(void 0,void 0,void 0,String(e))}function de(e){var t=new le(e.tag,e.data,e.children,e.text,e.elm,e.context,e.componentOptions,e.asyncFactory);return t.ns=e.ns,t.isStatic=e.isStatic,t.key=e.key,t.isComment=e.isComment,t.fnContext=e.fnContext,t.fnOptions=e.fnOptions,t.fnScopeId=e.fnScopeId,t.isCloned=!0,t}var ve=Array.prototype,he=Object.create(ve);["push","pop","shift","unshift","splice","sort","reverse"].forEach(function(o){var a=ve[o];N(he,o,function(){for(var e=[],t=arguments.length;t--;)e[t]=arguments[t];var n,r=a.apply(this,e),i=this.__ob__;switch(o){case"push":case"unshift":n=e;break;case"splice":n=e.slice(2)}return n&&i.observeArray(n),i.dep.notify(),r})});var me=Object.getOwnPropertyNames(he),ye=!0;function ge(e){ye=e}var _e=function(e){(this.value=e,this.dep=new oe,this.vmCount=0,N(e,"__ob__",this),Array.isArray(e))?((H?be:$e)(e,he,me),this.observeArray(e)):this.walk(e)};function be(e,t,n){e.__proto__=t}function $e(e,t,n){for(var r=0,i=n.length;r<i;r++){var o=n[r];N(e,o,t[o])}}function we(e,t){var n;if(P(e)&&!(e instanceof le))return p(e,"__ob__")&&e.__ob__ instanceof _e?n=e.__ob__:ye&&!Y()&&(Array.isArray(e)||l(e))&&Object.isExtensible(e)&&!e._isVue&&(n=new _e(e)),t&&n&&n.vmCount++,n}function Ce(n,e,r,t,i){var o=new oe,a=Object.getOwnPropertyDescriptor(n,e);if(!a||!1!==a.configurable){var s=a&&a.get;s||2!==arguments.length||(r=n[e]);var c=a&&a.set,l=!i&&we(r);Object.defineProperty(n,e,{enumerable:!0,configurable:!0,get:function(){var e=s?s.call(n):r;return oe.target&&(o.depend(),l&&(l.dep.depend(),Array.isArray(e)&&function e(t){for(var n=void 0,r=0,i=t.length;r<i;r++)(n=t[r])&&n.__ob__&&n.__ob__.dep.depend(),Array.isArray(n)&&e(n)}(e))),e},set:function(e){var t=s?s.call(n):r;e===t||e!=e&&t!=t||(c?c.call(n,e):r=e,l=!i&&we(e),o.notify())}})}}function xe(e,t,n){if(Array.isArray(e)&&i(t))return e.length=Math.max(e.length,t),e.splice(t,1,n),n;if(t in e&&!(t in Object.prototype))return e[t]=n;var r=e.__ob__;return e._isVue||r&&r.vmCount?n:r?(Ce(r.value,t,n),r.dep.notify(),n):e[t]=n}function ke(e,t){if(Array.isArray(e)&&i(t))e.splice(t,1);else{var n=e.__ob__;e._isVue||n&&n.vmCount||p(e,t)&&(delete e[t],n&&n.dep.notify())}}_e.prototype.walk=function(e){for(var t=Object.keys(e),n=0;n<t.length;n++)Ce(e,t[n])},_e.prototype.observeArray=function(e){for(var t=0,n=e.length;t<n;t++)we(e[t])};var Ae=j.optionMergeStrategies;function Oe(e,t){if(!t)return e;for(var n,r,i,o=Object.keys(t),a=0;a<o.length;a++)r=e[n=o[a]],i=t[n],p(e,n)?l(r)&&l(i)&&Oe(r,i):xe(e,n,i);return e}function Se(n,r,i){return i?function(){var e="function"==typeof r?r.call(i,i):r,t="function"==typeof n?n.call(i,i):n;return e?Oe(e,t):t}:r?n?function(){return Oe("function"==typeof r?r.call(this,this):r,"function"==typeof n?n.call(this,this):n)}:r:n}function Te(e,t){return t?e?e.concat(t):Array.isArray(t)?t:[t]:e}function Ee(e,t,n,r){var i=Object.create(e||null);return t?m(i,t):i}Ae.data=function(e,t,n){return n?Se(e,t,n):t&&"function"!=typeof t?e:Se(e,t)},A.forEach(function(e){Ae[e]=Te}),k.forEach(function(e){Ae[e+"s"]=Ee}),Ae.watch=function(e,t,n,r){if(e===G&&(e=void 0),t===G&&(t=void 0),!t)return Object.create(e||null);if(!e)return t;var i={};for(var o in m(i,e),t){var a=i[o],s=t[o];a&&!Array.isArray(a)&&(a=[a]),i[o]=a?a.concat(s):Array.isArray(s)?s:[s]}return i},Ae.props=Ae.methods=Ae.inject=Ae.computed=function(e,t,n,r){if(!e)return t;var i=Object.create(null);return m(i,e),t&&m(i,t),i},Ae.provide=Se;var je=function(e,t){return void 0===t?e:t};function Ne(n,r,i){"function"==typeof r&&(r=r.options),function(e,t){var n=e.props;if(n){var r,i,o={};if(Array.isArray(n))for(r=n.length;r--;)"string"==typeof(i=n[r])&&(o[g(i)]={type:null});else if(l(n))for(var a in n)i=n[a],o[g(a)]=l(i)?i:{type:i};e.props=o}}(r),function(e,t){var n=e.inject;if(n){var r=e.inject={};if(Array.isArray(n))for(var i=0;i<n.length;i++)r[n[i]]={from:n[i]};else if(l(n))for(var o in n){var a=n[o];r[o]=l(a)?m({from:o},a):{from:a}}}}(r),function(e){var t=e.directives;if(t)for(var n in t){var r=t[n];"function"==typeof r&&(t[n]={bind:r,update:r})}}(r);var e=r.extends;if(e&&(n=Ne(n,e,i)),r.mixins)for(var t=0,o=r.mixins.length;t<o;t++)n=Ne(n,r.mixins[t],i);var a,s={};for(a in n)c(a);for(a in r)p(n,a)||c(a);function c(e){var t=Ae[e]||je;s[e]=t(n[e],r[e],i,e)}return s}function Le(e,t,n,r){if("string"==typeof n){var i=e[t];if(p(i,n))return i[n];var o=g(n);if(p(i,o))return i[o];var a=d(o);return p(i,a)?i[a]:i[n]||i[o]||i[a]}}function Ie(e,t,n,r){var i=t[e],o=!p(n,e),a=n[e],s=Pe(Boolean,i.type);if(-1<s)if(o&&!p(i,"default"))a=!1;else if(""===a||a===_(e)){var c=Pe(String,i.type);(c<0||s<c)&&(a=!0)}if(void 0===a){a=function(e,t,n){if(!p(t,"default"))return;var r=t.default;if(e&&e.$options.propsData&&void 0===e.$options.propsData[n]&&void 0!==e._props[n])return e._props[n];return"function"==typeof r&&"Function"!==Me(t.type)?r.call(e):r}(r,i,e);var l=ye;ge(!0),we(a),ge(l)}return a}function Me(e){var t=e&&e.toString().match(/^\s*function (\w+)/);return t?t[1]:""}function De(e,t){return Me(e)===Me(t)}function Pe(e,t){if(!Array.isArray(t))return De(t,e)?0:-1;for(var n=0,r=t.length;n<r;n++)if(De(t[n],e))return n;return-1}function Fe(e,t,n){if(t)for(var r=t;r=r.$parent;){var i=r.$options.errorCaptured;if(i)for(var o=0;o<i.length;o++)try{if(!1===i[o].call(r,e,t,n))return}catch(e){Re(e,r,"errorCaptured hook")}}Re(e,t,n)}function Re(e,t,n){if(j.errorHandler)try{return j.errorHandler.call(null,e,t,n)}catch(e){He(e,null,"config.errorHandler")}He(e,t,n)}function He(e,t,n){if(!B&&!U||"undefined"==typeof console)throw e;console.error(e)}var Be,Ue,Ve=[],ze=!1;function Ke(){ze=!1;for(var e=Ve.slice(0),t=Ve.length=0;t<e.length;t++)e[t]()}var Je=!1;if("undefined"!=typeof setImmediate&&ee(setImmediate))Ue=function(){setImmediate(Ke)};else if("undefined"==typeof MessageChannel||!ee(MessageChannel)&&"[object MessageChannelConstructor]"!==MessageChannel.toString())Ue=function(){setTimeout(Ke,0)};else{var qe=new MessageChannel,We=qe.port2;qe.port1.onmessage=Ke,Ue=function(){We.postMessage(1)}}if("undefined"!=typeof Promise&&ee(Promise)){var Ge=Promise.resolve();Be=function(){Ge.then(Ke),W&&setTimeout($)}}else Be=Ue;function Ze(e,t){var n;if(Ve.push(function(){if(e)try{e.call(t)}catch(e){Fe(e,t,"nextTick")}else n&&n(t)}),ze||(ze=!0,Je?Ue():Be()),!e&&"undefined"!=typeof Promise)return new Promise(function(e){n=e})}var Xe=new te;function Ye(e){!function e(t,n){var r,i;var o=Array.isArray(t);if(!o&&!P(t)||Object.isFrozen(t)||t instanceof le)return;if(t.__ob__){var a=t.__ob__.dep.id;if(n.has(a))return;n.add(a)}if(o)for(r=t.length;r--;)e(t[r],n);else for(i=Object.keys(t),r=i.length;r--;)e(t[i[r]],n)}(e,Xe),Xe.clear()}var Qe,et=e(function(e){var t="&"===e.charAt(0),n="~"===(e=t?e.slice(1):e).charAt(0),r="!"===(e=n?e.slice(1):e).charAt(0);return{name:e=r?e.slice(1):e,once:n,capture:r,passive:t}});function tt(e){function i(){var e=arguments,t=i.fns;if(!Array.isArray(t))return t.apply(null,arguments);for(var n=t.slice(),r=0;r<n.length;r++)n[r].apply(null,e)}return i.fns=e,i}function nt(e,t,n,r,i){var o,a,s,c;for(o in e)a=e[o],s=t[o],c=et(o),M(a)||(M(s)?(M(a.fns)&&(a=e[o]=tt(a)),n(c.name,a,c.once,c.capture,c.passive,c.params)):a!==s&&(s.fns=a,e[o]=s));for(o in t)M(e[o])&&r((c=et(o)).name,t[o],c.capture)}function rt(e,t,n){var r;e instanceof le&&(e=e.data.hook||(e.data.hook={}));var i=e[t];function o(){n.apply(this,arguments),f(r.fns,o)}M(i)?r=tt([o]):D(i.fns)&&S(i.merged)?(r=i).fns.push(o):r=tt([i,o]),r.merged=!0,e[t]=r}function it(e,t,n,r,i){if(D(t)){if(p(t,n))return e[n]=t[n],i||delete t[n],!0;if(p(t,r))return e[n]=t[r],i||delete t[r],!0}return!1}function ot(e){return T(e)?[pe(e)]:Array.isArray(e)?function e(t,n){var r=[];var i,o,a,s;for(i=0;i<t.length;i++)M(o=t[i])||"boolean"==typeof o||(a=r.length-1,s=r[a],Array.isArray(o)?0<o.length&&(at((o=e(o,(n||"")+"_"+i))[0])&&at(s)&&(r[a]=pe(s.text+o[0].text),o.shift()),r.push.apply(r,o)):T(o)?at(s)?r[a]=pe(s.text+o):""!==o&&r.push(pe(o)):at(o)&&at(s)?r[a]=pe(s.text+o.text):(S(t._isVList)&&D(o.tag)&&M(o.key)&&D(n)&&(o.key="__vlist"+n+"_"+i+"__"),r.push(o)));return r}(e):void 0}function at(e){return D(e)&&D(e.text)&&!1===e.isComment}function st(e,t){return(e.__esModule||ne&&"Module"===e[Symbol.toStringTag])&&(e=e.default),P(e)?t.extend(e):e}function ct(e){return e.isComment&&e.asyncFactory}function lt(e){if(Array.isArray(e))for(var t=0;t<e.length;t++){var n=e[t];if(D(n)&&(D(n.componentOptions)||ct(n)))return n}}function ut(e,t,n){n?Qe.$once(e,t):Qe.$on(e,t)}function ft(e,t){Qe.$off(e,t)}function pt(e,t,n){Qe=e,nt(t,n||{},ut,ft),Qe=void 0}function dt(e,t){var n={};if(!e)return n;for(var r=0,i=e.length;r<i;r++){var o=e[r],a=o.data;if(a&&a.attrs&&a.attrs.slot&&delete a.attrs.slot,o.context!==t&&o.fnContext!==t||!a||null==a.slot)(n.default||(n.default=[])).push(o);else{var s=a.slot,c=n[s]||(n[s]=[]);"template"===o.tag?c.push.apply(c,o.children||[]):c.push(o)}}for(var l in n)n[l].every(vt)&&delete n[l];return n}function vt(e){return e.isComment&&!e.asyncFactory||" "===e.text}function ht(e,t){t=t||{};for(var n=0;n<e.length;n++)Array.isArray(e[n])?ht(e[n],t):t[e[n].key]=e[n].fn;return t}var mt=null;function yt(e){for(;e&&(e=e.$parent);)if(e._inactive)return!0;return!1}function gt(e,t){if(t){if(e._directInactive=!1,yt(e))return}else if(e._directInactive)return;if(e._inactive||null===e._inactive){e._inactive=!1;for(var n=0;n<e.$children.length;n++)gt(e.$children[n]);_t(e,"activated")}}function _t(t,n){se();var e=t.$options[n];if(e)for(var r=0,i=e.length;r<i;r++)try{e[r].call(t)}catch(e){Fe(e,t,n+" hook")}t._hasHookEvent&&t.$emit("hook:"+n),ce()}var bt=[],$t=[],wt={},Ct=!1,xt=!1,kt=0;function At(){var e,t;for(xt=!0,bt.sort(function(e,t){return e.id-t.id}),kt=0;kt<bt.length;kt++)t=(e=bt[kt]).id,wt[t]=null,e.run();var n=$t.slice(),r=bt.slice();kt=bt.length=$t.length=0,wt={},Ct=xt=!1,function(e){for(var t=0;t<e.length;t++)e[t]._inactive=!0,gt(e[t],!0)}(n),function(e){var t=e.length;for(;t--;){var n=e[t],r=n.vm;r._watcher===n&&r._isMounted&&_t(r,"updated")}}(r),Q&&j.devtools&&Q.emit("flush")}var Ot=0,St=function(e,t,n,r,i){this.vm=e,i&&(e._watcher=this),e._watchers.push(this),r?(this.deep=!!r.deep,this.user=!!r.user,this.lazy=!!r.lazy,this.sync=!!r.sync):this.deep=this.user=this.lazy=this.sync=!1,this.cb=n,this.id=++Ot,this.active=!0,this.dirty=this.lazy,this.deps=[],this.newDeps=[],this.depIds=new te,this.newDepIds=new te,this.expression="","function"==typeof t?this.getter=t:(this.getter=function(e){if(!L.test(e)){var n=e.split(".");return function(e){for(var t=0;t<n.length;t++){if(!e)return;e=e[n[t]]}return e}}}(t),this.getter||(this.getter=function(){})),this.value=this.lazy?void 0:this.get()};St.prototype.get=function(){var e;se(this);var t=this.vm;try{e=this.getter.call(t,t)}catch(e){if(!this.user)throw e;Fe(e,t,'getter for watcher "'+this.expression+'"')}finally{this.deep&&Ye(e),ce(),this.cleanupDeps()}return e},St.prototype.addDep=function(e){var t=e.id;this.newDepIds.has(t)||(this.newDepIds.add(t),this.newDeps.push(e),this.depIds.has(t)||e.addSub(this))},St.prototype.cleanupDeps=function(){for(var e=this.deps.length;e--;){var t=this.deps[e];this.newDepIds.has(t.id)||t.removeSub(this)}var n=this.depIds;this.depIds=this.newDepIds,this.newDepIds=n,this.newDepIds.clear(),n=this.deps,this.deps=this.newDeps,this.newDeps=n,this.newDeps.length=0},St.prototype.update=function(){this.lazy?this.dirty=!0:this.sync?this.run():function(e){var t=e.id;if(null==wt[t]){if(wt[t]=!0,xt){for(var n=bt.length-1;kt<n&&bt[n].id>e.id;)n--;bt.splice(n+1,0,e)}else bt.push(e);Ct||(Ct=!0,Ze(At))}}(this)},St.prototype.run=function(){if(this.active){var e=this.get();if(e!==this.value||P(e)||this.deep){var t=this.value;if(this.value=e,this.user)try{this.cb.call(this.vm,e,t)}catch(e){Fe(e,this.vm,'callback for watcher "'+this.expression+'"')}else this.cb.call(this.vm,e,t)}}},St.prototype.evaluate=function(){this.value=this.get(),this.dirty=!1},St.prototype.depend=function(){for(var e=this.deps.length;e--;)this.deps[e].depend()},St.prototype.teardown=function(){if(this.active){this.vm._isBeingDestroyed||f(this.vm._watchers,this);for(var e=this.deps.length;e--;)this.deps[e].removeSub(this);this.active=!1}};var Tt={enumerable:!0,configurable:!0,get:$,set:$};function Et(e,t,n){Tt.get=function(){return this[t][n]},Tt.set=function(e){this[t][n]=e},Object.defineProperty(e,n,Tt)}function jt(e){e._watchers=[];var t=e.$options;t.props&&function(n,r){var i=n.$options.propsData||{},o=n._props={},a=n.$options._propKeys=[];n.$parent&&ge(!1);var e=function(e){a.push(e);var t=Ie(e,r,i,n);Ce(o,e,t),e in n||Et(n,"_props",e)};for(var t in r)e(t);ge(!0)}(e,t.props),t.methods&&function(e,t){e.$options.props;for(var n in t)e[n]=null==t[n]?$:v(t[n],e)}(e,t.methods),t.data?function(e){var t=e.$options.data;l(t=e._data="function"==typeof t?function(e,t){se();try{return e.call(t,t)}catch(e){return Fe(e,t,"data()"),{}}finally{ce()}}(t,e):t||{})||(t={});var n=Object.keys(t),r=e.$options.props,i=(e.$options.methods,n.length);for(;i--;){var o=n[i];r&&p(r,o)||(void 0,36!==(a=(o+"").charCodeAt(0))&&95!==a&&Et(e,"_data",o))}var a;we(t,!0)}(e):we(e._data={},!0),t.computed&&function(e,t){var n=e._computedWatchers=Object.create(null),r=Y();for(var i in t){var o=t[i],a="function"==typeof o?o:o.get;r||(n[i]=new St(e,a||$,$,Nt)),i in e||Lt(e,i,o)}}(e,t.computed),t.watch&&t.watch!==G&&function(e,t){for(var n in t){var r=t[n];if(Array.isArray(r))for(var i=0;i<r.length;i++)Mt(e,n,r[i]);else Mt(e,n,r)}}(e,t.watch)}var Nt={lazy:!0};function Lt(e,t,n){var r=!Y();"function"==typeof n?(Tt.get=r?It(t):n,Tt.set=$):(Tt.get=n.get?r&&!1!==n.cache?It(t):n.get:$,Tt.set=n.set?n.set:$),Object.defineProperty(e,t,Tt)}function It(t){return function(){var e=this._computedWatchers&&this._computedWatchers[t];if(e)return e.dirty&&e.evaluate(),oe.target&&e.depend(),e.value}}function Mt(e,t,n,r){return l(n)&&(n=(r=n).handler),"string"==typeof n&&(n=e[n]),e.$watch(t,n,r)}function Dt(t,e){if(t){for(var n=Object.create(null),r=ne?Reflect.ownKeys(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}):Object.keys(t),i=0;i<r.length;i++){for(var o=r[i],a=t[o].from,s=e;s;){if(s._provided&&p(s._provided,a)){n[o]=s._provided[a];break}s=s.$parent}if(!s&&"default"in t[o]){var c=t[o].default;n[o]="function"==typeof c?c.call(e):c}}return n}}function Pt(e,t){var n,r,i,o,a;if(Array.isArray(e)||"string"==typeof e)for(n=new Array(e.length),r=0,i=e.length;r<i;r++)n[r]=t(e[r],r);else if("number"==typeof e)for(n=new Array(e),r=0;r<e;r++)n[r]=t(r+1,r);else if(P(e))for(o=Object.keys(e),n=new Array(o.length),r=0,i=o.length;r<i;r++)a=o[r],n[r]=t(e[a],a,r);return D(n)&&(n._isVList=!0),n}function Ft(e,t,n,r){var i,o=this.$scopedSlots[e];if(o)n=n||{},r&&(n=m(m({},r),n)),i=o(n)||t;else{var a=this.$slots[e];a&&(a._rendered=!0),i=a||t}var s=n&&n.slot;return s?this.$createElement("template",{slot:s},i):i}function Rt(e){return Le(this.$options,"filters",e)||w}function Ht(e,t){return Array.isArray(e)?-1===e.indexOf(t):e!==t}function Bt(e,t,n,r,i){var o=j.keyCodes[t]||n;return i&&r&&!j.keyCodes[t]?Ht(i,r):o?Ht(o,e):r?_(r)!==t:void 0}function Ut(n,r,i,o,a){if(i)if(P(i)){var s;Array.isArray(i)&&(i=b(i));var e=function(t){if("class"===t||"style"===t||u(t))s=n;else{var e=n.attrs&&n.attrs.type;s=o||j.mustUseProp(r,e,t)?n.domProps||(n.domProps={}):n.attrs||(n.attrs={})}t in s||(s[t]=i[t],a&&((n.on||(n.on={}))["update:"+t]=function(e){i[t]=e}))};for(var t in i)e(t)}else;return n}function Vt(e,t){var n=this._staticTrees||(this._staticTrees=[]),r=n[e];return r&&!t||Kt(r=n[e]=this.$options.staticRenderFns[e].call(this._renderProxy,null,this),"__static__"+e,!1),r}function zt(e,t,n){return Kt(e,"__once__"+t+(n?"_"+n:""),!0),e}function Kt(e,t,n){if(Array.isArray(e))for(var r=0;r<e.length;r++)e[r]&&"string"!=typeof e[r]&&Jt(e[r],t+"_"+r,n);else Jt(e,t,n)}function Jt(e,t,n){e.isStatic=!0,e.key=t,e.isOnce=n}function qt(e,t){if(t)if(l(t)){var n=e.on=e.on?m({},e.on):{};for(var r in t){var i=n[r],o=t[r];n[r]=i?[].concat(i,o):o}}else;return e}function Wt(e){e._o=zt,e._n=F,e._s=t,e._l=Pt,e._t=Ft,e._q=C,e._i=x,e._m=Vt,e._f=Rt,e._k=Bt,e._b=Ut,e._v=pe,e._e=fe,e._u=ht,e._g=qt}function Gt(e,t,n,o,r){var a,s=r.options;p(o,"_uid")?(a=Object.create(o))._original=o:o=(a=o)._original;var i=S(s._compiled),c=!i;this.data=e,this.props=t,this.children=n,this.parent=o,this.listeners=e.on||y,this.injections=Dt(s.inject,o),this.slots=function(){return dt(n,o)},i&&(this.$options=s,this.$slots=this.slots(),this.$scopedSlots=e.scopedSlots||y),s._scopeId?this._c=function(e,t,n,r){var i=rn(a,e,t,n,r,c);return i&&!Array.isArray(i)&&(i.fnScopeId=s._scopeId,i.fnContext=o),i}:this._c=function(e,t,n,r){return rn(a,e,t,n,r,c)}}function Zt(e,t,n,r){var i=de(e);return i.fnContext=n,i.fnOptions=r,t.slot&&((i.data||(i.data={})).slot=t.slot),i}function Xt(e,t){for(var n in t)e[g(n)]=t[n]}Wt(Gt.prototype);var Yt={init:function(e,t,n,r){if(e.componentInstance&&!e.componentInstance._isDestroyed&&e.data.keepAlive){var i=e;Yt.prepatch(i,i)}else{(e.componentInstance=function(e,t,n,r){var i={_isComponent:!0,parent:t,_parentVnode:e,_parentElm:n||null,_refElm:r||null},o=e.data.inlineTemplate;D(o)&&(i.render=o.render,i.staticRenderFns=o.staticRenderFns);return new e.componentOptions.Ctor(i)}(e,mt,n,r)).$mount(t?e.elm:void 0,t)}},prepatch:function(e,t){var n=t.componentOptions;!function(e,t,n,r,i){var o=!!(i||e.$options._renderChildren||r.data.scopedSlots||e.$scopedSlots!==y);if(e.$options._parentVnode=r,e.$vnode=r,e._vnode&&(e._vnode.parent=r),e.$options._renderChildren=i,e.$attrs=r.data.attrs||y,e.$listeners=n||y,t&&e.$options.props){ge(!1);for(var a=e._props,s=e.$options._propKeys||[],c=0;c<s.length;c++){var l=s[c],u=e.$options.props;a[l]=Ie(l,u,t,e)}ge(!0),e.$options.propsData=t}n=n||y;var f=e.$options._parentListeners;e.$options._parentListeners=n,pt(e,n,f),o&&(e.$slots=dt(i,r.context),e.$forceUpdate())}(t.componentInstance=e.componentInstance,n.propsData,n.listeners,t,n.children)},insert:function(e){var t,n=e.context,r=e.componentInstance;r._isMounted||(r._isMounted=!0,_t(r,"mounted")),e.data.keepAlive&&(n._isMounted?((t=r)._inactive=!1,$t.push(t)):gt(r,!0))},destroy:function(e){var t=e.componentInstance;t._isDestroyed||(e.data.keepAlive?function e(t,n){if(!(n&&(t._directInactive=!0,yt(t))||t._inactive)){t._inactive=!0;for(var r=0;r<t.$children.length;r++)e(t.$children[r]);_t(t,"deactivated")}}(t,!0):t.$destroy())}},Qt=Object.keys(Yt);function en(e,t,n,r,i){if(!M(e)){var o=n.$options._base;if(P(e)&&(e=o.extend(e)),"function"==typeof e){var a,s,c,l,u,f,p;if(M(e.cid)&&void 0===(e=function(t,n,e){if(S(t.error)&&D(t.errorComp))return t.errorComp;if(D(t.resolved))return t.resolved;if(S(t.loading)&&D(t.loadingComp))return t.loadingComp;if(!D(t.contexts)){var r=t.contexts=[e],i=!0,o=function(){for(var e=0,t=r.length;e<t;e++)r[e].$forceUpdate()},a=R(function(e){t.resolved=st(e,n),i||o()}),s=R(function(e){D(t.errorComp)&&(t.error=!0,o())}),c=t(a,s);return P(c)&&("function"==typeof c.then?M(t.resolved)&&c.then(a,s):D(c.component)&&"function"==typeof c.component.then&&(c.component.then(a,s),D(c.error)&&(t.errorComp=st(c.error,n)),D(c.loading)&&(t.loadingComp=st(c.loading,n),0===c.delay?t.loading=!0:setTimeout(function(){M(t.resolved)&&M(t.error)&&(t.loading=!0,o())},c.delay||200)),D(c.timeout)&&setTimeout(function(){M(t.resolved)&&s(null)},c.timeout))),i=!1,t.loading?t.loadingComp:t.resolved}t.contexts.push(e)}(a=e,o,n)))return s=a,c=t,l=n,u=r,f=i,(p=fe()).asyncFactory=s,p.asyncMeta={data:c,context:l,children:u,tag:f},p;t=t||{},dn(e),D(t.model)&&function(e,t){var n=e.model&&e.model.prop||"value",r=e.model&&e.model.event||"input";(t.props||(t.props={}))[n]=t.model.value;var i=t.on||(t.on={});D(i[r])?i[r]=[t.model.callback].concat(i[r]):i[r]=t.model.callback}(e.options,t);var d=function(e,t,n){var r=t.options.props;if(!M(r)){var i={},o=e.attrs,a=e.props;if(D(o)||D(a))for(var s in r){var c=_(s);it(i,a,s,c,!0)||it(i,o,s,c,!1)}return i}}(t,e);if(S(e.options.functional))return function(e,t,n,r,i){var o=e.options,a={},s=o.props;if(D(s))for(var c in s)a[c]=Ie(c,s,t||y);else D(n.attrs)&&Xt(a,n.attrs),D(n.props)&&Xt(a,n.props);var l=new Gt(n,a,i,r,e),u=o.render.call(null,l._c,l);if(u instanceof le)return Zt(u,n,l.parent,o);if(Array.isArray(u)){for(var f=ot(u)||[],p=new Array(f.length),d=0;d<f.length;d++)p[d]=Zt(f[d],n,l.parent,o);return p}}(e,d,t,n,r);var v=t.on;if(t.on=t.nativeOn,S(e.options.abstract)){var h=t.slot;t={},h&&(t.slot=h)}!function(e){for(var t=e.hook||(e.hook={}),n=0;n<Qt.length;n++){var r=Qt[n];t[r]=Yt[r]}}(t);var m=e.options.name||i;return new le("vue-component-"+e.cid+(m?"-"+m:""),t,void 0,void 0,void 0,n,{Ctor:e,propsData:d,listeners:v,tag:i,children:r},a)}}}var tn=1,nn=2;function rn(e,t,n,r,i,o){return(Array.isArray(n)||T(n))&&(i=r,r=n,n=void 0),S(o)&&(i=nn),function(e,t,n,r,i){if(D(n)&&D(n.__ob__))return fe();D(n)&&D(n.is)&&(t=n.is);if(!t)return fe();Array.isArray(r)&&"function"==typeof r[0]&&((n=n||{}).scopedSlots={default:r[0]},r.length=0);i===nn?r=ot(r):i===tn&&(r=function(e){for(var t=0;t<e.length;t++)if(Array.isArray(e[t]))return Array.prototype.concat.apply([],e);return e}(r));var o,a;if("string"==typeof t){var s;a=e.$vnode&&e.$vnode.ns||j.getTagNamespace(t),o=j.isReservedTag(t)?new le(j.parsePlatformTagName(t),n,r,void 0,void 0,e):D(s=Le(e.$options,"components",t))?en(s,n,e,r,t):new le(t,n,r,void 0,void 0,e)}else o=en(t,n,e,r);return Array.isArray(o)?o:D(o)?(D(a)&&function e(t,n,r){t.ns=n;"foreignObject"===t.tag&&(n=void 0,r=!0);if(D(t.children))for(var i=0,o=t.children.length;i<o;i++){var a=t.children[i];D(a.tag)&&(M(a.ns)||S(r)&&"svg"!==a.tag)&&e(a,n,r)}}(o,a),D(n)&&function(e){P(e.style)&&Ye(e.style);P(e.class)&&Ye(e.class)}(n),o):fe()}(e,t,n,r,i)}var on,an,sn,cn,ln,un,fn,pn=0;function dn(e){var t=e.options;if(e.super){var n=dn(e.super);if(n!==e.superOptions){e.superOptions=n;var r=function(e){var t,n=e.options,r=e.extendOptions,i=e.sealedOptions;for(var o in n)n[o]!==i[o]&&(t||(t={}),t[o]=vn(n[o],r[o],i[o]));return t}(e);r&&m(e.extendOptions,r),(t=e.options=Ne(n,e.extendOptions)).name&&(t.components[t.name]=e)}}return t}function vn(e,t,n){if(Array.isArray(e)){var r=[];n=Array.isArray(n)?n:[n],t=Array.isArray(t)?t:[t];for(var i=0;i<e.length;i++)(0<=t.indexOf(e[i])||n.indexOf(e[i])<0)&&r.push(e[i]);return r}return e}function hn(e){this._init(e)}function mn(e){e.cid=0;var a=1;e.extend=function(e){e=e||{};var t=this,n=t.cid,r=e._Ctor||(e._Ctor={});if(r[n])return r[n];var i=e.name||t.options.name,o=function(e){this._init(e)};return((o.prototype=Object.create(t.prototype)).constructor=o).cid=a++,o.options=Ne(t.options,e),o.super=t,o.options.props&&function(e){var t=e.options.props;for(var n in t)Et(e.prototype,"_props",n)}(o),o.options.computed&&function(e){var t=e.options.computed;for(var n in t)Lt(e.prototype,n,t[n])}(o),o.extend=t.extend,o.mixin=t.mixin,o.use=t.use,k.forEach(function(e){o[e]=t[e]}),i&&(o.options.components[i]=o),o.superOptions=t.options,o.extendOptions=e,o.sealedOptions=m({},o.options),r[n]=o}}function yn(e){return e&&(e.Ctor.options.name||e.tag)}function gn(e,t){return Array.isArray(e)?-1<e.indexOf(t):"string"==typeof e?-1<e.split(",").indexOf(t):(n=e,"[object RegExp]"===r.call(n)&&e.test(t));var n}function _n(e,t){var n=e.cache,r=e.keys,i=e._vnode;for(var o in n){var a=n[o];if(a){var s=yn(a.componentOptions);s&&!t(s)&&bn(n,o,r,i)}}}function bn(e,t,n,r){var i=e[t];!i||r&&i.tag===r.tag||i.componentInstance.$destroy(),e[t]=null,f(n,t)}hn.prototype._init=function(e){var t,n,r,i,o=this;o._uid=pn++,o._isVue=!0,e&&e._isComponent?function(e,t){var n=e.$options=Object.create(e.constructor.options),r=t._parentVnode;n.parent=t.parent,n._parentVnode=r,n._parentElm=t._parentElm,n._refElm=t._refElm;var i=r.componentOptions;n.propsData=i.propsData,n._parentListeners=i.listeners,n._renderChildren=i.children,n._componentTag=i.tag,t.render&&(n.render=t.render,n.staticRenderFns=t.staticRenderFns)}(o,e):o.$options=Ne(dn(o.constructor),e||{},o),function(e){var t=e.$options,n=t.parent;if(n&&!t.abstract){for(;n.$options.abstract&&n.$parent;)n=n.$parent;n.$children.push(e)}e.$parent=n,e.$root=n?n.$root:e,e.$children=[],e.$refs={},e._watcher=null,e._inactive=null,e._directInactive=!1,e._isMounted=!1,e._isDestroyed=!1,e._isBeingDestroyed=!1}((o._renderProxy=o)._self=o),function(e){e._events=Object.create(null),e._hasHookEvent=!1;var t=e.$options._parentListeners;t&&pt(e,t)}(o),function(i){i._vnode=null,i._staticTrees=null;var e=i.$options,t=i.$vnode=e._parentVnode,n=t&&t.context;i.$slots=dt(e._renderChildren,n),i.$scopedSlots=y,i._c=function(e,t,n,r){return rn(i,e,t,n,r,!1)},i.$createElement=function(e,t,n,r){return rn(i,e,t,n,r,!0)};var r=t&&t.data;Ce(i,"$attrs",r&&r.attrs||y,null,!0),Ce(i,"$listeners",e._parentListeners||y,null,!0)}(o),_t(o,"beforeCreate"),(n=Dt((t=o).$options.inject,t))&&(ge(!1),Object.keys(n).forEach(function(e){Ce(t,e,n[e])}),ge(!0)),jt(o),(i=(r=o).$options.provide)&&(r._provided="function"==typeof i?i.call(r):i),_t(o,"created"),o.$options.el&&o.$mount(o.$options.el)},on=hn,an={get:function(){return this._data}},sn={get:function(){return this._props}},Object.defineProperty(on.prototype,"$data",an),Object.defineProperty(on.prototype,"$props",sn),on.prototype.$set=xe,on.prototype.$delete=ke,on.prototype.$watch=function(e,t,n){if(l(t))return Mt(this,e,t,n);(n=n||{}).user=!0;var r=new St(this,e,t,n);return n.immediate&&t.call(this,r.value),function(){r.teardown()}},ln=/^hook:/,(cn=hn).prototype.$on=function(e,t){if(Array.isArray(e))for(var n=0,r=e.length;n<r;n++)this.$on(e[n],t);else(this._events[e]||(this._events[e]=[])).push(t),ln.test(e)&&(this._hasHookEvent=!0);return this},cn.prototype.$once=function(e,t){var n=this;function r(){n.$off(e,r),t.apply(n,arguments)}return r.fn=t,n.$on(e,r),n},cn.prototype.$off=function(e,t){var n=this;if(!arguments.length)return n._events=Object.create(null),n;if(Array.isArray(e)){for(var r=0,i=e.length;r<i;r++)this.$off(e[r],t);return n}var o=n._events[e];if(!o)return n;if(!t)return n._events[e]=null,n;if(t)for(var a,s=o.length;s--;)if((a=o[s])===t||a.fn===t){o.splice(s,1);break}return n},cn.prototype.$emit=function(t){var n=this,e=n._events[t];if(e){e=1<e.length?h(e):e;for(var r=h(arguments,1),i=0,o=e.length;i<o;i++)try{e[i].apply(n,r)}catch(e){Fe(e,n,'event handler for "'+t+'"')}}return n},(un=hn).prototype._update=function(e,t){var n=this;n._isMounted&&_t(n,"beforeUpdate");var r=n.$el,i=n._vnode,o=mt;(mt=n)._vnode=e,i?n.$el=n.__patch__(i,e):(n.$el=n.__patch__(n.$el,e,t,!1,n.$options._parentElm,n.$options._refElm),n.$options._parentElm=n.$options._refElm=null),mt=o,r&&(r.__vue__=null),n.$el&&(n.$el.__vue__=n),n.$vnode&&n.$parent&&n.$vnode===n.$parent._vnode&&(n.$parent.$el=n.$el)},un.prototype.$forceUpdate=function(){this._watcher&&this._watcher.update()},un.prototype.$destroy=function(){var e=this;if(!e._isBeingDestroyed){_t(e,"beforeDestroy"),e._isBeingDestroyed=!0;var t=e.$parent;!t||t._isBeingDestroyed||e.$options.abstract||f(t.$children,e),e._watcher&&e._watcher.teardown();for(var n=e._watchers.length;n--;)e._watchers[n].teardown();e._data.__ob__&&e._data.__ob__.vmCount--,e._isDestroyed=!0,e.__patch__(e._vnode,null),_t(e,"destroyed"),e.$off(),e.$el&&(e.$el.__vue__=null),e.$vnode&&(e.$vnode.parent=null)}},Wt((fn=hn).prototype),fn.prototype.$nextTick=function(e){return Ze(e,this)},fn.prototype._render=function(){var t,n=this,e=n.$options,r=e.render,i=e._parentVnode;i&&(n.$scopedSlots=i.data.scopedSlots||y),n.$vnode=i;try{t=r.call(n._renderProxy,n.$createElement)}catch(e){Fe(e,n,"render"),t=n._vnode}return t instanceof le||(t=fe()),t.parent=i,t};var $n,wn,Cn,xn=[String,RegExp,Array],kn={KeepAlive:{name:"keep-alive",abstract:!0,props:{include:xn,exclude:xn,max:[String,Number]},created:function(){this.cache=Object.create(null),this.keys=[]},destroyed:function(){for(var e in this.cache)bn(this.cache,e,this.keys)},mounted:function(){var e=this;this.$watch("include",function(t){_n(e,function(e){return gn(t,e)})}),this.$watch("exclude",function(t){_n(e,function(e){return!gn(t,e)})})},render:function(){var e=this.$slots.default,t=lt(e),n=t&&t.componentOptions;if(n){var r=yn(n),i=this.include,o=this.exclude;if(i&&(!r||!gn(i,r))||o&&r&&gn(o,r))return t;var a=this.cache,s=this.keys,c=null==t.key?n.Ctor.cid+(n.tag?"::"+n.tag:""):t.key;a[c]?(t.componentInstance=a[c].componentInstance,f(s,c),s.push(c)):(a[c]=t,s.push(c),this.max&&s.length>parseInt(this.max)&&bn(a,s[0],s,this._vnode)),t.data.keepAlive=!0}return t||e&&e[0]}}};$n=hn,Cn={get:function(){return j}},Object.defineProperty($n,"config",Cn),$n.util={warn:re,extend:m,mergeOptions:Ne,defineReactive:Ce},$n.set=xe,$n.delete=ke,$n.nextTick=Ze,$n.options=Object.create(null),k.forEach(function(e){$n.options[e+"s"]=Object.create(null)}),m(($n.options._base=$n).options.components,kn),$n.use=function(e){var t=this._installedPlugins||(this._installedPlugins=[]);if(-1<t.indexOf(e))return this;var n=h(arguments,1);return n.unshift(this),"function"==typeof e.install?e.install.apply(e,n):"function"==typeof e&&e.apply(null,n),t.push(e),this},$n.mixin=function(e){return this.options=Ne(this.options,e),this},mn($n),wn=$n,k.forEach(function(n){wn[n]=function(e,t){return t?("component"===n&&l(t)&&(t.name=t.name||e,t=this.options._base.extend(t)),"directive"===n&&"function"==typeof t&&(t={bind:t,update:t}),this.options[n+"s"][e]=t):this.options[n+"s"][e]}}),Object.defineProperty(hn.prototype,"$isServer",{get:Y}),Object.defineProperty(hn.prototype,"$ssrContext",{get:function(){return this.$vnode&&this.$vnode.ssrContext}}),Object.defineProperty(hn,"FunctionalRenderContext",{value:Gt}),hn.version="2.5.16";var An=s("style,class"),On=s("input,textarea,option,select,progress"),Sn=function(e,t,n){return"value"===n&&On(e)&&"button"!==t||"selected"===n&&"option"===e||"checked"===n&&"input"===e||"muted"===n&&"video"===e},Tn=s("contenteditable,draggable,spellcheck"),En=s("allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,default,defaultchecked,defaultmuted,defaultselected,defer,disabled,enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,required,reversed,scoped,seamless,selected,sortable,translate,truespeed,typemustmatch,visible"),jn="http://www.w3.org/1999/xlink",Nn=function(e){return":"===e.charAt(5)&&"xlink"===e.slice(0,5)},Ln=function(e){return Nn(e)?e.slice(6,e.length):""},In=function(e){return null==e||!1===e};function Mn(e){for(var t=e.data,n=e,r=e;D(r.componentInstance);)(r=r.componentInstance._vnode)&&r.data&&(t=Dn(r.data,t));for(;D(n=n.parent);)n&&n.data&&(t=Dn(t,n.data));return function(e,t){if(D(e)||D(t))return Pn(e,Fn(t));return""}(t.staticClass,t.class)}function Dn(e,t){return{staticClass:Pn(e.staticClass,t.staticClass),class:D(e.class)?[e.class,t.class]:t.class}}function Pn(e,t){return e?t?e+" "+t:e:t||""}function Fn(e){return Array.isArray(e)?function(e){for(var t,n="",r=0,i=e.length;r<i;r++)D(t=Fn(e[r]))&&""!==t&&(n&&(n+=" "),n+=t);return n}(e):P(e)?function(e){var t="";for(var n in e)e[n]&&(t&&(t+=" "),t+=n);return t}(e):"string"==typeof e?e:""}var Rn={svg:"http://www.w3.org/2000/svg",math:"http://www.w3.org/1998/Math/MathML"},Hn=s("html,body,base,head,link,meta,style,title,address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,hgroup,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,rtc,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,menuitem,summary,content,element,shadow,template,blockquote,iframe,tfoot"),Bn=s("svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view",!0),Un=function(e){return Hn(e)||Bn(e)};function Vn(e){return Bn(e)?"svg":"math"===e?"math":void 0}var zn=Object.create(null);var Kn=s("text,number,password,search,email,tel,url");function Jn(e){if("string"==typeof e){var t=document.querySelector(e);return t||document.createElement("div")}return e}var qn=Object.freeze({createElement:function(e,t){var n=document.createElement(e);return"select"!==e||t.data&&t.data.attrs&&void 0!==t.data.attrs.multiple&&n.setAttribute("multiple","multiple"),n},createElementNS:function(e,t){return document.createElementNS(Rn[e],t)},createTextNode:function(e){return document.createTextNode(e)},createComment:function(e){return document.createComment(e)},insertBefore:function(e,t,n){e.insertBefore(t,n)},removeChild:function(e,t){e.removeChild(t)},appendChild:function(e,t){e.appendChild(t)},parentNode:function(e){return e.parentNode},nextSibling:function(e){return e.nextSibling},tagName:function(e){return e.tagName},setTextContent:function(e,t){e.textContent=t},setStyleScope:function(e,t){e.setAttribute(t,"")}}),Wn={create:function(e,t){Gn(t)},update:function(e,t){e.data.ref!==t.data.ref&&(Gn(e,!0),Gn(t))},destroy:function(e){Gn(e,!0)}};function Gn(e,t){var n=e.data.ref;if(D(n)){var r=e.context,i=e.componentInstance||e.elm,o=r.$refs;t?Array.isArray(o[n])?f(o[n],i):o[n]===i&&(o[n]=void 0):e.data.refInFor?Array.isArray(o[n])?o[n].indexOf(i)<0&&o[n].push(i):o[n]=[i]:o[n]=i}}var Zn=new le("",{},[]),Xn=["create","activate","update","remove","destroy"];function Yn(e,t){return e.key===t.key&&(e.tag===t.tag&&e.isComment===t.isComment&&D(e.data)===D(t.data)&&function(e,t){if("input"!==e.tag)return!0;var n,r=D(n=e.data)&&D(n=n.attrs)&&n.type,i=D(n=t.data)&&D(n=n.attrs)&&n.type;return r===i||Kn(r)&&Kn(i)}(e,t)||S(e.isAsyncPlaceholder)&&e.asyncFactory===t.asyncFactory&&M(t.asyncFactory.error))}function Qn(e,t,n){var r,i,o={};for(r=t;r<=n;++r)D(i=e[r].key)&&(o[i]=r);return o}var er={create:tr,update:tr,destroy:function(e){tr(e,Zn)}};function tr(e,t){(e.data.directives||t.data.directives)&&function(t,n){var e,r,i,o=t===Zn,a=n===Zn,s=rr(t.data.directives,t.context),c=rr(n.data.directives,n.context),l=[],u=[];for(e in c)r=s[e],i=c[e],r?(i.oldValue=r.value,ir(i,"update",n,t),i.def&&i.def.componentUpdated&&u.push(i)):(ir(i,"bind",n,t),i.def&&i.def.inserted&&l.push(i));if(l.length){var f=function(){for(var e=0;e<l.length;e++)ir(l[e],"inserted",n,t)};o?rt(n,"insert",f):f()}u.length&&rt(n,"postpatch",function(){for(var e=0;e<u.length;e++)ir(u[e],"componentUpdated",n,t)});if(!o)for(e in s)c[e]||ir(s[e],"unbind",t,t,a)}(e,t)}var nr=Object.create(null);function rr(e,t){var n,r,i,o=Object.create(null);if(!e)return o;for(n=0;n<e.length;n++)(r=e[n]).modifiers||(r.modifiers=nr),(o[(i=r,i.rawName||i.name+"."+Object.keys(i.modifiers||{}).join("."))]=r).def=Le(t.$options,"directives",r.name);return o}function ir(t,n,r,e,i){var o=t.def&&t.def[n];if(o)try{o(r.elm,t,r,e,i)}catch(e){Fe(e,r.context,"directive "+t.name+" "+n+" hook")}}var or=[Wn,er];function ar(e,t){var n=t.componentOptions;if(!(D(n)&&!1===n.Ctor.options.inheritAttrs||M(e.data.attrs)&&M(t.data.attrs))){var r,i,o=t.elm,a=e.data.attrs||{},s=t.data.attrs||{};for(r in D(s.__ob__)&&(s=t.data.attrs=m({},s)),s)i=s[r],a[r]!==i&&sr(o,r,i);for(r in(K||q)&&s.value!==a.value&&sr(o,"value",s.value),a)M(s[r])&&(Nn(r)?o.removeAttributeNS(jn,Ln(r)):Tn(r)||o.removeAttribute(r))}}function sr(e,t,n){-1<e.tagName.indexOf("-")?cr(e,t,n):En(t)?In(n)?e.removeAttribute(t):(n="allowfullscreen"===t&&"EMBED"===e.tagName?"true":t,e.setAttribute(t,n)):Tn(t)?e.setAttribute(t,In(n)||"false"===n?"false":"true"):Nn(t)?In(n)?e.removeAttributeNS(jn,Ln(t)):e.setAttributeNS(jn,t,n):cr(e,t,n)}function cr(t,e,n){if(In(n))t.removeAttribute(e);else{if(K&&!J&&"TEXTAREA"===t.tagName&&"placeholder"===e&&!t.__ieph){var r=function(e){e.stopImmediatePropagation(),t.removeEventListener("input",r)};t.addEventListener("input",r),t.__ieph=!0}t.setAttribute(e,n)}}var lr={create:ar,update:ar};function ur(e,t){var n=t.elm,r=t.data,i=e.data;if(!(M(r.staticClass)&&M(r.class)&&(M(i)||M(i.staticClass)&&M(i.class)))){var o=Mn(t),a=n._transitionClasses;D(a)&&(o=Pn(o,Fn(a))),o!==n._prevClass&&(n.setAttribute("class",o),n._prevClass=o)}}var fr,pr,dr,vr,hr,mr,yr={create:ur,update:ur},gr=/[\w).+\-_$\]]/;function _r(e){var t,n,r,i,o,a=!1,s=!1,c=!1,l=!1,u=0,f=0,p=0,d=0;for(r=0;r<e.length;r++)if(n=t,t=e.charCodeAt(r),a)39===t&&92!==n&&(a=!1);else if(s)34===t&&92!==n&&(s=!1);else if(c)96===t&&92!==n&&(c=!1);else if(l)47===t&&92!==n&&(l=!1);else if(124!==t||124===e.charCodeAt(r+1)||124===e.charCodeAt(r-1)||u||f||p){switch(t){case 34:s=!0;break;case 39:a=!0;break;case 96:c=!0;break;case 40:p++;break;case 41:p--;break;case 91:f++;break;case 93:f--;break;case 123:u++;break;case 125:u--}if(47===t){for(var v=r-1,h=void 0;0<=v&&" "===(h=e.charAt(v));v--);h&&gr.test(h)||(l=!0)}}else void 0===i?(d=r+1,i=e.slice(0,r).trim()):m();function m(){(o||(o=[])).push(e.slice(d,r).trim()),d=r+1}if(void 0===i?i=e.slice(0,r).trim():0!==d&&m(),o)for(r=0;r<o.length;r++)i=br(i,o[r]);return i}function br(e,t){var n=t.indexOf("(");if(n<0)return'_f("'+t+'")('+e+")";var r=t.slice(0,n),i=t.slice(n+1);return'_f("'+r+'")('+e+(")"!==i?","+i:i)}function $r(e){console.error("[Vue compiler]: "+e)}function wr(e,t){return e?e.map(function(e){return e[t]}).filter(function(e){return e}):[]}function Cr(e,t,n){(e.props||(e.props=[])).push({name:t,value:n}),e.plain=!1}function xr(e,t,n){(e.attrs||(e.attrs=[])).push({name:t,value:n}),e.plain=!1}function kr(e,t,n){e.attrsMap[t]=n,e.attrsList.push({name:t,value:n})}function Ar(e,t,n,r,i,o){var a;(r=r||y).capture&&(delete r.capture,t="!"+t),r.once&&(delete r.once,t="~"+t),r.passive&&(delete r.passive,t="&"+t),"click"===t&&(r.right?(t="contextmenu",delete r.right):r.middle&&(t="mouseup")),r.native?(delete r.native,a=e.nativeEvents||(e.nativeEvents={})):a=e.events||(e.events={});var s={value:n.trim()};r!==y&&(s.modifiers=r);var c=a[t];Array.isArray(c)?i?c.unshift(s):c.push(s):a[t]=c?i?[s,c]:[c,s]:s,e.plain=!1}function Or(e,t,n){var r=Sr(e,":"+t)||Sr(e,"v-bind:"+t);if(null!=r)return _r(r);if(!1!==n){var i=Sr(e,t);if(null!=i)return JSON.stringify(i)}}function Sr(e,t,n){var r;if(null!=(r=e.attrsMap[t]))for(var i=e.attrsList,o=0,a=i.length;o<a;o++)if(i[o].name===t){i.splice(o,1);break}return n&&delete e.attrsMap[t],r}function Tr(e,t,n){var r=n||{},i=r.number,o="$$v",a=o;r.trim&&(a="(typeof $$v === 'string'? $$v.trim(): $$v)"),i&&(a="_n("+a+")");var s=Er(t,a);e.model={value:"("+t+")",expression:'"'+t+'"',callback:"function ($$v) {"+s+"}"}}function Er(e,t){var n=function(e){if(e=e.trim(),fr=e.length,e.indexOf("[")<0||e.lastIndexOf("]")<fr-1)return-1<(vr=e.lastIndexOf("."))?{exp:e.slice(0,vr),key:'"'+e.slice(vr+1)+'"'}:{exp:e,key:null};pr=e,vr=hr=mr=0;for(;!Nr();)Lr(dr=jr())?Mr(dr):91===dr&&Ir(dr);return{exp:e.slice(0,hr),key:e.slice(hr+1,mr)}}(e);return null===n.key?e+"="+t:"$set("+n.exp+", "+n.key+", "+t+")"}function jr(){return pr.charCodeAt(++vr)}function Nr(){return fr<=vr}function Lr(e){return 34===e||39===e}function Ir(e){var t=1;for(hr=vr;!Nr();)if(Lr(e=jr()))Mr(e);else if(91===e&&t++,93===e&&t--,0===t){mr=vr;break}}function Mr(e){for(var t=e;!Nr()&&(e=jr())!==t;);}var Dr,Pr="__r",Fr="__c";function Rr(e,t,n,r,i){var o,a,s,c,l;t=(o=t)._withTask||(o._withTask=function(){Je=!0;var e=o.apply(null,arguments);return Je=!1,e}),n&&(a=t,s=e,c=r,l=Dr,t=function e(){null!==a.apply(null,arguments)&&Hr(s,e,c,l)}),Dr.addEventListener(e,t,Z?{capture:r,passive:i}:r)}function Hr(e,t,n,r){(r||Dr).removeEventListener(e,t._withTask||t,n)}function Br(e,t){if(!M(e.data.on)||!M(t.data.on)){var n=t.data.on||{},r=e.data.on||{};Dr=t.elm,function(e){if(D(e[Pr])){var t=K?"change":"input";e[t]=[].concat(e[Pr],e[t]||[]),delete e[Pr]}D(e[Fr])&&(e.change=[].concat(e[Fr],e.change||[]),delete e[Fr])}(n),nt(n,r,Rr,Hr,t.context),Dr=void 0}}var Ur={create:Br,update:Br};function Vr(e,t){if(!M(e.data.domProps)||!M(t.data.domProps)){var n,r,i,o,a=t.elm,s=e.data.domProps||{},c=t.data.domProps||{};for(n in D(c.__ob__)&&(c=t.data.domProps=m({},c)),s)M(c[n])&&(a[n]="");for(n in c){if(r=c[n],"textContent"===n||"innerHTML"===n){if(t.children&&(t.children.length=0),r===s[n])continue;1===a.childNodes.length&&a.removeChild(a.childNodes[0])}if("value"===n){var l=M(a._value=r)?"":String(r);o=l,(i=a).composing||"OPTION"!==i.tagName&&!function(e,t){var n=!0;try{n=document.activeElement!==e}catch(e){}return n&&e.value!==t}(i,o)&&!function(e,t){var n=e.value,r=e._vModifiers;if(D(r)){if(r.lazy)return!1;if(r.number)return F(n)!==F(t);if(r.trim)return n.trim()!==t.trim()}return n!==t}(i,o)||(a.value=l)}else a[n]=r}}}var zr={create:Vr,update:Vr},Kr=e(function(e){var n={},r=/:(.+)/;return e.split(/;(?![^(]*\))/g).forEach(function(e){if(e){var t=e.split(r);1<t.length&&(n[t[0].trim()]=t[1].trim())}}),n});function Jr(e){var t=qr(e.style);return e.staticStyle?m(e.staticStyle,t):t}function qr(e){return Array.isArray(e)?b(e):"string"==typeof e?Kr(e):e}var Wr,Gr=/^--/,Zr=/\s*!important$/,Xr=function(e,t,n){if(Gr.test(t))e.style.setProperty(t,n);else if(Zr.test(n))e.style.setProperty(t,n.replace(Zr,""),"important");else{var r=Qr(t);if(Array.isArray(n))for(var i=0,o=n.length;i<o;i++)e.style[r]=n[i];else e.style[r]=n}},Yr=["Webkit","Moz","ms"],Qr=e(function(e){if(Wr=Wr||document.createElement("div").style,"filter"!==(e=g(e))&&e in Wr)return e;for(var t=e.charAt(0).toUpperCase()+e.slice(1),n=0;n<Yr.length;n++){var r=Yr[n]+t;if(r in Wr)return r}});function ei(e,t){var n=t.data,r=e.data;if(!(M(n.staticStyle)&&M(n.style)&&M(r.staticStyle)&&M(r.style))){var i,o,a=t.elm,s=r.staticStyle,c=r.normalizedStyle||r.style||{},l=s||c,u=qr(t.data.style)||{};t.data.normalizedStyle=D(u.__ob__)?m({},u):u;var f=function(e,t){var n,r={};if(t)for(var i=e;i.componentInstance;)(i=i.componentInstance._vnode)&&i.data&&(n=Jr(i.data))&&m(r,n);(n=Jr(e.data))&&m(r,n);for(var o=e;o=o.parent;)o.data&&(n=Jr(o.data))&&m(r,n);return r}(t,!0);for(o in l)M(f[o])&&Xr(a,o,"");for(o in f)(i=f[o])!==l[o]&&Xr(a,o,null==i?"":i)}}var ti={create:ei,update:ei};function ni(t,e){if(e&&(e=e.trim()))if(t.classList)-1<e.indexOf(" ")?e.split(/\s+/).forEach(function(e){return t.classList.add(e)}):t.classList.add(e);else{var n=" "+(t.getAttribute("class")||"")+" ";n.indexOf(" "+e+" ")<0&&t.setAttribute("class",(n+e).trim())}}function ri(t,e){if(e&&(e=e.trim()))if(t.classList)-1<e.indexOf(" ")?e.split(/\s+/).forEach(function(e){return t.classList.remove(e)}):t.classList.remove(e),t.classList.length||t.removeAttribute("class");else{for(var n=" "+(t.getAttribute("class")||"")+" ",r=" "+e+" ";0<=n.indexOf(r);)n=n.replace(r," ");(n=n.trim())?t.setAttribute("class",n):t.removeAttribute("class")}}function ii(e){if(e){if("object"==typeof e){var t={};return!1!==e.css&&m(t,oi(e.name||"v")),m(t,e),t}return"string"==typeof e?oi(e):void 0}}var oi=e(function(e){return{enterClass:e+"-enter",enterToClass:e+"-enter-to",enterActiveClass:e+"-enter-active",leaveClass:e+"-leave",leaveToClass:e+"-leave-to",leaveActiveClass:e+"-leave-active"}}),ai=B&&!J,si="transition",ci="animation",li="transition",ui="transitionend",fi="animation",pi="animationend";ai&&(void 0===window.ontransitionend&&void 0!==window.onwebkittransitionend&&(li="WebkitTransition",ui="webkitTransitionEnd"),void 0===window.onanimationend&&void 0!==window.onwebkitanimationend&&(fi="WebkitAnimation",pi="webkitAnimationEnd"));var di=B?window.requestAnimationFrame?window.requestAnimationFrame.bind(window):setTimeout:function(e){return e()};function vi(e){di(function(){di(e)})}function hi(e,t){var n=e._transitionClasses||(e._transitionClasses=[]);n.indexOf(t)<0&&(n.push(t),ni(e,t))}function mi(e,t){e._transitionClasses&&f(e._transitionClasses,t),ri(e,t)}function yi(t,e,n){var r=_i(t,e),i=r.type,o=r.timeout,a=r.propCount;if(!i)return n();var s=i===si?ui:pi,c=0,l=function(){t.removeEventListener(s,u),n()},u=function(e){e.target===t&&++c>=a&&l()};setTimeout(function(){c<a&&l()},o+1),t.addEventListener(s,u)}var gi=/\b(transform|all)(,|$)/;function _i(e,t){var n,r=window.getComputedStyle(e),i=r[li+"Delay"].split(", "),o=r[li+"Duration"].split(", "),a=bi(i,o),s=r[fi+"Delay"].split(", "),c=r[fi+"Duration"].split(", "),l=bi(s,c),u=0,f=0;return t===si?0<a&&(n=si,u=a,f=o.length):t===ci?0<l&&(n=ci,u=l,f=c.length):f=(n=0<(u=Math.max(a,l))?l<a?si:ci:null)?n===si?o.length:c.length:0,{type:n,timeout:u,propCount:f,hasTransform:n===si&&gi.test(r[li+"Property"])}}function bi(n,e){for(;n.length<e.length;)n=n.concat(n);return Math.max.apply(null,e.map(function(e,t){return $i(e)+$i(n[t])}))}function $i(e){return 1e3*Number(e.slice(0,-1))}function wi(n,e){var r=n.elm;D(r._leaveCb)&&(r._leaveCb.cancelled=!0,r._leaveCb());var t=ii(n.data.transition);if(!M(t)&&!D(r._enterCb)&&1===r.nodeType){for(var i=t.css,o=t.type,a=t.enterClass,s=t.enterToClass,c=t.enterActiveClass,l=t.appearClass,u=t.appearToClass,f=t.appearActiveClass,p=t.beforeEnter,d=t.enter,v=t.afterEnter,h=t.enterCancelled,m=t.beforeAppear,y=t.appear,g=t.afterAppear,_=t.appearCancelled,b=t.duration,$=mt,w=mt.$vnode;w&&w.parent;)$=(w=w.parent).context;var C=!$._isMounted||!n.isRootInsert;if(!C||y||""===y){var x=C&&l?l:a,k=C&&f?f:c,A=C&&u?u:s,O=C&&m||p,S=C&&"function"==typeof y?y:d,T=C&&g||v,E=C&&_||h,j=F(P(b)?b.enter:b),N=!1!==i&&!J,L=ki(S),I=r._enterCb=R(function(){N&&(mi(r,A),mi(r,k)),I.cancelled?(N&&mi(r,x),E&&E(r)):T&&T(r),r._enterCb=null});n.data.show||rt(n,"insert",function(){var e=r.parentNode,t=e&&e._pending&&e._pending[n.key];t&&t.tag===n.tag&&t.elm._leaveCb&&t.elm._leaveCb(),S&&S(r,I)}),O&&O(r),N&&(hi(r,x),hi(r,k),vi(function(){mi(r,x),I.cancelled||(hi(r,A),L||(xi(j)?setTimeout(I,j):yi(r,o,I)))})),n.data.show&&(e&&e(),S&&S(r,I)),N||L||I()}}}function Ci(e,t){var n=e.elm;D(n._enterCb)&&(n._enterCb.cancelled=!0,n._enterCb());var r=ii(e.data.transition);if(M(r)||1!==n.nodeType)return t();if(!D(n._leaveCb)){var i=r.css,o=r.type,a=r.leaveClass,s=r.leaveToClass,c=r.leaveActiveClass,l=r.beforeLeave,u=r.leave,f=r.afterLeave,p=r.leaveCancelled,d=r.delayLeave,v=r.duration,h=!1!==i&&!J,m=ki(u),y=F(P(v)?v.leave:v),g=n._leaveCb=R(function(){n.parentNode&&n.parentNode._pending&&(n.parentNode._pending[e.key]=null),h&&(mi(n,s),mi(n,c)),g.cancelled?(h&&mi(n,a),p&&p(n)):(t(),f&&f(n)),n._leaveCb=null});d?d(_):_()}function _(){g.cancelled||(e.data.show||((n.parentNode._pending||(n.parentNode._pending={}))[e.key]=e),l&&l(n),h&&(hi(n,a),hi(n,c),vi(function(){mi(n,a),g.cancelled||(hi(n,s),m||(xi(y)?setTimeout(g,y):yi(n,o,g)))})),u&&u(n,g),h||m||g())}}function xi(e){return"number"==typeof e&&!isNaN(e)}function ki(e){if(M(e))return!1;var t=e.fns;return D(t)?ki(Array.isArray(t)?t[0]:t):1<(e._length||e.length)}function Ai(e,t){!0!==t.data.show&&wi(t)}var Oi=function(e){var r,t,g={},n=e.modules,_=e.nodeOps;for(r=0;r<Xn.length;++r)for(g[Xn[r]]=[],t=0;t<n.length;++t)D(n[t][Xn[r]])&&g[Xn[r]].push(n[t][Xn[r]]);function o(e){var t=_.parentNode(e);D(t)&&_.removeChild(t,e)}function b(e,t,n,r,i,o,a){if(D(e.elm)&&D(o)&&(e=o[a]=de(e)),e.isRootInsert=!i,!function(e,t,n,r){var i=e.data;if(D(i)){var o=D(e.componentInstance)&&i.keepAlive;if(D(i=i.hook)&&D(i=i.init)&&i(e,!1,n,r),D(e.componentInstance))return d(e,t),S(o)&&function(e,t,n,r){for(var i,o=e;o.componentInstance;)if(o=o.componentInstance._vnode,D(i=o.data)&&D(i=i.transition)){for(i=0;i<g.activate.length;++i)g.activate[i](Zn,o);t.push(o);break}u(n,e.elm,r)}(e,t,n,r),!0}}(e,t,n,r)){var s=e.data,c=e.children,l=e.tag;D(l)?(e.elm=e.ns?_.createElementNS(e.ns,l):_.createElement(l,e),f(e),v(e,c,t),D(s)&&h(e,t)):S(e.isComment)?e.elm=_.createComment(e.text):e.elm=_.createTextNode(e.text),u(n,e.elm,r)}}function d(e,t){D(e.data.pendingInsert)&&(t.push.apply(t,e.data.pendingInsert),e.data.pendingInsert=null),e.elm=e.componentInstance.$el,$(e)?(h(e,t),f(e)):(Gn(e),t.push(e))}function u(e,t,n){D(e)&&(D(n)?n.parentNode===e&&_.insertBefore(e,t,n):_.appendChild(e,t))}function v(e,t,n){if(Array.isArray(t))for(var r=0;r<t.length;++r)b(t[r],n,e.elm,null,!0,t,r);else T(e.text)&&_.appendChild(e.elm,_.createTextNode(String(e.text)))}function $(e){for(;e.componentInstance;)e=e.componentInstance._vnode;return D(e.tag)}function h(e,t){for(var n=0;n<g.create.length;++n)g.create[n](Zn,e);D(r=e.data.hook)&&(D(r.create)&&r.create(Zn,e),D(r.insert)&&t.push(e))}function f(e){var t;if(D(t=e.fnScopeId))_.setStyleScope(e.elm,t);else for(var n=e;n;)D(t=n.context)&&D(t=t.$options._scopeId)&&_.setStyleScope(e.elm,t),n=n.parent;D(t=mt)&&t!==e.context&&t!==e.fnContext&&D(t=t.$options._scopeId)&&_.setStyleScope(e.elm,t)}function y(e,t,n,r,i,o){for(;r<=i;++r)b(n[r],o,e,t,!1,n,r)}function w(e){var t,n,r=e.data;if(D(r))for(D(t=r.hook)&&D(t=t.destroy)&&t(e),t=0;t<g.destroy.length;++t)g.destroy[t](e);if(D(t=e.children))for(n=0;n<e.children.length;++n)w(e.children[n])}function C(e,t,n,r){for(;n<=r;++n){var i=t[n];D(i)&&(D(i.tag)?(a(i),w(i)):o(i.elm))}}function a(e,t){if(D(t)||D(e.data)){var n,r=g.remove.length+1;for(D(t)?t.listeners+=r:t=function(e,t){function n(){0==--n.listeners&&o(e)}return n.listeners=t,n}(e.elm,r),D(n=e.componentInstance)&&D(n=n._vnode)&&D(n.data)&&a(n,t),n=0;n<g.remove.length;++n)g.remove[n](e,t);D(n=e.data.hook)&&D(n=n.remove)?n(e,t):t()}else o(e.elm)}function x(e,t,n,r){for(var i=n;i<r;i++){var o=t[i];if(D(o)&&Yn(e,o))return i}}function k(e,t,n,r){if(e!==t){var i=t.elm=e.elm;if(S(e.isAsyncPlaceholder))D(t.asyncFactory.resolved)?O(e.elm,t,n):t.isAsyncPlaceholder=!0;else if(S(t.isStatic)&&S(e.isStatic)&&t.key===e.key&&(S(t.isCloned)||S(t.isOnce)))t.componentInstance=e.componentInstance;else{var o,a=t.data;D(a)&&D(o=a.hook)&&D(o=o.prepatch)&&o(e,t);var s=e.children,c=t.children;if(D(a)&&$(t)){for(o=0;o<g.update.length;++o)g.update[o](e,t);D(o=a.hook)&&D(o=o.update)&&o(e,t)}M(t.text)?D(s)&&D(c)?s!==c&&function(e,t,n,r,i){for(var o,a,s,c=0,l=0,u=t.length-1,f=t[0],p=t[u],d=n.length-1,v=n[0],h=n[d],m=!i;c<=u&&l<=d;)M(f)?f=t[++c]:M(p)?p=t[--u]:Yn(f,v)?(k(f,v,r),f=t[++c],v=n[++l]):Yn(p,h)?(k(p,h,r),p=t[--u],h=n[--d]):Yn(f,h)?(k(f,h,r),m&&_.insertBefore(e,f.elm,_.nextSibling(p.elm)),f=t[++c],h=n[--d]):(Yn(p,v)?(k(p,v,r),m&&_.insertBefore(e,p.elm,f.elm),p=t[--u]):(M(o)&&(o=Qn(t,c,u)),M(a=D(v.key)?o[v.key]:x(v,t,c,u))?b(v,r,e,f.elm,!1,n,l):Yn(s=t[a],v)?(k(s,v,r),t[a]=void 0,m&&_.insertBefore(e,s.elm,f.elm)):b(v,r,e,f.elm,!1,n,l)),v=n[++l]);u<c?y(e,M(n[d+1])?null:n[d+1].elm,n,l,d,r):d<l&&C(0,t,c,u)}(i,s,c,n,r):D(c)?(D(e.text)&&_.setTextContent(i,""),y(i,null,c,0,c.length-1,n)):D(s)?C(0,s,0,s.length-1):D(e.text)&&_.setTextContent(i,""):e.text!==t.text&&_.setTextContent(i,t.text),D(a)&&D(o=a.hook)&&D(o=o.postpatch)&&o(e,t)}}}function A(e,t,n){if(S(n)&&D(e.parent))e.parent.data.pendingInsert=t;else for(var r=0;r<t.length;++r)t[r].data.hook.insert(t[r])}var m=s("attrs,class,staticClass,staticStyle,key");function O(e,t,n,r){var i,o=t.tag,a=t.data,s=t.children;if(r=r||a&&a.pre,t.elm=e,S(t.isComment)&&D(t.asyncFactory))return t.isAsyncPlaceholder=!0;if(D(a)&&(D(i=a.hook)&&D(i=i.init)&&i(t,!0),D(i=t.componentInstance)))return d(t,n),!0;if(D(o)){if(D(s))if(e.hasChildNodes())if(D(i=a)&&D(i=i.domProps)&&D(i=i.innerHTML)){if(i!==e.innerHTML)return!1}else{for(var c=!0,l=e.firstChild,u=0;u<s.length;u++){if(!l||!O(l,s[u],n,r)){c=!1;break}l=l.nextSibling}if(!c||l)return!1}else v(t,s,n);if(D(a)){var f=!1;for(var p in a)if(!m(p)){f=!0,h(t,n);break}!f&&a.class&&Ye(a.class)}}else e.data!==t.text&&(e.data=t.text);return!0}return function(e,t,n,r,i,o){if(!M(t)){var a,s=!1,c=[];if(M(e))s=!0,b(t,c,i,o);else{var l=D(e.nodeType);if(!l&&Yn(e,t))k(e,t,c,r);else{if(l){if(1===e.nodeType&&e.hasAttribute(E)&&(e.removeAttribute(E),n=!0),S(n)&&O(e,t,c))return A(t,c,!0),e;a=e,e=new le(_.tagName(a).toLowerCase(),{},[],void 0,a)}var u=e.elm,f=_.parentNode(u);if(b(t,c,u._leaveCb?null:f,_.nextSibling(u)),D(t.parent))for(var p=t.parent,d=$(t);p;){for(var v=0;v<g.destroy.length;++v)g.destroy[v](p);if(p.elm=t.elm,d){for(var h=0;h<g.create.length;++h)g.create[h](Zn,p);var m=p.data.hook.insert;if(m.merged)for(var y=1;y<m.fns.length;y++)m.fns[y]()}else Gn(p);p=p.parent}D(f)?C(0,[e],0,0):D(e.tag)&&w(e)}}return A(t,c,s),t.elm}D(e)&&w(e)}}({nodeOps:qn,modules:[lr,yr,Ur,zr,ti,B?{create:Ai,activate:Ai,remove:function(e,t){!0!==e.data.show?Ci(e,t):t()}}:{}].concat(or)});J&&document.addEventListener("selectionchange",function(){var e=document.activeElement;e&&e.vmodel&&Mi(e,"input")});var Si={inserted:function(e,t,n,r){"select"===n.tag?(r.elm&&!r.elm._vOptions?rt(n,"postpatch",function(){Si.componentUpdated(e,t,n)}):Ti(e,t,n.context),e._vOptions=[].map.call(e.options,Ni)):("textarea"===n.tag||Kn(e.type))&&(e._vModifiers=t.modifiers,t.modifiers.lazy||(e.addEventListener("compositionstart",Li),e.addEventListener("compositionend",Ii),e.addEventListener("change",Ii),J&&(e.vmodel=!0)))},componentUpdated:function(e,t,n){if("select"===n.tag){Ti(e,t,n.context);var r=e._vOptions,i=e._vOptions=[].map.call(e.options,Ni);if(i.some(function(e,t){return!C(e,r[t])}))(e.multiple?t.value.some(function(e){return ji(e,i)}):t.value!==t.oldValue&&ji(t.value,i))&&Mi(e,"change")}}};function Ti(e,t,n){Ei(e,t,n),(K||q)&&setTimeout(function(){Ei(e,t,n)},0)}function Ei(e,t,n){var r=t.value,i=e.multiple;if(!i||Array.isArray(r)){for(var o,a,s=0,c=e.options.length;s<c;s++)if(a=e.options[s],i)o=-1<x(r,Ni(a)),a.selected!==o&&(a.selected=o);else if(C(Ni(a),r))return void(e.selectedIndex!==s&&(e.selectedIndex=s));i||(e.selectedIndex=-1)}}function ji(t,e){return e.every(function(e){return!C(e,t)})}function Ni(e){return"_value"in e?e._value:e.value}function Li(e){e.target.composing=!0}function Ii(e){e.target.composing&&(e.target.composing=!1,Mi(e.target,"input"))}function Mi(e,t){var n=document.createEvent("HTMLEvents");n.initEvent(t,!0,!0),e.dispatchEvent(n)}function Di(e){return!e.componentInstance||e.data&&e.data.transition?e:Di(e.componentInstance._vnode)}var Pi={model:Si,show:{bind:function(e,t,n){var r=t.value,i=(n=Di(n)).data&&n.data.transition,o=e.__vOriginalDisplay="none"===e.style.display?"":e.style.display;r&&i?(n.data.show=!0,wi(n,function(){e.style.display=o})):e.style.display=r?o:"none"},update:function(e,t,n){var r=t.value;!r!=!t.oldValue&&((n=Di(n)).data&&n.data.transition?(n.data.show=!0,r?wi(n,function(){e.style.display=e.__vOriginalDisplay}):Ci(n,function(){e.style.display="none"})):e.style.display=r?e.__vOriginalDisplay:"none")},unbind:function(e,t,n,r,i){i||(e.style.display=e.__vOriginalDisplay)}}},Fi={name:String,appear:Boolean,css:Boolean,mode:String,type:String,enterClass:String,leaveClass:String,enterToClass:String,leaveToClass:String,enterActiveClass:String,leaveActiveClass:String,appearClass:String,appearActiveClass:String,appearToClass:String,duration:[Number,String,Object]};function Ri(e){var t=e&&e.componentOptions;return t&&t.Ctor.options.abstract?Ri(lt(t.children)):e}function Hi(e){var t={},n=e.$options;for(var r in n.propsData)t[r]=e[r];var i=n._parentListeners;for(var o in i)t[g(o)]=i[o];return t}function Bi(e,t){if(/\d-keep-alive$/.test(t.tag))return e("keep-alive",{props:t.componentOptions.propsData})}var Ui={name:"transition",props:Fi,abstract:!0,render:function(e){var t=this,n=this.$slots.default;if(n&&(n=n.filter(function(e){return e.tag||ct(e)})).length){var r=this.mode,i=n[0];if(function(e){for(;e=e.parent;)if(e.data.transition)return!0}(this.$vnode))return i;var o=Ri(i);if(!o)return i;if(this._leaving)return Bi(e,i);var a="__transition-"+this._uid+"-";o.key=null==o.key?o.isComment?a+"comment":a+o.tag:T(o.key)?0===String(o.key).indexOf(a)?o.key:a+o.key:o.key;var s,c,l=(o.data||(o.data={})).transition=Hi(this),u=this._vnode,f=Ri(u);if(o.data.directives&&o.data.directives.some(function(e){return"show"===e.name})&&(o.data.show=!0),f&&f.data&&(s=o,(c=f).key!==s.key||c.tag!==s.tag)&&!ct(f)&&(!f.componentInstance||!f.componentInstance._vnode.isComment)){var p=f.data.transition=m({},l);if("out-in"===r)return this._leaving=!0,rt(p,"afterLeave",function(){t._leaving=!1,t.$forceUpdate()}),Bi(e,i);if("in-out"===r){if(ct(o))return u;var d,v=function(){d()};rt(l,"afterEnter",v),rt(l,"enterCancelled",v),rt(p,"delayLeave",function(e){d=e})}}return i}}},Vi=m({tag:String,moveClass:String},Fi);function zi(e){e.elm._moveCb&&e.elm._moveCb(),e.elm._enterCb&&e.elm._enterCb()}function Ki(e){e.data.newPos=e.elm.getBoundingClientRect()}function Ji(e){var t=e.data.pos,n=e.data.newPos,r=t.left-n.left,i=t.top-n.top;if(r||i){e.data.moved=!0;var o=e.elm.style;o.transform=o.WebkitTransform="translate("+r+"px,"+i+"px)",o.transitionDuration="0s"}}delete Vi.mode;var qi={Transition:Ui,TransitionGroup:{props:Vi,render:function(e){for(var t=this.tag||this.$vnode.data.tag||"span",n=Object.create(null),r=this.prevChildren=this.children,i=this.$slots.default||[],o=this.children=[],a=Hi(this),s=0;s<i.length;s++){var c=i[s];c.tag&&null!=c.key&&0!==String(c.key).indexOf("__vlist")&&(o.push(c),((n[c.key]=c).data||(c.data={})).transition=a)}if(r){for(var l=[],u=[],f=0;f<r.length;f++){var p=r[f];p.data.transition=a,p.data.pos=p.elm.getBoundingClientRect(),n[p.key]?l.push(p):u.push(p)}this.kept=e(t,null,l),this.removed=u}return e(t,null,o)},beforeUpdate:function(){this.__patch__(this._vnode,this.kept,!1,!0),this._vnode=this.kept},updated:function(){var e=this.prevChildren,r=this.moveClass||(this.name||"v")+"-move";e.length&&this.hasMove(e[0].elm,r)&&(e.forEach(zi),e.forEach(Ki),e.forEach(Ji),this._reflow=document.body.offsetHeight,e.forEach(function(e){if(e.data.moved){var n=e.elm,t=n.style;hi(n,r),t.transform=t.WebkitTransform=t.transitionDuration="",n.addEventListener(ui,n._moveCb=function e(t){t&&!/transform$/.test(t.propertyName)||(n.removeEventListener(ui,e),n._moveCb=null,mi(n,r))})}}))},methods:{hasMove:function(e,t){if(!ai)return!1;if(this._hasMove)return this._hasMove;var n=e.cloneNode();e._transitionClasses&&e._transitionClasses.forEach(function(e){ri(n,e)}),ni(n,t),n.style.display="none",this.$el.appendChild(n);var r=_i(n);return this.$el.removeChild(n),this._hasMove=r.hasTransform}}}};hn.config.mustUseProp=Sn,hn.config.isReservedTag=Un,hn.config.isReservedAttr=An,hn.config.getTagNamespace=Vn,hn.config.isUnknownElement=function(e){if(!B)return!0;if(Un(e))return!1;if(e=e.toLowerCase(),null!=zn[e])return zn[e];var t=document.createElement(e);return-1<e.indexOf("-")?zn[e]=t.constructor===window.HTMLUnknownElement||t.constructor===window.HTMLElement:zn[e]=/HTMLUnknownElement/.test(t.toString())},m(hn.options.directives,Pi),m(hn.options.components,qi),hn.prototype.__patch__=B?Oi:$,hn.prototype.$mount=function(e,t){return e=e&&B?Jn(e):void 0,r=e,i=t,(n=this).$el=r,n.$options.render||(n.$options.render=fe),_t(n,"beforeMount"),new St(n,function(){n._update(n._render(),i)},$,null,!0),i=!1,null==n.$vnode&&(n._isMounted=!0,_t(n,"mounted")),n;var n,r,i},B&&setTimeout(function(){j.devtools&&Q&&Q.emit("init",hn)},0);var Wi=/\{\{((?:.|\n)+?)\}\}/g,Gi=/[-.*+?^${}()|[\]\/\\]/g,Zi=e(function(e){var t=e[0].replace(Gi,"\\$&"),n=e[1].replace(Gi,"\\$&");return new RegExp(t+"((?:.|\\n)+?)"+n,"g")});var Xi={staticKeys:["staticClass"],transformNode:function(e,t){t.warn;var n=Sr(e,"class");n&&(e.staticClass=JSON.stringify(n));var r=Or(e,"class",!1);r&&(e.classBinding=r)},genData:function(e){var t="";return e.staticClass&&(t+="staticClass:"+e.staticClass+","),e.classBinding&&(t+="class:"+e.classBinding+","),t}};var Yi,Qi={staticKeys:["staticStyle"],transformNode:function(e,t){t.warn;var n=Sr(e,"style");n&&(e.staticStyle=JSON.stringify(Kr(n)));var r=Or(e,"style",!1);r&&(e.styleBinding=r)},genData:function(e){var t="";return e.staticStyle&&(t+="staticStyle:"+e.staticStyle+","),e.styleBinding&&(t+="style:("+e.styleBinding+"),"),t}},eo=function(e){return(Yi=Yi||document.createElement("div")).innerHTML=e,Yi.textContent},to=s("area,base,br,col,embed,frame,hr,img,input,isindex,keygen,link,meta,param,source,track,wbr"),no=s("colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr,source"),ro=s("address,article,aside,base,blockquote,body,caption,col,colgroup,dd,details,dialog,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,head,header,hgroup,hr,html,legend,li,menuitem,meta,optgroup,option,param,rp,rt,source,style,summary,tbody,td,tfoot,th,thead,title,tr,track"),io=/^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/,oo="[a-zA-Z_][\\w\\-\\.]*",ao="((?:"+oo+"\\:)?"+oo+")",so=new RegExp("^<"+ao),co=/^\s*(\/?)>/,lo=new RegExp("^<\\/"+ao+"[^>]*>"),uo=/^<!DOCTYPE [^>]+>/i,fo=/^<!\--/,po=/^<!\[/,vo=!1;"x".replace(/x(.)?/g,function(e,t){vo=""===t});var ho=s("script,style,textarea",!0),mo={},yo={"&lt;":"<","&gt;":">","&quot;":'"',"&amp;":"&","&#10;":"\n","&#9;":"\t"},go=/&(?:lt|gt|quot|amp);/g,_o=/&(?:lt|gt|quot|amp|#10|#9);/g,bo=s("pre,textarea",!0),$o=function(e,t){return e&&bo(e)&&"\n"===t[0]};var wo,Co,xo,ko,Ao,Oo,So,To,Eo=/^@|^v-on:/,jo=/^v-|^@|^:/,No=/([^]*?)\s+(?:in|of)\s+([^]*)/,Lo=/,([^,\}\]]*)(?:,([^,\}\]]*))?$/,Io=/^\(|\)$/g,Mo=/:(.*)$/,Do=/^:|^v-bind:/,Po=/\.[^.]+/g,Fo=e(eo);function Ro(e,t,n){return{type:1,tag:e,attrsList:t,attrsMap:function(e){for(var t={},n=0,r=e.length;n<r;n++)t[e[n].name]=e[n].value;return t}(t),parent:n,children:[]}}function Ho(e,p){wo=p.warn||$r,Oo=p.isPreTag||O,So=p.mustUseProp||O,To=p.getTagNamespace||O,xo=wr(p.modules,"transformNode"),ko=wr(p.modules,"preTransformNode"),Ao=wr(p.modules,"postTransformNode"),Co=p.delimiters;var d,v,h=[],i=!1!==p.preserveWhitespace,m=!1,y=!1;function g(e){e.pre&&(m=!1),Oo(e.tag)&&(y=!1);for(var t=0;t<Ao.length;t++)Ao[t](e,p)}return function(i,d){for(var e,v,h=[],m=d.expectHTML,y=d.isUnaryTag||O,g=d.canBeLeftOpenTag||O,a=0;i;){if(e=i,v&&ho(v)){var r=0,o=v.toLowerCase(),t=mo[o]||(mo[o]=new RegExp("([\\s\\S]*?)(</"+o+"[^>]*>)","i")),n=i.replace(t,function(e,t,n){return r=n.length,ho(o)||"noscript"===o||(t=t.replace(/<!\--([\s\S]*?)-->/g,"$1").replace(/<!\[CDATA\[([\s\S]*?)]]>/g,"$1")),$o(o,t)&&(t=t.slice(1)),d.chars&&d.chars(t),""});a+=i.length-n.length,i=n,A(o,a-r,a)}else{var s=i.indexOf("<");if(0===s){if(fo.test(i)){var c=i.indexOf("--\x3e");if(0<=c){d.shouldKeepComment&&d.comment(i.substring(4,c)),C(c+3);continue}}if(po.test(i)){var l=i.indexOf("]>");if(0<=l){C(l+2);continue}}var u=i.match(uo);if(u){C(u[0].length);continue}var f=i.match(lo);if(f){var p=a;C(f[0].length),A(f[1],p,a);continue}var _=x();if(_){k(_),$o(v,i)&&C(1);continue}}var b=void 0,$=void 0,w=void 0;if(0<=s){for($=i.slice(s);!(lo.test($)||so.test($)||fo.test($)||po.test($)||(w=$.indexOf("<",1))<0);)s+=w,$=i.slice(s);b=i.substring(0,s),C(s)}s<0&&(b=i,i=""),d.chars&&b&&d.chars(b)}if(i===e){d.chars&&d.chars(i);break}}function C(e){a+=e,i=i.substring(e)}function x(){var e=i.match(so);if(e){var t,n,r={tagName:e[1],attrs:[],start:a};for(C(e[0].length);!(t=i.match(co))&&(n=i.match(io));)C(n[0].length),r.attrs.push(n);if(t)return r.unarySlash=t[1],C(t[0].length),r.end=a,r}}function k(e){var t=e.tagName,n=e.unarySlash;m&&("p"===v&&ro(t)&&A(v),g(t)&&v===t&&A(t));for(var r,i,o,a=y(t)||!!n,s=e.attrs.length,c=new Array(s),l=0;l<s;l++){var u=e.attrs[l];vo&&-1===u[0].indexOf('""')&&(""===u[3]&&delete u[3],""===u[4]&&delete u[4],""===u[5]&&delete u[5]);var f=u[3]||u[4]||u[5]||"",p="a"===t&&"href"===u[1]?d.shouldDecodeNewlinesForHref:d.shouldDecodeNewlines;c[l]={name:u[1],value:(r=f,i=p,o=i?_o:go,r.replace(o,function(e){return yo[e]}))}}a||(h.push({tag:t,lowerCasedTag:t.toLowerCase(),attrs:c}),v=t),d.start&&d.start(t,c,a,e.start,e.end)}function A(e,t,n){var r,i;if(null==t&&(t=a),null==n&&(n=a),e&&(i=e.toLowerCase()),e)for(r=h.length-1;0<=r&&h[r].lowerCasedTag!==i;r--);else r=0;if(0<=r){for(var o=h.length-1;r<=o;o--)d.end&&d.end(h[o].tag,t,n);h.length=r,v=r&&h[r-1].tag}else"br"===i?d.start&&d.start(e,[],!0,t,n):"p"===i&&(d.start&&d.start(e,[],!1,t,n),d.end&&d.end(e,t,n))}A()}(e,{warn:wo,expectHTML:p.expectHTML,isUnaryTag:p.isUnaryTag,canBeLeftOpenTag:p.canBeLeftOpenTag,shouldDecodeNewlines:p.shouldDecodeNewlines,shouldDecodeNewlinesForHref:p.shouldDecodeNewlinesForHref,shouldKeepComment:p.comments,start:function(e,t,n){var r=v&&v.ns||To(e);K&&"svg"===r&&(t=function(e){for(var t=[],n=0;n<e.length;n++){var r=e[n];Ko.test(r.name)||(r.name=r.name.replace(Jo,""),t.push(r))}return t}(t));var i,o,a,s,c,l=Ro(e,t,v);r&&(l.ns=r),"style"!==(i=l).tag&&("script"!==i.tag||i.attrsMap.type&&"text/javascript"!==i.attrsMap.type)||Y()||(l.forbidden=!0);for(var u=0;u<ko.length;u++)l=ko[u](l,p)||l;if(m||(null!=Sr(o=l,"v-pre")&&(o.pre=!0),l.pre&&(m=!0)),Oo(l.tag)&&(y=!0),m?function(e){var t=e.attrsList.length;if(t)for(var n=e.attrs=new Array(t),r=0;r<t;r++)n[r]={name:e.attrsList[r].name,value:JSON.stringify(e.attrsList[r].value)};else e.pre||(e.plain=!0)}(l):l.processed||(Uo(l),function(e){var t=Sr(e,"v-if");if(t)e.if=t,Vo(e,{exp:t,block:e});else{null!=Sr(e,"v-else")&&(e.else=!0);var n=Sr(e,"v-else-if");n&&(e.elseif=n)}}(l),null!=Sr(a=l,"v-once")&&(a.once=!0),Bo(l,p)),d?h.length||d.if&&(l.elseif||l.else)&&Vo(d,{exp:l.elseif,block:l}):d=l,v&&!l.forbidden)if(l.elseif||l.else)s=l,(c=function(e){var t=e.length;for(;t--;){if(1===e[t].type)return e[t];e.pop()}}(v.children))&&c.if&&Vo(c,{exp:s.elseif,block:s});else if(l.slotScope){v.plain=!1;var f=l.slotTarget||'"default"';(v.scopedSlots||(v.scopedSlots={}))[f]=l}else v.children.push(l),l.parent=v;n?g(l):(v=l,h.push(l))},end:function(){var e=h[h.length-1],t=e.children[e.children.length-1];t&&3===t.type&&" "===t.text&&!y&&e.children.pop(),h.length-=1,v=h[h.length-1],g(e)},chars:function(e){if(v&&(!K||"textarea"!==v.tag||v.attrsMap.placeholder!==e)){var t,n,r=v.children;if(e=y||e.trim()?"script"===(t=v).tag||"style"===t.tag?e:Fo(e):i&&r.length?" ":"")!m&&" "!==e&&(n=function(e,t){var n=t?Zi(t):Wi;if(n.test(e)){for(var r,i,o,a=[],s=[],c=n.lastIndex=0;r=n.exec(e);){c<(i=r.index)&&(s.push(o=e.slice(c,i)),a.push(JSON.stringify(o)));var l=_r(r[1].trim());a.push("_s("+l+")"),s.push({"@binding":l}),c=i+r[0].length}return c<e.length&&(s.push(o=e.slice(c)),a.push(JSON.stringify(o))),{expression:a.join("+"),tokens:s}}}(e,Co))?r.push({type:2,expression:n.expression,tokens:n.tokens,text:e}):" "===e&&r.length&&" "===r[r.length-1].text||r.push({type:3,text:e})}},comment:function(e){v.children.push({type:3,text:e,isComment:!0})}}),d}function Bo(e,t){var n,r,i,o;(r=Or(n=e,"key"))&&(n.key=r),e.plain=!e.key&&!e.attrsList.length,(o=Or(i=e,"ref"))&&(i.ref=o,i.refInFor=function(e){for(var t=e;t;){if(void 0!==t.for)return!0;t=t.parent}return!1}(i)),function(e){if("slot"===e.tag)e.slotName=Or(e,"name");else{var t;"template"===e.tag?(t=Sr(e,"scope"),e.slotScope=t||Sr(e,"slot-scope")):(t=Sr(e,"slot-scope"))&&(e.slotScope=t);var n=Or(e,"slot");n&&(e.slotTarget='""'===n?'"default"':n,"template"===e.tag||e.slotScope||xr(e,"slot",n))}}(e),function(e){var t;(t=Or(e,"is"))&&(e.component=t);null!=Sr(e,"inline-template")&&(e.inlineTemplate=!0)}(e);for(var a=0;a<xo.length;a++)e=xo[a](e,t)||e;!function(e){var t,n,r,i,o,a,s,c=e.attrsList;for(t=0,n=c.length;t<n;t++)if(r=i=c[t].name,o=c[t].value,jo.test(r))if(e.hasBindings=!0,(a=zo(r))&&(r=r.replace(Po,"")),Do.test(r))r=r.replace(Do,""),o=_r(o),s=!1,a&&(a.prop&&(s=!0,"innerHtml"===(r=g(r))&&(r="innerHTML")),a.camel&&(r=g(r)),a.sync&&Ar(e,"update:"+g(r),Er(o,"$event"))),s||!e.component&&So(e.tag,e.attrsMap.type,r)?Cr(e,r,o):xr(e,r,o);else if(Eo.test(r))r=r.replace(Eo,""),Ar(e,r,o,a,!1);else{var l=(r=r.replace(jo,"")).match(Mo),u=l&&l[1];u&&(r=r.slice(0,-(u.length+1))),p=r,d=i,v=o,h=u,m=a,((f=e).directives||(f.directives=[])).push({name:p,rawName:d,value:v,arg:h,modifiers:m}),f.plain=!1}else xr(e,r,JSON.stringify(o)),!e.component&&"muted"===r&&So(e.tag,e.attrsMap.type,r)&&Cr(e,r,"true");var f,p,d,v,h,m}(e)}function Uo(e){var t;if(t=Sr(e,"v-for")){var n=function(e){var t=e.match(No);if(!t)return;var n={};n.for=t[2].trim();var r=t[1].trim().replace(Io,""),i=r.match(Lo);i?(n.alias=r.replace(Lo,""),n.iterator1=i[1].trim(),i[2]&&(n.iterator2=i[2].trim())):n.alias=r;return n}(t);n&&m(e,n)}}function Vo(e,t){e.ifConditions||(e.ifConditions=[]),e.ifConditions.push(t)}function zo(e){var t=e.match(Po);if(t){var n={};return t.forEach(function(e){n[e.slice(1)]=!0}),n}}var Ko=/^xmlns:NS\d+/,Jo=/^NS\d+:/;function qo(e){return Ro(e.tag,e.attrsList.slice(),e.parent)}var Wo=[Xi,Qi,{preTransformNode:function(e,t){if("input"===e.tag){var n,r=e.attrsMap;if(!r["v-model"])return;if((r[":type"]||r["v-bind:type"])&&(n=Or(e,"type")),r.type||n||!r["v-bind"]||(n="("+r["v-bind"]+").type"),n){var i=Sr(e,"v-if",!0),o=i?"&&("+i+")":"",a=null!=Sr(e,"v-else",!0),s=Sr(e,"v-else-if",!0),c=qo(e);Uo(c),kr(c,"type","checkbox"),Bo(c,t),c.processed=!0,c.if="("+n+")==='checkbox'"+o,Vo(c,{exp:c.if,block:c});var l=qo(e);Sr(l,"v-for",!0),kr(l,"type","radio"),Bo(l,t),Vo(c,{exp:"("+n+")==='radio'"+o,block:l});var u=qo(e);return Sr(u,"v-for",!0),kr(u,":type",n),Bo(u,t),Vo(c,{exp:i,block:u}),a?c.else=!0:s&&(c.elseif=s),c}}}}];var Go,Zo,Xo,Yo={expectHTML:!0,modules:Wo,directives:{model:function(e,t,n){var r,i,o,a,s,c,l,u,f,p,d,v,h,m,y,g,_=t.value,b=t.modifiers,$=e.tag,w=e.attrsMap.type;if(e.component)return Tr(e,_,b),!1;if("select"===$)h=e,m=_,g=(g='var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return '+((y=b)&&y.number?"_n(val)":"val")+"});")+" "+Er(m,"$event.target.multiple ? $$selectedVal : $$selectedVal[0]"),Ar(h,"change",g,null,!0);else if("input"===$&&"checkbox"===w)c=e,l=_,f=(u=b)&&u.number,p=Or(c,"value")||"null",d=Or(c,"true-value")||"true",v=Or(c,"false-value")||"false",Cr(c,"checked","Array.isArray("+l+")?_i("+l+","+p+")>-1"+("true"===d?":("+l+")":":_q("+l+","+d+")")),Ar(c,"change","var $$a="+l+",$$el=$event.target,$$c=$$el.checked?("+d+"):("+v+");if(Array.isArray($$a)){var $$v="+(f?"_n("+p+")":p)+",$$i=_i($$a,$$v);if($$el.checked){$$i<0&&("+Er(l,"$$a.concat([$$v])")+")}else{$$i>-1&&("+Er(l,"$$a.slice(0,$$i).concat($$a.slice($$i+1))")+")}}else{"+Er(l,"$$c")+"}",null,!0);else if("input"===$&&"radio"===w)r=e,i=_,a=(o=b)&&o.number,s=Or(r,"value")||"null",Cr(r,"checked","_q("+i+","+(s=a?"_n("+s+")":s)+")"),Ar(r,"change",Er(i,s),null,!0);else if("input"===$||"textarea"===$)!function(e,t,n){var r=e.attrsMap.type,i=n||{},o=i.lazy,a=i.number,s=i.trim,c=!o&&"range"!==r,l=o?"change":"range"===r?Pr:"input",u="$event.target.value";s&&(u="$event.target.value.trim()"),a&&(u="_n("+u+")");var f=Er(t,u);c&&(f="if($event.target.composing)return;"+f),Cr(e,"value","("+t+")"),Ar(e,l,f,null,!0),(s||a)&&Ar(e,"blur","$forceUpdate()")}(e,_,b);else if(!j.isReservedTag($))return Tr(e,_,b),!1;return!0},text:function(e,t){t.value&&Cr(e,"textContent","_s("+t.value+")")},html:function(e,t){t.value&&Cr(e,"innerHTML","_s("+t.value+")")}},isPreTag:function(e){return"pre"===e},isUnaryTag:to,mustUseProp:Sn,canBeLeftOpenTag:no,isReservedTag:Un,getTagNamespace:Vn,staticKeys:(Go=Wo,Go.reduce(function(e,t){return e.concat(t.staticKeys||[])},[]).join(","))},Qo=e(function(e){return s("type,tag,attrsList,attrsMap,plain,parent,children,attrs"+(e?","+e:""))});function ea(e,t){e&&(Zo=Qo(t.staticKeys||""),Xo=t.isReservedTag||O,function e(t){t.static=function(e){if(2===e.type)return!1;if(3===e.type)return!0;return!(!e.pre&&(e.hasBindings||e.if||e.for||c(e.tag)||!Xo(e.tag)||function(e){for(;e.parent;){if("template"!==(e=e.parent).tag)return!1;if(e.for)return!0}return!1}(e)||!Object.keys(e).every(Zo)))}(t);if(1===t.type){if(!Xo(t.tag)&&"slot"!==t.tag&&null==t.attrsMap["inline-template"])return;for(var n=0,r=t.children.length;n<r;n++){var i=t.children[n];e(i),i.static||(t.static=!1)}if(t.ifConditions)for(var o=1,a=t.ifConditions.length;o<a;o++){var s=t.ifConditions[o].block;e(s),s.static||(t.static=!1)}}}(e),function e(t,n){if(1===t.type){if((t.static||t.once)&&(t.staticInFor=n),t.static&&t.children.length&&(1!==t.children.length||3!==t.children[0].type))return void(t.staticRoot=!0);if(t.staticRoot=!1,t.children)for(var r=0,i=t.children.length;r<i;r++)e(t.children[r],n||!!t.for);if(t.ifConditions)for(var o=1,a=t.ifConditions.length;o<a;o++)e(t.ifConditions[o].block,n)}}(e,!1))}var ta=/^([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/,na=/^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/,ra={esc:27,tab:9,enter:13,space:32,up:38,left:37,right:39,down:40,delete:[8,46]},ia={esc:"Escape",tab:"Tab",enter:"Enter",space:" ",up:["Up","ArrowUp"],left:["Left","ArrowLeft"],right:["Right","ArrowRight"],down:["Down","ArrowDown"],delete:["Backspace","Delete"]},oa=function(e){return"if("+e+")return null;"},aa={stop:"$event.stopPropagation();",prevent:"$event.preventDefault();",self:oa("$event.target !== $event.currentTarget"),ctrl:oa("!$event.ctrlKey"),shift:oa("!$event.shiftKey"),alt:oa("!$event.altKey"),meta:oa("!$event.metaKey"),left:oa("'button' in $event && $event.button !== 0"),middle:oa("'button' in $event && $event.button !== 1"),right:oa("'button' in $event && $event.button !== 2")};function sa(e,t,n){var r=t?"nativeOn:{":"on:{";for(var i in e)r+='"'+i+'":'+ca(i,e[i])+",";return r.slice(0,-1)+"}"}function ca(t,e){if(!e)return"function(){}";if(Array.isArray(e))return"["+e.map(function(e){return ca(t,e)}).join(",")+"]";var n=na.test(e.value),r=ta.test(e.value);if(e.modifiers){var i="",o="",a=[];for(var s in e.modifiers)if(aa[s])o+=aa[s],ra[s]&&a.push(s);else if("exact"===s){var c=e.modifiers;o+=oa(["ctrl","shift","alt","meta"].filter(function(e){return!c[e]}).map(function(e){return"$event."+e+"Key"}).join("||"))}else a.push(s);return a.length&&(i+="if(!('button' in $event)&&"+a.map(la).join("&&")+")return null;"),o&&(i+=o),"function($event){"+i+(n?"return "+e.value+"($event)":r?"return ("+e.value+")($event)":e.value)+"}"}return n||r?e.value:"function($event){"+e.value+"}"}function la(e){var t=parseInt(e,10);if(t)return"$event.keyCode!=="+t;var n=ra[e],r=ia[e];return"_k($event.keyCode,"+JSON.stringify(e)+","+JSON.stringify(n)+",$event.key,"+JSON.stringify(r)+")"}var ua={on:function(e,t){e.wrapListeners=function(e){return"_g("+e+","+t.value+")"}},bind:function(t,n){t.wrapData=function(e){return"_b("+e+",'"+t.tag+"',"+n.value+","+(n.modifiers&&n.modifiers.prop?"true":"false")+(n.modifiers&&n.modifiers.sync?",true":"")+")"}},cloak:$},fa=function(e){this.options=e,this.warn=e.warn||$r,this.transforms=wr(e.modules,"transformCode"),this.dataGenFns=wr(e.modules,"genData"),this.directives=m(m({},ua),e.directives);var t=e.isReservedTag||O;this.maybeComponent=function(e){return!t(e.tag)},this.onceId=0,this.staticRenderFns=[]};function pa(e,t){var n=new fa(t);return{render:"with(this){return "+(e?da(e,n):'_c("div")')+"}",staticRenderFns:n.staticRenderFns}}function da(e,t){if(e.staticRoot&&!e.staticProcessed)return va(e,t);if(e.once&&!e.onceProcessed)return ha(e,t);if(e.for&&!e.forProcessed)return f=t,v=(u=e).for,h=u.alias,m=u.iterator1?","+u.iterator1:"",y=u.iterator2?","+u.iterator2:"",u.forProcessed=!0,(d||"_l")+"(("+v+"),function("+h+m+y+"){return "+(p||da)(u,f)+"})";if(e.if&&!e.ifProcessed)return ma(e,t);if("template"!==e.tag||e.slotTarget){if("slot"===e.tag)return function(e,t){var n=e.slotName||'"default"',r=_a(e,t),i="_t("+n+(r?","+r:""),o=e.attrs&&"{"+e.attrs.map(function(e){return g(e.name)+":"+e.value}).join(",")+"}",a=e.attrsMap["v-bind"];!o&&!a||r||(i+=",null");o&&(i+=","+o);a&&(i+=(o?"":",null")+","+a);return i+")"}(e,t);var n;if(e.component)a=e.component,c=t,l=(s=e).inlineTemplate?null:_a(s,c,!0),n="_c("+a+","+ya(s,c)+(l?","+l:"")+")";else{var r=e.plain?void 0:ya(e,t),i=e.inlineTemplate?null:_a(e,t,!0);n="_c('"+e.tag+"'"+(r?","+r:"")+(i?","+i:"")+")"}for(var o=0;o<t.transforms.length;o++)n=t.transforms[o](e,n);return n}return _a(e,t)||"void 0";var a,s,c,l,u,f,p,d,v,h,m,y}function va(e,t){return e.staticProcessed=!0,t.staticRenderFns.push("with(this){return "+da(e,t)+"}"),"_m("+(t.staticRenderFns.length-1)+(e.staticInFor?",true":"")+")"}function ha(e,t){if(e.onceProcessed=!0,e.if&&!e.ifProcessed)return ma(e,t);if(e.staticInFor){for(var n="",r=e.parent;r;){if(r.for){n=r.key;break}r=r.parent}return n?"_o("+da(e,t)+","+t.onceId+++","+n+")":da(e,t)}return va(e,t)}function ma(e,t,n,r){return e.ifProcessed=!0,function e(t,n,r,i){if(!t.length)return i||"_e()";var o=t.shift();return o.exp?"("+o.exp+")?"+a(o.block)+":"+e(t,n,r,i):""+a(o.block);function a(e){return r?r(e,n):e.once?ha(e,n):da(e,n)}}(e.ifConditions.slice(),t,n,r)}function ya(e,t){var n,r,i="{",o=function(e,t){var n=e.directives;if(!n)return;var r,i,o,a,s="directives:[",c=!1;for(r=0,i=n.length;r<i;r++){o=n[r],a=!0;var l=t.directives[o.name];l&&(a=!!l(e,o,t.warn)),a&&(c=!0,s+='{name:"'+o.name+'",rawName:"'+o.rawName+'"'+(o.value?",value:("+o.value+"),expression:"+JSON.stringify(o.value):"")+(o.arg?',arg:"'+o.arg+'"':"")+(o.modifiers?",modifiers:"+JSON.stringify(o.modifiers):"")+"},")}if(c)return s.slice(0,-1)+"]"}(e,t);o&&(i+=o+","),e.key&&(i+="key:"+e.key+","),e.ref&&(i+="ref:"+e.ref+","),e.refInFor&&(i+="refInFor:true,"),e.pre&&(i+="pre:true,"),e.component&&(i+='tag:"'+e.tag+'",');for(var a=0;a<t.dataGenFns.length;a++)i+=t.dataGenFns[a](e);if(e.attrs&&(i+="attrs:{"+wa(e.attrs)+"},"),e.props&&(i+="domProps:{"+wa(e.props)+"},"),e.events&&(i+=sa(e.events,!1,t.warn)+","),e.nativeEvents&&(i+=sa(e.nativeEvents,!0,t.warn)+","),e.slotTarget&&!e.slotScope&&(i+="slot:"+e.slotTarget+","),e.scopedSlots&&(i+=(n=e.scopedSlots,r=t,"scopedSlots:_u(["+Object.keys(n).map(function(e){return ga(e,n[e],r)}).join(",")+"]),")),e.model&&(i+="model:{value:"+e.model.value+",callback:"+e.model.callback+",expression:"+e.model.expression+"},"),e.inlineTemplate){var s=function(e,t){var n=e.children[0];if(1===n.type){var r=pa(n,t.options);return"inlineTemplate:{render:function(){"+r.render+"},staticRenderFns:["+r.staticRenderFns.map(function(e){return"function(){"+e+"}"}).join(",")+"]}"}}(e,t);s&&(i+=s+",")}return i=i.replace(/,$/,"")+"}",e.wrapData&&(i=e.wrapData(i)),e.wrapListeners&&(i=e.wrapListeners(i)),i}function ga(e,t,n){return t.for&&!t.forProcessed?(r=e,o=n,a=(i=t).for,s=i.alias,c=i.iterator1?","+i.iterator1:"",l=i.iterator2?","+i.iterator2:"",i.forProcessed=!0,"_l(("+a+"),function("+s+c+l+"){return "+ga(r,i,o)+"})"):"{key:"+e+",fn:"+("function("+String(t.slotScope)+"){return "+("template"===t.tag?t.if?t.if+"?"+(_a(t,n)||"undefined")+":undefined":_a(t,n)||"undefined":da(t,n))+"}")+"}";var r,i,o,a,s,c,l}function _a(e,t,n,r,i){var o=e.children;if(o.length){var a=o[0];if(1===o.length&&a.for&&"template"!==a.tag&&"slot"!==a.tag)return(r||da)(a,t);var s=n?function(e,t){for(var n=0,r=0;r<e.length;r++){var i=e[r];if(1===i.type){if(ba(i)||i.ifConditions&&i.ifConditions.some(function(e){return ba(e.block)})){n=2;break}(t(i)||i.ifConditions&&i.ifConditions.some(function(e){return t(e.block)}))&&(n=1)}}return n}(o,t.maybeComponent):0,c=i||$a;return"["+o.map(function(e){return c(e,t)}).join(",")+"]"+(s?","+s:"")}}function ba(e){return void 0!==e.for||"template"===e.tag||"slot"===e.tag}function $a(e,t){return 1===e.type?da(e,t):3===e.type&&e.isComment?(r=e,"_e("+JSON.stringify(r.text)+")"):"_v("+(2===(n=e).type?n.expression:Ca(JSON.stringify(n.text)))+")";var n,r}function wa(e){for(var t="",n=0;n<e.length;n++){var r=e[n];t+='"'+r.name+'":'+Ca(r.value)+","}return t.slice(0,-1)}function Ca(e){return e.replace(/\u2028/g,"\\u2028").replace(/\u2029/g,"\\u2029")}new RegExp("\\b"+"do,if,for,let,new,try,var,case,else,with,await,break,catch,class,const,super,throw,while,yield,delete,export,import,return,switch,default,extends,finally,continue,debugger,function,arguments".split(",").join("\\b|\\b")+"\\b"),new RegExp("\\b"+"delete,typeof,void".split(",").join("\\s*\\([^\\)]*\\)|\\b")+"\\s*\\([^\\)]*\\)");function xa(t,n){try{return new Function(t)}catch(e){return n.push({err:e,code:t}),$}}var ka,Aa,Oa=(ka=function(e,t){var n=Ho(e.trim(),t);!1!==t.optimize&&ea(n,t);var r=pa(n,t);return{ast:n,render:r.render,staticRenderFns:r.staticRenderFns}},function(s){function e(e,t){var n=Object.create(s),r=[],i=[];if(n.warn=function(e,t){(t?i:r).push(e)},t)for(var o in t.modules&&(n.modules=(s.modules||[]).concat(t.modules)),t.directives&&(n.directives=m(Object.create(s.directives||null),t.directives)),t)"modules"!==o&&"directives"!==o&&(n[o]=t[o]);var a=ka(e,n);return a.errors=r,a.tips=i,a}return{compile:e,compileToFunctions:(c=e,l=Object.create(null),function(e,t,n){(t=m({},t)).warn,delete t.warn;var r=t.delimiters?String(t.delimiters)+e:e;if(l[r])return l[r];var i=c(e,t),o={},a=[];return o.render=xa(i.render,a),o.staticRenderFns=i.staticRenderFns.map(function(e){return xa(e,a)}),l[r]=o})};var c,l})(Yo).compileToFunctions;function Sa(e){return(Aa=Aa||document.createElement("div")).innerHTML=e?'<a href="\n"/>':'<div a="\n"/>',0<Aa.innerHTML.indexOf("&#10;")}var Ta=!!B&&Sa(!1),Ea=!!B&&Sa(!0),ja=e(function(e){var t=Jn(e);return t&&t.innerHTML}),Na=hn.prototype.$mount;return hn.prototype.$mount=function(e,t){if((e=e&&Jn(e))===document.body||e===document.documentElement)return this;var n=this.$options;if(!n.render){var r=n.template;if(r)if("string"==typeof r)"#"===r.charAt(0)&&(r=ja(r));else{if(!r.nodeType)return this;r=r.innerHTML}else e&&(r=function(e){{if(e.outerHTML)return e.outerHTML;var t=document.createElement("div");return t.appendChild(e.cloneNode(!0)),t.innerHTML}}(e));if(r){var i=Oa(r,{shouldDecodeNewlines:Ta,shouldDecodeNewlinesForHref:Ea,delimiters:n.delimiters,comments:n.comments},this),o=i.render,a=i.staticRenderFns;n.render=o,n.staticRenderFns=a}}return Na.call(this,e,t)},hn.compile=Oa,hn});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(14).setImmediate))
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+let Vue = null;
+
+class Notification{
+
+    setVueInstance (instance) { Vue = instance }
+
+    addAlert(statusId, statusType, title, statusMessage, timeoutDelete, href){
+
+        console.log("Vue.$notify", Vue.$notify)
+
+        Vue.$notify({
+            group: (statusId === undefined) ? 'all' : statusId,
+            title: title,
+            text: statusMessage,
+            type: statusType,
+            duration: timeoutDelete,
+            speed: 2000,
+            data: {id:statusId}
+        })
+
+    }
+
+    deleteAlert(arrayStatusId){
+
+        Vue.$notify({
+            group: arrayStatusId,
+            clean: true
+        })
+
+    }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (new Notification());
+
+/***/ }),
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -561,96 +613,17 @@ class BrowserHelpers{
 /* harmony default export */ __webpack_exports__["a"] = (BrowserHelpers);
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.5.16
- * (c) 2014-2018 Evan You
- * Released under the MIT License.
- */
-!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define(t):e.Vue=t()}(this,function(){"use strict";var y=Object.freeze({});function M(e){return null==e}function D(e){return null!=e}function S(e){return!0===e}function T(e){return"string"==typeof e||"number"==typeof e||"symbol"==typeof e||"boolean"==typeof e}function P(e){return null!==e&&"object"==typeof e}var r=Object.prototype.toString;function l(e){return"[object Object]"===r.call(e)}function i(e){var t=parseFloat(String(e));return 0<=t&&Math.floor(t)===t&&isFinite(e)}function t(e){return null==e?"":"object"==typeof e?JSON.stringify(e,null,2):String(e)}function F(e){var t=parseFloat(e);return isNaN(t)?e:t}function s(e,t){for(var n=Object.create(null),r=e.split(","),i=0;i<r.length;i++)n[r[i]]=!0;return t?function(e){return n[e.toLowerCase()]}:function(e){return n[e]}}var c=s("slot,component",!0),u=s("key,ref,slot,slot-scope,is");function f(e,t){if(e.length){var n=e.indexOf(t);if(-1<n)return e.splice(n,1)}}var n=Object.prototype.hasOwnProperty;function p(e,t){return n.call(e,t)}function e(t){var n=Object.create(null);return function(e){return n[e]||(n[e]=t(e))}}var o=/-(\w)/g,g=e(function(e){return e.replace(o,function(e,t){return t?t.toUpperCase():""})}),d=e(function(e){return e.charAt(0).toUpperCase()+e.slice(1)}),a=/\B([A-Z])/g,_=e(function(e){return e.replace(a,"-$1").toLowerCase()});var v=Function.prototype.bind?function(e,t){return e.bind(t)}:function(n,r){function e(e){var t=arguments.length;return t?1<t?n.apply(r,arguments):n.call(r,e):n.call(r)}return e._length=n.length,e};function h(e,t){t=t||0;for(var n=e.length-t,r=new Array(n);n--;)r[n]=e[n+t];return r}function m(e,t){for(var n in t)e[n]=t[n];return e}function b(e){for(var t={},n=0;n<e.length;n++)e[n]&&m(t,e[n]);return t}function $(e,t,n){}var O=function(e,t,n){return!1},w=function(e){return e};function C(t,n){if(t===n)return!0;var e=P(t),r=P(n);if(!e||!r)return!e&&!r&&String(t)===String(n);try{var i=Array.isArray(t),o=Array.isArray(n);if(i&&o)return t.length===n.length&&t.every(function(e,t){return C(e,n[t])});if(i||o)return!1;var a=Object.keys(t),s=Object.keys(n);return a.length===s.length&&a.every(function(e){return C(t[e],n[e])})}catch(e){return!1}}function x(e,t){for(var n=0;n<e.length;n++)if(C(e[n],t))return n;return-1}function R(e){var t=!1;return function(){t||(t=!0,e.apply(this,arguments))}}var E="data-server-rendered",k=["component","directive","filter"],A=["beforeCreate","created","beforeMount","mounted","beforeUpdate","updated","beforeDestroy","destroyed","activated","deactivated","errorCaptured"],j={optionMergeStrategies:Object.create(null),silent:!1,productionTip:!1,devtools:!1,performance:!1,errorHandler:null,warnHandler:null,ignoredElements:[],keyCodes:Object.create(null),isReservedTag:O,isReservedAttr:O,isUnknownElement:O,getTagNamespace:$,parsePlatformTagName:w,mustUseProp:O,_lifecycleHooks:A};function N(e,t,n,r){Object.defineProperty(e,t,{value:n,enumerable:!!r,writable:!0,configurable:!0})}var L=/[^\w.$]/;var I,H="__proto__"in{},B="undefined"!=typeof window,U="undefined"!=typeof WXEnvironment&&!!WXEnvironment.platform,V=U&&WXEnvironment.platform.toLowerCase(),z=B&&window.navigator.userAgent.toLowerCase(),K=z&&/msie|trident/.test(z),J=z&&0<z.indexOf("msie 9.0"),q=z&&0<z.indexOf("edge/"),W=(z&&z.indexOf("android"),z&&/iphone|ipad|ipod|ios/.test(z)||"ios"===V),G=(z&&/chrome\/\d+/.test(z),{}.watch),Z=!1;if(B)try{var X={};Object.defineProperty(X,"passive",{get:function(){Z=!0}}),window.addEventListener("test-passive",null,X)}catch(e){}var Y=function(){return void 0===I&&(I=!B&&!U&&"undefined"!=typeof global&&"server"===global.process.env.VUE_ENV),I},Q=B&&window.__VUE_DEVTOOLS_GLOBAL_HOOK__;function ee(e){return"function"==typeof e&&/native code/.test(e.toString())}var te,ne="undefined"!=typeof Symbol&&ee(Symbol)&&"undefined"!=typeof Reflect&&ee(Reflect.ownKeys);te="undefined"!=typeof Set&&ee(Set)?Set:function(){function e(){this.set=Object.create(null)}return e.prototype.has=function(e){return!0===this.set[e]},e.prototype.add=function(e){this.set[e]=!0},e.prototype.clear=function(){this.set=Object.create(null)},e}();var re=$,ie=0,oe=function(){this.id=ie++,this.subs=[]};oe.prototype.addSub=function(e){this.subs.push(e)},oe.prototype.removeSub=function(e){f(this.subs,e)},oe.prototype.depend=function(){oe.target&&oe.target.addDep(this)},oe.prototype.notify=function(){for(var e=this.subs.slice(),t=0,n=e.length;t<n;t++)e[t].update()},oe.target=null;var ae=[];function se(e){oe.target&&ae.push(oe.target),oe.target=e}function ce(){oe.target=ae.pop()}var le=function(e,t,n,r,i,o,a,s){this.tag=e,this.data=t,this.children=n,this.text=r,this.elm=i,this.ns=void 0,this.context=o,this.fnContext=void 0,this.fnOptions=void 0,this.fnScopeId=void 0,this.key=t&&t.key,this.componentOptions=a,this.componentInstance=void 0,this.parent=void 0,this.raw=!1,this.isStatic=!1,this.isRootInsert=!0,this.isComment=!1,this.isCloned=!1,this.isOnce=!1,this.asyncFactory=s,this.asyncMeta=void 0,this.isAsyncPlaceholder=!1},ue={child:{configurable:!0}};ue.child.get=function(){return this.componentInstance},Object.defineProperties(le.prototype,ue);var fe=function(e){void 0===e&&(e="");var t=new le;return t.text=e,t.isComment=!0,t};function pe(e){return new le(void 0,void 0,void 0,String(e))}function de(e){var t=new le(e.tag,e.data,e.children,e.text,e.elm,e.context,e.componentOptions,e.asyncFactory);return t.ns=e.ns,t.isStatic=e.isStatic,t.key=e.key,t.isComment=e.isComment,t.fnContext=e.fnContext,t.fnOptions=e.fnOptions,t.fnScopeId=e.fnScopeId,t.isCloned=!0,t}var ve=Array.prototype,he=Object.create(ve);["push","pop","shift","unshift","splice","sort","reverse"].forEach(function(o){var a=ve[o];N(he,o,function(){for(var e=[],t=arguments.length;t--;)e[t]=arguments[t];var n,r=a.apply(this,e),i=this.__ob__;switch(o){case"push":case"unshift":n=e;break;case"splice":n=e.slice(2)}return n&&i.observeArray(n),i.dep.notify(),r})});var me=Object.getOwnPropertyNames(he),ye=!0;function ge(e){ye=e}var _e=function(e){(this.value=e,this.dep=new oe,this.vmCount=0,N(e,"__ob__",this),Array.isArray(e))?((H?be:$e)(e,he,me),this.observeArray(e)):this.walk(e)};function be(e,t,n){e.__proto__=t}function $e(e,t,n){for(var r=0,i=n.length;r<i;r++){var o=n[r];N(e,o,t[o])}}function we(e,t){var n;if(P(e)&&!(e instanceof le))return p(e,"__ob__")&&e.__ob__ instanceof _e?n=e.__ob__:ye&&!Y()&&(Array.isArray(e)||l(e))&&Object.isExtensible(e)&&!e._isVue&&(n=new _e(e)),t&&n&&n.vmCount++,n}function Ce(n,e,r,t,i){var o=new oe,a=Object.getOwnPropertyDescriptor(n,e);if(!a||!1!==a.configurable){var s=a&&a.get;s||2!==arguments.length||(r=n[e]);var c=a&&a.set,l=!i&&we(r);Object.defineProperty(n,e,{enumerable:!0,configurable:!0,get:function(){var e=s?s.call(n):r;return oe.target&&(o.depend(),l&&(l.dep.depend(),Array.isArray(e)&&function e(t){for(var n=void 0,r=0,i=t.length;r<i;r++)(n=t[r])&&n.__ob__&&n.__ob__.dep.depend(),Array.isArray(n)&&e(n)}(e))),e},set:function(e){var t=s?s.call(n):r;e===t||e!=e&&t!=t||(c?c.call(n,e):r=e,l=!i&&we(e),o.notify())}})}}function xe(e,t,n){if(Array.isArray(e)&&i(t))return e.length=Math.max(e.length,t),e.splice(t,1,n),n;if(t in e&&!(t in Object.prototype))return e[t]=n;var r=e.__ob__;return e._isVue||r&&r.vmCount?n:r?(Ce(r.value,t,n),r.dep.notify(),n):e[t]=n}function ke(e,t){if(Array.isArray(e)&&i(t))e.splice(t,1);else{var n=e.__ob__;e._isVue||n&&n.vmCount||p(e,t)&&(delete e[t],n&&n.dep.notify())}}_e.prototype.walk=function(e){for(var t=Object.keys(e),n=0;n<t.length;n++)Ce(e,t[n])},_e.prototype.observeArray=function(e){for(var t=0,n=e.length;t<n;t++)we(e[t])};var Ae=j.optionMergeStrategies;function Oe(e,t){if(!t)return e;for(var n,r,i,o=Object.keys(t),a=0;a<o.length;a++)r=e[n=o[a]],i=t[n],p(e,n)?l(r)&&l(i)&&Oe(r,i):xe(e,n,i);return e}function Se(n,r,i){return i?function(){var e="function"==typeof r?r.call(i,i):r,t="function"==typeof n?n.call(i,i):n;return e?Oe(e,t):t}:r?n?function(){return Oe("function"==typeof r?r.call(this,this):r,"function"==typeof n?n.call(this,this):n)}:r:n}function Te(e,t){return t?e?e.concat(t):Array.isArray(t)?t:[t]:e}function Ee(e,t,n,r){var i=Object.create(e||null);return t?m(i,t):i}Ae.data=function(e,t,n){return n?Se(e,t,n):t&&"function"!=typeof t?e:Se(e,t)},A.forEach(function(e){Ae[e]=Te}),k.forEach(function(e){Ae[e+"s"]=Ee}),Ae.watch=function(e,t,n,r){if(e===G&&(e=void 0),t===G&&(t=void 0),!t)return Object.create(e||null);if(!e)return t;var i={};for(var o in m(i,e),t){var a=i[o],s=t[o];a&&!Array.isArray(a)&&(a=[a]),i[o]=a?a.concat(s):Array.isArray(s)?s:[s]}return i},Ae.props=Ae.methods=Ae.inject=Ae.computed=function(e,t,n,r){if(!e)return t;var i=Object.create(null);return m(i,e),t&&m(i,t),i},Ae.provide=Se;var je=function(e,t){return void 0===t?e:t};function Ne(n,r,i){"function"==typeof r&&(r=r.options),function(e,t){var n=e.props;if(n){var r,i,o={};if(Array.isArray(n))for(r=n.length;r--;)"string"==typeof(i=n[r])&&(o[g(i)]={type:null});else if(l(n))for(var a in n)i=n[a],o[g(a)]=l(i)?i:{type:i};e.props=o}}(r),function(e,t){var n=e.inject;if(n){var r=e.inject={};if(Array.isArray(n))for(var i=0;i<n.length;i++)r[n[i]]={from:n[i]};else if(l(n))for(var o in n){var a=n[o];r[o]=l(a)?m({from:o},a):{from:a}}}}(r),function(e){var t=e.directives;if(t)for(var n in t){var r=t[n];"function"==typeof r&&(t[n]={bind:r,update:r})}}(r);var e=r.extends;if(e&&(n=Ne(n,e,i)),r.mixins)for(var t=0,o=r.mixins.length;t<o;t++)n=Ne(n,r.mixins[t],i);var a,s={};for(a in n)c(a);for(a in r)p(n,a)||c(a);function c(e){var t=Ae[e]||je;s[e]=t(n[e],r[e],i,e)}return s}function Le(e,t,n,r){if("string"==typeof n){var i=e[t];if(p(i,n))return i[n];var o=g(n);if(p(i,o))return i[o];var a=d(o);return p(i,a)?i[a]:i[n]||i[o]||i[a]}}function Ie(e,t,n,r){var i=t[e],o=!p(n,e),a=n[e],s=Pe(Boolean,i.type);if(-1<s)if(o&&!p(i,"default"))a=!1;else if(""===a||a===_(e)){var c=Pe(String,i.type);(c<0||s<c)&&(a=!0)}if(void 0===a){a=function(e,t,n){if(!p(t,"default"))return;var r=t.default;if(e&&e.$options.propsData&&void 0===e.$options.propsData[n]&&void 0!==e._props[n])return e._props[n];return"function"==typeof r&&"Function"!==Me(t.type)?r.call(e):r}(r,i,e);var l=ye;ge(!0),we(a),ge(l)}return a}function Me(e){var t=e&&e.toString().match(/^\s*function (\w+)/);return t?t[1]:""}function De(e,t){return Me(e)===Me(t)}function Pe(e,t){if(!Array.isArray(t))return De(t,e)?0:-1;for(var n=0,r=t.length;n<r;n++)if(De(t[n],e))return n;return-1}function Fe(e,t,n){if(t)for(var r=t;r=r.$parent;){var i=r.$options.errorCaptured;if(i)for(var o=0;o<i.length;o++)try{if(!1===i[o].call(r,e,t,n))return}catch(e){Re(e,r,"errorCaptured hook")}}Re(e,t,n)}function Re(e,t,n){if(j.errorHandler)try{return j.errorHandler.call(null,e,t,n)}catch(e){He(e,null,"config.errorHandler")}He(e,t,n)}function He(e,t,n){if(!B&&!U||"undefined"==typeof console)throw e;console.error(e)}var Be,Ue,Ve=[],ze=!1;function Ke(){ze=!1;for(var e=Ve.slice(0),t=Ve.length=0;t<e.length;t++)e[t]()}var Je=!1;if("undefined"!=typeof setImmediate&&ee(setImmediate))Ue=function(){setImmediate(Ke)};else if("undefined"==typeof MessageChannel||!ee(MessageChannel)&&"[object MessageChannelConstructor]"!==MessageChannel.toString())Ue=function(){setTimeout(Ke,0)};else{var qe=new MessageChannel,We=qe.port2;qe.port1.onmessage=Ke,Ue=function(){We.postMessage(1)}}if("undefined"!=typeof Promise&&ee(Promise)){var Ge=Promise.resolve();Be=function(){Ge.then(Ke),W&&setTimeout($)}}else Be=Ue;function Ze(e,t){var n;if(Ve.push(function(){if(e)try{e.call(t)}catch(e){Fe(e,t,"nextTick")}else n&&n(t)}),ze||(ze=!0,Je?Ue():Be()),!e&&"undefined"!=typeof Promise)return new Promise(function(e){n=e})}var Xe=new te;function Ye(e){!function e(t,n){var r,i;var o=Array.isArray(t);if(!o&&!P(t)||Object.isFrozen(t)||t instanceof le)return;if(t.__ob__){var a=t.__ob__.dep.id;if(n.has(a))return;n.add(a)}if(o)for(r=t.length;r--;)e(t[r],n);else for(i=Object.keys(t),r=i.length;r--;)e(t[i[r]],n)}(e,Xe),Xe.clear()}var Qe,et=e(function(e){var t="&"===e.charAt(0),n="~"===(e=t?e.slice(1):e).charAt(0),r="!"===(e=n?e.slice(1):e).charAt(0);return{name:e=r?e.slice(1):e,once:n,capture:r,passive:t}});function tt(e){function i(){var e=arguments,t=i.fns;if(!Array.isArray(t))return t.apply(null,arguments);for(var n=t.slice(),r=0;r<n.length;r++)n[r].apply(null,e)}return i.fns=e,i}function nt(e,t,n,r,i){var o,a,s,c;for(o in e)a=e[o],s=t[o],c=et(o),M(a)||(M(s)?(M(a.fns)&&(a=e[o]=tt(a)),n(c.name,a,c.once,c.capture,c.passive,c.params)):a!==s&&(s.fns=a,e[o]=s));for(o in t)M(e[o])&&r((c=et(o)).name,t[o],c.capture)}function rt(e,t,n){var r;e instanceof le&&(e=e.data.hook||(e.data.hook={}));var i=e[t];function o(){n.apply(this,arguments),f(r.fns,o)}M(i)?r=tt([o]):D(i.fns)&&S(i.merged)?(r=i).fns.push(o):r=tt([i,o]),r.merged=!0,e[t]=r}function it(e,t,n,r,i){if(D(t)){if(p(t,n))return e[n]=t[n],i||delete t[n],!0;if(p(t,r))return e[n]=t[r],i||delete t[r],!0}return!1}function ot(e){return T(e)?[pe(e)]:Array.isArray(e)?function e(t,n){var r=[];var i,o,a,s;for(i=0;i<t.length;i++)M(o=t[i])||"boolean"==typeof o||(a=r.length-1,s=r[a],Array.isArray(o)?0<o.length&&(at((o=e(o,(n||"")+"_"+i))[0])&&at(s)&&(r[a]=pe(s.text+o[0].text),o.shift()),r.push.apply(r,o)):T(o)?at(s)?r[a]=pe(s.text+o):""!==o&&r.push(pe(o)):at(o)&&at(s)?r[a]=pe(s.text+o.text):(S(t._isVList)&&D(o.tag)&&M(o.key)&&D(n)&&(o.key="__vlist"+n+"_"+i+"__"),r.push(o)));return r}(e):void 0}function at(e){return D(e)&&D(e.text)&&!1===e.isComment}function st(e,t){return(e.__esModule||ne&&"Module"===e[Symbol.toStringTag])&&(e=e.default),P(e)?t.extend(e):e}function ct(e){return e.isComment&&e.asyncFactory}function lt(e){if(Array.isArray(e))for(var t=0;t<e.length;t++){var n=e[t];if(D(n)&&(D(n.componentOptions)||ct(n)))return n}}function ut(e,t,n){n?Qe.$once(e,t):Qe.$on(e,t)}function ft(e,t){Qe.$off(e,t)}function pt(e,t,n){Qe=e,nt(t,n||{},ut,ft),Qe=void 0}function dt(e,t){var n={};if(!e)return n;for(var r=0,i=e.length;r<i;r++){var o=e[r],a=o.data;if(a&&a.attrs&&a.attrs.slot&&delete a.attrs.slot,o.context!==t&&o.fnContext!==t||!a||null==a.slot)(n.default||(n.default=[])).push(o);else{var s=a.slot,c=n[s]||(n[s]=[]);"template"===o.tag?c.push.apply(c,o.children||[]):c.push(o)}}for(var l in n)n[l].every(vt)&&delete n[l];return n}function vt(e){return e.isComment&&!e.asyncFactory||" "===e.text}function ht(e,t){t=t||{};for(var n=0;n<e.length;n++)Array.isArray(e[n])?ht(e[n],t):t[e[n].key]=e[n].fn;return t}var mt=null;function yt(e){for(;e&&(e=e.$parent);)if(e._inactive)return!0;return!1}function gt(e,t){if(t){if(e._directInactive=!1,yt(e))return}else if(e._directInactive)return;if(e._inactive||null===e._inactive){e._inactive=!1;for(var n=0;n<e.$children.length;n++)gt(e.$children[n]);_t(e,"activated")}}function _t(t,n){se();var e=t.$options[n];if(e)for(var r=0,i=e.length;r<i;r++)try{e[r].call(t)}catch(e){Fe(e,t,n+" hook")}t._hasHookEvent&&t.$emit("hook:"+n),ce()}var bt=[],$t=[],wt={},Ct=!1,xt=!1,kt=0;function At(){var e,t;for(xt=!0,bt.sort(function(e,t){return e.id-t.id}),kt=0;kt<bt.length;kt++)t=(e=bt[kt]).id,wt[t]=null,e.run();var n=$t.slice(),r=bt.slice();kt=bt.length=$t.length=0,wt={},Ct=xt=!1,function(e){for(var t=0;t<e.length;t++)e[t]._inactive=!0,gt(e[t],!0)}(n),function(e){var t=e.length;for(;t--;){var n=e[t],r=n.vm;r._watcher===n&&r._isMounted&&_t(r,"updated")}}(r),Q&&j.devtools&&Q.emit("flush")}var Ot=0,St=function(e,t,n,r,i){this.vm=e,i&&(e._watcher=this),e._watchers.push(this),r?(this.deep=!!r.deep,this.user=!!r.user,this.lazy=!!r.lazy,this.sync=!!r.sync):this.deep=this.user=this.lazy=this.sync=!1,this.cb=n,this.id=++Ot,this.active=!0,this.dirty=this.lazy,this.deps=[],this.newDeps=[],this.depIds=new te,this.newDepIds=new te,this.expression="","function"==typeof t?this.getter=t:(this.getter=function(e){if(!L.test(e)){var n=e.split(".");return function(e){for(var t=0;t<n.length;t++){if(!e)return;e=e[n[t]]}return e}}}(t),this.getter||(this.getter=function(){})),this.value=this.lazy?void 0:this.get()};St.prototype.get=function(){var e;se(this);var t=this.vm;try{e=this.getter.call(t,t)}catch(e){if(!this.user)throw e;Fe(e,t,'getter for watcher "'+this.expression+'"')}finally{this.deep&&Ye(e),ce(),this.cleanupDeps()}return e},St.prototype.addDep=function(e){var t=e.id;this.newDepIds.has(t)||(this.newDepIds.add(t),this.newDeps.push(e),this.depIds.has(t)||e.addSub(this))},St.prototype.cleanupDeps=function(){for(var e=this.deps.length;e--;){var t=this.deps[e];this.newDepIds.has(t.id)||t.removeSub(this)}var n=this.depIds;this.depIds=this.newDepIds,this.newDepIds=n,this.newDepIds.clear(),n=this.deps,this.deps=this.newDeps,this.newDeps=n,this.newDeps.length=0},St.prototype.update=function(){this.lazy?this.dirty=!0:this.sync?this.run():function(e){var t=e.id;if(null==wt[t]){if(wt[t]=!0,xt){for(var n=bt.length-1;kt<n&&bt[n].id>e.id;)n--;bt.splice(n+1,0,e)}else bt.push(e);Ct||(Ct=!0,Ze(At))}}(this)},St.prototype.run=function(){if(this.active){var e=this.get();if(e!==this.value||P(e)||this.deep){var t=this.value;if(this.value=e,this.user)try{this.cb.call(this.vm,e,t)}catch(e){Fe(e,this.vm,'callback for watcher "'+this.expression+'"')}else this.cb.call(this.vm,e,t)}}},St.prototype.evaluate=function(){this.value=this.get(),this.dirty=!1},St.prototype.depend=function(){for(var e=this.deps.length;e--;)this.deps[e].depend()},St.prototype.teardown=function(){if(this.active){this.vm._isBeingDestroyed||f(this.vm._watchers,this);for(var e=this.deps.length;e--;)this.deps[e].removeSub(this);this.active=!1}};var Tt={enumerable:!0,configurable:!0,get:$,set:$};function Et(e,t,n){Tt.get=function(){return this[t][n]},Tt.set=function(e){this[t][n]=e},Object.defineProperty(e,n,Tt)}function jt(e){e._watchers=[];var t=e.$options;t.props&&function(n,r){var i=n.$options.propsData||{},o=n._props={},a=n.$options._propKeys=[];n.$parent&&ge(!1);var e=function(e){a.push(e);var t=Ie(e,r,i,n);Ce(o,e,t),e in n||Et(n,"_props",e)};for(var t in r)e(t);ge(!0)}(e,t.props),t.methods&&function(e,t){e.$options.props;for(var n in t)e[n]=null==t[n]?$:v(t[n],e)}(e,t.methods),t.data?function(e){var t=e.$options.data;l(t=e._data="function"==typeof t?function(e,t){se();try{return e.call(t,t)}catch(e){return Fe(e,t,"data()"),{}}finally{ce()}}(t,e):t||{})||(t={});var n=Object.keys(t),r=e.$options.props,i=(e.$options.methods,n.length);for(;i--;){var o=n[i];r&&p(r,o)||(void 0,36!==(a=(o+"").charCodeAt(0))&&95!==a&&Et(e,"_data",o))}var a;we(t,!0)}(e):we(e._data={},!0),t.computed&&function(e,t){var n=e._computedWatchers=Object.create(null),r=Y();for(var i in t){var o=t[i],a="function"==typeof o?o:o.get;r||(n[i]=new St(e,a||$,$,Nt)),i in e||Lt(e,i,o)}}(e,t.computed),t.watch&&t.watch!==G&&function(e,t){for(var n in t){var r=t[n];if(Array.isArray(r))for(var i=0;i<r.length;i++)Mt(e,n,r[i]);else Mt(e,n,r)}}(e,t.watch)}var Nt={lazy:!0};function Lt(e,t,n){var r=!Y();"function"==typeof n?(Tt.get=r?It(t):n,Tt.set=$):(Tt.get=n.get?r&&!1!==n.cache?It(t):n.get:$,Tt.set=n.set?n.set:$),Object.defineProperty(e,t,Tt)}function It(t){return function(){var e=this._computedWatchers&&this._computedWatchers[t];if(e)return e.dirty&&e.evaluate(),oe.target&&e.depend(),e.value}}function Mt(e,t,n,r){return l(n)&&(n=(r=n).handler),"string"==typeof n&&(n=e[n]),e.$watch(t,n,r)}function Dt(t,e){if(t){for(var n=Object.create(null),r=ne?Reflect.ownKeys(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}):Object.keys(t),i=0;i<r.length;i++){for(var o=r[i],a=t[o].from,s=e;s;){if(s._provided&&p(s._provided,a)){n[o]=s._provided[a];break}s=s.$parent}if(!s&&"default"in t[o]){var c=t[o].default;n[o]="function"==typeof c?c.call(e):c}}return n}}function Pt(e,t){var n,r,i,o,a;if(Array.isArray(e)||"string"==typeof e)for(n=new Array(e.length),r=0,i=e.length;r<i;r++)n[r]=t(e[r],r);else if("number"==typeof e)for(n=new Array(e),r=0;r<e;r++)n[r]=t(r+1,r);else if(P(e))for(o=Object.keys(e),n=new Array(o.length),r=0,i=o.length;r<i;r++)a=o[r],n[r]=t(e[a],a,r);return D(n)&&(n._isVList=!0),n}function Ft(e,t,n,r){var i,o=this.$scopedSlots[e];if(o)n=n||{},r&&(n=m(m({},r),n)),i=o(n)||t;else{var a=this.$slots[e];a&&(a._rendered=!0),i=a||t}var s=n&&n.slot;return s?this.$createElement("template",{slot:s},i):i}function Rt(e){return Le(this.$options,"filters",e)||w}function Ht(e,t){return Array.isArray(e)?-1===e.indexOf(t):e!==t}function Bt(e,t,n,r,i){var o=j.keyCodes[t]||n;return i&&r&&!j.keyCodes[t]?Ht(i,r):o?Ht(o,e):r?_(r)!==t:void 0}function Ut(n,r,i,o,a){if(i)if(P(i)){var s;Array.isArray(i)&&(i=b(i));var e=function(t){if("class"===t||"style"===t||u(t))s=n;else{var e=n.attrs&&n.attrs.type;s=o||j.mustUseProp(r,e,t)?n.domProps||(n.domProps={}):n.attrs||(n.attrs={})}t in s||(s[t]=i[t],a&&((n.on||(n.on={}))["update:"+t]=function(e){i[t]=e}))};for(var t in i)e(t)}else;return n}function Vt(e,t){var n=this._staticTrees||(this._staticTrees=[]),r=n[e];return r&&!t||Kt(r=n[e]=this.$options.staticRenderFns[e].call(this._renderProxy,null,this),"__static__"+e,!1),r}function zt(e,t,n){return Kt(e,"__once__"+t+(n?"_"+n:""),!0),e}function Kt(e,t,n){if(Array.isArray(e))for(var r=0;r<e.length;r++)e[r]&&"string"!=typeof e[r]&&Jt(e[r],t+"_"+r,n);else Jt(e,t,n)}function Jt(e,t,n){e.isStatic=!0,e.key=t,e.isOnce=n}function qt(e,t){if(t)if(l(t)){var n=e.on=e.on?m({},e.on):{};for(var r in t){var i=n[r],o=t[r];n[r]=i?[].concat(i,o):o}}else;return e}function Wt(e){e._o=zt,e._n=F,e._s=t,e._l=Pt,e._t=Ft,e._q=C,e._i=x,e._m=Vt,e._f=Rt,e._k=Bt,e._b=Ut,e._v=pe,e._e=fe,e._u=ht,e._g=qt}function Gt(e,t,n,o,r){var a,s=r.options;p(o,"_uid")?(a=Object.create(o))._original=o:o=(a=o)._original;var i=S(s._compiled),c=!i;this.data=e,this.props=t,this.children=n,this.parent=o,this.listeners=e.on||y,this.injections=Dt(s.inject,o),this.slots=function(){return dt(n,o)},i&&(this.$options=s,this.$slots=this.slots(),this.$scopedSlots=e.scopedSlots||y),s._scopeId?this._c=function(e,t,n,r){var i=rn(a,e,t,n,r,c);return i&&!Array.isArray(i)&&(i.fnScopeId=s._scopeId,i.fnContext=o),i}:this._c=function(e,t,n,r){return rn(a,e,t,n,r,c)}}function Zt(e,t,n,r){var i=de(e);return i.fnContext=n,i.fnOptions=r,t.slot&&((i.data||(i.data={})).slot=t.slot),i}function Xt(e,t){for(var n in t)e[g(n)]=t[n]}Wt(Gt.prototype);var Yt={init:function(e,t,n,r){if(e.componentInstance&&!e.componentInstance._isDestroyed&&e.data.keepAlive){var i=e;Yt.prepatch(i,i)}else{(e.componentInstance=function(e,t,n,r){var i={_isComponent:!0,parent:t,_parentVnode:e,_parentElm:n||null,_refElm:r||null},o=e.data.inlineTemplate;D(o)&&(i.render=o.render,i.staticRenderFns=o.staticRenderFns);return new e.componentOptions.Ctor(i)}(e,mt,n,r)).$mount(t?e.elm:void 0,t)}},prepatch:function(e,t){var n=t.componentOptions;!function(e,t,n,r,i){var o=!!(i||e.$options._renderChildren||r.data.scopedSlots||e.$scopedSlots!==y);if(e.$options._parentVnode=r,e.$vnode=r,e._vnode&&(e._vnode.parent=r),e.$options._renderChildren=i,e.$attrs=r.data.attrs||y,e.$listeners=n||y,t&&e.$options.props){ge(!1);for(var a=e._props,s=e.$options._propKeys||[],c=0;c<s.length;c++){var l=s[c],u=e.$options.props;a[l]=Ie(l,u,t,e)}ge(!0),e.$options.propsData=t}n=n||y;var f=e.$options._parentListeners;e.$options._parentListeners=n,pt(e,n,f),o&&(e.$slots=dt(i,r.context),e.$forceUpdate())}(t.componentInstance=e.componentInstance,n.propsData,n.listeners,t,n.children)},insert:function(e){var t,n=e.context,r=e.componentInstance;r._isMounted||(r._isMounted=!0,_t(r,"mounted")),e.data.keepAlive&&(n._isMounted?((t=r)._inactive=!1,$t.push(t)):gt(r,!0))},destroy:function(e){var t=e.componentInstance;t._isDestroyed||(e.data.keepAlive?function e(t,n){if(!(n&&(t._directInactive=!0,yt(t))||t._inactive)){t._inactive=!0;for(var r=0;r<t.$children.length;r++)e(t.$children[r]);_t(t,"deactivated")}}(t,!0):t.$destroy())}},Qt=Object.keys(Yt);function en(e,t,n,r,i){if(!M(e)){var o=n.$options._base;if(P(e)&&(e=o.extend(e)),"function"==typeof e){var a,s,c,l,u,f,p;if(M(e.cid)&&void 0===(e=function(t,n,e){if(S(t.error)&&D(t.errorComp))return t.errorComp;if(D(t.resolved))return t.resolved;if(S(t.loading)&&D(t.loadingComp))return t.loadingComp;if(!D(t.contexts)){var r=t.contexts=[e],i=!0,o=function(){for(var e=0,t=r.length;e<t;e++)r[e].$forceUpdate()},a=R(function(e){t.resolved=st(e,n),i||o()}),s=R(function(e){D(t.errorComp)&&(t.error=!0,o())}),c=t(a,s);return P(c)&&("function"==typeof c.then?M(t.resolved)&&c.then(a,s):D(c.component)&&"function"==typeof c.component.then&&(c.component.then(a,s),D(c.error)&&(t.errorComp=st(c.error,n)),D(c.loading)&&(t.loadingComp=st(c.loading,n),0===c.delay?t.loading=!0:setTimeout(function(){M(t.resolved)&&M(t.error)&&(t.loading=!0,o())},c.delay||200)),D(c.timeout)&&setTimeout(function(){M(t.resolved)&&s(null)},c.timeout))),i=!1,t.loading?t.loadingComp:t.resolved}t.contexts.push(e)}(a=e,o,n)))return s=a,c=t,l=n,u=r,f=i,(p=fe()).asyncFactory=s,p.asyncMeta={data:c,context:l,children:u,tag:f},p;t=t||{},dn(e),D(t.model)&&function(e,t){var n=e.model&&e.model.prop||"value",r=e.model&&e.model.event||"input";(t.props||(t.props={}))[n]=t.model.value;var i=t.on||(t.on={});D(i[r])?i[r]=[t.model.callback].concat(i[r]):i[r]=t.model.callback}(e.options,t);var d=function(e,t,n){var r=t.options.props;if(!M(r)){var i={},o=e.attrs,a=e.props;if(D(o)||D(a))for(var s in r){var c=_(s);it(i,a,s,c,!0)||it(i,o,s,c,!1)}return i}}(t,e);if(S(e.options.functional))return function(e,t,n,r,i){var o=e.options,a={},s=o.props;if(D(s))for(var c in s)a[c]=Ie(c,s,t||y);else D(n.attrs)&&Xt(a,n.attrs),D(n.props)&&Xt(a,n.props);var l=new Gt(n,a,i,r,e),u=o.render.call(null,l._c,l);if(u instanceof le)return Zt(u,n,l.parent,o);if(Array.isArray(u)){for(var f=ot(u)||[],p=new Array(f.length),d=0;d<f.length;d++)p[d]=Zt(f[d],n,l.parent,o);return p}}(e,d,t,n,r);var v=t.on;if(t.on=t.nativeOn,S(e.options.abstract)){var h=t.slot;t={},h&&(t.slot=h)}!function(e){for(var t=e.hook||(e.hook={}),n=0;n<Qt.length;n++){var r=Qt[n];t[r]=Yt[r]}}(t);var m=e.options.name||i;return new le("vue-component-"+e.cid+(m?"-"+m:""),t,void 0,void 0,void 0,n,{Ctor:e,propsData:d,listeners:v,tag:i,children:r},a)}}}var tn=1,nn=2;function rn(e,t,n,r,i,o){return(Array.isArray(n)||T(n))&&(i=r,r=n,n=void 0),S(o)&&(i=nn),function(e,t,n,r,i){if(D(n)&&D(n.__ob__))return fe();D(n)&&D(n.is)&&(t=n.is);if(!t)return fe();Array.isArray(r)&&"function"==typeof r[0]&&((n=n||{}).scopedSlots={default:r[0]},r.length=0);i===nn?r=ot(r):i===tn&&(r=function(e){for(var t=0;t<e.length;t++)if(Array.isArray(e[t]))return Array.prototype.concat.apply([],e);return e}(r));var o,a;if("string"==typeof t){var s;a=e.$vnode&&e.$vnode.ns||j.getTagNamespace(t),o=j.isReservedTag(t)?new le(j.parsePlatformTagName(t),n,r,void 0,void 0,e):D(s=Le(e.$options,"components",t))?en(s,n,e,r,t):new le(t,n,r,void 0,void 0,e)}else o=en(t,n,e,r);return Array.isArray(o)?o:D(o)?(D(a)&&function e(t,n,r){t.ns=n;"foreignObject"===t.tag&&(n=void 0,r=!0);if(D(t.children))for(var i=0,o=t.children.length;i<o;i++){var a=t.children[i];D(a.tag)&&(M(a.ns)||S(r)&&"svg"!==a.tag)&&e(a,n,r)}}(o,a),D(n)&&function(e){P(e.style)&&Ye(e.style);P(e.class)&&Ye(e.class)}(n),o):fe()}(e,t,n,r,i)}var on,an,sn,cn,ln,un,fn,pn=0;function dn(e){var t=e.options;if(e.super){var n=dn(e.super);if(n!==e.superOptions){e.superOptions=n;var r=function(e){var t,n=e.options,r=e.extendOptions,i=e.sealedOptions;for(var o in n)n[o]!==i[o]&&(t||(t={}),t[o]=vn(n[o],r[o],i[o]));return t}(e);r&&m(e.extendOptions,r),(t=e.options=Ne(n,e.extendOptions)).name&&(t.components[t.name]=e)}}return t}function vn(e,t,n){if(Array.isArray(e)){var r=[];n=Array.isArray(n)?n:[n],t=Array.isArray(t)?t:[t];for(var i=0;i<e.length;i++)(0<=t.indexOf(e[i])||n.indexOf(e[i])<0)&&r.push(e[i]);return r}return e}function hn(e){this._init(e)}function mn(e){e.cid=0;var a=1;e.extend=function(e){e=e||{};var t=this,n=t.cid,r=e._Ctor||(e._Ctor={});if(r[n])return r[n];var i=e.name||t.options.name,o=function(e){this._init(e)};return((o.prototype=Object.create(t.prototype)).constructor=o).cid=a++,o.options=Ne(t.options,e),o.super=t,o.options.props&&function(e){var t=e.options.props;for(var n in t)Et(e.prototype,"_props",n)}(o),o.options.computed&&function(e){var t=e.options.computed;for(var n in t)Lt(e.prototype,n,t[n])}(o),o.extend=t.extend,o.mixin=t.mixin,o.use=t.use,k.forEach(function(e){o[e]=t[e]}),i&&(o.options.components[i]=o),o.superOptions=t.options,o.extendOptions=e,o.sealedOptions=m({},o.options),r[n]=o}}function yn(e){return e&&(e.Ctor.options.name||e.tag)}function gn(e,t){return Array.isArray(e)?-1<e.indexOf(t):"string"==typeof e?-1<e.split(",").indexOf(t):(n=e,"[object RegExp]"===r.call(n)&&e.test(t));var n}function _n(e,t){var n=e.cache,r=e.keys,i=e._vnode;for(var o in n){var a=n[o];if(a){var s=yn(a.componentOptions);s&&!t(s)&&bn(n,o,r,i)}}}function bn(e,t,n,r){var i=e[t];!i||r&&i.tag===r.tag||i.componentInstance.$destroy(),e[t]=null,f(n,t)}hn.prototype._init=function(e){var t,n,r,i,o=this;o._uid=pn++,o._isVue=!0,e&&e._isComponent?function(e,t){var n=e.$options=Object.create(e.constructor.options),r=t._parentVnode;n.parent=t.parent,n._parentVnode=r,n._parentElm=t._parentElm,n._refElm=t._refElm;var i=r.componentOptions;n.propsData=i.propsData,n._parentListeners=i.listeners,n._renderChildren=i.children,n._componentTag=i.tag,t.render&&(n.render=t.render,n.staticRenderFns=t.staticRenderFns)}(o,e):o.$options=Ne(dn(o.constructor),e||{},o),function(e){var t=e.$options,n=t.parent;if(n&&!t.abstract){for(;n.$options.abstract&&n.$parent;)n=n.$parent;n.$children.push(e)}e.$parent=n,e.$root=n?n.$root:e,e.$children=[],e.$refs={},e._watcher=null,e._inactive=null,e._directInactive=!1,e._isMounted=!1,e._isDestroyed=!1,e._isBeingDestroyed=!1}((o._renderProxy=o)._self=o),function(e){e._events=Object.create(null),e._hasHookEvent=!1;var t=e.$options._parentListeners;t&&pt(e,t)}(o),function(i){i._vnode=null,i._staticTrees=null;var e=i.$options,t=i.$vnode=e._parentVnode,n=t&&t.context;i.$slots=dt(e._renderChildren,n),i.$scopedSlots=y,i._c=function(e,t,n,r){return rn(i,e,t,n,r,!1)},i.$createElement=function(e,t,n,r){return rn(i,e,t,n,r,!0)};var r=t&&t.data;Ce(i,"$attrs",r&&r.attrs||y,null,!0),Ce(i,"$listeners",e._parentListeners||y,null,!0)}(o),_t(o,"beforeCreate"),(n=Dt((t=o).$options.inject,t))&&(ge(!1),Object.keys(n).forEach(function(e){Ce(t,e,n[e])}),ge(!0)),jt(o),(i=(r=o).$options.provide)&&(r._provided="function"==typeof i?i.call(r):i),_t(o,"created"),o.$options.el&&o.$mount(o.$options.el)},on=hn,an={get:function(){return this._data}},sn={get:function(){return this._props}},Object.defineProperty(on.prototype,"$data",an),Object.defineProperty(on.prototype,"$props",sn),on.prototype.$set=xe,on.prototype.$delete=ke,on.prototype.$watch=function(e,t,n){if(l(t))return Mt(this,e,t,n);(n=n||{}).user=!0;var r=new St(this,e,t,n);return n.immediate&&t.call(this,r.value),function(){r.teardown()}},ln=/^hook:/,(cn=hn).prototype.$on=function(e,t){if(Array.isArray(e))for(var n=0,r=e.length;n<r;n++)this.$on(e[n],t);else(this._events[e]||(this._events[e]=[])).push(t),ln.test(e)&&(this._hasHookEvent=!0);return this},cn.prototype.$once=function(e,t){var n=this;function r(){n.$off(e,r),t.apply(n,arguments)}return r.fn=t,n.$on(e,r),n},cn.prototype.$off=function(e,t){var n=this;if(!arguments.length)return n._events=Object.create(null),n;if(Array.isArray(e)){for(var r=0,i=e.length;r<i;r++)this.$off(e[r],t);return n}var o=n._events[e];if(!o)return n;if(!t)return n._events[e]=null,n;if(t)for(var a,s=o.length;s--;)if((a=o[s])===t||a.fn===t){o.splice(s,1);break}return n},cn.prototype.$emit=function(t){var n=this,e=n._events[t];if(e){e=1<e.length?h(e):e;for(var r=h(arguments,1),i=0,o=e.length;i<o;i++)try{e[i].apply(n,r)}catch(e){Fe(e,n,'event handler for "'+t+'"')}}return n},(un=hn).prototype._update=function(e,t){var n=this;n._isMounted&&_t(n,"beforeUpdate");var r=n.$el,i=n._vnode,o=mt;(mt=n)._vnode=e,i?n.$el=n.__patch__(i,e):(n.$el=n.__patch__(n.$el,e,t,!1,n.$options._parentElm,n.$options._refElm),n.$options._parentElm=n.$options._refElm=null),mt=o,r&&(r.__vue__=null),n.$el&&(n.$el.__vue__=n),n.$vnode&&n.$parent&&n.$vnode===n.$parent._vnode&&(n.$parent.$el=n.$el)},un.prototype.$forceUpdate=function(){this._watcher&&this._watcher.update()},un.prototype.$destroy=function(){var e=this;if(!e._isBeingDestroyed){_t(e,"beforeDestroy"),e._isBeingDestroyed=!0;var t=e.$parent;!t||t._isBeingDestroyed||e.$options.abstract||f(t.$children,e),e._watcher&&e._watcher.teardown();for(var n=e._watchers.length;n--;)e._watchers[n].teardown();e._data.__ob__&&e._data.__ob__.vmCount--,e._isDestroyed=!0,e.__patch__(e._vnode,null),_t(e,"destroyed"),e.$off(),e.$el&&(e.$el.__vue__=null),e.$vnode&&(e.$vnode.parent=null)}},Wt((fn=hn).prototype),fn.prototype.$nextTick=function(e){return Ze(e,this)},fn.prototype._render=function(){var t,n=this,e=n.$options,r=e.render,i=e._parentVnode;i&&(n.$scopedSlots=i.data.scopedSlots||y),n.$vnode=i;try{t=r.call(n._renderProxy,n.$createElement)}catch(e){Fe(e,n,"render"),t=n._vnode}return t instanceof le||(t=fe()),t.parent=i,t};var $n,wn,Cn,xn=[String,RegExp,Array],kn={KeepAlive:{name:"keep-alive",abstract:!0,props:{include:xn,exclude:xn,max:[String,Number]},created:function(){this.cache=Object.create(null),this.keys=[]},destroyed:function(){for(var e in this.cache)bn(this.cache,e,this.keys)},mounted:function(){var e=this;this.$watch("include",function(t){_n(e,function(e){return gn(t,e)})}),this.$watch("exclude",function(t){_n(e,function(e){return!gn(t,e)})})},render:function(){var e=this.$slots.default,t=lt(e),n=t&&t.componentOptions;if(n){var r=yn(n),i=this.include,o=this.exclude;if(i&&(!r||!gn(i,r))||o&&r&&gn(o,r))return t;var a=this.cache,s=this.keys,c=null==t.key?n.Ctor.cid+(n.tag?"::"+n.tag:""):t.key;a[c]?(t.componentInstance=a[c].componentInstance,f(s,c),s.push(c)):(a[c]=t,s.push(c),this.max&&s.length>parseInt(this.max)&&bn(a,s[0],s,this._vnode)),t.data.keepAlive=!0}return t||e&&e[0]}}};$n=hn,Cn={get:function(){return j}},Object.defineProperty($n,"config",Cn),$n.util={warn:re,extend:m,mergeOptions:Ne,defineReactive:Ce},$n.set=xe,$n.delete=ke,$n.nextTick=Ze,$n.options=Object.create(null),k.forEach(function(e){$n.options[e+"s"]=Object.create(null)}),m(($n.options._base=$n).options.components,kn),$n.use=function(e){var t=this._installedPlugins||(this._installedPlugins=[]);if(-1<t.indexOf(e))return this;var n=h(arguments,1);return n.unshift(this),"function"==typeof e.install?e.install.apply(e,n):"function"==typeof e&&e.apply(null,n),t.push(e),this},$n.mixin=function(e){return this.options=Ne(this.options,e),this},mn($n),wn=$n,k.forEach(function(n){wn[n]=function(e,t){return t?("component"===n&&l(t)&&(t.name=t.name||e,t=this.options._base.extend(t)),"directive"===n&&"function"==typeof t&&(t={bind:t,update:t}),this.options[n+"s"][e]=t):this.options[n+"s"][e]}}),Object.defineProperty(hn.prototype,"$isServer",{get:Y}),Object.defineProperty(hn.prototype,"$ssrContext",{get:function(){return this.$vnode&&this.$vnode.ssrContext}}),Object.defineProperty(hn,"FunctionalRenderContext",{value:Gt}),hn.version="2.5.16";var An=s("style,class"),On=s("input,textarea,option,select,progress"),Sn=function(e,t,n){return"value"===n&&On(e)&&"button"!==t||"selected"===n&&"option"===e||"checked"===n&&"input"===e||"muted"===n&&"video"===e},Tn=s("contenteditable,draggable,spellcheck"),En=s("allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,default,defaultchecked,defaultmuted,defaultselected,defer,disabled,enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,required,reversed,scoped,seamless,selected,sortable,translate,truespeed,typemustmatch,visible"),jn="http://www.w3.org/1999/xlink",Nn=function(e){return":"===e.charAt(5)&&"xlink"===e.slice(0,5)},Ln=function(e){return Nn(e)?e.slice(6,e.length):""},In=function(e){return null==e||!1===e};function Mn(e){for(var t=e.data,n=e,r=e;D(r.componentInstance);)(r=r.componentInstance._vnode)&&r.data&&(t=Dn(r.data,t));for(;D(n=n.parent);)n&&n.data&&(t=Dn(t,n.data));return function(e,t){if(D(e)||D(t))return Pn(e,Fn(t));return""}(t.staticClass,t.class)}function Dn(e,t){return{staticClass:Pn(e.staticClass,t.staticClass),class:D(e.class)?[e.class,t.class]:t.class}}function Pn(e,t){return e?t?e+" "+t:e:t||""}function Fn(e){return Array.isArray(e)?function(e){for(var t,n="",r=0,i=e.length;r<i;r++)D(t=Fn(e[r]))&&""!==t&&(n&&(n+=" "),n+=t);return n}(e):P(e)?function(e){var t="";for(var n in e)e[n]&&(t&&(t+=" "),t+=n);return t}(e):"string"==typeof e?e:""}var Rn={svg:"http://www.w3.org/2000/svg",math:"http://www.w3.org/1998/Math/MathML"},Hn=s("html,body,base,head,link,meta,style,title,address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,hgroup,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,rtc,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,menuitem,summary,content,element,shadow,template,blockquote,iframe,tfoot"),Bn=s("svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view",!0),Un=function(e){return Hn(e)||Bn(e)};function Vn(e){return Bn(e)?"svg":"math"===e?"math":void 0}var zn=Object.create(null);var Kn=s("text,number,password,search,email,tel,url");function Jn(e){if("string"==typeof e){var t=document.querySelector(e);return t||document.createElement("div")}return e}var qn=Object.freeze({createElement:function(e,t){var n=document.createElement(e);return"select"!==e||t.data&&t.data.attrs&&void 0!==t.data.attrs.multiple&&n.setAttribute("multiple","multiple"),n},createElementNS:function(e,t){return document.createElementNS(Rn[e],t)},createTextNode:function(e){return document.createTextNode(e)},createComment:function(e){return document.createComment(e)},insertBefore:function(e,t,n){e.insertBefore(t,n)},removeChild:function(e,t){e.removeChild(t)},appendChild:function(e,t){e.appendChild(t)},parentNode:function(e){return e.parentNode},nextSibling:function(e){return e.nextSibling},tagName:function(e){return e.tagName},setTextContent:function(e,t){e.textContent=t},setStyleScope:function(e,t){e.setAttribute(t,"")}}),Wn={create:function(e,t){Gn(t)},update:function(e,t){e.data.ref!==t.data.ref&&(Gn(e,!0),Gn(t))},destroy:function(e){Gn(e,!0)}};function Gn(e,t){var n=e.data.ref;if(D(n)){var r=e.context,i=e.componentInstance||e.elm,o=r.$refs;t?Array.isArray(o[n])?f(o[n],i):o[n]===i&&(o[n]=void 0):e.data.refInFor?Array.isArray(o[n])?o[n].indexOf(i)<0&&o[n].push(i):o[n]=[i]:o[n]=i}}var Zn=new le("",{},[]),Xn=["create","activate","update","remove","destroy"];function Yn(e,t){return e.key===t.key&&(e.tag===t.tag&&e.isComment===t.isComment&&D(e.data)===D(t.data)&&function(e,t){if("input"!==e.tag)return!0;var n,r=D(n=e.data)&&D(n=n.attrs)&&n.type,i=D(n=t.data)&&D(n=n.attrs)&&n.type;return r===i||Kn(r)&&Kn(i)}(e,t)||S(e.isAsyncPlaceholder)&&e.asyncFactory===t.asyncFactory&&M(t.asyncFactory.error))}function Qn(e,t,n){var r,i,o={};for(r=t;r<=n;++r)D(i=e[r].key)&&(o[i]=r);return o}var er={create:tr,update:tr,destroy:function(e){tr(e,Zn)}};function tr(e,t){(e.data.directives||t.data.directives)&&function(t,n){var e,r,i,o=t===Zn,a=n===Zn,s=rr(t.data.directives,t.context),c=rr(n.data.directives,n.context),l=[],u=[];for(e in c)r=s[e],i=c[e],r?(i.oldValue=r.value,ir(i,"update",n,t),i.def&&i.def.componentUpdated&&u.push(i)):(ir(i,"bind",n,t),i.def&&i.def.inserted&&l.push(i));if(l.length){var f=function(){for(var e=0;e<l.length;e++)ir(l[e],"inserted",n,t)};o?rt(n,"insert",f):f()}u.length&&rt(n,"postpatch",function(){for(var e=0;e<u.length;e++)ir(u[e],"componentUpdated",n,t)});if(!o)for(e in s)c[e]||ir(s[e],"unbind",t,t,a)}(e,t)}var nr=Object.create(null);function rr(e,t){var n,r,i,o=Object.create(null);if(!e)return o;for(n=0;n<e.length;n++)(r=e[n]).modifiers||(r.modifiers=nr),(o[(i=r,i.rawName||i.name+"."+Object.keys(i.modifiers||{}).join("."))]=r).def=Le(t.$options,"directives",r.name);return o}function ir(t,n,r,e,i){var o=t.def&&t.def[n];if(o)try{o(r.elm,t,r,e,i)}catch(e){Fe(e,r.context,"directive "+t.name+" "+n+" hook")}}var or=[Wn,er];function ar(e,t){var n=t.componentOptions;if(!(D(n)&&!1===n.Ctor.options.inheritAttrs||M(e.data.attrs)&&M(t.data.attrs))){var r,i,o=t.elm,a=e.data.attrs||{},s=t.data.attrs||{};for(r in D(s.__ob__)&&(s=t.data.attrs=m({},s)),s)i=s[r],a[r]!==i&&sr(o,r,i);for(r in(K||q)&&s.value!==a.value&&sr(o,"value",s.value),a)M(s[r])&&(Nn(r)?o.removeAttributeNS(jn,Ln(r)):Tn(r)||o.removeAttribute(r))}}function sr(e,t,n){-1<e.tagName.indexOf("-")?cr(e,t,n):En(t)?In(n)?e.removeAttribute(t):(n="allowfullscreen"===t&&"EMBED"===e.tagName?"true":t,e.setAttribute(t,n)):Tn(t)?e.setAttribute(t,In(n)||"false"===n?"false":"true"):Nn(t)?In(n)?e.removeAttributeNS(jn,Ln(t)):e.setAttributeNS(jn,t,n):cr(e,t,n)}function cr(t,e,n){if(In(n))t.removeAttribute(e);else{if(K&&!J&&"TEXTAREA"===t.tagName&&"placeholder"===e&&!t.__ieph){var r=function(e){e.stopImmediatePropagation(),t.removeEventListener("input",r)};t.addEventListener("input",r),t.__ieph=!0}t.setAttribute(e,n)}}var lr={create:ar,update:ar};function ur(e,t){var n=t.elm,r=t.data,i=e.data;if(!(M(r.staticClass)&&M(r.class)&&(M(i)||M(i.staticClass)&&M(i.class)))){var o=Mn(t),a=n._transitionClasses;D(a)&&(o=Pn(o,Fn(a))),o!==n._prevClass&&(n.setAttribute("class",o),n._prevClass=o)}}var fr,pr,dr,vr,hr,mr,yr={create:ur,update:ur},gr=/[\w).+\-_$\]]/;function _r(e){var t,n,r,i,o,a=!1,s=!1,c=!1,l=!1,u=0,f=0,p=0,d=0;for(r=0;r<e.length;r++)if(n=t,t=e.charCodeAt(r),a)39===t&&92!==n&&(a=!1);else if(s)34===t&&92!==n&&(s=!1);else if(c)96===t&&92!==n&&(c=!1);else if(l)47===t&&92!==n&&(l=!1);else if(124!==t||124===e.charCodeAt(r+1)||124===e.charCodeAt(r-1)||u||f||p){switch(t){case 34:s=!0;break;case 39:a=!0;break;case 96:c=!0;break;case 40:p++;break;case 41:p--;break;case 91:f++;break;case 93:f--;break;case 123:u++;break;case 125:u--}if(47===t){for(var v=r-1,h=void 0;0<=v&&" "===(h=e.charAt(v));v--);h&&gr.test(h)||(l=!0)}}else void 0===i?(d=r+1,i=e.slice(0,r).trim()):m();function m(){(o||(o=[])).push(e.slice(d,r).trim()),d=r+1}if(void 0===i?i=e.slice(0,r).trim():0!==d&&m(),o)for(r=0;r<o.length;r++)i=br(i,o[r]);return i}function br(e,t){var n=t.indexOf("(");if(n<0)return'_f("'+t+'")('+e+")";var r=t.slice(0,n),i=t.slice(n+1);return'_f("'+r+'")('+e+(")"!==i?","+i:i)}function $r(e){console.error("[Vue compiler]: "+e)}function wr(e,t){return e?e.map(function(e){return e[t]}).filter(function(e){return e}):[]}function Cr(e,t,n){(e.props||(e.props=[])).push({name:t,value:n}),e.plain=!1}function xr(e,t,n){(e.attrs||(e.attrs=[])).push({name:t,value:n}),e.plain=!1}function kr(e,t,n){e.attrsMap[t]=n,e.attrsList.push({name:t,value:n})}function Ar(e,t,n,r,i,o){var a;(r=r||y).capture&&(delete r.capture,t="!"+t),r.once&&(delete r.once,t="~"+t),r.passive&&(delete r.passive,t="&"+t),"click"===t&&(r.right?(t="contextmenu",delete r.right):r.middle&&(t="mouseup")),r.native?(delete r.native,a=e.nativeEvents||(e.nativeEvents={})):a=e.events||(e.events={});var s={value:n.trim()};r!==y&&(s.modifiers=r);var c=a[t];Array.isArray(c)?i?c.unshift(s):c.push(s):a[t]=c?i?[s,c]:[c,s]:s,e.plain=!1}function Or(e,t,n){var r=Sr(e,":"+t)||Sr(e,"v-bind:"+t);if(null!=r)return _r(r);if(!1!==n){var i=Sr(e,t);if(null!=i)return JSON.stringify(i)}}function Sr(e,t,n){var r;if(null!=(r=e.attrsMap[t]))for(var i=e.attrsList,o=0,a=i.length;o<a;o++)if(i[o].name===t){i.splice(o,1);break}return n&&delete e.attrsMap[t],r}function Tr(e,t,n){var r=n||{},i=r.number,o="$$v",a=o;r.trim&&(a="(typeof $$v === 'string'? $$v.trim(): $$v)"),i&&(a="_n("+a+")");var s=Er(t,a);e.model={value:"("+t+")",expression:'"'+t+'"',callback:"function ($$v) {"+s+"}"}}function Er(e,t){var n=function(e){if(e=e.trim(),fr=e.length,e.indexOf("[")<0||e.lastIndexOf("]")<fr-1)return-1<(vr=e.lastIndexOf("."))?{exp:e.slice(0,vr),key:'"'+e.slice(vr+1)+'"'}:{exp:e,key:null};pr=e,vr=hr=mr=0;for(;!Nr();)Lr(dr=jr())?Mr(dr):91===dr&&Ir(dr);return{exp:e.slice(0,hr),key:e.slice(hr+1,mr)}}(e);return null===n.key?e+"="+t:"$set("+n.exp+", "+n.key+", "+t+")"}function jr(){return pr.charCodeAt(++vr)}function Nr(){return fr<=vr}function Lr(e){return 34===e||39===e}function Ir(e){var t=1;for(hr=vr;!Nr();)if(Lr(e=jr()))Mr(e);else if(91===e&&t++,93===e&&t--,0===t){mr=vr;break}}function Mr(e){for(var t=e;!Nr()&&(e=jr())!==t;);}var Dr,Pr="__r",Fr="__c";function Rr(e,t,n,r,i){var o,a,s,c,l;t=(o=t)._withTask||(o._withTask=function(){Je=!0;var e=o.apply(null,arguments);return Je=!1,e}),n&&(a=t,s=e,c=r,l=Dr,t=function e(){null!==a.apply(null,arguments)&&Hr(s,e,c,l)}),Dr.addEventListener(e,t,Z?{capture:r,passive:i}:r)}function Hr(e,t,n,r){(r||Dr).removeEventListener(e,t._withTask||t,n)}function Br(e,t){if(!M(e.data.on)||!M(t.data.on)){var n=t.data.on||{},r=e.data.on||{};Dr=t.elm,function(e){if(D(e[Pr])){var t=K?"change":"input";e[t]=[].concat(e[Pr],e[t]||[]),delete e[Pr]}D(e[Fr])&&(e.change=[].concat(e[Fr],e.change||[]),delete e[Fr])}(n),nt(n,r,Rr,Hr,t.context),Dr=void 0}}var Ur={create:Br,update:Br};function Vr(e,t){if(!M(e.data.domProps)||!M(t.data.domProps)){var n,r,i,o,a=t.elm,s=e.data.domProps||{},c=t.data.domProps||{};for(n in D(c.__ob__)&&(c=t.data.domProps=m({},c)),s)M(c[n])&&(a[n]="");for(n in c){if(r=c[n],"textContent"===n||"innerHTML"===n){if(t.children&&(t.children.length=0),r===s[n])continue;1===a.childNodes.length&&a.removeChild(a.childNodes[0])}if("value"===n){var l=M(a._value=r)?"":String(r);o=l,(i=a).composing||"OPTION"!==i.tagName&&!function(e,t){var n=!0;try{n=document.activeElement!==e}catch(e){}return n&&e.value!==t}(i,o)&&!function(e,t){var n=e.value,r=e._vModifiers;if(D(r)){if(r.lazy)return!1;if(r.number)return F(n)!==F(t);if(r.trim)return n.trim()!==t.trim()}return n!==t}(i,o)||(a.value=l)}else a[n]=r}}}var zr={create:Vr,update:Vr},Kr=e(function(e){var n={},r=/:(.+)/;return e.split(/;(?![^(]*\))/g).forEach(function(e){if(e){var t=e.split(r);1<t.length&&(n[t[0].trim()]=t[1].trim())}}),n});function Jr(e){var t=qr(e.style);return e.staticStyle?m(e.staticStyle,t):t}function qr(e){return Array.isArray(e)?b(e):"string"==typeof e?Kr(e):e}var Wr,Gr=/^--/,Zr=/\s*!important$/,Xr=function(e,t,n){if(Gr.test(t))e.style.setProperty(t,n);else if(Zr.test(n))e.style.setProperty(t,n.replace(Zr,""),"important");else{var r=Qr(t);if(Array.isArray(n))for(var i=0,o=n.length;i<o;i++)e.style[r]=n[i];else e.style[r]=n}},Yr=["Webkit","Moz","ms"],Qr=e(function(e){if(Wr=Wr||document.createElement("div").style,"filter"!==(e=g(e))&&e in Wr)return e;for(var t=e.charAt(0).toUpperCase()+e.slice(1),n=0;n<Yr.length;n++){var r=Yr[n]+t;if(r in Wr)return r}});function ei(e,t){var n=t.data,r=e.data;if(!(M(n.staticStyle)&&M(n.style)&&M(r.staticStyle)&&M(r.style))){var i,o,a=t.elm,s=r.staticStyle,c=r.normalizedStyle||r.style||{},l=s||c,u=qr(t.data.style)||{};t.data.normalizedStyle=D(u.__ob__)?m({},u):u;var f=function(e,t){var n,r={};if(t)for(var i=e;i.componentInstance;)(i=i.componentInstance._vnode)&&i.data&&(n=Jr(i.data))&&m(r,n);(n=Jr(e.data))&&m(r,n);for(var o=e;o=o.parent;)o.data&&(n=Jr(o.data))&&m(r,n);return r}(t,!0);for(o in l)M(f[o])&&Xr(a,o,"");for(o in f)(i=f[o])!==l[o]&&Xr(a,o,null==i?"":i)}}var ti={create:ei,update:ei};function ni(t,e){if(e&&(e=e.trim()))if(t.classList)-1<e.indexOf(" ")?e.split(/\s+/).forEach(function(e){return t.classList.add(e)}):t.classList.add(e);else{var n=" "+(t.getAttribute("class")||"")+" ";n.indexOf(" "+e+" ")<0&&t.setAttribute("class",(n+e).trim())}}function ri(t,e){if(e&&(e=e.trim()))if(t.classList)-1<e.indexOf(" ")?e.split(/\s+/).forEach(function(e){return t.classList.remove(e)}):t.classList.remove(e),t.classList.length||t.removeAttribute("class");else{for(var n=" "+(t.getAttribute("class")||"")+" ",r=" "+e+" ";0<=n.indexOf(r);)n=n.replace(r," ");(n=n.trim())?t.setAttribute("class",n):t.removeAttribute("class")}}function ii(e){if(e){if("object"==typeof e){var t={};return!1!==e.css&&m(t,oi(e.name||"v")),m(t,e),t}return"string"==typeof e?oi(e):void 0}}var oi=e(function(e){return{enterClass:e+"-enter",enterToClass:e+"-enter-to",enterActiveClass:e+"-enter-active",leaveClass:e+"-leave",leaveToClass:e+"-leave-to",leaveActiveClass:e+"-leave-active"}}),ai=B&&!J,si="transition",ci="animation",li="transition",ui="transitionend",fi="animation",pi="animationend";ai&&(void 0===window.ontransitionend&&void 0!==window.onwebkittransitionend&&(li="WebkitTransition",ui="webkitTransitionEnd"),void 0===window.onanimationend&&void 0!==window.onwebkitanimationend&&(fi="WebkitAnimation",pi="webkitAnimationEnd"));var di=B?window.requestAnimationFrame?window.requestAnimationFrame.bind(window):setTimeout:function(e){return e()};function vi(e){di(function(){di(e)})}function hi(e,t){var n=e._transitionClasses||(e._transitionClasses=[]);n.indexOf(t)<0&&(n.push(t),ni(e,t))}function mi(e,t){e._transitionClasses&&f(e._transitionClasses,t),ri(e,t)}function yi(t,e,n){var r=_i(t,e),i=r.type,o=r.timeout,a=r.propCount;if(!i)return n();var s=i===si?ui:pi,c=0,l=function(){t.removeEventListener(s,u),n()},u=function(e){e.target===t&&++c>=a&&l()};setTimeout(function(){c<a&&l()},o+1),t.addEventListener(s,u)}var gi=/\b(transform|all)(,|$)/;function _i(e,t){var n,r=window.getComputedStyle(e),i=r[li+"Delay"].split(", "),o=r[li+"Duration"].split(", "),a=bi(i,o),s=r[fi+"Delay"].split(", "),c=r[fi+"Duration"].split(", "),l=bi(s,c),u=0,f=0;return t===si?0<a&&(n=si,u=a,f=o.length):t===ci?0<l&&(n=ci,u=l,f=c.length):f=(n=0<(u=Math.max(a,l))?l<a?si:ci:null)?n===si?o.length:c.length:0,{type:n,timeout:u,propCount:f,hasTransform:n===si&&gi.test(r[li+"Property"])}}function bi(n,e){for(;n.length<e.length;)n=n.concat(n);return Math.max.apply(null,e.map(function(e,t){return $i(e)+$i(n[t])}))}function $i(e){return 1e3*Number(e.slice(0,-1))}function wi(n,e){var r=n.elm;D(r._leaveCb)&&(r._leaveCb.cancelled=!0,r._leaveCb());var t=ii(n.data.transition);if(!M(t)&&!D(r._enterCb)&&1===r.nodeType){for(var i=t.css,o=t.type,a=t.enterClass,s=t.enterToClass,c=t.enterActiveClass,l=t.appearClass,u=t.appearToClass,f=t.appearActiveClass,p=t.beforeEnter,d=t.enter,v=t.afterEnter,h=t.enterCancelled,m=t.beforeAppear,y=t.appear,g=t.afterAppear,_=t.appearCancelled,b=t.duration,$=mt,w=mt.$vnode;w&&w.parent;)$=(w=w.parent).context;var C=!$._isMounted||!n.isRootInsert;if(!C||y||""===y){var x=C&&l?l:a,k=C&&f?f:c,A=C&&u?u:s,O=C&&m||p,S=C&&"function"==typeof y?y:d,T=C&&g||v,E=C&&_||h,j=F(P(b)?b.enter:b),N=!1!==i&&!J,L=ki(S),I=r._enterCb=R(function(){N&&(mi(r,A),mi(r,k)),I.cancelled?(N&&mi(r,x),E&&E(r)):T&&T(r),r._enterCb=null});n.data.show||rt(n,"insert",function(){var e=r.parentNode,t=e&&e._pending&&e._pending[n.key];t&&t.tag===n.tag&&t.elm._leaveCb&&t.elm._leaveCb(),S&&S(r,I)}),O&&O(r),N&&(hi(r,x),hi(r,k),vi(function(){mi(r,x),I.cancelled||(hi(r,A),L||(xi(j)?setTimeout(I,j):yi(r,o,I)))})),n.data.show&&(e&&e(),S&&S(r,I)),N||L||I()}}}function Ci(e,t){var n=e.elm;D(n._enterCb)&&(n._enterCb.cancelled=!0,n._enterCb());var r=ii(e.data.transition);if(M(r)||1!==n.nodeType)return t();if(!D(n._leaveCb)){var i=r.css,o=r.type,a=r.leaveClass,s=r.leaveToClass,c=r.leaveActiveClass,l=r.beforeLeave,u=r.leave,f=r.afterLeave,p=r.leaveCancelled,d=r.delayLeave,v=r.duration,h=!1!==i&&!J,m=ki(u),y=F(P(v)?v.leave:v),g=n._leaveCb=R(function(){n.parentNode&&n.parentNode._pending&&(n.parentNode._pending[e.key]=null),h&&(mi(n,s),mi(n,c)),g.cancelled?(h&&mi(n,a),p&&p(n)):(t(),f&&f(n)),n._leaveCb=null});d?d(_):_()}function _(){g.cancelled||(e.data.show||((n.parentNode._pending||(n.parentNode._pending={}))[e.key]=e),l&&l(n),h&&(hi(n,a),hi(n,c),vi(function(){mi(n,a),g.cancelled||(hi(n,s),m||(xi(y)?setTimeout(g,y):yi(n,o,g)))})),u&&u(n,g),h||m||g())}}function xi(e){return"number"==typeof e&&!isNaN(e)}function ki(e){if(M(e))return!1;var t=e.fns;return D(t)?ki(Array.isArray(t)?t[0]:t):1<(e._length||e.length)}function Ai(e,t){!0!==t.data.show&&wi(t)}var Oi=function(e){var r,t,g={},n=e.modules,_=e.nodeOps;for(r=0;r<Xn.length;++r)for(g[Xn[r]]=[],t=0;t<n.length;++t)D(n[t][Xn[r]])&&g[Xn[r]].push(n[t][Xn[r]]);function o(e){var t=_.parentNode(e);D(t)&&_.removeChild(t,e)}function b(e,t,n,r,i,o,a){if(D(e.elm)&&D(o)&&(e=o[a]=de(e)),e.isRootInsert=!i,!function(e,t,n,r){var i=e.data;if(D(i)){var o=D(e.componentInstance)&&i.keepAlive;if(D(i=i.hook)&&D(i=i.init)&&i(e,!1,n,r),D(e.componentInstance))return d(e,t),S(o)&&function(e,t,n,r){for(var i,o=e;o.componentInstance;)if(o=o.componentInstance._vnode,D(i=o.data)&&D(i=i.transition)){for(i=0;i<g.activate.length;++i)g.activate[i](Zn,o);t.push(o);break}u(n,e.elm,r)}(e,t,n,r),!0}}(e,t,n,r)){var s=e.data,c=e.children,l=e.tag;D(l)?(e.elm=e.ns?_.createElementNS(e.ns,l):_.createElement(l,e),f(e),v(e,c,t),D(s)&&h(e,t)):S(e.isComment)?e.elm=_.createComment(e.text):e.elm=_.createTextNode(e.text),u(n,e.elm,r)}}function d(e,t){D(e.data.pendingInsert)&&(t.push.apply(t,e.data.pendingInsert),e.data.pendingInsert=null),e.elm=e.componentInstance.$el,$(e)?(h(e,t),f(e)):(Gn(e),t.push(e))}function u(e,t,n){D(e)&&(D(n)?n.parentNode===e&&_.insertBefore(e,t,n):_.appendChild(e,t))}function v(e,t,n){if(Array.isArray(t))for(var r=0;r<t.length;++r)b(t[r],n,e.elm,null,!0,t,r);else T(e.text)&&_.appendChild(e.elm,_.createTextNode(String(e.text)))}function $(e){for(;e.componentInstance;)e=e.componentInstance._vnode;return D(e.tag)}function h(e,t){for(var n=0;n<g.create.length;++n)g.create[n](Zn,e);D(r=e.data.hook)&&(D(r.create)&&r.create(Zn,e),D(r.insert)&&t.push(e))}function f(e){var t;if(D(t=e.fnScopeId))_.setStyleScope(e.elm,t);else for(var n=e;n;)D(t=n.context)&&D(t=t.$options._scopeId)&&_.setStyleScope(e.elm,t),n=n.parent;D(t=mt)&&t!==e.context&&t!==e.fnContext&&D(t=t.$options._scopeId)&&_.setStyleScope(e.elm,t)}function y(e,t,n,r,i,o){for(;r<=i;++r)b(n[r],o,e,t,!1,n,r)}function w(e){var t,n,r=e.data;if(D(r))for(D(t=r.hook)&&D(t=t.destroy)&&t(e),t=0;t<g.destroy.length;++t)g.destroy[t](e);if(D(t=e.children))for(n=0;n<e.children.length;++n)w(e.children[n])}function C(e,t,n,r){for(;n<=r;++n){var i=t[n];D(i)&&(D(i.tag)?(a(i),w(i)):o(i.elm))}}function a(e,t){if(D(t)||D(e.data)){var n,r=g.remove.length+1;for(D(t)?t.listeners+=r:t=function(e,t){function n(){0==--n.listeners&&o(e)}return n.listeners=t,n}(e.elm,r),D(n=e.componentInstance)&&D(n=n._vnode)&&D(n.data)&&a(n,t),n=0;n<g.remove.length;++n)g.remove[n](e,t);D(n=e.data.hook)&&D(n=n.remove)?n(e,t):t()}else o(e.elm)}function x(e,t,n,r){for(var i=n;i<r;i++){var o=t[i];if(D(o)&&Yn(e,o))return i}}function k(e,t,n,r){if(e!==t){var i=t.elm=e.elm;if(S(e.isAsyncPlaceholder))D(t.asyncFactory.resolved)?O(e.elm,t,n):t.isAsyncPlaceholder=!0;else if(S(t.isStatic)&&S(e.isStatic)&&t.key===e.key&&(S(t.isCloned)||S(t.isOnce)))t.componentInstance=e.componentInstance;else{var o,a=t.data;D(a)&&D(o=a.hook)&&D(o=o.prepatch)&&o(e,t);var s=e.children,c=t.children;if(D(a)&&$(t)){for(o=0;o<g.update.length;++o)g.update[o](e,t);D(o=a.hook)&&D(o=o.update)&&o(e,t)}M(t.text)?D(s)&&D(c)?s!==c&&function(e,t,n,r,i){for(var o,a,s,c=0,l=0,u=t.length-1,f=t[0],p=t[u],d=n.length-1,v=n[0],h=n[d],m=!i;c<=u&&l<=d;)M(f)?f=t[++c]:M(p)?p=t[--u]:Yn(f,v)?(k(f,v,r),f=t[++c],v=n[++l]):Yn(p,h)?(k(p,h,r),p=t[--u],h=n[--d]):Yn(f,h)?(k(f,h,r),m&&_.insertBefore(e,f.elm,_.nextSibling(p.elm)),f=t[++c],h=n[--d]):(Yn(p,v)?(k(p,v,r),m&&_.insertBefore(e,p.elm,f.elm),p=t[--u]):(M(o)&&(o=Qn(t,c,u)),M(a=D(v.key)?o[v.key]:x(v,t,c,u))?b(v,r,e,f.elm,!1,n,l):Yn(s=t[a],v)?(k(s,v,r),t[a]=void 0,m&&_.insertBefore(e,s.elm,f.elm)):b(v,r,e,f.elm,!1,n,l)),v=n[++l]);u<c?y(e,M(n[d+1])?null:n[d+1].elm,n,l,d,r):d<l&&C(0,t,c,u)}(i,s,c,n,r):D(c)?(D(e.text)&&_.setTextContent(i,""),y(i,null,c,0,c.length-1,n)):D(s)?C(0,s,0,s.length-1):D(e.text)&&_.setTextContent(i,""):e.text!==t.text&&_.setTextContent(i,t.text),D(a)&&D(o=a.hook)&&D(o=o.postpatch)&&o(e,t)}}}function A(e,t,n){if(S(n)&&D(e.parent))e.parent.data.pendingInsert=t;else for(var r=0;r<t.length;++r)t[r].data.hook.insert(t[r])}var m=s("attrs,class,staticClass,staticStyle,key");function O(e,t,n,r){var i,o=t.tag,a=t.data,s=t.children;if(r=r||a&&a.pre,t.elm=e,S(t.isComment)&&D(t.asyncFactory))return t.isAsyncPlaceholder=!0;if(D(a)&&(D(i=a.hook)&&D(i=i.init)&&i(t,!0),D(i=t.componentInstance)))return d(t,n),!0;if(D(o)){if(D(s))if(e.hasChildNodes())if(D(i=a)&&D(i=i.domProps)&&D(i=i.innerHTML)){if(i!==e.innerHTML)return!1}else{for(var c=!0,l=e.firstChild,u=0;u<s.length;u++){if(!l||!O(l,s[u],n,r)){c=!1;break}l=l.nextSibling}if(!c||l)return!1}else v(t,s,n);if(D(a)){var f=!1;for(var p in a)if(!m(p)){f=!0,h(t,n);break}!f&&a.class&&Ye(a.class)}}else e.data!==t.text&&(e.data=t.text);return!0}return function(e,t,n,r,i,o){if(!M(t)){var a,s=!1,c=[];if(M(e))s=!0,b(t,c,i,o);else{var l=D(e.nodeType);if(!l&&Yn(e,t))k(e,t,c,r);else{if(l){if(1===e.nodeType&&e.hasAttribute(E)&&(e.removeAttribute(E),n=!0),S(n)&&O(e,t,c))return A(t,c,!0),e;a=e,e=new le(_.tagName(a).toLowerCase(),{},[],void 0,a)}var u=e.elm,f=_.parentNode(u);if(b(t,c,u._leaveCb?null:f,_.nextSibling(u)),D(t.parent))for(var p=t.parent,d=$(t);p;){for(var v=0;v<g.destroy.length;++v)g.destroy[v](p);if(p.elm=t.elm,d){for(var h=0;h<g.create.length;++h)g.create[h](Zn,p);var m=p.data.hook.insert;if(m.merged)for(var y=1;y<m.fns.length;y++)m.fns[y]()}else Gn(p);p=p.parent}D(f)?C(0,[e],0,0):D(e.tag)&&w(e)}}return A(t,c,s),t.elm}D(e)&&w(e)}}({nodeOps:qn,modules:[lr,yr,Ur,zr,ti,B?{create:Ai,activate:Ai,remove:function(e,t){!0!==e.data.show?Ci(e,t):t()}}:{}].concat(or)});J&&document.addEventListener("selectionchange",function(){var e=document.activeElement;e&&e.vmodel&&Mi(e,"input")});var Si={inserted:function(e,t,n,r){"select"===n.tag?(r.elm&&!r.elm._vOptions?rt(n,"postpatch",function(){Si.componentUpdated(e,t,n)}):Ti(e,t,n.context),e._vOptions=[].map.call(e.options,Ni)):("textarea"===n.tag||Kn(e.type))&&(e._vModifiers=t.modifiers,t.modifiers.lazy||(e.addEventListener("compositionstart",Li),e.addEventListener("compositionend",Ii),e.addEventListener("change",Ii),J&&(e.vmodel=!0)))},componentUpdated:function(e,t,n){if("select"===n.tag){Ti(e,t,n.context);var r=e._vOptions,i=e._vOptions=[].map.call(e.options,Ni);if(i.some(function(e,t){return!C(e,r[t])}))(e.multiple?t.value.some(function(e){return ji(e,i)}):t.value!==t.oldValue&&ji(t.value,i))&&Mi(e,"change")}}};function Ti(e,t,n){Ei(e,t,n),(K||q)&&setTimeout(function(){Ei(e,t,n)},0)}function Ei(e,t,n){var r=t.value,i=e.multiple;if(!i||Array.isArray(r)){for(var o,a,s=0,c=e.options.length;s<c;s++)if(a=e.options[s],i)o=-1<x(r,Ni(a)),a.selected!==o&&(a.selected=o);else if(C(Ni(a),r))return void(e.selectedIndex!==s&&(e.selectedIndex=s));i||(e.selectedIndex=-1)}}function ji(t,e){return e.every(function(e){return!C(e,t)})}function Ni(e){return"_value"in e?e._value:e.value}function Li(e){e.target.composing=!0}function Ii(e){e.target.composing&&(e.target.composing=!1,Mi(e.target,"input"))}function Mi(e,t){var n=document.createEvent("HTMLEvents");n.initEvent(t,!0,!0),e.dispatchEvent(n)}function Di(e){return!e.componentInstance||e.data&&e.data.transition?e:Di(e.componentInstance._vnode)}var Pi={model:Si,show:{bind:function(e,t,n){var r=t.value,i=(n=Di(n)).data&&n.data.transition,o=e.__vOriginalDisplay="none"===e.style.display?"":e.style.display;r&&i?(n.data.show=!0,wi(n,function(){e.style.display=o})):e.style.display=r?o:"none"},update:function(e,t,n){var r=t.value;!r!=!t.oldValue&&((n=Di(n)).data&&n.data.transition?(n.data.show=!0,r?wi(n,function(){e.style.display=e.__vOriginalDisplay}):Ci(n,function(){e.style.display="none"})):e.style.display=r?e.__vOriginalDisplay:"none")},unbind:function(e,t,n,r,i){i||(e.style.display=e.__vOriginalDisplay)}}},Fi={name:String,appear:Boolean,css:Boolean,mode:String,type:String,enterClass:String,leaveClass:String,enterToClass:String,leaveToClass:String,enterActiveClass:String,leaveActiveClass:String,appearClass:String,appearActiveClass:String,appearToClass:String,duration:[Number,String,Object]};function Ri(e){var t=e&&e.componentOptions;return t&&t.Ctor.options.abstract?Ri(lt(t.children)):e}function Hi(e){var t={},n=e.$options;for(var r in n.propsData)t[r]=e[r];var i=n._parentListeners;for(var o in i)t[g(o)]=i[o];return t}function Bi(e,t){if(/\d-keep-alive$/.test(t.tag))return e("keep-alive",{props:t.componentOptions.propsData})}var Ui={name:"transition",props:Fi,abstract:!0,render:function(e){var t=this,n=this.$slots.default;if(n&&(n=n.filter(function(e){return e.tag||ct(e)})).length){var r=this.mode,i=n[0];if(function(e){for(;e=e.parent;)if(e.data.transition)return!0}(this.$vnode))return i;var o=Ri(i);if(!o)return i;if(this._leaving)return Bi(e,i);var a="__transition-"+this._uid+"-";o.key=null==o.key?o.isComment?a+"comment":a+o.tag:T(o.key)?0===String(o.key).indexOf(a)?o.key:a+o.key:o.key;var s,c,l=(o.data||(o.data={})).transition=Hi(this),u=this._vnode,f=Ri(u);if(o.data.directives&&o.data.directives.some(function(e){return"show"===e.name})&&(o.data.show=!0),f&&f.data&&(s=o,(c=f).key!==s.key||c.tag!==s.tag)&&!ct(f)&&(!f.componentInstance||!f.componentInstance._vnode.isComment)){var p=f.data.transition=m({},l);if("out-in"===r)return this._leaving=!0,rt(p,"afterLeave",function(){t._leaving=!1,t.$forceUpdate()}),Bi(e,i);if("in-out"===r){if(ct(o))return u;var d,v=function(){d()};rt(l,"afterEnter",v),rt(l,"enterCancelled",v),rt(p,"delayLeave",function(e){d=e})}}return i}}},Vi=m({tag:String,moveClass:String},Fi);function zi(e){e.elm._moveCb&&e.elm._moveCb(),e.elm._enterCb&&e.elm._enterCb()}function Ki(e){e.data.newPos=e.elm.getBoundingClientRect()}function Ji(e){var t=e.data.pos,n=e.data.newPos,r=t.left-n.left,i=t.top-n.top;if(r||i){e.data.moved=!0;var o=e.elm.style;o.transform=o.WebkitTransform="translate("+r+"px,"+i+"px)",o.transitionDuration="0s"}}delete Vi.mode;var qi={Transition:Ui,TransitionGroup:{props:Vi,render:function(e){for(var t=this.tag||this.$vnode.data.tag||"span",n=Object.create(null),r=this.prevChildren=this.children,i=this.$slots.default||[],o=this.children=[],a=Hi(this),s=0;s<i.length;s++){var c=i[s];c.tag&&null!=c.key&&0!==String(c.key).indexOf("__vlist")&&(o.push(c),((n[c.key]=c).data||(c.data={})).transition=a)}if(r){for(var l=[],u=[],f=0;f<r.length;f++){var p=r[f];p.data.transition=a,p.data.pos=p.elm.getBoundingClientRect(),n[p.key]?l.push(p):u.push(p)}this.kept=e(t,null,l),this.removed=u}return e(t,null,o)},beforeUpdate:function(){this.__patch__(this._vnode,this.kept,!1,!0),this._vnode=this.kept},updated:function(){var e=this.prevChildren,r=this.moveClass||(this.name||"v")+"-move";e.length&&this.hasMove(e[0].elm,r)&&(e.forEach(zi),e.forEach(Ki),e.forEach(Ji),this._reflow=document.body.offsetHeight,e.forEach(function(e){if(e.data.moved){var n=e.elm,t=n.style;hi(n,r),t.transform=t.WebkitTransform=t.transitionDuration="",n.addEventListener(ui,n._moveCb=function e(t){t&&!/transform$/.test(t.propertyName)||(n.removeEventListener(ui,e),n._moveCb=null,mi(n,r))})}}))},methods:{hasMove:function(e,t){if(!ai)return!1;if(this._hasMove)return this._hasMove;var n=e.cloneNode();e._transitionClasses&&e._transitionClasses.forEach(function(e){ri(n,e)}),ni(n,t),n.style.display="none",this.$el.appendChild(n);var r=_i(n);return this.$el.removeChild(n),this._hasMove=r.hasTransform}}}};hn.config.mustUseProp=Sn,hn.config.isReservedTag=Un,hn.config.isReservedAttr=An,hn.config.getTagNamespace=Vn,hn.config.isUnknownElement=function(e){if(!B)return!0;if(Un(e))return!1;if(e=e.toLowerCase(),null!=zn[e])return zn[e];var t=document.createElement(e);return-1<e.indexOf("-")?zn[e]=t.constructor===window.HTMLUnknownElement||t.constructor===window.HTMLElement:zn[e]=/HTMLUnknownElement/.test(t.toString())},m(hn.options.directives,Pi),m(hn.options.components,qi),hn.prototype.__patch__=B?Oi:$,hn.prototype.$mount=function(e,t){return e=e&&B?Jn(e):void 0,r=e,i=t,(n=this).$el=r,n.$options.render||(n.$options.render=fe),_t(n,"beforeMount"),new St(n,function(){n._update(n._render(),i)},$,null,!0),i=!1,null==n.$vnode&&(n._isMounted=!0,_t(n,"mounted")),n;var n,r,i},B&&setTimeout(function(){j.devtools&&Q&&Q.emit("init",hn)},0);var Wi=/\{\{((?:.|\n)+?)\}\}/g,Gi=/[-.*+?^${}()|[\]\/\\]/g,Zi=e(function(e){var t=e[0].replace(Gi,"\\$&"),n=e[1].replace(Gi,"\\$&");return new RegExp(t+"((?:.|\\n)+?)"+n,"g")});var Xi={staticKeys:["staticClass"],transformNode:function(e,t){t.warn;var n=Sr(e,"class");n&&(e.staticClass=JSON.stringify(n));var r=Or(e,"class",!1);r&&(e.classBinding=r)},genData:function(e){var t="";return e.staticClass&&(t+="staticClass:"+e.staticClass+","),e.classBinding&&(t+="class:"+e.classBinding+","),t}};var Yi,Qi={staticKeys:["staticStyle"],transformNode:function(e,t){t.warn;var n=Sr(e,"style");n&&(e.staticStyle=JSON.stringify(Kr(n)));var r=Or(e,"style",!1);r&&(e.styleBinding=r)},genData:function(e){var t="";return e.staticStyle&&(t+="staticStyle:"+e.staticStyle+","),e.styleBinding&&(t+="style:("+e.styleBinding+"),"),t}},eo=function(e){return(Yi=Yi||document.createElement("div")).innerHTML=e,Yi.textContent},to=s("area,base,br,col,embed,frame,hr,img,input,isindex,keygen,link,meta,param,source,track,wbr"),no=s("colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr,source"),ro=s("address,article,aside,base,blockquote,body,caption,col,colgroup,dd,details,dialog,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,head,header,hgroup,hr,html,legend,li,menuitem,meta,optgroup,option,param,rp,rt,source,style,summary,tbody,td,tfoot,th,thead,title,tr,track"),io=/^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/,oo="[a-zA-Z_][\\w\\-\\.]*",ao="((?:"+oo+"\\:)?"+oo+")",so=new RegExp("^<"+ao),co=/^\s*(\/?)>/,lo=new RegExp("^<\\/"+ao+"[^>]*>"),uo=/^<!DOCTYPE [^>]+>/i,fo=/^<!\--/,po=/^<!\[/,vo=!1;"x".replace(/x(.)?/g,function(e,t){vo=""===t});var ho=s("script,style,textarea",!0),mo={},yo={"&lt;":"<","&gt;":">","&quot;":'"',"&amp;":"&","&#10;":"\n","&#9;":"\t"},go=/&(?:lt|gt|quot|amp);/g,_o=/&(?:lt|gt|quot|amp|#10|#9);/g,bo=s("pre,textarea",!0),$o=function(e,t){return e&&bo(e)&&"\n"===t[0]};var wo,Co,xo,ko,Ao,Oo,So,To,Eo=/^@|^v-on:/,jo=/^v-|^@|^:/,No=/([^]*?)\s+(?:in|of)\s+([^]*)/,Lo=/,([^,\}\]]*)(?:,([^,\}\]]*))?$/,Io=/^\(|\)$/g,Mo=/:(.*)$/,Do=/^:|^v-bind:/,Po=/\.[^.]+/g,Fo=e(eo);function Ro(e,t,n){return{type:1,tag:e,attrsList:t,attrsMap:function(e){for(var t={},n=0,r=e.length;n<r;n++)t[e[n].name]=e[n].value;return t}(t),parent:n,children:[]}}function Ho(e,p){wo=p.warn||$r,Oo=p.isPreTag||O,So=p.mustUseProp||O,To=p.getTagNamespace||O,xo=wr(p.modules,"transformNode"),ko=wr(p.modules,"preTransformNode"),Ao=wr(p.modules,"postTransformNode"),Co=p.delimiters;var d,v,h=[],i=!1!==p.preserveWhitespace,m=!1,y=!1;function g(e){e.pre&&(m=!1),Oo(e.tag)&&(y=!1);for(var t=0;t<Ao.length;t++)Ao[t](e,p)}return function(i,d){for(var e,v,h=[],m=d.expectHTML,y=d.isUnaryTag||O,g=d.canBeLeftOpenTag||O,a=0;i;){if(e=i,v&&ho(v)){var r=0,o=v.toLowerCase(),t=mo[o]||(mo[o]=new RegExp("([\\s\\S]*?)(</"+o+"[^>]*>)","i")),n=i.replace(t,function(e,t,n){return r=n.length,ho(o)||"noscript"===o||(t=t.replace(/<!\--([\s\S]*?)-->/g,"$1").replace(/<!\[CDATA\[([\s\S]*?)]]>/g,"$1")),$o(o,t)&&(t=t.slice(1)),d.chars&&d.chars(t),""});a+=i.length-n.length,i=n,A(o,a-r,a)}else{var s=i.indexOf("<");if(0===s){if(fo.test(i)){var c=i.indexOf("--\x3e");if(0<=c){d.shouldKeepComment&&d.comment(i.substring(4,c)),C(c+3);continue}}if(po.test(i)){var l=i.indexOf("]>");if(0<=l){C(l+2);continue}}var u=i.match(uo);if(u){C(u[0].length);continue}var f=i.match(lo);if(f){var p=a;C(f[0].length),A(f[1],p,a);continue}var _=x();if(_){k(_),$o(v,i)&&C(1);continue}}var b=void 0,$=void 0,w=void 0;if(0<=s){for($=i.slice(s);!(lo.test($)||so.test($)||fo.test($)||po.test($)||(w=$.indexOf("<",1))<0);)s+=w,$=i.slice(s);b=i.substring(0,s),C(s)}s<0&&(b=i,i=""),d.chars&&b&&d.chars(b)}if(i===e){d.chars&&d.chars(i);break}}function C(e){a+=e,i=i.substring(e)}function x(){var e=i.match(so);if(e){var t,n,r={tagName:e[1],attrs:[],start:a};for(C(e[0].length);!(t=i.match(co))&&(n=i.match(io));)C(n[0].length),r.attrs.push(n);if(t)return r.unarySlash=t[1],C(t[0].length),r.end=a,r}}function k(e){var t=e.tagName,n=e.unarySlash;m&&("p"===v&&ro(t)&&A(v),g(t)&&v===t&&A(t));for(var r,i,o,a=y(t)||!!n,s=e.attrs.length,c=new Array(s),l=0;l<s;l++){var u=e.attrs[l];vo&&-1===u[0].indexOf('""')&&(""===u[3]&&delete u[3],""===u[4]&&delete u[4],""===u[5]&&delete u[5]);var f=u[3]||u[4]||u[5]||"",p="a"===t&&"href"===u[1]?d.shouldDecodeNewlinesForHref:d.shouldDecodeNewlines;c[l]={name:u[1],value:(r=f,i=p,o=i?_o:go,r.replace(o,function(e){return yo[e]}))}}a||(h.push({tag:t,lowerCasedTag:t.toLowerCase(),attrs:c}),v=t),d.start&&d.start(t,c,a,e.start,e.end)}function A(e,t,n){var r,i;if(null==t&&(t=a),null==n&&(n=a),e&&(i=e.toLowerCase()),e)for(r=h.length-1;0<=r&&h[r].lowerCasedTag!==i;r--);else r=0;if(0<=r){for(var o=h.length-1;r<=o;o--)d.end&&d.end(h[o].tag,t,n);h.length=r,v=r&&h[r-1].tag}else"br"===i?d.start&&d.start(e,[],!0,t,n):"p"===i&&(d.start&&d.start(e,[],!1,t,n),d.end&&d.end(e,t,n))}A()}(e,{warn:wo,expectHTML:p.expectHTML,isUnaryTag:p.isUnaryTag,canBeLeftOpenTag:p.canBeLeftOpenTag,shouldDecodeNewlines:p.shouldDecodeNewlines,shouldDecodeNewlinesForHref:p.shouldDecodeNewlinesForHref,shouldKeepComment:p.comments,start:function(e,t,n){var r=v&&v.ns||To(e);K&&"svg"===r&&(t=function(e){for(var t=[],n=0;n<e.length;n++){var r=e[n];Ko.test(r.name)||(r.name=r.name.replace(Jo,""),t.push(r))}return t}(t));var i,o,a,s,c,l=Ro(e,t,v);r&&(l.ns=r),"style"!==(i=l).tag&&("script"!==i.tag||i.attrsMap.type&&"text/javascript"!==i.attrsMap.type)||Y()||(l.forbidden=!0);for(var u=0;u<ko.length;u++)l=ko[u](l,p)||l;if(m||(null!=Sr(o=l,"v-pre")&&(o.pre=!0),l.pre&&(m=!0)),Oo(l.tag)&&(y=!0),m?function(e){var t=e.attrsList.length;if(t)for(var n=e.attrs=new Array(t),r=0;r<t;r++)n[r]={name:e.attrsList[r].name,value:JSON.stringify(e.attrsList[r].value)};else e.pre||(e.plain=!0)}(l):l.processed||(Uo(l),function(e){var t=Sr(e,"v-if");if(t)e.if=t,Vo(e,{exp:t,block:e});else{null!=Sr(e,"v-else")&&(e.else=!0);var n=Sr(e,"v-else-if");n&&(e.elseif=n)}}(l),null!=Sr(a=l,"v-once")&&(a.once=!0),Bo(l,p)),d?h.length||d.if&&(l.elseif||l.else)&&Vo(d,{exp:l.elseif,block:l}):d=l,v&&!l.forbidden)if(l.elseif||l.else)s=l,(c=function(e){var t=e.length;for(;t--;){if(1===e[t].type)return e[t];e.pop()}}(v.children))&&c.if&&Vo(c,{exp:s.elseif,block:s});else if(l.slotScope){v.plain=!1;var f=l.slotTarget||'"default"';(v.scopedSlots||(v.scopedSlots={}))[f]=l}else v.children.push(l),l.parent=v;n?g(l):(v=l,h.push(l))},end:function(){var e=h[h.length-1],t=e.children[e.children.length-1];t&&3===t.type&&" "===t.text&&!y&&e.children.pop(),h.length-=1,v=h[h.length-1],g(e)},chars:function(e){if(v&&(!K||"textarea"!==v.tag||v.attrsMap.placeholder!==e)){var t,n,r=v.children;if(e=y||e.trim()?"script"===(t=v).tag||"style"===t.tag?e:Fo(e):i&&r.length?" ":"")!m&&" "!==e&&(n=function(e,t){var n=t?Zi(t):Wi;if(n.test(e)){for(var r,i,o,a=[],s=[],c=n.lastIndex=0;r=n.exec(e);){c<(i=r.index)&&(s.push(o=e.slice(c,i)),a.push(JSON.stringify(o)));var l=_r(r[1].trim());a.push("_s("+l+")"),s.push({"@binding":l}),c=i+r[0].length}return c<e.length&&(s.push(o=e.slice(c)),a.push(JSON.stringify(o))),{expression:a.join("+"),tokens:s}}}(e,Co))?r.push({type:2,expression:n.expression,tokens:n.tokens,text:e}):" "===e&&r.length&&" "===r[r.length-1].text||r.push({type:3,text:e})}},comment:function(e){v.children.push({type:3,text:e,isComment:!0})}}),d}function Bo(e,t){var n,r,i,o;(r=Or(n=e,"key"))&&(n.key=r),e.plain=!e.key&&!e.attrsList.length,(o=Or(i=e,"ref"))&&(i.ref=o,i.refInFor=function(e){for(var t=e;t;){if(void 0!==t.for)return!0;t=t.parent}return!1}(i)),function(e){if("slot"===e.tag)e.slotName=Or(e,"name");else{var t;"template"===e.tag?(t=Sr(e,"scope"),e.slotScope=t||Sr(e,"slot-scope")):(t=Sr(e,"slot-scope"))&&(e.slotScope=t);var n=Or(e,"slot");n&&(e.slotTarget='""'===n?'"default"':n,"template"===e.tag||e.slotScope||xr(e,"slot",n))}}(e),function(e){var t;(t=Or(e,"is"))&&(e.component=t);null!=Sr(e,"inline-template")&&(e.inlineTemplate=!0)}(e);for(var a=0;a<xo.length;a++)e=xo[a](e,t)||e;!function(e){var t,n,r,i,o,a,s,c=e.attrsList;for(t=0,n=c.length;t<n;t++)if(r=i=c[t].name,o=c[t].value,jo.test(r))if(e.hasBindings=!0,(a=zo(r))&&(r=r.replace(Po,"")),Do.test(r))r=r.replace(Do,""),o=_r(o),s=!1,a&&(a.prop&&(s=!0,"innerHtml"===(r=g(r))&&(r="innerHTML")),a.camel&&(r=g(r)),a.sync&&Ar(e,"update:"+g(r),Er(o,"$event"))),s||!e.component&&So(e.tag,e.attrsMap.type,r)?Cr(e,r,o):xr(e,r,o);else if(Eo.test(r))r=r.replace(Eo,""),Ar(e,r,o,a,!1);else{var l=(r=r.replace(jo,"")).match(Mo),u=l&&l[1];u&&(r=r.slice(0,-(u.length+1))),p=r,d=i,v=o,h=u,m=a,((f=e).directives||(f.directives=[])).push({name:p,rawName:d,value:v,arg:h,modifiers:m}),f.plain=!1}else xr(e,r,JSON.stringify(o)),!e.component&&"muted"===r&&So(e.tag,e.attrsMap.type,r)&&Cr(e,r,"true");var f,p,d,v,h,m}(e)}function Uo(e){var t;if(t=Sr(e,"v-for")){var n=function(e){var t=e.match(No);if(!t)return;var n={};n.for=t[2].trim();var r=t[1].trim().replace(Io,""),i=r.match(Lo);i?(n.alias=r.replace(Lo,""),n.iterator1=i[1].trim(),i[2]&&(n.iterator2=i[2].trim())):n.alias=r;return n}(t);n&&m(e,n)}}function Vo(e,t){e.ifConditions||(e.ifConditions=[]),e.ifConditions.push(t)}function zo(e){var t=e.match(Po);if(t){var n={};return t.forEach(function(e){n[e.slice(1)]=!0}),n}}var Ko=/^xmlns:NS\d+/,Jo=/^NS\d+:/;function qo(e){return Ro(e.tag,e.attrsList.slice(),e.parent)}var Wo=[Xi,Qi,{preTransformNode:function(e,t){if("input"===e.tag){var n,r=e.attrsMap;if(!r["v-model"])return;if((r[":type"]||r["v-bind:type"])&&(n=Or(e,"type")),r.type||n||!r["v-bind"]||(n="("+r["v-bind"]+").type"),n){var i=Sr(e,"v-if",!0),o=i?"&&("+i+")":"",a=null!=Sr(e,"v-else",!0),s=Sr(e,"v-else-if",!0),c=qo(e);Uo(c),kr(c,"type","checkbox"),Bo(c,t),c.processed=!0,c.if="("+n+")==='checkbox'"+o,Vo(c,{exp:c.if,block:c});var l=qo(e);Sr(l,"v-for",!0),kr(l,"type","radio"),Bo(l,t),Vo(c,{exp:"("+n+")==='radio'"+o,block:l});var u=qo(e);return Sr(u,"v-for",!0),kr(u,":type",n),Bo(u,t),Vo(c,{exp:i,block:u}),a?c.else=!0:s&&(c.elseif=s),c}}}}];var Go,Zo,Xo,Yo={expectHTML:!0,modules:Wo,directives:{model:function(e,t,n){var r,i,o,a,s,c,l,u,f,p,d,v,h,m,y,g,_=t.value,b=t.modifiers,$=e.tag,w=e.attrsMap.type;if(e.component)return Tr(e,_,b),!1;if("select"===$)h=e,m=_,g=(g='var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return '+((y=b)&&y.number?"_n(val)":"val")+"});")+" "+Er(m,"$event.target.multiple ? $$selectedVal : $$selectedVal[0]"),Ar(h,"change",g,null,!0);else if("input"===$&&"checkbox"===w)c=e,l=_,f=(u=b)&&u.number,p=Or(c,"value")||"null",d=Or(c,"true-value")||"true",v=Or(c,"false-value")||"false",Cr(c,"checked","Array.isArray("+l+")?_i("+l+","+p+")>-1"+("true"===d?":("+l+")":":_q("+l+","+d+")")),Ar(c,"change","var $$a="+l+",$$el=$event.target,$$c=$$el.checked?("+d+"):("+v+");if(Array.isArray($$a)){var $$v="+(f?"_n("+p+")":p)+",$$i=_i($$a,$$v);if($$el.checked){$$i<0&&("+Er(l,"$$a.concat([$$v])")+")}else{$$i>-1&&("+Er(l,"$$a.slice(0,$$i).concat($$a.slice($$i+1))")+")}}else{"+Er(l,"$$c")+"}",null,!0);else if("input"===$&&"radio"===w)r=e,i=_,a=(o=b)&&o.number,s=Or(r,"value")||"null",Cr(r,"checked","_q("+i+","+(s=a?"_n("+s+")":s)+")"),Ar(r,"change",Er(i,s),null,!0);else if("input"===$||"textarea"===$)!function(e,t,n){var r=e.attrsMap.type,i=n||{},o=i.lazy,a=i.number,s=i.trim,c=!o&&"range"!==r,l=o?"change":"range"===r?Pr:"input",u="$event.target.value";s&&(u="$event.target.value.trim()"),a&&(u="_n("+u+")");var f=Er(t,u);c&&(f="if($event.target.composing)return;"+f),Cr(e,"value","("+t+")"),Ar(e,l,f,null,!0),(s||a)&&Ar(e,"blur","$forceUpdate()")}(e,_,b);else if(!j.isReservedTag($))return Tr(e,_,b),!1;return!0},text:function(e,t){t.value&&Cr(e,"textContent","_s("+t.value+")")},html:function(e,t){t.value&&Cr(e,"innerHTML","_s("+t.value+")")}},isPreTag:function(e){return"pre"===e},isUnaryTag:to,mustUseProp:Sn,canBeLeftOpenTag:no,isReservedTag:Un,getTagNamespace:Vn,staticKeys:(Go=Wo,Go.reduce(function(e,t){return e.concat(t.staticKeys||[])},[]).join(","))},Qo=e(function(e){return s("type,tag,attrsList,attrsMap,plain,parent,children,attrs"+(e?","+e:""))});function ea(e,t){e&&(Zo=Qo(t.staticKeys||""),Xo=t.isReservedTag||O,function e(t){t.static=function(e){if(2===e.type)return!1;if(3===e.type)return!0;return!(!e.pre&&(e.hasBindings||e.if||e.for||c(e.tag)||!Xo(e.tag)||function(e){for(;e.parent;){if("template"!==(e=e.parent).tag)return!1;if(e.for)return!0}return!1}(e)||!Object.keys(e).every(Zo)))}(t);if(1===t.type){if(!Xo(t.tag)&&"slot"!==t.tag&&null==t.attrsMap["inline-template"])return;for(var n=0,r=t.children.length;n<r;n++){var i=t.children[n];e(i),i.static||(t.static=!1)}if(t.ifConditions)for(var o=1,a=t.ifConditions.length;o<a;o++){var s=t.ifConditions[o].block;e(s),s.static||(t.static=!1)}}}(e),function e(t,n){if(1===t.type){if((t.static||t.once)&&(t.staticInFor=n),t.static&&t.children.length&&(1!==t.children.length||3!==t.children[0].type))return void(t.staticRoot=!0);if(t.staticRoot=!1,t.children)for(var r=0,i=t.children.length;r<i;r++)e(t.children[r],n||!!t.for);if(t.ifConditions)for(var o=1,a=t.ifConditions.length;o<a;o++)e(t.ifConditions[o].block,n)}}(e,!1))}var ta=/^([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/,na=/^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/,ra={esc:27,tab:9,enter:13,space:32,up:38,left:37,right:39,down:40,delete:[8,46]},ia={esc:"Escape",tab:"Tab",enter:"Enter",space:" ",up:["Up","ArrowUp"],left:["Left","ArrowLeft"],right:["Right","ArrowRight"],down:["Down","ArrowDown"],delete:["Backspace","Delete"]},oa=function(e){return"if("+e+")return null;"},aa={stop:"$event.stopPropagation();",prevent:"$event.preventDefault();",self:oa("$event.target !== $event.currentTarget"),ctrl:oa("!$event.ctrlKey"),shift:oa("!$event.shiftKey"),alt:oa("!$event.altKey"),meta:oa("!$event.metaKey"),left:oa("'button' in $event && $event.button !== 0"),middle:oa("'button' in $event && $event.button !== 1"),right:oa("'button' in $event && $event.button !== 2")};function sa(e,t,n){var r=t?"nativeOn:{":"on:{";for(var i in e)r+='"'+i+'":'+ca(i,e[i])+",";return r.slice(0,-1)+"}"}function ca(t,e){if(!e)return"function(){}";if(Array.isArray(e))return"["+e.map(function(e){return ca(t,e)}).join(",")+"]";var n=na.test(e.value),r=ta.test(e.value);if(e.modifiers){var i="",o="",a=[];for(var s in e.modifiers)if(aa[s])o+=aa[s],ra[s]&&a.push(s);else if("exact"===s){var c=e.modifiers;o+=oa(["ctrl","shift","alt","meta"].filter(function(e){return!c[e]}).map(function(e){return"$event."+e+"Key"}).join("||"))}else a.push(s);return a.length&&(i+="if(!('button' in $event)&&"+a.map(la).join("&&")+")return null;"),o&&(i+=o),"function($event){"+i+(n?"return "+e.value+"($event)":r?"return ("+e.value+")($event)":e.value)+"}"}return n||r?e.value:"function($event){"+e.value+"}"}function la(e){var t=parseInt(e,10);if(t)return"$event.keyCode!=="+t;var n=ra[e],r=ia[e];return"_k($event.keyCode,"+JSON.stringify(e)+","+JSON.stringify(n)+",$event.key,"+JSON.stringify(r)+")"}var ua={on:function(e,t){e.wrapListeners=function(e){return"_g("+e+","+t.value+")"}},bind:function(t,n){t.wrapData=function(e){return"_b("+e+",'"+t.tag+"',"+n.value+","+(n.modifiers&&n.modifiers.prop?"true":"false")+(n.modifiers&&n.modifiers.sync?",true":"")+")"}},cloak:$},fa=function(e){this.options=e,this.warn=e.warn||$r,this.transforms=wr(e.modules,"transformCode"),this.dataGenFns=wr(e.modules,"genData"),this.directives=m(m({},ua),e.directives);var t=e.isReservedTag||O;this.maybeComponent=function(e){return!t(e.tag)},this.onceId=0,this.staticRenderFns=[]};function pa(e,t){var n=new fa(t);return{render:"with(this){return "+(e?da(e,n):'_c("div")')+"}",staticRenderFns:n.staticRenderFns}}function da(e,t){if(e.staticRoot&&!e.staticProcessed)return va(e,t);if(e.once&&!e.onceProcessed)return ha(e,t);if(e.for&&!e.forProcessed)return f=t,v=(u=e).for,h=u.alias,m=u.iterator1?","+u.iterator1:"",y=u.iterator2?","+u.iterator2:"",u.forProcessed=!0,(d||"_l")+"(("+v+"),function("+h+m+y+"){return "+(p||da)(u,f)+"})";if(e.if&&!e.ifProcessed)return ma(e,t);if("template"!==e.tag||e.slotTarget){if("slot"===e.tag)return function(e,t){var n=e.slotName||'"default"',r=_a(e,t),i="_t("+n+(r?","+r:""),o=e.attrs&&"{"+e.attrs.map(function(e){return g(e.name)+":"+e.value}).join(",")+"}",a=e.attrsMap["v-bind"];!o&&!a||r||(i+=",null");o&&(i+=","+o);a&&(i+=(o?"":",null")+","+a);return i+")"}(e,t);var n;if(e.component)a=e.component,c=t,l=(s=e).inlineTemplate?null:_a(s,c,!0),n="_c("+a+","+ya(s,c)+(l?","+l:"")+")";else{var r=e.plain?void 0:ya(e,t),i=e.inlineTemplate?null:_a(e,t,!0);n="_c('"+e.tag+"'"+(r?","+r:"")+(i?","+i:"")+")"}for(var o=0;o<t.transforms.length;o++)n=t.transforms[o](e,n);return n}return _a(e,t)||"void 0";var a,s,c,l,u,f,p,d,v,h,m,y}function va(e,t){return e.staticProcessed=!0,t.staticRenderFns.push("with(this){return "+da(e,t)+"}"),"_m("+(t.staticRenderFns.length-1)+(e.staticInFor?",true":"")+")"}function ha(e,t){if(e.onceProcessed=!0,e.if&&!e.ifProcessed)return ma(e,t);if(e.staticInFor){for(var n="",r=e.parent;r;){if(r.for){n=r.key;break}r=r.parent}return n?"_o("+da(e,t)+","+t.onceId+++","+n+")":da(e,t)}return va(e,t)}function ma(e,t,n,r){return e.ifProcessed=!0,function e(t,n,r,i){if(!t.length)return i||"_e()";var o=t.shift();return o.exp?"("+o.exp+")?"+a(o.block)+":"+e(t,n,r,i):""+a(o.block);function a(e){return r?r(e,n):e.once?ha(e,n):da(e,n)}}(e.ifConditions.slice(),t,n,r)}function ya(e,t){var n,r,i="{",o=function(e,t){var n=e.directives;if(!n)return;var r,i,o,a,s="directives:[",c=!1;for(r=0,i=n.length;r<i;r++){o=n[r],a=!0;var l=t.directives[o.name];l&&(a=!!l(e,o,t.warn)),a&&(c=!0,s+='{name:"'+o.name+'",rawName:"'+o.rawName+'"'+(o.value?",value:("+o.value+"),expression:"+JSON.stringify(o.value):"")+(o.arg?',arg:"'+o.arg+'"':"")+(o.modifiers?",modifiers:"+JSON.stringify(o.modifiers):"")+"},")}if(c)return s.slice(0,-1)+"]"}(e,t);o&&(i+=o+","),e.key&&(i+="key:"+e.key+","),e.ref&&(i+="ref:"+e.ref+","),e.refInFor&&(i+="refInFor:true,"),e.pre&&(i+="pre:true,"),e.component&&(i+='tag:"'+e.tag+'",');for(var a=0;a<t.dataGenFns.length;a++)i+=t.dataGenFns[a](e);if(e.attrs&&(i+="attrs:{"+wa(e.attrs)+"},"),e.props&&(i+="domProps:{"+wa(e.props)+"},"),e.events&&(i+=sa(e.events,!1,t.warn)+","),e.nativeEvents&&(i+=sa(e.nativeEvents,!0,t.warn)+","),e.slotTarget&&!e.slotScope&&(i+="slot:"+e.slotTarget+","),e.scopedSlots&&(i+=(n=e.scopedSlots,r=t,"scopedSlots:_u(["+Object.keys(n).map(function(e){return ga(e,n[e],r)}).join(",")+"]),")),e.model&&(i+="model:{value:"+e.model.value+",callback:"+e.model.callback+",expression:"+e.model.expression+"},"),e.inlineTemplate){var s=function(e,t){var n=e.children[0];if(1===n.type){var r=pa(n,t.options);return"inlineTemplate:{render:function(){"+r.render+"},staticRenderFns:["+r.staticRenderFns.map(function(e){return"function(){"+e+"}"}).join(",")+"]}"}}(e,t);s&&(i+=s+",")}return i=i.replace(/,$/,"")+"}",e.wrapData&&(i=e.wrapData(i)),e.wrapListeners&&(i=e.wrapListeners(i)),i}function ga(e,t,n){return t.for&&!t.forProcessed?(r=e,o=n,a=(i=t).for,s=i.alias,c=i.iterator1?","+i.iterator1:"",l=i.iterator2?","+i.iterator2:"",i.forProcessed=!0,"_l(("+a+"),function("+s+c+l+"){return "+ga(r,i,o)+"})"):"{key:"+e+",fn:"+("function("+String(t.slotScope)+"){return "+("template"===t.tag?t.if?t.if+"?"+(_a(t,n)||"undefined")+":undefined":_a(t,n)||"undefined":da(t,n))+"}")+"}";var r,i,o,a,s,c,l}function _a(e,t,n,r,i){var o=e.children;if(o.length){var a=o[0];if(1===o.length&&a.for&&"template"!==a.tag&&"slot"!==a.tag)return(r||da)(a,t);var s=n?function(e,t){for(var n=0,r=0;r<e.length;r++){var i=e[r];if(1===i.type){if(ba(i)||i.ifConditions&&i.ifConditions.some(function(e){return ba(e.block)})){n=2;break}(t(i)||i.ifConditions&&i.ifConditions.some(function(e){return t(e.block)}))&&(n=1)}}return n}(o,t.maybeComponent):0,c=i||$a;return"["+o.map(function(e){return c(e,t)}).join(",")+"]"+(s?","+s:"")}}function ba(e){return void 0!==e.for||"template"===e.tag||"slot"===e.tag}function $a(e,t){return 1===e.type?da(e,t):3===e.type&&e.isComment?(r=e,"_e("+JSON.stringify(r.text)+")"):"_v("+(2===(n=e).type?n.expression:Ca(JSON.stringify(n.text)))+")";var n,r}function wa(e){for(var t="",n=0;n<e.length;n++){var r=e[n];t+='"'+r.name+'":'+Ca(r.value)+","}return t.slice(0,-1)}function Ca(e){return e.replace(/\u2028/g,"\\u2028").replace(/\u2029/g,"\\u2029")}new RegExp("\\b"+"do,if,for,let,new,try,var,case,else,with,await,break,catch,class,const,super,throw,while,yield,delete,export,import,return,switch,default,extends,finally,continue,debugger,function,arguments".split(",").join("\\b|\\b")+"\\b"),new RegExp("\\b"+"delete,typeof,void".split(",").join("\\s*\\([^\\)]*\\)|\\b")+"\\s*\\([^\\)]*\\)");function xa(t,n){try{return new Function(t)}catch(e){return n.push({err:e,code:t}),$}}var ka,Aa,Oa=(ka=function(e,t){var n=Ho(e.trim(),t);!1!==t.optimize&&ea(n,t);var r=pa(n,t);return{ast:n,render:r.render,staticRenderFns:r.staticRenderFns}},function(s){function e(e,t){var n=Object.create(s),r=[],i=[];if(n.warn=function(e,t){(t?i:r).push(e)},t)for(var o in t.modules&&(n.modules=(s.modules||[]).concat(t.modules)),t.directives&&(n.directives=m(Object.create(s.directives||null),t.directives)),t)"modules"!==o&&"directives"!==o&&(n[o]=t[o]);var a=ka(e,n);return a.errors=r,a.tips=i,a}return{compile:e,compileToFunctions:(c=e,l=Object.create(null),function(e,t,n){(t=m({},t)).warn,delete t.warn;var r=t.delimiters?String(t.delimiters)+e:e;if(l[r])return l[r];var i=c(e,t),o={},a=[];return o.render=xa(i.render,a),o.staticRenderFns=i.staticRenderFns.map(function(e){return xa(e,a)}),l[r]=o})};var c,l})(Yo).compileToFunctions;function Sa(e){return(Aa=Aa||document.createElement("div")).innerHTML=e?'<a href="\n"/>':'<div a="\n"/>',0<Aa.innerHTML.indexOf("&#10;")}var Ta=!!B&&Sa(!1),Ea=!!B&&Sa(!0),ja=e(function(e){var t=Jn(e);return t&&t.innerHTML}),Na=hn.prototype.$mount;return hn.prototype.$mount=function(e,t){if((e=e&&Jn(e))===document.body||e===document.documentElement)return this;var n=this.$options;if(!n.render){var r=n.template;if(r)if("string"==typeof r)"#"===r.charAt(0)&&(r=ja(r));else{if(!r.nodeType)return this;r=r.innerHTML}else e&&(r=function(e){{if(e.outerHTML)return e.outerHTML;var t=document.createElement("div");return t.appendChild(e.cloneNode(!0)),t.innerHTML}}(e));if(r){var i=Oa(r,{shouldDecodeNewlines:Ta,shouldDecodeNewlinesForHref:Ea,delimiters:n.delimiters,comments:n.comments},this),o=i.render,a=i.staticRenderFns;n.render=o,n.staticRenderFns=a}}return Na.call(this,e,t)},hn.compile=Oa,hn});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(14).setImmediate))
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-let Vue = null;
-
-class Notification{
-
-    setVueInstance (instance) { Vue = instance }
-
-    addAlert(statusId, statusType, title, statusMessage, timeoutDelete, href){
-
-        console.log("Vue.$notify", Vue.$notify)
-
-        Vue.$notify({
-            group: (statusId === undefined) ? 'all' : statusId,
-            title: title,
-            text: statusMessage,
-            type: statusType,
-            duration: timeoutDelete,
-            speed: 2000,
-            data: {id:statusId}
-        })
-
-    }
-
-    deleteAlert(arrayStatusId){
-
-        Vue.$notify({
-            group: arrayStatusId,
-            clean: true
-        })
-
-    }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (new Notification());
-
-/***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_icon_vue__ = __webpack_require__(17);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4a4e8449_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_icon_vue__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4a4e8449_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_icon_vue__ = __webpack_require__(61);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(56)
+  __webpack_require__(59)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -696,7 +669,41 @@ if (false) {(function () {
 
 
 /***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["v-clipboard"]=t():e["v-clipboard"]=t()}(this,function(){return function(e){function t(o){if(n[o])return n[o].exports;var r=n[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,o){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/",t(t.s=0)}([function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(e){var t=document.createElement("textarea"),n=!1;t.value=e,t.style.cssText="position:fixed;pointer-events:none;z-index:-9999;opacity:0;",document.body.appendChild(t),t.select();try{n=document.execCommand("copy")}catch(e){}return document.body.removeChild(t),n};t.default={install:function(e){e.prototype.$clipboard=o,e.directive("clipboard",{bind:function(e,t,n){e.addEventListener("click",function(e){if(t.hasOwnProperty("value")){var r=t.value,c={value:r,srcEvent:e},i=n.context;o(r)?i.$emit("copy",c):i.$emit("copyError",c)}})}})}}}])});
+//# sourceMappingURL=index.min.js.map
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8734,17 +8741,178 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6), __webpack_require__(14).setImmediate))
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-!function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["v-clipboard"]=t():e["v-clipboard"]=t()}(this,function(){return function(e){function t(o){if(n[o])return n[o].exports;var r=n[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var n={};return t.m=e,t.c=n,t.i=function(e){return e},t.d=function(e,n,o){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/dist/",t(t.s=0)}([function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=function(e){var t=document.createElement("textarea"),n=!1;t.value=e,t.style.cssText="position:fixed;pointer-events:none;z-index:-9999;opacity:0;",document.body.appendChild(t),t.select();try{n=document.execCommand("copy")}catch(e){}return document.body.removeChild(t),n};t.default={install:function(e){e.prototype.$clipboard=o,e.directive("clipboard",{bind:function(e,t,n){e.addEventListener("click",function(e){if(t.hasOwnProperty("value")){var r=t.value,c={value:r,srcEvent:e},i=n.context;o(r)?i.$emit("copy",c):i.$emit("copyError",c)}})}})}}}])});
-//# sourceMappingURL=index.min.js.map
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(7), __webpack_require__(14).setImmediate))
 
 /***/ }),
 /* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Modal_vue__ = __webpack_require__(21);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d4961080_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Modal_vue__ = __webpack_require__(71);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(69)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Modal_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d4961080_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Modal_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/components/UI/modal/Modal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d4961080", Component.options)
+  } else {
+    hotAPI.reload("data-v-d4961080", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Balance_vue__ = __webpack_require__(22);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_53087030_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Balance_vue__ = __webpack_require__(75);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(72)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Balance_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_53087030_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Balance_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/components/Wallet/Address/Balance/Show-Balance.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-53087030", Component.options)
+  } else {
+    hotAPI.reload("data-v-53087030", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Sum_Balances_vue__ = __webpack_require__(25);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a5495d6_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Sum_Balances_vue__ = __webpack_require__(78);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(76)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Sum_Balances_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a5495d6_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Sum_Balances_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/components/Wallet/Address/Balance/Balances/Show-Sum-Balances.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0a5495d6", Component.options)
+  } else {
+    hotAPI.reload("data-v-0a5495d6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* FileSaver.js
@@ -8930,180 +9098,12 @@ var saveAs = saveAs || (function(view) {
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports.saveAs = saveAs;
-} else if (("function" !== "undefined" && __webpack_require__(61) !== null) && (__webpack_require__(62) !== null)) {
+} else if (("function" !== "undefined" && __webpack_require__(64) !== null) && (__webpack_require__(65) !== null)) {
   !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
     return saveAs;
   }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Modal_vue__ = __webpack_require__(21);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d4961080_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Modal_vue__ = __webpack_require__(68);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(66)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Modal_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d4961080_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Modal_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src/components/UI/modal/Modal.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d4961080", Component.options)
-  } else {
-    hotAPI.reload("data-v-d4961080", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Balance_vue__ = __webpack_require__(22);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_53087030_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Balance_vue__ = __webpack_require__(72);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(69)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Balance_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_53087030_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Balance_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src/components/Wallet/Address/Balance/Show-Balance.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-53087030", Component.options)
-  } else {
-    hotAPI.reload("data-v-53087030", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Sum_Balances_vue__ = __webpack_require__(25);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a5495d6_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Sum_Balances_vue__ = __webpack_require__(75);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(73)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Show_Sum_Balances_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a5495d6_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Show_Sum_Balances_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src/components/Wallet/Address/Balance/Balances/Show-Sum-Balances.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0a5495d6", Component.options)
-  } else {
-    hotAPI.reload("data-v-0a5495d6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
 
 /***/ }),
@@ -9160,7 +9160,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(47);
+__webpack_require__(50);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -9171,16 +9171,16 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Wallet_Wallet_vue__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Mining_Mining_vue__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Wallet_Wallet_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Mining_Mining_vue__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_components_Wallet_Address_Address_vue__ = __webpack_require__(18);
 //
 //
@@ -9324,11 +9324,18 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Address_Address_vue__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Browser_helpers__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Browser_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_helpers_Notification_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Address_Modals_Main_Modal_Address_main_modal_offline_vue__ = __webpack_require__(107);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -9410,8 +9417,9 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 //
 //
 
-    var Vue = __webpack_require__(4);
+    var Vue = __webpack_require__(3);
 
+    
     
     
     
@@ -9424,6 +9432,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
             icon: __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__["a" /* default */],
             "Address": __WEBPACK_IMPORTED_MODULE_1__Address_Address_vue__["a" /* default */],
             ShowSumBalances: __WEBPACK_IMPORTED_MODULE_3__Address_Balance_Balances_Show_Sum_Balances_vue__["a" /* default */],
+            offlineTransactionsModal: __WEBPACK_IMPORTED_MODULE_5__Address_Modals_Main_Modal_Address_main_modal_offline_vue__["a" /* default */]
         },
 
         props: ['addresses', 'currency'],
@@ -9496,6 +9505,12 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
         },
 
         methods: {
+
+            showOfflineTransactions(){
+
+                this.$refs['refOfflineTransactionsModal'].showModal();
+
+            },
 
             changeScreenBehavior(){
 
@@ -9767,11 +9782,11 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Address_vue__ = __webpack_require__(19);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6fd10b33_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Address_vue__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6fd10b33_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Address_vue__ = __webpack_require__(106);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(59)
+  __webpack_require__(62)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -9821,16 +9836,16 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_UI_icons_icon_vue__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Modals_Main_Modal_Address_main_modal_vue__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Modals_Lock_modal_vue__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Modals_Delete_modal_vue__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Browser_helpers__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_UI_icons_icon_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Modals_Main_Modal_Address_main_modal_vue__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Modals_Lock_modal_vue__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Modals_Delete_modal_vue__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Browser_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -10083,15 +10098,15 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_components_Wallet_Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_UI_icons_icon_vue__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parts_Transactions_Transactions_part_vue__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parts_Transfer_part_vue__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_components_Wallet_Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_UI_icons_icon_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parts_Transactions_Transactions_part_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parts_Transfer_part_vue__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -10170,7 +10185,7 @@ if (false) {(function () {
 //
 
 
-var Vue = __webpack_require__(4);
+var Vue = __webpack_require__(3);
 
 
 
@@ -10190,6 +10205,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
     props: {
         address: {default: null},
         isMiningAddress: {default: false},
+        offlineTransaction:  {default: false},
     },
 
     components: {
@@ -10204,7 +10220,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
     data: () => {
         return {
             partActivated : 'none',
-
             clipboardText: 'Copy Address',
         }
     },
@@ -10229,14 +10244,20 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
         },
 
         closeModal() {
+            this.offlineTransaction=false;
             this.$refs['refModal'].closeModal();
         },
 
-        showModal(e) {
+        showModal(e,offlineTransactionsMode) {
             if (this.$refs['refModal'].modalOpened === false){
                 this.$refs['refModal'].showModal();
             }
             this.clipboardText= 'Copy Address';
+
+            if(offlineTransactionsMode)
+                this.offlineTransaction = true;
+            else
+                this.offlineTransaction = false;
         },
         copyToClipboard(){
             this.clipboardText = 'Copied';
@@ -10250,7 +10271,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 
         handleTransferSuccess(){
             this.closeModal();
-        }
+        },
 
     },
 
@@ -10270,7 +10291,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__ = __webpack_require__(6);
 //
 //
 //
@@ -10347,7 +10368,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_elements_Loading_Spinner_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(5);
 //
 //
 //
@@ -10504,7 +10525,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Loading_Spinner_vue__ = __webpack_require__(24);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f5858e2a_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Loading_Spinner_vue__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f5858e2a_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Loading_Spinner_vue__ = __webpack_require__(74);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -10588,7 +10609,7 @@ if (false) {(function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_elements_Loading_Spinner_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(5);
 //
 //
 //
@@ -10731,8 +10752,65 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transaction_element_vue__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transactions_part_vue__ = __webpack_require__(27);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2382f042_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transactions_part_vue__ = __webpack_require__(93);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(79)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transactions_part_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2382f042_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transactions_part_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/components/Wallet/Address/Modals/Main-Modal/parts/Transactions/Transactions.part.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2382f042", Component.options)
+  } else {
+    hotAPI.reload("data-v-2382f042", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transaction_element_vue__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -10773,6 +10851,7 @@ if (false) {(function () {
 //
 //
 //
+
 
 
 
@@ -10847,7 +10926,7 @@ if (false) {(function () {
             __WEBPACK_IMPORTED_MODULE_0_vue__["default"].set(this.transactions, transaction.txId, transaction);
 
             if (transaction.confirmed && (oldTransaction !== undefined && oldTransaction.confirmed === false)){
-                Notification.addAlert("error-firewall", "success", "Transaction Confirmed", "Transaction to "+ this.toAddress + " with " +  BrowserHelpers.formatMoneyNumber(amountToSend)+"WEBD has been confirmed.",5000);
+                __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", "Transaction Confirmed", "Transaction to "+ this.toAddress + " with " +  BrowserHelpers.formatMoneyNumber(amountToSend)+"WEBD has been confirmed.",5000);
             }
 
         },
@@ -10890,12 +10969,12 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Transaction_From_element_vue__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transaction_To_element_vue__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Transaction_From_element_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transaction_To_element_vue__ = __webpack_require__(88);
 //
 //
 //
@@ -10948,11 +11027,11 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__);
 //
 //
@@ -10972,7 +11051,7 @@ if (false) {(function () {
 //
 
 
-var Vue = __webpack_require__(4);
+var Vue = __webpack_require__(3);
 
 
 
@@ -11007,11 +11086,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__);
 //
 //
@@ -11031,7 +11110,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 //
 
 
-var Vue = __webpack_require__(4);
+var Vue = __webpack_require__(3);
 
 
 
@@ -11067,14 +11146,95 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transfer_part_vue__ = __webpack_require__(32);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cff1114e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transfer_part_vue__ = __webpack_require__(96);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(94)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transfer_part_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cff1114e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transfer_part_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/components/Wallet/Address/Modals/Main-Modal/parts/Transfer.part.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-cff1114e", Component.options)
+  } else {
+    hotAPI.reload("data-v-cff1114e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -11206,14 +11366,19 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
     //@onTransferSuccess
     props:{
         address: {default: null},
+        offlineTransaction: {default:false}
     },
 
     data: () => {
         return {
+            timeLock:0,
+            incognitoMode:false,
+            syncronizedOnce: false,
             toAddress: '',
+            internetConnection:true,
             toAmount: '',
+            importedAddress:false,
             fee: '',
-            offlineTransaction:false,
             errorMessage: '',
             errorToAddressMessage: '',
             errorToAmountMessage: '',
@@ -11236,9 +11401,12 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
         }
     },
 
-    mounted(){
+    async mounted(){
 
         if (typeof window === 'undefined') return;
+
+        this.incognitoMode = await this.checkIncognito();
+        this.checkInternetConnection();
 
     },
 
@@ -11254,7 +11422,71 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
     methods:{
 
-        async handleCreateTransaction(e,offline=false){
+        async handleImportAddressOffline(){
+
+            if(this.internetConnection){
+
+                this.backToStepTwo();
+
+            }else{
+
+                // TODO merge with the function for import tx
+                if ((window.File && window.FileReader && window.FileList && window.Blob) === false){
+                    __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "error", "Import Error", "The File import is not fully supported in this browser", 5000);
+                }
+
+                let fileInput = this.$refs['reffImportedAddressOffline'];
+
+                if ('files' in fileInput) {
+                    if (fileInput.files.length === 0) {
+                        __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "error", "Import Error", "No file selected", 5000);
+                    } else {
+
+                        for (let i = 0; i < fileInput.files.length; i++) {
+
+                            let file = fileInput.files[i];
+                            let extension = file.name.split('.').pop();
+
+                            if (extension === "webd") {
+                                let reader = new FileReader();
+
+                                try {
+                                    reader.onload = async (e) => {
+
+                                        //console.log(reader.result);
+                                        let data = JSON.parse(reader.result);
+
+                                        let answer = await WebDollar.Blockchain.Wallet.importAddressFromJSON(data);
+
+                                        if (answer.result === true){
+                                            this.importedAddress = answer.address;
+                                            __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", "Import Success", answer.address + " has been imported!", 5000);
+                                        } else {
+                                            __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "error", "Import Error", answer.message, 5000);
+                                        }
+
+                                    };
+
+                                } catch (exception){
+                                    __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "error", "Import Error","Your Uploaded file is not a valid JSON format", 5000);
+                                }
+
+                                reader.readAsText(file);
+                            } else {
+                                __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "error","Import Error", "File not supported!", 5000);
+                            }
+
+                        }
+
+
+                    }
+                }
+
+            }
+
+        },
+
+        async handleCreateTransaction(e){
 
             this.toAmount = Number(this.toAmount);
             this.fee = Number(this.fee);
@@ -11277,30 +11509,37 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
             let feeToSend = parseInt(this.fee * WebDollar.Applications.CoinsHelper.WEBD);
             let answer;
 
-            if (offline){
+            if (this.offlineTransaction){
 
-                answer = await WebDollar.Blockchain.Transactions.wizard.validateTransaction( this.address, this.toAddress, amountToSend, feeToSend );
+                if(this.internetConnection){
 
-                if (answer.result){
+                    this.backToStepTwo();
 
-                    let data = {
-                        transaction: answer.transaction.serializeTransaction(),
-                        signature: answer.signature
-                    };
+                }else{
 
-                    this.handleExportTransaction(data);
+                    answer = await WebDollar.Blockchain.Transactions.wizard.validateTransaction( this.importedAddress, this.toAddress, amountToSend, feeToSend, undefined, undefined, this.timeLock-1, true );
 
-                    this.toAddress = '';
-                    this.toAmount = '';
-                    this.fee = '';
+                    if (answer.result){
 
-                    this.$emit('onTransferSuccess', answer.message);
+                        let data = {
+                            transaction: answer.transaction.serializeTransaction(),
+                            signature: answer.signature
+                        };
 
-                } else {
-                    this.errorMessage = answer.message;
-                    this.successMessage = '';
+                        this.handleExportTransaction(data);
+
+                        this.toAddress = '';
+                        this.toAmount = '';
+                        this.fee = '';
+
+                        this.$emit('onTransferSuccess', answer.message);
+
+                    } else {
+                        this.errorMessage = answer.message;
+                        this.successMessage = '';
+                    }
+
                 }
-
             }
             else{
 
@@ -11308,7 +11547,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
                 if (answer.result){
 
-                    __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert("error-firewall", "warn", "Transaction Created", "Transaction to "+ this.toAddress + " with " +  __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__["a" /* default */].formatMoneyNumber(amountToSend)+"WEBD has been created.",5000);
+                    __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", "Transaction Created", "Transaction to "+ this.toAddress + " with " +  __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__["a" /* default */].formatMoneyNumber(amountToSend)+"WEBD has been created.",5000);
 
                     this.toAddress = '';
                     this.toAmount = '';
@@ -11363,32 +11602,36 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
             this.fee = WebDollar.Blockchain.Transactions.wizard.calculateFeeSimple ( this.toAmount * WebDollar.Applications.CoinsHelper.WEBD) / WebDollar.Applications.CoinsHelper.WEBD;
 
-            try {
+            if(!this.offlineTransaction){
 
-                let balance = WebDollar.Blockchain.blockchain.accountantTree.getBalance(this.address, undefined);
+                try {
 
-                if (balance === null) throw "Balance is empty";
+                    let balance = WebDollar.Blockchain.blockchain.accountantTree.getBalance(this.address, undefined);
 
-                let total = (parseFloat(this.toAmount) + this.fee ) * WebDollar.Applications.CoinsHelper.WEBD;
+                    if (balance === null) throw "Balance is empty";
 
-                if ( balance < total ) {
-                    console.error("Insufficient funds", {balance:balance, toAmount: this.toAmount, fee:this.fee})
-                    throw "Insufficient Funds";
+                    let total = (parseFloat(this.toAmount) + this.fee ) * WebDollar.Applications.CoinsHelper.WEBD;
+
+                    if ( balance < total ) {
+                        console.error("Insufficient funds", {balance:balance, toAmount: this.toAmount, fee:this.fee})
+                        throw "Insufficient Funds";
+                    }
+
+                } catch (exception){
+
+                    if (typeof exception === "string")
+                        this.errorToAmountMessage = exception.toString();
+                    else
+                        this.errorToAmountMessage = exception.message;
+
+                    this.fee = '';
                 }
 
-            } catch (exception){
+                if (this.fee===0 || this.fee===undefined || this.errorToAmountMessage!==''){
 
-                if (typeof exception === "string")
-                    this.errorToAmountMessage = exception.toString();
-                else
-                    this.errorToAmountMessage = exception.message;
+                    this.fee = 10;
 
-                this.fee = '';
-            }
-
-            if (this.fee===0 || this.fee===undefined || this.errorToAmountMessage!==''){
-
-                this.fee = 10;
+                }
 
             }
 
@@ -11399,12 +11642,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
             this.fee = this.decimalPlaces(this.fee);
 
             this.errorToAmountMessage = '';
-
-        },
-
-        switchToOfflineTransfer(){
-
-            this.offlineTransaction = !this.offlineTransaction;
 
         },
 
@@ -11423,20 +11660,22 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
         checkInternetConnection(){
 
-            return navigator.onLine
+            this.internetConnection = navigator.onLine;
 
         },
 
         choseInternetInstruction(){
 
+            this.checkInternetConnection();
+
             if (this.steps[2].typeCreate){
 
-                if(this.checkInternetConnection)
+                if(this.internetConnection)
                     return 'disconnect from the';
 
             }else{
 
-                if(this.checkInternetConnection)
+                if(this.internetConnection)
                     return 'connect to the';
 
             }
@@ -11445,19 +11684,15 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
         },
 
-        validateInternetConnection(){
+        validateSecurity() {
 
-            if (this.steps[2].typeCreate && !this.checkInternetConnection){
+            this.checkInternetConnection();
+            this.handleChangeToAmount();
+            this.handleChangeToFee();
 
-                this.steps[2].passed = true;
-                this.steps[2].contentOpen = true;
-                this.steps[1].contentOpen = false;
+            let propagationError = false;
 
-                this.steps[1].error = false;
-                return true;
-            }
-
-            if (!this.steps[2].typeCreate && this.checkInternetConnection){
+            if (!this.steps[2].typeCreate && this.internetConnection) {
 
                 this.steps[2].passed = true;
                 this.steps[2].contentOpen = true;
@@ -11465,11 +11700,56 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
                 this.steps[1].error = false;
                 return true;
+
+            }else{
+
+               propagationError = true;
+
             }
 
-            this.steps[1].error = true;
+            if(this.incognitoMode){
 
-            return false;
+                if (WebDollar.Blockchain._synchronized || this.syncronizedOnce) {
+
+                    this.syncronizedOnce = true;
+                    this.timeLock = WebDollar.Blockchain.blockchain.blocks.length;
+
+                    if (this.steps[2].typeCreate && !this.internetConnection) {
+
+                        this.steps[2].passed = true;
+                        this.steps[2].contentOpen = true;
+                        this.steps[1].contentOpen = false;
+
+                        this.steps[1].error = false;
+                        return true;
+
+                    }else{
+
+                        this.steps[1].error = 3;
+                        return false;
+
+                    }
+
+                }else{
+
+                    this.steps[1].error = 1;
+                    return false;
+
+                }
+
+            }else{
+
+                if(propagationError){
+
+                    this.steps[1].error = 3;
+                    return false;
+
+                }
+
+                this.steps[1].error = 2;
+                return false;
+
+            }
 
         },
 
@@ -11502,6 +11782,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
             }
 
+            this.validateSecurity();
+
         },
 
         async handleImportTransaction(){
@@ -11525,7 +11807,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
                         let file = fileInput.files[i];
                         let extension = file.name.split('.').pop();
 
-                        if (extension === "txt") {
+                        if (extension === "tx") {
                             let reader = new FileReader();
 
                             try {
@@ -11545,7 +11827,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
                                         this.fee = '';
 
                                         this.backToStepOne();
-                                        this.switchToOfflineTransfer();
 
                                         this.$emit('closeModal');
 
@@ -11578,12 +11859,37 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
             let transactionData = new Blob( [JSON.stringify(data)], {type: "application/text;charset=utf-8"});
 
-            let fileName = "transaction"+".txt";
+            let fileName = "transaction"+".tx";
             __WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver___default.a.saveAs(transactionData, fileName);
 
-            __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert("error-firewall", "warn", "Offline Transaction", "The offline transaction to "+ this.toAddress + " has been created and saved on your device.",5000);
+            __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", "Offline Transaction", 'The offline transaction has been created and saved on your device. For keep your wallet totally safe, this browser tab will be closed in 5 seconds.',5000);
+
+            setTimeout(function(){ window.close(); }, 5000);
 
         },
+
+        async checkIncognito() {
+
+            let fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+
+            if (!fs) {
+                console.error("Not incognito mode");
+                return false;
+            } else {
+
+                return await new Promise((resolve)=>{
+
+                    fs(window.TEMPORARY, 100,
+                        ()=> resolve(false),
+                        ()=> resolve(true),
+                    );
+
+                });
+
+            }
+
+
+        }
 
     },
 
@@ -11591,14 +11897,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -11816,14 +12122,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -11858,7 +12164,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
 //
 
 
-let Vue = __webpack_require__(4);
+let Vue = __webpack_require__(3);
 
 
 
@@ -11931,13 +12237,129 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard___default.a);
 
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_Wallet_Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__slider_vue__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_components_Wallet_Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_UI_icons_icon_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parts_Transactions_Transactions_part_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parts_Transfer_part_vue__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var Vue = __webpack_require__(3);
+
+
+
+
+
+
+
+
+
+
+
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___default.a);
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+
+    props: {
+        address: {default: null},
+    },
+
+    components: {
+        ShowBalance: __WEBPACK_IMPORTED_MODULE_2_components_Wallet_Address_Balance_Show_Balance_vue__["a" /* default */],
+        Modal: __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__["a" /* default */],
+        Transactions: __WEBPACK_IMPORTED_MODULE_5__parts_Transactions_Transactions_part_vue__["a" /* default */],
+        Transfer: __WEBPACK_IMPORTED_MODULE_6__parts_Transfer_part_vue__["a" /* default */],
+        icon: __WEBPACK_IMPORTED_MODULE_4_components_UI_icons_icon_vue__["a" /* default */],
+        ShowPotentialBalance: __WEBPACK_IMPORTED_MODULE_3_components_Wallet_Address_Balance_Balances_Show_Sum_Balances_vue__["a" /* default */]
+    },
+
+    methods: {
+
+        showTransfer() {
+            this.partActivated = "transfer";
+        },
+
+        showBuy() {
+            this.partActivated = "buy/sell";
+        },
+        showTransactions(){
+            this.partActivated = "transactions";
+        },
+
+        closeModal() {
+            this.offlineTransaction=false;
+            this.$refs['refModal'].closeModal();
+        },
+
+        showModal() {
+            if (this.$refs['refModal'].modalOpened === false){
+                this.$refs['refModal'].showModal();
+            }
+            this.clipboardText= 'Copy Address';
+        },
+        copyToClipboard(){
+            this.clipboardText = 'Copied';
+            this.$clipboard(this.address);
+        },
+
+        handleSetAddress(){
+            WebDollar.Blockchain.Mining.minerAddress = this.address;
+            __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", "Mining Address Changed", "You're mining now on " + this.address ,5000);
+        },
+
+        handleTransferSuccess(){
+            this.closeModal();
+        },
+
+    },
+
+    mounted() {
+
+        if (typeof window === 'undefined') return;
+
+
+    },
+
+});
+
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_Wallet_Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__slider_vue__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(11);
 //
 //
 //
@@ -12174,11 +12596,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard___default.a);
 
 
 /***/ }),
-/* 34 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slider_component__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slider_component__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component__);
 //
 //
@@ -12277,12 +12699,12 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard___default.a);
 
 
 /***/ }),
-/* 35 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(8));
+		module.exports = factory(__webpack_require__(9));
 	else if(typeof define === 'function' && define.amd)
 		define(["vue"], factory);
 	else if(typeof exports === 'object')
@@ -13401,15 +13823,15 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 36 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_Circle_Map__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_Circles__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Maps_tester__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__res_Network_Native_Map_Canvas_vue__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__res_dialog_Network_Native_Map_Dialog_vue__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_Circle_Map__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_Circles__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Maps_tester__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__res_Network_Native_Map_Canvas_vue__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__res_dialog_Network_Native_Map_Dialog_vue__ = __webpack_require__(132);
 //
 //
 //
@@ -13428,7 +13850,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 
     
     
-    const uuid = __webpack_require__(135);
+    const uuid = __webpack_require__(140);
 
     /* harmony default export */ __webpack_exports__["a"] = ({
 
@@ -13887,7 +14309,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 
 
 /***/ }),
-/* 37 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15981,11 +16403,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 
 
 /***/ }),
-/* 38 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(135);
 //
 //
 //
@@ -16048,11 +16470,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__ = __webpack_require__(6);
 //
 //
 //
@@ -16107,7 +16529,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, exports) {
 
 // Unique ID creation requires a high quality random # generator.  In the
@@ -16145,7 +16567,7 @@ if (getRandomValues) {
 
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /**
@@ -16174,12 +16596,12 @@ module.exports = bytesToUuid;
 
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_notification__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_notification__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_notification___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_notification__);
 //
 //
@@ -16369,13 +16791,13 @@ module.exports = bytesToUuid;
 
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_initialize_params_Initialize_Params__ = __webpack_require__(44);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_initialize_params_Initialize_Params__ = __webpack_require__(47);
 
 
 
@@ -16400,15 +16822,15 @@ if ( typeof window !== 'undefined')
     window.WebDollarUserInterface = exportObject;
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(7)))
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_initialize_Global_Initialization__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_initialize_Global_Initialization__ = __webpack_require__(48);
 
 
 
@@ -16463,7 +16885,7 @@ class InitializeParams{
             this.mining.startAutomatically = false;
         }
 
-        let mainVue = __webpack_require__(46).default;
+        let mainVue = __webpack_require__(49).default;
         mainVue(this.mining, this.wallet);
 
         this.createElements();
@@ -16472,11 +16894,11 @@ class InitializeParams{
 
     createElements(){
 
-        let networkNativeMapMainVue =__webpack_require__(117).default;
+        let networkNativeMapMainVue =__webpack_require__(122).default;
         if (this.maps.activated)
             networkNativeMapMainVue(this.maps);
 
-        let alertsStickyBarMainVue = __webpack_require__(139).default;
+        let alertsStickyBarMainVue = __webpack_require__(144).default;
         if (this.alertsStickyBar.activated)
             alertsStickyBarMainVue(this.alertsStickyBar);
 
@@ -16490,11 +16912,11 @@ class InitializeParams{
 /* harmony default export */ __webpack_exports__["a"] = (new InitializeParams());
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(5);
 
 
 class GlobalInitialization {
@@ -16530,15 +16952,15 @@ class GlobalInitialization {
 /* harmony default export */ __webpack_exports__["a"] = (new GlobalInitialization());
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_Dashboard_vue__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_notification__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_Dashboard_vue__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_notification__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_notification___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_notification__);
-var Vue = __webpack_require__(4);
+var Vue = __webpack_require__(3);
 
 
 
@@ -16569,7 +16991,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_notification___default.a);
 });
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -16759,10 +17181,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_notification___default.a);
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(48)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(51)))
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -16952,17 +17374,17 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Dashboard_vue__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aae30ed8_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dashboard_vue__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aae30ed8_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dashboard_vue__ = __webpack_require__(121);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(50)
+  __webpack_require__(53)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -17008,13 +17430,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(51);
+var content = __webpack_require__(54);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17034,7 +17456,7 @@ if(false) {
 }
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17048,7 +17470,7 @@ exports.push([module.i, "\n#webDollar * {\n    box-sizing: content-box;\n}\n#web
 
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports) {
 
 /**
@@ -17081,17 +17503,17 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 53 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Wallet_vue__ = __webpack_require__(16);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8087f122_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Wallet_vue__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8087f122_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Wallet_vue__ = __webpack_require__(111);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(54)
+  __webpack_require__(57)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -17137,13 +17559,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 54 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(55);
+var content = __webpack_require__(58);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17163,7 +17585,7 @@ if(false) {
 }
 
 /***/ }),
-/* 55 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17171,19 +17593,19 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n@keyframes jump {\n0%   {transform: translate3d(0,0,0) scale3d(1,1,1);\n}\n40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);\n}\n100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);\n}\n}\n.jump.sendingImg, .jump.receivingImg {\n    fill: #000!important;\n    -ms-transform-origin: 50% 50%;\n        transform-origin: 50% 50%;\n    animation: jump .5s linear alternate infinite;\n}\n#myWalletImport{\n    display: none;\n}\n.vue-slider-component.vue-slider-horizontal .vue-slider-dot{\n    left:-5px;\n}\n#walletButtonText{\n    color: #1f1f1f!important;\n}\n#walletButtonText svg{\n    vertical-align: top;\n    width: 14px;\n    margin-left: 10px;\n    margin-top: 5px;\n}\n.mainAddress{\n    background-color: #fec02c14;\n}\n#walletButton {\n    margin: 0 auto;\n    position: fixed;\n    z-index: 85;\n    bottom: 0;\n    width: 299px!important;\n    right: 0;\n    text-align: center;\n    height: 50px;\n    border-top-left-radius: 60px;\n    cursor: pointer;\n    background-color: #fec02c;\n    color: #1f1f1f;\n    margin-bottom: 20px;\n    transition: all .3s linear;\n}\n#walletButton:hover{\n    background-color: #fec02c;\n    transition: all .3s linear;\n}\n.walletSection{\n    display: inline-block;\n    vertical-align: top;\n    height: 315px;\n    overflow-y: auto;\n    overflow-x: hidden;\n    width: 100%;\n}\n.walletController{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr;\n        grid-template-columns: 1fr 1fr;\n    position: relative;\n    width: 100%;\n    border-bottom: solid 1px #333333;\n    background-color: #3e3e3e;\n}\n.walletController .btn{\n    text-align: center;\n    color: #b5b5b5;\n    cursor: pointer;\n    padding: 8px 19px 6px 19px!important;\n}\n.walletController .btn:hover{\n    background-color: #44403f;\n    transition: all .3s linear;\n}\n.walletController .btn:first-child{\n    border-right: solid 1px #3c3b3b;\n}\n.allWallets div{\n    border: solid 1px #545454;\n}\n#walletButton:hover{\n    transition: all .3s linear;\n}\n#walletButton span{\n    width: 100%;\n    line-height: 50px;\n    font-size: 20px;\n    font-weight: bolder;\n    transition: all .3s linear;\n}\n#walletButton span:hover{\n    transition: all .3s linear;\n}\n.statusWalletIcon{\n    margin-top: 10px!important;\n}\n#walletMenu{\n    margin: 0 auto;\n    position: fixed;\n    bottom: 0;\n    right: 0;\n    width: 300px;\n    background-color: #1f1f1f;\n    height: 358px;\n    margin-bottom:-100px;\n    z-index: 90;\n    border-top: solid 1px #3d3d3d;\n    border-left: solid 1px #393939;\n    transition: all .3s linear;\n}\n.buttonIcon{\n    display: inline-block;\n    margin-right: 10px;\n}\n.editError{\n    color: #ff0000 !important;\n    padding: 1px 0 10px 11px;\n    display: block;\n    font-size: 14px;\n    text-align: left;\n}\n.editError2{\n    padding: 10px 0 10px 11px;\n}\ndashboardWallet span{\n    width: 100%!important;\n    display: block;\n    margin: 0;\n    letter-spacing: 0!important;\n    color: #808080;\n}\n#walletButton .buttonIcon{\n    fill: #000;\n    transition: all .3s linear;\n}\n.walletAddress b{\n    font-weight:100;\n}\n.miningStatus{\n    width: 20px;\n    height: 20px;\n    position: fixed;\n    display: block;\n    right: 4px;\n    bottom: 57px;\n    z-index: 1000;\n    fill:#262626;\n    transition: all 1.2s linear;\n}\n.buttonTextStyle{\n    font-size: 14px!important;\n}\n.sendingImg{\n    fill:#298bea!important;\n}\n.receivingImg{\n    fill:#219411!important;\n}\nlabel.myLabel input[type=\"file\"] {\n    position: fixed;\n    top: -1000px;\n}\n\n/* Small Devices, Tablets */\n@media only screen and (max-width : 831px) {\n.miningStatus{\n        display: none;\n        bottom: 67px;\n}\n#walletMenu{\n        width: 100%;\n        margin-top: 50px!important;\n}\n#walletButton{\n        width: 100%!important;\n        border:0;\n        height: 50px;\n        border-top-left-radius: 15px;\n        border-top-right-radius: 15px;\n        margin-bottom: 90px;\n}\n#walletButton span{\n        line-height: 50px;\n        font-size: 22px;\n}\n.walletController .btn{\n        padding: 10px 19px 6px 19px!important;\n        margin-left: 10px;\n}\n.webdollarFont{\n        width: 20px!important;\n}\n#allWallets .walletAddress{\n        margin: 15px 0 0 10px!important;\n}\n#allWallets .walletAddress img{\n        margin-top: 5px;\n}\n#allWallets .walletAddress .imageAndInput img{\n        margin-top: 0!important;\n}\n.walletAddress b{\n        font-size: 22px!important;\n        line-height: 60px!important;\n}\n.walletController{\n        position: relative;\n        width: 100%;\n        border-bottom: solid 5px #333333;\n        background-color: #313131;\n        border-top: solid 5px #313131;\n}\n#walletButtonText svg{\n        width: 22px;\n}\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/src/components/Wallet/Wallet.vue"],"names":[],"mappings":";AAsXA;AACA,MAAA,6CAAA;CAAA;AACA,MAAA,kDAAA;CAAA;AACA,MAAA,mDAAA;CAAA;CACA;AACA;IACA,qBAAA;IACA,8BAAA;QAAA,0BAAA;IACA,8CAAA;CACA;AAEA;IACA,cAAA;CACA;AAEA;IACA,UAAA;CACA;AAEA;IACA,yBAAA;CACA;AAEA;IACA,oBAAA;IACA,YAAA;IACA,kBAAA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;CACA;AAEA;IACA,eAAA;IACA,gBAAA;IACA,YAAA;IACA,UAAA;IACA,uBAAA;IACA,SAAA;IACA,mBAAA;IACA,aAAA;IACA,6BAAA;IACA,gBAAA;IACA,0BAAA;IACA,eAAA;IACA,oBAAA;IACA,2BAAA;CACA;AAEA;IACA,0BAAA;IACA,2BAAA;CACA;AAEA;IACA,sBAAA;IACA,oBAAA;IACA,cAAA;IACA,iBAAA;IACA,mBAAA;IACA,YAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,0BAAA;QAAA,+BAAA;IACA,mBAAA;IACA,YAAA;IACA,iCAAA;IACA,0BAAA;CACA;AAEA;IACA,mBAAA;IACA,eAAA;IACA,gBAAA;IACA,qCAAA;CACA;AAEA;IACA,0BAAA;IACA,2BAAA;CACA;AAEA;IACA,gCAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,2BAAA;CACA;AAEA;IACA,YAAA;IACA,kBAAA;IACA,gBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AAEA;IACA,2BAAA;CACA;AAEA;IACA,2BAAA;CACA;AAEA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,SAAA;IACA,aAAA;IACA,0BAAA;IACA,cAAA;IACA,qBAAA;IACA,YAAA;IACA,8BAAA;IACA,+BAAA;IACA,2BAAA;CACA;AAEA;IACA,sBAAA;IACA,mBAAA;CACA;AAEA;IACA,0BAAA;IACA,yBAAA;IACA,eAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,4BAAA;IACA,eAAA;CACA;AAEA;IACA,WAAA;IACA,2BAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,gBAAA;IACA,eAAA;IACA,WAAA;IACA,aAAA;IACA,cAAA;IACA,aAAA;IACA,4BAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;CACA;;AAEA,4BAAA;AACA;AAEA;QACA,cAAA;QACA,aAAA;CACA;AAEA;QACA,YAAA;QACA,2BAAA;CACA;AACA;QACA,sBAAA;QACA,SAAA;QACA,aAAA;QACA,6BAAA;QACA,8BAAA;QACA,oBAAA;CACA;AACA;QACA,kBAAA;QACA,gBAAA;CACA;AACA;QACA,sCAAA;QACA,kBAAA;CACA;AACA;QACA,sBAAA;CACA;AACA;QACA,gCAAA;CACA;AACA;QACA,gBAAA;CACA;AACA;QACA,wBAAA;CACA;AACA;QACA,0BAAA;QACA,4BAAA;CACA;AACA;QACA,mBAAA;QACA,YAAA;QACA,iCAAA;QACA,0BAAA;QACA,8BAAA;CACA;AAEA;QACA,YAAA;CACA;CAEA","file":"Wallet.vue","sourcesContent":["<template>\n\n    <div class=\"dashboardWallet\" ref=\"dashboardWallet\">\n\n        <icon v-show=\"!this.opened && isSendingMoney\" class=\"miningStatus sendingImg jump\" icon='chevron-double-up' :style=\"\"></icon>\n\n        <icon v-show=\"!this.opened && isReceivingMoney\" :style=\"{\n            right: isSendingMoney ? '20px' : '4px',\n            marginBottom: isSendingMoney ? '-2px' : '0'}\" class=\"miningStatus receivingImg jump\"icon='chevron-double-down'>\n        </icon>\n\n        <div id=\"walletButton\" ref=\"walletMenuButton\" @click=\"this.toggleWallet\" :style=\"{\n            marginBottom: this.opened ? this.walletButtonMarginOpened+'px': this.walletButtonMarginClosed+'px',\n            top: this.opened ? this.buttonTopDistanceOpen : this.buttonTopDistanceClose,\n            borderTopLeftRadius: this.opened ? this.walletButtonRadiusLeftOpen+'px' : this.walletButtonRadiusLeftClose+'px',\n            borderTopRightRadius: this.opened ? this.walletButtonRadiusRightOpen+'px' : this.walletButtonRadiusRightClose+'px'}\">\n\n            <span id=\"walletButtonText\">\n                <div style=\"display: inline-block\">\n                    <icon class=\"buttonIcon statusWalletIcon\" :icon=\"this.opened ? 'chevron-down' : 'chevron-up'\" style=\"fill: black\"></icon>\n                    Wallet\n                </div>\n                <show-sum-balances ref=\"refShowSumBalances\" :style=\"{display: this.isMobile==false ? 'none' : 'inline-block'}\" :addresses=\"this.addresses\" :currency=\"this.currency\"> </show-sum-balances>\n            </span>\n        </div>\n\n        <div id=\"walletMenu\" ref=\"walletMenu\" :style=\"{\n            marginBottom: this.opened ? this.walletMarginOpened+'px': this.walletMarginClosed+'px',\n            top: this.opened ? this.buttonTopDistanceOpen : this.buttonTopDistanceClose,\n            marginTop: this.opened ? this.walletMenuMarginTopOpen : this.walletMenuMarginTopClose,\n            height: this.opened ? this.walletMenuHeightOpen : this.walletMenuHeightClosed}\">\n\n            <div id=\"dashboardWallet\">\n\n                <div class=\"walletController\">\n\n                    <div class=\"btn buttonTextStyle\" @click=\"this.handleAddNewAddress\">\n                        Add Address\n                    </div>\n\n                    <label class=\"myLabel\">\n\n                        <input ref=\"importedAddress\" type=\"file\" v-on:change=\"this.handleImportAddress\" multiple size=\"50\" />\n\n                        <div class=\"btn buttonTextStyle\">\n                            Import Address\n                        </div>\n\n                    </label>\n\n                </div>\n\n                <div class=\"walletSection walletsContainer\" :style=\"{height: this.walletContentHeight}\">\n\n                    <div id=\"allWallets\">\n\n                        <Address v-for=\"(walletAddress, index) in this.addresses\"\n                             :isMiningAddress=\"miningAddress === walletAddress.address\"\n                             :key=\"walletAddress.address\"\n                             :id=\"'address'+walletAddress.address\"\n                             :ref=\"'address'+index\"\n                             :address=\"walletAddress.address\"\n                             style=\"padding-right: 20px\"\n                             @onPendingTransactionsChanges=\"handlePendingTransactionsChanges\"\n                        >\n\n                        </Address>\n\n                    </div>\n\n                </div>\n            </div>\n        </div>\n\n    </div>\n\n</template>\n\n\n\n<script>\n    var Vue = require('vue/dist/vue.min.js');\n\n    import icon from \"components/UI/icons/icon.vue\"\n    import Address from \"./Address/Address.vue\"\n    import BrowserHelpers from \"helpers/Browser.helpers\"\n    import ShowSumBalances from \"./Address/Balance/Balances/Show-Sum-Balances.vue\"\n    import Notification from \"helpers/Notification.helpers\"\n\n    export default{\n\n        components:{\n            icon,\n            \"Address\": Address,\n            ShowSumBalances,\n        },\n\n        props: ['addresses', 'currency'],\n\n        data:  () => {\n            return {\n                opened: false,\n                balanceHover: false,\n                miningAddress: '',\n\n                isMobile:false,\n\n                sendingMoney:{},\n                receivingMoney:{},\n\n                walletButtonMarginOpened: 0,\n                walletButtonMarginClosed: 0,\n                buttonTopDistanceOpen: 0,\n                buttonTopDistanceClose: 0,\n                walletMarginOpened: 0,\n                walletMarginClosed: 0,\n                walletMenuMarginTopOpen: 0,\n                walletMenuMarginTopClose: 0,\n                walletMenuHeightOpen: 0,\n                walletMenuHeightClosed: 0,\n                walletContentHeight: 315,\n                walletButtonRadiusLeftOpen: 0,\n                walletButtonRadiusLeftClose: 0,\n                walletButtonRadiusRightOpen: 0,\n                walletButtonRadiusRightClose: 0,\n            }\n        },\n\n        mounted(){\n\n            //in browser\n            if (typeof window === \"undefined\") return false;\n\n            this.changeScreenBehavior();\n\n            WebDollar.StatusEvents.on(\"blockchain/mining/address\", (data)=>{\n                this.miningAddress = data.address;\n            });\n            this.miningAddress = WebDollar.Blockchain.Mining.minerAddress;\n\n            //onLoad\n            BrowserHelpers.addEvent(window, \"load\", (event) => {\n                this.changeScreenBehavior();\n                this.walletResizeFix();\n            });\n\n          //onResize\n            BrowserHelpers.addEvent(window, \"resize\", (event) => {\n                this.changeScreenBehavior();\n                this.walletResizeFix();\n            });\n\n        },\n\n        computed:{\n\n            isSendingMoney(){\n                return Object.keys(this.sendingMoney).length !== 0;\n            },\n\n            isReceivingMoney(){\n                return Object.keys(this.receivingMoney).length !== 0;\n            }\n\n        },\n\n        methods: {\n\n            changeScreenBehavior(){\n\n                if (this.$refs['walletMenuButton'] === undefined) {\n                    console.log(\"not ready..\");\n                    return;\n                }\n\n                if (window.screenWidth < 831){\n\n                    this.isMobile = true;\n\n                    this.walletButtonMarginOpened = 452;\n                    this.walletButtonMarginClosed = 43;\n\n                    this.walletMarginOpened = 42;\n                    this.walletMarginClosed = -325;\n\n                    this.buttonTopDistanceOpen = '0';\n                    this.buttonTopDistanceClose = 'auto';\n\n                    this.walletMenuMarginTopOpen=this.$refs['walletMenuButton'].clientHeight;\n                    this.walletMenuMarginTopClose='0';\n\n                    this.walletMenuHeightOpen='100%';\n                    this.walletMenuHeightClosed='358px';\n\n                    this.walletContentHeight= window.outerHeight-110;\n\n                    this.walletButtonRadiusLeftOpen= 0;\n                    this.walletButtonRadiusLeftClose= 0;\n\n                    this.walletButtonRadiusRightOpen= 0;\n                    this.walletButtonRadiusRightClose= 0;\n\n                }else{\n\n                    this.isMobile=false;\n\n                    this.walletContentHeight= 315;\n\n                    this.walletButtonMarginOpened = 392;\n                    this.walletButtonMarginClosed = 30;\n\n                    this.walletMarginOpened = 34;\n                    this.walletMarginClosed = -325;\n\n                    this.buttonTopDistanceOpen = 'auto';\n                    this.buttonTopDistanceClose = 'auto';\n\n                    this.walletMenuMarginTopOpen=this.$refs['walletMenuButton'].clientHeight;\n                    this.walletMenuMarginTopClose='0';\n\n                    this.walletMenuHeightOpen='358px';\n                    this.walletMenuHeightClosed='0';\n\n                    this.walletButtonRadiusLeftOpen= 60;\n                    this.walletButtonRadiusLeftClose= 60;\n\n                    this.walletButtonRadiusRightOpen= 0;\n                    this.walletButtonRadiusRightClose= 0;\n\n                }\n\n            },\n\n            toggleWallet(){\n\n                this.opened = !this.opened;\n\n                if(window.screenWidth < 831){\n                    if (this.opened===true)\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:none');\n                    else\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n                }else\n                    document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n\n            },\n\n            walletResizeFix(){\n\n                if(window.screenWidth < 831)\n                    if (this.opened===true)\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:none');\n                    else\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n                else\n                    document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n\n            },\n\n            async handleAddNewAddress(){\n\n                if (WebDollar.Blockchain.Wallet.addresses.length <= 2) {\n\n                    await WebDollar.Blockchain.Wallet.createNewAddress();\n                    Notification.addAlert(undefined, \"success\", \"Wallet Created\", WebDollar.Blockchain.Wallet.addresses[WebDollar.Blockchain.Wallet.addresses.length-1].address + \" has been added to your wallet!\", 5000);\n\n                } else {\n\n                    Notification.addAlert(undefined, \"warn\", \"Wallet Warning\", \"You can't add new address if you already have 3 addresses\", 5000);\n\n                }\n\n            },\n\n            async handleImportAddress(){\n\n                // dropzone tutorial https://www.html5rocks.com/en/tutorials/file/dndfiles/\n\n                // Check for the various File API support.\n                if ((window.File && window.FileReader && window.FileList && window.Blob) === false){\n                    Notification.addAlert(undefined, \"error\", \"Import Error\", \"The File import is not fully supported in this browser\", 5000);\n                }\n\n                let fileInput = this.$refs['importedAddress'];\n\n                if ('files' in fileInput) {\n                    if (fileInput.files.length === 0) {\n                        Notification.addAlert(undefined, \"error\", \"Import Error\", \"No file selected\", 5000);\n                    } else {\n\n                        for (let i = 0; i < fileInput.files.length; i++) {\n\n                            let file = fileInput.files[i];\n                            let extension = file.name.split('.').pop();\n\n//                            console.log(file);\n//                            console.log(extension);\n\n                            if (extension === \"webd\") {\n                                let reader = new FileReader();\n\n                                try {\n                                    reader.onload = async (e) => {\n\n                                        //console.log(reader.result);\n                                        let data = JSON.parse(reader.result);\n\n                                        let answer = await WebDollar.Blockchain.Wallet.importAddressFromJSON(data);\n\n                                        if (answer.result === true){\n                                            Notification.addAlert(undefined, \"success\", \"Import Success\", answer.address + \" has been imported!\", 5000);\n                                        } else {\n                                            Notification.addAlert(undefined, \"error\", \"Import Error\", answer.message, 5000);\n                                        }\n\n                                    };\n\n                                } catch (exception){\n                                    Notification.addAlert(undefined, \"error\", \"Import Error\",\"Your Uploaded file is not a valid JSON format\", 5000);\n                                }\n\n                                reader.readAsText(file);\n                            } else {\n                                Notification.addAlert(undefined, \"error\",\"Import Error\", \"File not supported!\", 5000);\n                            }\n\n                        }\n\n\n                    }\n                }\n\n\n\n            },\n\n\n            handlePendingTransactionsChanges(){\n\n                this.receivingMoney = {};\n                this.sendingMoney = {};\n\n                let i=-1;\n                while (1===1){\n\n                    i++;\n                    let element = this.$refs['address'+i];\n                    if (element === undefined) break;\n\n                    element = element[0];\n\n                    for (let key in element.receivingMoney)\n                        Vue.set(this.receivingMoney, key, element.receivingMoney[key]);\n\n                    for (let key in element.sendingMoney)\n                        Vue.set(this.sendingMoney, key, element.sendingMoney[key]);\n\n                }\n\n            },\n\n\n        }\n\n    }\n\n</script>\n\n<style>\n\n    @keyframes jump {\n        0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}\n        40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}\n        100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}\n    }\n    .jump.sendingImg, .jump.receivingImg {\n        fill: #000!important;\n        transform-origin: 50% 50%;\n        animation: jump .5s linear alternate infinite;\n    }\n\n    #myWalletImport{\n        display: none;\n    }\n\n    .vue-slider-component.vue-slider-horizontal .vue-slider-dot{\n        left:-5px;\n    }\n\n    #walletButtonText{\n        color: #1f1f1f!important;\n    }\n\n    #walletButtonText svg{\n        vertical-align: top;\n        width: 14px;\n        margin-left: 10px;\n        margin-top: 5px;\n    }\n\n    .mainAddress{\n        background-color: #fec02c14;\n    }\n\n    #walletButton {\n        margin: 0 auto;\n        position: fixed;\n        z-index: 85;\n        bottom: 0;\n        width: 299px!important;\n        right: 0;\n        text-align: center;\n        height: 50px;\n        border-top-left-radius: 60px;\n        cursor: pointer;\n        background-color: #fec02c;\n        color: #1f1f1f;\n        margin-bottom: 20px;\n        transition: all .3s linear;\n    }\n\n    #walletButton:hover{\n        background-color: #fec02c;\n        transition: all .3s linear;\n    }\n\n    .walletSection{\n        display: inline-block;\n        vertical-align: top;\n        height: 315px;\n        overflow-y: auto;\n        overflow-x: hidden;\n        width: 100%;\n    }\n\n    .walletController{\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        position: relative;\n        width: 100%;\n        border-bottom: solid 1px #333333;\n        background-color: #3e3e3e;\n    }\n\n    .walletController .btn{\n        text-align: center;\n        color: #b5b5b5;\n        cursor: pointer;\n        padding: 8px 19px 6px 19px!important;\n    }\n\n    .walletController .btn:hover{\n        background-color: #44403f;\n        transition: all .3s linear;\n    }\n\n    .walletController .btn:first-child{\n        border-right: solid 1px #3c3b3b;\n    }\n\n    .allWallets div{\n        border: solid 1px #545454;\n    }\n\n    #walletButton:hover{\n        transition: all .3s linear;\n    }\n\n    #walletButton span{\n        width: 100%;\n        line-height: 50px;\n        font-size: 20px;\n        font-weight: bolder;\n        transition: all .3s linear;\n    }\n\n    #walletButton span:hover{\n        transition: all .3s linear;\n    }\n\n    .statusWalletIcon{\n        margin-top: 10px!important;\n    }\n\n    #walletMenu{\n        margin: 0 auto;\n        position: fixed;\n        bottom: 0;\n        right: 0;\n        width: 300px;\n        background-color: #1f1f1f;\n        height: 358px;\n        margin-bottom:-100px;\n        z-index: 90;\n        border-top: solid 1px #3d3d3d;\n        border-left: solid 1px #393939;\n        transition: all .3s linear;\n    }\n\n    .buttonIcon{\n        display: inline-block;\n        margin-right: 10px;\n    }\n\n    .editError{\n        color: #ff0000 !important;\n        padding: 1px 0 10px 11px;\n        display: block;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .editError2{\n        padding: 10px 0 10px 11px;\n    }\n\n    dashboardWallet span{\n        width: 100%!important;\n        display: block;\n        margin: 0;\n        letter-spacing: 0!important;\n        color: #808080;\n    }\n\n    #walletButton .buttonIcon{\n        fill: #000;\n        transition: all .3s linear;\n    }\n\n    .walletAddress b{\n        font-weight:100;\n    }\n\n    .miningStatus{\n        width: 20px;\n        height: 20px;\n        position: fixed;\n        display: block;\n        right: 4px;\n        bottom: 57px;\n        z-index: 1000;\n        fill:#262626;\n        transition: all 1.2s linear;\n    }\n\n    .buttonTextStyle{\n        font-size: 14px!important;\n    }\n\n    .sendingImg{\n        fill:#298bea!important;\n    }\n\n    .receivingImg{\n        fill:#219411!important;\n    }\n\n    label.myLabel input[type=\"file\"] {\n        position: fixed;\n        top: -1000px;\n    }\n\n    /* Small Devices, Tablets */\n    @media only screen and (max-width : 831px) {\n\n        .miningStatus{\n            display: none;\n            bottom: 67px;\n        }\n\n        #walletMenu{\n            width: 100%;\n            margin-top: 50px!important;\n        }\n        #walletButton{\n            width: 100%!important;\n            border:0;\n            height: 50px;\n            border-top-left-radius: 15px;\n            border-top-right-radius: 15px;\n            margin-bottom: 90px;\n        }\n        #walletButton span{\n            line-height: 50px;\n            font-size: 22px;\n        }\n        .walletController .btn{\n            padding: 10px 19px 6px 19px!important;\n            margin-left: 10px;\n        }\n        .webdollarFont{\n            width: 20px!important;\n        }\n        #allWallets .walletAddress{\n            margin: 15px 0 0 10px!important;\n        }\n        #allWallets .walletAddress img{\n            margin-top: 5px;\n        }\n        #allWallets .walletAddress .imageAndInput img{\n            margin-top: 0!important;\n        }\n        .walletAddress b{\n            font-size: 22px!important;\n            line-height: 60px!important;\n        }\n        .walletController{\n            position: relative;\n            width: 100%;\n            border-bottom: solid 5px #333333;\n            background-color: #313131;\n            border-top: solid 5px #313131;\n        }\n\n        #walletButtonText svg{\n            width: 22px;\n        }\n\n    }\n\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n@keyframes jump {\n0%   {transform: translate3d(0,0,0) scale3d(1,1,1);\n}\n40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);\n}\n100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);\n}\n}\n.jump.sendingImg, .jump.receivingImg {\n    fill: #000!important;\n    -ms-transform-origin: 50% 50%;\n        transform-origin: 50% 50%;\n    animation: jump .5s linear alternate infinite;\n}\n#myWalletImport{\n    display: none;\n}\n.vue-slider-component.vue-slider-horizontal .vue-slider-dot{\n    left:-5px;\n}\n#walletButtonText{\n    color: #1f1f1f!important;\n}\n#walletButtonText svg{\n    vertical-align: top;\n    width: 14px;\n    margin-left: 10px;\n    margin-top: 5px;\n}\n.mainAddress{\n    background-color: #fec02c14;\n}\n#walletButton {\n    margin: 0 auto;\n    position: fixed;\n    z-index: 85;\n    bottom: 0;\n    width: 299px!important;\n    right: 0;\n    text-align: center;\n    height: 50px;\n    border-top-left-radius: 60px;\n    cursor: pointer;\n    background-color: #fec02c;\n    color: #1f1f1f;\n    margin-bottom: 20px;\n    transition: all .3s linear;\n}\n#walletButton:hover{\n    background-color: #fec02c;\n    transition: all .3s linear;\n}\n.walletSection{\n    display: inline-block;\n    vertical-align: top;\n    height: 315px;\n    overflow-y: auto;\n    overflow-x: hidden;\n    width: 100%;\n}\n.walletController{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 1fr;\n        grid-template-columns: 1fr 1fr 1fr;\n    position: relative;\n    width: 100%;\n    border-bottom: solid 1px #333333;\n    background-color: #3e3e3e;\n}\n.walletController .btn{\n    text-align: center;\n    color: #b5b5b5;\n    cursor: pointer;\n    padding: 8px 19px 6px 19px!important;\n}\n.walletController .btn:hover{\n    background-color: #575757;\n    transition: all .3s linear;\n}\n.walletController .btn:first-child{\n    border-right: solid 1px #3c3b3b;\n}\n.allWallets div{\n    border: solid 1px #545454;\n}\n#walletButton:hover{\n    transition: all .3s linear;\n}\n#walletButton span{\n    width: 100%;\n    line-height: 50px;\n    font-size: 20px;\n    font-weight: bolder;\n    transition: all .3s linear;\n}\n#walletButton span:hover{\n    transition: all .3s linear;\n}\n.statusWalletIcon{\n    margin-top: 10px!important;\n}\n#walletMenu{\n    margin: 0 auto;\n    position: fixed;\n    bottom: 0;\n    right: 0;\n    width: 300px;\n    background-color: #1f1f1f;\n    height: 358px;\n    margin-bottom:-100px;\n    z-index: 90;\n    border-top: solid 1px #3d3d3d;\n    border-left: solid 1px #393939;\n    transition: all .3s linear;\n}\n.buttonIcon{\n    display: inline-block;\n    margin-right: 10px;\n}\n.editError{\n    color: #ff0000 !important;\n    padding: 1px 0 10px 11px;\n    display: block;\n    font-size: 14px;\n    text-align: left;\n}\n.editError2{\n    padding: 10px 0 10px 11px;\n}\ndashboardWallet span{\n    width: 100%!important;\n    display: block;\n    margin: 0;\n    letter-spacing: 0!important;\n    color: #808080;\n}\n#walletButton .buttonIcon{\n    fill: #000;\n    transition: all .3s linear;\n}\n.walletAddress b{\n    font-weight:100;\n}\n.miningStatus{\n    width: 20px;\n    height: 20px;\n    position: fixed;\n    display: block;\n    right: 4px;\n    bottom: 57px;\n    z-index: 1000;\n    fill:#262626;\n    transition: all 1.2s linear;\n}\n.buttonTextStyle{\n    font-size: 14px!important;\n}\n.sendingImg{\n    fill:#298bea!important;\n}\n.receivingImg{\n    fill:#219411!important;\n}\nlabel.myLabel input[type=\"file\"] {\n    position: fixed;\n    top: -1000px;\n}\n\n/* Small Devices, Tablets */\n@media only screen and (max-width : 831px) {\n.miningStatus{\n        display: none;\n        bottom: 67px;\n}\n#walletMenu{\n        width: 100%;\n        margin-top: 50px!important;\n}\n#walletButton{\n        width: 100%!important;\n        border:0;\n        height: 50px;\n        border-top-left-radius: 15px;\n        border-top-right-radius: 15px;\n        margin-bottom: 90px;\n}\n#walletButton span{\n        line-height: 50px;\n        font-size: 22px;\n}\n.walletController .btn{\n        padding: 10px 19px 6px 19px!important;\n        margin-left: 10px;\n}\n.webdollarFont{\n        width: 20px!important;\n}\n#allWallets .walletAddress{\n        margin: 15px 0 0 10px!important;\n}\n#allWallets .walletAddress img{\n        margin-top: 5px;\n}\n#allWallets .walletAddress .imageAndInput img{\n        margin-top: 0!important;\n}\n.walletAddress b{\n        font-size: 22px!important;\n        line-height: 60px!important;\n}\n.walletController{\n        position: relative;\n        width: 100%;\n        border-bottom: solid 5px #333333;\n        background-color: #313131;\n        border-top: solid 5px #313131;\n}\n#walletButtonText svg{\n        width: 22px;\n}\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/src/components/Wallet/Wallet.vue"],"names":[],"mappings":";AAoYA;AACA,MAAA,6CAAA;CAAA;AACA,MAAA,kDAAA;CAAA;AACA,MAAA,mDAAA;CAAA;CACA;AACA;IACA,qBAAA;IACA,8BAAA;QAAA,0BAAA;IACA,8CAAA;CACA;AAEA;IACA,cAAA;CACA;AAEA;IACA,UAAA;CACA;AAEA;IACA,yBAAA;CACA;AAEA;IACA,oBAAA;IACA,YAAA;IACA,kBAAA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;CACA;AAEA;IACA,eAAA;IACA,gBAAA;IACA,YAAA;IACA,UAAA;IACA,uBAAA;IACA,SAAA;IACA,mBAAA;IACA,aAAA;IACA,6BAAA;IACA,gBAAA;IACA,0BAAA;IACA,eAAA;IACA,oBAAA;IACA,2BAAA;CACA;AAEA;IACA,0BAAA;IACA,2BAAA;CACA;AAEA;IACA,sBAAA;IACA,oBAAA;IACA,cAAA;IACA,iBAAA;IACA,mBAAA;IACA,YAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,8BAAA;QAAA,mCAAA;IACA,mBAAA;IACA,YAAA;IACA,iCAAA;IACA,0BAAA;CACA;AAEA;IACA,mBAAA;IACA,eAAA;IACA,gBAAA;IACA,qCAAA;CACA;AAEA;IACA,0BAAA;IACA,2BAAA;CACA;AAEA;IACA,gCAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,2BAAA;CACA;AAEA;IACA,YAAA;IACA,kBAAA;IACA,gBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AAEA;IACA,2BAAA;CACA;AAEA;IACA,2BAAA;CACA;AAEA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,SAAA;IACA,aAAA;IACA,0BAAA;IACA,cAAA;IACA,qBAAA;IACA,YAAA;IACA,8BAAA;IACA,+BAAA;IACA,2BAAA;CACA;AAEA;IACA,sBAAA;IACA,mBAAA;CACA;AAEA;IACA,0BAAA;IACA,yBAAA;IACA,eAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,4BAAA;IACA,eAAA;CACA;AAEA;IACA,WAAA;IACA,2BAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,gBAAA;IACA,eAAA;IACA,WAAA;IACA,aAAA;IACA,cAAA;IACA,aAAA;IACA,4BAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;CACA;;AAEA,4BAAA;AACA;AAEA;QACA,cAAA;QACA,aAAA;CACA;AAEA;QACA,YAAA;QACA,2BAAA;CACA;AACA;QACA,sBAAA;QACA,SAAA;QACA,aAAA;QACA,6BAAA;QACA,8BAAA;QACA,oBAAA;CACA;AACA;QACA,kBAAA;QACA,gBAAA;CACA;AACA;QACA,sCAAA;QACA,kBAAA;CACA;AACA;QACA,sBAAA;CACA;AACA;QACA,gCAAA;CACA;AACA;QACA,gBAAA;CACA;AACA;QACA,wBAAA;CACA;AACA;QACA,0BAAA;QACA,4BAAA;CACA;AACA;QACA,mBAAA;QACA,YAAA;QACA,iCAAA;QACA,0BAAA;QACA,8BAAA;CACA;AAEA;QACA,YAAA;CACA;CAEA","file":"Wallet.vue","sourcesContent":["<template>\n\n    <div class=\"dashboardWallet\" ref=\"dashboardWallet\">\n\n        <icon v-show=\"!this.opened && isSendingMoney\" class=\"miningStatus sendingImg jump\" icon='chevron-double-up' :style=\"\"></icon>\n\n        <icon v-show=\"!this.opened && isReceivingMoney\" :style=\"{\n            right: isSendingMoney ? '20px' : '4px',\n            marginBottom: isSendingMoney ? '-2px' : '0'}\" class=\"miningStatus receivingImg jump\"icon='chevron-double-down'>\n        </icon>\n\n        <div id=\"walletButton\" ref=\"walletMenuButton\" @click=\"this.toggleWallet\" :style=\"{\n            marginBottom: this.opened ? this.walletButtonMarginOpened+'px': this.walletButtonMarginClosed+'px',\n            top: this.opened ? this.buttonTopDistanceOpen : this.buttonTopDistanceClose,\n            borderTopLeftRadius: this.opened ? this.walletButtonRadiusLeftOpen+'px' : this.walletButtonRadiusLeftClose+'px',\n            borderTopRightRadius: this.opened ? this.walletButtonRadiusRightOpen+'px' : this.walletButtonRadiusRightClose+'px'}\">\n\n            <span id=\"walletButtonText\">\n                <div style=\"display: inline-block\">\n                    <icon class=\"buttonIcon statusWalletIcon\" :icon=\"this.opened ? 'chevron-down' : 'chevron-up'\" style=\"fill: black\"></icon>\n                    Wallet\n                </div>\n                <show-sum-balances ref=\"refShowSumBalances\" :style=\"{display: this.isMobile==false ? 'none' : 'inline-block'}\" :addresses=\"this.addresses\" :currency=\"this.currency\"> </show-sum-balances>\n            </span>\n        </div>\n\n        <div id=\"walletMenu\" ref=\"walletMenu\" :style=\"{\n            marginBottom: this.opened ? this.walletMarginOpened+'px': this.walletMarginClosed+'px',\n            top: this.opened ? this.buttonTopDistanceOpen : this.buttonTopDistanceClose,\n            marginTop: this.opened ? this.walletMenuMarginTopOpen : this.walletMenuMarginTopClose,\n            height: this.opened ? this.walletMenuHeightOpen : this.walletMenuHeightClosed}\">\n\n            <div id=\"dashboardWallet\">\n\n                <div class=\"walletController\">\n\n                    <div class=\"btn buttonTextStyle\" @click=\"this.handleAddNewAddress\" title=\"Add new wallet\">\n                        Add\n                    </div>\n\n                    <label class=\"myLabel\" title=\"Import existing wallet\">\n\n                        <input ref=\"importedAddress\" type=\"file\" v-on:change=\"this.handleImportAddress\" multiple size=\"50\" />\n\n                        <div class=\"btn buttonTextStyle\">\n                            Import\n                        </div>\n\n                    </label>\n\n                    <div class=\"btn buttonTextStyle\" title=\"Create Offline transaction\" v-on:click.stop=\"showOfflineTransactions\">\n                        Offline\n                    </div>\n\n                </div>\n\n                <div class=\"walletSection walletsContainer\" :style=\"{height: this.walletContentHeight}\">\n\n                    <div id=\"allWallets\">\n\n                        <Address v-for=\"(walletAddress, index) in this.addresses\"\n                             :isMiningAddress=\"miningAddress === walletAddress.address\"\n                             :key=\"walletAddress.address\"\n                             :id=\"'address'+walletAddress.address\"\n                             :ref=\"'address'+index\"\n                             :address=\"walletAddress.address\"\n                             style=\"padding-right: 20px\"\n                             @onPendingTransactionsChanges=\"handlePendingTransactionsChanges\"\n                        >\n\n                        </Address>\n\n                    </div>\n\n                </div>\n            </div>\n        </div>\n\n        <offline-transactions-modal ref=\"refOfflineTransactionsModal\" :address=\"this.miningAddress\"  />\n\n    </div>\n\n</template>\n\n\n\n<script>\n    var Vue = require('vue/dist/vue.min.js');\n\n    import icon from \"components/UI/icons/icon.vue\"\n    import Address from \"./Address/Address.vue\"\n    import BrowserHelpers from \"helpers/Browser.helpers\"\n    import ShowSumBalances from \"./Address/Balance/Balances/Show-Sum-Balances.vue\"\n    import Notification from \"helpers/Notification.helpers\"\n    import offlineTransactionsModal from \"./Address/Modals/Main-Modal/Address-main.modal.offline.vue\"\n\n    export default{\n\n        components:{\n            icon,\n            \"Address\": Address,\n            ShowSumBalances,\n            offlineTransactionsModal\n        },\n\n        props: ['addresses', 'currency'],\n\n        data:  () => {\n            return {\n                opened: false,\n                balanceHover: false,\n                miningAddress: '',\n\n                isMobile:false,\n\n                sendingMoney:{},\n                receivingMoney:{},\n\n                walletButtonMarginOpened: 0,\n                walletButtonMarginClosed: 0,\n                buttonTopDistanceOpen: 0,\n                buttonTopDistanceClose: 0,\n                walletMarginOpened: 0,\n                walletMarginClosed: 0,\n                walletMenuMarginTopOpen: 0,\n                walletMenuMarginTopClose: 0,\n                walletMenuHeightOpen: 0,\n                walletMenuHeightClosed: 0,\n                walletContentHeight: 315,\n                walletButtonRadiusLeftOpen: 0,\n                walletButtonRadiusLeftClose: 0,\n                walletButtonRadiusRightOpen: 0,\n                walletButtonRadiusRightClose: 0,\n            }\n        },\n\n        mounted(){\n\n            //in browser\n            if (typeof window === \"undefined\") return false;\n\n            this.changeScreenBehavior();\n\n            WebDollar.StatusEvents.on(\"blockchain/mining/address\", (data)=>{\n                this.miningAddress = data.address;\n            });\n            this.miningAddress = WebDollar.Blockchain.Mining.minerAddress;\n\n            //onLoad\n            BrowserHelpers.addEvent(window, \"load\", (event) => {\n                this.changeScreenBehavior();\n                this.walletResizeFix();\n            });\n\n          //onResize\n            BrowserHelpers.addEvent(window, \"resize\", (event) => {\n                this.changeScreenBehavior();\n                this.walletResizeFix();\n            });\n\n        },\n\n        computed:{\n\n            isSendingMoney(){\n                return Object.keys(this.sendingMoney).length !== 0;\n            },\n\n            isReceivingMoney(){\n                return Object.keys(this.receivingMoney).length !== 0;\n            }\n\n        },\n\n        methods: {\n\n            showOfflineTransactions(){\n\n                this.$refs['refOfflineTransactionsModal'].showModal();\n\n            },\n\n            changeScreenBehavior(){\n\n                if (this.$refs['walletMenuButton'] === undefined) {\n                    console.log(\"not ready..\");\n                    return;\n                }\n\n                if (window.screenWidth < 831){\n\n                    this.isMobile = true;\n\n                    this.walletButtonMarginOpened = 452;\n                    this.walletButtonMarginClosed = 43;\n\n                    this.walletMarginOpened = 42;\n                    this.walletMarginClosed = -325;\n\n                    this.buttonTopDistanceOpen = '0';\n                    this.buttonTopDistanceClose = 'auto';\n\n                    this.walletMenuMarginTopOpen=this.$refs['walletMenuButton'].clientHeight;\n                    this.walletMenuMarginTopClose='0';\n\n                    this.walletMenuHeightOpen='100%';\n                    this.walletMenuHeightClosed='358px';\n\n                    this.walletContentHeight= window.outerHeight-110;\n\n                    this.walletButtonRadiusLeftOpen= 0;\n                    this.walletButtonRadiusLeftClose= 0;\n\n                    this.walletButtonRadiusRightOpen= 0;\n                    this.walletButtonRadiusRightClose= 0;\n\n                }else{\n\n                    this.isMobile=false;\n\n                    this.walletContentHeight= 315;\n\n                    this.walletButtonMarginOpened = 392;\n                    this.walletButtonMarginClosed = 30;\n\n                    this.walletMarginOpened = 34;\n                    this.walletMarginClosed = -325;\n\n                    this.buttonTopDistanceOpen = 'auto';\n                    this.buttonTopDistanceClose = 'auto';\n\n                    this.walletMenuMarginTopOpen=this.$refs['walletMenuButton'].clientHeight;\n                    this.walletMenuMarginTopClose='0';\n\n                    this.walletMenuHeightOpen='358px';\n                    this.walletMenuHeightClosed='0';\n\n                    this.walletButtonRadiusLeftOpen= 60;\n                    this.walletButtonRadiusLeftClose= 60;\n\n                    this.walletButtonRadiusRightOpen= 0;\n                    this.walletButtonRadiusRightClose= 0;\n\n                }\n\n            },\n\n            toggleWallet(){\n\n                this.opened = !this.opened;\n\n                if(window.screenWidth < 831){\n                    if (this.opened===true)\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:none');\n                    else\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n                }else\n                    document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n\n            },\n\n            walletResizeFix(){\n\n                if(window.screenWidth < 831)\n                    if (this.opened===true)\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:none');\n                    else\n                        document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n                else\n                    document.getElementById('dashboardMining').setAttribute('style', 'display:block');\n\n\n            },\n\n            async handleAddNewAddress(){\n\n                if (WebDollar.Blockchain.Wallet.addresses.length <= 2) {\n\n                    await WebDollar.Blockchain.Wallet.createNewAddress();\n                    Notification.addAlert(undefined, \"success\", \"Wallet Created\", WebDollar.Blockchain.Wallet.addresses[WebDollar.Blockchain.Wallet.addresses.length-1].address + \" has been added to your wallet!\", 5000);\n\n                } else {\n\n                    Notification.addAlert(undefined, \"warn\", \"Wallet Warning\", \"You can't add new address if you already have 3 addresses\", 5000);\n\n                }\n\n            },\n\n            async handleImportAddress(){\n\n                // dropzone tutorial https://www.html5rocks.com/en/tutorials/file/dndfiles/\n\n                // Check for the various File API support.\n                if ((window.File && window.FileReader && window.FileList && window.Blob) === false){\n                    Notification.addAlert(undefined, \"error\", \"Import Error\", \"The File import is not fully supported in this browser\", 5000);\n                }\n\n                let fileInput = this.$refs['importedAddress'];\n\n                if ('files' in fileInput) {\n                    if (fileInput.files.length === 0) {\n                        Notification.addAlert(undefined, \"error\", \"Import Error\", \"No file selected\", 5000);\n                    } else {\n\n                        for (let i = 0; i < fileInput.files.length; i++) {\n\n                            let file = fileInput.files[i];\n                            let extension = file.name.split('.').pop();\n\n//                            console.log(file);\n//                            console.log(extension);\n\n                            if (extension === \"webd\") {\n                                let reader = new FileReader();\n\n                                try {\n                                    reader.onload = async (e) => {\n\n                                        //console.log(reader.result);\n                                        let data = JSON.parse(reader.result);\n\n                                        let answer = await WebDollar.Blockchain.Wallet.importAddressFromJSON(data);\n\n                                        if (answer.result === true){\n                                            Notification.addAlert(undefined, \"success\", \"Import Success\", answer.address + \" has been imported!\", 5000);\n                                        } else {\n                                            Notification.addAlert(undefined, \"error\", \"Import Error\", answer.message, 5000);\n                                        }\n\n                                    };\n\n                                } catch (exception){\n                                    Notification.addAlert(undefined, \"error\", \"Import Error\",\"Your Uploaded file is not a valid JSON format\", 5000);\n                                }\n\n                                reader.readAsText(file);\n                            } else {\n                                Notification.addAlert(undefined, \"error\",\"Import Error\", \"File not supported!\", 5000);\n                            }\n\n                        }\n\n\n                    }\n                }\n\n\n\n            },\n\n\n            handlePendingTransactionsChanges(){\n\n                this.receivingMoney = {};\n                this.sendingMoney = {};\n\n                let i=-1;\n                while (1===1){\n\n                    i++;\n                    let element = this.$refs['address'+i];\n                    if (element === undefined) break;\n\n                    element = element[0];\n\n                    for (let key in element.receivingMoney)\n                        Vue.set(this.receivingMoney, key, element.receivingMoney[key]);\n\n                    for (let key in element.sendingMoney)\n                        Vue.set(this.sendingMoney, key, element.sendingMoney[key]);\n\n                }\n\n            },\n\n\n        }\n\n    }\n\n</script>\n\n<style>\n\n    @keyframes jump {\n        0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}\n        40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}\n        100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}\n    }\n    .jump.sendingImg, .jump.receivingImg {\n        fill: #000!important;\n        transform-origin: 50% 50%;\n        animation: jump .5s linear alternate infinite;\n    }\n\n    #myWalletImport{\n        display: none;\n    }\n\n    .vue-slider-component.vue-slider-horizontal .vue-slider-dot{\n        left:-5px;\n    }\n\n    #walletButtonText{\n        color: #1f1f1f!important;\n    }\n\n    #walletButtonText svg{\n        vertical-align: top;\n        width: 14px;\n        margin-left: 10px;\n        margin-top: 5px;\n    }\n\n    .mainAddress{\n        background-color: #fec02c14;\n    }\n\n    #walletButton {\n        margin: 0 auto;\n        position: fixed;\n        z-index: 85;\n        bottom: 0;\n        width: 299px!important;\n        right: 0;\n        text-align: center;\n        height: 50px;\n        border-top-left-radius: 60px;\n        cursor: pointer;\n        background-color: #fec02c;\n        color: #1f1f1f;\n        margin-bottom: 20px;\n        transition: all .3s linear;\n    }\n\n    #walletButton:hover{\n        background-color: #fec02c;\n        transition: all .3s linear;\n    }\n\n    .walletSection{\n        display: inline-block;\n        vertical-align: top;\n        height: 315px;\n        overflow-y: auto;\n        overflow-x: hidden;\n        width: 100%;\n    }\n\n    .walletController{\n        display: grid;\n        grid-template-columns: 1fr 1fr 1fr;\n        position: relative;\n        width: 100%;\n        border-bottom: solid 1px #333333;\n        background-color: #3e3e3e;\n    }\n\n    .walletController .btn{\n        text-align: center;\n        color: #b5b5b5;\n        cursor: pointer;\n        padding: 8px 19px 6px 19px!important;\n    }\n\n    .walletController .btn:hover{\n        background-color: #575757;\n        transition: all .3s linear;\n    }\n\n    .walletController .btn:first-child{\n        border-right: solid 1px #3c3b3b;\n    }\n\n    .allWallets div{\n        border: solid 1px #545454;\n    }\n\n    #walletButton:hover{\n        transition: all .3s linear;\n    }\n\n    #walletButton span{\n        width: 100%;\n        line-height: 50px;\n        font-size: 20px;\n        font-weight: bolder;\n        transition: all .3s linear;\n    }\n\n    #walletButton span:hover{\n        transition: all .3s linear;\n    }\n\n    .statusWalletIcon{\n        margin-top: 10px!important;\n    }\n\n    #walletMenu{\n        margin: 0 auto;\n        position: fixed;\n        bottom: 0;\n        right: 0;\n        width: 300px;\n        background-color: #1f1f1f;\n        height: 358px;\n        margin-bottom:-100px;\n        z-index: 90;\n        border-top: solid 1px #3d3d3d;\n        border-left: solid 1px #393939;\n        transition: all .3s linear;\n    }\n\n    .buttonIcon{\n        display: inline-block;\n        margin-right: 10px;\n    }\n\n    .editError{\n        color: #ff0000 !important;\n        padding: 1px 0 10px 11px;\n        display: block;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .editError2{\n        padding: 10px 0 10px 11px;\n    }\n\n    dashboardWallet span{\n        width: 100%!important;\n        display: block;\n        margin: 0;\n        letter-spacing: 0!important;\n        color: #808080;\n    }\n\n    #walletButton .buttonIcon{\n        fill: #000;\n        transition: all .3s linear;\n    }\n\n    .walletAddress b{\n        font-weight:100;\n    }\n\n    .miningStatus{\n        width: 20px;\n        height: 20px;\n        position: fixed;\n        display: block;\n        right: 4px;\n        bottom: 57px;\n        z-index: 1000;\n        fill:#262626;\n        transition: all 1.2s linear;\n    }\n\n    .buttonTextStyle{\n        font-size: 14px!important;\n    }\n\n    .sendingImg{\n        fill:#298bea!important;\n    }\n\n    .receivingImg{\n        fill:#219411!important;\n    }\n\n    label.myLabel input[type=\"file\"] {\n        position: fixed;\n        top: -1000px;\n    }\n\n    /* Small Devices, Tablets */\n    @media only screen and (max-width : 831px) {\n\n        .miningStatus{\n            display: none;\n            bottom: 67px;\n        }\n\n        #walletMenu{\n            width: 100%;\n            margin-top: 50px!important;\n        }\n        #walletButton{\n            width: 100%!important;\n            border:0;\n            height: 50px;\n            border-top-left-radius: 15px;\n            border-top-right-radius: 15px;\n            margin-bottom: 90px;\n        }\n        #walletButton span{\n            line-height: 50px;\n            font-size: 22px;\n        }\n        .walletController .btn{\n            padding: 10px 19px 6px 19px!important;\n            margin-left: 10px;\n        }\n        .webdollarFont{\n            width: 20px!important;\n        }\n        #allWallets .walletAddress{\n            margin: 15px 0 0 10px!important;\n        }\n        #allWallets .walletAddress img{\n            margin-top: 5px;\n        }\n        #allWallets .walletAddress .imageAndInput img{\n            margin-top: 0!important;\n        }\n        .walletAddress b{\n            font-size: 22px!important;\n            line-height: 60px!important;\n        }\n        .walletController{\n            position: relative;\n            width: 100%;\n            border-bottom: solid 5px #333333;\n            background-color: #313131;\n            border-top: solid 5px #313131;\n        }\n\n        #walletButtonText svg{\n            width: 22px;\n        }\n\n    }\n\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 56 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(57);
+var content = __webpack_require__(60);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17203,7 +17625,7 @@ if(false) {
 }
 
 /***/ }),
-/* 57 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17217,7 +17639,7 @@ exports.push([module.i, "\n.webdollarFont{\n    cursor: pointer;\n    color: #f6
 
 
 /***/ }),
-/* 58 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17378,13 +17800,13 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(60);
+var content = __webpack_require__(63);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17404,7 +17826,7 @@ if(false) {
 }
 
 /***/ }),
-/* 60 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17418,7 +17840,7 @@ exports.push([module.i, "\n.isImining {\n    animation:spin 1s linear infinite;\
 
 
 /***/ }),
-/* 61 */
+/* 64 */
 /***/ (function(module, exports) {
 
 module.exports = function() {
@@ -17427,7 +17849,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 62 */
+/* 65 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
@@ -17436,17 +17858,17 @@ module.exports = __webpack_amd_options__;
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 63 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Address_main_modal_vue__ = __webpack_require__(20);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_fe1c3922_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Address_main_modal_vue__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_fe1c3922_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Address_main_modal_vue__ = __webpack_require__(97);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(64)
+  __webpack_require__(67)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -17492,13 +17914,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 64 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(65);
+var content = __webpack_require__(68);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17518,7 +17940,7 @@ if(false) {
 }
 
 /***/ }),
-/* 65 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17526,19 +17948,19 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.miningAddress{\n    display: block!important;\n    font-size: 12px;\n    line-height: 30px;\n    padding-top: 7px;\n}\n.addressMainModal .modifyPadding{\n    padding: 0!important;\n}\n.balanceText{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 100px;\n        grid-template-columns: 1fr 100px;\n    grid-row-gap: 10px;\n    padding-bottom: 24px;\n}\n.balanceAmount{\n    font-size: 14px;\n    text-align: left;\n}\n.balanceContent, .copyButton, .actionButton, .headerModal, .transferList{\n    -webkit-user-select: none;  /* Chrome all / Safari all */\n    -moz-user-select: none;     /* Firefox all */\n    -ms-user-select: none;      /* IE 10+ */\n    user-select: none;\n}\n.balanceContent{\n    padding: 45px 10px 20px 10px!important\n}\n.balanceContent svg{\n    width: 20px;\n    height: 20px;\n    padding: 0!important;\n}\n.balanceTitle{\n    text-align: right;\n    font-size: 14px;\n    padding-right: 10px;\n}\n.balanceAmount .balanceContent{\n    padding: 0;\n}\n@media (max-width: 1000px){\n.balanceText{\n        -ms-grid-columns: 1fr;\n            grid-template-columns: 1fr;\n}\n}\n@media (max-width: 600px){\n.balanceContent{\n        padding: 10px!important\n}\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/src/components/Wallet/Address/Modals/Main-Modal/Address-main.modal.vue"],"names":[],"mappings":";AA8KA;IACA,yBAAA;IACA,gBAAA;IACA,kBAAA;IACA,iBAAA;CACA;AAEA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,4BAAA;QAAA,iCAAA;IACA,mBAAA;IACA,qBAAA;CACA;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA,EAAA,6BAAA;IACA,uBAAA,KAAA,iBAAA;IACA,sBAAA,MAAA,YAAA;IACA,kBAAA;CACA;AAEA;IACA,sCAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;IACA,gBAAA;IACA,oBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;AAEA;QACA,sBAAA;YAAA,2BAAA;CACA;CAEA;AAEA;AAEA;QACA,uBAAA;CACA;CACA","file":"Address-main.modal.vue","sourcesContent":["<template>\n\n    <div v-if=\"this.address !== null && this.address !== undefined\">\n\n        <modal title=\"Wallet Address\" ref=\"refModal\" class=\"addressMainModal\">\n\n            <div slot=\"content\">\n\n                <div class=\"twoColumns\">\n\n                    <div class=\"section\">\n\n                        <div >\n                            <img class=\"walletAddressImage\" :src=\"this.getAddressPic\" >\n                            <b style=\"color:gray\" id=\"walletID\">{{this.address.toString()}}</b>\n                        </div>\n\n                        <div @click=\"copyToClipboard\" class=\"copyButton\" :class=\" this.clipboardText!='Copied' ? 'modalButton2' : 'modalButton2Success' \">\n                            {{this.clipboardText}}\n                        </div>\n\n                    </div>\n\n                    <div class=\"section balanceContent\">\n\n                        <div class=\"balanceText\">\n\n                            <div class=\"balanceTitle\" title=\"Balance available to be spent\">\n                                Available Balance:\n                            </div>\n                            <div class=\"balanceAmount\" title=\"Balance available to be spent\">\n                                <show-balance :address=\"this.address\" currency=\"0x01\"/>\n                            </div>\n\n                            <div class=\"balanceTitle\" style=\"letter-spacing: 0.1px\" title=\"The balance you will have at the next block mined by your pool\">\n                                Potential Balance:\n                            </div>\n                            <div class=\"balanceAmount\" title=\"The balance you will have at the next block mined by your pool\">\n                                <show-balance :showPoolReward=\"isMiningAddress\" :address=\"this.address\" currency=\"0x01\"/>\n                            </div>\n\n                        </div>\n\n                        <div class=\"miningAddress\" v-if=\"isMiningAddress\">\n                            You are mining on this Address\n                        </div>\n                        <div  v-if=\"!isMiningAddress\" @click=\"handleSetAddress\" class=\"modalButton2\">\n                            Mine on this address\n                        </div>\n\n                    </div>\n\n                </div>\n\n                <div class=\"addressActions\">\n                    <div @click=\"this.showTransfer\" :class=\"[ this.partActivated === 'transfer' ? 'actionButton activeActionButton' : 'actionButton' ]\">\n                        Transfer\n                    </div>\n                    <div @click=\"this.showTransactions\" :class=\"[ this.partActivated === 'transactions' ? 'actionButton activeActionButton' : 'actionButton' ]\">\n                        Transactions\n                    </div>\n                </div>\n\n                <transfer :address=\"this.address\" :style=\"{display: this.partActivated === 'transfer' ? 'block': 'none'}\" @onTransferSuccess=\"this.handleTransferSuccess\" @closeModal=\"this.closeModal\"/>\n\n                <transactions :address=\"this.address\" :style=\"{display: this.partActivated === 'transactions' ? 'block': 'none'}\" />\n\n            </div>\n\n\n        </modal>\n\n    </div>\n\n</template>\n\n<script>\n\n    var Vue = require('vue/dist/vue.min.js');\n\n    import Modal from \"components/UI/modal/Modal.vue\"\n    import Clipboard from '../../../../../../node_modules/v-clipboard/dist/index.min'\n    import ShowBalance from \"components/Wallet/Address/Balance/Show-Balance.vue\"\n    import ShowPotentialBalance from \"components/Wallet/Address/Balance/Balances/Show-Sum-Balances.vue\"\n    import icon from \"components/UI/icons/icon.vue\"\n\n    import Transactions from \"./parts/Transactions/Transactions.part.vue\"\n    import Transfer from \"./parts/Transfer.part.vue\"\n\n    import Notification from \"helpers/Notification.helpers\"\n\n    Vue.use(Clipboard);\n\n    export default {\n\n        props: {\n            address: {default: null},\n            isMiningAddress: {default: false},\n        },\n\n        components: {\n            ShowBalance,\n            Modal,\n            Transactions,\n            Transfer,\n            icon,\n            ShowPotentialBalance\n        },\n\n        data: () => {\n            return {\n                partActivated : 'none',\n\n                clipboardText: 'Copy Address',\n            }\n        },\n\n        computed:{\n            getAddressPic(){\n                return WebDollar.Blockchain.Wallet.getAddressPic(this.address);\n            }\n        },\n\n        methods: {\n\n            showTransfer() {\n                this.partActivated = \"transfer\";\n            },\n\n            showBuy() {\n                this.partActivated = \"buy/sell\";\n            },\n            showTransactions(){\n                this.partActivated = \"transactions\";\n            },\n\n            closeModal() {\n                this.$refs['refModal'].closeModal();\n            },\n\n            showModal(e) {\n                if (this.$refs['refModal'].modalOpened === false){\n                    this.$refs['refModal'].showModal();\n                }\n                this.clipboardText= 'Copy Address';\n            },\n            copyToClipboard(){\n                this.clipboardText = 'Copied';\n                this.$clipboard(this.address);\n            },\n\n            handleSetAddress(){\n                WebDollar.Blockchain.Mining.minerAddress = this.address;\n                Notification.addAlert(undefined, \"success\", \"Mining Address Changed\", \"You're mining now on \" + this.address ,5000);\n            },\n\n            handleTransferSuccess(){\n                this.closeModal();\n            }\n\n        },\n\n        mounted() {\n\n            if (typeof window === 'undefined') return;\n\n\n        },\n\n    }\n\n</script>\n\n<style>\n    .miningAddress{\n        display: block!important;\n        font-size: 12px;\n        line-height: 30px;\n        padding-top: 7px;\n    }\n\n    .addressMainModal .modifyPadding{\n        padding: 0!important;\n    }\n\n    .balanceText{\n        display: grid;\n        grid-template-columns: 1fr 100px;\n        grid-row-gap: 10px;\n        padding-bottom: 24px;\n    }\n\n    .balanceAmount{\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .balanceContent, .copyButton, .actionButton, .headerModal, .transferList{\n        -webkit-user-select: none;  /* Chrome all / Safari all */\n        -moz-user-select: none;     /* Firefox all */\n        -ms-user-select: none;      /* IE 10+ */\n        user-select: none;\n    }\n\n    .balanceContent{\n        padding: 45px 10px 20px 10px!important\n    }\n\n    .balanceContent svg{\n        width: 20px;\n        height: 20px;\n        padding: 0!important;\n    }\n\n    .balanceTitle{\n        text-align: right;\n        font-size: 14px;\n        padding-right: 10px;\n    }\n\n    .balanceAmount .balanceContent{\n        padding: 0;\n    }\n\n    @media (max-width: 1000px){\n\n        .balanceText{\n            grid-template-columns: 1fr;\n        }\n\n    }\n\n    @media (max-width: 600px){\n\n        .balanceContent{\n            padding: 10px!important\n        }\n    }\n\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.miningAddress{\n    display: block!important;\n    font-size: 12px;\n    line-height: 30px;\n    padding-top: 7px;\n}\n.addressMainModal .modifyPadding{\n    padding: 0!important;\n}\n.balanceText{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 100px;\n        grid-template-columns: 1fr 100px;\n    grid-row-gap: 10px;\n    padding-bottom: 24px;\n}\n.balanceAmount{\n    font-size: 14px;\n    text-align: left;\n}\n.balanceContent, .copyButton, .actionButton, .headerModal, .transferList{\n    -webkit-user-select: none;  /* Chrome all / Safari all */\n    -moz-user-select: none;     /* Firefox all */\n    -ms-user-select: none;      /* IE 10+ */\n    user-select: none;\n}\n.balanceContent{\n    padding: 45px 10px 20px 10px!important\n}\n.balanceContent svg{\n    width: 20px;\n    height: 20px;\n    padding: 0!important;\n}\n.balanceTitle{\n    text-align: right;\n    font-size: 14px;\n    padding-right: 10px;\n}\n.balanceAmount .balanceContent{\n    padding: 0;\n}\n@media (max-width: 1000px){\n.balanceText{\n        -ms-grid-columns: 1fr;\n            grid-template-columns: 1fr;\n}\n}\n@media (max-width: 600px){\n.balanceContent{\n        padding: 10px!important\n}\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/src/components/Wallet/Address/Modals/Main-Modal/Address-main.modal.vue"],"names":[],"mappings":";AAoLA;IACA,yBAAA;IACA,gBAAA;IACA,kBAAA;IACA,iBAAA;CACA;AAEA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,4BAAA;QAAA,iCAAA;IACA,mBAAA;IACA,qBAAA;CACA;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA,EAAA,6BAAA;IACA,uBAAA,KAAA,iBAAA;IACA,sBAAA,MAAA,YAAA;IACA,kBAAA;CACA;AAEA;IACA,sCAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;IACA,gBAAA;IACA,oBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;AAEA;QACA,sBAAA;YAAA,2BAAA;CACA;CAEA;AAEA;AAEA;QACA,uBAAA;CACA;CACA","file":"Address-main.modal.vue","sourcesContent":["<template>\n\n    <div v-if=\"this.address !== null && this.address !== undefined\">\n\n        <modal title=\"Wallet Address\" ref=\"refModal\" class=\"addressMainModal\">\n\n            <div slot=\"content\">\n\n                <div v-if=\"!this.offlineTransaction\" class=\"twoColumns\">\n\n                    <div class=\"section\">\n\n                        <div >\n                            <img class=\"walletAddressImage\" :src=\"this.getAddressPic\" >\n                            <b style=\"color:gray\" id=\"walletID\">{{this.address.toString()}}</b>\n                        </div>\n\n                        <div @click=\"copyToClipboard\" class=\"copyButton\" :class=\" this.clipboardText!='Copied' ? 'modalButton2' : 'modalButton2Success' \">\n                            {{this.clipboardText}}\n                        </div>\n\n                    </div>\n\n                    <div class=\"section balanceContent\">\n\n                        <div class=\"balanceText\">\n\n                            <div class=\"balanceTitle\" title=\"Balance available to be spent\">\n                                Available Balance:\n                            </div>\n                            <div class=\"balanceAmount\" title=\"Balance available to be spent\">\n                                <show-balance :address=\"this.address\" currency=\"0x01\"/>\n                            </div>\n\n                            <div class=\"balanceTitle\" style=\"letter-spacing: 0.1px\" title=\"The balance you will have at the next block mined by your pool\">\n                                Potential Balance:\n                            </div>\n                            <div class=\"balanceAmount\" title=\"The balance you will have at the next block mined by your pool\">\n                                <show-balance :showPoolReward=\"isMiningAddress\" :address=\"this.address\" currency=\"0x01\"/>\n                            </div>\n\n                        </div>\n\n                        <div class=\"miningAddress\" v-if=\"isMiningAddress\">\n                            You are mining on this Address\n                        </div>\n                        <div  v-if=\"!isMiningAddress\" @click=\"handleSetAddress\" class=\"modalButton2\">\n                            Mine on this address\n                        </div>\n\n                    </div>\n\n                </div>\n\n                <div v-if=\"!this.offlineTransaction\" class=\"addressActions\">\n                    <div @click=\"this.showTransfer\" :class=\"[ this.partActivated === 'transfer' ? 'actionButton activeActionButton' : 'actionButton' ]\">\n                        Transfer\n                    </div>\n                    <div @click=\"this.showTransactions\" :class=\"[ this.partActivated === 'transactions' ? 'actionButton activeActionButton' : 'actionButton' ]\">\n                        Transactions\n                    </div>\n                </div>\n\n                <transfer :address=\"this.address\" :style=\"{display: this.partActivated === 'transfer' ? 'block': 'none'}\" @onTransferSuccess=\"this.handleTransferSuccess\" @closeModal=\"this.closeModal\" :offlineTransaction=\"this.offlineTransaction\"/>\n\n                <transactions :address=\"this.address\" :style=\"{display: this.partActivated === 'transactions' ? 'block': 'none'}\" />\n\n            </div>\n\n\n        </modal>\n\n    </div>\n\n</template>\n\n<script>\n\n    var Vue = require('vue/dist/vue.min.js');\n\n    import Modal from \"components/UI/modal/Modal.vue\"\n    import Clipboard from '../../../../../../node_modules/v-clipboard/dist/index.min'\n    import ShowBalance from \"components/Wallet/Address/Balance/Show-Balance.vue\"\n    import ShowPotentialBalance from \"components/Wallet/Address/Balance/Balances/Show-Sum-Balances.vue\"\n    import icon from \"components/UI/icons/icon.vue\"\n\n    import Transactions from \"./parts/Transactions/Transactions.part.vue\"\n    import Transfer from \"./parts/Transfer.part.vue\"\n\n    import Notification from \"helpers/Notification.helpers\"\n\n    Vue.use(Clipboard);\n\n    export default {\n\n        props: {\n            address: {default: null},\n            isMiningAddress: {default: false},\n            offlineTransaction:  {default: false},\n        },\n\n        components: {\n            ShowBalance,\n            Modal,\n            Transactions,\n            Transfer,\n            icon,\n            ShowPotentialBalance\n        },\n\n        data: () => {\n            return {\n                partActivated : 'none',\n                clipboardText: 'Copy Address',\n            }\n        },\n\n        computed:{\n            getAddressPic(){\n                return WebDollar.Blockchain.Wallet.getAddressPic(this.address);\n            }\n        },\n\n        methods: {\n\n            showTransfer() {\n                this.partActivated = \"transfer\";\n            },\n\n            showBuy() {\n                this.partActivated = \"buy/sell\";\n            },\n            showTransactions(){\n                this.partActivated = \"transactions\";\n            },\n\n            closeModal() {\n                this.offlineTransaction=false;\n                this.$refs['refModal'].closeModal();\n            },\n\n            showModal(e,offlineTransactionsMode) {\n                if (this.$refs['refModal'].modalOpened === false){\n                    this.$refs['refModal'].showModal();\n                }\n                this.clipboardText= 'Copy Address';\n\n                if(offlineTransactionsMode)\n                    this.offlineTransaction = true;\n                else\n                    this.offlineTransaction = false;\n            },\n            copyToClipboard(){\n                this.clipboardText = 'Copied';\n                this.$clipboard(this.address);\n            },\n\n            handleSetAddress(){\n                WebDollar.Blockchain.Mining.minerAddress = this.address;\n                Notification.addAlert(undefined, \"success\", \"Mining Address Changed\", \"You're mining now on \" + this.address ,5000);\n            },\n\n            handleTransferSuccess(){\n                this.closeModal();\n            },\n\n        },\n\n        mounted() {\n\n            if (typeof window === 'undefined') return;\n\n\n        },\n\n    }\n\n</script>\n\n<style>\n    .miningAddress{\n        display: block!important;\n        font-size: 12px;\n        line-height: 30px;\n        padding-top: 7px;\n    }\n\n    .addressMainModal .modifyPadding{\n        padding: 0!important;\n    }\n\n    .balanceText{\n        display: grid;\n        grid-template-columns: 1fr 100px;\n        grid-row-gap: 10px;\n        padding-bottom: 24px;\n    }\n\n    .balanceAmount{\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .balanceContent, .copyButton, .actionButton, .headerModal, .transferList{\n        -webkit-user-select: none;  /* Chrome all / Safari all */\n        -moz-user-select: none;     /* Firefox all */\n        -ms-user-select: none;      /* IE 10+ */\n        user-select: none;\n    }\n\n    .balanceContent{\n        padding: 45px 10px 20px 10px!important\n    }\n\n    .balanceContent svg{\n        width: 20px;\n        height: 20px;\n        padding: 0!important;\n    }\n\n    .balanceTitle{\n        text-align: right;\n        font-size: 14px;\n        padding-right: 10px;\n    }\n\n    .balanceAmount .balanceContent{\n        padding: 0;\n    }\n\n    @media (max-width: 1000px){\n\n        .balanceText{\n            grid-template-columns: 1fr;\n        }\n\n    }\n\n    @media (max-width: 600px){\n\n        .balanceContent{\n            padding: 10px!important\n        }\n    }\n\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 66 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(67);
+var content = __webpack_require__(70);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17558,7 +17980,7 @@ if(false) {
 }
 
 /***/ }),
-/* 67 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17572,7 +17994,7 @@ exports.push([module.i, "\n::-webkit-scrollbar{\n    width:7px;height:7px\n}\n::
 
 
 /***/ }),
-/* 68 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17619,13 +18041,13 @@ if (false) {
 }
 
 /***/ }),
-/* 69 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(70);
+var content = __webpack_require__(73);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17645,7 +18067,7 @@ if(false) {
 }
 
 /***/ }),
-/* 70 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17659,7 +18081,7 @@ exports.push([module.i, "\n.balanceContent .fontColor{\n    display: block;\n}\n
 
 
 /***/ }),
-/* 71 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17722,7 +18144,7 @@ if (false) {
 }
 
 /***/ }),
-/* 72 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17773,13 +18195,13 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(74);
+var content = __webpack_require__(77);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17799,7 +18221,7 @@ if(false) {
 }
 
 /***/ }),
-/* 74 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17813,7 +18235,7 @@ exports.push([module.i, "\n.balanceContent .fontColor{\n    display: block;\n}\n
 
 
 /***/ }),
-/* 75 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17861,69 +18283,13 @@ if (false) {
 }
 
 /***/ }),
-/* 76 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transactions_part_vue__ = __webpack_require__(26);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2382f042_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transactions_part_vue__ = __webpack_require__(91);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(77)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transactions_part_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2382f042_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transactions_part_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src/components/Wallet/Address/Modals/Main-Modal/parts/Transactions/Transactions.part.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2382f042", Component.options)
-  } else {
-    hotAPI.reload("data-v-2382f042", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(78);
+var content = __webpack_require__(80);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17943,7 +18309,7 @@ if(false) {
 }
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -17951,23 +18317,23 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.transferListContainer{\n    list-style: none;\n    padding: 0;\n    max-height: 200px;\n    overflow: scroll;\n    overflow-x:hidden;\n}\n.transferListContainer::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferListContainer::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferListContainer::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferList::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferList::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferList::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferListElement{\n    font-size: 12px;\n    color: #fff;\n    list-style: none;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    white-space: nowrap ;\n    text-align: left;\n    background-color: #151515;\n    padding: 5px 10px;\n    border-bottom: solid 1px#262626;\n    border-top: solid 1px#262626;\n}\n.transferListElement:hover{\n    background-color: #1f1f1f!important;\n    transition: all 0.5s ease;\n}\n.destinations{\n    list-style: none;\n    padding: 0;\n}\n.money, .destinationAddress{\n    display: inline-block;\n}\n.destinationAddress{\n    width: 70%;\n    overflow: hidden;\n}\n.money{\n    width: 20%;\n    padding-left: 10px;\n    display: inline-block;\n    float: right;\n    text-align: right;\n}\n.currency{\n    margin-left: 5px;\n}\n.pairListElement{\n    background-color: #333333;\n}\n.transferListContainer .money{\n    color:#ffc12c;\n    line-height: 26px;\n}\n.transferListContainer .source{\n    color: #c5c5c5;\n}\n.transferList .title{\n    margin: 10px 0;\n}\n.transferList .headerTable{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    background-color: #262626;\n    color: #fff!important;\n    padding: 5px 0 5px 10px;\n}\n.headerTable span{\n    width: 100%!important;\n}\n.headerElement{\n    display: inline-block;\n    color: #d4d4d4!important;\n    font-size: 14px;\n    text-align: left;\n}\n.transactionElement{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 30px 1fr;\n        grid-template-columns: 30px 1fr;\n}\n.transactionElement img{\n    height: 26px!important;\n}\n.transferList .miningAddress{\n    color: #737373 !important;\n    padding: 7px 0;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 10px;\n    width: 90%;\n    margin: 0 auto;\n}\n.noTransactions .transferList .miningAddress{\n    letter-spacing: 1px!important;\n    width: 90%!important;\n}\n.noTransactions .miningAddress{\n    line-height: 18px;\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/Transactions/src/components/Wallet/Address/Modals/Main-Modal/parts/Transactions/Transactions.part.vue"],"names":[],"mappings":";AA+JA;IACA,iBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,kBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,iBAAA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,qBAAA;IACA,iBAAA;IACA,0BAAA;IACA,kBAAA;IACA,gCAAA;IACA,6BAAA;CACA;AAEA;IACA,oCAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;IACA,WAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,iBAAA;CACA;AAGA;IACA,WAAA;IACA,mBAAA;IACA,sBAAA;IACA,aAAA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,0BAAA;IACA,sBAAA;IACA,wBAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,yBAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,0BAAA;IACA,eAAA;IACA,0BAAA;IACA,oBAAA;IACA,gBAAA;IACA,WAAA;IACA,eAAA;CACA;AAEA;IACA,8BAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;CACA","file":"Transactions.part.vue","sourcesContent":["<template>\n\n    <div class=\"transferList\" ref=\"refTransferList\">\n\n        <div v-show=\"objectIsEmpty(transactions)\" class=\"noTransactions\">\n\n            <span class=\"miningAddress\" style=\"color: white!important\">You don't have any transaction in last 20 blocks</span>\n\n        </div>\n\n        <div v-show=\"!objectIsEmpty(transactions)\">\n\n            <span class=\"miningAddress\" style=\"color: white!important\">Transactions from last 20 blocks</span>\n\n            <div class=\"headerTable\">\n\n                <span class=\"headerElement fromItem\">From</span>\n                <span class=\"headerElement\">To</span>\n                <span class=\"headerElement\">Status</span>\n\n            </div>\n\n\n            <ul class=\"transferListContainer\">\n\n                <transaction v-for=\"(tx, index) in orderedTransactions\"\n                             :transaction = \"tx\"\n                             :key=\"'transaction'+index\"\n                >\n\n                </transaction>\n\n            </ul>\n\n        </div>\n\n    </div>\n\n</template>\n\n<script>\n\n    import Vue from \"vue\";\n    import Transaction from \"./Transaction.element.vue\"\n\n    export default {\n\n        components:{ Transaction },\n\n        props:{\n            address: {default: null},\n        },\n\n        data: ()=>{\n            return {\n                transactions : {},\n                subscription: null,\n                transactionsLength: 0,\n            }\n        },\n\n        mounted(){\n\n            if (typeof window === \"undefined\") return false;\n\n            //subscribe to transactions changes\n            let data = WebDollar.Blockchain.Transactions.subscribeTransactionsChanges(this.address, (data)=>{\n\n                if (data.transaction !== undefined)\n                    this._addTransaction (data.transaction);\n                else\n                    Vue.delete(this.transactions, data.txId );\n\n                this.$forceUpdate();\n\n            });\n\n            if (data !== null && data.result) {\n                this.subscription = data.subscription;\n                this._addTransactions(data.transactions);\n            }\n\n        },\n\n        computed: {\n\n            orderedTransactions() {\n\n                let sortable = [];\n                for (let i in this.transactions) {\n                    sortable.push( this.transactions[i] );\n                }\n\n                return sortable.sort(function(a, b) {\n                    return a._index - b._index;\n                });\n\n            }\n        },\n\n        methods:{\n\n            _addTransaction(transaction){\n\n                // in case it is a new transaction\n                if (this.transactions[transaction.txId] === undefined) {\n                    transaction._index =  -( ++this.transactionsLength );\n                }\n\n                let oldTransaction = this.transactions[transaction.txId];\n\n                Vue.set(this.transactions, transaction.txId, transaction);\n\n                if (transaction.confirmed && (oldTransaction !== undefined && oldTransaction.confirmed === false)){\n                    Notification.addAlert(\"error-firewall\", \"success\", \"Transaction Confirmed\", \"Transaction to \"+ this.toAddress + \" with \" +  BrowserHelpers.formatMoneyNumber(amountToSend)+\"WEBD has been confirmed.\",5000);\n                }\n\n            },\n\n            _addTransactions(transactions){\n\n                for (let key in transactions)\n                    this._addTransaction(transactions[key]);\n\n            },\n\n            objectIsEmpty(obj) {\n\n                // null and undefined are \"empty\"\n                if (obj == null) return true;\n\n                // Assume if it has a length property with a non-zero value\n                // that that property is correct.\n                if (obj.length > 0)    return false;\n                if (obj.length === 0)  return true;\n\n                // If it isn't an object at this point\n                // it is empty, but it can't be anything *but* empty\n                // Is it empty?  Depends on your application.\n                if (typeof obj !== \"object\") return true;\n\n                // Otherwise, does it have any properties of its own?\n                // Note that this doesn't handle\n                // toString and valueOf enumeration bugs in IE < 9\n                for (var key in obj) {\n                    if (hasOwnProperty.call(obj, key)) return false;\n                }\n\n                return true;\n            }\n\n        }\n\n    }\n</script>\n\n\n<style>\n\n    .transferListContainer{\n        list-style: none;\n        padding: 0;\n        max-height: 200px;\n        overflow: scroll;\n        overflow-x:hidden;\n    }\n\n    .transferListContainer::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferListContainer::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferListContainer::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferList::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferList::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferList::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferListElement{\n        font-size: 12px;\n        color: #fff;\n        list-style: none;\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        white-space: nowrap ;\n        text-align: left;\n        background-color: #151515;\n        padding: 5px 10px;\n        border-bottom: solid 1px#262626;\n        border-top: solid 1px#262626;\n    }\n\n    .transferListElement:hover{\n        background-color: #1f1f1f!important;\n        transition: all 0.5s ease;\n    }\n\n    .destinations{\n        list-style: none;\n        padding: 0;\n    }\n\n    .money, .destinationAddress{\n        display: inline-block;\n    }\n\n    .destinationAddress{\n        width: 70%;\n        overflow: hidden;\n    }\n\n\n    .money{\n        width: 20%;\n        padding-left: 10px;\n        display: inline-block;\n        float: right;\n        text-align: right;\n    }\n\n    .currency{\n        margin-left: 5px;\n    }\n\n    .pairListElement{\n        background-color: #333333;\n    }\n\n    .transferListContainer .money{\n        color:#ffc12c;\n        line-height: 26px;\n    }\n\n    .transferListContainer .source{\n        color: #c5c5c5;\n    }\n\n    .transferList .title{\n        margin: 10px 0;\n    }\n\n    .transferList .headerTable{\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        background-color: #262626;\n        color: #fff!important;\n        padding: 5px 0 5px 10px;\n    }\n\n    .headerTable span{\n        width: 100%!important;\n    }\n\n    .headerElement{\n        display: inline-block;\n        color: #d4d4d4!important;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .transactionElement{\n        display: grid;\n        grid-template-columns: 30px 1fr;\n    }\n\n    .transactionElement img{\n        height: 26px!important;\n    }\n\n    .transferList .miningAddress{\n        color: #737373 !important;\n        padding: 7px 0;\n        text-transform: uppercase;\n        letter-spacing: 2px;\n        font-size: 10px;\n        width: 90%;\n        margin: 0 auto;\n    }\n\n    .noTransactions .transferList .miningAddress{\n        letter-spacing: 1px!important;\n        width: 90%!important;\n    }\n\n    .noTransactions .miningAddress{\n        line-height: 18px;\n    }\n\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.transferListContainer{\n    list-style: none;\n    padding: 0;\n    max-height: 200px;\n    overflow: scroll;\n    overflow-x:hidden;\n}\n.transferListContainer::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferListContainer::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferListContainer::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferList::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferList::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferList::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferListElement{\n    font-size: 12px;\n    color: #fff;\n    list-style: none;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    white-space: nowrap ;\n    text-align: left;\n    background-color: #151515;\n    padding: 5px 10px;\n    border-bottom: solid 1px#262626;\n    border-top: solid 1px#262626;\n}\n.transferListElement:hover{\n    background-color: #1f1f1f!important;\n    transition: all 0.5s ease;\n}\n.destinations{\n    list-style: none;\n    padding: 0;\n}\n.money, .destinationAddress{\n    display: inline-block;\n}\n.destinationAddress{\n    width: 70%;\n    overflow: hidden;\n}\n.money{\n    width: 20%;\n    padding-left: 10px;\n    display: inline-block;\n    float: right;\n    text-align: right;\n}\n.currency{\n    margin-left: 5px;\n}\n.pairListElement{\n    background-color: #333333;\n}\n.transferListContainer .money{\n    color:#ffc12c;\n    line-height: 26px;\n}\n.transferListContainer .source{\n    color: #c5c5c5;\n}\n.transferList .title{\n    margin: 10px 0;\n}\n.transferList .headerTable{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    background-color: #262626;\n    color: #fff!important;\n    padding: 5px 0 5px 10px;\n}\n.headerTable span{\n    width: 100%!important;\n}\n.headerElement{\n    display: inline-block;\n    color: #d4d4d4!important;\n    font-size: 14px;\n    text-align: left;\n}\n.transactionElement{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 30px 1fr;\n        grid-template-columns: 30px 1fr;\n}\n.transactionElement img{\n    height: 26px!important;\n}\n.transferList .miningAddress{\n    color: #737373 !important;\n    padding: 7px 0;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 10px;\n    width: 90%;\n    margin: 0 auto;\n}\n.noTransactions .transferList .miningAddress{\n    letter-spacing: 1px!important;\n    width: 90%!important;\n}\n.noTransactions .miningAddress{\n    line-height: 18px;\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/Transactions/src/components/Wallet/Address/Modals/Main-Modal/parts/Transactions/Transactions.part.vue"],"names":[],"mappings":";AAgKA;IACA,iBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,kBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,iBAAA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,qBAAA;IACA,iBAAA;IACA,0BAAA;IACA,kBAAA;IACA,gCAAA;IACA,6BAAA;CACA;AAEA;IACA,oCAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;IACA,WAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,iBAAA;CACA;AAGA;IACA,WAAA;IACA,mBAAA;IACA,sBAAA;IACA,aAAA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,0BAAA;IACA,sBAAA;IACA,wBAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,yBAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,0BAAA;IACA,eAAA;IACA,0BAAA;IACA,oBAAA;IACA,gBAAA;IACA,WAAA;IACA,eAAA;CACA;AAEA;IACA,8BAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;CACA","file":"Transactions.part.vue","sourcesContent":["<template>\n\n    <div class=\"transferList\" ref=\"refTransferList\">\n\n        <div v-show=\"objectIsEmpty(transactions)\" class=\"noTransactions\">\n\n            <span class=\"miningAddress\" style=\"color: white!important\">You don't have any transaction in last 20 blocks</span>\n\n        </div>\n\n        <div v-show=\"!objectIsEmpty(transactions)\">\n\n            <span class=\"miningAddress\" style=\"color: white!important\">Transactions from last 20 blocks</span>\n\n            <div class=\"headerTable\">\n\n                <span class=\"headerElement fromItem\">From</span>\n                <span class=\"headerElement\">To</span>\n                <span class=\"headerElement\">Status</span>\n\n            </div>\n\n\n            <ul class=\"transferListContainer\">\n\n                <transaction v-for=\"(tx, index) in orderedTransactions\"\n                             :transaction = \"tx\"\n                             :key=\"'transaction'+index\"\n                >\n\n                </transaction>\n\n            </ul>\n\n        </div>\n\n    </div>\n\n</template>\n\n<script>\n\n    import Vue from \"vue\";\n    import Transaction from \"./Transaction.element.vue\"\n    import Notification from \"helpers/Notification.helpers\"\n\n    export default {\n\n        components:{ Transaction },\n\n        props:{\n            address: {default: null},\n        },\n\n        data: ()=>{\n            return {\n                transactions : {},\n                subscription: null,\n                transactionsLength: 0,\n            }\n        },\n\n        mounted(){\n\n            if (typeof window === \"undefined\") return false;\n\n            //subscribe to transactions changes\n            let data = WebDollar.Blockchain.Transactions.subscribeTransactionsChanges(this.address, (data)=>{\n\n                if (data.transaction !== undefined)\n                    this._addTransaction (data.transaction);\n                else\n                    Vue.delete(this.transactions, data.txId );\n\n                this.$forceUpdate();\n\n            });\n\n            if (data !== null && data.result) {\n                this.subscription = data.subscription;\n                this._addTransactions(data.transactions);\n            }\n\n        },\n\n        computed: {\n\n            orderedTransactions() {\n\n                let sortable = [];\n                for (let i in this.transactions) {\n                    sortable.push( this.transactions[i] );\n                }\n\n                return sortable.sort(function(a, b) {\n                    return a._index - b._index;\n                });\n\n            }\n        },\n\n        methods:{\n\n            _addTransaction(transaction){\n\n                // in case it is a new transaction\n                if (this.transactions[transaction.txId] === undefined) {\n                    transaction._index =  -( ++this.transactionsLength );\n                }\n\n                let oldTransaction = this.transactions[transaction.txId];\n\n                Vue.set(this.transactions, transaction.txId, transaction);\n\n                if (transaction.confirmed && (oldTransaction !== undefined && oldTransaction.confirmed === false)){\n                    Notification.addAlert(undefined, \"success\", \"Transaction Confirmed\", \"Transaction to \"+ this.toAddress + \" with \" +  BrowserHelpers.formatMoneyNumber(amountToSend)+\"WEBD has been confirmed.\",5000);\n                }\n\n            },\n\n            _addTransactions(transactions){\n\n                for (let key in transactions)\n                    this._addTransaction(transactions[key]);\n\n            },\n\n            objectIsEmpty(obj) {\n\n                // null and undefined are \"empty\"\n                if (obj == null) return true;\n\n                // Assume if it has a length property with a non-zero value\n                // that that property is correct.\n                if (obj.length > 0)    return false;\n                if (obj.length === 0)  return true;\n\n                // If it isn't an object at this point\n                // it is empty, but it can't be anything *but* empty\n                // Is it empty?  Depends on your application.\n                if (typeof obj !== \"object\") return true;\n\n                // Otherwise, does it have any properties of its own?\n                // Note that this doesn't handle\n                // toString and valueOf enumeration bugs in IE < 9\n                for (var key in obj) {\n                    if (hasOwnProperty.call(obj, key)) return false;\n                }\n\n                return true;\n            }\n\n        }\n\n    }\n</script>\n\n\n<style>\n\n    .transferListContainer{\n        list-style: none;\n        padding: 0;\n        max-height: 200px;\n        overflow: scroll;\n        overflow-x:hidden;\n    }\n\n    .transferListContainer::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferListContainer::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferListContainer::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferList::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferList::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferList::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferListElement{\n        font-size: 12px;\n        color: #fff;\n        list-style: none;\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        white-space: nowrap ;\n        text-align: left;\n        background-color: #151515;\n        padding: 5px 10px;\n        border-bottom: solid 1px#262626;\n        border-top: solid 1px#262626;\n    }\n\n    .transferListElement:hover{\n        background-color: #1f1f1f!important;\n        transition: all 0.5s ease;\n    }\n\n    .destinations{\n        list-style: none;\n        padding: 0;\n    }\n\n    .money, .destinationAddress{\n        display: inline-block;\n    }\n\n    .destinationAddress{\n        width: 70%;\n        overflow: hidden;\n    }\n\n\n    .money{\n        width: 20%;\n        padding-left: 10px;\n        display: inline-block;\n        float: right;\n        text-align: right;\n    }\n\n    .currency{\n        margin-left: 5px;\n    }\n\n    .pairListElement{\n        background-color: #333333;\n    }\n\n    .transferListContainer .money{\n        color:#ffc12c;\n        line-height: 26px;\n    }\n\n    .transferListContainer .source{\n        color: #c5c5c5;\n    }\n\n    .transferList .title{\n        margin: 10px 0;\n    }\n\n    .transferList .headerTable{\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        background-color: #262626;\n        color: #fff!important;\n        padding: 5px 0 5px 10px;\n    }\n\n    .headerTable span{\n        width: 100%!important;\n    }\n\n    .headerElement{\n        display: inline-block;\n        color: #d4d4d4!important;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .transactionElement{\n        display: grid;\n        grid-template-columns: 30px 1fr;\n    }\n\n    .transactionElement img{\n        height: 26px!important;\n    }\n\n    .transferList .miningAddress{\n        color: #737373 !important;\n        padding: 7px 0;\n        text-transform: uppercase;\n        letter-spacing: 2px;\n        font-size: 10px;\n        width: 90%;\n        margin: 0 auto;\n    }\n\n    .noTransactions .transferList .miningAddress{\n        letter-spacing: 1px!important;\n        width: 90%!important;\n    }\n\n    .noTransactions .miningAddress{\n        line-height: 18px;\n    }\n\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transaction_element_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transaction_element_vue__ = __webpack_require__(28);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0eff801f_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transaction_element_vue__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0eff801f_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transaction_element_vue__ = __webpack_require__(92);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(80)
+  __webpack_require__(82)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -18013,13 +18379,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(81);
+var content = __webpack_require__(83);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -18039,7 +18405,7 @@ if(false) {
 }
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -18053,17 +18419,17 @@ exports.push([module.i, "\n.sources{\n    margin: 0;\n    padding: 0!important;\
 
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transaction_From_element_vue__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transaction_From_element_vue__ = __webpack_require__(29);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4868e878_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transaction_From_element_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4868e878_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transaction_From_element_vue__ = __webpack_require__(87);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(83)
+  __webpack_require__(85)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -18109,13 +18475,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(84);
+var content = __webpack_require__(86);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -18135,7 +18501,7 @@ if(false) {
 }
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -18149,7 +18515,7 @@ exports.push([module.i, "\n.destinations img{\n    cursor: pointer;\n}\n\n", "",
 
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18185,17 +18551,17 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transaction_To_element_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transaction_To_element_vue__ = __webpack_require__(30);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a9e5e15_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transaction_To_element_vue__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a9e5e15_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transaction_To_element_vue__ = __webpack_require__(91);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(87)
+  __webpack_require__(89)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -18241,13 +18607,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(88);
+var content = __webpack_require__(90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -18267,7 +18633,7 @@ if(false) {
 }
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -18281,7 +18647,7 @@ exports.push([module.i, "\n.destinations img{\n    cursor: pointer;\n}\n\n", "",
 
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18315,7 +18681,7 @@ if (false) {
 }
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18379,7 +18745,7 @@ if (false) {
 }
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18471,69 +18837,13 @@ if (false) {
 }
 
 /***/ }),
-/* 92 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transfer_part_vue__ = __webpack_require__(30);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cff1114e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transfer_part_vue__ = __webpack_require__(95);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(93)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Transfer_part_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cff1114e_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Transfer_part_vue__["a" /* default */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src/components/Wallet/Address/Modals/Main-Modal/parts/Transfer.part.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-cff1114e", Component.options)
-  } else {
-    hotAPI.reload("data-v-cff1114e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(94);
+var content = __webpack_require__(95);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -18553,7 +18863,7 @@ if(false) {
 }
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -18561,13 +18871,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.modal .title {\n    background-color: #262626;\n    padding: 10px 0;\n    text-transform: capitalize;\n    letter-spacing: 2px;\n    line-height: 18px;\n}\n.step, .step .title{\n    display: block;\n}\n.step .title{\n    text-align: left;\n    padding-left: 10px!important;\n    font-size: 16px;\n    color: #757575;\n    cursor: pointer;\n}\n.passed .title{\n    color: #ffc12c\n}\n.offlineTransaction{\n    cursor: pointer;\n    text-align: center;\n    color: #fff;\n    display: block;\n    margin-bottom: 15px;\n    margin-top: 15px;\n    font-size: 14px;\n    letter-spacing: 1px;\n    transition: all 0.5s ease;\n}\n.offlineTransfer{\n    color: #fff;\n}\n.offlineTransaction:hover{\n    color: #ffc12c;\n    transition: all 0.5s ease;\n}\n.transferError{\n    color: red;\n}\n.transferSuccess{\n    color: #ffc12c;\n    padding: 20px;\n    display: block;\n}\n.transferFee{\n    color: white;\n    text-align: left;\n}\n.transferWalletAddressImage{\n    position: relative;\n    height: 36.5px!important;\n    margin: 0 auto;\n    border-radius: 0!important;\n}\n.imageAndInput{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 36px 1fr;\n        grid-template-columns: 36px 1fr;\n    background-color: #333;\n}\n.moneyBox{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 100px;\n        grid-template-columns: 1fr 100px;\n    grid-column-gap: 10px;\n}\n.hide{\n    display: none!important;\n}\n.transfer .button{\n    cursor: pointer;\n}\n.stepContent .buttons{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr;\n        grid-template-columns: 1fr 1fr;\n    padding: 10px 0 0 0;\n}\n.stepContent .modalButton{\n    background-color: #ffc12c;\n    color: #000;\n    letter-spacing: 1px;\n    border: none;\n    text-align: center;\n    width: 90%;\n    margin-bottom: 10px;\n    box-sizing: border-box!important;\n    transition: all 0.5s ease;\n}\n.stepContent .fullWidthButton{\n    width: auto;\n    margin: 0 10px;\n    margin-top: 10px!important;\n    margin-bottom: 10px!important;\n    display: block;\n}\n.stepContent .modalButton:hover{\n    background-color: #fff560;\n    transition: all 0.5s ease;\n}\n.stepContent{\n    text-align: left;\n}\n.stepContent span{\n    padding: 10px 15px;\n    font-size: 12px;\n    display: block;\n    width: auto;\n    line-height: 18px!important;\n    color: #d4d4d4!important;\n}\n.stepContent .hilight{\n    color: #ffc12c!important;\n    display: inline-block;\n    padding: 2px;\n}\n.stepContent .hilightRed{\n    color: #dc5f48!important;\n}\n.marginBottomButton{\n    margin-bottom: 10px;\n}\ninput[type=number]::-webkit-inner-spin-button,\ninput[type=number]::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n}\n@media only screen and (max-width: 600px){\n.imageAndInput{\n        display: -ms-grid;\n        display: grid;\n        -ms-grid-columns: 38px 1fr;\n            grid-template-columns: 38px 1fr;\n        background-color: #333;\n}\n.modal .transfer .address {\n        padding: 6px 0 4px 10px;\n}\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/src/components/Wallet/Address/Modals/Main-Modal/parts/Transfer.part.vue"],"names":[],"mappings":";AAqgBA;IACA,0BAAA;IACA,gBAAA;IACA,2BAAA;IACA,oBAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,iBAAA;IACA,6BAAA;IACA,gBAAA;IACA,eAAA;IACA,gBAAA;CACA;AAEA;IACA,cAAA;CACA;AAEA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,eAAA;IACA,oBAAA;IACA,iBAAA;IACA,gBAAA;IACA,oBAAA;IACA,0BAAA;CACA;AAEA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;CACA;AAEA;IACA,WAAA;CACA;AAGA;IACA,eAAA;IACA,cAAA;IACA,eAAA;CACA;AAEA;IACA,aAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,yBAAA;IACA,eAAA;IACA,2BAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;IACA,uBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,4BAAA;QAAA,iCAAA;IACA,sBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,0BAAA;QAAA,+BAAA;IACA,oBAAA;CACA;AAEA;IACA,0BAAA;IACA,YAAA;IACA,oBAAA;IACA,aAAA;IACA,mBAAA;IACA,WAAA;IACA,oBAAA;IACA,iCAAA;IACA,0BAAA;CACA;AAEA;IACA,YAAA;IACA,eAAA;IACA,2BAAA;IACA,8BAAA;IACA,eAAA;CACA;AAEA;IACA,0BAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,gBAAA;IACA,eAAA;IACA,YAAA;IACA,4BAAA;IACA,yBAAA;CACA;AAEA;IACA,yBAAA;IACA,sBAAA;IACA,aAAA;CACA;AAEA;IACA,yBAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;;IAEA,yBAAA;IACA,UAAA;CACA;AAEA;AAEA;QACA,kBAAA;QAAA,cAAA;QACA,2BAAA;YAAA,gCAAA;QACA,uBAAA;CACA;AAEA;QACA,wBAAA;CACA;CAEA","file":"Transfer.part.vue","sourcesContent":["<template>\n    <div class=\"transferList\">\n\n        <div class=\"offlineTransfer\" v-if=\"this.offlineTransaction\">\n\n            <div class=\"step step1\" :class=\"this.steps[0].passed ? 'passed' : ''\">\n\n                <div class=\"title\" @click=\"backToStepOne()\">\n                    1. Action Type\n                </div>\n\n                <div class=\"stepContent\" v-if=\"this.steps[0].contentOpen\">\n\n                    <span>\n                        Do you want to create a new transaction or to propagate a already created transaction?\n                    </span>\n\n                    <div class=\"buttons\">\n\n                        <div class=\"modalButton\" @click=\"choseActionType(true)\">\n                            Create\n                        </div>\n\n                        <div class=\"modalButton\" @click=\"choseActionType(false)\">\n                            Propagate\n                        </div>\n\n                    </div>\n\n                </div>\n\n            </div>\n\n            <div class=\"step step2\" :class=\"this.steps[1].passed ? 'passed' : ''\">\n\n                <div class=\"title\" @click=\"backToStepTwo()\">\n                    2. Internet Connection\n                </div>\n\n                <div class=\"stepContent\" v-if=\"this.steps[1].contentOpen\">\n\n                    <span v-if=\"this.steps[1].error\">\n                        Your internet connection if <span class=\"hilight\" :class=\"this.checkInternetConnection() ? '' : 'hilightRed'\">{{ this.checkInternetConnection() ? 'Online' : 'Offline'}}</span>,\n                        In order to {{ this.steps[2].typeCreate ? 'create' : 'propagate' }} the offline transaction first you should {{ this.choseInternetInstruction() }} internet and then recheck the connection by pressing the following button.\n                    </span>\n\n                    <div class=\"modalButton fullWidthButton\" @click=\"validateInternetConnection()\">\n                        Check Connection\n                    </div>\n\n                </div>\n\n            </div>\n\n            <div class=\"step step3\" :class=\"this.steps[2].passed ? 'passed' : ''\" v-if=\"this.steps[1].passed\">\n\n                <div class=\"title\">\n                    {{ this.steps[2].typeCreate ? '3. Offline Transaction' : '3. Propagate Online Transaction'}}\n                </div>\n\n                <div class=\"stepContent\" v-if=\"this.steps[2].contentOpen && !this.steps[2].typeCreate\">\n\n                    <span v-if=\"this.steps[2].error\">\n                        eroare\n                    </span>\n\n                    <label class=\"myLabel\">\n\n                        <input ref=\"importedTransaction\" type=\"file\" v-on:change=\"this.handleImportTransaction\" multiple size=\"50\" />\n\n                        <div class=\"modalButton fullWidthButton\">\n                            Propagate Transactions\n                        </div>\n\n                    </label>\n\n                </div>\n\n            </div>\n\n        </div>\n\n        <div class=\"transfer\" @keyup.enter=\"handleCreateTransaction(undefined,offlineTransaction)\" v-if=\"!this.offlineTransaction || (this.steps[2].contentOpen && this.steps[2].typeCreate)\">\n            <div >\n                <div class=\"imageAndInput\">\n\n                    <div>\n                        <img class=\"walletAddressImage transferWalletAddressImage\" :src=\"this.getAddressPic\" :class=\"this.errorToAddressMessage==='Invalid Address' ? 'hide' : ''\" >\n                    </div>\n                    <div>\n                        <input class=\"address \" @keyup=\"this.handleChangeToAddress\" v-model=\"toAddress\" placeholder=\"Recipient Address\"/>\n                    </div>\n\n                </div>\n\n                <span class=\"editError\" v-html=\"this.errorToAddressMessage\" :class=\"this.errorToAddressMessage ? '' : 'hide'\"></span>\n\n            </div>\n\n            <div>\n                <div class=\"moneyBox\">\n                    <input v-model=\"toAmount\" @keyup=\"this.handleChangeToAmount\" type=\"number\" class=\"amount\" placeholder=\"WEBD Amount\"/>\n                    <input v-model=\"fee\" @keyup=\"this.handleChangeToFee\" class=\"amount\" type=\"number\" placeholder=\"Fee\"/>\n                </div>\n            </div>\n\n            <span class=\"editError editError2\" v-html=\"this.errorToAmountMessage\" :class=\"this.errorToAmountMessage ? '' : 'hide'\"></span>\n\n            <button class=\"button marginBottomButton\" @click=\"handleCreateTransaction(undefined,offlineTransaction)\" :class=\"this.successMessage ? 'hide' : ''\" >\n                {{ this.offlineTransaction ? 'CREATE TRANSACTION' : 'SEND WEBD' }}\n            </button>\n\n            <span v-if=\"!this.offlineTransaction\" class=\"offlineTransaction\" @click=\"switchToOfflineTransfer()\">\n                Offline Transaction\n            </span>\n        </div>\n\n    </div>\n</template>\n\n<script>\n\n    import Notification from \"helpers/Notification.helpers\"\n    import BrowserHelpers from \"helpers/Browser.helpers\"\n    import FileSaver from './../../../../../../../node_modules/file-saver'\n\n    export default {\n\n        //@onTransferSuccess\n        props:{\n            address: {default: null},\n        },\n\n        data: () => {\n            return {\n                toAddress: '',\n                toAmount: '',\n                fee: '',\n                offlineTransaction:false,\n                errorMessage: '',\n                errorToAddressMessage: '',\n                errorToAmountMessage: '',\n                successMessage: '',\n                steps:[{\n                        passed:true,\n                        contentOpen:true\n                    },\n                    {\n                        passed:false,\n                        contentOpen:false,\n                        error:false\n                    },\n                    {\n                        passed:false,\n                        contentOpen:false,\n                        typeCreate:true,\n                        error:false\n                    }]\n            }\n        },\n\n        mounted(){\n\n            if (typeof window === 'undefined') return;\n\n        },\n\n        computed:{\n\n            getAddressPic(){\n\n                return WebDollar.Blockchain.Wallet.getAddressPic(this.toAddress);\n\n            }\n\n        },\n\n        methods:{\n\n            async handleCreateTransaction(e,offline=false){\n\n                this.toAmount = Number(this.toAmount);\n                this.fee = Number(this.fee);\n\n                this.handleChangeToAddress();\n\n                if (this.fee === 0) {\n                    this.errorToAmountMessage = 'Fee should not be 0';\n                    return false;\n                }\n\n                if (this.fee * WebDollar.Applications.CoinsHelper.WEBD < WebDollar.Applications.CONSTS.MINING_POOL.MINING.FEE_THRESHOLD){\n                    this.errorToAmountMessage = 'Fee is too small, and miners won\\'t process your transaction';\n                    return false;\n                }\n\n                if (this.errorToAddressMessage !== '' || this.errorToAmountMessage !== '' ) return false;\n\n                let amountToSend = parseInt(this.toAmount * WebDollar.Applications.CoinsHelper.WEBD);\n                let feeToSend = parseInt(this.fee * WebDollar.Applications.CoinsHelper.WEBD);\n                let answer;\n\n                if (offline){\n\n                    answer = await WebDollar.Blockchain.Transactions.wizard.validateTransaction( this.address, this.toAddress, amountToSend, feeToSend );\n\n                    if (answer.result){\n\n                        let data = {\n                            transaction: answer.transaction.serializeTransaction(),\n                            signature: answer.signature\n                        };\n\n                        this.handleExportTransaction(data);\n\n                        this.toAddress = '';\n                        this.toAmount = '';\n                        this.fee = '';\n\n                        this.$emit('onTransferSuccess', answer.message);\n\n                    } else {\n                        this.errorMessage = answer.message;\n                        this.successMessage = '';\n                    }\n\n                }\n                else{\n\n                    answer = await WebDollar.Blockchain.Transactions.wizard.createTransactionSimple( this.address, this.toAddress, amountToSend, feeToSend );\n\n                    if (answer.result){\n\n                        Notification.addAlert(\"error-firewall\", \"warn\", \"Transaction Created\", \"Transaction to \"+ this.toAddress + \" with \" +  BrowserHelpers.formatMoneyNumber(amountToSend)+\"WEBD has been created.\",5000);\n\n                        this.toAddress = '';\n                        this.toAmount = '';\n                        this.fee = '';\n\n                        this.$emit('onTransferSuccess', answer.message);\n\n                    } else {\n                        this.errorMessage = answer.message;\n                        this.successMessage = '';\n                    }\n\n                }\n\n            },\n\n            handleChangeToAddress(e){\n\n                try {\n\n                    if ( WebDollar.Applications.AddressHelper.getUnencodedAddressFromWIF(this.toAddress) === null ) {\n                        this.errorToAddressMessage = 'Invalid Address';\n                        return false;\n                    }\n\n                } catch (exception){\n                    this.errorToAddressMessage = 'Invalid Address';\n                    return false;\n                }\n\n                this.errorToAddressMessage = '';\n\n            },\n\n            decimalPlaces(num) {\n                var match = (''+num).match(/(?:\\.(\\d+))?(?:[eE]([+-]?\\d+))?$/);\n                if (!match) { return 0; }\n                var decimalsNumber= Math.max(\n                    0,\n                    (match[1] ? match[1].length : 0)\n                    - (match[2] ? +match[2] : 0));\n\n                if (decimalsNumber>4) return parseFloat(num).toFixed(4);\n                    else return num;\n            },\n\n            handleChangeToAmount(e){\n\n                this.toAmount = this.decimalPlaces(this.toAmount);\n\n                this.errorToAmountMessage = '';\n\n                this.fee = WebDollar.Blockchain.Transactions.wizard.calculateFeeSimple ( this.toAmount * WebDollar.Applications.CoinsHelper.WEBD) / WebDollar.Applications.CoinsHelper.WEBD;\n\n                try {\n\n                    let balance = WebDollar.Blockchain.blockchain.accountantTree.getBalance(this.address, undefined);\n\n                    if (balance === null) throw \"Balance is empty\";\n\n                    let total = (parseFloat(this.toAmount) + this.fee ) * WebDollar.Applications.CoinsHelper.WEBD;\n\n                    if ( balance < total ) {\n                        console.error(\"Insufficient funds\", {balance:balance, toAmount: this.toAmount, fee:this.fee})\n                        throw \"Insufficient Funds\";\n                    }\n\n                } catch (exception){\n\n                    if (typeof exception === \"string\")\n                        this.errorToAmountMessage = exception.toString();\n                    else\n                        this.errorToAmountMessage = exception.message;\n\n                    this.fee = '';\n                }\n\n                if (this.fee===0 || this.fee===undefined || this.errorToAmountMessage!==''){\n\n                    this.fee = 10;\n\n                }\n\n            },\n\n            handleChangeToFee(e){\n\n                this.fee = this.decimalPlaces(this.fee);\n\n                this.errorToAmountMessage = '';\n\n            },\n\n            switchToOfflineTransfer(){\n\n                this.offlineTransaction = !this.offlineTransaction;\n\n            },\n\n            choseActionType(value){\n\n                this.steps[1].passed = true;\n                this.steps[1].contentOpen = true;\n                this.steps[0].contentOpen = false;\n\n                if(value)\n                    this.steps[2].typeCreate=true;\n                else\n                    this.steps[2].typeCreate=false;\n\n            },\n\n            checkInternetConnection(){\n\n                return navigator.onLine\n\n            },\n\n            choseInternetInstruction(){\n\n                if (this.steps[2].typeCreate){\n\n                    if(this.checkInternetConnection)\n                        return 'disconnect from the';\n\n                }else{\n\n                    if(this.checkInternetConnection)\n                        return 'connect to the';\n\n                }\n\n                return false;\n\n            },\n\n            validateInternetConnection(){\n\n                if (this.steps[2].typeCreate && !this.checkInternetConnection){\n\n                    this.steps[2].passed = true;\n                    this.steps[2].contentOpen = true;\n                    this.steps[1].contentOpen = false;\n\n                    this.steps[1].error = false;\n                    return true;\n                }\n\n                if (!this.steps[2].typeCreate && this.checkInternetConnection){\n\n                    this.steps[2].passed = true;\n                    this.steps[2].contentOpen = true;\n                    this.steps[1].contentOpen = false;\n\n                    this.steps[1].error = false;\n                    return true;\n                }\n\n                this.steps[1].error = true;\n\n                return false;\n\n            },\n\n            backToStepOne(){\n\n                this.steps[1].passed = false;\n                this.steps[1].contentOpen = false;\n                this.steps[1].error = false;\n\n                this.steps[2].passed = false;\n                this.steps[2].contentOpen = false;\n\n                this.steps[0].contentOpen = true;\n\n            },\n\n            backToStepTwo(){\n\n                if(!this.steps[0].contentOpen){\n\n                    this.steps[1].passed = true;\n                    this.steps[1].contentOpen = true;\n                    this.steps[1].error = false;\n\n                    this.steps[2].passed = false;\n                    this.steps[2].contentOpen = false;\n\n                    this.steps[0].passed = true;\n                    this.steps[0].contentOpen = false;\n\n                }\n\n            },\n\n            async handleImportTransaction(){\n\n                // dropzone tutorial https://www.html5rocks.com/en/tutorials/file/dndfiles/\n\n                // Check for the various File API support.\n                if ((window.File && window.FileReader && window.FileList && window.Blob) === false){\n                    Notification.addAlert(undefined, \"error\", \"Import Error\", \"The File import is not fully supported in this browser\", 5000);\n                }\n\n                let fileInput = this.$refs['importedTransaction'];\n\n                if ('files' in fileInput) {\n                    if (fileInput.files.length === 0) {\n                        Notification.addAlert(undefined, \"error\", \"Import Error\", \"No file selected\", 5000);\n                    } else {\n\n                        for (let i = 0; i < fileInput.files.length; i++) {\n\n                            let file = fileInput.files[i];\n                            let extension = file.name.split('.').pop();\n\n                            if (extension === \"txt\") {\n                                let reader = new FileReader();\n\n                                try {\n                                    reader.onload = async (e) => {\n\n                                        //console.log(reader.result);\n                                        let data = JSON.parse(reader.result);\n\n                                        let myTransaction = await WebDollar.Blockchain.Transactions.wizard.deserializeValidateTransaction(data.transaction);\n\n                                        let answer = await WebDollar.Blockchain.Transactions.wizard.propagateTransaction( data.signature , myTransaction );\n\n                                        if (answer.result === true){\n\n                                            this.toAddress = '';\n                                            this.toAmount = '';\n                                            this.fee = '';\n\n                                            this.backToStepOne();\n                                            this.switchToOfflineTransfer();\n\n                                            this.$emit('closeModal');\n\n                                            Notification.addAlert(undefined, \"success\", \"Import Success\", \" Transaction has been propagated!\", 5000);\n\n                                        } else {\n                                            Notification.addAlert(undefined, \"error\", \"Import Error\", answer.message, 5000);\n                                        }\n\n                                    };\n\n                                } catch (exception){\n                                    Notification.addAlert(undefined, \"error\", \"Import Error\",\"Your Uploaded file is not a valid JSON format\", 5000);\n                                }\n\n                                reader.readAsText(file);\n                            } else {\n                                Notification.addAlert(undefined, \"error\",\"Import Error\", \"File not supported!\", 5000);\n                            }\n\n                        }\n\n\n                    }\n                }\n\n            },\n\n            handleExportTransaction(data){\n\n                let transactionData = new Blob( [JSON.stringify(data)], {type: \"application/text;charset=utf-8\"});\n\n                let fileName = \"transaction\"+\".txt\";\n                FileSaver.saveAs(transactionData, fileName);\n\n                Notification.addAlert(\"error-firewall\", \"warn\", \"Offline Transaction\", \"The offline transaction to \"+ this.toAddress + \" has been created and saved on your device.\",5000);\n\n            },\n\n        },\n\n    }\n</script>\n\n<style>\n\n    .modal .title {\n        background-color: #262626;\n        padding: 10px 0;\n        text-transform: capitalize;\n        letter-spacing: 2px;\n        line-height: 18px;\n    }\n\n    .step, .step .title{\n        display: block;\n    }\n\n    .step .title{\n        text-align: left;\n        padding-left: 10px!important;\n        font-size: 16px;\n        color: #757575;\n        cursor: pointer;\n    }\n\n    .passed .title{\n        color: #ffc12c\n    }\n\n    .offlineTransaction{\n        cursor: pointer;\n        text-align: center;\n        color: #fff;\n        display: block;\n        margin-bottom: 15px;\n        margin-top: 15px;\n        font-size: 14px;\n        letter-spacing: 1px;\n        transition: all 0.5s ease;\n    }\n\n    .offlineTransfer{\n        color: #fff;\n    }\n\n    .offlineTransaction:hover{\n        color: #ffc12c;\n        transition: all 0.5s ease;\n    }\n\n    .transferError{\n        color: red;\n    }\n\n\n    .transferSuccess{\n        color: #ffc12c;\n        padding: 20px;\n        display: block;\n    }\n\n    .transferFee{\n        color: white;\n        text-align: left;\n    }\n\n    .transferWalletAddressImage{\n        position: relative;\n        height: 36.5px!important;\n        margin: 0 auto;\n        border-radius: 0!important;\n    }\n\n    .imageAndInput{\n        display: grid;\n        grid-template-columns: 36px 1fr;\n        background-color: #333;\n    }\n\n    .moneyBox{\n        display: grid;\n        grid-template-columns: 1fr 100px;\n        grid-column-gap: 10px;\n    }\n\n    .hide{\n        display: none!important;\n    }\n\n    .transfer .button{\n        cursor: pointer;\n    }\n\n    .stepContent .buttons{\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        padding: 10px 0 0 0;\n    }\n\n    .stepContent .modalButton{\n        background-color: #ffc12c;\n        color: #000;\n        letter-spacing: 1px;\n        border: none;\n        text-align: center;\n        width: 90%;\n        margin-bottom: 10px;\n        box-sizing: border-box!important;\n        transition: all 0.5s ease;\n    }\n\n    .stepContent .fullWidthButton{\n        width: auto;\n        margin: 0 10px;\n        margin-top: 10px!important;\n        margin-bottom: 10px!important;\n        display: block;\n    }\n\n    .stepContent .modalButton:hover{\n        background-color: #fff560;\n        transition: all 0.5s ease;\n    }\n\n    .stepContent{\n        text-align: left;\n    }\n\n    .stepContent span{\n        padding: 10px 15px;\n        font-size: 12px;\n        display: block;\n        width: auto;\n        line-height: 18px!important;\n        color: #d4d4d4!important;\n    }\n\n    .stepContent .hilight{\n        color: #ffc12c!important;\n        display: inline-block;\n        padding: 2px;\n    }\n\n    .stepContent .hilightRed{\n        color: #dc5f48!important;\n    }\n\n    .marginBottomButton{\n        margin-bottom: 10px;\n    }\n\n    input[type=number]::-webkit-inner-spin-button,\n    input[type=number]::-webkit-outer-spin-button {\n        -webkit-appearance: none;\n        margin: 0;\n    }\n\n    @media only screen and (max-width: 600px){\n\n        .imageAndInput{\n            display: grid;\n            grid-template-columns: 38px 1fr;\n            background-color: #333;\n        }\n\n        .modal .transfer .address {\n            padding: 6px 0 4px 10px;\n        }\n\n    }\n\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.modal .title {\n    background-color: #262626;\n    padding: 10px 0;\n    text-transform: capitalize;\n    letter-spacing: 2px;\n    line-height: 18px;\n}\n.step, .step .title{\n    display: block;\n}\n.step .title{\n    text-align: left;\n    margin: 10px 0;\n    padding-left: 10px!important;\n    font-size: 16px;\n    color: #757575;\n    cursor: pointer;\n}\n.passed .title{\n    color: #ffc12c\n}\n.offlineTransaction{\n    cursor: pointer;\n    text-align: center;\n    color: #fff;\n    display: block;\n    margin-bottom: 15px;\n    margin-top: 15px;\n    font-size: 14px;\n    letter-spacing: 1px;\n    transition: all 0.5s ease;\n}\n.offlineTransfer{\n    color: #fff;\n}\n.offlineTransaction:hover{\n    color: #ffc12c;\n    transition: all 0.5s ease;\n}\n.transferError{\n    color: red;\n}\n.transferSuccess{\n    color: #ffc12c;\n    padding: 20px;\n    display: block;\n}\n.transferFee{\n    color: white;\n    text-align: left;\n}\n.transferWalletAddressImage{\n    position: relative;\n    height: 36.5px!important;\n    margin: 0 auto;\n    border-radius: 0!important;\n}\n.imageAndInput{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 36px 1fr;\n        grid-template-columns: 36px 1fr;\n    background-color: #333;\n}\n.hideTransactionImage{\n    -ms-grid-columns: 1fr!important;\n        grid-template-columns: 1fr!important;\n}\n.moneyBox{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 100px;\n        grid-template-columns: 1fr 100px;\n    grid-column-gap: 10px;\n}\n.hide{\n    display: none!important;\n}\n.transfer .button{\n    cursor: pointer;\n}\n.stepContent .buttons{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr;\n        grid-template-columns: 1fr 1fr;\n    padding: 10px 0 0 0;\n}\n.stepContent .modalButton{\n    background-color: #ffc12c;\n    color: #000;\n    letter-spacing: 1px;\n    border: none;\n    text-align: center;\n    width: 90%;\n    margin-bottom: 10px;\n    box-sizing: border-box!important;\n    transition: all 0.5s ease;\n}\n.stepContent .fullWidthButton{\n    width: auto;\n    margin: 0 10px;\n    margin-top: 10px!important;\n    margin-bottom: 10px!important;\n    display: block;\n}\n.stepContent .modalButton:hover{\n    background-color: #fff560;\n    transition: all 0.5s ease;\n}\n.stepContent{\n    text-align: left;\n}\n.stepContent span{\n    padding: 10px 15px;\n    font-size: 12px;\n    display: block;\n    width: auto;\n    line-height: 18px!important;\n    color: #d4d4d4!important;\n}\n.stepContent .hilight{\n    color: #ffc12c!important;\n    display: inline-block;\n    padding: 2px;\n}\n.stepContent .hilightRed{\n    color: #dc5f48!important;\n}\n.marginBottomButton{\n    margin-bottom: 10px;\n}\n.offlineTransfer h2{\n    color: #ffffff;\n    letter-spacing: 2px;\n    font-size: 20px;\n    font-weight: 500!important;\n    line-height: 40px;\n    margin-top: 13px;\n    margin-bottom: 10px;\n    transition: all .5s linear;\n}\ninput[type=number]::-webkit-inner-spin-button,\ninput[type=number]::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n}\n@media only screen and (max-width: 600px){\n.imageAndInput{\n        display: -ms-grid;\n        display: grid;\n        -ms-grid-columns: 38px 1fr;\n            grid-template-columns: 38px 1fr;\n        background-color: #333;\n}\n.modal .transfer .address {\n        padding: 6px 0 4px 10px;\n}\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/src/components/Wallet/Address/Modals/Main-Modal/parts/Transfer.part.vue"],"names":[],"mappings":";AAgrBA;IACA,0BAAA;IACA,gBAAA;IACA,2BAAA;IACA,oBAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,iBAAA;IACA,eAAA;IACA,6BAAA;IACA,gBAAA;IACA,eAAA;IACA,gBAAA;CACA;AAEA;IACA,cAAA;CACA;AAEA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,eAAA;IACA,oBAAA;IACA,iBAAA;IACA,gBAAA;IACA,oBAAA;IACA,0BAAA;CACA;AAEA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;CACA;AAEA;IACA,WAAA;CACA;AAGA;IACA,eAAA;IACA,cAAA;IACA,eAAA;CACA;AAEA;IACA,aAAA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,yBAAA;IACA,eAAA;IACA,2BAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;IACA,uBAAA;CACA;AAEA;IACA,gCAAA;QAAA,qCAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,4BAAA;QAAA,iCAAA;IACA,sBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,0BAAA;QAAA,+BAAA;IACA,oBAAA;CACA;AAEA;IACA,0BAAA;IACA,YAAA;IACA,oBAAA;IACA,aAAA;IACA,mBAAA;IACA,WAAA;IACA,oBAAA;IACA,iCAAA;IACA,0BAAA;CACA;AAEA;IACA,YAAA;IACA,eAAA;IACA,2BAAA;IACA,8BAAA;IACA,eAAA;CACA;AAEA;IACA,0BAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,mBAAA;IACA,gBAAA;IACA,eAAA;IACA,YAAA;IACA,4BAAA;IACA,yBAAA;CACA;AAEA;IACA,yBAAA;IACA,sBAAA;IACA,aAAA;CACA;AAEA;IACA,yBAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;IACA,eAAA;IACA,oBAAA;IACA,gBAAA;IACA,2BAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AAEA;;IAEA,yBAAA;IACA,UAAA;CACA;AAEA;AAEA;QACA,kBAAA;QAAA,cAAA;QACA,2BAAA;YAAA,gCAAA;QACA,uBAAA;CACA;AAEA;QACA,wBAAA;CACA;CAEA","file":"Transfer.part.vue","sourcesContent":["<template>\n    <div class=\"transferList\">\n\n        <div class=\"offlineTransfer\" v-if=\"this.offlineTransaction\">\n\n            <h2>Offline Transaction</h2>\n\n            <div class=\"step step1\" :class=\"this.steps[0].passed ? 'passed' : ''\">\n\n                <div class=\"title\" @click=\"backToStepOne()\">\n                    1. Chose Action Type\n                </div>\n\n                <div class=\"stepContent\" v-if=\"this.steps[0].contentOpen\">\n\n                    <span>\n                        Do you want to create a new transaction or to propagate a already created transaction?\n                    </span>\n\n                    <div class=\"buttons\">\n\n                        <div class=\"modalButton\" @click=\"choseActionType(true)\">\n                            Create\n                        </div>\n\n                        <div class=\"modalButton\" @click=\"choseActionType(false)\">\n                            Propagate\n                        </div>\n\n                    </div>\n\n                </div>\n\n            </div>\n\n            <div class=\"step step2\" :class=\"this.steps[1].passed ? 'passed' : ''\">\n\n                <div class=\"title\" @click=\"backToStepTwo()\">\n                    2. Secure Offline transaction\n                </div>\n\n                <div class=\"stepContent\" v-if=\"this.steps[1].contentOpen\">\n\n                     <span v-if=\"this.steps[1].error===2 && this.steps[2].typeCreate\">\n                        You're not in private mode. In order to create a offline transaction, you should use incognito mode for higher level of security.\n                    </span>\n\n                    <span v-if=\"this.steps[1].error===1\">\n                        You're not sync with the network yet. In order to {{ this.steps[2].typeCreate ? 'create' : 'propagate' }}, you should be synchronized.\n                    </span>\n\n                    <span v-if=\"this.steps[1].error===3\">\n                        Your internet connection is \"<span class=\"hilight\" :class=\"this.internetConnection ? '' : 'hilightRed'\">{{ this.internetConnection ? 'Online' : 'Offline'}}</span>\",\n                        In order to {{ this.steps[2].typeCreate ? 'create' : 'propagate' }} the offline transaction, you should first {{ this.choseInternetInstruction() }} internet and then recheck the connection, by pressing the following button to verify you are \"{{ !this.internetConnection ? 'Online' : 'Offline'}}\".\n                    </span>\n\n                    <div class=\"modalButton fullWidthButton\" @click=\"validateSecurity()\">\n                        Check Security\n                    </div>\n\n                </div>\n\n            </div>\n\n            <div class=\"step step3\" :class=\"this.steps[2].passed ? 'passed' : ''\" v-if=\"this.steps[1].passed\">\n\n                <div class=\"title\">\n                    {{ this.steps[2].typeCreate ? '3. Wallet & Transaction' : '3. Propagate Online Transaction'}}\n                </div>\n\n                <div class=\"stepContent\" v-if=\"this.steps[2].contentOpen && !this.steps[2].typeCreate\">\n\n                    <span v-if=\"this.steps[2].error\">\n                        eroare\n                    </span>\n\n                    <label class=\"myLabel\">\n\n                        <input ref=\"importedTransaction\" type=\"file\" v-on:change=\"this.handleImportTransaction\" multiple size=\"50\" />\n\n                        <div class=\"modalButton fullWidthButton\">\n                            Chose tx file to propagate\n                        </div>\n\n                    </label>\n\n                </div>\n\n                <div class=\"stepContent\" v-if=\"this.steps[2].contentOpen && this.steps[2].typeCreate\">\n\n                    <span v-if=\"this.steps[2].error\">\n                        eroare\n                    </span>\n\n                    <label v-if=\"!this.importedAddress\" class=\"myLabel\">\n\n                        <input ref=\"reffImportedAddressOffline\" type=\"file\" v-on:change=\"this.handleImportAddressOffline\" multiple size=\"50\" />\n\n                        <div class=\"modalButton fullWidthButton\">\n                            Import your wallet\n                        </div>\n\n                    </label>\n\n                </div>\n\n            </div>\n\n        </div>\n\n        <div class=\"transfer\" @keyup.enter=\"handleCreateTransaction(undefined,offlineTransaction)\" v-if=\"!this.offlineTransaction || (this.steps[2].contentOpen && this.steps[2].typeCreate && this.importedAddress)\">\n            <div >\n                <div class=\"imageAndInput\" :class=\"!this.offlineTransaction ? '' : 'hideTransactionImage'\">\n\n                    <div v-if=\"!this.offlineTransaction\">\n                        <img class=\"walletAddressImage transferWalletAddressImage\" :src=\"this.getAddressPic\" :class=\"this.errorToAddressMessage==='Invalid Address' ? 'hide' : ''\" >\n                    </div>\n                    <div>\n                        <input class=\"address \" @keyup=\"this.handleChangeToAddress\" v-model=\"toAddress\" placeholder=\"Recipient Address\"/>\n                    </div>\n\n                </div>\n\n                <span class=\"editError\" v-html=\"this.errorToAddressMessage\" :class=\"this.errorToAddressMessage ? '' : 'hide'\"></span>\n\n            </div>\n\n            <div>\n                <div class=\"moneyBox\">\n                    <input v-model=\"toAmount\" @keyup=\"this.handleChangeToAmount\" type=\"number\" class=\"amount\" placeholder=\"WEBD Amount\"/>\n                    <input v-model=\"fee\" @keyup=\"this.handleChangeToFee\" class=\"amount\" type=\"number\" placeholder=\"Fee\"/>\n                </div>\n            </div>\n\n            <span class=\"editError editError2\" v-html=\"this.errorToAmountMessage\" :class=\"this.errorToAmountMessage ? '' : 'hide'\"></span>\n\n            <button class=\"button marginBottomButton\" @click=\"handleCreateTransaction(undefined,offlineTransaction)\" :class=\"this.successMessage ? 'hide' : ''\" >\n                {{ this.offlineTransaction ? 'EXPORT TRANSACTION' : 'SEND WEBD' }}\n            </button>\n\n        </div>\n\n    </div>\n</template>\n\n<script>\n\n    import Notification from \"helpers/Notification.helpers\"\n    import BrowserHelpers from \"helpers/Browser.helpers\"\n    import FileSaver from './../../../../../../../node_modules/file-saver'\n\n    export default {\n\n        //@onTransferSuccess\n        props:{\n            address: {default: null},\n            offlineTransaction: {default:false}\n        },\n\n        data: () => {\n            return {\n                timeLock:0,\n                incognitoMode:false,\n                syncronizedOnce: false,\n                toAddress: '',\n                internetConnection:true,\n                toAmount: '',\n                importedAddress:false,\n                fee: '',\n                errorMessage: '',\n                errorToAddressMessage: '',\n                errorToAmountMessage: '',\n                successMessage: '',\n                steps:[{\n                        passed:true,\n                        contentOpen:true\n                    },\n                    {\n                        passed:false,\n                        contentOpen:false,\n                        error:false\n                    },\n                    {\n                        passed:false,\n                        contentOpen:false,\n                        typeCreate:true,\n                        error:false\n                    }]\n            }\n        },\n\n        async mounted(){\n\n            if (typeof window === 'undefined') return;\n\n            this.incognitoMode = await this.checkIncognito();\n            this.checkInternetConnection();\n\n        },\n\n        computed:{\n\n            getAddressPic(){\n\n                return WebDollar.Blockchain.Wallet.getAddressPic(this.toAddress);\n\n            }\n\n        },\n\n        methods:{\n\n            async handleImportAddressOffline(){\n\n                if(this.internetConnection){\n\n                    this.backToStepTwo();\n\n                }else{\n\n                    // TODO merge with the function for import tx\n                    if ((window.File && window.FileReader && window.FileList && window.Blob) === false){\n                        Notification.addAlert(undefined, \"error\", \"Import Error\", \"The File import is not fully supported in this browser\", 5000);\n                    }\n\n                    let fileInput = this.$refs['reffImportedAddressOffline'];\n\n                    if ('files' in fileInput) {\n                        if (fileInput.files.length === 0) {\n                            Notification.addAlert(undefined, \"error\", \"Import Error\", \"No file selected\", 5000);\n                        } else {\n\n                            for (let i = 0; i < fileInput.files.length; i++) {\n\n                                let file = fileInput.files[i];\n                                let extension = file.name.split('.').pop();\n\n                                if (extension === \"webd\") {\n                                    let reader = new FileReader();\n\n                                    try {\n                                        reader.onload = async (e) => {\n\n                                            //console.log(reader.result);\n                                            let data = JSON.parse(reader.result);\n\n                                            let answer = await WebDollar.Blockchain.Wallet.importAddressFromJSON(data);\n\n                                            if (answer.result === true){\n                                                this.importedAddress = answer.address;\n                                                Notification.addAlert(undefined, \"success\", \"Import Success\", answer.address + \" has been imported!\", 5000);\n                                            } else {\n                                                Notification.addAlert(undefined, \"error\", \"Import Error\", answer.message, 5000);\n                                            }\n\n                                        };\n\n                                    } catch (exception){\n                                        Notification.addAlert(undefined, \"error\", \"Import Error\",\"Your Uploaded file is not a valid JSON format\", 5000);\n                                    }\n\n                                    reader.readAsText(file);\n                                } else {\n                                    Notification.addAlert(undefined, \"error\",\"Import Error\", \"File not supported!\", 5000);\n                                }\n\n                            }\n\n\n                        }\n                    }\n\n                }\n\n            },\n\n            async handleCreateTransaction(e){\n\n                this.toAmount = Number(this.toAmount);\n                this.fee = Number(this.fee);\n\n                this.handleChangeToAddress();\n\n                if (this.fee === 0) {\n                    this.errorToAmountMessage = 'Fee should not be 0';\n                    return false;\n                }\n\n                if (this.fee * WebDollar.Applications.CoinsHelper.WEBD < WebDollar.Applications.CONSTS.MINING_POOL.MINING.FEE_THRESHOLD){\n                    this.errorToAmountMessage = 'Fee is too small, and miners won\\'t process your transaction';\n                    return false;\n                }\n\n                if (this.errorToAddressMessage !== '' || this.errorToAmountMessage !== '' ) return false;\n\n                let amountToSend = parseInt(this.toAmount * WebDollar.Applications.CoinsHelper.WEBD);\n                let feeToSend = parseInt(this.fee * WebDollar.Applications.CoinsHelper.WEBD);\n                let answer;\n\n                if (this.offlineTransaction){\n\n                    if(this.internetConnection){\n\n                        this.backToStepTwo();\n\n                    }else{\n\n                        answer = await WebDollar.Blockchain.Transactions.wizard.validateTransaction( this.importedAddress, this.toAddress, amountToSend, feeToSend, undefined, undefined, this.timeLock-1, true );\n\n                        if (answer.result){\n\n                            let data = {\n                                transaction: answer.transaction.serializeTransaction(),\n                                signature: answer.signature\n                            };\n\n                            this.handleExportTransaction(data);\n\n                            this.toAddress = '';\n                            this.toAmount = '';\n                            this.fee = '';\n\n                            this.$emit('onTransferSuccess', answer.message);\n\n                        } else {\n                            this.errorMessage = answer.message;\n                            this.successMessage = '';\n                        }\n\n                    }\n                }\n                else{\n\n                    answer = await WebDollar.Blockchain.Transactions.wizard.createTransactionSimple( this.address, this.toAddress, amountToSend, feeToSend );\n\n                    if (answer.result){\n\n                        Notification.addAlert(undefined, \"success\", \"Transaction Created\", \"Transaction to \"+ this.toAddress + \" with \" +  BrowserHelpers.formatMoneyNumber(amountToSend)+\"WEBD has been created.\",5000);\n\n                        this.toAddress = '';\n                        this.toAmount = '';\n                        this.fee = '';\n\n                        this.$emit('onTransferSuccess', answer.message);\n\n                    } else {\n                        this.errorMessage = answer.message;\n                        this.successMessage = '';\n                    }\n\n                }\n\n            },\n\n            handleChangeToAddress(e){\n\n                try {\n\n                    if ( WebDollar.Applications.AddressHelper.getUnencodedAddressFromWIF(this.toAddress) === null ) {\n                        this.errorToAddressMessage = 'Invalid Address';\n                        return false;\n                    }\n\n                } catch (exception){\n                    this.errorToAddressMessage = 'Invalid Address';\n                    return false;\n                }\n\n                this.errorToAddressMessage = '';\n\n            },\n\n            decimalPlaces(num) {\n                var match = (''+num).match(/(?:\\.(\\d+))?(?:[eE]([+-]?\\d+))?$/);\n                if (!match) { return 0; }\n                var decimalsNumber= Math.max(\n                    0,\n                    (match[1] ? match[1].length : 0)\n                    - (match[2] ? +match[2] : 0));\n\n                if (decimalsNumber>4) return parseFloat(num).toFixed(4);\n                    else return num;\n            },\n\n            handleChangeToAmount(e){\n\n                this.toAmount = this.decimalPlaces(this.toAmount);\n\n                this.errorToAmountMessage = '';\n\n                this.fee = WebDollar.Blockchain.Transactions.wizard.calculateFeeSimple ( this.toAmount * WebDollar.Applications.CoinsHelper.WEBD) / WebDollar.Applications.CoinsHelper.WEBD;\n\n                if(!this.offlineTransaction){\n\n                    try {\n\n                        let balance = WebDollar.Blockchain.blockchain.accountantTree.getBalance(this.address, undefined);\n\n                        if (balance === null) throw \"Balance is empty\";\n\n                        let total = (parseFloat(this.toAmount) + this.fee ) * WebDollar.Applications.CoinsHelper.WEBD;\n\n                        if ( balance < total ) {\n                            console.error(\"Insufficient funds\", {balance:balance, toAmount: this.toAmount, fee:this.fee})\n                            throw \"Insufficient Funds\";\n                        }\n\n                    } catch (exception){\n\n                        if (typeof exception === \"string\")\n                            this.errorToAmountMessage = exception.toString();\n                        else\n                            this.errorToAmountMessage = exception.message;\n\n                        this.fee = '';\n                    }\n\n                    if (this.fee===0 || this.fee===undefined || this.errorToAmountMessage!==''){\n\n                        this.fee = 10;\n\n                    }\n\n                }\n\n            },\n\n            handleChangeToFee(e){\n\n                this.fee = this.decimalPlaces(this.fee);\n\n                this.errorToAmountMessage = '';\n\n            },\n\n            choseActionType(value){\n\n                this.steps[1].passed = true;\n                this.steps[1].contentOpen = true;\n                this.steps[0].contentOpen = false;\n\n                if(value)\n                    this.steps[2].typeCreate=true;\n                else\n                    this.steps[2].typeCreate=false;\n\n            },\n\n            checkInternetConnection(){\n\n                this.internetConnection = navigator.onLine;\n\n            },\n\n            choseInternetInstruction(){\n\n                this.checkInternetConnection();\n\n                if (this.steps[2].typeCreate){\n\n                    if(this.internetConnection)\n                        return 'disconnect from the';\n\n                }else{\n\n                    if(this.internetConnection)\n                        return 'connect to the';\n\n                }\n\n                return false;\n\n            },\n\n            validateSecurity() {\n\n                this.checkInternetConnection();\n                this.handleChangeToAmount();\n                this.handleChangeToFee();\n\n                let propagationError = false;\n\n                if (!this.steps[2].typeCreate && this.internetConnection) {\n\n                    this.steps[2].passed = true;\n                    this.steps[2].contentOpen = true;\n                    this.steps[1].contentOpen = false;\n\n                    this.steps[1].error = false;\n                    return true;\n\n                }else{\n\n                   propagationError = true;\n\n                }\n\n                if(this.incognitoMode){\n\n                    if (WebDollar.Blockchain._synchronized || this.syncronizedOnce) {\n\n                        this.syncronizedOnce = true;\n                        this.timeLock = WebDollar.Blockchain.blockchain.blocks.length;\n\n                        if (this.steps[2].typeCreate && !this.internetConnection) {\n\n                            this.steps[2].passed = true;\n                            this.steps[2].contentOpen = true;\n                            this.steps[1].contentOpen = false;\n\n                            this.steps[1].error = false;\n                            return true;\n\n                        }else{\n\n                            this.steps[1].error = 3;\n                            return false;\n\n                        }\n\n                    }else{\n\n                        this.steps[1].error = 1;\n                        return false;\n\n                    }\n\n                }else{\n\n                    if(propagationError){\n\n                        this.steps[1].error = 3;\n                        return false;\n\n                    }\n\n                    this.steps[1].error = 2;\n                    return false;\n\n                }\n\n            },\n\n            backToStepOne(){\n\n                this.steps[1].passed = false;\n                this.steps[1].contentOpen = false;\n                this.steps[1].error = false;\n\n                this.steps[2].passed = false;\n                this.steps[2].contentOpen = false;\n\n                this.steps[0].contentOpen = true;\n\n            },\n\n            backToStepTwo(){\n\n                if(!this.steps[0].contentOpen){\n\n                    this.steps[1].passed = true;\n                    this.steps[1].contentOpen = true;\n                    this.steps[1].error = false;\n\n                    this.steps[2].passed = false;\n                    this.steps[2].contentOpen = false;\n\n                    this.steps[0].passed = true;\n                    this.steps[0].contentOpen = false;\n\n                }\n\n                this.validateSecurity();\n\n            },\n\n            async handleImportTransaction(){\n\n                // dropzone tutorial https://www.html5rocks.com/en/tutorials/file/dndfiles/\n\n                // Check for the various File API support.\n                if ((window.File && window.FileReader && window.FileList && window.Blob) === false){\n                    Notification.addAlert(undefined, \"error\", \"Import Error\", \"The File import is not fully supported in this browser\", 5000);\n                }\n\n                let fileInput = this.$refs['importedTransaction'];\n\n                if ('files' in fileInput) {\n                    if (fileInput.files.length === 0) {\n                        Notification.addAlert(undefined, \"error\", \"Import Error\", \"No file selected\", 5000);\n                    } else {\n\n                        for (let i = 0; i < fileInput.files.length; i++) {\n\n                            let file = fileInput.files[i];\n                            let extension = file.name.split('.').pop();\n\n                            if (extension === \"tx\") {\n                                let reader = new FileReader();\n\n                                try {\n                                    reader.onload = async (e) => {\n\n                                        //console.log(reader.result);\n                                        let data = JSON.parse(reader.result);\n\n                                        let myTransaction = await WebDollar.Blockchain.Transactions.wizard.deserializeValidateTransaction(data.transaction);\n\n                                        let answer = await WebDollar.Blockchain.Transactions.wizard.propagateTransaction( data.signature , myTransaction );\n\n                                        if (answer.result === true){\n\n                                            this.toAddress = '';\n                                            this.toAmount = '';\n                                            this.fee = '';\n\n                                            this.backToStepOne();\n\n                                            this.$emit('closeModal');\n\n                                            Notification.addAlert(undefined, \"success\", \"Import Success\", \" Transaction has been propagated!\", 5000);\n\n                                        } else {\n                                            Notification.addAlert(undefined, \"error\", \"Import Error\", answer.message, 5000);\n                                        }\n\n                                    };\n\n                                } catch (exception){\n                                    Notification.addAlert(undefined, \"error\", \"Import Error\",\"Your Uploaded file is not a valid JSON format\", 5000);\n                                }\n\n                                reader.readAsText(file);\n                            } else {\n                                Notification.addAlert(undefined, \"error\",\"Import Error\", \"File not supported!\", 5000);\n                            }\n\n                        }\n\n\n                    }\n                }\n\n            },\n\n            handleExportTransaction(data){\n\n                let transactionData = new Blob( [JSON.stringify(data)], {type: \"application/text;charset=utf-8\"});\n\n                let fileName = \"transaction\"+\".tx\";\n                FileSaver.saveAs(transactionData, fileName);\n\n                Notification.addAlert(undefined, \"success\", \"Offline Transaction\", 'The offline transaction has been created and saved on your device. For keep your wallet totally safe, this browser tab will be closed in 5 seconds.',5000);\n\n                setTimeout(function(){ window.close(); }, 5000);\n\n            },\n\n            async checkIncognito() {\n\n                let fs = window.RequestFileSystem || window.webkitRequestFileSystem;\n\n                if (!fs) {\n                    console.error(\"Not incognito mode\");\n                    return false;\n                } else {\n\n                    return await new Promise((resolve)=>{\n\n                        fs(window.TEMPORARY, 100,\n                            ()=> resolve(false),\n                            ()=> resolve(true),\n                        );\n\n                    });\n\n                }\n\n\n            }\n\n        },\n\n    }\n</script>\n\n<style>\n\n    .modal .title {\n        background-color: #262626;\n        padding: 10px 0;\n        text-transform: capitalize;\n        letter-spacing: 2px;\n        line-height: 18px;\n    }\n\n    .step, .step .title{\n        display: block;\n    }\n\n    .step .title{\n        text-align: left;\n        margin: 10px 0;\n        padding-left: 10px!important;\n        font-size: 16px;\n        color: #757575;\n        cursor: pointer;\n    }\n\n    .passed .title{\n        color: #ffc12c\n    }\n\n    .offlineTransaction{\n        cursor: pointer;\n        text-align: center;\n        color: #fff;\n        display: block;\n        margin-bottom: 15px;\n        margin-top: 15px;\n        font-size: 14px;\n        letter-spacing: 1px;\n        transition: all 0.5s ease;\n    }\n\n    .offlineTransfer{\n        color: #fff;\n    }\n\n    .offlineTransaction:hover{\n        color: #ffc12c;\n        transition: all 0.5s ease;\n    }\n\n    .transferError{\n        color: red;\n    }\n\n\n    .transferSuccess{\n        color: #ffc12c;\n        padding: 20px;\n        display: block;\n    }\n\n    .transferFee{\n        color: white;\n        text-align: left;\n    }\n\n    .transferWalletAddressImage{\n        position: relative;\n        height: 36.5px!important;\n        margin: 0 auto;\n        border-radius: 0!important;\n    }\n\n    .imageAndInput{\n        display: grid;\n        grid-template-columns: 36px 1fr;\n        background-color: #333;\n    }\n\n    .hideTransactionImage{\n        grid-template-columns: 1fr!important;\n    }\n\n    .moneyBox{\n        display: grid;\n        grid-template-columns: 1fr 100px;\n        grid-column-gap: 10px;\n    }\n\n    .hide{\n        display: none!important;\n    }\n\n    .transfer .button{\n        cursor: pointer;\n    }\n\n    .stepContent .buttons{\n        display: grid;\n        grid-template-columns: 1fr 1fr;\n        padding: 10px 0 0 0;\n    }\n\n    .stepContent .modalButton{\n        background-color: #ffc12c;\n        color: #000;\n        letter-spacing: 1px;\n        border: none;\n        text-align: center;\n        width: 90%;\n        margin-bottom: 10px;\n        box-sizing: border-box!important;\n        transition: all 0.5s ease;\n    }\n\n    .stepContent .fullWidthButton{\n        width: auto;\n        margin: 0 10px;\n        margin-top: 10px!important;\n        margin-bottom: 10px!important;\n        display: block;\n    }\n\n    .stepContent .modalButton:hover{\n        background-color: #fff560;\n        transition: all 0.5s ease;\n    }\n\n    .stepContent{\n        text-align: left;\n    }\n\n    .stepContent span{\n        padding: 10px 15px;\n        font-size: 12px;\n        display: block;\n        width: auto;\n        line-height: 18px!important;\n        color: #d4d4d4!important;\n    }\n\n    .stepContent .hilight{\n        color: #ffc12c!important;\n        display: inline-block;\n        padding: 2px;\n    }\n\n    .stepContent .hilightRed{\n        color: #dc5f48!important;\n    }\n\n    .marginBottomButton{\n        margin-bottom: 10px;\n    }\n\n    .offlineTransfer h2{\n        color: #ffffff;\n        letter-spacing: 2px;\n        font-size: 20px;\n        font-weight: 500!important;\n        line-height: 40px;\n        margin-top: 13px;\n        margin-bottom: 10px;\n        transition: all .5s linear;\n    }\n\n    input[type=number]::-webkit-inner-spin-button,\n    input[type=number]::-webkit-outer-spin-button {\n        -webkit-appearance: none;\n        margin: 0;\n    }\n\n    @media only screen and (max-width: 600px){\n\n        .imageAndInput{\n            display: grid;\n            grid-template-columns: 38px 1fr;\n            background-color: #333;\n        }\n\n        .modal .transfer .address {\n            padding: 6px 0 4px 10px;\n        }\n\n    }\n\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18578,6 +18888,7 @@ var render = function() {
   return _c("div", { staticClass: "transferList" }, [
     this.offlineTransaction
       ? _c("div", { staticClass: "offlineTransfer" }, [
+          _c("h2", [_vm._v("Offline Transaction")]),
           _c(
             "div",
             {
@@ -18595,7 +18906,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n                1. Action Type\n            ")]
+                [_vm._v("\n                1. Chose Action Type\n            ")]
               ),
               this.steps[0].contentOpen
                 ? _c("div", { staticClass: "stepContent" }, [
@@ -18661,45 +18972,65 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\n                2. Internet Connection\n            "
+                    "\n                2. Secure Offline transaction\n            "
                   )
                 ]
               ),
               this.steps[1].contentOpen
                 ? _c("div", { staticClass: "stepContent" }, [
-                    this.steps[1].error
+                    this.steps[1].error === 2 && this.steps[2].typeCreate
                       ? _c("span", [
                           _vm._v(
-                            "\n                    Your internet connection if "
-                          ),
-                          _c(
-                            "span",
-                            {
-                              staticClass: "hilight",
-                              class: this.checkInternetConnection()
-                                ? ""
-                                : "hilightRed"
-                            },
-                            [
-                              _vm._v(
-                                _vm._s(
-                                  this.checkInternetConnection()
-                                    ? "Online"
-                                    : "Offline"
-                                )
-                              )
-                            ]
-                          ),
+                            "\n                    You're not in private mode. In order to create a offline transaction, you should use incognito mode for higher level of security.\n                "
+                          )
+                        ])
+                      : _vm._e(),
+                    this.steps[1].error === 1
+                      ? _c("span", [
                           _vm._v(
-                            ",\n                    In order to " +
+                            "\n                    You're not sync with the network yet. In order to " +
                               _vm._s(
                                 this.steps[2].typeCreate
                                   ? "create"
                                   : "propagate"
                               ) +
-                              " the offline transaction first you should " +
+                              ", you should be synchronized.\n                "
+                          )
+                        ])
+                      : _vm._e(),
+                    this.steps[1].error === 3
+                      ? _c("span", [
+                          _vm._v(
+                            '\n                    Your internet connection is "'
+                          ),
+                          _c(
+                            "span",
+                            {
+                              staticClass: "hilight",
+                              class: this.internetConnection ? "" : "hilightRed"
+                            },
+                            [
+                              _vm._v(
+                                _vm._s(
+                                  this.internetConnection ? "Online" : "Offline"
+                                )
+                              )
+                            ]
+                          ),
+                          _vm._v(
+                            '",\n                    In order to ' +
+                              _vm._s(
+                                this.steps[2].typeCreate
+                                  ? "create"
+                                  : "propagate"
+                              ) +
+                              " the offline transaction, you should first " +
                               _vm._s(this.choseInternetInstruction()) +
-                              " internet and then recheck the connection by pressing the following button.\n                "
+                              ' internet and then recheck the connection, by pressing the following button to verify you are "' +
+                              _vm._s(
+                                !this.internetConnection ? "Online" : "Offline"
+                              ) +
+                              '".\n                '
                           )
                         ])
                       : _vm._e(),
@@ -18709,13 +19040,13 @@ var render = function() {
                         staticClass: "modalButton fullWidthButton",
                         on: {
                           click: function($event) {
-                            _vm.validateInternetConnection()
+                            _vm.validateSecurity()
                           }
                         }
                       },
                       [
                         _vm._v(
-                          "\n                    Check Connection\n                "
+                          "\n                    Check Security\n                "
                         )
                       ]
                     )
@@ -18736,7 +19067,7 @@ var render = function() {
                       "\n                " +
                         _vm._s(
                           this.steps[2].typeCreate
-                            ? "3. Offline Transaction"
+                            ? "3. Wallet & Transaction"
                             : "3. Propagate Online Transaction"
                         ) +
                         "\n            "
@@ -18762,11 +19093,44 @@ var render = function() {
                             { staticClass: "modalButton fullWidthButton" },
                             [
                               _vm._v(
-                                "\n                        Propagate Transactions\n                    "
+                                "\n                        Chose tx file to propagate\n                    "
                               )
                             ]
                           )
                         ])
+                      ])
+                    : _vm._e(),
+                  this.steps[2].contentOpen && this.steps[2].typeCreate
+                    ? _c("div", { staticClass: "stepContent" }, [
+                        this.steps[2].error
+                          ? _c("span", [
+                              _vm._v(
+                                "\n                    eroare\n                "
+                              )
+                            ])
+                          : _vm._e(),
+                        !this.importedAddress
+                          ? _c("label", { staticClass: "myLabel" }, [
+                              _c("input", {
+                                ref: "reffImportedAddressOffline",
+                                attrs: {
+                                  type: "file",
+                                  multiple: "",
+                                  size: "50"
+                                },
+                                on: { change: this.handleImportAddressOffline }
+                              }),
+                              _c(
+                                "div",
+                                { staticClass: "modalButton fullWidthButton" },
+                                [
+                                  _vm._v(
+                                    "\n                        Import your wallet\n                    "
+                                  )
+                                ]
+                              )
+                            ])
+                          : _vm._e()
                       ])
                     : _vm._e()
                 ]
@@ -18775,7 +19139,9 @@ var render = function() {
         ])
       : _vm._e(),
     !this.offlineTransaction ||
-    (this.steps[2].contentOpen && this.steps[2].typeCreate)
+    (this.steps[2].contentOpen &&
+      this.steps[2].typeCreate &&
+      this.importedAddress)
       ? _c(
           "div",
           {
@@ -18794,43 +19160,52 @@ var render = function() {
           },
           [
             _c("div", [
-              _c("div", { staticClass: "imageAndInput" }, [
-                _c("div", [
-                  _c("img", {
-                    staticClass:
-                      "walletAddressImage transferWalletAddressImage",
-                    class:
-                      this.errorToAddressMessage === "Invalid Address"
-                        ? "hide"
-                        : "",
-                    attrs: { src: this.getAddressPic }
-                  })
-                ]),
-                _c("div", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.toAddress,
-                        expression: "toAddress"
-                      }
-                    ],
-                    staticClass: "address ",
-                    attrs: { placeholder: "Recipient Address" },
-                    domProps: { value: _vm.toAddress },
-                    on: {
-                      keyup: this.handleChangeToAddress,
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+              _c(
+                "div",
+                {
+                  staticClass: "imageAndInput",
+                  class: !this.offlineTransaction ? "" : "hideTransactionImage"
+                },
+                [
+                  !this.offlineTransaction
+                    ? _c("div", [
+                        _c("img", {
+                          staticClass:
+                            "walletAddressImage transferWalletAddressImage",
+                          class:
+                            this.errorToAddressMessage === "Invalid Address"
+                              ? "hide"
+                              : "",
+                          attrs: { src: this.getAddressPic }
+                        })
+                      ])
+                    : _vm._e(),
+                  _c("div", [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.toAddress,
+                          expression: "toAddress"
                         }
-                        _vm.toAddress = $event.target.value
+                      ],
+                      staticClass: "address ",
+                      attrs: { placeholder: "Recipient Address" },
+                      domProps: { value: _vm.toAddress },
+                      on: {
+                        keyup: this.handleChangeToAddress,
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.toAddress = $event.target.value
+                        }
                       }
-                    }
-                  })
-                ])
-              ]),
+                    })
+                  ])
+                ]
+              ),
               _c("span", {
                 staticClass: "editError",
                 class: this.errorToAddressMessage ? "" : "hide",
@@ -18909,27 +19284,13 @@ var render = function() {
                   "\n            " +
                     _vm._s(
                       this.offlineTransaction
-                        ? "CREATE TRANSACTION"
+                        ? "EXPORT TRANSACTION"
                         : "SEND WEBD"
                     ) +
                     "\n        "
                 )
               ]
-            ),
-            !this.offlineTransaction
-              ? _c(
-                  "span",
-                  {
-                    staticClass: "offlineTransaction",
-                    on: {
-                      click: function($event) {
-                        _vm.switchToOfflineTransfer()
-                      }
-                    }
-                  },
-                  [_vm._v("\n            Offline Transaction\n        ")]
-                )
-              : _vm._e()
+            )
           ]
         )
       : _vm._e()
@@ -18947,7 +19308,7 @@ if (false) {
 }
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18971,168 +19332,182 @@ var render = function() {
                 "div",
                 { attrs: { slot: "content" }, slot: "content" },
                 [
-                  _c("div", { staticClass: "twoColumns" }, [
-                    _c("div", { staticClass: "section" }, [
-                      _c("div", [
-                        _c("img", {
-                          staticClass: "walletAddressImage",
-                          attrs: { src: this.getAddressPic }
-                        }),
-                        _c(
-                          "b",
-                          {
-                            staticStyle: { color: "gray" },
-                            attrs: { id: "walletID" }
-                          },
-                          [_vm._v(_vm._s(this.address.toString()))]
-                        )
-                      ]),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "copyButton",
-                          class:
-                            this.clipboardText != "Copied"
-                              ? "modalButton2"
-                              : "modalButton2Success",
-                          on: { click: _vm.copyToClipboard }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(this.clipboardText) +
-                              "\n                    "
-                          )
-                        ]
-                      )
-                    ]),
-                    _c("div", { staticClass: "section balanceContent" }, [
-                      _c("div", { staticClass: "balanceText" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "balanceTitle",
-                            attrs: { title: "Balance available to be spent" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                            Available Balance:\n                        "
+                  !this.offlineTransaction
+                    ? _c("div", { staticClass: "twoColumns" }, [
+                        _c("div", { staticClass: "section" }, [
+                          _c("div", [
+                            _c("img", {
+                              staticClass: "walletAddressImage",
+                              attrs: { src: this.getAddressPic }
+                            }),
+                            _c(
+                              "b",
+                              {
+                                staticStyle: { color: "gray" },
+                                attrs: { id: "walletID" }
+                              },
+                              [_vm._v(_vm._s(this.address.toString()))]
                             )
-                          ]
-                        ),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "balanceAmount",
-                            attrs: { title: "Balance available to be spent" }
-                          },
-                          [
-                            _c("show-balance", {
-                              attrs: { address: this.address, currency: "0x01" }
-                            })
-                          ],
-                          1
-                        ),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "balanceTitle",
-                            staticStyle: { "letter-spacing": "0.1px" },
-                            attrs: {
-                              title:
-                                "The balance you will have at the next block mined by your pool"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                            Potential Balance:\n                        "
-                            )
-                          ]
-                        ),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "balanceAmount",
-                            attrs: {
-                              title:
-                                "The balance you will have at the next block mined by your pool"
-                            }
-                          },
-                          [
-                            _c("show-balance", {
-                              attrs: {
-                                showPoolReward: _vm.isMiningAddress,
-                                address: this.address,
-                                currency: "0x01"
-                              }
-                            })
-                          ],
-                          1
-                        )
-                      ]),
-                      _vm.isMiningAddress
-                        ? _c("div", { staticClass: "miningAddress" }, [
-                            _vm._v(
-                              "\n                        You are mining on this Address\n                    "
-                            )
-                          ])
-                        : _vm._e(),
-                      !_vm.isMiningAddress
-                        ? _c(
+                          ]),
+                          _c(
                             "div",
                             {
-                              staticClass: "modalButton2",
-                              on: { click: _vm.handleSetAddress }
+                              staticClass: "copyButton",
+                              class:
+                                this.clipboardText != "Copied"
+                                  ? "modalButton2"
+                                  : "modalButton2Success",
+                              on: { click: _vm.copyToClipboard }
                             },
                             [
                               _vm._v(
-                                "\n                        Mine on this address\n                    "
+                                "\n                        " +
+                                  _vm._s(this.clipboardText) +
+                                  "\n                    "
                               )
                             ]
                           )
-                        : _vm._e()
-                    ])
-                  ]),
-                  _c("div", { staticClass: "addressActions" }, [
-                    _c(
-                      "div",
-                      {
-                        class: [
-                          this.partActivated === "transfer"
-                            ? "actionButton activeActionButton"
-                            : "actionButton"
-                        ],
-                        on: { click: this.showTransfer }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    Transfer\n                "
+                        ]),
+                        _c("div", { staticClass: "section balanceContent" }, [
+                          _c("div", { staticClass: "balanceText" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "balanceTitle",
+                                attrs: {
+                                  title: "Balance available to be spent"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            Available Balance:\n                        "
+                                )
+                              ]
+                            ),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "balanceAmount",
+                                attrs: {
+                                  title: "Balance available to be spent"
+                                }
+                              },
+                              [
+                                _c("show-balance", {
+                                  attrs: {
+                                    address: this.address,
+                                    currency: "0x01"
+                                  }
+                                })
+                              ],
+                              1
+                            ),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "balanceTitle",
+                                staticStyle: { "letter-spacing": "0.1px" },
+                                attrs: {
+                                  title:
+                                    "The balance you will have at the next block mined by your pool"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            Potential Balance:\n                        "
+                                )
+                              ]
+                            ),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "balanceAmount",
+                                attrs: {
+                                  title:
+                                    "The balance you will have at the next block mined by your pool"
+                                }
+                              },
+                              [
+                                _c("show-balance", {
+                                  attrs: {
+                                    showPoolReward: _vm.isMiningAddress,
+                                    address: this.address,
+                                    currency: "0x01"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ]),
+                          _vm.isMiningAddress
+                            ? _c("div", { staticClass: "miningAddress" }, [
+                                _vm._v(
+                                  "\n                        You are mining on this Address\n                    "
+                                )
+                              ])
+                            : _vm._e(),
+                          !_vm.isMiningAddress
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass: "modalButton2",
+                                  on: { click: _vm.handleSetAddress }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        Mine on this address\n                    "
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ])
+                      ])
+                    : _vm._e(),
+                  !this.offlineTransaction
+                    ? _c("div", { staticClass: "addressActions" }, [
+                        _c(
+                          "div",
+                          {
+                            class: [
+                              this.partActivated === "transfer"
+                                ? "actionButton activeActionButton"
+                                : "actionButton"
+                            ],
+                            on: { click: this.showTransfer }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Transfer\n                "
+                            )
+                          ]
+                        ),
+                        _c(
+                          "div",
+                          {
+                            class: [
+                              this.partActivated === "transactions"
+                                ? "actionButton activeActionButton"
+                                : "actionButton"
+                            ],
+                            on: { click: this.showTransactions }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Transactions\n                "
+                            )
+                          ]
                         )
-                      ]
-                    ),
-                    _c(
-                      "div",
-                      {
-                        class: [
-                          this.partActivated === "transactions"
-                            ? "actionButton activeActionButton"
-                            : "actionButton"
-                        ],
-                        on: { click: this.showTransactions }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    Transactions\n                "
-                        )
-                      ]
-                    )
-                  ]),
+                      ])
+                    : _vm._e(),
                   _c("transfer", {
                     style: {
                       display:
                         this.partActivated === "transfer" ? "block" : "none"
                     },
-                    attrs: { address: this.address },
+                    attrs: {
+                      address: this.address,
+                      offlineTransaction: this.offlineTransaction
+                    },
                     on: {
                       onTransferSuccess: this.handleTransferSuccess,
                       closeModal: this.closeModal
@@ -19167,17 +19542,17 @@ if (false) {
 }
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Lock_modal_vue__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Lock_modal_vue__ = __webpack_require__(33);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b585992_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Lock_modal_vue__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3b585992_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Lock_modal_vue__ = __webpack_require__(101);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(98)
+  __webpack_require__(99)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -19223,13 +19598,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(99);
+var content = __webpack_require__(100);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -19249,7 +19624,7 @@ if(false) {
 }
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -19263,7 +19638,7 @@ exports.push([module.i, "\n.descriptionTextPass{\n    color: #bdbdbd;\n    paddi
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19356,17 +19731,17 @@ if (false) {
 }
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Delete_modal_vue__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Delete_modal_vue__ = __webpack_require__(34);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_dc2c73dc_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Delete_modal_vue__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_dc2c73dc_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Delete_modal_vue__ = __webpack_require__(105);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(102)
+  __webpack_require__(103)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -19412,13 +19787,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(103);
+var content = __webpack_require__(104);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -19438,7 +19813,7 @@ if(false) {
 }
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -19452,7 +19827,7 @@ exports.push([module.i, "\n.descriptionText{\n\n    color: #bdbdbd;\n    padding
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19535,7 +19910,7 @@ if (false) {
 }
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19731,7 +20106,156 @@ if (false) {
 }
 
 /***/ }),
-/* 106 */
+/* 107 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Address_main_modal_offline_vue__ = __webpack_require__(35);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_708937e4_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Address_main_modal_offline_vue__ = __webpack_require__(110);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(108)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Address_main_modal_offline_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_708937e4_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Address_main_modal_offline_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/components/Wallet/Address/Modals/Main-Modal/Address-main.modal.offline.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-708937e4", Component.options)
+  } else {
+    hotAPI.reload("data-v-708937e4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(109);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0b874b1d", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js?sourceMap!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-708937e4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Address-main.modal.offline.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js?sourceMap!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-708937e4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Address-main.modal.offline.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.miningAddress{\n    display: block!important;\n    font-size: 12px;\n    line-height: 30px;\n    padding-top: 7px;\n}\n.addressMainModal .modifyPadding{\n    padding: 0!important;\n}\n.balanceText{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 100px;\n        grid-template-columns: 1fr 100px;\n    grid-row-gap: 10px;\n    padding-bottom: 24px;\n}\n.balanceAmount{\n    font-size: 14px;\n    text-align: left;\n}\n.balanceContent, .copyButton, .actionButton, .headerModal, .transferList{\n    -webkit-user-select: none;  /* Chrome all / Safari all */\n    -moz-user-select: none;     /* Firefox all */\n    -ms-user-select: none;      /* IE 10+ */\n    user-select: none;\n}\n.balanceContent{\n    padding: 45px 10px 20px 10px!important\n}\n.balanceContent svg{\n    width: 20px;\n    height: 20px;\n    padding: 0!important;\n}\n.balanceTitle{\n    text-align: right;\n    font-size: 14px;\n    padding-right: 10px;\n}\n.balanceAmount .balanceContent{\n    padding: 0;\n}\n@media (max-width: 1000px){\n.balanceText{\n        -ms-grid-columns: 1fr;\n            grid-template-columns: 1fr;\n}\n}\n@media (max-width: 600px){\n.balanceContent{\n        padding: 10px!important\n}\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/src/components/Wallet/Address/Modals/Main-Modal/Address-main.modal.offline.vue"],"names":[],"mappings":";AAuGA;IACA,yBAAA;IACA,gBAAA;IACA,kBAAA;IACA,iBAAA;CACA;AAEA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,4BAAA;QAAA,iCAAA;IACA,mBAAA;IACA,qBAAA;CACA;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA,EAAA,6BAAA;IACA,uBAAA,KAAA,iBAAA;IACA,sBAAA,MAAA,YAAA;IACA,kBAAA;CACA;AAEA;IACA,sCAAA;CACA;AAEA;IACA,YAAA;IACA,aAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;IACA,gBAAA;IACA,oBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;AAEA;QACA,sBAAA;YAAA,2BAAA;CACA;CAEA;AAEA;AAEA;QACA,uBAAA;CACA;CACA","file":"Address-main.modal.offline.vue","sourcesContent":["<template>\n\n    <div v-if=\"this.address !== null && this.address !== undefined\">\n\n        <modal title=\"Wallet Address\" ref=\"refModal\" class=\"addressMainModal\">\n\n            <div slot=\"content\">\n\n                <transfer :address=\"this.address\" @onTransferSuccess=\"this.handleTransferSuccess\" @closeModal=\"this.closeModal\" :offlineTransaction=\"true\"/>\n\n            </div>\n\n\n        </modal>\n\n    </div>\n\n</template>\n\n<script>\n\n    var Vue = require('vue/dist/vue.min.js');\n\n    import Modal from \"components/UI/modal/Modal.vue\"\n    import Clipboard from '../../../../../../node_modules/v-clipboard/dist/index.min'\n    import ShowBalance from \"components/Wallet/Address/Balance/Show-Balance.vue\"\n    import ShowPotentialBalance from \"components/Wallet/Address/Balance/Balances/Show-Sum-Balances.vue\"\n    import icon from \"components/UI/icons/icon.vue\"\n\n    import Transactions from \"./parts/Transactions/Transactions.part.vue\"\n    import Transfer from \"./parts/Transfer.part.vue\"\n\n    import Notification from \"helpers/Notification.helpers\"\n\n    Vue.use(Clipboard);\n\n    export default {\n\n        props: {\n            address: {default: null},\n        },\n\n        components: {\n            ShowBalance,\n            Modal,\n            Transactions,\n            Transfer,\n            icon,\n            ShowPotentialBalance\n        },\n\n        methods: {\n\n            showTransfer() {\n                this.partActivated = \"transfer\";\n            },\n\n            showBuy() {\n                this.partActivated = \"buy/sell\";\n            },\n            showTransactions(){\n                this.partActivated = \"transactions\";\n            },\n\n            closeModal() {\n                this.offlineTransaction=false;\n                this.$refs['refModal'].closeModal();\n            },\n\n            showModal() {\n                if (this.$refs['refModal'].modalOpened === false){\n                    this.$refs['refModal'].showModal();\n                }\n                this.clipboardText= 'Copy Address';\n            },\n            copyToClipboard(){\n                this.clipboardText = 'Copied';\n                this.$clipboard(this.address);\n            },\n\n            handleSetAddress(){\n                WebDollar.Blockchain.Mining.minerAddress = this.address;\n                Notification.addAlert(undefined, \"success\", \"Mining Address Changed\", \"You're mining now on \" + this.address ,5000);\n            },\n\n            handleTransferSuccess(){\n                this.closeModal();\n            },\n\n        },\n\n        mounted() {\n\n            if (typeof window === 'undefined') return;\n\n\n        },\n\n    }\n\n</script>\n\n<style>\n    .miningAddress{\n        display: block!important;\n        font-size: 12px;\n        line-height: 30px;\n        padding-top: 7px;\n    }\n\n    .addressMainModal .modifyPadding{\n        padding: 0!important;\n    }\n\n    .balanceText{\n        display: grid;\n        grid-template-columns: 1fr 100px;\n        grid-row-gap: 10px;\n        padding-bottom: 24px;\n    }\n\n    .balanceAmount{\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .balanceContent, .copyButton, .actionButton, .headerModal, .transferList{\n        -webkit-user-select: none;  /* Chrome all / Safari all */\n        -moz-user-select: none;     /* Firefox all */\n        -ms-user-select: none;      /* IE 10+ */\n        user-select: none;\n    }\n\n    .balanceContent{\n        padding: 45px 10px 20px 10px!important\n    }\n\n    .balanceContent svg{\n        width: 20px;\n        height: 20px;\n        padding: 0!important;\n    }\n\n    .balanceTitle{\n        text-align: right;\n        font-size: 14px;\n        padding-right: 10px;\n    }\n\n    .balanceAmount .balanceContent{\n        padding: 0;\n    }\n\n    @media (max-width: 1000px){\n\n        .balanceText{\n            grid-template-columns: 1fr;\n        }\n\n    }\n\n    @media (max-width: 600px){\n\n        .balanceContent{\n            padding: 10px!important\n        }\n    }\n\n</style>\n\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return this.address !== null && this.address !== undefined
+    ? _c(
+        "div",
+        [
+          _c(
+            "modal",
+            {
+              ref: "refModal",
+              staticClass: "addressMainModal",
+              attrs: { title: "Wallet Address" }
+            },
+            [
+              _c(
+                "div",
+                { attrs: { slot: "content" }, slot: "content" },
+                [
+                  _c("transfer", {
+                    attrs: { address: this.address, offlineTransaction: true },
+                    on: {
+                      onTransferSuccess: this.handleTransferSuccess,
+                      closeModal: this.closeModal
+                    }
+                  })
+                ],
+                1
+              )
+            ]
+          )
+        ],
+        1
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-708937e4", esExports)
+  }
+}
+
+/***/ }),
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19849,22 +20373,44 @@ var render = function() {
                 "div",
                 {
                   staticClass: "btn buttonTextStyle",
+                  attrs: { title: "Add new wallet" },
                   on: { click: this.handleAddNewAddress }
                 },
-                [_vm._v("\n                    Add Address\n                ")]
+                [_vm._v("\n                    Add\n                ")]
               ),
-              _c("label", { staticClass: "myLabel" }, [
-                _c("input", {
-                  ref: "importedAddress",
-                  attrs: { type: "file", multiple: "", size: "50" },
-                  on: { change: this.handleImportAddress }
-                }),
-                _c("div", { staticClass: "btn buttonTextStyle" }, [
-                  _vm._v(
-                    "\n                        Import Address\n                    "
-                  )
-                ])
-              ])
+              _c(
+                "label",
+                {
+                  staticClass: "myLabel",
+                  attrs: { title: "Import existing wallet" }
+                },
+                [
+                  _c("input", {
+                    ref: "importedAddress",
+                    attrs: { type: "file", multiple: "", size: "50" },
+                    on: { change: this.handleImportAddress }
+                  }),
+                  _c("div", { staticClass: "btn buttonTextStyle" }, [
+                    _vm._v(
+                      "\n                        Import\n                    "
+                    )
+                  ])
+                ]
+              ),
+              _c(
+                "div",
+                {
+                  staticClass: "btn buttonTextStyle",
+                  attrs: { title: "Create Offline transaction" },
+                  on: {
+                    click: function($event) {
+                      $event.stopPropagation()
+                      return _vm.showOfflineTransactions($event)
+                    }
+                  }
+                },
+                [_vm._v("\n                    Offline\n                ")]
+              )
             ]),
             _c(
               "div",
@@ -19899,7 +20445,11 @@ var render = function() {
             )
           ])
         ]
-      )
+      ),
+      _c("offline-transactions-modal", {
+        ref: "refOfflineTransactionsModal",
+        attrs: { address: this.miningAddress }
+      })
     ],
     1
   )
@@ -19916,17 +20466,17 @@ if (false) {
 }
 
 /***/ }),
-/* 107 */
+/* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Mining_vue__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Mining_vue__ = __webpack_require__(36);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0954b78f_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mining_vue__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0954b78f_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mining_vue__ = __webpack_require__(120);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(108)
+  __webpack_require__(113)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -19972,13 +20522,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 108 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(109);
+var content = __webpack_require__(114);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -19998,7 +20548,7 @@ if(false) {
 }
 
 /***/ }),
-/* 109 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -20012,17 +20562,17 @@ exports.push([module.i, "\n.hoverBalanceInfo{\n    position: fixed;\n    float: 
 
 
 /***/ }),
-/* 110 */
+/* 115 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_slider_vue__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_slider_vue__ = __webpack_require__(37);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b39a900_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_slider_vue__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b39a900_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_slider_vue__ = __webpack_require__(119);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(111)
+  __webpack_require__(116)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20068,13 +20618,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 111 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(112);
+var content = __webpack_require__(117);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -20094,7 +20644,7 @@ if(false) {
 }
 
 /***/ }),
-/* 112 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -20108,13 +20658,13 @@ exports.push([module.i, "\n.miningSlider {\n    padding-top: 15px !important;\n 
 
 
 /***/ }),
-/* 113 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define("vue-slider-component",[],e):"object"==typeof exports?exports["vue-slider-component"]=e():t["vue-slider-component"]=e()}(this,function(){return function(t){function e(s){if(i[s])return i[s].exports;var r=i[s]={i:s,l:!1,exports:{}};return t[s].call(r.exports,r,r.exports,e),r.l=!0,r.exports}var i={};return e.m=t,e.c=i,e.i=function(t){return t},e.d=function(t,i,s){e.o(t,i)||Object.defineProperty(t,i,{configurable:!1,enumerable:!0,get:s})},e.n=function(t){var i=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(i,"a",i),i},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=2)}([function(t,e,i){i(7);var s=i(5)(i(1),i(6),null,null);t.exports=s.exports},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var s=function(){var t="undefined"!=typeof window?window.devicePixelRatio||1:1;return function(e){return Math.round(e*t)/t}}();e.default={name:"VueSliderComponent",props:{width:{type:[Number,String],default:"auto"},height:{type:[Number,String],default:6},data:{type:Array,default:null},dotSize:{type:Number,default:16},dotWidth:{type:Number,required:!1},dotHeight:{type:Number,required:!1},min:{type:Number,default:0},max:{type:Number,default:100},interval:{type:Number,default:1},show:{type:Boolean,default:!0},disabled:{type:Boolean,default:!1},piecewise:{type:Boolean,default:!1},tooltip:{type:[String,Boolean],default:"always"},eventType:{type:String,default:"auto"},direction:{type:String,default:"horizontal"},reverse:{type:Boolean,default:!1},lazy:{type:Boolean,default:!1},clickable:{type:Boolean,default:!0},speed:{type:Number,default:.5},realTime:{type:Boolean,default:!1},stopPropagation:{type:Boolean,default:!1},value:{type:[String,Number,Array,Object],default:0},piecewiseLabel:{type:Boolean,default:!1},debug:{type:Boolean,default:!0},fixed:{type:Boolean,default:!1},processDragable:{type:Boolean,default:!1},useKeyboard:{type:Boolean,default:!1},actionsKeyboard:{type:Array,default:function(){return[function(t){return t-1},function(t){return t+1}]}},sliderStyle:[Array,Object,Function],focusStyle:[Array,Object,Function],tooltipDir:[Array,String],formatter:[String,Function],piecewiseStyle:Object,piecewiseActiveStyle:Object,processStyle:Object,bgStyle:Object,tooltipStyle:[Array,Object,Function],labelStyle:Object,labelActiveStyle:Object},data:function(){return{flag:!1,keydownFlag:null,focusFlag:!1,processFlag:!1,processSign:null,size:0,fixedValue:0,focusSlider:0,currentValue:0,currentSlider:0,isComponentExists:!0}},computed:{dotWidthVal:function(){return"number"==typeof this.dotWidth?this.dotWidth:this.dotSize},dotHeightVal:function(){return"number"==typeof this.dotHeight?this.dotHeight:this.dotSize},flowDirection:function(){return"vue-slider-"+this.direction+(this.reverse?"-reverse":"")},tooltipDirection:function(){var t=this.tooltipDir||("vertical"===this.direction?"left":"top");return Array.isArray(t)?this.isRange?t:t[1]:this.isRange?[t,t]:t},tooltipStatus:function(){return"hover"===this.tooltip&&this.flag?"vue-slider-always":this.tooltip?"vue-slider-"+this.tooltip:""},tooltipClass:function(){return["vue-slider-tooltip-"+this.tooltipDirection,"vue-slider-tooltip"]},isDisabled:function(){return"none"===this.eventType||this.disabled},disabledClass:function(){return this.disabled?"vue-slider-disabled":""},stateClass:function(){return{"vue-slider-state-process-drag":this.processFlag,"vue-slider-state-drag":this.flag&&!this.processFlag&&!this.keydownFlag,"vue-slider-state-focus":this.focusFlag}},isRange:function(){return Array.isArray(this.value)},slider:function(){return this.isRange?[this.$refs.dot0,this.$refs.dot1]:this.$refs.dot},minimum:function(){return this.data?0:this.min},val:{get:function(){return this.data?this.isRange?[this.data[this.currentValue[0]],this.data[this.currentValue[1]]]:this.data[this.currentValue]:this.currentValue},set:function(t){if(this.data)if(this.isRange){var e=this.data.indexOf(t[0]),i=this.data.indexOf(t[1]);e>-1&&i>-1&&(this.currentValue=[e,i])}else{var s=this.data.indexOf(t);s>-1&&(this.currentValue=s)}else this.currentValue=t}},currentIndex:function(){return this.isRange?this.data?this.currentValue:[(this.currentValue[0]-this.minimum)/this.spacing,(this.currentValue[1]-this.minimum)/this.spacing]:(this.currentValue-this.minimum)/this.spacing},indexRange:function(){return this.isRange?this.currentIndex:[0,this.currentIndex]},maximum:function(){return this.data?this.data.length-1:this.max},multiple:function(){var t=(""+this.interval).split(".")[1];return t?Math.pow(10,t.length):1},spacing:function(){return this.data?1:this.interval},total:function(){return this.data?this.data.length-1:(Math.floor((this.maximum-this.minimum)*this.multiple)%(this.interval*this.multiple)!=0&&this.printError("Prop[interval] is illegal, Please make sure that the interval can be divisible"),(this.maximum-this.minimum)/this.interval)},gap:function(){return this.size/this.total},position:function(){return this.isRange?[(this.currentValue[0]-this.minimum)/this.spacing*this.gap,(this.currentValue[1]-this.minimum)/this.spacing*this.gap]:(this.currentValue-this.minimum)/this.spacing*this.gap},limit:function(){return this.isRange?this.fixed?[[0,(this.maximum-this.fixedValue*this.spacing)/this.spacing*this.gap],[(this.minimum+this.fixedValue*this.spacing)/this.spacing*this.gap,this.size]]:[[0,this.position[1]],[this.position[0],this.size]]:[0,this.size]},valueLimit:function(){return this.isRange?this.fixed?[[this.minimum,this.maximum-this.fixedValue*this.spacing],[this.minimum+this.fixedValue*this.spacing,this.maximum]]:[[this.minimum,this.currentValue[1]],[this.currentValue[0],this.maximum]]:[this.minimum,this.maximum]},idleSlider:function(){return 0===this.currentSlider?1:0},wrapStyles:function(){return"vertical"===this.direction?{height:"number"==typeof this.height?this.height+"px":this.height,padding:this.dotHeightVal/2+"px "+this.dotWidthVal/2+"px"}:{width:"number"==typeof this.width?this.width+"px":this.width,padding:this.dotHeightVal/2+"px "+this.dotWidthVal/2+"px"}},sliderStyles:function(){return Array.isArray(this.sliderStyle)?this.isRange?this.sliderStyle:this.sliderStyle[1]:"function"==typeof this.sliderStyle?this.sliderStyle(this.val,this.currentIndex):this.isRange?[this.sliderStyle,this.sliderStyle]:this.sliderStyle},focusStyles:function(){return Array.isArray(this.focusStyle)?this.isRange?this.focusStyle:this.focusStyle[1]:"function"==typeof this.focusStyle?this.focusStyle(this.val,this.currentIndex):this.isRange?[this.focusStyle,this.focusStyle]:this.focusStyle},tooltipStyles:function(){return Array.isArray(this.tooltipStyle)?this.isRange?this.tooltipStyle:this.tooltipStyle[1]:"function"==typeof this.tooltipStyle?this.tooltipStyle(this.val,this.currentIndex):this.isRange?[this.tooltipStyle,this.tooltipStyle]:this.tooltipStyle},elemStyles:function(){return"vertical"===this.direction?{width:this.width+"px",height:"100%"}:{height:this.height+"px"}},dotStyles:function(){return"vertical"===this.direction?{width:this.dotWidthVal+"px",height:this.dotHeightVal+"px",left:-(this.dotWidthVal-this.width)/2+"px"}:{width:this.dotWidthVal+"px",height:this.dotHeightVal+"px",top:-(this.dotHeightVal-this.height)/2+"px"}},piecewiseDotStyle:function(){return"vertical"===this.direction?{width:this.width+"px",height:this.width+"px"}:{width:this.height+"px",height:this.height+"px"}},piecewiseDotWrap:function(){if(!this.piecewise&&!this.piecewiseLabel)return!1;for(var t=[],e=0;e<=this.total;e++){var i="vertical"===this.direction?{bottom:this.gap*e-this.width/2+"px",left:0}:{left:this.gap*e-this.height/2+"px",top:0},s=this.reverse?this.total-e:e,r=this.data?this.data[s]:this.spacing*s+this.min;t.push({style:i,label:this.formatter?this.formatting(r):r,inRange:s>=this.indexRange[0]&&s<=this.indexRange[1]})}return t}},watch:{value:function(t){this.flag||this.setValue(t,!0)},max:function(t){if(t<this.min)return this.printError("The maximum value can not be less than the minimum value.");var e=this.limitValue(this.val);this.setValue(e),this.refresh()},min:function(t){if(t>this.max)return this.printError("The minimum value can not be greater than the maximum value.");var e=this.limitValue(this.val);this.setValue(e),this.refresh()},show:function(t){var e=this;t&&!this.size&&this.$nextTick(function(){e.refresh()})},fixed:function(){this.computedFixedValue()}},methods:{bindEvents:function(){document.addEventListener("touchmove",this.moving,{passive:!1}),document.addEventListener("touchend",this.moveEnd,{passive:!1}),document.addEventListener("mousedown",this.blurSlider),document.addEventListener("mousemove",this.moving),document.addEventListener("mouseup",this.moveEnd),document.addEventListener("mouseleave",this.moveEnd),document.addEventListener("keydown",this.handleKeydown),document.addEventListener("keyup",this.handleKeyup),window.addEventListener("resize",this.refresh)},unbindEvents:function(){document.removeEventListener("touchmove",this.moving),document.removeEventListener("touchend",this.moveEnd),document.removeEventListener("mousedown",this.blurSlider),document.removeEventListener("mousemove",this.moving),document.removeEventListener("mouseup",this.moveEnd),document.removeEventListener("mouseleave",this.moveEnd),document.removeEventListener("keydown",this.handleKeydown),document.removeEventListener("keyup",this.handleKeyup),window.removeEventListener("resize",this.refresh)},handleKeydown:function(t){if(!this.useKeyboard||!this.focusFlag)return!1;switch(t.keyCode){case 37:case 40:t.preventDefault(),this.keydownFlag=!0,this.flag=!0,this.changeFocusSlider(this.actionsKeyboard[0]);break;case 38:case 39:t.preventDefault(),this.keydownFlag=!0,this.flag=!0,this.changeFocusSlider(this.actionsKeyboard[1])}},handleKeyup:function(){this.keydownFlag&&(this.keydownFlag=!1,this.flag=!1)},changeFocusSlider:function(t){var e=this;if(this.isRange){var i=this.currentIndex.map(function(i,s){if(s===e.focusSlider||e.fixed){var r=t(i),n=e.fixed?e.valueLimit[s]:[e.minimum,e.maximum];if(r<=n[1]&&r>=n[0])return r}return i});i[0]>i[1]&&(this.focusSlider=0===this.focusSlider?1:0,i=i.reverse()),this.setIndex(i)}else this.setIndex(t(this.currentIndex))},blurSlider:function(t){var e=this.isRange?this.$refs["dot"+this.focusSlider]:this.$refs.dot;if(!e||e===t.target)return!1;this.focusFlag=!1},formatting:function(t){return"string"==typeof this.formatter?this.formatter.replace(/\{value\}/,t):this.formatter(t)},getPos:function(t){return this.realTime&&this.getStaticData(),"vertical"===this.direction?this.reverse?t.pageY-this.offset:this.size-(t.pageY-this.offset):this.reverse?this.size-(t.clientX-this.offset):t.clientX-this.offset},processClick:function(t){this.fixed&&t.stopPropagation()},wrapClick:function(t){if(this.isDisabled||!this.clickable||this.processFlag)return!1;var e=this.getPos(t);this.isRange&&(this.currentSlider=e>(this.position[1]-this.position[0])/2+this.position[0]?1:0),this.setValueOnPos(e)},moveStart:function(t){var e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,i=arguments[2];if(this.isDisabled)return!1;if(this.stopPropagation&&t.stopPropagation(),this.isRange&&(this.currentSlider=e,i)){if(!this.processDragable)return!1;this.processFlag=!0,this.processSign={pos:this.position,start:this.getPos(t.targetTouches&&t.targetTouches[0]?t.targetTouches[0]:t)}}!i&&this.useKeyboard&&(this.focusFlag=!0,this.focusSlider=e),this.flag=!0,this.$emit("drag-start",this)},moving:function(t){if(this.stopPropagation&&t.stopPropagation(),!this.flag)return!1;t.preventDefault(),t.targetTouches&&t.targetTouches[0]&&(t=t.targetTouches[0]),this.processFlag?(this.currentSlider=0,this.setValueOnPos(this.processSign.pos[0]+this.getPos(t)-this.processSign.start,!0),this.currentSlider=1,this.setValueOnPos(this.processSign.pos[1]+this.getPos(t)-this.processSign.start,!0)):this.setValueOnPos(this.getPos(t),!0)},moveEnd:function(t){var e=this;if(this.stopPropagation&&t.stopPropagation(),!this.flag)return!1;this.$emit("drag-end",this),this.lazy&&this.isDiff(this.val,this.value)&&this.syncValue(),this.flag=!1,window.setTimeout(function(){e.processFlag=!1},0),this.setPosition()},setValueOnPos:function(t,e){var i=this.isRange?this.limit[this.currentSlider]:this.limit,s=this.isRange?this.valueLimit[this.currentSlider]:this.valueLimit;if(t>=i[0]&&t<=i[1]){this.setTransform(t);var r=(Math.round(t/this.gap)*(this.spacing*this.multiple)+this.minimum*this.multiple)/this.multiple;this.setCurrentValue(r,e),this.isRange&&this.fixed&&(this.setTransform(t+this.fixedValue*this.gap*(0===this.currentSlider?1:-1),!0),this.setCurrentValue(r+this.fixedValue*this.spacing*(0===this.currentSlider?1:-1),e,!0))}else t<i[0]?(this.setTransform(i[0]),this.setCurrentValue(s[0]),this.isRange&&this.fixed?(this.setTransform(this.limit[this.idleSlider][0],!0),this.setCurrentValue(this.valueLimit[this.idleSlider][0],e,!0)):this.fixed||1!==this.currentSlider||(this.focusSlider=0,this.currentSlider=0)):(this.setTransform(i[1]),this.setCurrentValue(s[1]),this.isRange&&this.fixed?(this.setTransform(this.limit[this.idleSlider][1],!0),this.setCurrentValue(this.valueLimit[this.idleSlider][1],e,!0)):this.fixed||0!==this.currentSlider||(this.focusSlider=1,this.currentSlider=1))},isDiff:function(t,e){return Object.prototype.toString.call(t)!==Object.prototype.toString.call(e)||(Array.isArray(t)&&t.length===e.length?t.some(function(t,i){return t!==e[i]}):t!==e)},setCurrentValue:function(t,e,i){var s=i?this.idleSlider:this.currentSlider;if(t<this.minimum||t>this.maximum)return!1;this.isRange?this.isDiff(this.currentValue[s],t)&&(this.currentValue.splice(s,1,t),this.lazy&&this.flag||this.syncValue()):this.isDiff(this.currentValue,t)&&(this.currentValue=t,this.lazy&&this.flag||this.syncValue()),e||this.setPosition()},setIndex:function(t){if(Array.isArray(t)&&this.isRange){var e=void 0;e=this.data?[this.data[t[0]],this.data[t[1]]]:[this.spacing*t[0]+this.minimum,this.spacing*t[1]+this.minimum],this.setValue(e)}else t=this.spacing*t+this.minimum,this.isRange&&(this.currentSlider=t>(this.currentValue[1]-this.currentValue[0])/2+this.currentValue[0]?1:0),this.setCurrentValue(t)},setValue:function(t,e,i){var s=this;if(this.isDiff(this.val,t)){var r=this.limitValue(t);this.val=this.isRange?r.concat():r,this.computedFixedValue(),this.syncValue(e)}this.$nextTick(function(){return s.setPosition(i)})},computedFixedValue:function(){if(!this.fixed)return this.fixedValue=0,!1;this.fixedValue=this.currentIndex[1]-this.currentIndex[0]},setPosition:function(t){this.flag||this.setTransitionTime(void 0===t?this.speed:t),this.isRange?(this.setTransform(this.position[0],1===this.currentSlider),this.setTransform(this.position[1],0===this.currentSlider)):this.setTransform(this.position),this.flag||this.setTransitionTime(0)},setTransform:function(t,e){var i=e?this.idleSlider:this.currentSlider,r=s(("vertical"===this.direction?this.dotHeightVal/2-t:t-this.dotWidthVal/2)*(this.reverse?-1:1)),n="vertical"===this.direction?"translateY("+r+"px)":"translateX("+r+"px)",o=this.fixed?this.fixedValue*this.gap+"px":(0===i?this.position[1]-t:t-this.position[0])+"px",l=this.fixed?(0===i?t:t-this.fixedValue*this.gap)+"px":(0===i?t:this.position[0])+"px";this.isRange?(this.slider[i].style.transform=n,this.slider[i].style.WebkitTransform=n,this.slider[i].style.msTransform=n,"vertical"===this.direction?(this.$refs.process.style.height=o,this.$refs.process.style[this.reverse?"top":"bottom"]=l):(this.$refs.process.style.width=o,this.$refs.process.style[this.reverse?"right":"left"]=l)):(this.slider.style.transform=n,this.slider.style.WebkitTransform=n,this.slider.style.msTransform=n,"vertical"===this.direction?(this.$refs.process.style.height=t+"px",this.$refs.process.style[this.reverse?"top":"bottom"]=0):(this.$refs.process.style.width=t+"px",this.$refs.process.style[this.reverse?"right":"left"]=0))},setTransitionTime:function(t){if(t||this.$refs.process.offsetWidth,this.isRange){for(var e=0;e<this.slider.length;e++)this.slider[e].style.transitionDuration=t+"s",this.slider[e].style.WebkitTransitionDuration=t+"s";this.$refs.process.style.transitionDuration=t+"s",this.$refs.process.style.WebkitTransitionDuration=t+"s"}else this.slider.style.transitionDuration=t+"s",this.slider.style.WebkitTransitionDuration=t+"s",this.$refs.process.style.transitionDuration=t+"s",this.$refs.process.style.WebkitTransitionDuration=t+"s"},limitValue:function(t){var e=this;if(this.data)return t;var i=function(i){return i<e.min?(e.printError("The value of the slider is "+t+", the minimum value is "+e.min+", the value of this slider can not be less than the minimum value"),e.min):i>e.max?(e.printError("The value of the slider is "+t+", the maximum value is "+e.max+", the value of this slider can not be greater than the maximum value"),e.max):i};return this.isRange?t.map(function(t){return i(t)}):i(t)},syncValue:function(t){var e=this.isRange?this.val.concat():this.val;this.$emit("input",e),t||this.$emit("callback",e)},getValue:function(){return this.val},getIndex:function(){return this.currentIndex},getStaticData:function(){this.$refs.elem&&(this.size="vertical"===this.direction?this.$refs.elem.offsetHeight:this.$refs.elem.offsetWidth,this.offset="vertical"===this.direction?this.$refs.elem.getBoundingClientRect().top+window.pageYOffset||document.documentElement.scrollTop:this.$refs.elem.getBoundingClientRect().left)},refresh:function(){this.$refs.elem&&(this.getStaticData(),this.computedFixedValue(),this.setPosition())},printError:function(t){this.debug&&console.error("[VueSlider error]: "+t)}},mounted:function(){var t=this;if(this.isComponentExists=!0,"undefined"==typeof window||"undefined"==typeof document)return this.printError("window or document is undefined, can not be initialization.");this.$nextTick(function(){t.isComponentExists&&(t.getStaticData(),t.setValue(t.limitValue(t.value),!0,0),t.bindEvents())})},beforeDestroy:function(){this.isComponentExists=!1,this.unbindEvents()}}},function(t,e,i){"use strict";var s=i(0);t.exports=s},function(t,e,i){e=t.exports=i(4)(),e.push([t.i,'.vue-slider-component{position:relative;box-sizing:border-box;-ms-user-select:none;user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none}.vue-slider-component.vue-slider-disabled{opacity:.5;cursor:not-allowed}.vue-slider-component.vue-slider-has-label{margin-bottom:15px}.vue-slider-component.vue-slider-disabled .vue-slider-dot{cursor:not-allowed}.vue-slider-component .vue-slider{position:relative;display:block;border-radius:15px;background-color:#ccc}.vue-slider-component .vue-slider:after{content:"";position:absolute;left:0;top:0;width:100%;height:100%;z-index:2}.vue-slider-component .vue-slider-process{position:absolute;border-radius:15px;background-color:#3498db;transition:all 0s;z-index:1}.vue-slider-component .vue-slider-process.vue-slider-process-dragable{cursor:pointer;z-index:3}.vue-slider-component.vue-slider-horizontal .vue-slider-process{width:0;height:100%;top:0;left:0;will-change:width}.vue-slider-component.vue-slider-vertical .vue-slider-process{width:100%;height:0;bottom:0;left:0;will-change:height}.vue-slider-component.vue-slider-horizontal-reverse .vue-slider-process{width:0;height:100%;top:0;right:0}.vue-slider-component.vue-slider-vertical-reverse .vue-slider-process{width:100%;height:0;top:0;left:0}.vue-slider-component .vue-slider-dot{position:absolute;border-radius:50%;background-color:#fff;box-shadow:.5px .5px 2px 1px rgba(0,0,0,.32);transition:all 0s;will-change:transform;cursor:pointer;z-index:4}.vue-slider-component .vue-slider-dot.vue-slider-dot-focus{box-shadow:0 0 2px 1px #3498db}.vue-slider-component.vue-slider-horizontal .vue-slider-dot{left:0}.vue-slider-component.vue-slider-vertical .vue-slider-dot{bottom:0}.vue-slider-component.vue-slider-horizontal-reverse .vue-slider-dot{right:0}.vue-slider-component.vue-slider-vertical-reverse .vue-slider-dot{top:0}.vue-slider-component .vue-slider-tooltip-wrap{display:none;position:absolute;z-index:9}.vue-slider-component .vue-slider-tooltip{display:block;font-size:14px;white-space:nowrap;padding:2px 5px;min-width:20px;text-align:center;color:#fff;border-radius:5px;border:1px solid #3498db;background-color:#3498db}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top{top:-9px;left:50%;-webkit-transform:translate(-50%,-100%);transform:translate(-50%,-100%)}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom{bottom:-9px;left:50%;-webkit-transform:translate(-50%,100%);transform:translate(-50%,100%)}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left{top:50%;left:-9px;-webkit-transform:translate(-100%,-50%);transform:translate(-100%,-50%)}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right{top:50%;right:-9px;-webkit-transform:translate(100%,-50%);transform:translate(100%,-50%)}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-top .vue-slider-tooltip:before{content:"";position:absolute;bottom:-10px;left:50%;width:0;height:0;border:5px solid transparent;border:6px solid transparent\\0;border-top-color:inherit;-webkit-transform:translate(-50%);transform:translate(-50%)}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-bottom .vue-slider-tooltip:before{content:"";position:absolute;top:-10px;left:50%;width:0;height:0;border:5px solid transparent;border:6px solid transparent\\0;border-bottom-color:inherit;-webkit-transform:translate(-50%);transform:translate(-50%)}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-left .vue-slider-tooltip:before{content:"";position:absolute;top:50%;right:-10px;width:0;height:0;border:5px solid transparent;border:6px solid transparent\\0;border-left-color:inherit;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.vue-slider-component .vue-slider-tooltip-wrap.vue-slider-tooltip-right .vue-slider-tooltip:before{content:"";position:absolute;top:50%;left:-10px;width:0;height:0;border:5px solid transparent;border:6px solid transparent\\0;border-right-color:inherit;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.vue-slider-component .vue-slider-dot.vue-slider-hover:hover .vue-slider-tooltip-wrap{display:block}.vue-slider-component .vue-slider-dot.vue-slider-always .vue-slider-tooltip-wrap{display:block!important}.vue-slider-component .vue-slider-piecewise{position:absolute;width:100%;padding:0;margin:0;left:0;top:0;height:100%;list-style:none}.vue-slider-component .vue-slider-piecewise-item{position:absolute;width:8px;height:8px}.vue-slider-component .vue-slider-piecewise-dot{position:absolute;left:50%;top:50%;width:100%;height:100%;display:inline-block;background-color:rgba(0,0,0,.16);border-radius:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:2;transition:all .3s}.vue-slider-component .vue-slider-piecewise-item:first-child .vue-slider-piecewise-dot,.vue-slider-component .vue-slider-piecewise-item:last-child .vue-slider-piecewise-dot{visibility:hidden}.vue-slider-component.vue-slider-horizontal-reverse .vue-slider-piecewise-label,.vue-slider-component.vue-slider-horizontal .vue-slider-piecewise-label{position:absolute;display:inline-block;top:100%;left:50%;white-space:nowrap;font-size:12px;color:#333;-webkit-transform:translate(-50%,8px);transform:translate(-50%,8px);visibility:visible}.vue-slider-component.vue-slider-vertical-reverse .vue-slider-piecewise-label,.vue-slider-component.vue-slider-vertical .vue-slider-piecewise-label{position:absolute;display:inline-block;top:50%;left:100%;white-space:nowrap;font-size:12px;color:#333;-webkit-transform:translate(8px,-50%);transform:translate(8px,-50%);visibility:visible}.vue-slider-component .vue-slider-sr-only{clip:rect(1px,1px,1px,1px);height:1px;width:1px;overflow:hidden;position:absolute!important}',""])},function(t,e){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],e=0;e<this.length;e++){var i=this[e];i[2]?t.push("@media "+i[2]+"{"+i[1]+"}"):t.push(i[1])}return t.join("")},t.i=function(e,i){"string"==typeof e&&(e=[[null,e,""]]);for(var s={},r=0;r<this.length;r++){var n=this[r][0];"number"==typeof n&&(s[n]=!0)}for(r=0;r<e.length;r++){var o=e[r];"number"==typeof o[0]&&s[o[0]]||(i&&!o[2]?o[2]=i:i&&(o[2]="("+o[2]+") and ("+i+")"),t.push(o))}},t}},function(t,e){t.exports=function(t,e,i,s){var r,n=t=t||{},o=typeof t.default;"object"!==o&&"function"!==o||(r=t,n=t.default);var l="function"==typeof n?n.options:n;if(e&&(l.render=e.render,l.staticRenderFns=e.staticRenderFns),i&&(l._scopeId=i),s){var a=Object.create(l.computed||null);Object.keys(s).forEach(function(t){var e=s[t];a[t]=function(){return e}}),l.computed=a}return{esModule:r,exports:n,options:l}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("div",{directives:[{name:"show",rawName:"v-show",value:t.show,expression:"show"}],ref:"wrap",class:["vue-slider-component",t.flowDirection,t.disabledClass,t.stateClass,{"vue-slider-has-label":t.piecewiseLabel}],style:t.wrapStyles,on:{click:t.wrapClick}},[i("div",{ref:"elem",staticClass:"vue-slider",style:[t.elemStyles,t.bgStyle],attrs:{"aria-hidden":"true"}},[t.isRange?[i("div",{ref:"dot0",class:[t.tooltipStatus,"vue-slider-dot",{"vue-slider-dot-focus":t.focusFlag&&0===t.focusSlider}],style:[t.dotStyles,t.sliderStyles[0],t.focusFlag&&0===t.focusSlider?t.focusStyles[0]:null],on:{mousedown:function(e){t.moveStart(e,0)},touchstart:function(e){t.moveStart(e,0)}}},[i("span",{class:["vue-slider-tooltip-"+t.tooltipDirection[0],"vue-slider-tooltip-wrap"]},[t._t("tooltip",[i("span",{staticClass:"vue-slider-tooltip",style:t.tooltipStyles[0]},[t._v(t._s(t.formatter?t.formatting(t.val[0]):t.val[0]))])],{value:t.val[0],index:0})],2)]),t._v(" "),i("div",{ref:"dot1",class:[t.tooltipStatus,"vue-slider-dot",{"vue-slider-dot-focus":t.focusFlag&&1===t.focusSlider}],style:[t.dotStyles,t.sliderStyles[1],t.focusFlag&&1===t.focusSlider?t.focusStyles[1]:null],on:{mousedown:function(e){t.moveStart(e,1)},touchstart:function(e){t.moveStart(e,1)}}},[i("span",{class:["vue-slider-tooltip-"+t.tooltipDirection[1],"vue-slider-tooltip-wrap"]},[t._t("tooltip",[i("span",{staticClass:"vue-slider-tooltip",style:t.tooltipStyles[1]},[t._v(t._s(t.formatter?t.formatting(t.val[1]):t.val[1]))])],{value:t.val[1],index:1})],2)])]:[i("div",{ref:"dot",class:[t.tooltipStatus,"vue-slider-dot",{"vue-slider-dot-focus":t.focusFlag&&0===t.focusSlider}],style:[t.dotStyles,t.sliderStyles,t.focusFlag&&0===t.focusSlider?t.focusStyles:null],on:{mousedown:t.moveStart,touchstart:t.moveStart}},[i("span",{class:["vue-slider-tooltip-"+t.tooltipDirection,"vue-slider-tooltip-wrap"]},[t._t("tooltip",[i("span",{staticClass:"vue-slider-tooltip",style:t.tooltipStyles},[t._v(t._s(t.formatter?t.formatting(t.val):t.val))])],{value:t.val})],2)])],t._v(" "),i("ul",{staticClass:"vue-slider-piecewise"},t._l(t.piecewiseDotWrap,function(e,s){return i("li",{key:s,staticClass:"vue-slider-piecewise-item",style:[t.piecewiseDotStyle,e.style]},[t._t("piecewise",[t.piecewise?i("span",{staticClass:"vue-slider-piecewise-dot",style:[t.piecewiseStyle,e.inRange?t.piecewiseActiveStyle:null]}):t._e()],{label:e.label,index:s,first:0===s,last:s===t.piecewiseDotWrap.length-1,active:e.inRange}),t._v(" "),t._t("label",[t.piecewiseLabel?i("span",{staticClass:"vue-slider-piecewise-label",style:[t.labelStyle,e.inRange?t.labelActiveStyle:null]},[t._v("\n            "+t._s(e.label)+"\n          ")]):t._e()],{label:e.label,index:s,first:0===s,last:s===t.piecewiseDotWrap.length-1,active:e.inRange})],2)})),t._v(" "),i("div",{ref:"process",class:["vue-slider-process",{"vue-slider-process-dragable":t.isRange&&t.processDragable}],style:t.processStyle,on:{click:t.processClick,mousedown:function(e){t.moveStart(e,0,!0)},touchstart:function(e){t.moveStart(e,0,!0)}}})],2),t._v(" "),t.isRange||t.data?t._e():i("input",{directives:[{name:"model",rawName:"v-model",value:t.val,expression:"val"}],staticClass:"vue-slider-sr-only",attrs:{type:"range",min:t.min,max:t.max},domProps:{value:t.val},on:{__r:function(e){t.val=e.target.value}}})])},staticRenderFns:[]}},function(t,e,i){var s=i(3);"string"==typeof s&&(s=[[t.i,s,""]]),s.locals&&(t.exports=s.locals);i(8)("743d98f5",s,!0)},function(t,e,i){function s(t){for(var e=0;e<t.length;e++){var i=t[e],s=h[i.id];if(s){s.refs++;for(var r=0;r<s.parts.length;r++)s.parts[r](i.parts[r]);for(;r<i.parts.length;r++)s.parts.push(n(i.parts[r]));s.parts.length>i.parts.length&&(s.parts.length=i.parts.length)}else{for(var o=[],r=0;r<i.parts.length;r++)o.push(n(i.parts[r]));h[i.id]={id:i.id,refs:1,parts:o}}}}function r(){var t=document.createElement("style");return t.type="text/css",d.appendChild(t),t}function n(t){var e,i,s=document.querySelector('style[data-vue-ssr-id~="'+t.id+'"]');if(s){if(f)return v;s.parentNode.removeChild(s)}if(m){var n=p++;s=c||(c=r()),e=o.bind(null,s,n,!1),i=o.bind(null,s,n,!0)}else s=r(),e=l.bind(null,s),i=function(){s.parentNode.removeChild(s)};return e(t),function(s){if(s){if(s.css===t.css&&s.media===t.media&&s.sourceMap===t.sourceMap)return;e(t=s)}else i()}}function o(t,e,i,s){var r=i?"":s.css;if(t.styleSheet)t.styleSheet.cssText=g(e,r);else{var n=document.createTextNode(r),o=t.childNodes;o[e]&&t.removeChild(o[e]),o.length?t.insertBefore(n,o[e]):t.appendChild(n)}}function l(t,e){var i=e.css,s=e.media,r=e.sourceMap;if(s&&t.setAttribute("media",s),r&&(i+="\n/*# sourceURL="+r.sources[0]+" */",i+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(r))))+" */"),t.styleSheet)t.styleSheet.cssText=i;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(i))}}var a="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!a)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var u=i(9),h={},d=a&&(document.head||document.getElementsByTagName("head")[0]),c=null,p=0,f=!1,v=function(){},m="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());t.exports=function(t,e,i){f=i;var r=u(t,e);return s(r),function(e){for(var i=[],n=0;n<r.length;n++){var o=r[n],l=h[o.id];l.refs--,i.push(l)}e?(r=u(t,e),s(r)):r=[];for(var n=0;n<i.length;n++){var l=i[n];if(0===l.refs){for(var a=0;a<l.parts.length;a++)l.parts[a]();delete h[l.id]}}}};var g=function(){var t=[];return function(e,i){return t[e]=i,t.filter(Boolean).join("\n")}}()},function(t,e){t.exports=function(t,e){for(var i=[],s={},r=0;r<e.length;r++){var n=e[r],o=n[0],l=n[1],a=n[2],u=n[3],h={id:t+":"+r,css:l,media:a,sourceMap:u};s[o]?s[o].parts.push(h):i.push(s[o]={id:o,parts:[h]})}return i}}])});
 
 /***/ }),
-/* 114 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20162,7 +20712,7 @@ if (false) {
 }
 
 /***/ }),
-/* 115 */
+/* 120 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20430,7 +20980,7 @@ if (false) {
 }
 
 /***/ }),
-/* 116 */
+/* 121 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20470,14 +21020,14 @@ if (false) {
 }
 
 /***/ }),
-/* 117 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_maps_Native_Map_Network_Native_Map_vue__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_maps_Native_Map_Network_Native_Map_vue__ = __webpack_require__(123);
 
-var Vue = __webpack_require__(4);
+var Vue = __webpack_require__(3);
 
 
 
@@ -20494,13 +21044,13 @@ var Vue = __webpack_require__(4);
 });
 
 /***/ }),
-/* 118 */
+/* 123 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_vue__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_vue__ = __webpack_require__(39);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f992934_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_vue__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f992934_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_vue__ = __webpack_require__(143);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20546,11 +21096,11 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 119 */
+/* 124 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projection__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projection__ = __webpack_require__(125);
 
 
 class CircleMap {
@@ -20739,7 +21289,7 @@ CircleMap.MAX_CELL_DISTANCE = 12; // in terms of cells
 /* harmony default export */ __webpack_exports__["a"] = (CircleMap);
 
 /***/ }),
-/* 120 */
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20803,7 +21353,7 @@ class Projection {
 /* harmony default export */ __webpack_exports__["a"] = (Projection);
 
 /***/ }),
-/* 121 */
+/* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20838,7 +21388,7 @@ class Circles {
 /* harmony default export */ __webpack_exports__["a"] = (Circles);
 
 /***/ }),
-/* 122 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20890,17 +21440,17 @@ class MapsTester{
 /* unused harmony default export */ var _unused_webpack_default_export = (MapsTester);
 
 /***/ }),
-/* 123 */
+/* 128 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Canvas_vue__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Canvas_vue__ = __webpack_require__(40);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_df567280_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Canvas_vue__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_df567280_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Canvas_vue__ = __webpack_require__(131);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(124)
+  __webpack_require__(129)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20946,13 +21496,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 124 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(125);
+var content = __webpack_require__(130);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -20972,7 +21522,7 @@ if(false) {
 }
 
 /***/ }),
-/* 125 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -20986,7 +21536,7 @@ exports.push([module.i, "\n@keyframes connected {\n0% { opacity: 0\n}\n10% { opa
 
 
 /***/ }),
-/* 126 */
+/* 131 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27017,17 +27567,17 @@ if (false) {
 }
 
 /***/ }),
-/* 127 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Dialog_vue__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Dialog_vue__ = __webpack_require__(41);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_05fc5bd9_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_vue__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_05fc5bd9_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_vue__ = __webpack_require__(139);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(128)
+  __webpack_require__(133)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -27073,13 +27623,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 128 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(129);
+var content = __webpack_require__(134);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27099,7 +27649,7 @@ if(false) {
 }
 
 /***/ }),
-/* 129 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -27113,17 +27663,17 @@ exports.push([module.i, "\n.map-dialog-description {\n    color: #ffc107;\n    h
 
 
 /***/ }),
-/* 130 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(42);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_094a8568_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_094a8568_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(138);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(131)
+  __webpack_require__(136)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -27169,13 +27719,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 131 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(132);
+var content = __webpack_require__(137);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27195,7 +27745,7 @@ if(false) {
 }
 
 /***/ }),
-/* 132 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -27209,7 +27759,7 @@ exports.push([module.i, "\n.icon-connected{\n    filter: brightness(0) invert(1)
 
 
 /***/ }),
-/* 133 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27292,7 +27842,7 @@ if (false) {
 }
 
 /***/ }),
-/* 134 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27336,11 +27886,11 @@ if (false) {
 }
 
 /***/ }),
-/* 135 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var v1 = __webpack_require__(136);
-var v4 = __webpack_require__(137);
+var v1 = __webpack_require__(141);
+var v4 = __webpack_require__(142);
 
 var uuid = v4;
 uuid.v1 = v1;
@@ -27350,11 +27900,11 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 136 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rng = __webpack_require__(40);
-var bytesToUuid = __webpack_require__(41);
+var rng = __webpack_require__(43);
+var bytesToUuid = __webpack_require__(44);
 
 // **`v1()` - Generate time-based UUID**
 //
@@ -27465,11 +28015,11 @@ module.exports = v1;
 
 
 /***/ }),
-/* 137 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rng = __webpack_require__(40);
-var bytesToUuid = __webpack_require__(41);
+var rng = __webpack_require__(43);
+var bytesToUuid = __webpack_require__(44);
 
 function v4(options, buf, offset) {
   var i = buf && offset || 0;
@@ -27500,7 +28050,7 @@ module.exports = v4;
 
 
 /***/ }),
-/* 138 */
+/* 143 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27529,13 +28079,13 @@ if (false) {
 }
 
 /***/ }),
-/* 139 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_alerts_Notifications_vue__ = __webpack_require__(140);
-var Vue = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_alerts_Notifications_vue__ = __webpack_require__(145);
+var Vue = __webpack_require__(3);
 
 
 
@@ -27556,17 +28106,17 @@ var Vue = __webpack_require__(4);
 });
 
 /***/ }),
-/* 140 */
+/* 145 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Notifications_vue__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Notifications_vue__ = __webpack_require__(45);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_87887140_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Notifications_vue__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_87887140_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Notifications_vue__ = __webpack_require__(148);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(141)
+  __webpack_require__(146)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -27612,13 +28162,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 141 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(142);
+var content = __webpack_require__(147);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27638,7 +28188,7 @@ if(false) {
 }
 
 /***/ }),
-/* 142 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -27652,7 +28202,7 @@ exports.push([module.i, "\n.notificationsBox{\n    width:450px!important;\n    w
 
 
 /***/ }),
-/* 143 */
+/* 148 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
