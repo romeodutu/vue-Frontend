@@ -2169,7 +2169,7 @@ consts.SETTINGS = {
 
     NODE: {
 
-        VERSION: "1.197.6",
+        VERSION: "1.197.8",
 
         VERSION_COMPATIBILITY: "1.174",
         VERSION_COMPATIBILITY_POOL_MINERS: "1.174",
@@ -29118,8 +29118,8 @@ class InterfaceBlockchainBlockData {
 
     toJSON(){
         return {
-            minerAddress: this.minerAddress.toString("hex"),
-            hashData: this.hashData.toString("hex"),
+            minerAddress: Buffer.isBuffer(this.minerAddress) ?  this.minerAddress.toString("hex") : '',
+            hashData: Buffer.isBuffer(this.hashData) ?  this.hashData.toString("hex") : '',
         };
     }
 
@@ -100289,9 +100289,9 @@ class InterfaceBlockchainMining extends  __WEBPACK_IMPORTED_MODULE_6__Interface_
 
             //mining next blocks
 
-            let nextBlock = await this.getNextBlock();
-
             try {
+
+                let nextBlock = await this.getNextBlock();
 
                 let difficulty = this.blockchain.getDifficultyTarget();
 
@@ -100414,7 +100414,7 @@ class InterfaceBlockchainMining extends  __WEBPACK_IMPORTED_MODULE_6__Interface_
 
         } catch (Exception){
 
-            console.error( "Error mining block ", Exception, block.toJSON() );
+            console.error( "Error mining block ", Exception, (block !== null ? block.toJSON() : '') );
 
             throw Exception;
         }
