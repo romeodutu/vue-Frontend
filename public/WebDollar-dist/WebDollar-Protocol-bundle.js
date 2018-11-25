@@ -2099,7 +2099,7 @@ consts.HASH_ARGON2_PARAMS = {
     algoNode: 0,
     algoBrowser: 0,
     hashLen: 32,
-    distPath: 'https://webdollar.io/public/argon2'
+    distPath: 'https://webdollar.io/public/WebDollar-dist/argon2'
 };
 
 // change also to Browser-Mining-WebWorker.js
@@ -80449,7 +80449,7 @@ class Argon2BrowserWebAssembly{
 
 var global =  typeof window === "undefined" ? self : window;
 //var root =  window === undefined ? '../' : '';
-var root = "https://webdollar.io/public/argon2/";
+var root = "https://webdollar.io/public/WebDollar-dist/argon2/";
 
 class Argon2BrowserWebAssemblyCalc{
 
@@ -101947,7 +101947,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 let jobTerminated = false; //is not working and jobTermianted is not reliable in the Worker....
 let block = undefined;
-let ARGON2_PARAM = { salt: 'Satoshi_is_Finney', time: 2, mem: 256, parallelism: 2, type: 0, hashLen: 32, distPath: 'https://webdollar.io/public/argon2/dist'}
+let ARGON2_PARAM = { salt: 'Satoshi_is_Finney', time: 2, mem: 256, parallelism: 2, type: 0, hashLen: 32, distPath: 'https://webdollar.io/public/WebDollar-dist/argon2/dist'}
 
 let algorithm = undefined;
 
@@ -101962,7 +101962,7 @@ var _librayLoaded = false;
 var _libraryLoadPromise = false;
 
 var global = typeof window === 'undefined' ? self : window;
-var root = "https://webdollar.io/public/argon2/";
+var root = "https://webdollar.io/public/WebDollar-dist/argon2/";
 
 var log;
 
