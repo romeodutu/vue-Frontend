@@ -136,6 +136,16 @@
                 </a>
             </div>
 
+            <div class="mediaContentBox">
+                <a href ="https://youtu.be/oPP-b4cFFqw" target="_blank">
+
+                    <img alt="Alexandru Panait" src="/public/assets/images/media/antena3.jpg">
+                    <h3>First Romanian Cryptocurrency</h3>
+                    <span>Antena 3</span>
+
+                </a>
+            </div>
+
         </div>
 
     </div>
