@@ -304,20 +304,6 @@
                     </p>
                 </div>
 
-                <div class="our-team smirna">
-                    <div class="team-pic">
-                        <img src="/public/assets/images/team/Tudor-Smirna.jpeg" alt="Tudor Smirna">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://mises.org/profile/tudor-smirna" target="_blank" class="fa fa-earth"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Tudor Smirna</span>
-                    <span class="teamRole">Economic Advisor</span>
-                    <p>Tudor Smirna, Ph.D., is an economist and entrepreneur specialized in money and banking. He is a fellow of the Ludwig von Mises Institute and teaches at the Bucharest University of Economic Studies.</p>
-                </div>
-
             </div>
 
         </div>
