@@ -35,8 +35,8 @@
                                 <loading-spinner />
                             </span>
                             <span v-show="this.loaded" class="value">
-                                {{this.getNetworkHashrate}}
-                                <span class='networkDifficulty'> {{this.getNetworkHashrateSign}}{{ this.isPos ? ' coins' : 'h/s'}}</span>
+                                ~{{this.getNetworkHashrate}}
+                                <span class='networkDifficulty'>{{this.getNetworkHashrateSign}}{{ this.isPos ? ' coins' : 'h/s'}}</span>
                             </span>
                             <span class="description">{{ this.isPos ? 'Compete coins in PoS' : 'Global Hash rate' }}</span>
                         </div>
