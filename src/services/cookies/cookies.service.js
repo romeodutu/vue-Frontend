@@ -1,5 +1,5 @@
 /*
- TUTORIAL BASED on http://stackoverflow.com/questions/34298133/angular-2-cookies
+ TUTORIAL BASED on https://stackoverflow.com/questions/34298133/angular-2-cookies
  */
 
 export default class CookiesService {

@@ -5,7 +5,7 @@
         <div v-if="this.displayType==='normal'" class="poolContainer">
 
             <div v-for="(element, index) in this.minersList" :key="'miningPoolListElement '+index"  class="miner" :class="element.active===true ? 'activeMiner' : ''"  @click="selectMiner(index)">
-                <img alt="picker" src="public/assets/images/picker.png"/>
+                <img alt="picker" class="lazy" data-src="public/assets/images/picker.png"/>
                 <span class="status">{{element.active===true ? 'Mining' : 'Offline'}}</span>
             </div>
 

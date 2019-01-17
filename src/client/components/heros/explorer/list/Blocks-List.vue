@@ -229,37 +229,41 @@
 
         mounted(){
 
-            if (typeof window === "undefined") return false;
+            window.addEventListener("load", () => {
 
-            if (WebDollar.Blockchain.synchronized){
+                if (typeof window === "undefined") return false;
 
-                var start = WebDollar.Blockchain.blockchain.blocks.blocksStartingPoint;
-                var stop = WebDollar.Blockchain.blockchain.blocks.length;
-
-                let blocks = WebDollar.Blockchain.blockchain.blocks;
-                this.data = this.updateChart(blocks, start,stop);
-                this.createChardData(this.data);
-
-            }
-
-            WebDollar.StatusEvents.emitter.on("blockchain/status", (data)=>{
-
-                if (data.message === "Blockchain Ready to Mine"){
+                if (WebDollar.Blockchain.synchronized) {
 
                     var start = WebDollar.Blockchain.blockchain.blocks.blocksStartingPoint;
                     var stop = WebDollar.Blockchain.blockchain.blocks.length;
 
                     let blocks = WebDollar.Blockchain.blockchain.blocks;
-                    this.data = this.updateChart(blocks, start,stop);
+                    this.data = this.updateChart(blocks, start, stop);
                     this.createChardData(this.data);
 
-                    WebDollar.StatusEvents.on("blockchain/blocks-count-changed", (blocksLength)=>{
-
-                        this.addNewBlock(WebDollar.Blockchain.blockchain.blocks[blocksLength-1]);
-
-                    });
-
                 }
+
+                WebDollar.StatusEvents.emitter.on("blockchain/status", (data) => {
+
+                    if (data.message === "Blockchain Ready to Mine") {
+
+                        var start = WebDollar.Blockchain.blockchain.blocks.blocksStartingPoint;
+                        var stop = WebDollar.Blockchain.blockchain.blocks.length;
+
+                        let blocks = WebDollar.Blockchain.blockchain.blocks;
+                        this.data = this.updateChart(blocks, start, stop);
+                        this.createChardData(this.data);
+
+                        WebDollar.StatusEvents.on("blockchain/blocks-count-changed", (blocksLength) => {
+
+                            this.addNewBlock(WebDollar.Blockchain.blockchain.blocks[blocksLength - 1]);
+
+                        });
+
+                    }
+
+                });
 
             });
 

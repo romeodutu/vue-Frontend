@@ -282,7 +282,7 @@ a:hover{
 }
 
 .teamWrapper p{
-  font-size: 14px;
+  font-size: 16px;
   background-color: #020102ad;
   border-radius: 5px;
   padding: 20px 20px;
@@ -622,7 +622,7 @@ background-color:#ff2200}
   margin-top: 0;
 }
 .main-timeline .description{
-  font-size: 15px;
+  font-size: 16px;
   color: #b3b3b3;
   line-height: 25px;
 }
@@ -698,6 +698,10 @@ background-color:#ff2200}
 #team h4{
   text-transform: uppercase;
   height: 30px;
+}
+
+#team{
+  margin-bottom: 80px;
 }
 
 #whatContainer p{
@@ -962,7 +966,7 @@ background-color:#ff2200}
   }
 }
 
-#p2p-network,#what-is-WebDollar,#timelineSection{
+.p2pNetwork,#p2p-network,#what-is-WebDollar,#timelineSection{
     padding-top: 60px;
 }
 
@@ -974,7 +978,7 @@ background-color:#ff2200}
     margin-top: 60px;
 }
 
-#p2p-network h3,#timelineSection h3, #knowUsSection h3{
+#p2p-network h3,#timelineSection h3, #knowUsSection h3, .p2pNetwork{
   font-weight: 100;
   color: #efe0be;
   text-align: center;
@@ -1236,7 +1240,7 @@ background-color:#ff2200}
   width: 100%;
 }
 
-#createPoolSection .distributionContainer{
+.createPoolSection .distributionContainer{
   grid-template-columns: 1fr 1fr;
 }
 
@@ -1342,11 +1346,11 @@ background-color:#ff2200}
   padding-bottom: 80px;
 }
 
-#createPoolSection{
+.createPoolSection{
   margin-bottom: 100px;
 }
 
-#createPoolSection .subtitle{
+.createPoolSection .subtitle{
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1354,19 +1358,19 @@ background-color:#ff2200}
   color: #fec02c;
 }
 
-#createPoolSection .createPoolLink{
+.createPoolSection .createPoolLink{
   width: 80%!important;
   margin: 0 auto;
   border-top: solid 1px #444;
   padding-top: 30px;
 }
 
-#createPoolSection .bigMarginBottom{
+.createPoolSection .bigMarginBottom{
   margin-bottom: 60px;
   margin-top: 60px;
 }
 
-#createPoolSection .poolSlider .miningSlider{
+.createPoolSection .poolSlider .miningSlider{
   width: 80%!important;
   margin: 0 auto;
   margin-top: 50px;
@@ -1913,7 +1917,6 @@ background-color:#ff2200}
 }
 
 .socialLinksNewsletter{
-  display: block;
   text-align: center;
 }
 
@@ -2219,4 +2222,13 @@ background-color:#ff2200}
 
 #miningPoolController{
   border-bottom: solid 1px#ffffff;
+}
+
+.sectionCenteredWidth{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ajustedSectionCenteredWidth{
+  max-height: 1000px;
 }

@@ -90,50 +90,54 @@
 
         mounted(){
 
-            if (typeof window === "undefined") return false;
+            window.addEventListener("load", () => {
 
-            WebDollar.StatusEvents.on("blockchain/status", (data)=>{
+                if (typeof window === "undefined") return false;
 
-                if (data.message === "Single Window") {
+                WebDollar.StatusEvents.on("blockchain/status", (data)=>{
 
-                    this.protocolUsedOnMultipleTabs= false;
+                    if (data.message === "Single Window") {
 
-                }else
-                if (data.message === "Multiple Windows Detected"){
+                        this.protocolUsedOnMultipleTabs= false;
 
-                    this.protocolUsedOnMultipleTabs=true;
+                    }else
+                    if (data.message === "Multiple Windows Detected"){
 
-                }
+                        this.protocolUsedOnMultipleTabs=true;
+
+                    }
+
+                });
+
+                this.initializePool();
+
+                WebDollar.StatusEvents.on("blockchain/logs", (data)=> {
+
+                    switch (data.message) {
+
+                        case "Network Adjusted Time Error":
+
+                            setTimeout(()=>{
+                                location.reload();
+                            }, 12022*1000);
+
+                            break;
+
+                        case "You mined way too many blocks":
+
+                            setTimeout(()=>{
+                                location.reload();
+                            }, 15*1000);
+
+                            break;
+                    }
+
+                });
+
+
+                this.loadPoolSettings();
 
             });
-
-            this.initializePool();
-
-            WebDollar.StatusEvents.on("blockchain/logs", (data)=> {
-
-                switch (data.message) {
-
-                    case "Network Adjusted Time Error":
-
-                        setTimeout(()=>{
-                            location.reload();
-                        }, 12022*1000);
-
-                        break;
-
-                    case "You mined way too many blocks":
-
-                        setTimeout(()=>{
-                            location.reload();
-                        }, 15*1000);
-
-                        break;
-                }
-
-            });
-
-
-            this.loadPoolSettings();
 
         },
 

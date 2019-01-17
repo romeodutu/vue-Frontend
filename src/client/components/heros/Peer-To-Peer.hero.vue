@@ -11,13 +11,15 @@
                 <div class="networkConnection">
                     <div class="connectionType">
 
-                        <span>Connection:</span>
-                        <select v-model="poolsListSelected" class="poolSelect" @change="handleConnectionSelect">
+                        <label for="poolConnectionSelect">Connection:</label>
+
+                        <select id="poolConnectionSelect" v-model="poolsListSelected" class="poolSelect" @change="handleConnectionSelect">
                             <option class="poolSelectOption" >Consensus (No Pool)</option>
                             <option v-for="(poolListElement, index) in this.poolsList" class="poolSelectOption"  >
                                 {{poolListElement.poolName}}
                             </option>
                         </select>
+
 
                     </div>
                 </div>
@@ -127,14 +129,18 @@
 
         async mounted(){
 
-            if (typeof window === "undefined") return;
+            window.addEventListener("load", async () => {
 
-            WebDollar.StatusEvents.on("miner-pool/settings",data =>  this.loadData() );
-            WebDollar.StatusEvents.on("miner-pool/newPoolURL",data =>  this.loadData() );
+                if (typeof window === "undefined") return;
 
-            await WebDollar.Blockchain.onPoolsInitialized;
+                WebDollar.StatusEvents.on("miner-pool/settings",data =>  this.loadData() );
+                WebDollar.StatusEvents.on("miner-pool/newPoolURL",data =>  this.loadData() );
 
-            this.loadData();
+                await WebDollar.Blockchain.onPoolsInitialized;
+
+                this.loadData();
+
+            })
 
         }
 

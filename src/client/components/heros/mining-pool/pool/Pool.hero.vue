@@ -1,9 +1,9 @@
 <template>
 
-    <div id="p2p-network">
+    <div id="" class="p2pNetwork">
 
 
-        <div id="createPoolSection">
+        <div id="" class="createPoolSection">
 
             <h1 class="alignCenter bigMarginBottom">POOL Mining</h1>
 
@@ -177,22 +177,25 @@
 
         mounted() {
 
-            if (typeof window === 'undefined') return;
+            window.addEventListener("load", () => {
 
-            WebDollar.StatusEvents.on("pools/status", (data) => {
+                if (typeof window === 'undefined') return;
+
+                WebDollar.StatusEvents.on("pools/status", (data) => {
+                    this.loadPoolData();
+                });
+
+                WebDollar.StatusEvents.on("pools/settings", (data) => {
+                    this.loadPoolData();
+                });
+
                 this.loadPoolData();
+
+                WebDollar.StatusEvents.on("pools/servers-connections", (data) => {
+                    this.getPoolServers();
+                });
+
             });
-
-            WebDollar.StatusEvents.on("pools/settings",(data)=>{
-                this.loadPoolData();
-            });
-
-            this.loadPoolData();
-
-            WebDollar.StatusEvents.on("pools/servers-connections",(data)=>{
-                this.getPoolServers();
-            });
-
 
         }
 

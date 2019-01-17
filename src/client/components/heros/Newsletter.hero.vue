@@ -8,38 +8,40 @@
             <span class="pageTitle alignCenter titleMarginBottom removeBackground">Follow us</span>
 
             <div class="socialLinksNewsletter">
-                <a href="https://facebook.com/webdollar.io" target="_blank" class="linkIconSocial">
-                    <img src="/public/assets/images/SocialMedia/facebook_white.png" alt="facebook" class="linkIconSocialNormal">
-                    <img src="/public/assets/images/SocialMedia/facebook_yellow.png" alt="facebook" class="linkIconSocialHover">
+                <a href="https://facebook.com/webdollar.io" rel="noopener" target="_blank" class="linkIconSocial">
+                    <img data-src="/public/assets/images/SocialMedia/facebook_white.png" alt="facebook" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/facebook_yellow.png" alt="facebook" class="linkIconSocialHover lazy">
                 </a>
-                <a href="https://twitter.com/webdollar_io" target="_blank" class="linkIconSocial">
-                    <img src="/public/assets/images/SocialMedia/twitter_white.png" alt="twitter" class="linkIconSocialNormal">
-                    <img src="/public/assets/images/SocialMedia/twitter_yellow.png" alt="twitter" class="linkIconSocialHover">
+                <a href="https://twitter.com/webdollar_io" rel="noopener" target="_blank" class="linkIconSocial">
+                    <img data-src="/public/assets/images/SocialMedia/twitter_white.png" alt="twitter" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/twitter_yellow.png" alt="twitter" class="linkIconSocialHover lazy">
                 </a>
-                <a href="https://t.me/WebDollar" target="_blank" class="linkIconSocial">
-                    <img src="/public/assets/images/SocialMedia/telegram_white.png" alt="telegram" class="linkIconSocialNormal">
-                    <img src="/public/assets/images/SocialMedia/telegram_yellow.png" alt="telegram" class="linkIconSocialHover">
+                <a href="https://t.me/WebDollar" rel="noopener" target="_blank" class="linkIconSocial">
+                    <img data-src="/public/assets/images/SocialMedia/telegram_white.png" alt="telegram" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/telegram_yellow.png" alt="telegram" class="linkIconSocialHover lazy">
                 </a>
-                <a href="https://github.com/WebDollar" target="_blank" class="linkIconSocial">
-                    <img src="/public/assets/images/SocialMedia/github_white.png" alt="github" class="linkIconSocialNormal">
-                    <img src="/public/assets/images/SocialMedia/github_yellow.png" alt="github" class="linkIconSocialHover">
+                <a href="https://github.com/WebDollar" rel="noopener" target="_blank" class="linkIconSocial">
+                    <img data-src="/public/assets/images/SocialMedia/github_white.png" alt="github" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/github_yellow.png" alt="github" class="linkIconSocialHover lazy">
                 </a>
-                <a href="https://www.reddit.com/r/webdollar/" target="_blank"  class="linkIconSocial">
-                    <img src="/public/assets/images/SocialMedia/reddit_white.png" alt="reddit" class="linkIconSocialNormal">
-                    <img src="/public/assets/images/SocialMedia/reddit_yellow.png" alt="reddit" class="linkIconSocialHover">
+                <a href="https://www.reddit.com/r/webdollar/" rel="noopener" target="_blank"  class="linkIconSocial lazy">
+                    <img data-src="/public/assets/images/SocialMedia/reddit_white.png" alt="reddit" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/reddit_yellow.png" alt="reddit" class="linkIconSocialHover lazy">
                 </a>
-                <a href="https://medium.com/@webdollar" target="_blank" class="linkIconSocial">
-                    <img src="/public/assets/images/SocialMedia/medium_white.png" alt="medium" class="linkIconSocialNormal">
-                    <img src="/public/assets/images/SocialMedia/medium_yellow.png" alt="medium" class="linkIconSocialHover">
+                <a href="https://medium.com/@webdollar" rel="noopener" target="_blank" class="linkIconSocial">
+                    <img data-src="/public/assets/images/SocialMedia/medium_white.png" alt="medium" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/medium_yellow.png" alt="medium" class="linkIconSocialHover lazy">
                 </a>
             </div>
 
             <div id="newsletterContainer">
 
-                <span class="newsletterText">Subscribe to our newsletter for the latest news</span>
+                <label for="newsletterInput">
+                    <span class="newsletterText">Subscribe to our newsletter for the latest news</span>
+                </label>
 
                 <div v-if="this.success === ''" >
-                    <input v-model="email" placeholder="Email"  />
+                    <input v-model="email" placeholder="Email" id="newsletterInput" />
 
                     <span class="error">
                         {{this.error}}

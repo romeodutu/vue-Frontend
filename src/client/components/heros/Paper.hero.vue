@@ -8,13 +8,13 @@
 
             <div class="paperItem paperItemColor1 blackPaper">
 
-                <a href="/public/doc/WebDollar-Black-Paper.pdf" target="_blank" class="paperItem paperItemColor1 whitePaper">
+                <a href="/public/doc/WebDollar-Black-Paper.pdf" rel="noopener" target="_blank" class="paperItem paperItemColor1 whitePaper">
 
                     <div class="paperItem2 paperItemColor2">
 
                         <div class="paperItem2 paperItemColor3">
 
-                            <img class="paperImg" src="public/assets/images/black_paper.png">
+                            <img class="paperImg lazy" alt="Black Paper" data-src="/public/assets/images/black_paper.png">
 
                             <h2>Black Paper</h2>
 
@@ -28,13 +28,13 @@
 
             </div>
 
-            <a href="/public/doc/WebDollar-White-Paper.pdf" target="_blank" class="paperItem paperItemColor1 whitePaper">
+            <a href="/public/doc/WebDollar-White-Paper.pdf" rel="noopener" target="_blank" class="paperItem paperItemColor1 whitePaper">
 
                 <div class="paperItem2 paperItemColor2">
 
                     <div class="paperItem2 paperItemColor3">
 
-                        <img class="paperImg" src="public/assets/images/white_paper.png">
+                        <img class="paperImg lazy" alt="White Paper" data-src="/public/assets/images/white_paper.png">
 
                         <h2>White Paper</h2>
 

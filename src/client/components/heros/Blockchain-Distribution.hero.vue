@@ -10,7 +10,7 @@
 
                 <div class="distributionGrid">
                     <div class="webdCoin spinCoin">
-                        <img src="/public/assets/images/logo-coin.png" alt="webDollar logo black" title="webDollar black logo" class="coinLogo">
+                        <img data-src="/public/assets/images/logo-coin.png" alt="webDollar logo black" title="webDollar black logo" class="coinLogo lazy">
                     </div>
                 </div>
                 <div class="distributionGrid">
@@ -36,9 +36,9 @@
                             </span>
                             <span v-show="this.loaded" class="value">
                                 {{this.getNetworkHashrate}}
-                                <span class='networkDifficulty'> {{this.getNetworkHashrateSign}}</span>
+                                <span class='networkDifficulty'> {{this.getNetworkHashrateSign}}{{ this.isPos ? ' coins' : 'h/s'}}</span>
                             </span>
-                            <span class="description">Global Hash rate</span>
+                            <span class="description">{{ this.isPos ? 'Compete coins in PoS' : 'Global Hash rate' }}</span>
                         </div>
                     </div>
 
@@ -77,6 +77,7 @@
                 totalAmountCoins: 0,
                 blocksLength: 0,
                 loaded:false,
+                isPos: false,
 
                 distributionProgressBarMax : 42000000000,
                 distributionProgressBarMin : 0,
@@ -103,42 +104,52 @@
             },
 
             getNetworkHashrate(){
-                return Utils.showHashes(this.networkHashRate);
+                return Utils.showHashes(this.networkHashRate,this.isPos);
             },
 
             getNetworkHashrateSign(){
-                return Utils.showHashesSign(this.networkHashRate);
+                return Utils.showHashesSign(this.networkHashRate,this.isPos);
             }
 
         },
 
         mounted(){
 
-            if (typeof window === "undefined") return;
+            window.addEventListener("load", () => {
 
-            if (WebDollar.Blockchain.synchronized){
+                if (typeof window === "undefined") return;
 
-                this.verifyIfContainData( WebDollar.Blockchain.Chain.accountantTree.calculateNodeCoins() / 10000 );
+                if (WebDollar.Blockchain.synchronized){
 
-                this.blocksLength = WebDollar.Blockchain.Chain.blocks.length;
-                this.networkHashRate = WebDollar.Blockchain.Chain.blocks.networkHashRate;
+                    this.verifyIfContainData( WebDollar.Blockchain.Chain.accountantTree.calculateNodeCoins() / 10000 );
 
-            }
+                    this.blocksLength = WebDollar.Blockchain.Chain.blocks.length;
+                    this.networkHashRate = WebDollar.Blockchain.Chain.blocks.networkHashRate;
+
+                }
 
 
-            WebDollar.StatusEvents.on("blockchain/blocks-count-changed", (blocksLength)=>{
+                WebDollar.StatusEvents.on("blockchain/blocks-count-changed", (blocksLength)=>{
 
-                this.verifyIfContainData( WebDollar.Blockchain.Chain.accountantTree.calculateNodeCoins() / 10000 );
-                this.blocksLength = blocksLength;
+                    this.verifyIfContainData( WebDollar.Blockchain.Chain.accountantTree.calculateNodeCoins() / 10000 );
+                    this.blocksLength = blocksLength;
+
+                    if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength ) ){
+                        this.isPos = true;
+                    }
+                    else{
+                        this.isPos = false;
+                    }
+
+                });
+
+                WebDollar.StatusEvents.on("blockchain/new-network-hash-rate", (networkHashRate)=>{
+
+                    this.networkHashRate = networkHashRate;
+
+                });
 
             });
-
-            WebDollar.StatusEvents.on("blockchain/new-network-hash-rate", (networkHashRate)=>{
-
-                this.networkHashRate = networkHashRate;
-
-            });
-
 
         },
 

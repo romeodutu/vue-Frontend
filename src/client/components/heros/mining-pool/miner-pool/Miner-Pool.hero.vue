@@ -1,13 +1,13 @@
 <template>
 
-    <div id="p2p-network">
+    <div id="" class="p2pNetwork">
 
 
-        <div id="createPoolSection">
+        <div id="createPoolSection" cl>
 
             <h1 class="alignCenter bigMarginBottom">POOL Mining</h1>
 
-            <div class="distributionContainer">
+            <div class="distributionContainer sectionCenteredWidth">
 
                 <div class="distributionGrid borderBottom">
                     <h2 class="subtitle">{{ this.minerPoolStatus === 'miner' ? 'Referral Quick Actions' : 'Pool Quick Actions'}}</h2>
@@ -224,37 +224,40 @@
 
         mounted() {
 
+            window.addEventListener("load", () => {
 
-            if (typeof window === "undefined") return;
+                if (typeof window === "undefined") return;
 
-            WebDollar.StatusEvents.on("miner-pool/status", data => this.loadPoolData() );
+                WebDollar.StatusEvents.on("miner-pool/status", data => this.loadPoolData());
 
-            WebDollar.StatusEvents.on("miner-pool/settings",data =>  this.loadPoolData() );
+                WebDollar.StatusEvents.on("miner-pool/settings", data => this.loadPoolData());
 
-            WebDollar.StatusEvents.on("miner-pool/referral-url", data =>  this.poolURLReferral = data.poolURLReferral );
+                WebDollar.StatusEvents.on("miner-pool/referral-url", data => this.poolURLReferral = data.poolURLReferral);
 
-            this.loadPoolData();
+                this.loadPoolData();
 
-            WebDollar.StatusEvents.on("miner-pool/referral-confirmed-reward", data => this.rewardReferralConfirmed = data.referralConfirmedReward );
-            WebDollar.StatusEvents.on("miner-pool/referral-total-reward", data => this.rewardReferralTotal = data.referralTotalReward );
+                WebDollar.StatusEvents.on("miner-pool/referral-confirmed-reward", data => this.rewardReferralConfirmed = data.referralConfirmedReward);
+                WebDollar.StatusEvents.on("miner-pool/referral-total-reward", data => this.rewardReferralTotal = data.referralTotalReward);
 
-            if (WebDollar.Blockchain.MinerPoolManagement !== undefined){
-                this.rewardReferralTotal = WebDollar.Blockchain.MinerPoolManagement.totalReferralReward;
-                this.rewardReferralConfirmed = WebDollar.Blockchain.MinerPoolManagement.confirmedReferralReward;
-            }
+                if (WebDollar.Blockchain.MinerPoolManagement !== undefined) {
+                    this.rewardReferralTotal = WebDollar.Blockchain.MinerPoolManagement.totalReferralReward;
+                    this.rewardReferralConfirmed = WebDollar.Blockchain.MinerPoolManagement.confirmedReferralReward;
+                }
 
-            //servers
+                //servers
 
-            WebDollar.StatusEvents.on("miner-pool/servers-connections",(data)=>{
-                this.getPoolServers();
+                WebDollar.StatusEvents.on("miner-pool/servers-connections", (data) => {
+                    this.getPoolServers();
+                });
+
+                WebDollar.StatusEvents.on("blockchain/new-network-hash-rate", (networkHashRate) => {
+
+                    this.networkHashRate = networkHashRate;
+
+                });
+
             });
 
-            WebDollar.StatusEvents.on("blockchain/new-network-hash-rate", (networkHashRate)=>{
-
-                this.networkHashRate = networkHashRate;
-
-            });
-            
         }
 
     }

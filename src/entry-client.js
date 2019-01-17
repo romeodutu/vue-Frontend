@@ -82,5 +82,6 @@ router.onReady(() => {
 
   // actually mount to DOM
   app.$mount('#app')
+
 })
 

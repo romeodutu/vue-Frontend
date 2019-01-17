@@ -55,24 +55,27 @@
         },
        mounted(){
 
-            if (typeof window === "undefined") return false;
+           window.addEventListener("load", () => {
 
-            this.selectNewItem( this.$route.params.a );
+               if (typeof window === "undefined") return false;
 
-            WebDollar.StatusEvents.on("blockchain/status", (data)=>{
+               this.selectNewItem(this.$route.params.a);
 
-                if (data.message === "Single Window") {
+               WebDollar.StatusEvents.on("blockchain/status", (data) => {
 
-                    this.protocolUsedOnMultipleTabs= false;
+                   if (data.message === "Single Window") {
 
-                }else
-                if (data.message === "Multiple Windows Detected"){
+                       this.protocolUsedOnMultipleTabs = false;
 
-                    this.protocolUsedOnMultipleTabs=true;
+                   } else if (data.message === "Multiple Windows Detected") {
 
-                }
+                       this.protocolUsedOnMultipleTabs = true;
 
-            });
+                   }
+
+               });
+
+           });
 
         },
 

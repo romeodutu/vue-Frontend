@@ -42,20 +42,23 @@
 
         mouted(){
 
-            if (typeof window === "undefined") return false;
+            window.addEventListener("load", () => {
 
-            WebDollar.StatusEvents.on("blockchain/status", (data)=>{
+                if (typeof window === "undefined") return false;
 
-                if (data.message === "Single Window") {
+                WebDollar.StatusEvents.on("blockchain/status", (data) => {
 
-                    this.protocolUsedOnMultipleTabs= false;
+                    if (data.message === "Single Window") {
 
-                }else
-                if (data.message === "Multiple Windows Detected"){
+                        this.protocolUsedOnMultipleTabs = false;
 
-                    this.protocolUsedOnMultipleTabs=true;
+                    } else if (data.message === "Multiple Windows Detected") {
 
-                }
+                        this.protocolUsedOnMultipleTabs = true;
+
+                    }
+
+                });
 
             });
 

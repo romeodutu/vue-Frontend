@@ -70,19 +70,57 @@ export default {
 
     },
     
-    showHashes(hashes){
+    showHashes(hashes,isPoS){
 
-        if (hashes >= 1000000) return (hashes / 1000000).toFixed(2);
-        if (hashes >= 1000) return (hashes / 1000).toFixed(0);
+        if (hashes >= 1000000000000)
+            if(!isPoS)
+                return (hashes / 1000000000000).toFixed(2);
+            else
+                return (hashes / 20000000000000).toFixed(2)
+        if (hashes >= 1000000000)
+            if(!isPoS)
+                return (hashes / 1000000000).toFixed(2);
+            else
+                return (hashes / 20000000000).toFixed(2);
+
+        if (hashes >= 1000000)
+            if(!isPoS)
+                return (hashes / 1000000).toFixed(2);
+            else
+                return (hashes / 20000000).toFixed(2);
+
+        if (hashes >= 1000)
+            if(!isPoS)
+                return (hashes / 1000).toFixed(0);
+            else
+                return (hashes / 20000).toFixed(0);
+
         return hashes
         
     },
     
-    showHashesSign(hashes){
+    showHashesSign(hashes,isPoS){
 
-        if (hashes >= 1000000) return 'Mh/s';
-        if (hashes >= 1000) return 'Kh/s';
-        return 'h/s';
+        if (hashes >= 1000000000000)
+            if(!isPoS)
+                return 'T';
+            else
+                return 'B';
+
+        if (hashes >= 1000000000)
+            if(!isPoS)
+                return 'B';
+            else
+                return 'M';
+
+        if (hashes >= 1000000)
+            if(!isPoS)
+                return 'M';
+            else
+                return 'K';
+
+        if (hashes >= 1000 && !isPoS) return 'K';
+        else return '';
         
     }
 

@@ -536,11 +536,11 @@
         padding: 60px 0!important;
     }
 
-    #createPoolSection .bigMarginBottom{
+    .createPoolSection .bigMarginBottom{
         margin-bottom: 0;
     }
 
-    #createPoolSection .poolDescription{
+    .createPoolSection .poolDescription{
         width: 80%!important;
         margin: 0 auto;
     }
@@ -565,13 +565,13 @@
         margin-bottom: 0;
     }
 
-    #createPoolSection .distributionContainer {
+    .createPoolSection .distributionContainer {
         grid-template-columns: 1fr;
         grid-row-gap: 50px;
         padding-top: 0;
     }
 
-    #createPoolSection{
+    .createPoolSection{
          margin-bottom: 0;
     }
 

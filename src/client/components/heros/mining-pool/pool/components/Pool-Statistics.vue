@@ -187,7 +187,9 @@
 
               if (typeof window === "undefined") return 0;
 
-              return  this.rewardReferralTotal / WebDollar.Applications.CoinsHelper.WEBD ;
+                window.addEventListener("load", () => {
+                    return this.rewardReferralTotal / WebDollar.Applications.CoinsHelper.WEBD;
+                });
             }
 
         },
@@ -272,11 +274,15 @@
 
         mounted(){
 
-            if (typeof window === "undefined") return;
+            window.addEventListener("load", () => {
 
-            WebDollar.StatusEvents.on("miner-pool/settings",data =>  this.loadPoolData() );
+                if (typeof window === "undefined") return;
 
-            this.loadPoolData();
+                WebDollar.StatusEvents.on("miner-pool/settings", data => this.loadPoolData());
+
+                this.loadPoolData();
+
+            });
 
         }
 

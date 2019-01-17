@@ -6,8 +6,6 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
 const path = require('path')
 
-
-
 module.exports = merge(base, {
   target: 'node',
   devtool: '#source-map',

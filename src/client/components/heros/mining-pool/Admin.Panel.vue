@@ -263,25 +263,28 @@
 
         async mounted() {
 
-            if (typeof window === 'undefined') return;
+            window.addEventListener("load", async () => {
 
-            WebDollar.StatusEvents.on("miner-pool/status", (data)=> this.loadAdminData() );
+                if (typeof window === 'undefined') return;
 
-            WebDollar.StatusEvents.on("pools/status", (data) => this.loadAdminData() );
+                WebDollar.StatusEvents.on("miner-pool/status", (data) => this.loadAdminData());
 
-            this.loadAdminData();
+                WebDollar.StatusEvents.on("pools/status", (data) => this.loadAdminData());
 
-            this.selectUserStatus();
+                this.loadAdminData();
+
+                this.selectUserStatus();
 
 
-            await WebDollar.Blockchain.onLoaded;
+                await WebDollar.Blockchain.onLoaded;
 
-            WebDollar.Blockchain.MinerPoolManagement.minerPoolReferrals.requireReferrals = true;
-            WebDollar.Blockchain.MinerPoolManagement.minerPoolReferrals.requestReferrals();
+                WebDollar.Blockchain.MinerPoolManagement.minerPoolReferrals.requireReferrals = true;
+                WebDollar.Blockchain.MinerPoolManagement.minerPoolReferrals.requestReferrals();
 
-            WebDollar.StatusEvents.on("mining-pool/pool-referral-data-changed", (data) => this.loadMinerPoolReferralData() );
-            this.loadMinerPoolReferralData();
+                WebDollar.StatusEvents.on("mining-pool/pool-referral-data-changed", (data) => this.loadMinerPoolReferralData());
+                this.loadMinerPoolReferralData();
 
+            });
 
         },
 

@@ -13,7 +13,7 @@
                  <div v-on:click="this.collapseMenuBack">Paper</div>
             </router-link>
 
-            <a href="https://webdollarforum.com" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " target="_blank" >
+            <a href="https://webdollarforum.com" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " rel="noopener" target="_blank" >
                 <div v-on:click="this.collapseMenuBack">Forum</div>
             </a>
 
@@ -29,7 +29,7 @@
                 <div v-on:click="this.collapseMenuBack">About</div>
             </router-link>
 
-            <a href="http://webdscan.io" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " target="_blank" >
+            <a href="https://webdscan.io" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " rel="noopener" target="_blank" >
                 <!--<router-link to="/explorer" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">-->
                 <div v-on:click="this.collapseMenuBack">Explorer</div>
                 <!--</router-link>-->

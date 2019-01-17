@@ -14,7 +14,7 @@
                 <div>Reward WEBD</div>
             </div>
 
-            <a v-for="(element, index) in list" :key="'InstagramRankingListElement '+index" class="listElement instagramElement" :href="element.url" target="_blank">
+            <a v-for="(element, index) in list" :key="'InstagramRankingListElement '+index" class="listElement instagramElement" :href="element.url" rel="noopener" target="_blank">
 
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Position:</span>

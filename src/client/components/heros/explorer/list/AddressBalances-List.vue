@@ -134,19 +134,23 @@
 
         mounted(){
 
-            if (typeof window === "undefined") return false;
+            window.addEventListener("load", () => {
 
-            if (WebDollar.Blockchain.synchronized){
-                this.data = WebDollar.Blockchain.AccountantTree.getAccountantTreeList();
-                this.updateChart();
-            }
+                if (typeof window === "undefined") return false;
 
-            WebDollar.StatusEvents.emitter.on("blockchain/status", (data)=>{
-
-                if (data.message === "Blockchain Ready to Mine"){
+                if (WebDollar.Blockchain.synchronized) {
                     this.data = WebDollar.Blockchain.AccountantTree.getAccountantTreeList();
                     this.updateChart();
                 }
+
+                WebDollar.StatusEvents.emitter.on("blockchain/status", (data) => {
+
+                    if (data.message === "Blockchain Ready to Mine") {
+                        this.data = WebDollar.Blockchain.AccountantTree.getAccountantTreeList();
+                        this.updateChart();
+                    }
+
+                });
 
             });
 

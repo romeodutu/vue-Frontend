@@ -19,7 +19,7 @@
 
             <div>
 
-                <a  v-for="(element, index) in list" :key="'TwitterRankingListElement '+index" class="listElement twitterElement" :href="element.url" target="_blank">
+                <a  v-for="(element, index) in list" :key="'TwitterRankingListElement '+index" class="listElement twitterElement" :href="element.url" rel="noopener" target="_blank">
 
                     <div class="mobileTableShow">
                         <span class="mobileTableShowTitle">Position:</span>

@@ -4,7 +4,6 @@
   <head>
     <title>{{ SEOMixinTitle.title }}</title>
 
-
     <meta name="description" content="{{ SEOMixinDescription.description }}">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="keywords" content="{{ SEOMixinKeywords.toString() }}">
@@ -22,9 +21,6 @@
     <meta property="og:description"  content="{{ SEOMixinDescription.facebook }}" />
 
     <meta name="google-site-verification" content="H1d-mGDiBeFhUDV_cm-gyxfs1w6J9hYf0uuDCoYbVGw" />
-
-    <script id="protocolBundle" type="text/javascript" src="/public/WebDollar-dist/WebDollar-Protocol-bundle.js?v671" > </script>
-    <script id="UIBundle" type="text/javascript" src="/public/WebDollar-dist/WebDollar-User-Interface-bundle.js?v671" > </script>
 
     {{{ SEOMixinImages }}}
 
@@ -53,15 +49,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="manifest" href="/manifest.json">
-
-    <link rel="stylesheet" type="text/css" href="/public/assets/styles/stylesheet.css?v0.4" />
-    <link rel="stylesheet" type="text/css" href="/public/assets/styles/mobile.css?v0.4" />
-    <link rel="stylesheet" type="text/css" href="/public/assets/styles/animations.css?v0.4" />
-    <link rel="stylesheet" type="text/css" href="/public/assets/styles/icomoon/style.css?v0.4" />
+    <noscript>To run this application, JavaScript is required to be enabled.</noscript>
+    <meta name="theme-color" content="#000000" />
 
   </head>
 
-  <body class="fixed-sidebar fixed-nav fixed-nav-basic" style="background-color: #2f4050 !important;" id="webDollar">
+  <body class="fixed-sidebar fixed-nav fixed-nav-basic" style="background-color: #2f4050 !important;">
     <!--vue-ssr-outlet-->
   </body>
 
@@ -89,5 +82,44 @@
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
 
+  <link rel="stylesheet" type="text/css" href="/public/assets/styles/stylesheet.css?v0.4" />
+  <link rel="stylesheet" type="text/css" href="/public/assets/styles/mobile.css?v0.4" />
+  <link rel="stylesheet" type="text/css" href="/public/assets/styles/animations.css?v0.4" />
+  <link rel="stylesheet" type="text/css" href="/public/assets/styles/icomoon/style.css?v0.4" />
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var lazyloadImages = document.querySelectorAll("img.lazy");
+          var lazyloadThrottleTimeout;
+
+          function lazyload () {
+              if(lazyloadThrottleTimeout) {
+                  clearTimeout(lazyloadThrottleTimeout);
+              }
+
+              lazyloadThrottleTimeout = setTimeout(function() {
+                  var scrollTop = window.pageYOffset;
+                  lazyloadImages.forEach(function(img) {
+                      if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                          img.src = img.dataset.src;
+                          img.classList.remove('lazy');
+                      }
+                  });
+                  if(lazyloadImages.length == 0) {
+                      document.removeEventListener("scroll", lazyload);
+                      window.removeEventListener("resize", lazyload);
+                      window.removeEventListener("orientationChange", lazyload);
+                  }
+              }, 20);
+          }
+
+          document.addEventListener("scroll", lazyload);
+          window.addEventListener("resize", lazyload);
+          window.addEventListener("orientationChange", lazyload);
+      });
+  </script>
+
+  <script id="protocolBundle" type="text/javascript" src="/public/WebDollar-dist/WebDollar-Protocol-bundle.js?v672" > </script>
+  <script id="UIBundle" type="text/javascript" src="/public/WebDollar-dist/WebDollar-User-Interface-bundle.js?v672" > </script>
 
 </html>

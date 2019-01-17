@@ -17,7 +17,7 @@
                 <div>Reward WEBD</div>
             </div>
 
-            <a v-for="(element, index) in this.list" :key="'YoutubeRankingListElement '+index"  :href="element.url" target="_blank" class="listElement youtubeElement">
+            <a v-for="(element, index) in this.list" :key="'YoutubeRankingListElement '+index"  :href="element.url" rel="noopener" target="_blank" class="listElement youtubeElement">
 
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Position:</span>

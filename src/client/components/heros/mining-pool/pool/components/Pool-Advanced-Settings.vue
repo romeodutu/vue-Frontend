@@ -68,7 +68,7 @@
                                     Pool Website:
                                 </div>
                                 <div>
-                                    <input type="text" class="input" v-model="poolWebsite" placeholder="http://url" >
+                                    <input type="text" class="input" v-model="poolWebsite" placeholder="https://url" >
                                 </div>
                             </div>
 
@@ -128,7 +128,7 @@
                         <div class="settingsTitle feeHeight">
                             Invitation URL:
                         </div>
-                        <input ref="poolUrl" type="text" class="input" :value="this.poolURL" placeholder="http://url" @click="selectURL($event.target)">
+                        <input ref="poolUrl" type="text" class="input" :value="this.poolURL" placeholder="https://url" @click="selectURL($event.target)">
                     </div>
 
                     <div class="poolSettingsRow" v-if="this.poolURL!=''">
