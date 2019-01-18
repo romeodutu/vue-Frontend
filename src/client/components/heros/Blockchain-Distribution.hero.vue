@@ -134,7 +134,7 @@
                     this.verifyIfContainData( WebDollar.Blockchain.Chain.accountantTree.calculateNodeCoins() / 10000 );
                     this.blocksLength = blocksLength;
 
-                    if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength ) ){
+                    if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength-1 ) ){
                         this.isPos = true;
                     }
                     else{

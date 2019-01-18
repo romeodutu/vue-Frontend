@@ -178,7 +178,7 @@
                         </div>
                     </div>
                     <span class="teamName">Cristian Scurtu</span>
-                    <span class="teamRole">Marketing & Communication Manager</span>
+                    <span class="teamRole">Marketing Manager</span>
                     <p>
                         Cristian has over 13 years of creative output in 3 different countries: Romania, UAE and Germany. His work was published, shortlisted and awarded in both regional and international advertising festivals and publications.
                     </p>
