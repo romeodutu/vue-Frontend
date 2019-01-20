@@ -2423,20 +2423,20 @@ if ( consts.DEBUG === true ) {
     consts.SETTINGS.NODE.SSL = false;
     consts.MINING_POOL.MINING.MAXIMUM_BLOCKS_TO_MINE_BEFORE_ERROR = 10000;
 
-    consts.SETTINGS.NODE.PORT = 2220;
+    consts.SETTINGS.NODE.PORT = 8086;
 
     //consts.BLOCKCHAIN.HARD_FORKS.TRANSACTIONS_BUG_2_BYTES = 100;
 
     __WEBPACK_IMPORTED_MODULE_0_node_sockets_node_clients_service_discovery_fallbacks_fallback_nodes_list__["a" /* default */].nodes = [{
-        "addr": ["http://testnet2.hoste.ro:8002"],
+        "addr": ["http://86.126.138.61:2024"],
     }];
 
     consts.SPAM_GUARDIAN.TRANSACTIONS.MAXIMUM_IDENTICAL_INPUTS = 1000;
     consts.SPAM_GUARDIAN.TRANSACTIONS.MAXIMUM_IDENTICAL_OUTPUTS = 1000;
 
-    consts.SETTINGS.NODE.VERSION = "1.207.6";
-    consts.SETTINGS.NODE.VERSION_COMPATIBILITY = "1.207.3";
-    consts.SETTINGS.NODE.VERSION_COMPATIBILITY_POOL_MINERS = "1.207.3";
+    consts.SETTINGS.NODE.VERSION = "1.207.9";
+    consts.SETTINGS.NODE.VERSION_COMPATIBILITY = "1.207.9";
+    consts.SETTINGS.NODE.VERSION_COMPATIBILITY_POOL_MINERS = "1.207.9";
 
 }
 
@@ -2629,7 +2629,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_node_lists_waitlist_Nodes_Waitlist__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_common_crypto_WebDollar_Crypto__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__node_lists_types_Node_Type__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_common_mining_pools_pool_pool_management_Pool_Management__ = __webpack_require__(859);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_common_mining_pools_miner_Miner_Pool_Management__ = __webpack_require__(882);
 
@@ -3817,6 +3817,75 @@ $exports.store = store;
 
 /***/ }),
 /* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_consts_const_global__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__ = __webpack_require__(3);
+
+
+
+class BlockchainGenesis{
+
+    constructor(){
+
+        this.hashPrev = new Buffer("731D46C131EB6DD4667A96BDC27BAF9223BEC72C3468DFB6BA52C460E76423A4", "hex"); //main net
+
+        this.timeStamp = 0;
+        this.timeStampOffset = 1539513579; //main net
+        //this.timeStampOffset = 1529344475; //test net
+
+        this.difficultyTarget = new Buffer ( "00029112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb", "hex" ); //hard difficulty
+        //this.difficultyTargetPOS = new Buffer ( "00000000000000000ac231b39a23dc4da786eff8147c4e72b9807785afee48bb", "hex" ); //hard difficulty
+        // this.difficultyTargetPOS = new Buffer ( "0000000000a44d81efd6a4b6a68718e792b2c6a3540806a038741c63f898e506", "hex" ); //small difficulty
+        this.difficultyTargetPOS = new Buffer ( "000000001b73c489d2404a4647e46dcbef5f05335326a182ed9a53231171650c", "hex" ); //smallest difficulty
+
+        this.address = __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__["a" /* default */].fromBase("WEBD$gBzsiV+$FARK8qSGqs09V6AEDBi#@fP6n7$"); // genesis address
+    }
+
+    validateGenesis(block){
+
+        if ( block.timeStamp.length !== this.timeStamp.length )
+            throw {message: "Timestamp doesn't match", timestamp: block.timeStamp};
+
+        if ( block.timeStamp > 0x000FFFFF)
+            throw {message: "Timestamp is too old ", timestamp: block.timeStamp};
+
+        if (block.timeStamp < 0)
+            throw {message: "Timestamp is invalid", timeStamp: block.timeStamp}
+    }
+
+    getLevel(){
+        return 0;
+    }
+
+    isPoSActivated(height){
+
+        if (typeof height === "string") height = Number.parseInt(height);
+
+        if (height < __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.HARD_FORKS.POS_ACTIVATION)
+            return false;
+        else {
+
+            //0..19  pos
+            //20..29 pow
+            if ( height % 30 < 20) return true;
+            else return false;
+
+            //29,0..19  pos
+            //20..29 pow
+
+        }
+
+    }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (new BlockchainGenesis());
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1).Buffer))
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -3828,7 +3897,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ERRORS = __webpack_require__(309)
@@ -4092,73 +4161,6 @@ typeforce.TfPropertyTypeError = TfPropertyTypeError
 
 module.exports = typeforce
 
-
-/***/ }),
-/* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_consts_const_global__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__ = __webpack_require__(3);
-
-
-
-class BlockchainGenesis{
-
-    constructor(){
-
-        this.hashPrev = new Buffer("731D46C131EB6DD4667A96BDC27BAF9223BEC72C3468DFB6BA52C460E76423A4", "hex"); //main net
-
-        this.timeStamp = 0;
-        this.timeStampOffset = 1539513579; //main net
-        //this.timeStampOffset = 1529344475; //test net
-
-        this.difficultyTarget = new Buffer ( "00029112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb", "hex" ); //hard difficulty
-        //this.difficultyTargetPOS = new Buffer ( "00000000000000000ac231b39a23dc4da786eff8147c4e72b9807785afee48bb", "hex" ); //hard difficulty
-        // this.difficultyTargetPOS = new Buffer ( "0000000000a44d81efd6a4b6a68718e792b2c6a3540806a038741c63f898e506", "hex" ); //small difficulty
-        this.difficultyTargetPOS = new Buffer ( "000000001b73c489d2404a4647e46dcbef5f05335326a182ed9a53231171650c", "hex" ); //smallest difficulty
-
-        this.address = __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__["a" /* default */].fromBase("WEBD$gBzsiV+$FARK8qSGqs09V6AEDBi#@fP6n7$"); // genesis address
-    }
-
-    validateGenesis(block){
-
-        if ( block.timeStamp.length !== this.timeStamp.length )
-            throw {message: "Timestamp doesn't match", timestamp: block.timeStamp};
-
-        if ( block.timeStamp > 0x000FFFFF)
-            throw {message: "Timestamp is too old ", timestamp: block.timeStamp};
-
-        if (block.timeStamp < 0)
-            throw {message: "Timestamp is invalid", timeStamp: block.timeStamp}
-    }
-
-    getLevel(){
-        return 0;
-    }
-
-    isPoSActivated(height){
-
-        if (height < __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.HARD_FORKS.POS_ACTIVATION)
-            return false;
-        else {
-
-            //0..19  pos
-            //20..29 pow
-            if ( height % 30 < 20) return true;
-            else return false;
-
-            //29,0..19  pos
-            //20..29 pow
-
-        }
-
-    }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (new BlockchainGenesis());
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1).Buffer))
 
 /***/ }),
 /* 19 */
@@ -8416,7 +8418,7 @@ module.exports = function (it) {
 var Buffer = __webpack_require__(4).Buffer
 var bip66 = __webpack_require__(307)
 var pushdata = __webpack_require__(308)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 var scriptNumber = __webpack_require__(310)
 
@@ -8691,7 +8693,7 @@ const NODE_TYPE = {
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 
 var UINT31_MAX = Math.pow(2, 31) - 1
 function UInt31 (value) {
@@ -11970,7 +11972,7 @@ module.exports = function (KEY, exec) {
 var ctx = __webpack_require__(52);
 var IObject = __webpack_require__(104);
 var toObject = __webpack_require__(25);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var asc = __webpack_require__(168);
 module.exports = function (TYPE, $create) {
   var IS_MAP = TYPE == 1;
@@ -12639,7 +12641,7 @@ if (__webpack_require__(21)) {
   var hide = __webpack_require__(39);
   var redefineAll = __webpack_require__(84);
   var toInteger = __webpack_require__(54);
-  var toLength = __webpack_require__(16);
+  var toLength = __webpack_require__(17);
   var toIndex = __webpack_require__(255);
   var toAbsoluteIndex = __webpack_require__(78);
   var toPrimitive = __webpack_require__(56);
@@ -16508,7 +16510,7 @@ module.exports = BigInteger
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_crypto_WebDollar_Crypto__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Mining_Reward__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_utils_Serialization__ = __webpack_require__(9);
@@ -17422,7 +17424,7 @@ var ctx = __webpack_require__(52);
 var call = __webpack_require__(242);
 var isArrayIter = __webpack_require__(165);
 var anObject = __webpack_require__(8);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var getIterFn = __webpack_require__(167);
 var BREAK = {};
 var RETURN = {};
@@ -20634,7 +20636,7 @@ class NodeProtocol {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__blocks_validation_Interface_Blockchain_Block_Validation__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_consts_global__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_events_Status_Events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_utils_Revert_Actions_Revert_Actions__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_common_sockets_protocol_propagation_Node_Blockchain_Propagation__ = __webpack_require__(101);
@@ -21876,7 +21878,7 @@ var store = global[SHARED] || (global[SHARED] = {});
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(43);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var toAbsoluteIndex = __webpack_require__(78);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
@@ -24768,7 +24770,7 @@ module.exports = function (original, length) {
 
 var toObject = __webpack_require__(25);
 var toAbsoluteIndex = __webpack_require__(78);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 module.exports = function fill(value /* , start = 0, end = @length */) {
   var O = toObject(this);
   var length = toLength(O.length);
@@ -25107,7 +25109,7 @@ var redefineAll = __webpack_require__(84);
 var fails = __webpack_require__(13);
 var anInstance = __webpack_require__(82);
 var toInteger = __webpack_require__(54);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var toIndex = __webpack_require__(255);
 var gOPN = __webpack_require__(80).f;
 var dP = __webpack_require__(22).f;
@@ -27255,7 +27257,7 @@ var bcrypto = __webpack_require__(99)
 var bscript = __webpack_require__(26)
 var bufferutils = __webpack_require__(314)
 var opcodes = __webpack_require__(34)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 var varuint = __webpack_require__(196)
 
@@ -27752,7 +27754,7 @@ var baddress = __webpack_require__(199)
 var bcrypto = __webpack_require__(99)
 var ecdsa = __webpack_require__(711)
 var randomBytes = __webpack_require__(85)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 var wif = __webpack_require__(717)
 
@@ -27891,7 +27893,7 @@ var bs58check = __webpack_require__(200)
 var bscript = __webpack_require__(26)
 var btemplates = __webpack_require__(192)
 var networks = __webpack_require__(113)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 
 function fromBase58Check (address) {
@@ -28008,7 +28010,7 @@ module.exports = bs58checkBase(sha256x2)
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var bip66 = __webpack_require__(307)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 
 var BigInteger = __webpack_require__(72)
@@ -28513,7 +28515,7 @@ class GeoHelper {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__ = __webpack_require__(3);
 
 
@@ -29465,7 +29467,7 @@ class InterfaceBlockchainTransactionsWizard{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_crypto_WebDollar_Crypto__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_utils_Serialization__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__addresses_Interface_Blockchain_Address_Helper__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Interface_Blockchain_Block_Data_Transactions__ = __webpack_require__(754);
 
@@ -33024,7 +33026,7 @@ module.exports = function (iterator, fn, value, entries) {
 var aFunction = __webpack_require__(32);
 var toObject = __webpack_require__(25);
 var IObject = __webpack_require__(104);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 
 module.exports = function (that, callbackfn, aLen, memo, isRight) {
   aFunction(callbackfn);
@@ -33060,7 +33062,7 @@ module.exports = function (that, callbackfn, aLen, memo, isRight) {
 
 var toObject = __webpack_require__(25);
 var toAbsoluteIndex = __webpack_require__(78);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 
 module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /* = 0, end = @length */) {
   var O = toObject(this);
@@ -33513,7 +33515,7 @@ module.exports = {
 
 // https://tc39.github.io/ecma262/#sec-toindex
 var toInteger = __webpack_require__(54);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 module.exports = function (it) {
   if (it === undefined) return 0;
   var number = toInteger(it);
@@ -33548,7 +33550,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 // https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
 var isArray = __webpack_require__(123);
 var isObject = __webpack_require__(14);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var ctx = __webpack_require__(52);
 var IS_CONCAT_SPREADABLE = __webpack_require__(15)('isConcatSpreadable');
 
@@ -33590,7 +33592,7 @@ module.exports = flattenIntoArray;
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-string-pad-start-end
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var repeat = __webpack_require__(158);
 var defined = __webpack_require__(57);
 
@@ -33887,7 +33889,7 @@ module.exports = bytesToUuid;
         {"addr": ["http://testnet1.hoste.ro:8000"]}, // Thanks to Hostero
         {"addr": ["http://testnet2.hoste.ro:8001"]}, // Thanks to Hostero
         {"addr": ["http://testnet2.hoste.ro:8002"]}, // Thanks to Hostero
-        {"addr": ["http://86.126.138.61:2224"]}, // Thanks to Hostero
+        {"addr": ["http://86.126.138.61:2024"]}, // Thanks to Hostero
     ]
 });
 
@@ -50939,7 +50941,7 @@ module.exports = {
 
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 var OP_INT_BASE = OPS.OP_RESERVED // OP_1 - 1
 
@@ -51009,7 +51011,7 @@ module.exports = {
 
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 function check (script) {
@@ -51048,7 +51050,7 @@ module.exports = {
 
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 function check (script) {
@@ -53901,7 +53903,7 @@ class MiniBlockchain extends  inheritBlockchain{
 
         } catch (ex){
             revertException = true;
-            console.error("MiniBlockchain simulateNewBlock 1 raised an exception at blockHeight", block.height, ex, block !== null ? block.toJSON() : '' );
+            console.error("MiniBlockchain simulateNewBlock 1 raised an exception at blockHeight", block.height, ex, block ? block.toJSON() : '' );
         }
 
         try{
@@ -54008,7 +54010,7 @@ class MiniBlockchain extends  inheritBlockchain{
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_blockchain_interface_blockchain_blocks_Interface_Blockchain_Block__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Mining_Reward__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_consts_global__ = __webpack_require__(37);
@@ -55333,6 +55335,14 @@ class TransactionsPendingQueue {
 
     _insertPendingTransaction(transaction,exceptSockets){
 
+        if (!this.blockchain.mining.miningTransactionSelector.validateTransaction(transaction))
+            throw {message: "Transsaction validation failed"}
+
+        // if (this.blockchain.agent.light)
+        //     if(  transaction.timeLock < this.blockchain.blocks.length-1 ){
+        //         throw {message: "transaction is too old"};
+        //     }
+
         let inserted = false;
 
         for (let i=0; i<this.listArray.length ; i++ ) {
@@ -55509,19 +55519,23 @@ class TransactionsPendingQueue {
 
         for (let i=this.listArray.length-1; i >= 0; i--) {
 
+            let removeThis = false;
+
             try{
 
-                if( this.listArray[i].timeLock + __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.FORKS.IMMUTABILITY_LENGTH < this.blockchain.blocks.length ){
+                if (this.blockchain.agent.light)
+                    if( this.listArray[i].timeLock < this.blockchain.blocks.length-1 )
+                        removeThis=true;
 
-                    this._removePendingTransaction(this.listArray[i], i);
-                    continue;
+                if (this.listArray[i].nonce < this.blockchain.accountantTree.getAccountNonce(this.listArray[i].from.addresses[0].unencodedAddress))
+                    removeThis=true;
 
-                }else if ( (  (this.blockchain.blocks.length > this.listArray[i].pendingDateBlockHeight + __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].SETTINGS.MEM_POOL.TIME_LOCK.TRANSACTIONS_MAX_LIFE_TIME_IN_POOL_AFTER_EXPIRATION) ||
+                if( this.listArray[i].timeLock + __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.FORKS.IMMUTABILITY_LENGTH < this.blockchain.blocks.length )
+                    removeThis=true;
+                else if ( (  (this.blockchain.blocks.length > this.listArray[i].pendingDateBlockHeight + __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].SETTINGS.MEM_POOL.TIME_LOCK.TRANSACTIONS_MAX_LIFE_TIME_IN_POOL_AFTER_EXPIRATION) ||
                             ( __WEBPACK_IMPORTED_MODULE_4__main_blockchain_Blockchain__["a" /* default */].blockchain.agent.consensus && !this.listArray[i].validateTransactionEveryTime(undefined, blockValidationType ))  ) &&
-                        (this.listArray[i].timeLock === 0 || this.listArray[i].timeLock < this.blockchain.blocks.length - __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].SETTINGS.MEM_POOL.TIME_LOCK.TRANSACTIONS_MAX_LIFE_TIME_IN_POOL_AFTER_EXPIRATION  )) {
-                        this._removePendingTransaction(this.listArray[i], i);
-                        continue;
-                }
+                        (this.listArray[i].timeLock === 0 || this.listArray[i].timeLock < this.blockchain.blocks.length - __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].SETTINGS.MEM_POOL.TIME_LOCK.TRANSACTIONS_MAX_LIFE_TIME_IN_POOL_AFTER_EXPIRATION  ))
+                    removeThis=true;
 
                 if ( __WEBPACK_IMPORTED_MODULE_4__main_blockchain_Blockchain__["a" /* default */].blockchain.agent.consensus )
                     this.listArray[i].validateTransactionEveryTime(undefined, blockValidationType );
@@ -55529,11 +55543,18 @@ class TransactionsPendingQueue {
             } catch (exception){
 
                 if ( !exception.myNonce || Math.abs( exception.myNonce - exception.nonce) > __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].SPAM_GUARDIAN.MAXIMUM_DIFF_NONCE_ACCEPTED_FOR_QUEUE )
-                    this._removePendingTransaction(this.listArray[i], i)
+                    removeThis=true;
 
             }
 
+            if(removeThis){
+                this._removePendingTransaction(this.listArray[i], i);
+                continue;
+            }
+
         }
+
+        console.warn("Transactions stack -", this.listArray.length);
 
         setTimeout( this._removeOldTransactions.bind(this), 20000 );
 
@@ -57147,7 +57168,7 @@ class InterfaceMerkleTreeNode extends __WEBPACK_IMPORTED_MODULE_0_common_trees_I
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Blockchain_Network_Adjusted_Time__ = __webpack_require__(762);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_node_lists_Nodes_List__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 
 
 
@@ -63290,7 +63311,7 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 
 var $export = __webpack_require__(0);
 var toIObject = __webpack_require__(43);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 
 $export($export.S, 'String', {
   // 21.1.2.4 String.raw(callSite, ...substitutions)
@@ -63370,7 +63391,7 @@ $export($export.P, 'String', {
 // 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
 
 var $export = __webpack_require__(0);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var context = __webpack_require__(163);
 var ENDS_WITH = 'endsWith';
 var $endsWith = ''[ENDS_WITH];
@@ -63428,7 +63449,7 @@ $export($export.P, 'String', {
 // 21.1.3.18 String.prototype.startsWith(searchString [, position ])
 
 var $export = __webpack_require__(0);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var context = __webpack_require__(163);
 var STARTS_WITH = 'startsWith';
 var $startsWith = ''[STARTS_WITH];
@@ -63772,7 +63793,7 @@ var $export = __webpack_require__(0);
 var toObject = __webpack_require__(25);
 var call = __webpack_require__(242);
 var isArrayIter = __webpack_require__(165);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var createProperty = __webpack_require__(166);
 var getIterFn = __webpack_require__(167);
 
@@ -63860,7 +63881,7 @@ var $export = __webpack_require__(0);
 var html = __webpack_require__(154);
 var cof = __webpack_require__(53);
 var toAbsoluteIndex = __webpack_require__(78);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var arraySlice = [].slice;
 
 // fallback for not array-like ES3 strings and DOM objects
@@ -64088,7 +64109,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(55)($nati
 var $export = __webpack_require__(0);
 var toIObject = __webpack_require__(43);
 var toInteger = __webpack_require__(54);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var $native = [].lastIndexOf;
 var NEGATIVE_ZERO = !!$native && 1 / [1].lastIndexOf(1, -0) < 0;
 
@@ -64270,7 +64291,7 @@ if (__webpack_require__(13)(function () { return $toString.call({ source: 'a', f
 
 
 var anObject = __webpack_require__(8);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var advanceStringIndex = __webpack_require__(172);
 var regExpExec = __webpack_require__(127);
 
@@ -64318,7 +64339,7 @@ __webpack_require__(128)('match', 1, function (defined, MATCH, $match, maybeCall
 
 var anObject = __webpack_require__(8);
 var toObject = __webpack_require__(25);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var toInteger = __webpack_require__(54);
 var advanceStringIndex = __webpack_require__(172);
 var regExpExec = __webpack_require__(127);
@@ -64483,7 +64504,7 @@ var isRegExp = __webpack_require__(125);
 var anObject = __webpack_require__(8);
 var speciesConstructor = __webpack_require__(107);
 var advanceStringIndex = __webpack_require__(172);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var callRegExpExec = __webpack_require__(127);
 var regexpExec = __webpack_require__(171);
 var $min = Math.min;
@@ -64936,7 +64957,7 @@ var $typed = __webpack_require__(131);
 var buffer = __webpack_require__(176);
 var anObject = __webpack_require__(8);
 var toAbsoluteIndex = __webpack_require__(78);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var isObject = __webpack_require__(14);
 var ArrayBuffer = __webpack_require__(10).ArrayBuffer;
 var speciesConstructor = __webpack_require__(107);
@@ -65452,7 +65473,7 @@ __webpack_require__(68)('includes');
 var $export = __webpack_require__(0);
 var flattenIntoArray = __webpack_require__(257);
 var toObject = __webpack_require__(25);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var aFunction = __webpack_require__(32);
 var arraySpeciesCreate = __webpack_require__(168);
 
@@ -65481,7 +65502,7 @@ __webpack_require__(68)('flatMap');
 var $export = __webpack_require__(0);
 var flattenIntoArray = __webpack_require__(257);
 var toObject = __webpack_require__(25);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var toInteger = __webpack_require__(54);
 var arraySpeciesCreate = __webpack_require__(168);
 
@@ -65591,7 +65612,7 @@ __webpack_require__(94)('trimRight', function ($trim) {
 // https://tc39.github.io/String.prototype.matchAll/
 var $export = __webpack_require__(0);
 var defined = __webpack_require__(57);
-var toLength = __webpack_require__(16);
+var toLength = __webpack_require__(17);
 var isRegExp = __webpack_require__(125);
 var getFlags = __webpack_require__(106);
 var RegExpProto = RegExp.prototype;
@@ -84410,7 +84431,7 @@ module.exports = map
 var Buffer = __webpack_require__(4).Buffer
 var bscript = __webpack_require__(26)
 var p2mso = __webpack_require__(311)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 function partialSignature (value) {
@@ -84487,7 +84508,7 @@ module.exports = {
 
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 function check (script) {
@@ -84526,7 +84547,7 @@ module.exports = {
 // {signature}
 
 var bscript = __webpack_require__(26)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 
 function check (script) {
   var chunks = bscript.decompile(script)
@@ -84572,7 +84593,7 @@ module.exports = {
 // {pubKey} OP_CHECKSIG
 
 var bscript = __webpack_require__(26)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 function check (script) {
@@ -84611,7 +84632,7 @@ module.exports = {
 // {signature} {pubKey}
 
 var bscript = __webpack_require__(26)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 
 function check (script) {
   var chunks = bscript.decompile(script)
@@ -84670,7 +84691,7 @@ module.exports = {
 
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 function check (script) {
@@ -84728,7 +84749,7 @@ module.exports = {
 
 var Buffer = __webpack_require__(4).Buffer
 var bscript = __webpack_require__(26)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 
 var p2ms = __webpack_require__(193)
 var p2pk = __webpack_require__(194)
@@ -84819,7 +84840,7 @@ module.exports = {
 
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 function check (script) {
@@ -84868,7 +84889,7 @@ module.exports = {
 // {signature} {pubKey}
 
 var bscript = __webpack_require__(26)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 
 function isCompressedCanonicalPubKey (pubKey) {
   return bscript.isCanonicalPubKey(pubKey) && pubKey.length === 33
@@ -84930,7 +84951,7 @@ module.exports = {
 
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 
 var p2ms = __webpack_require__(193)
 var p2pk = __webpack_require__(194)
@@ -85011,7 +85032,7 @@ module.exports = {
 var Buffer = __webpack_require__(4).Buffer
 var bscript = __webpack_require__(26)
 var types = __webpack_require__(29)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var OPS = __webpack_require__(34)
 
 var HEADER = Buffer.from('aa21a9ed', 'hex')
@@ -85057,7 +85078,7 @@ module.exports = {
 var Buffer = __webpack_require__(4).Buffer
 var bcrypto = __webpack_require__(99)
 var fastMerkleRoot = __webpack_require__(708)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 var varuint = __webpack_require__(196)
 
@@ -85481,7 +85502,7 @@ module.exports = function (checksumFn) {
 
 var Buffer = __webpack_require__(4).Buffer
 var createHmac = __webpack_require__(137)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 
 var BigInteger = __webpack_require__(72)
@@ -85868,7 +85889,7 @@ var Buffer = __webpack_require__(4).Buffer
 var base58check = __webpack_require__(200)
 var bcrypto = __webpack_require__(99)
 var createHmac = __webpack_require__(137)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 var NETWORKS = __webpack_require__(113)
 
@@ -86193,7 +86214,7 @@ var bscript = __webpack_require__(26)
 var btemplates = __webpack_require__(192)
 var networks = __webpack_require__(113)
 var ops = __webpack_require__(34)
-var typeforce = __webpack_require__(17)
+var typeforce = __webpack_require__(18)
 var types = __webpack_require__(29)
 var scriptTypes = btemplates.types
 var SIGNABLE = [btemplates.types.P2PKH, btemplates.types.P2PK, btemplates.types.MULTISIG]
@@ -87066,7 +87087,7 @@ class PPoWBlockchain extends __WEBPACK_IMPORTED_MODULE_0_common_blockchain_inter
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_consts_const_global__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 
 
 
@@ -90179,7 +90200,7 @@ class InterfaceBlockchainBlockDataTransactions {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_events_Status_Events__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_utils_Serialization__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__blocks_Interface_Blockchain_Block_Timestamp__ = __webpack_require__(756);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__crypto_WebDollar_Crypto__ = __webpack_require__(23);
@@ -90389,7 +90410,7 @@ class InterfaceBlockchainBlocks{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_interface_blockchain_blocks_Interface_Blockchain_Block__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_consts_const_global__ = __webpack_require__(2);
 
@@ -91766,7 +91787,7 @@ class MiniBlockchainAccountantTreeEvents extends __WEBPACK_IMPORTED_MODULE_2_com
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_node_lists_Nodes_List__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clusters_Network_Adjusted_Time_Clusters__ = __webpack_require__(763);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Blockchain_Timestamp__ = __webpack_require__(341);
 
 
@@ -92662,7 +92683,7 @@ class InterfaceBlockchainHardForks{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_node_lists_types_Connection_Type__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_node_lists_Nodes_List__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_main_blockchain_Blockchain__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 
 
 
@@ -99994,7 +100015,7 @@ class PPoWBlockchainVerifier{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_interface_blockchain_blocks_Interface_Blockchain_Block__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_blockchain_ppow_blockchain_blocks_PPoW_Blockchain_Block__ = __webpack_require__(786);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_common_utils_Serialization__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_crypto_WebDollar_Crypto__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_main_blockchain_Blockchain__ = __webpack_require__(5);
@@ -100313,7 +100334,7 @@ class MiniBlockchainBlock extends inheritBlockchainBlock {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_interface_blockchain_blocks_Interface_Blockchain_Block__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_utils_Convert__ = __webpack_require__(787);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_utils_Serialization__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_common_utils_BufferExtended__ = __webpack_require__(3);
@@ -100944,7 +100965,7 @@ class MiniBlockchainAdvancedGZipManager{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_consts_global__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Mini_Blockchain_Advanced__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_sockets_protocol_propagation_Node_Blockchain_Propagation__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Mini_Blockchain__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_utils_GZip__ = __webpack_require__(90);
@@ -101477,7 +101498,7 @@ class MiniBlockchainMining extends  InterfaceBlockchainMining {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_utils_Semaphore_Processing__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_events_Status_Events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_consts_const_global__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 
 
 
@@ -101854,7 +101875,7 @@ class InterfaceBlockchainMining extends  __WEBPACK_IMPORTED_MODULE_6__Interface_
                 }) === false) throw {message: "Mining1 returned False"};
 
         } catch (Exception){
-            console.error("Error processBlocksSempahoreCallback ", Exception, nextBlock);
+            console.error("Error processBlocksSempahoreCallback ", Exception, nextBlock ? nextBlock.toJSON() : '');
             revertActions.revertOperations();
         }
 
@@ -102073,7 +102094,7 @@ class InterfaceBlockchainMining extends  __WEBPACK_IMPORTED_MODULE_6__Interface_
 
                 if (this.blockchain.blocks.timestampBlocks.validateNetworkAdjustedTime( medianTimestamp + i, this.block.height )) {
 
-                    let hash = await this.calculateHash(   medianTimestamp + i, this.block.posMinerAddress);
+                    let hash = await this.calculateHash(   medianTimestamp + i, this.block.posMinerAddress, balance);
                     this.block.timeStamp = medianTimestamp + i;
 
                     if (hash.compare(this.bestHash) < 0) {
@@ -103821,19 +103842,25 @@ class NanoWalletProtocol{
 
             for (let k in data.transactions){
 
-                let transaction = data.transactions[k];
+                try{
 
-                let tx = null;
-                if (transaction !== undefined) tx = __WEBPACK_IMPORTED_MODULE_0_main_blockchain_Blockchain__["a" /* default */].Transactions._createTransaction( transaction.from, transaction.to, transaction.nonce, transaction.timeLock, transaction.version, undefined, false, false );
+                    let transaction = data.transactions[k];
 
-                let foundTx = __WEBPACK_IMPORTED_MODULE_0_main_blockchain_Blockchain__["a" /* default */].Transactions.pendingQueue.findPendingTransaction( transaction.txId );
+                    let tx = null;
+                    if (transaction !== undefined) tx = __WEBPACK_IMPORTED_MODULE_0_main_blockchain_Blockchain__["a" /* default */].Transactions._createTransaction( transaction.from, transaction.to, transaction.nonce, transaction.timeLock, transaction.version, undefined, false, false );
 
-                if ( foundTx === null) {
-                    __WEBPACK_IMPORTED_MODULE_0_main_blockchain_Blockchain__["a" /* default */].Transactions.pendingQueue.includePendingTransaction(tx, "all", true);
-                    foundTx = transaction;
+                    let foundTx = __WEBPACK_IMPORTED_MODULE_0_main_blockchain_Blockchain__["a" /* default */].Transactions.pendingQueue.findPendingTransaction( transaction.txId );
+
+                    if ( foundTx === null) {
+                        __WEBPACK_IMPORTED_MODULE_0_main_blockchain_Blockchain__["a" /* default */].Transactions.pendingQueue.includePendingTransaction(tx, "all", true);
+                        foundTx = transaction;
+                    }
+
+                    foundTx.confirmed = transaction.confirmed;
+                    
+                }catch(exception){
+                    
                 }
-
-                foundTx .confirmed = transaction.confirmed;
 
             }
 
@@ -110182,7 +110209,7 @@ class MiniBlockchainProtocol extends inheritProtocol{
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_blockchain_interface_blockchain_blockchain_forks_Interface_Blockchain_Fork__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__prover_proofs_PPoW_Blockchain_Proof_Pi__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_events_Status_Events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__helpers_PPoW_Helper__ = __webpack_require__(213);
@@ -113690,7 +113717,7 @@ class PoolData {
 
     addBlockInformation(){
 
-        let blockInformation = new __WEBPACK_IMPORTED_MODULE_5_common_mining_pools_pool_pool_management_pool_data_block_informations_Pool_Data_Block_Information__["a" /* default */](this.poolManagement, this.blocksInfo.length, undefined, undefined, __WEBPACK_IMPORTED_MODULE_6_main_blockchain_Blockchain__["a" /* default */].blockchain.blocks.length );
+        let blockInformation = new __WEBPACK_IMPORTED_MODULE_5_common_mining_pools_pool_pool_management_pool_data_block_informations_Pool_Data_Block_Information__["a" /* default */](this.poolManagement, this.blocksInfo.length, undefined, undefined, undefined, __WEBPACK_IMPORTED_MODULE_6_main_blockchain_Blockchain__["a" /* default */].blockchain.blocks.length );
         this.blocksInfo.push(blockInformation);
 
         return blockInformation;
@@ -113809,7 +113836,7 @@ class PoolData {
             this.blocksInfo = [];
             for (let i = 0; i < numBlocksInformation && offset < buffer.length; i++) {
 
-                let blockInformation = new __WEBPACK_IMPORTED_MODULE_5_common_mining_pools_pool_pool_management_pool_data_block_informations_Pool_Data_Block_Information__["a" /* default */](this.poolManagement, this.blocksInfo.length, undefined, undefined, __WEBPACK_IMPORTED_MODULE_6_main_blockchain_Blockchain__["a" /* default */].blockchain.blocks.length );
+                let blockInformation = new __WEBPACK_IMPORTED_MODULE_5_common_mining_pools_pool_pool_management_pool_data_block_informations_Pool_Data_Block_Information__["a" /* default */](this.poolManagement, this.blocksInfo.length, undefined, undefined, undefined, __WEBPACK_IMPORTED_MODULE_6_main_blockchain_Blockchain__["a" /* default */].blockchain.blocks.length );
                 offset = await blockInformation.deserializeBlockInformation(buffer, offset );
 
                 if (blockInformation.blockInformationMinersInstances.length > 0) {
@@ -114700,6 +114727,7 @@ class PoolDataMinerReferral {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_main_blockchain_Blockchain__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 
 
 
@@ -114710,18 +114738,26 @@ const BigNumber = __webpack_require__(69);
 
 
 
+
 class PoolDataBlockInformation {
 
-    constructor(poolManagement, index, totalDifficulty, block, height){
+    constructor(poolManagement, index, totalDifficultyPOW, totalDifficultyPOS, block, height){
 
         this.poolManagement = poolManagement;
 
         this.index = index;
 
-        if (totalDifficulty === undefined)
-            totalDifficulty = new BigNumber(0);
+        if ( !totalDifficultyPOW ) totalDifficultyPOW = new BigNumber(0);
+        if ( !totalDifficultyPOS) totalDifficultyPOS = new BigNumber(0);
 
-        this.totalDifficulty = totalDifficulty;
+        this.totalDifficultyPOW = totalDifficultyPOW;
+        this.totalDifficultyPOS = totalDifficultyPOS;
+
+        this.miningHeights = {
+            length: 0,
+            blocksPow: 0,
+            blocksPos: 0,
+        };
 
         this.blockInformationMinersInstances = [];
 
@@ -114759,24 +114795,37 @@ class PoolDataBlockInformation {
 
     }
 
-    adjustBlockInformationDifficultyBestTarget (difficulty, prevDifficulty){
+    adjustBlockInformationDifficultyBestTarget (difficulty, prevDifficulty, height){
 
-        this._totalDifficultyMinus( prevDifficulty, true );
-        this._totalDifficultyPlus( difficulty );
+        if (typeof height === "string") height = Number.parseInt(height);
+
+        let pos = __WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(height);
+
+        if (!this.miningHeights[height]) {
+
+            this.miningHeights[height] = true;
+            this.miningHeights.length++;
+
+            if (pos) this.miningHeights.blocksPos++;
+            else this.miningHeights.blocksPow++;
+        }
+
+        this._totalDifficultyMinus( prevDifficulty, true, pos );
+        this._totalDifficultyPlus( difficulty, false, pos);
 
     }
 
-    adjustBlockInformationDifficulty (difficulty, hash){
-
-        // target     =     maximum target / difficulty
-        // difficulty =     maximum target / target
-
-        if (difficulty === undefined)
-            difficulty = __WEBPACK_IMPORTED_MODULE_4_consts_const_global__["a" /* default */].BLOCKCHAIN.BLOCKS_MAX_TARGET.dividedToIntegerBy(new BigNumber("0x" + hash.toString("hex")));
-
-        this._totalDifficultyPlus( difficulty );
-
-    }
+    // adjustBlockInformationDifficulty (difficulty, hash){
+    //
+    //     // target     =     maximum target / difficulty
+    //     // difficulty =     maximum target / target
+    //
+    //     if (difficulty === undefined)
+    //         difficulty = consts.BLOCKCHAIN.BLOCKS_MAX_TARGET.dividedToIntegerBy(new BigNumber("0x" + hash.toString("hex")));
+    //
+    //     this._totalDifficultyPlus( difficulty );
+    //
+    // }
 
 
     getRewardBlockInformationMinerInstance(minerInstance){
@@ -114793,30 +114842,27 @@ class PoolDataBlockInformation {
 
         let buffers = [];
 
-        buffers.push ( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber1Byte( 0x02 ));
+        buffers.push ( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber1Byte( 0x03 ));
 
         buffers.push ( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber4Bytes( this.height || 500 ));
 
-        let length = 0;
+        let minerInstances = [];
 
-        if (this.blockInformationMinersInstances !== null && Array.isArray(this.blockInformationMinersInstances))
+        if (this.blockInformationMinersInstances && Array.isArray(this.blockInformationMinersInstances) )
             for (let i=0; i<this.blockInformationMinersInstances.length; i++)
-                if (this.blockInformationMinersInstances[i].minerInstance !== undefined && this.blockInformationMinersInstances[i].minerInstance !== null && this.blockInformationMinersInstances[i].reward > 0)
-                    length ++;
+                if (this.blockInformationMinersInstances[i].minerInstance && this.blockInformationMinersInstances[i].reward > 0 )
+                    minerInstances.push( this.blockInformationMinersInstances[i].serializeBlockInformationMinerInstance() );
 
-        buffers.push ( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber4Bytes(length));
 
-        if (length > 0 && this.blockInformationMinersInstances !== null && Array.isArray(this.blockInformationMinersInstances))
-            for (let i=0; i<this.blockInformationMinersInstances.length; i++)
-                if (this.blockInformationMinersInstances[i].minerInstance !== undefined && this.blockInformationMinersInstances[i].minerInstance !== null && this.blockInformationMinersInstances[i].reward > 0)
-                    buffers.push( this.blockInformationMinersInstances[i].serializeBlockInformationMinerInstance() );
+        buffers.push ( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber4Bytes(minerInstances.length) );
 
-        buffers.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber1Byte(this.payout ? 1 : 0) );
+        buffers = buffers.concat( minerInstances );
 
+        buffers.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber1Byte( this.payout ? 1 : 0 ) );
 
         let array=[];
         //serialize block
-        if (this.block !== undefined && this.block !== null && this.block.blockchain !== undefined) {
+        if (this.block && this.block.blockchain ) {
 
             try {
 
@@ -114827,11 +114873,11 @@ class PoolDataBlockInformation {
             } catch (exception){
                 __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__["a" /* default */].error("Error saving block", __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__["a" /* default */].LOG_TYPE.POOLS, this.block !== null ? this.block.toJSON() : '');
             }
+
         }
 
         buffers.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber1Byte( array.length > 0 ? 1 : 0 ));
-        for (let i=0; i<array.length; i++)
-            buffers.push(array[i]);
+        buffers = buffers.concat( array );
 
         return Buffer.concat( buffers );
     }
@@ -114855,16 +114901,15 @@ class PoolDataBlockInformation {
 
         this.blockInformationMinersInstances = [];
 
-        this.totalDifficulty = new BigNumber(0);
+        this.totalDifficultyPOW = new BigNumber(0);
+        this.totalDifficultyPOS = new BigNumber(0);
 
         for (let i=0; i<length; i++){
 
             let blockInformationMinerInstance = new __WEBPACK_IMPORTED_MODULE_2__Pool_Data_Block_Information_Miner_Instance__["a" /* default */](this.poolManagement, this, undefined);
             offset = blockInformationMinerInstance.deserializeBlockInformationMinerInstance(buffer, offset, version);
 
-            if (blockInformationMinerInstance.minerInstance === undefined || blockInformationMinerInstance.minerInstance === null) continue;
-
-            this.totalDifficulty = this.totalDifficulty.plus( blockInformationMinerInstance.minerInstanceTotalDifficulty );
+            if ( !blockInformationMinerInstance.minerInstance ) continue;
 
             this.blockInformationMinersInstances.push(blockInformationMinerInstance);
 
@@ -114895,12 +114940,10 @@ class PoolDataBlockInformation {
                 offset = this.block.deserializeBlock(buffer, height, undefined, undefined, offset, false);
                 this.block.difficultyTargetPrev = difficultyTargetPrev;
 
-                await this.block.computeHash();
-
             } catch (exception){
 
                 this.block = undefined;
-                __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__["a" /* default */].error("Error Deserializing block", __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__["a" /* default */].LOG_TYPE.POOLS);
+                __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__["a" /* default */].error("Error Deserialize block", __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__["a" /* default */].LOG_TYPE.POOLS);
                 offset = buffer.length;
 
             }
@@ -114947,13 +114990,12 @@ class PoolDataBlockInformation {
                     break;
                 }
 
+        this.blockInformationMinersInstances[pos].cancelDifficulties();
         this.blockInformationMinersInstances[pos].cancelReward();
 
-        this._totalDifficultyMinus(this.blockInformationMinersInstances[pos].minerInstanceTotalDifficulty);
+
         this.blockInformationMinersInstances.splice(pos,1);
 
-        for (let j=0; j<this.blockInformationMinersInstances.length; j++)
-            this.blockInformationMinersInstances.adjustDifficulty(0);
 
 
     }
@@ -114992,16 +115034,19 @@ class PoolDataBlockInformation {
 
     }
 
-    _totalDifficultyPlus(value, avoidToCalculateRemaining = false){
+    _totalDifficultyPlus(value, avoidToCalculateRemaining = false, pos){
 
-        this.totalDifficulty = this.totalDifficulty.plus(value);
+        if (pos) this.totalDifficultyPOS = this.totalDifficultyPOS.plus(value);
+        else this.totalDifficultyPOW = this.totalDifficultyPOW.plus(value);
 
         if (!avoidToCalculateRemaining)
             this._calculateTimeRemaining();
     }
 
-    _totalDifficultyMinus(value, avoidToCalculateRemaining = false){
-        this.totalDifficulty = this.totalDifficulty.minus(value);
+    _totalDifficultyMinus(value, avoidToCalculateRemaining = false, pos){
+
+        if (pos) this.totalDifficultyPOS = this.totalDifficultyPOS.minus(value);
+        else this.totalDifficultyPOW = this.totalDifficultyPOW.minus(value);
 
         if (!avoidToCalculateRemaining)
             this._calculateTimeRemaining();
@@ -115032,7 +115077,7 @@ class PoolDataBlockInformation {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_common_blockchain_global_Blockchain_Mining_Reward__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_main_blockchain_Blockchain__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_common_utils_helpers_Utils__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 const BigNumber = __webpack_require__ (69);
 
 
@@ -115044,7 +115089,7 @@ const BigNumber = __webpack_require__ (69);
 
 class PoolDataBlockInformationMinerInstance {
 
-    constructor(poolManagement, blockInformation, minerInstance, minerInstanceTotalDifficulty){
+    constructor(poolManagement, blockInformation, minerInstance){
 
         this.poolManagement = poolManagement;
 
@@ -115055,25 +115100,20 @@ class PoolDataBlockInformationMinerInstance {
         this.rewardForReferral = 0;
         this._prevRewardInitial = 0;
 
-        this._workHash = undefined;
-        this.workHashNonce = undefined;
-        this.workBlock = undefined;
-
-        this.workPosMinerAddressBalance = undefined;
-        this.workPosSignature = undefined;
-        this.workPosMinerAddress = undefined;
-        this.workPosMinerPublicKey = undefined;
-        this.workPosTimestamp = undefined;
-
-
-        this._workDifficulty = undefined;
-
         this.addresses = []; //received by pool for POS balances to be sent
 
-        if ( minerInstanceTotalDifficulty === undefined )
-            minerInstanceTotalDifficulty = BigNumber(0);
+        //current block
 
-        this.minerInstanceTotalDifficulty = minerInstanceTotalDifficulty;
+        this.minerInstanceTotalDifficultyPOW = BigNumber(0);
+        this.minerInstanceTotalDifficultyPOS = BigNumber(0);
+
+        this._minerInstanceTotalDifficultiesPOW = {
+        };
+        this._minerInstanceTotalDifficultiesPOS = {
+        };
+
+        this._lastHeight = 60; //avoid genesis wallets
+
         this.socket = undefined;
 
     }
@@ -115084,16 +115124,9 @@ class PoolDataBlockInformationMinerInstance {
         this.blockInformation = undefined;
         this.minerInstance = undefined;
 
-        if (this.workBlock !== undefined)
-            this.workBlock.destroyBlock();
-
-        this.workBlock = undefined;
-
     }
 
     async validateWorkHash(prevBlock, workHash){
-
-        prevBlock = (prevBlock || this.workBlock);
 
         //validate hash
         let hash = await  prevBlock.computeHash.apply(  prevBlock, Array.prototype.slice.call( arguments, 2 ) );
@@ -115104,75 +115137,98 @@ class PoolDataBlockInformationMinerInstance {
 
     }
 
-    async wasBlockMined(){
+    async wasBlockMined(prevBlock){
 
-        if ( (await this.workBlock.computeHash.apply(this.workBlock, arguments)).compare(this.workBlock.difficultyTargetPrev) <= 0)
+        if ( (await prevBlock.computeHash.apply( prevBlock, Array.prototype.slice.call( arguments, 1 ) )).compare( prevBlock.difficultyTargetPrev ) <= 0)
             return true;
 
         return false;
     }
 
-    calculateDifficulty(workHash){
+
+    //for POW work is workHash
+    //for POS work is number of coins
+    calculateDifficulty(prevBlock, workDone ){
 
         //POS difficulty
-        if (__WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(this.workBlock.height)){
+        if (__WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(prevBlock.height)){
 
-            if ( !workHash )
-                workHash = this.posMinerAddressBalance.toString();
+            workDone = workDone.toString();
 
-            this._workDifficulty = new BigNumber( workHash );
+            return new BigNumber( workDone );
 
         } else { //POW difficulty
-
-            if ( !workHash )
-                workHash = this._workHash;
 
             // target     =     maximum target / difficulty
             // difficulty =     maximum target / target
 
-            this._workDifficulty = __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].BLOCKCHAIN.BLOCKS_MAX_TARGET.dividedBy( new BigNumber ( "0x"+ workHash.toString("hex") ) );
+            return __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].BLOCKCHAIN.BLOCKS_MAX_TARGET.dividedBy( new BigNumber ( "0x"+ workDone.toString("hex") ) );
 
         }
 
     }
 
-    adjustDifficulty(difficulty, useDeltaTime = false ){
+    adjustDifficulty(prevBlock, difficulty, useDeltaTime = false, calculateReward = true ){
 
-        if ( !this.workBlock )
-            return;
-
-        if (difficulty === undefined) difficulty = this._workDifficulty;
+        let height = prevBlock.height;
 
         //POS difficulty
-        if (__WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(this.workBlock.height)){
+        if (__WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated( height )){
 
-            this.blockInformation.adjustBlockInformationDifficultyBestTarget( difficulty, this.minerInstanceTotalDifficulty, __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(this.workBlock.height) );
-            this.minerInstanceTotalDifficulty = difficulty;
+            let prevDifficulty = this._minerInstanceTotalDifficultiesPOS[height]||BigNumber(0);
 
-            this.calculateReward( useDeltaTime );
+            if ( prevDifficulty.isLessThan( difficulty ) ){
+
+                this.blockInformation.adjustBlockInformationDifficultyBestTarget( difficulty, prevDifficulty, height );
+
+                this.minerInstanceTotalDifficultyPOS = this.minerInstanceTotalDifficultyPOS.plus( difficulty.minus(prevDifficulty) );
+                this._minerInstanceTotalDifficultiesPOS[height] = difficulty;
+
+            }
 
         } else { //POW difficulty
 
-            if (this.minerInstanceTotalDifficulty.isLessThan(difficulty)) {
+            let prevDifficulty = this._minerInstanceTotalDifficultiesPOW[height]||BigNumber(0);
 
-                this.blockInformation.adjustBlockInformationDifficultyBestTarget( difficulty, this.minerInstanceTotalDifficulty, __WEBPACK_IMPORTED_MODULE_6_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(this.workBlock.height) );
-                this.minerInstanceTotalDifficulty = difficulty;
+            if ( prevDifficulty.isLessThan(difficulty)) {
 
-                this.calculateReward( useDeltaTime );
+                this.blockInformation.adjustBlockInformationDifficultyBestTarget( difficulty, prevDifficulty, height );
+
+                this.minerInstanceTotalDifficultyPOW = this.minerInstanceTotalDifficultyPOW.plus( difficulty.minus(prevDifficulty) );
+                this._minerInstanceTotalDifficultiesPOW[height] = difficulty;
+
+
             }
 
         }
 
+        if (calculateReward)
+            this.calculateReward( useDeltaTime );
+
+        this._lastHeight = Math.max(this._lastHeight, height);
+
     }
 
-    calculateReward(useDeltaTime = false){
+    cancelDifficulty(){
 
-        let height;
+    }
 
-        if ( this.blockInformation.block !== undefined ) height = this.blockInformation.block.height;
-        else if ( this.workBlock !== undefined) height = this.workBlock.height;
-        else if (__WEBPACK_IMPORTED_MODULE_4_main_blockchain_Blockchain__["a" /* default */].blockchain.blocks.length > 0) height = __WEBPACK_IMPORTED_MODULE_4_main_blockchain_Blockchain__["a" /* default */].blockchain.blocks.length-1;
-        else height = 100000;
+    cancelDifficulties(){
+
+        for (let height in this._minerInstanceTotalDifficultiesPOW)
+            this.blockInformation.adjustBlockInformationDifficultyBestTarget( BigNumber(0), this._minerInstanceTotalDifficultiesPOW[height], height );
+        this._minerInstanceTotalDifficultiesPOW = {};
+        this.minerInstanceTotalDifficultyPOW = BigNumber(0);
+
+
+        for (let height in this._minerInstanceTotalDifficultiesPOS)
+            this.blockInformation.adjustBlockInformationDifficultyBestTarget( BigNumber(0), this._minerInstanceTotalDifficultiesPOS[height], height );
+        this._minerInstanceTotalDifficultiesPOS = {};
+        this.minerInstanceTotalDifficultyPOS = BigNumber(0);
+
+    }
+
+    calculateReward( useDeltaTime = false ){
 
         let ratio = 1;
 
@@ -115185,7 +115241,17 @@ class PoolDataBlockInformationMinerInstance {
         }
 
 
-        let reward =  this.minerInstanceTotalDifficulty.dividedBy( this.blockInformation.totalDifficulty ).multipliedBy(ratio).multipliedBy( __WEBPACK_IMPORTED_MODULE_3_common_blockchain_global_Blockchain_Mining_Reward__["a" /* default */].getReward( height )  ).multipliedBy( 1-this.poolManagement.poolSettings.poolFee).toNumber();
+        let rewardPOW = BigNumber(0);
+        if (this.blockInformation.totalDifficultyPOW.isGreaterThan(0))
+            rewardPOW = this.minerInstanceTotalDifficultyPOW.dividedBy( this.blockInformation.totalDifficultyPOW ).multipliedBy( this.blockInformation.miningHeights.blocksPow ).dividedBy( this.blockInformation.miningHeights.blocksPow + this.blockInformation.miningHeights.blocksPos );
+
+        let rewardPOS = BigNumber(0);
+        if (this.blockInformation.totalDifficultyPOS.isGreaterThan(0))
+            rewardPOS = this.minerInstanceTotalDifficultyPOS.dividedBy( this.blockInformation.totalDifficultyPOS ).multipliedBy( this.blockInformation.miningHeights.blocksPos ).dividedBy( this.blockInformation.miningHeights.blocksPow + this.blockInformation.miningHeights.blocksPos );
+
+        let rewardDifficulty = rewardPOW.plus(rewardPOS);
+
+        let reward =  rewardDifficulty.multipliedBy(ratio).multipliedBy( __WEBPACK_IMPORTED_MODULE_3_common_blockchain_global_Blockchain_Mining_Reward__["a" /* default */].getReward( this._lastHeight)  ).multipliedBy( 1-this.poolManagement.poolSettings.poolFee).toNumber();
 
         if ( this.miner.referrals.referralLinkMiner !== undefined && this.poolManagement.poolSettings.poolReferralFee > 0) {
 
@@ -115217,12 +115283,27 @@ class PoolDataBlockInformationMinerInstance {
 
     serializeBlockInformationMinerInstance() {
 
-        return Buffer.concat([
-
+        let buffers = [
             this.minerInstance.address,
-            __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeBigNumber(this.minerInstanceTotalDifficulty),
+        ];
 
-        ]);
+        let pow =  [], pos= [];
+
+        for (let height in this._minerInstanceTotalDifficultiesPOW) {
+            pow.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber3Bytes( Number.parseInt( height ) ) );
+            pow.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeBigNumber( this._minerInstanceTotalDifficultiesPOW[ height ] ) );
+        }
+        buffers.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber2Bytes( pow.length / 2 ) );
+        buffers = buffers.concat( pow );
+
+        for (let height in this._minerInstanceTotalDifficultiesPOS) {
+            pos.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber3Bytes( Number.parseInt( height ) ) );
+            pos.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeBigNumber( this._minerInstanceTotalDifficultiesPOS[ height ] ) );
+        }
+        buffers.push( __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].serializeNumber2Bytes( pos.length / 2 ) );
+        buffers = buffers.concat( pos );
+
+        return Buffer.concat( buffers,);
 
     }
 
@@ -115230,35 +115311,15 @@ class PoolDataBlockInformationMinerInstance {
 
         let address;
 
-        //TODO: to be removed
-
-        if (version === 0x01) {
-
-            let adr = __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__["a" /* default */].substr(buffer, offset, __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].ADDRESSES.PUBLIC_KEY.LENGTH);
-            offset += __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].ADDRESSES.PUBLIC_KEY.LENGTH;
-
-            address = new Buffer(1);
-
-            for (let i=0; i< this.poolManagement.poolData.miners.length; i++)
-                if (this.poolManagement.poolData.miners[i].publicKeys !== undefined)
-                    for (let j=0; j<this.poolManagement.poolData.miners[i].publicKeys.length; j++)
-                        if (this.poolManagement.poolData.miners[i].publicKeys[j].equals(adr)){
-
-                            address = this.poolManagement.poolData.miners[i].address;
-                            break;
-
-                        }
-
-        } else {
+        if (version >= 0x02) {
 
             address = __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__["a" /* default */].substr(buffer, offset, __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].ADDRESSES.ADDRESS.LENGTH);
             offset += __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].ADDRESSES.ADDRESS.LENGTH;
 
         }
 
-
         let miner = this.poolManagement.poolData.findMiner( address );
-        if (miner !== undefined && miner !== null) {
+        if ( !miner) {
             this.minerInstance = miner.addInstance({
                 _diff: Math.random(),
                 node: {
@@ -115267,9 +115328,33 @@ class PoolDataBlockInformationMinerInstance {
             });
         }
 
-        let answer = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeBigNumber(buffer, offset);
-        this.minerInstanceTotalDifficulty = answer.number;
-        offset = answer.newOffset;
+        if (version === 0x02){
+
+            //TODO to be removed
+            let answer = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeBigNumber(buffer, offset);
+            offset = answer.newOffset;
+
+        } else if (version === 0x03) {
+
+            let powLength = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeNumber2Bytes(buffer, offset); offset += 2;
+            for (let i=0; i  < powLength; i++){
+                let height = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeNumber3Bytes(buffer, offset); offset += 3;
+                let difficultyBigNumber = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeBigNumber(buffer, offset); offset= difficultyBigNumber.newOffset;
+                let difficulty = difficultyBigNumber.number;
+
+                this.adjustDifficulty({height: height}, difficulty, false, false);
+
+            }
+
+            let posLength = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeNumber2Bytes(buffer, offset); offset += 2;
+            for (let i=0; i  < posLength; i++){
+                let height = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeNumber3Bytes(buffer, offset); offset += 3;
+                let difficultyBigNumber = __WEBPACK_IMPORTED_MODULE_0_common_utils_Serialization__["a" /* default */].deserializeBigNumber(buffer, offset); offset= difficultyBigNumber.newOffset;
+                let difficulty = difficultyBigNumber.number;
+                this.adjustDifficulty({height: height}, difficulty, false, false);
+            }
+
+        }
 
         return offset;
 
@@ -115427,7 +115512,7 @@ class PoolDataConnectedMinerInstances extends __WEBPACK_IMPORTED_MODULE_0_common
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Pool_Work__ = __webpack_require__(872);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_common_events_Status_Events__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Pool_New_Work_Management__ = __webpack_require__(873);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Pool_Work_Validation__ = __webpack_require__(874);
 
 
@@ -115560,9 +115645,9 @@ class PoolWorkManagement{
             if ( __WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated( prevBlock.height) ) {
 
                 work.nonce = 0;
-                blockInformationMinerInstance.workPosMinerAddressBalance = this._getMinerBalance(work.pos.posMinerAddress, prevBlock );
+                work.pos.balance = this._getMinerBalance(work.pos.posMinerAddress, prevBlock );
 
-                args = [ work.pos.timestamp, work.pos.posMinerAddress, blockInformationMinerInstance.workPosMinerAddressBalance ];
+                args = [  work.pos.timestamp, work.pos.posMinerAddress, work.pos.balance ];
 
             } else {
                 args = [work.nonce];
@@ -115571,26 +115656,21 @@ class PoolWorkManagement{
              if ( false === await blockInformationMinerInstance.validateWorkHash.apply( blockInformationMinerInstance, [ prevBlock, work.hash ].concat( args ),  )  )
                 throw {message: "block was incorrectly mined", work: work };
 
-            blockInformationMinerInstance.workHash = work.hash;
-            blockInformationMinerInstance.workHashNonce = work.nonce;
+            // blockInformationMinerInstance.work = {};
+            // blockInformationMinerInstance.work.hash = work.hash;
+            // blockInformationMinerInstance.work.nonce = work.nonce;
 
-            if (__WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated( prevBlock.height) ) {
-                blockInformationMinerInstance.workPosSignature = work.pos.posSignature;
-                blockInformationMinerInstance.workPosMinerAddress = work.pos.posMinerAddress;
-                blockInformationMinerInstance.workPosMinerPublicKey = work.pos.posMinerPublicKey;
-                blockInformationMinerInstance.workPosTimestamp = work.pos.timestamp;
-            }
 
             if (Math.random() < 0.001)
                 console.log("Work: ", work);
 
             if ( work.result  ) { //it is a solution and prevBlock is undefined
 
-                if ( await blockInformationMinerInstance.wasBlockMined.apply( blockInformationMinerInstance, args ) ){
+                if ( await blockInformationMinerInstance.wasBlockMined.apply( blockInformationMinerInstance, [prevBlock].concat( args )  ) ){
 
                     console.warn("----------------------------------------------------------------------------");
                     console.warn("----------------------------------------------------------------------------");
-                    console.warn("WebDollar Block was mined in Pool 2 ", prevBlock.height, " nonce (", blockInformationMinerInstance.workHashNonce + ")", blockInformationMinerInstance.workHash.toString("hex"), " reward", (blockInformationMinerInstance.workBlock.reward / __WEBPACK_IMPORTED_MODULE_3_common_utils_coins_WebDollar_Coins__["a" /* default */].WEBD), "WEBD", blockInformationMinerInstance.workBlock.data.minerAddress.toString("hex"));
+                    console.warn("WebDollar Block was mined in Pool 2 ", prevBlock.height, " nonce (", work.nonce + ")", work.hash.toString("hex"), " reward", (prevBlock.reward / __WEBPACK_IMPORTED_MODULE_3_common_utils_coins_WebDollar_Coins__["a" /* default */].WEBD), "WEBD", prevBlock.data.minerAddress.toString("hex"));
                     console.warn("----------------------------------------------------------------------------");
                     console.warn("----------------------------------------------------------------------------");
 
@@ -115605,17 +115685,17 @@ class PoolWorkManagement{
 
                         let workBlock = prevBlock;
 
-                        workBlock.hash = blockInformationMinerInstance.workHash;
+                        workBlock.hash = work.hash;
+                        workBlock.nonce = work.nonce;
 
                         if (__WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(workBlock.height)) {
                             workBlock.nonce = 0;
-                            workBlock.posSignature = blockInformationMinerInstance.workPosSignature;
-                            workBlock.posMinerAddress = blockInformationMinerInstance.workPosMinerAddress;
-                            workBlock.posMinerPublicKey = blockInformationMinerInstance.workPosMinerPublicKey;
-                            workBlock.timeStamp = blockInformationMinerInstance.workPosTimestamp;
+                            workBlock.posSignature = work.pos.posSignature;
+                            workBlock.posMinerAddress = work.pos.posMinerAddress;
+                            workBlock.posMinerPublicKey = work.pos.posMinerPublicKey;
+                            workBlock.timeStamp = work.pos.timestamp;
                         }
-                        else
-                            workBlock.nonce = blockInformationMinerInstance.workHashNonce;
+
 
                         let serialization = prevBlock.serializeBlock();
                         block = this.blockchain.blockCreator.createEmptyBlock(workBlock.height, undefined );
@@ -115670,11 +115750,18 @@ class PoolWorkManagement{
 
             }
 
-            blockInformationMinerInstance.calculateDifficulty()  ;
-            blockInformationMinerInstance.adjustDifficulty(undefined, true);
+            let workDone;
+
+            if (__WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(prevBlock.height))
+                workDone = work.pos.balance;
+            else
+                workDone = work.hash;
+
+            let difficulty = blockInformationMinerInstance.calculateDifficulty( prevBlock, workDone )  ;
+            blockInformationMinerInstance.adjustDifficulty( prevBlock, difficulty, true);
 
             //statistics
-            this.poolManagement.poolStatistics.addStatistics(blockInformationMinerInstance._workDifficulty, minerInstance);
+            this.poolManagement.poolStatistics.addStatistics( difficulty, minerInstance);
 
             result = true;
 
@@ -115731,7 +115818,7 @@ class PoolWorkManagement{
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_main_blockchain_Blockchain__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_utils_helpers_Utils__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_consts_const_global__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_utils_Serialization__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_common_events_Status_Events__ = __webpack_require__(12);
@@ -116361,7 +116448,7 @@ class PoolConnectedServersProtocol extends __WEBPACK_IMPORTED_MODULE_5_common_mi
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_common_crypto_ed25519__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_common_utils_Serialization__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_main_blockchain_Blockchain__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 
 
 
@@ -117001,7 +117088,7 @@ class PoolStatistics{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_common_blockchain_interface_blockchain_blocks_validation_Interface_Blockchain_Block_Validation__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Payout_Pool_Payouts__ = __webpack_require__(880);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_utils_logging_Log__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_main_blockchain_Blockchain__ = __webpack_require__(5);
 
 
@@ -117066,32 +117153,57 @@ class PoolRewardsManagement{
         this._lastTimeCheckHeight = this.blockchain.blocks.length-1;
 
         //check for penalties
-        for (let i = 0; i < this.poolData.blocksInfo.length; i++){
 
-            let blockInfo = this.poolData.blocksInfo[i].block;
+        let penaltiesMinerInstances = {
+            length: 0,
+        };
 
-            if ( blockInfo && blockInfo.height >= this.blockchain.blocks.blocksStartingPoint && this.blockchain.blocks[blockInfo.height] && this.blockchain.blocks.length - blockInfo.height >= 10 )
+        this.poolData.blocksInfo.forEach( (blockInfo)=>{
 
-                if (__WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(blockInfo.height)){
+            let block = this.blockchain.blocks[blockInfo.height];
+            if ( blockInfo && blockInfo.height >= this.blockchain.blocks.blocksStartingPoint && block && this.blockchain.blocks.length - blockInfo.height >= 10 )
+                if (__WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(blockInfo.height))
 
-                    for (let j=0; j < this.poolData.blocksInfo[i].blockInformationMinersInstances.length; j++){
+                    blockInfo.blockInformationMinersInstances.forEach((blockInformationMinerInstance) => {
 
-                        let blockInformationMinerInstance = this.poolData.blocksInfo[i].blockInformationMinersInstances[j];
-                        if ( this.blockchain.blocks[blockInfo.height].data.minerAddress.equals( blockInformationMinerInstance.minerAddress ) ||  ( this.blockchain.blocks[blockInfo.height].posMinerAddress && this.blockchain.blocks[blockInfo.height].posMinerAddress.equals( blockInformationMinerInstance.minerAddress ) )){
+                        let penalty;
+                        if (block.posMinerAddress && block.posMinerAddress.equals(blockInformationMinerInstance.minerAddress) && !block.data.minerAddress.equals(this.blockchain.mining.unencodedMinerAddress))
+                            penalty = true;
+
+                        if (block.data.minerAddress.equals(blockInformationMinerInstance.minerAddress))
+                            penalty = true;
+
+                        if (penalty) {
+                            penaltiesMinerInstances[blockInformationMinerInstance.minerAddress.toString("hex")] = blockInformationMinerInstance.minerAddress;
+                            penaltiesMinerInstances.length++;
+                        }
+
+                    });
+
+        });
+
+        //redistribute all pool POS
+        if (penaltiesMinerInstances.length > 0)
+            for (let minerAddress in penaltiesMinerInstances) {
+
+                this.poolData.blocksInfo.forEach( (blockInfo)=> {
+
+                    blockInfo.blockInformationMinersInstances.forEach((blockInformationMinerInstance) => {
+
+                        if (blockInformationMinerInstance.minerAddress.equals( penaltiesMinerInstances[minerAddress] )) {
 
                             //redistribute all pool POS
-
+                            blockInformationMinerInstance.cancelDifficulties();
                             blockInformationMinerInstance.cancelReward();
-                            blockInformationMinerInstance.adjustDifficulty( blockInformationMinerInstance.minerInstanceTotalDifficulty, true );
 
                         }
 
-                    }
+                    });
 
-                }
+                });
 
+            }
 
-        }
 
         let confirmationsPool = 0;
         let confirmationsOthers = 0;
@@ -117261,7 +117373,7 @@ class PoolRewardsManagement{
                     minerInstance.miner.rewardTotal -= minerInstance.reward;
 
 
-                    if ( minerInstance.miner.referrals.referralLinkMiner !== undefined && this.poolManagement.poolSettings.poolReferralFee > 0) {
+                    if ( minerInstance.miner.referrals.referralLinkMiner && this.poolManagement.poolSettings.poolReferralFee > 0) {
                         minerInstance.miner.referrals.referralLinkMiner.rewardReferralConfirmed += minerInstance.rewardForReferral;
                         minerInstance.miner.referrals.referralLinkMiner.rewardReferralTotal -= minerInstance.rewardForReferral;
                     }
@@ -117412,18 +117524,29 @@ class PoolRewardsManagement{
         blockInformation.block = undefined; //cancel the block
 
         //move the blockInformationMinerInstances to the latest non solved blockInformation
-        let lastBlockInformation = this.poolData.lastBlockInformation;
+        let newBlockInformation = this.poolData.lastBlockInformation;
 
-        if (lastBlockInformation.block !== undefined)
-            lastBlockInformation = this.poolData.addBlockInformation();
+        if (newBlockInformation.block !== undefined)
+            newBlockInformation = this.poolData.addBlockInformation();
 
-        for (let i=0; i<blockInformation.blockInformationMinersInstances.length; i++) {
+        blockInformation.blockInformationMinersInstances.forEach( (blockInformationMinersInstance)=>{
 
-            let lastBlockInformationMinerInstance = lastBlockInformation._addBlockInformationMinerInstance( blockInformation.blockInformationMinersInstances[i].minerInstance );
+            let newBlockInformationMinerInstance = newBlockInformation._addBlockInformationMinerInstance( blockInformationMinersInstance.minerInstance );
 
-            blockInformation.blockInformationMinersInstances[i].cancelReward();
-            lastBlockInformationMinerInstance.adjustDifficulty(blockInformation.blockInformationMinersInstances[i].minerInstanceTotalDifficulty, true);
-        }
+            blockInformationMinersInstance.cancelReward();
+
+            for (let height in blockInformationMinersInstance._minerInstanceTotalDifficultiesPOW)
+                newBlockInformationMinerInstance.adjustDifficulty( {height: height}, blockInformationMinersInstance._minerInstanceTotalDifficultiesPOW[height], true);
+
+            for (let height in blockInformationMinersInstance._minerInstanceTotalDifficultiesPOS)
+                newBlockInformationMinerInstance.adjustDifficulty( {height: height}, blockInformationMinersInstance._minerInstanceTotalDifficultiesPOS[height], true);
+
+            blockInformationMinersInstance.cancelDifficulties();
+
+
+        });
+
+
 
         //clear the blockInformation
         this.poolData.deleteBlockInformation(index);
@@ -117561,23 +117684,29 @@ class PoolPayouts{
 
             for (let i=0; i<blocksConfirmed.length; i++) {
 
-                let totalDifficulty = new BigNumber(0);
+                let totalDifficultyPOW = new BigNumber(0), totalDifficultyPOS = new BigNumber(0);
 
                 blocksConfirmed[i].blockInformationMinersInstances.forEach((blockInformationMinerInstance)=>{
-                    totalDifficulty = totalDifficulty.plus(blockInformationMinerInstance.minerInstanceTotalDifficulty);
+                    totalDifficultyPOW = totalDifficultyPOW.plus(blockInformationMinerInstance.minerInstanceTotalDifficultyPOW);
+                    totalDifficultyPOS = totalDifficultyPOS.plus(blockInformationMinerInstance.minerInstanceTotalDifficultyPOS);
                 });
 
-                if (!totalDifficulty.isEqualTo(blocksConfirmed[i].totalDifficulty))
-                    throw {message: "Total Difficulty doesn't match", totalDifficulty: totalDifficulty,  blockConfirmedDifficulty: blocksConfirmed[i].totalDifficulty};
+                if ( !totalDifficultyPOW.isEqualTo(blocksConfirmed[i].totalDifficultyPOW)  )
+                    throw { message: "Total POW Difficulty doesn't match", totalDifficultyPOW: totalDifficultyPOW,  blockConfirmedDifficulty: blocksConfirmed[i].totalDifficultyPOW };
+
+                if ( !totalDifficultyPOS.isEqualTo(blocksConfirmed[i].totalDifficultyPOS) )
+                    throw { message: "Total POS Difficulty doesn't match", totalDifficultyPOS: totalDifficultyPOS, blockConfirmedDifficulty: blocksConfirmed[i].totalDifficultyPOS };
+
 
                 let maxSumReward = __WEBPACK_IMPORTED_MODULE_4_common_blockchain_global_Blockchain_Mining_Reward__["a" /* default */].getReward( blocksConfirmed[i].block.height ) * (1 - this.poolManagement.poolSettings.poolFee);
 
                 let sumReward = 0;
-                for (let j = 0; j < blocksConfirmed[i].blockInformationMinersInstances.length; j++) {
-                    blocksConfirmed[i].blockInformationMinersInstances[j].calculateReward(false);
-                    sumReward += blocksConfirmed[i].blockInformationMinersInstances[j].reward;
-                    sumReward += blocksConfirmed[i].blockInformationMinersInstances[j].rewardForReferral;
-                }
+
+                blocksConfirmed[i].blockInformationMinersInstances.forEach( (blockInformationMinerInstance )=>{
+                    blockInformationMinerInstance.calculateReward(false);
+                    sumReward += blockInformationMinerInstance.reward;
+                    sumReward += blockInformationMinerInstance.rewardForReferral;
+                });
 
                 let difference = (sumReward - maxSumReward) + poolForkDifferencePerBlock;
 
@@ -118303,7 +118432,7 @@ class MinerProtocol {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_common_utils_Serialization__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_common_utils_BufferExtended__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__blockchain_interface_blockchain_blocks_Interface_Blockchain_Block_Creator__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 
 
 
@@ -118436,6 +118565,7 @@ class MinerPoolMining extends InheritedPoolMining {
 
             for (let i=0 ; i< work.b.length; i++)
                 this._miningBalances[ __WEBPACK_IMPORTED_MODULE_3_main_blockchain_Blockchain__["a" /* default */].Wallet.addresses[i].unencodedAddress.toString("hex") ] = work.b[i];
+
         }
 
         let block = new this.blockchain.blockCreator.blockClass( this.blockchain, undefined, 0, new Buffer(32), new Buffer(32), new Buffer(32), 0, 0, undefined, work.h,   );
@@ -118532,9 +118662,9 @@ class MinerPoolMining extends InheritedPoolMining {
                             }
 
                             answer.timeDiff = new Date().getTime() - timeInitial;
+                            answer.id = workId;
 
                             if (!this.resetForced) {
-                                answer.id = workId;
                                 answer.hashes = workEnd - workStart;
                                 this.minerPoolManagement.minerPoolProtocol.pushWork(answer, this._miningWork.poolSocket);
                             } else {
@@ -119995,7 +120125,7 @@ class NodeWebPeersDiscoveryService {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_node_lists_types_Connection_Type__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_main_blockchain_Blockchain__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__types_Node_Type__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_common_utils_bans_BansList__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_common_utils_coins_WebDollar_Coins__ = __webpack_require__(27);
 

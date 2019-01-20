@@ -45,48 +45,110 @@ export default {
 
     getFirstDigits(number,decimals){
 
-        var decimalsVerifier = Math.pow(10,decimals);
-        var newNumber = '';
+        let newNumber = '';
 
-        if(number<10){
-
+        if(number<10)
             newNumber='000'+number.toString();
-
-        }else if(number<100){
-
+        else if(number<100)
             newNumber='00'+number.toString();
-
-        }else if(number<1000){
-
+        else if(number<1000)
             newNumber='0'+number.toString();
-
-        }else if(number<10000){
-
+        else if(number<10000)
             newNumber=''+number.toString();
-
-        }
 
         return newNumber.substring(0,decimals);
 
     },
 
-    showHashes(hashes,isPoS){
+    processHashesPoS(hashes){
 
-        if(isPoS)
-            hashes /= 5000000;
+        if (hashes >= 1000000000000) return (hashes / 1500000000000).toFixed(2);
+        if (hashes >= 1000000000) return (hashes / 1500000000).toFixed(2);
+        if (hashes >= 1000000) return (hashes / 1500000).toFixed(2);
+        if (hashes >= 1000) return (hashes / 1500).toFixed(0);
 
-        if (hashes >= 1000000) return (hashes / 1000000).toFixed(2);
-        if (hashes >= 1000) return (hashes / 1000).toFixed(0);
-        return hashes
+        return hashes;
 
     },
 
-    showHashesSign(hashes,isPoS){
+    processHashesPoW(hashes){
 
+        if (hashes >= 1000000000000) return (hashes / 1000000000000).toFixed(2);
+        if (hashes >= 1000000000) return (hashes / 1000000000).toFixed(2);
+        if (hashes >= 1000000) return (hashes / 1000000).toFixed(2);
+        if (hashes >= 1000) return (hashes / 1000).toFixed(0);
+
+        return hashes;
+
+    },
+
+    processHashesSignPoS(hashes){
+
+        if (hashes >= 15000000000000) return 'B';
+        if (hashes >= 15000000000) return 'M';
+        if (hashes >= 15000000) return 'K';
+
+        return '';
+
+    },
+
+    processHashesSignPoW(hashes){
+
+        if (hashes >= 1000000000000) return 'T';
         if (hashes >= 1000000000) return 'B';
         if (hashes >= 1000000) return 'M';
         if (hashes >= 1000) return 'K';
+
         return '';
+
+    },
+
+    showHashes(hashes,isPoS,roundJustChanged,max){
+
+        if(max*1000 < hashes)
+            hashes=max*1000;
+
+        if(roundJustChanged){
+
+            if(isPoS)
+                hashes = this.processHashesPoW(hashes);
+            else
+                hashes = this.processHashesPoS(hashes);
+
+        }else{
+
+            if(isPoS)
+                hashes = this.processHashesPoS(hashes);
+            else
+                hashes = this.processHashesPoW(hashes);
+
+        }
+
+        return hashes;
+
+    },
+
+    showHashesSign(hashes,isPoS,roundJustChanged){
+
+        let sign;
+
+        if(roundJustChanged){
+
+            if(isPoS)
+                sign = this.processHashesSignPoW(hashes);
+            else
+                sign = this.processHashesSignPoS(hashes);
+
+        }else{
+
+            if(isPoS)
+                sign = this.processHashesSignPoS(hashes);
+            else
+                sign = this.processHashesSignPoW(hashes);
+
+        }
+
+        return sign;
 
     }
 

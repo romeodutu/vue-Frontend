@@ -1116,6 +1116,22 @@ background-color:#ff2200}
   background-color: #292929;
   border-radius: 30px;
 }
+
+#myRound {
+  width: 98%;
+  margin: 0 auto;
+  background-color: #292929;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+#myRoundBar {
+  width: 100%;
+  height: 5px;
+  background-color: #ccb27d63;
+  border-radius: 30px;
+}
+
 #myBar {
   width: 70%;
   height: 25px;
@@ -1196,7 +1212,7 @@ background-color:#ff2200}
 .distributionContainer .stats{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   padding-top: 20px;
 }
 

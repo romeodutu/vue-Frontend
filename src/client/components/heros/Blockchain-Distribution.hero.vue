@@ -36,10 +36,14 @@
                             </span>
                             <span v-show="this.loaded" class="value">
                                 ~{{this.getNetworkHashrate}}
-                                <span class='networkDifficulty'>{{this.getNetworkHashrateSign}}{{ this.isPos ? ' coins' : 'h/s'}}</span>
+                                <span class='networkDifficulty'>{{this.getNetworkHashrateSign}}{{ this.isPos ? '' : 'h/s'}}</span>
                             </span>
-                            <span class="description">{{ this.isPos ? 'Compete coins in PoS' : 'Global Hash rate' }}</span>
+                            <span class="description">{{ this.isPos ? 'Staking coins' : 'Global Hash rate' }}</span>
                         </div>
+                    </div>
+
+                    <div id="myRound">
+                        <div id="myRoundBar" :style="{width: this.roundBarValue===100 ? 0 : this.roundBarValue + '%' }"></div>
                     </div>
 
                     <div id="myProgress">
@@ -76,8 +80,11 @@
             return {
                 totalAmountCoins: 0,
                 blocksLength: 0,
+                blocksLastRoundChange: 0,
+                roundJustChanged: null,
                 loaded:false,
                 isPos: false,
+                roundBarValue: 0,
 
                 distributionProgressBarMax : 42000000000,
                 distributionProgressBarMin : 0,
@@ -104,11 +111,11 @@
             },
 
             getNetworkHashrate(){
-                return Utils.showHashes(this.networkHashRate,this.isPos);
+                return Utils.showHashes(this.networkHashRate,this.isPos,this.roundJustChanged,this.totalAmountCoins);
             },
 
             getNetworkHashrateSign(){
-                return Utils.showHashesSign(this.networkHashRate,this.isPos);
+                return Utils.showHashesSign(this.networkHashRate,this.isPos,this.roundJustChanged);
             }
 
         },
@@ -134,18 +141,67 @@
                     this.verifyIfContainData( WebDollar.Blockchain.Chain.accountantTree.calculateNodeCoins() / 10000 );
                     this.blocksLength = blocksLength;
 
-                    if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength-1 ) ){
+                    if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength ) ){
+
+                        if(!this.isPos){
+                            if(this.roundJustChanged !== null && this.blocksLastRoundChange%10!==0)
+                                this.roundJustChanged=true;
+
+                            if(this.blocksLastRoundChange!==0)
+                                this.blocksLastRoundChange = this.blocksLength;
+                        }else{
+                            this.roundJustChanged=false;
+                        }
+
                         this.isPos = true;
+
                     }
                     else{
+                        if(this.isPos){
+                            if(this.roundJustChanged !== null)
+                                this.roundJustChanged=true;
+
+                            if(this.blocksLastRoundChange!==0)
+                                this.blocksLastRoundChange = this.blocksLength;
+                        }else{
+                            this.roundJustChanged=false;
+                        }
+
                         this.isPos = false;
                     }
+
+                    if( this.blocksLastRoundChange===0 )
+                        this.blocksLastRoundChange = this.blocksLength - this.blocksLength%10;
+
+                    if(this.roundJustChanged)
+                        this.roundBarValue = 0;
+                    else
+                        this.roundBarValue = (this.blocksLength-this.blocksLastRoundChange) / (this.isPos ? 20 : 10) * 100;
+
+                    if(this.isPos)
+                        this.roundBarValue+=1;
+                    else
+                        this.roundBarValue-=1;
+
+                    console.log("RoundBar - blocksLastRoundChange",this.blocksLastRoundChange);
+                    console.log("RoundBar - blocksLength",this.blocksLength);
+                    console.log("RoundBar - isPos",this.isPos);
+                    console.log("RoundBar - roundJustChanged",this.roundJustChanged);
 
                 });
 
                 WebDollar.StatusEvents.on("blockchain/new-network-hash-rate", (networkHashRate)=>{
 
-                    this.networkHashRate = networkHashRate;
+                    if(networkHashRate!==0){
+
+                        this.networkHashRate = networkHashRate;
+
+                        if(!this.isPos && this.blocksLastRoundChange)
+                            this.networkHashRate = this.networkHashRate;
+                        else
+                            this.networkHashRate = networkHashRate;
+
+                    }
 
                 });
 
