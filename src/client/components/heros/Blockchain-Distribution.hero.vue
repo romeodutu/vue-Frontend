@@ -20,14 +20,19 @@
                             <span v-show="!this.loaded" class="value">
                                 <loading-spinner />
                             </span>
-                            <span v-show="this.loaded" class="value">{{this.distributionAmount}}</span>
+                            <span v-show="this.loaded" class="value">
+                                {{this.distributionAmount}}
+                                <span class='networkDifficulty'>{{this.getNumberSign(this.totalAmountCoins)}}</span>
+                            </span>
                             <span class="description">Current Distribution</span>
                         </div>
                         <div>
                             <span v-show="!this.loaded" class="value">
                                  <loading-spinner />
                             </span>
-                            <span v-show="this.loaded" class="value">{{this.distributionBlocks}}</span>
+                            <span v-show="this.loaded" class="value">
+                                {{this.distributionBlocks}}
+                            </span>
                             <span class="description">Mined blocks</span>
                         </div>
                         <div>
@@ -103,11 +108,11 @@
                 return this.formatMoneyNumber(this.distributionProgressBarMax, 0)
             },
             distributionAmount(){
-                return this.formatMoneyNumber(this.totalAmountCoins, 0)
+                return Utils.processHashesPoW(this.totalAmountCoins)
             },
 
             distributionBlocks(){
-                return this.formatMoneyNumber(this.blocksLength, 0)
+                return this.formatMoneyNumber(this.blocksLength,0)
             },
 
             getNetworkHashrate(){
@@ -239,6 +244,10 @@
                 else
                     this.loaded = false;
 
+            },
+
+            getNumberSign(value){
+                return Utils.processHashesSignPoW(value);
             }
 
         }

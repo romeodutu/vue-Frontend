@@ -63,7 +63,7 @@ export default {
     processHashesPoS(hashes){
 
         if (hashes >= 1000000000000) return (hashes / 1500000000000).toFixed(2);
-        if (hashes >= 1000000000) return (hashes / 1500000000).toFixed(1);
+        if (hashes >= 1000000000) return (hashes / 1500000000).toFixed(2);
         if (hashes >= 1000000) return (hashes / 1500000).toFixed(1);
         if (hashes >= 1000) return (hashes / 1500).toFixed(0);
 
@@ -74,7 +74,7 @@ export default {
     processHashesPoW(hashes){
 
         if (hashes >= 1000000000000) return (hashes / 1000000000000).toFixed(2);
-        if (hashes >= 1000000000) return (hashes / 1000000000).toFixed(1);
+        if (hashes >= 1000000000) return (hashes / 1000000000).toFixed(2);
         if (hashes >= 1000000) return (hashes / 1000000).toFixed(1);
         if (hashes >= 1000) return (hashes / 1000).toFixed(0);
 
