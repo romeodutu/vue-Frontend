@@ -36,9 +36,9 @@
                             </span>
                             <span v-show="this.loaded" class="value">
                                 ~{{this.getNetworkHashrate}}
-                                <span class='networkDifficulty'>{{this.getNetworkHashrateSign}}{{ this.isPos ? '' : 'h/s'}}</span>
+                                <span class='networkDifficulty'>{{this.getNetworkHashrateSign}}{{ this.changeRound ? '' : 'h/s'}}</span>
                             </span>
-                            <span class="description">{{ this.isPos ? 'Staking coins' : 'Global Hash rate' }}</span>
+                            <span class="description">{{ this.changeRound ? 'Staking coins' : 'Global Hash rate' }}</span>
                         </div>
                     </div>
 
@@ -116,6 +116,19 @@
 
             getNetworkHashrateSign(){
                 return Utils.showHashesSign(this.networkHashRate,this.isPos,this.roundJustChanged);
+            },
+
+            changeRound(){
+                if(this.isPos)
+                    if(this.roundJustChanged)
+                        return false;
+                    else
+                        return true;
+                else
+                    if(this.roundJustChanged)
+                        return true;
+                    else
+                        return false;
             }
 
         },
@@ -144,28 +157,28 @@
                     if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength ) ){
 
                         if(!this.isPos){
-                            if(this.roundJustChanged !== null && this.blocksLastRoundChange%10!==0)
+                            if(this.roundJustChanged !== null && this.blocksLength%10===0)
                                 this.roundJustChanged=true;
 
                             if(this.blocksLastRoundChange!==0)
                                 this.blocksLastRoundChange = this.blocksLength;
-                        }else{
-                            this.roundJustChanged=false;
-                        }
+                        }else
+                            if(this.blocksLength%10!==0)
+                                this.roundJustChanged=false;
 
                         this.isPos = true;
 
                     }
                     else{
                         if(this.isPos){
-                            if(this.roundJustChanged !== null)
+                            if(this.roundJustChanged !== null && this.blocksLength%10===0)
                                 this.roundJustChanged=true;
 
                             if(this.blocksLastRoundChange!==0)
                                 this.blocksLastRoundChange = this.blocksLength;
-                        }else{
-                            this.roundJustChanged=false;
-                        }
+                        }else
+                            if(this.blocksLength%10!==0)
+                                this.roundJustChanged=false;
 
                         this.isPos = false;
                     }
@@ -183,6 +196,7 @@
                     else
                         this.roundBarValue-=1;
 
+                    console.log("RoundBar - hashrate",this.networkHashRate);
                     console.log("RoundBar - blocksLastRoundChange",this.blocksLastRoundChange);
                     console.log("RoundBar - blocksLength",this.blocksLength);
                     console.log("RoundBar - isPos",this.isPos);
@@ -194,11 +208,7 @@
 
                     if(networkHashRate!==0){
 
-                        this.networkHashRate = networkHashRate;
-
-                        if(!this.isPos && this.blocksLastRoundChange)
-                            this.networkHashRate = this.networkHashRate;
-                        else
+                        if(!this.roundJustChanged)
                             this.networkHashRate = networkHashRate;
 
                     }
