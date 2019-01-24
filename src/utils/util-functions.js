@@ -88,7 +88,7 @@ export default {
         if (hashes >= 15000000000) return 'M';
         if (hashes >= 15000000) return 'K';
 
-        return '';
+        return 'K';
 
     },
 

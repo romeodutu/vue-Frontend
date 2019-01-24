@@ -196,6 +196,9 @@
                     else
                         this.roundBarValue = (this.blocksLength-this.blocksLastRoundChange) / (this.isPos ? 20 : 10) * 100;
 
+                    if(this.roundJustChanged === null && this.blocksLength%10===0)
+                        this.roundBarValue = 0;
+
                     if(this.isPos)
                         this.roundBarValue+=1;
                     else
