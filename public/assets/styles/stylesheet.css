@@ -1042,8 +1042,8 @@ background-color:#ff2200}
 
 .collapse .collapse-content-box{
   border: none!important;
-  text-align: center;
-  padding: 60px 40px!important;
+  text-align: left;
+  padding: 30px!important;
   line-height: 30px;
   color: #e8e8e8;
 }
@@ -1267,7 +1267,7 @@ background-color:#ff2200}
 
 .collapse .collapse-header > div{
   display: block!important;
-  text-align: center;
+  text-align: left;
 }
 
 .poolDescription{
