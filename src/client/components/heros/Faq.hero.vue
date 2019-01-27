@@ -4,7 +4,7 @@
 
         <span class="alignCenter bigMarginTop pageTitle">FAQ</span>
 
-        <div class="faqContainer">
+        <div class="faqContainer sectionCenteredWidth">
 
             <div class="faqSection">
 
