@@ -143,6 +143,10 @@
 
         </div>
 
+        <Center>
+            <h2 style="margin-top: 40px; letter-spacing: 1px;">Do you still have questions? <a href="https://t.me/WebDollar">Ask us on Telegram!</a></h2>
+        </Center>
+
     </div>
 </template>
 
