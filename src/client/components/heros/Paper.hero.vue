@@ -24,7 +24,7 @@
 
                 </a>
 
-                <span>Short presentation of the project</span>
+                <span>Short overview of the project</span>
 
             </div>
 
@@ -42,7 +42,7 @@
 
                 </div>
 
-                <span>Scientific presentation of the project</span>
+                <span>Tehnical presentation of the project</span>
 
             </a>
 
@@ -92,7 +92,7 @@
     .paperItem{
         background-color: #ffffff2e;
         padding: 10px 0 30px 0;
-        height: 300px;
+        height: 335px;
         overflow: hidden;
     }
 
