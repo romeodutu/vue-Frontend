@@ -4,29 +4,29 @@
 
         <div class="verticalAlignMiddle">
 
-            <span class="oneLineText">
-                Your Role: <span class="normalSpan yellowColor"> {{statsType}} </span>
-            </span>
+            <!--<span class="oneLineText">-->
+                <!--Your Role: <span class="normalSpan yellowColor"> {{statsType}} </span>-->
+            <!--</span>-->
 
-            <span class="oneLineText">
-                Pool Status: <span class="normalSpan Uppercase" :class="this.selectStatusColor">{{ this.poolStatus }}</span>
-            </span>
+            <!--<span class="oneLineText">-->
+                <!--Pool Status: <span class="normalSpan Uppercase" :class="this.selectStatusColor">{{ this.poolStatus }}</span>-->
+            <!--</span>-->
 
             <span class="oneLineText">
                 Pool Fee: <span class="normalSpan yellowColor"> <a :href="this.poolWebsite"> {{this.poolFee}} %</a></span>
             </span>
 
-            <span class="oneLineText">
-                Online Hosts: <span class="normalSpan" :class="this.selectOnlineHostColor"> {{ this.onlineHosts }} </span>
-            </span>
+            <!--<span class="oneLineText">-->
+                <!--Online Hosts: <span class="normalSpan" :class="this.selectOnlineHostColor"> {{ this.onlineHosts }} </span>-->
+            <!--</span>-->
 
-            <span class="oneLineText">
-                Pool Hash: <span class="normalSpan yellowColor"> {{this.getHashrate }} {{this.getHashrateSign}}</span>
-            </span>
+            <!--<span class="oneLineText">-->
+                <!--Pool Hash: <span class="normalSpan yellowColor"> {{this.getHashrate }} {{this.getHashrateSign}}</span>-->
+            <!--</span>-->
 
-            <span class="oneLineText">
-                Pool Power: <span class="normalSpan yellowColor"> {{this.getPoolPower }}% </span>
-            </span>
+            <!--<span class="oneLineText">-->
+                <!--Pool Power: <span class="normalSpan yellowColor"> {{this.getPoolPower }}% </span>-->
+            <!--</span>-->
 
             <span class="oneLineText">
                 Miners in pool: <span class="normalSpan" :class="this.isNotNullColor"> {{this.poolMinersOnline}} </span>
@@ -37,9 +37,9 @@
                 <!--Being confirmed: <span class="normalSpan" :class="this.isNotNullColor"> {{this.poolBlocksBeingConfirmed}} </span> Unconfirmed <span class="normalSpan" :class="this.isNotNullColor"> {{this.poolBlocksUnconfirmed}} </span>-->
             </span>
 
-            <span class="oneLineText">
-                Time to next block: <span class="normalSpan" :class="this.isNotNullColor"> {{this.showPoolRemainingTime}} </span>
-            </span>
+            <!--<span class="oneLineText">-->
+                <!--Time to next block: <span class="normalSpan" :class="this.isNotNullColor"> {{this.showPoolRemainingTime}} </span>-->
+            <!--</span>-->
 
             <span v-if="this.statsType === 'miner' " class="oneLineText">
                 Your Referral Potential Reward: <span class="normalSpan" :class="this.isNotNullColor"> {{this.referralPotential}} WEBD</span>
