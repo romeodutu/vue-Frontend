@@ -188,8 +188,12 @@
                         this.isPos = false;
                     }
 
-                    if( this.blocksLastRoundChange===0 )
+                    if( this.blocksLastRoundChange===0 ){
                         this.blocksLastRoundChange = this.blocksLength - this.blocksLength%10;
+
+                        if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength-10 ) )
+                            this.blocksLastRoundChange -= 10;
+                    }
 
                     if(this.roundJustChanged)
                         this.roundBarValue = 0;
