@@ -151,7 +151,8 @@
 <style>
 
     .networkConnection{
-        width: 400px;
+        width: 90%;
+        max-width: 400px;
         margin: 0 auto;
         margin-bottom: 40px;
     }

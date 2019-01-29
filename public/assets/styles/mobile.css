@@ -689,9 +689,20 @@
         width: 12%;
     }
 
+    .hideOnMobile{
+        display: none!important;
+    }
+
 }
 
 @media only screen and (max-width: 610px) {
+
+    svg.WebDollarNativeMap{
+        width: 90%;
+        margin: 0 auto;
+        margin-left: 5%;
+
+    }
 
     .listType{
         margin-bottom: 10px;

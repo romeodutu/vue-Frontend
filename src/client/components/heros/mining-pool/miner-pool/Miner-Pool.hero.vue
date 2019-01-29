@@ -9,10 +9,10 @@
 
             <div class="distributionContainer sectionCenteredWidth">
 
-                <div class="distributionGrid borderBottom">
+                <div class="distributionGrid borderBottom hideOnMobile">
                     <h2 class="subtitle">{{ this.minerPoolStatus === 'miner' ? 'Referral Quick Actions' : 'Pool Quick Actions'}}</h2>
                 </div>
-                <div class="distributionGrid borderBottom">
+                <div class="distributionGrid borderBottom hideOnMobile">
                     <h2 class="subtitle">Pool Statistics</h2>
                 </div>
 
