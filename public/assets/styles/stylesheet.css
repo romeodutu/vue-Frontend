@@ -1160,8 +1160,12 @@ background-color:#ff2200}
   padding: 50px 0;
   background-color: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-column-gap: 40px;
+}
+
+#createPoolSection .distributionContainer{
+  grid-template-columns: 1fr 1fr;
 }
 
 .spinCoin {
