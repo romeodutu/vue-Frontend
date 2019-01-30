@@ -118879,7 +118879,7 @@ class PoolRewardsManagement{
 
 
 
-class MinerProtocol {
+class MinerPoolManagement {
 
     constructor (blockchain){
 
@@ -119076,7 +119076,7 @@ class MinerProtocol {
             // if (!VersionCheckerHelper.detectMobile())
             //     throw "no mobile";
 
-            if (__WEBPACK_IMPORTED_MODULE_8_main_blockchain_Blockchain__["a" /* default */].blockchain.agent.status !== __WEBPACK_IMPORTED_MODULE_13_common_blockchain_interface_blockchain_agents_Agent_Status__["a" /* default */].AGENT_STATUS_NOT_SYNCHRONIZED)
+            if (__WEBPACK_IMPORTED_MODULE_8_main_blockchain_Blockchain__["a" /* default */].blockchain.agent.status !== __WEBPACK_IMPORTED_MODULE_13_common_blockchain_interface_blockchain_agents_Agent_Status__["a" /* default */].AGENT_STATUS_NOT_SYNCHRONIZED && this.minerPoolStarted)
                 throw "it is sync";
 
             let pools = 0;
@@ -119106,7 +119106,7 @@ class MinerProtocol {
 
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (MinerProtocol);
+/* harmony default export */ __webpack_exports__["a"] = (MinerPoolManagement);
 
 /***/ }),
 /* 883 */
@@ -119717,7 +119717,7 @@ class MinerPoolStatistics{
 
 
 
-class MinerProtocol extends __WEBPACK_IMPORTED_MODULE_7_common_mining_pools_common_Pool_Protocol_List__["a" /* default */]{
+class MinerPoolProtocol extends __WEBPACK_IMPORTED_MODULE_7_common_mining_pools_common_Pool_Protocol_List__["a" /* default */]{
 
     /**
      *
@@ -120192,7 +120192,7 @@ class MinerProtocol extends __WEBPACK_IMPORTED_MODULE_7_common_mining_pools_comm
 
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (MinerProtocol);
+/* harmony default export */ __webpack_exports__["a"] = (MinerPoolProtocol);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1).Buffer))
 
 /***/ }),
