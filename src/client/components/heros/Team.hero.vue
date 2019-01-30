@@ -74,7 +74,7 @@
                     <span class="teamName">Razvan Ceana</span>
                     <span class="teamRole">Software Engineer</span>
                     <p class="description">
-                        Răzvan is a software engineer with extensive experience in developing high scalability and high availability applications. He is part of a team that develops software for public procurement involving.
+                        Răzvan is a software engineer with extensive experience in developing high scalability and high availability applications. He is part of a team that develops software for public procurement involving real time data processing and Blockchain research integrations.
                     </p>
                 </div>
 
@@ -146,13 +146,13 @@
                         <img class="lazy" data-src="/public/assets/images/team/CristianAntal.jpg" alt="Cristian Antal" title="Cristian Antal">
                         <div class="over-layer">
                             <ul class="social-link">
-                                <li><a href="https://www.facebook.com/mekretzu" rel="noopener" target="_blank"  class="fa fa-facebook" aria-label="facebook"></a></li>
-                                <li><a href="https://www.linkedin.com/in/busuioceanu-constantin/" rel="noopener" target="_blank" class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://github.com/xkidro" rel="noopener" target="_blank"  class="fa fa-github" aria-label="github"></a></li>
+                                <li><a href="https://twitter.com/xkidu" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
                             </ul>
                         </div>
                     </div>
                     <span class="teamName">Cristian Antal</span>
-                    <span class="teamRole">Network Engineer</span>
+                    <span class="teamRole">DevOps</span>
                     <p class="description">
                         Cristian is a web developer turned crypto enthusiast, with over 10 years of development skills and working on mining platforms he aims to bring crypto closer to mass use.
                     </p>
