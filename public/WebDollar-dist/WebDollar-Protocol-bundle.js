@@ -1926,7 +1926,7 @@ const BigInteger = __webpack_require__(31);
 
 let consts = {
 
-    DEBUG: true,
+    DEBUG: false,
     OPEN_SERVER: true,
 
 };
@@ -1992,8 +1992,8 @@ consts.BLOCKCHAIN = {
         DIFFICULTY_TIME_BIGGER: 153060,
         DIFFICULTY_REMOVED_CONDITION: 161990,
 
-        TRANSACTIONS_INCLUDING_ONLY_HEADER: 566400, // SAME AS POS
-        POS_ACTIVATION: 566500,
+        TRANSACTIONS_INCLUDING_ONLY_HEADER: 567698, // SAME AS POS
+        POS_ACTIVATION: 567810,
 
     }
 
@@ -2184,10 +2184,10 @@ consts.SETTINGS = {
 
     NODE: {
 
-        VERSION: "1.200.0",
+        VERSION: "1.200.1",
 
-        VERSION_COMPATIBILITY: "1.200.0",
-        VERSION_COMPATIBILITY_POOL_MINERS: "1.200.0",
+        VERSION_COMPATIBILITY: "1.200.1",
+        VERSION_COMPATIBILITY_POOL_MINERS: "1.200.1",
 
         VERSION_COMPATIBILITY_UPDATE: "",
         VERSION_COMPATIBILITY_UPDATE_BLOCK_HEIGHT: 0,
@@ -2195,7 +2195,7 @@ consts.SETTINGS = {
         PROTOCOL: "WebDollar",
         SSL: true,
 
-        PORT: 91, //port
+        PORT: 80, //port
         MINER_POOL_PORT: 8086, //port
 
     },
@@ -2372,7 +2372,7 @@ consts.TERMINAL_WORKERS = {
     //  - if it detects only 1 cpu.
     //  - if you use 0 and u got only 2 cpus.
 
-    CPU_MAX: -1, //for CPU-CPP use, 2x or even 3x threads
+    CPU_MAX: parseInt(Object({"MINING_POOL_STATUS":undefined}).TERMINAL_WORKERS_CPU_MAX) || 0, //for CPU-CPP use, 2x or even 3x threads
 };
 
 consts.JSON_RPC = {
@@ -2394,9 +2394,6 @@ consts.JSON_RPC = {
         max      : Object({"MINING_POOL_STATUS":undefined}).JSON_RPC_RATE_LIMIT_MAX_REQUESTS || 60,        // limit each IP to 60 requests per windowMs,
         isEnabled: Object({"MINING_POOL_STATUS":undefined}).JSON_RPC_RATE_LIMIT_ENABLE       || true
     },
-
-    CPU_MAX: parseInt(Object({"MINING_POOL_STATUS":undefined}).TERMINAL_WORKERS_CPU_MAX) || 0, //for CPU-CPP use, 2x or even 3x threads
-
 };
 
 if ( Object({"MINING_POOL_STATUS":undefined}).JSON_RPC_BASIC_AUTH_USER  && Object({"MINING_POOL_STATUS":undefined}).JSON_RPC_BASIC_AUTH_PASS ) {
@@ -3855,13 +3852,16 @@ class BlockchainGenesis{
         this.hashPrev = new Buffer("731D46C131EB6DD4667A96BDC27BAF9223BEC72C3468DFB6BA52C460E76423A4", "hex"); //main net
 
         this.timeStamp = 0;
-        this.timeStampOffset = 1539513579; //main net
-        //this.timeStampOffset = 1529344475; //test net
+
+        if(!__WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].DEBUG)
+            this.timeStampOffset = 1524742312; //main net
+        else
+            this.timeStampOffset = 1529344475; //test net
 
         this.difficultyTarget = new Buffer ( "00029112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb", "hex" ); //hard difficulty
         //this.difficultyTargetPOS = new Buffer ( "00000000000000000ac231b39a23dc4da786eff8147c4e72b9807785afee48bb", "hex" ); //hard difficulty
         // this.difficultyTargetPOS = new Buffer ( "0000000000a44d81efd6a4b6a68718e792b2c6a3540806a038741c63f898e506", "hex" ); //small difficulty
-        this.difficultyTargetPOS = new Buffer ( "000000001b73c489d2404a4647e46dcbef5f05335326a182ed9a53231171650c", "hex" ); //smallest difficulty
+        this.difficultyTargetPOS = new Buffer ( "00000000000006ece3173c784c7d4871c061a1f20eca8f33aa76fb15846e0c13", "hex" ); //smallest difficulty
 
         this.address = __WEBPACK_IMPORTED_MODULE_1_common_utils_BufferExtended__["a" /* default */].fromBase("WEBD$gBzsiV+$FARK8qSGqs09V6AEDBi#@fP6n7$"); // genesis address
     }
@@ -30476,9 +30476,10 @@ class InterfaceBlockchainAgent extends __WEBPACK_IMPORTED_MODULE_8__Interface_Bl
                     date: new Date().getTime(),
                     blocks: this.blockchain.blocks.length,
 
-                }
+                };
 
-            this.status = __WEBPACK_IMPORTED_MODULE_6__Agent_Status__["a" /* default */].AGENT_STATUS_SYNCHRONIZED;
+            if (__WEBPACK_IMPORTED_MODULE_0_node_lists_Nodes_List__["a" /* default */].nodes.length > 0)
+                this.status = __WEBPACK_IMPORTED_MODULE_6__Agent_Status__["a" /* default */].AGENT_STATUS_SYNCHRONIZED;
 
         }
 
@@ -31280,7 +31281,6 @@ class NodesWaitlistConnecting {
 
     _calculateNumberOfConnections() {
 
-
         if (true) { //browser
 
             this.connectingMaximum.maximum_fallbacks = __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].SETTINGS.PARAMS.CONNECTIONS.BROWSER.CLIENT.MAXIMUM_CONNECTIONS_IN_BROWSER_WAITLIST_FALLBACK;
@@ -31328,6 +31328,7 @@ class NodesWaitlistConnecting {
             this.connectingMaximum.minimum_waitlist += 5;
 
         }
+
 
         try {
             let date = new Date().getTime();
@@ -34219,8 +34220,8 @@ module.exports = bytesToUuid;
         {"addr": ["https://losangeles.webdollarpool.win:80/"]}, // Thanks to @vladimirpetre
         {"addr": ["https://singapore.webdollarpool.win:80/"]}, // Thanks to @vladimirpetre
 
-        {"addr": ["https://romeonet.ddns.net:65101/"]}, // Thanks to @romeonet
-        {"addr": ["https://romeonet.ddns.net:65001/"]}, // Thanks to @romeonet        
+        {"addr": ["https://falx.romeonet.ro:65001"]}, // Thanks to @romeonet
+        {"addr": ["https://romeonet.ddns.net:65101"]}, // Thanks to @romeonet
 
         {"addr": ["https://pool.webdollarminingpool.com:41000"]}, // Thanks to @morion4000        
 
@@ -34235,49 +34236,15 @@ module.exports = bytesToUuid;
         {"addr": ["https://node-eu.int-webd.com:5009"]}, // Thanks to @int_webd
         {"addr": ["https://node-eu.int-webd.com:5010"]}, // Thanks to @int_webd
         
-        {"addr": ["https://cryptocoingb.ddns.net:80"]}, // Thanks to CryptoCoinGB
         {"addr": ["https://cryptocoingb.ddns.net:8080"]}, // Thanks to CryptoCoinGB
+        {"addr": ["https://cryptocoingb.ddns.net:8081"]}, // Thanks to CryptoCoinGB
 
-        // ----------------------------------------- inactive nodes
-        // {"addr": ["https://webdollar.bitcoinplusplus.com:443"]},
-        // {"addr": ["https://amsterdam.wdpool.io:443"]},
-        // {"addr": ["https://strasbourg.wdpool.io:443"]},
-        // {"addr": ["https://paris.wdpool.io:443"]},
-        // {"addr": ["https://wb.ciuc.ro:443"]}, // Thanks to Adi Clar
-        // {"addr": ["https://nodecstl.ddns.net:80"]},        
-        // {"addr": ["https://bacm.ro:80"]}, //Thanks to @jigodia
-        // {"addr": ["https://bacm.ro:443"]}, //Thanks to @jigodia
-        // {"addr": ["https://bacm.ro:8080"]}, //Thanks to @jigodia
-        // {"addr": ["https://bacm.ro:8081"]}, //Thanks to @jigodia
-        // {"addr": ["https://bacm.ro:8082"]}, //Thanks to @jigodia        
-        // {"addr": ["https://shpool.ml:443"]}, // Thanks to @Amahte
-        // {"addr": ["https://titan.serg.at:80/"]}, // Thanks to @SergiuWX
-        // {"addr": ["https://titan.serg.at:8080/"]}, // Thanks to @SergiuWX
-        // {"addr": ["https://titan.serg.at:8081/"]}, // Thanks to @SergiuWX
-        // {"addr": ["https://titan.serg.at:8082/"]}, // Thanks to @SergiuWX
-        // {"addr": ["https://pool1.cuckoo-pool.com:8443"]},
-        // {"addr": ["https://nodecstl.ddns.net:81/"]}, // Thanks to @taralungaCostel
-        // {"addr": ["https://robitza.ddns.net:443"]}, // Thanks to @robertclaudiu
-        // {"addr": ["https://robitza.ddns.net:8080"]}, // Thanks to @robertclaudiu
-        // {"addr": ["https://robitza.ddns.net:8081"]}, // Thanks to @robertclaudiu
-        // {"addr": ["https://robitza.ddns.net:8082"]}, // Thanks to @robertclaudiu
-        // {"addr": ["https://webdollar.network:5000"]}, // Thanks to @ader1990
+        {"addr": ["https://bacm.ro:443"]}, //Thanks to @jigodia
 
 
         //---------------------------------------------------------
         //--------------WebDollar FallBack Nodes-------------------
         //---------------------------------------------------------
-
-        //
-        // {"addr": ["https://skyhub.me:80"]},
-        // {"addr": ["https://presa7.ro:80"]},
-        //
-        //
-        // {"addr": ["https://webdollar-vps1.ddns.net:80"]},
-        // {"addr": ["https://webdollar-vps2.ddns.net:80"]},
-        // {"addr": ["https://webdollar-vps3.ddns.net:80"]},
-
-        //{"addr": ["https://webdollar.ddns.net:80"]},
 
         {"addr": ["https://webdchucknorris.vpnromania.ro:80"]}, // Thanks to @cbusuioceanu
         {"addr": ["https://webdchucknorris.vpnromania.ro:8080"]}, // Thanks to @cbusuioceanu
@@ -88586,8 +88553,10 @@ class BlockchainDifficulty{
             how_much_it_took_to_mine_X_Blocks += blockTimestamp - getTimeStampCallback(blockNumber);
             how_much_it_should_have_taken_X_Blocks += __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.DIFFICULTY.TIME_PER_BLOCK;
 
-            console.log("block ",blockNumber," timestamp ", blockTimestamp, " time ", blockTimestamp - getTimeStampCallback(blockNumber) );
-            console.log("how_much_it_took_to_mine_X_Blocks ",how_much_it_took_to_mine_X_Blocks  );
+            if(__WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].DEBUG){
+                console.log("block ",blockNumber," timestamp ", blockTimestamp, " time ", blockTimestamp - getTimeStampCallback(blockNumber) );
+                console.log("how_much_it_took_to_mine_X_Blocks ",how_much_it_took_to_mine_X_Blocks  );
+            }
 
             if (blockNumber <= __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.HARD_FORKS.DIFFICULTY_REMOVED_CONDITION && blockNumber < __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.HARD_FORKS.POS_ACTIVATION) {
                 if ( how_much_it_took_to_mine_X_Blocks <= (blockNumber <= __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.HARD_FORKS.DIFFICULTY_TIME_BIGGER ? __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.DIFFICULTY.TIME_PER_BLOCK : 5 * __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].BLOCKCHAIN.DIFFICULTY.TIME_PER_BLOCK ) )
@@ -93646,10 +93615,12 @@ class PPoWBlockchainProver{
 
     async createProofs() {
 
+        return;
+
         if ( !this.proofActivated )
             return false;
 
-        if (this.proofPi !== undefined)
+        if ( this.proofPi )
             this.proofPi.destroyProof();
 
         this.proofPi = await this._createProofPi(this.blockchain);
@@ -102195,6 +102166,9 @@ class InterfaceBlockchainMiningWorkers extends __WEBPACK_IMPORTED_MODULE_0__Inte
         let blockBuffer;
 
         //serialize the block
+        if (Buffer.isBuffer( block ))
+            blockBuffer = block;
+        else
         if ( !Buffer.isBuffer( block ) && typeof block === 'object' ) {
             blockBuffer = Buffer.concat( [
                 __WEBPACK_IMPORTED_MODULE_2_common_utils_Serialization__["a" /* default */].serializeBufferRemovingLeadingZeros( __WEBPACK_IMPORTED_MODULE_2_common_utils_Serialization__["a" /* default */].serializeNumber4Bytes(block.height) ),
@@ -110572,7 +110546,7 @@ class SocketProtocol {
 
             this.once(requestAnswer, requestFunction );
 
-            if (timeOutInterval !== undefined)
+            if ( timeOutInterval )
                 timeoutId = setTimeout( clearReturnFunction, timeOutInterval);
 
             let answer = this.node.sendRequest(request, requestData);
@@ -112586,7 +112560,7 @@ class PoolManagement{
                 this.poolStatistics.startInterval();
                 await this.poolProtocol._startPoolProtocol();
 
-                if (this.blockchain!== undefined && this.blockchain.prover !== undefined)
+                if (this.blockchain && this.blockchain.prover )
                     this.blockchain.prover.proofActivated = false;
 
                 await this.poolProtocol.poolConnectedServersProtocol.insertServersListWaitlist( this.poolSettings._poolServers );
@@ -112603,7 +112577,7 @@ class PoolManagement{
                 await this.poolProtocol._stopPoolProtocol();
                 this.poolStatistics.clearInterval();
 
-                if (this.blockchain !== undefined && this.blockchain.prover !== undefined)
+                if (this.blockchain && this.blockchain.prover )
                     this.blockchain.prover.proofActivated = true;
 
                 __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].MINING_POOL.MINING_POOL_STATUS = __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].MINING_POOL_TYPE.MINING_POOL_DISABLED;
@@ -116756,9 +116730,11 @@ class PoolNewWorkManagement{
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_common_utils_logging_Log__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_consts_const_global__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__ = __webpack_require__(15);
 
 const PROCESS_COUNT = 30;
+
 
 
 
@@ -116804,7 +116780,7 @@ class PoolWorkValidation{
                 minerInstance: minerInstance
             };
 
-            if (__WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(work.h))
+            if (__WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(work.h))
                 forced = true;
 
             if (work.result || forced  ){
@@ -116813,7 +116789,7 @@ class PoolWorkValidation{
 
             } else {
 
-                if (!__WEBPACK_IMPORTED_MODULE_1_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(work.h) && work.hash.equals( consts.BLOCKCHAIN.BLOCKS_MAX_TARGET_BUFFER ))
+                if (!__WEBPACK_IMPORTED_MODULE_2_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated(work.h) && work.hash.equals( __WEBPACK_IMPORTED_MODULE_1_consts_const_global__["a" /* default */].BLOCKCHAIN.BLOCKS_MAX_TARGET_BUFFER ))
                     return;
 
                 this._works.push(workData);
@@ -119048,7 +119024,7 @@ class MinerProtocol {
 
                     __WEBPACK_IMPORTED_MODULE_11_node_sockets_node_clients_service_discovery_Node_Clients_Discovery_Service__["a" /* default */].startDiscovery();
 
-                    if (this.blockchain !== undefined && this.blockchain.prover !== undefined)
+                    if (this.blockchain && this.blockchain.prover )
                         this.blockchain.prover.proofActivated = true;
 
                     __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].MINING_POOL.MINING_POOL_STATUS = __WEBPACK_IMPORTED_MODULE_0_consts_const_global__["a" /* default */].MINING_POOL_TYPE.MINING_POOL_DISABLED;
@@ -119408,8 +119384,8 @@ class MinerPoolMining extends InheritedPoolMining {
 
         try {
 
-            // if (this._miningWork.poolSocket !== null && this._miningWork.resolved)
-            //     await this.minerPoolManagement.minerPoolProtocol.requestWork();
+            if ( this._miningWork.poolSocket && this._hashesPerSecond === 0 )
+                await this.minerPoolManagement.minerPoolProtocol.requestWork();
 
             if (this.started && this.minerPoolManagement.started && ( (new Date().getTime() - this._miningWork.date ) > 180000 || this.minerPoolManagement.minerPoolProtocol.connectedPools.length === 0 ) ){
 
@@ -119426,7 +119402,7 @@ class MinerPoolMining extends InheritedPoolMining {
 
         }
 
-        this._checkForWorkInterval = setTimeout( this._checkForWorkIntervalCallback.bind(this), 5000);
+        this._checkForWorkInterval = setTimeout( this._checkForWorkIntervalCallback.bind(this), 5000 );
 
     }
 
@@ -120052,7 +120028,7 @@ class MinerProtocol extends __WEBPACK_IMPORTED_MODULE_7_common_mining_pools_comm
 
             answer = await answer;
 
-            if (answer === null) throw {message: "WorkDone: Answer is null"};
+            if ( !answer ) throw {message: "WorkDone: Answer is null"};
             if (answer.result !== true) throw {message: "WorkDone: Result is not True", reason: answer.message};
 
             this.minerPoolManagement.minerPoolReward.setReward(answer);
@@ -120543,9 +120519,9 @@ class MinerPoolSettings {
 
     async _addPoolsList(){
 
-        // await this.addPoolList("/pool/1/BACMpool/0.01/21dc1f57cb7338963ea159877b4ade97b71dd11ac17292e3852bdc33a26a17e4/https:$$pool.bacm.ro:443", undefined, true);
-        // await this.addPoolList("/pool/1/Balanel_si_Miaunel/0.02/cd7217ad76118df5357ae7a094aa48096daae8a67767bd3acbc8638dc68955ac/https:$$webd.pool.coffee:8443", undefined, true);
-        // await this.addPoolList("/pool/1/WMP/0.02/c01f57930c27e78e434de1243ae02b98e56d6cd3df42d136be1a1c0a0a9a8624/https:$$server.webdollarminingpool.com:443", undefined, true);
+        await this.addPoolList("/pool/1/BACMpool/0.01/21dc1f57cb7338963ea159877b4ade97b71dd11ac17292e3852bdc33a26a17e4/https:$$pool.bacm.ro:443", undefined, true);
+        await this.addPoolList("/pool/1/Balanel_si_Miaunel/0.02/cd7217ad76118df5357ae7a094aa48096daae8a67767bd3acbc8638dc68955ac/https:$$webd.pool.coffee:8443", undefined, true);
+        await this.addPoolList("/pool/1/WMP/0.02/c01f57930c27e78e434de1243ae02b98e56d6cd3df42d136be1a1c0a0a9a8624/https:$$server.webdollarminingpool.com:443", undefined, true);
 
     }
 
