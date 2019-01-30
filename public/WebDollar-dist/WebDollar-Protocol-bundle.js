@@ -116148,10 +116148,10 @@ class PoolWorkManagement{
 
     async getWork(minerInstance,  blockInformationMinerInstance){
 
-        if (minerInstance === undefined) throw {message: "minerInstance is undefined"};
+        if ( !minerInstance ) throw {message: "minerInstance is undefined"};
 
         let hashes = minerInstance.hashesPerSecond;
-        if (hashes === undefined ) hashes = 500;
+        if ( !hashes ) hashes = 500;
 
         if ( !blockInformationMinerInstance )
             blockInformationMinerInstance = this.poolManagement.poolData.lastBlockInformation._addBlockInformationMinerInstance(minerInstance);
@@ -116222,8 +116222,8 @@ class PoolWorkManagement{
 
         try{
 
-            if (minerInstance === undefined) throw {message: "minerInstance is undefined"};
-            if (work === null || typeof work !== "object") throw {message: "work is undefined"};
+            if ( !minerInstance ) throw {message: "minerInstance is undefined"};
+            if ( !work || typeof work !== "object") throw {message: "work is undefined"};
 
             if ( !Buffer.isBuffer(work.hash) || work.hash.length !== __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].BLOCKCHAIN.BLOCKS_POW_LENGTH) throw {message: "hash is invalid"};
             if ( typeof work.nonce !== "number" ) throw {message: "nonce is invalid"};
@@ -116284,22 +116284,22 @@ class PoolWorkManagement{
                     if ( isPos&& this.blockchain.blocks.length-3 > prevBlock.height )
                         throw {message: "pool: block is already too old"};
 
+                    prevBlock.hash = work.hash;
+                    prevBlock.nonce = work.nonce;
+
+                    if (isPos) {
+                        prevBlock.nonce = 0;
+                        prevBlock.posSignature = work.pos.posSignature;
+                        prevBlock.posMinerAddress = work.pos.posMinerAddress;
+                        prevBlock.posMinerPublicKey = work.pos.posMinerPublicKey;
+                        prevBlock.timeStamp = work.pos.timestamp;
+                    }
+
                     let revertActions = new __WEBPACK_IMPORTED_MODULE_4_common_utils_Revert_Actions_Revert_Actions__["a" /* default */](this.blockchain);
 
                     let block;
 
                     try {
-
-                        prevBlock.hash = work.hash;
-                        prevBlock.nonce = work.nonce;
-
-                        if (isPos) {
-                            prevBlock.nonce = 0;
-                            prevBlock.posSignature = work.pos.posSignature;
-                            prevBlock.posMinerAddress = work.pos.posMinerAddress;
-                            prevBlock.posMinerPublicKey = work.pos.posMinerPublicKey;
-                            prevBlock.timeStamp = work.pos.timestamp;
-                        }
 
                         let serialization = prevBlock.serializeBlock();
                         block = this.blockchain.blockCreator.createEmptyBlock(prevBlock.height, undefined );
@@ -116344,6 +116344,12 @@ class PoolWorkManagement{
 
                         if (block)
                             block.destroyBlock();
+
+                        //it is an invalid block, let's generate a new one
+                        if (this.blockchain.blocks.length-1 === prevBlock.height)
+                            await this.poolWork.getNextBlockForWork();
+
+
 
                     }
 
@@ -116478,7 +116484,7 @@ class PoolWork {
     findBlockById(blockId, blockHeight){
 
         for (let i=0; i<this._blocksList.length; i++)
-            if ( (blockId !== undefined && this._blocksList[i].blockId === blockId ) || ( this._blocksList[i].block.height === blockHeight ) ){
+            if ( (blockId && this._blocksList[i].blockId === blockId ) || ( this._blocksList[i].block.height === blockHeight ) ){
                 return this._blocksList[i].block;
             }
 
@@ -119232,7 +119238,7 @@ class MinerPoolMining extends InheritedPoolMining {
 
     }
 
-    async updatePoolMiningWork(work, poolSocket){
+    updatePoolMiningWork(work, poolSocket){
 
         //update manually the balances
         if (work.b && work.b.length === __WEBPACK_IMPORTED_MODULE_3_main_blockchain_Blockchain__["a" /* default */].Wallet.addresses.length){
@@ -119306,7 +119312,7 @@ class MinerPoolMining extends InheritedPoolMining {
 
                         let prevBlock = this.block;
 
-                        if (prevBlock !== undefined && prevBlock !== this._miningWork.block )
+                        if (prevBlock && prevBlock !== this._miningWork.block )
                             prevBlock.destroyBlock();
                     }
 
@@ -119323,20 +119329,16 @@ class MinerPoolMining extends InheritedPoolMining {
 
                             let answer = await this._run();
 
-                            if (!answer)
-                                answer = {
-
-                                };
+                            if (!answer)  answer = { };
 
                             answer.timeDiff = new Date().getTime() - timeInitial;
                             answer.id = workId;
                             answer.h = workHeight;
 
-                            if (!this._miningWork.resolved) {
+                            if (!this._miningWork.resolved)
                                 answer.hashes = workEnd - workStart;
-                            }
 
-                            this.minerPoolManagement.minerPoolProtocol.pushWork(answer, this._miningWork.poolSocket);
+                            this.minerPoolManagement.minerPoolProtocol.pushWork( answer, this._miningWork.poolSocket );
 
                             this.resetForced = false;
                             this._miningWork.resolved = true;
@@ -120009,10 +120011,6 @@ class MinerPoolProtocol extends __WEBPACK_IMPORTED_MODULE_7_common_mining_pools_
 
     async pushWork( miningAnswer, poolSocket){
 
-        //MAX_TARGET during POS is sent to ensure that my activity is taken in consideration
-        if ( miningAnswer.h && !__WEBPACK_IMPORTED_MODULE_16_common_blockchain_global_Blockchain_Genesis__["a" /* default */].isPoSActivated( miningAnswer.h ) && miningAnswer.hash.equals( __WEBPACK_IMPORTED_MODULE_12_consts_const_global__["a" /* default */].BLOCKCHAIN.BLOCKS_MAX_TARGET_BUFFER ) )
-            return;
-
         try {
 
             if (!poolSocket )
@@ -120022,7 +120020,7 @@ class MinerPoolProtocol extends __WEBPACK_IMPORTED_MODULE_7_common_mining_pools_
 
             let answer = poolSocket.node.sendRequestWaitOnce("mining-pool/work-done", {
                 work: miningAnswer,
-            }, "answer", undefined);
+            }, "answer", null);
 
             __WEBPACK_IMPORTED_MODULE_13_common_utils_logging_Log__["a" /* default */].info("Push Work: ("+miningAnswer.nonce+")"+ miningAnswer.hash.toString("hex") + " id: " + miningAnswer.id, __WEBPACK_IMPORTED_MODULE_13_common_utils_logging_Log__["a" /* default */].LOG_TYPE.POOLS);
             if (miningAnswer.pos)
