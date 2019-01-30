@@ -102694,6 +102694,20 @@ class InterfaceBlockchainMining extends  __WEBPACK_IMPORTED_MODULE_6__Interface_
 
         let medianTimestamp = Math.ceil( this.getMedianTimestamp() );
 
+        //browser avoid asking for password
+        if (true && await __WEBPACK_IMPORTED_MODULE_12__main_blockchain_Blockchain__["a" /* default */].Wallet.isAddressEncrypted( whoIsMining) )
+            return {
+                result: false,
+                hash: Buffer.from (__WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].BLOCKCHAIN.BLOCKS_MAX_TARGET_BUFFER),
+                nonce: 0,
+                pos: {
+                    timestamp: medianTimestamp,
+                    posSignature: undefined,
+                    posMinerAddress: this.block.posMinerAddress ? this.block.posMinerAddress : undefined,
+                    posMinerPublicKey: undefined,
+                }
+            };
+
         if ( !balance || balance < __WEBPACK_IMPORTED_MODULE_2_consts_const_global__["a" /* default */].BLOCKCHAIN.POS.MINIMUM_AMOUNT * __WEBPACK_IMPORTED_MODULE_9_common_utils_coins_WebDollar_Coins__["a" /* default */].WEBD ){
 
             await this.blockchain.sleep( __WEBPACK_IMPORTED_MODULE_12__main_blockchain_Blockchain__["a" /* default */].MinerPoolManagement.minerPoolStarted ? 10000 : 1000 );
