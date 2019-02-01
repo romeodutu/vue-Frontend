@@ -224,7 +224,7 @@
 
                 <collapse-faq :selected="false" ref="#WhatIsAvaiableBalance">
                     <div slot="collapse-header">
-                        What is avaiable balance?
+                        What is available balance?
                     </div>
                     <div slot="collapse-body">
                         It is the balance stored into the blockchain by the whole network, which can only be changed by means of transactions.
@@ -333,7 +333,12 @@
             CollapseFaq
         },
         mounted() {
-            let qHash = this.$route.hash;
+
+            if (typeof window === "undefined") return;
+
+            let qHash = this.$router.params;
+
+            console.log("paramss", qHash)
 
             if ((typeof qHash === 'undefined') || !this.$refs.hasOwnProperty(qHash)) {
                 return;
@@ -342,6 +347,15 @@
             let qRef = this.$refs[qHash];
 
             qRef.toggle();
+        },
+        methods:{
+
+            changeLink(route){
+
+
+
+            }
+
         }
     }
 </script>
