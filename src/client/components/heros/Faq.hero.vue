@@ -224,7 +224,7 @@
 
                 <collapse-faq :selected="false" ref="WhatIsAvaiableBalance">
                     <div slot="collapse-header">
-                        What is avaiable balance?
+                        What is available balance?
                     </div>
                     <div slot="collapse-body">
                         It is the balance stored into the blockchain by the whole network, which can only be changed by means of transactions.
