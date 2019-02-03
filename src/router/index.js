@@ -35,7 +35,7 @@ export function createRouter (){
             { path: '/explorer/:a?', component: ExplorerBlocks },
             { path: '/explorer', component: ExplorerBlocks },
             { path: '/bounties', component: Bounty },
-            { path: '/faq', component: FaqPage },
+            { path: '/faq/:qHash?', component: FaqPage, name: 'faq' },
             { path: '/pool', component: AdminPage },
             { path: '/pool/:a?', component: AdminPage },
             { path: '/clearIndexedDB', component: ClearIndexedDBPage },

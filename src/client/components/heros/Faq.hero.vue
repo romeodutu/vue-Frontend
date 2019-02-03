@@ -8,7 +8,7 @@
 
             <div class="faqSection">
 
-                <collapse-faq :selected="false" ref="#WhatIsWebDollar">
+                <collapse-faq :selected="false" ref="WhatIsWebDollar">
                     <div slot="collapse-header">
                         What is WebDollar?
                     </div>
@@ -17,7 +17,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatsItLikeUsingWebDollar">
+                <collapse-faq :selected="false" ref="WhatsItLikeUsingWebDollar">
                     <div slot="collapse-header">
                         What's it like using WebDollar?
                     </div>
@@ -26,7 +26,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatsValueOfWebDollarInFiatCurrency">
+                <collapse-faq :selected="false" ref="WhatsValueOfWebDollarInFiatCurrency">
                     <div slot="collapse-header">
                         What’s the value of WebDollar in FIAT (conventional) currency?
                     </div>
@@ -34,7 +34,7 @@
                         The value is based on the demand and supply imposed by the market. The price was and is currently set by the market.                    </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatAreRisksOfMiningWebDollarInBrowser">
+                <collapse-faq :selected="false" ref="WhatAreRisksOfMiningWebDollarInBrowser">
                     <div slot="collapse-header">
                         What are the risks of mining WebDollar in my browser?
                     </div>
@@ -43,7 +43,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#HowIsWebDollarDifferent">
+                <collapse-faq :selected="false" ref="HowIsWebDollarDifferent">
                     <div slot="collapse-header">
                         How is WebDollar different, when compared to other cryptocurrencies?
                     </div>
@@ -51,7 +51,7 @@
                         WebDollar is the easiest and fastest way to earn and use cryptocurrencies. You don’t need technical knowledge or dedicated hardware resources. WebDollar aims to make mining available for every laptop and smartphone, which is why we are using the Argon2d algorithm which makes mining with special hardware unprofitable because it is ASIC resistant and GPU unfriendly. We want to give everyone the opportunity to mine and take part in the new world of cryptocurrency.                    </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhereAreTheWalletsStored">
+                <collapse-faq :selected="false" ref="WhereAreTheWalletsStored">
                     <div slot="collapse-header">
                         Where are the wallets stored?
                     </div>
@@ -59,7 +59,7 @@
                         The Wallets are stored and managed securely by the Browser, by using the Indexed DB API. The wallet's storage location varies from one browser to another. You can also download the wallet as a file and store it on another browser, disk drive, USB drive, cloud storage, cold storage, etc.                    </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#SupportSmartContracts">
+                <collapse-faq :selected="false" ref="SupportSmartContracts">
                     <div slot="collapse-header">
                         Does WebDollar support smart contracts?
                     </div>
@@ -68,7 +68,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#MyBalanceSwitchedToZero">
+                <collapse-faq :selected="false" ref="MyBalanceSwitchedToZero">
                     <div slot="collapse-header">
                         Why did my balance switched to 0?
                     </div>
@@ -76,7 +76,7 @@
                         If you had no available balance before, this may be caused by the fact that you were connected to another pool and the potential balance from the previous pool is not displayed anymore. You will still receive the WEBD mined in the previous pool.                    </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatIsPotentialBalance">
+                <collapse-faq :selected="false" ref="WhatIsPotentialBalance">
                     <div slot="collapse-header">
                         What is potential balance?
                     </div>
@@ -85,7 +85,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#PoolMiningLinkChangeForTerminalMiners">
+                <collapse-faq :selected="false" ref="PoolMiningLinkChangeForTerminalMiners">
                     <div slot="collapse-header">
                         Will the link to pool mining change for terminal miners ?
                     </div>
@@ -94,7 +94,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatIsPercentageForHybridMiningPoSAndPoW">
+                <collapse-faq :selected="false" ref="WhatIsPercentageForHybridMiningPoSAndPoW">
                     <div slot="collapse-header">
                         What's the percentage for hybrid mining PoS + PoW ?
                     </div>
@@ -103,7 +103,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatIsPoW">
+                <collapse-faq :selected="false" ref="WhatIsPoW">
                     <div slot="collapse-header">
                         What is PoW ?
                     </div>
@@ -112,7 +112,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#HowWillPoSWorkOnConsensus">
+                <collapse-faq :selected="false" ref="HowWillPoSWorkOnConsensus">
                     <div slot="collapse-header">
                         How will PoS work on consensus ?
                     </div>
@@ -121,7 +121,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#MineInPoSFromScratchOrBuyInOrderToStake">
+                <collapse-faq :selected="false" ref="MineInPoSFromScratchOrBuyInOrderToStake">
                     <div slot="collapse-header">
                         Can I mine in PoS rounds from scratch or do I need to buy in order to stake?
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#IsWebDollarAToken">
+                <collapse-faq :selected="false" ref="IsWebDollarAToken">
                     <div slot="collapse-header">
                         Is WebDollar a token?
                     </div>
@@ -140,7 +140,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#CompatibleBrowsers">
+                <collapse-faq :selected="false" ref="CompatibleBrowsers">
                     <div slot="collapse-header">
                         Which browsers are compatible with WebDollar?
                     </div>
@@ -149,7 +149,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#DoesItWorkOnIphoneIos">
+                <collapse-faq :selected="false" ref="DoesItWorkOnIphoneIos">
                     <div slot="collapse-header">
                         Does it work on Iphone (iOS)?
                     </div>
@@ -162,7 +162,7 @@
 
             <div class="faqSection">
 
-                <collapse-faq :selected="false" ref="#HowAreWEBDsCreated">
+                <collapse-faq :selected="false" ref="HowAreWEBDsCreated">
                     <div slot="collapse-header">
                         How are WEBD's created?
                     </div>
@@ -171,7 +171,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatCanIDoWithWebDollars">
+                <collapse-faq :selected="false" ref="WhatCanIDoWithWebDollars">
                     <div slot="collapse-header">
                         What can I do with WebDollars?
                     </div>
@@ -179,7 +179,7 @@
                         WebDollar is meant to be used as you would use just about any other currency: paying for products online, trading for goods, trading in for other currencies. In addition, WebDollar can be used for cross border payments with no currency exchange fees. The community around the open source project, WebDollar, is continuously building the ecosystem.                    </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#HowCanIGetWebDollars">
+                <collapse-faq :selected="false" ref="HowCanIGetWebDollars">
                     <div slot="collapse-header">
                         How can I get WebDollars?
                     </div>
@@ -188,7 +188,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#HowMuchWebdEarnIn24HoursMining">
+                <collapse-faq :selected="false" ref="HowMuchWebdEarnIn24HoursMining">
                     <div slot="collapse-header">
                         How much WebDollars (WEBD) can I earn in 24 hours of mining?
                     </div>
@@ -197,7 +197,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#HowAreWalletsSecured">
+                <collapse-faq :selected="false" ref="HowAreWalletsSecured">
                     <div slot="collapse-header">
                         How are the wallets secured?
                     </div>
@@ -205,7 +205,7 @@
                         The wallets are stored directly into your browser, avoiding third parties. Your browser is the only one that is storing your wallet. NOTE: Like with any other coin or token, if you lose your wallet's recovery password, your WebDollars will be locked for ever.                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#UseOtherWallets">
+                <collapse-faq :selected="false" ref="UseOtherWallets">
                     <div slot="collapse-header">
                         Can I use other wallets to store WEBD, for example Ledger Nano S, Trezor, Keep Key, etc?
                     </div>
@@ -214,7 +214,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#ImportWalletBrowser">
+                <collapse-faq :selected="false" ref="ImportWalletBrowser">
                     <div slot="collapse-header">
                         Can I import an existing wallet into my browser?
                     </div>
@@ -222,7 +222,7 @@
                         Yes, you will be able to import and export your wallet from one browser to another one. The wallet is managed by your browser, not by the WebDollar Protocol or other third parties.                    </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatIsAvaiableBalance">
+                <collapse-faq :selected="false" ref="WhatIsAvaiableBalance">
                     <div slot="collapse-header">
                         What is avaiable balance?
                     </div>
@@ -231,7 +231,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#PotentialBalanceUpAndDown">
+                <collapse-faq :selected="false" ref="PotentialBalanceUpAndDown">
                     <div slot="collapse-header">
                         Why does the potential balance keep going up and down ?
                     </div>
@@ -240,7 +240,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#HowDoWebDollarBountiesWork">
+                <collapse-faq :selected="false" ref="HowDoWebDollarBountiesWork">
                     <div slot="collapse-header">
                         How do WebDollar's bounties work?
                     </div>
@@ -249,7 +249,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhatIsPoS">
+                <collapse-faq :selected="false" ref="WhatIsPoS">
                     <div slot="collapse-header">
                         What is PoS ?
                     </div>
@@ -258,7 +258,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhenMiningInPoSKeepAllOfStakeInOneWallet">
+                <collapse-faq :selected="false" ref="WhenMiningInPoSKeepAllOfStakeInOneWallet">
                     <div slot="collapse-header">
                         When mining in PoS rounds, do i have to keep all of my stake in one wallet ?
                     </div>
@@ -267,7 +267,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#StakingMyCoinsWithPOSRequiresCertainTypeOfDevice">
+                <collapse-faq :selected="false" ref="StakingMyCoinsWithPOSRequiresCertainTypeOfDevice">
                     <div slot="collapse-header">
                         Is staking my coins with POS, requiring a certain type of device?
                     </div>
@@ -276,7 +276,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#HelpTheProjectWhomDoIContact">
+                <collapse-faq :selected="false" ref="HelpTheProjectWhomDoIContact">
                     <div slot="collapse-header">
                         I want to help the project. Whom do I contact?
                     </div>
@@ -286,7 +286,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#ImplementWEBDAsAPaymentOption">
+                <collapse-faq :selected="false" ref="ImplementWEBDAsAPaymentOption">
                     <div slot="collapse-header">
                         I have a business and would like to implement WEBD as a payment option. Is this possible? If so, whom should I contact?
                     </div>
@@ -295,7 +295,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#DoesItWorkOnAndroidPhones">
+                <collapse-faq :selected="false" ref="DoesItWorkOnAndroidPhones">
                     <div slot="collapse-header">
                         Does it work on Android phones?
                     </div>
@@ -304,7 +304,7 @@
                     </div>
                 </collapse-faq>
 
-                <collapse-faq :selected="false" ref="#WhereCanISeeTheSourceCode">
+                <collapse-faq :selected="false" ref="WhereCanISeeTheSourceCode">
                     <div slot="collapse-header">
                         Where can I see the source code?
                     </div>
@@ -325,7 +325,8 @@
 </template>
 
 <script>
-    import CollapseFaq from './extend/CollapseFaq.vue'
+    import CollapseFaq from './extend/CollapseFaq.vue';
+    let VueScrollTo = require('vue-scrollto');
 
     export default {
         name: "YourComponent",
@@ -333,7 +334,7 @@
             CollapseFaq
         },
         mounted() {
-            let qHash = this.$route.hash;
+            let qHash = this.$route.params.qHash;
 
             if ((typeof qHash === 'undefined') || !this.$refs.hasOwnProperty(qHash)) {
                 return;
@@ -342,6 +343,8 @@
             let qRef = this.$refs[qHash];
 
             qRef.toggle();
+
+            VueScrollTo.scrollTo(qRef.$el);
         }
     }
 </script>
