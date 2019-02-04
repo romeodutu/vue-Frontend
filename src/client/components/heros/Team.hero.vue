@@ -217,22 +217,6 @@
                     </p>
                 </div>
 
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/AdrianRobescu.jpg" alt="Adrian Robescu">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/robescu/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                                <li><a href="https://www.facebook.com/robyxel" rel="noopener" target="_blank"  class="fa fa-facebook" aria-label="facebook"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Adrian Robescu</span>
-                    <span class="teamRole">Blockchain business developer</span>
-                    <p>Adrian is a Business Analyst and Strategist, specialized in modeling business processes and ERP solutions. With a strong background in marketing is working on adoption, partnerships and communication.</p>
-                </div>
-
             </div>
 
         </div>
