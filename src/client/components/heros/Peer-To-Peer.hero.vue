@@ -70,7 +70,7 @@
                         if (this.poolsList[key].poolName === poolName){
 
                             value = this.poolsList[key].poolURL;
-                            window.history.pushState(null, '', '/en/step2'+value);
+                            window.history.pushState(null, '', 'pool/1/'+value);
 
                             break;
                         }
