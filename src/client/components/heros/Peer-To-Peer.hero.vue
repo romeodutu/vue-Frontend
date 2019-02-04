@@ -68,7 +68,10 @@
 
                     for (let key in this.poolsList)
                         if (this.poolsList[key].poolName === poolName){
+
                             value = this.poolsList[key].poolURL;
+                            window.history.pushState(null, '', '/en/step2'+value);
+
                             break;
                         }
 
