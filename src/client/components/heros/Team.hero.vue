@@ -129,22 +129,6 @@
 
                 <div class="our-team ">
                     <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/MickySocaci.jpg" alt="Micky Socaci" title="Micky Socaci">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                              <!--&gt;<a href="https://www.linkedin.com/in/busuioceanu-constantin/" rel="noopener" target="_blank" class="fa fa-linkedin2" aria-label="linkedin"></a></li>-->
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Micky Socaci</span>
-                    <span class="teamRole">Tehnical Advisor</span>
-                    <p class="description">
-                        In software development since early 2001. Devops / Embedded / E-commerce to Software Architecture and Security. Creator of blockbits.io and Zoom Web3 Provider.
-                    </p>
-                </div>
-
-                <div class="our-team ">
-                    <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/CristianAntal.jpg" alt="Cristian Antal" title="Cristian Antal">
                         <div class="over-layer">
                             <ul class="social-link">
