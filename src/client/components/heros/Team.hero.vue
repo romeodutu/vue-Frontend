@@ -90,7 +90,7 @@
                     <span class="teamName">Ionut Moraru</span>
                     <span class="teamRole">Automation Engineer</span>
                     <p class="description">
-                        Ionut is a software developer with 10 years of experience working with web and mobile technologies. He has over a year of experience working with Solidity and Blockchain related technologies.
+                        Ionut is a software developer with over 10 years of experience working with web and mobile technologies. He is a Consensys certified developer and founder of <a href="https://www.hostero.eu" target="_blank">Hostero.eu</a>, a mining software for cryptocurrencies.
                     </p>
                 </div>
 
