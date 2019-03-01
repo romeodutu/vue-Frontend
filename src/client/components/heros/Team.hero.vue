@@ -83,7 +83,7 @@
                         <img class="lazy" data-src="/public/assets/images/team/IonutMoraru.jpeg" alt="Ionut Moraru" title="Ionut Moraru">
                         <div class="over-layer">
                             <ul class="social-link">
-                                <li><a href="https://twitter.com/morion4000" rel="noopener" target="_blank" class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://twitter.com/morion4000" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -99,6 +99,7 @@
                         <img class="lazy" data-src="/public/assets/images/team/ConstantinBusuioceanu.jpeg" alt="Constantin Busuioceanu" title="Constantin Busuioceanu">
                             <div class="over-layer">
                                 <ul class="social-link">
+                                    <li><a href="https://www.linkedin.com/in/busuioceanu-constantin/" class="fa fa-linkedin" rel="noopener" target="_blank" aria-label="linkedin"></a></li>
                                     <li><a href="https://www.facebook.com/cbusuioceanu" class="fa fa-facebook" rel="noopener" target="_blank" aria-label="facebook"></a></li>
                                     <li><a href="https://github.com/cbusuioceanu" class="fa fa-github" rel="noopener" target="_blank" aria-label="github"></a></li>
                                 </ul>
@@ -159,7 +160,7 @@
                         <img class="lazy" data-src="/public/assets/images/team/CristianScurtu.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
                         <div class="over-layer">
                             <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/shortafella/" rel="noopener" target="_blank"  class="fa fa-linkedin" aria-label="linkedin"></a></li>
+                                <li><a href="https://www.linkedin.com/in/shortafella/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
                             </ul>
                         </div>
                     </div>
