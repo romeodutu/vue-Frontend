@@ -132,7 +132,7 @@ function render (req, res) {
             facebook:'WebDollar is a cryptocurrency native to the browser. No installs or downloads. Mining and Wallets are incorporated in your browser. WebDollar is aiming for mass adoption',
             twitter: 'WebDollar is a cryptocurrency native to the browser. No installs or downloads. Mining and Wallets are incorporated in your browser. WebDollar is aiming for mass adoption', // default title
         },
-        SEOMixinKeywords: 'webdollar, blockchain, blockchain in browser, browser mining',
+        SEOMixinKeywords: 'cryptocurrency, blockchain, browser mining, bitcoin alternative, future of cryptocurrency, cryptocoin',
         SEOMixinImages:
         '<meta property="og:image"  content="http://webdollar.io/public/assets/images/WebDollar-Landing-image.png"  /> ' +
         '<meta property="og:image:alt" content="WebDollar - Currency of Internet" />' +
