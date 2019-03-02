@@ -151,7 +151,7 @@
 
         <div class="">
 
-            <span class="pageTitle alignCenter bigMarginTop" >Evanghelists</span>
+            <span class="pageTitle alignCenter bigMarginTop" >Evangelists</span>
 
             <div class="teamWrapper threeTeamColums">
 
