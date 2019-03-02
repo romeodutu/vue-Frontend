@@ -39,7 +39,7 @@
                             <div class="over-layer">
                                 <ul class="social-link social-link-4">
                                     <li><a href="https://www.facebook.com/Ionut.Alex.Panait" rel="noopener" target="_blank"  class="fa fa-facebook" aria-label="facebook"></a></li>
-                                    <li><a href="https://www.linkedin.com/in/panait-alexandru-ionut-64181ba7/" rel="noopener" target="_blank" class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                    <li><a href="https://www.linkedin.com/in/alexandru-panait-64181ba7/" rel="noopener" target="_blank" class="fa fa-linkedin2" aria-label="linkedin"></a></li>
                                     <li><a href="https://twitter.com/AlexandruPanai" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"/></li>
                                     <li><a href="https://t.me/WebDollar_alexandruPanait" rel="noopener" target="_blank" class="fa fa-telegram" aria-label="telegram"/></li>
                                 </ul>
