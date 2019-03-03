@@ -3,7 +3,7 @@
     <div id="mainSection" class="fullSection">
         <div class="verticalAlignMiddle alignCenter modifyTop verticalAlignMiddleMobileFix webSiteVerticalMiddle" @scroll="this.scrollPassByLogo()">
 
-            <img src="/public/assets/images/WebDollar-logo-white.png" alt="webDollar-logo" title="webDollar-logo" id="WebDollarLogo" class="mainLogo fadeIn">
+            <img src="/public/assets/images/WebDollar-logo-white.png" alt="Cryptocurrency of the future" title="Cryptocurrency of the future" id="WebDollarLogo" class="mainLogo fadeIn">
 
             <h1 class="fadeIn fadeIn2 noTransform titleWebSite"> WebDollar</h1>
             <!--<h2 class="fadeIn fadeIn2" :class="this.maintenance ? '' : 'hide'"><b class="testnet">EXPERIMENTAL</b></h2>-->
