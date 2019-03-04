@@ -123,12 +123,12 @@ function render (req, res) {
 
     const context = {
         SEOMixinTitle: {
-            title:'WebDollar - Currency of the Internet',
-            facebook: 'WebDollar - Currency of the Internet',
-            twitter: 'WebDollar - Currency of the Internet',
+            title:'CryptoCurrency of the future',
+            facebook: 'WebDollar - CryptoCurrency of the people',
+            twitter: 'WebDollar - CryptoCurrency of the internet',
         }, // default title
         SEOMixinDescription: {
-            description:'WebDollar is a cryptocurrency native to the browser. No installs or downloads. Mining and Wallets are incorporated in your browser. WebDollar is aiming for mass adoption',
+            description:'WebDollar is easy to use Cryptocurrency, Wallet in the Browser with modern hybrid Mining Proof of Work and Proof of Stake. Own blockchain. No installs, no downloads.',
             facebook:'WebDollar is a cryptocurrency native to the browser. No installs or downloads. Mining and Wallets are incorporated in your browser. WebDollar is aiming for mass adoption',
             twitter: 'WebDollar is a cryptocurrency native to the browser. No installs or downloads. Mining and Wallets are incorporated in your browser. WebDollar is aiming for mass adoption', // default title
         },
