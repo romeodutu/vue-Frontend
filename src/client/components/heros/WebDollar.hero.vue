@@ -14,7 +14,7 @@
                 <h5 class="fadeIn fadeIn4 statusMining" :class="this.loaded? 'hide' : ''">{{this.status}}</h5>
 
                 <div :class="this.loaded? '' : 'hide'" class='btn-cont btnPosition fadeIn fadeIn2'>
-                    <a class='btn' href="#p2p-network">
+                    <a class='btn' href="#p2p-network" title="Browser mining cryptocurrency real-time network">
                         See your Network
                         <span class='line-1'></span>
                         <span class='line-2'></span>
