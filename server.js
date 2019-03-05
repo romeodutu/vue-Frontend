@@ -124,7 +124,7 @@ function render (req, res) {
     const context = {
         SEOMixinTitle: {
             title:'CryptoCurrency of the future',
-            facebook: 'WebDollar - CryptoCurrency of the people',
+            facebook: 'WebDollar - CryptoCurrency of the internet',
             twitter: 'WebDollar - CryptoCurrency of the internet',
         }, // default title
         SEOMixinDescription: {
