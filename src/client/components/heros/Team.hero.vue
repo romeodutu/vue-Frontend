@@ -183,7 +183,7 @@
                     <span class="teamName">Giuliano Ifrim</span>
                     <span class="teamRole">Community Manager</span>
                     <p>
-                        Giuliano is an professional trader turned crypto enthusiast with a vast Forex and Crypto trading experience, Understanding both business and the vision, Giuliano is a key player for the WebDollar project, managing the Telegram community.
+                        Giuliano is a professional trader turned crypto enthusiast with a vast Forex and Crypto trading experience, Understanding both business and the vision, Giuliano is a key player for the WebDollar project, managing the Telegram community.
                     </p>
                 </div>
 
