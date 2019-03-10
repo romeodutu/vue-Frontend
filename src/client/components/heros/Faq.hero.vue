@@ -2,7 +2,7 @@
 
     <div id="faqSection">
 
-        <span class="alignCenter bigMarginTop pageTitle">FAQ</span>
+        <span class="alignCenter bigMarginTop pageTitle">Cryptocurrency explained</span>
 
         <div class="faqContainer sectionCenteredWidth">
 
