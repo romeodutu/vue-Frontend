@@ -10,6 +10,7 @@ const Bounty = () => import('client/pages/Bounty.page.vue');
 const ExplorerBlocks = () => import('client/pages/Explorer.page.vue');
 const AdminPage = () => import('client/pages/Admin.page.vue');
 const FaqPage = () => import('client/pages/Faq.page.vue');
+const ExchangePage = () => import('client/pages/Exchange.page.vue');
 const ClearIndexedDBPage = () => import('client/pages/ClearIndexedDB.page.vue');
 
 export function createRouter (){
@@ -36,6 +37,7 @@ export function createRouter (){
             { path: '/explorer', component: ExplorerBlocks },
             { path: '/bounties', component: Bounty },
             { path: '/faq/:qHash?', component: FaqPage, name: 'faq' },
+			{ path: '/exchange', component: ExchangePage },
             { path: '/pool', component: AdminPage },
             { path: '/pool/:a?', component: AdminPage },
             { path: '/clearIndexedDB', component: ClearIndexedDBPage },
