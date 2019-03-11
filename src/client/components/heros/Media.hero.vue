@@ -2,7 +2,7 @@
 
     <div id="knowUsSection" class="backgroundSection">
 
-        <h1 class="alignCenter">Media</h1>
+        <h2 class="alignCenter">Media</h2>
 
         <div id="mediaContainer">
 
