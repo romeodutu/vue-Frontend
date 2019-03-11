@@ -43,9 +43,9 @@
                 <div v-on:click="this.collapseMenuBack">Referral</div>
             </router-link>
 
-            <a href="https://google.com" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
+            <router-link to="/exchange" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
                 <div v-on:click="this.collapseMenuBack">Exchange</div>
-            </a>
+            </router-link>
 
             <a href="javascript:void(0);" style="font-size:15px;" :style="{display: (mobileMenuOpened || isMobile==false) ? 'none':'block'}" class="icon showMenu" @click="this.showMobileMenu" :class="mobileMenuOpened ? 'openedMenuLink' : '' ">&#9776;</a>
 
