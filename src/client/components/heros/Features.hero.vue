@@ -2,7 +2,7 @@
 
     <div id="newCryptoSection" class="backgroundSection">
 
-        <h1 class="alignCenter bigMarginTop">WebDollar Ecosystem</h1>
+        <h2 class="alignCenter bigMarginTop">WebDollar Ecosystem</h2>
 
         <div class="textContainer sectionCenteredWidth">
             <h2>Already integrated</h2>
