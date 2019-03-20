@@ -3,7 +3,7 @@
     <div id="mainSection" class="fullSection">
         <div class="verticalAlignMiddle alignCenter modifyTop verticalAlignMiddleMobileFix webSiteVerticalMiddle" @scroll="this.scrollPassByLogo()">
 
-            <img src="/public/assets/images/WebDollar-logo-white.png" alt="webDollar-logo" title="webDollar-logo" id="WebDollarLogo" class="mainLogo fadeIn">
+            <img src="/public/assets/images/WebDollar-logo-white.png" alt="Cryptocurrency of the future" title="Cryptocurrency of the future" id="WebDollarLogo" class="mainLogo fadeIn">
 
             <h1 class="fadeIn fadeIn2 noTransform titleWebSite"> WebDollar</h1>
             <!--<h2 class="fadeIn fadeIn2" :class="this.maintenance ? '' : 'hide'"><b class="testnet">EXPERIMENTAL</b></h2>-->
@@ -14,7 +14,7 @@
                 <h5 class="fadeIn fadeIn4 statusMining" :class="this.loaded? 'hide' : ''">{{this.status}}</h5>
 
                 <div :class="this.loaded? '' : 'hide'" class='btn-cont btnPosition fadeIn fadeIn2'>
-                    <a class='btn' href="#p2p-network">
+                    <a class='btn' href="#p2p-network" title="Browser mining cryptocurrency real-time network">
                         See your Network
                         <span class='line-1'></span>
                         <span class='line-2'></span>
