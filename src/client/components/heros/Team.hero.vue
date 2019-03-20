@@ -224,7 +224,7 @@
                             </ul>
                         </div>
                     </div>
-                    <span class="teamName">George Alexandru Sfica</span>
+                    <span class="teamName">George A. Sfica</span>
                     <span class="teamRole">United Kingdom Ambassador</span>
                     <p>
                         George is a high-end architectural designer, student at the University of West London. Passionate about entrepreneurship and cryptocurrency, founder of wesomi.com, a reward based social network.
@@ -233,7 +233,7 @@
 
                 <div class="our-team">
                     <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/yangChengming.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
+                        <img class="lazy" data-src="/public/assets/images/team/yangChengming.jpg" alt="Yang Chengming" title="Yang Chengming">
                         <div class="over-layer">
                             <ul class="social-link">
 
@@ -249,7 +249,22 @@
 
                 <div class="our-team">
                     <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/lordBruce.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
+                        <img class="lazy" data-src="/public/assets/images/team/Jhonson.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Jhonson Zheong</span>
+                    <span class="teamRole">Korea Ambassador</span>
+                    <p>
+                        Jhonson Zheong has a solid marketing background on the Asian markets, with years of experience in both digital and traditional communication and customer relationship management.
+                    </p>
+                </div>
+
+                <div class="our-team">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/lordBruce.jpg" alt="Tochukwu Kennedy. M" title="Tochukwu Kennedy. M">
                         <div class="over-layer">
                             <ul class="social-link">
                                 <li><a href="https://www.linkedin.com/in/teekay-tochukwu-kennedy-m-lord-bruce-0a2260102" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
@@ -260,6 +275,22 @@
                     <span class="teamRole">Africa Ambassador</span>
                     <p>
                         Tochukwu Kennedy is an ambitious entrepreneur which has has a vast experience in the digital space from blogging to the blockchain technology and he also has web developing and marketing skills.
+                    </p>
+                </div>
+
+                <div class="our-team">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/sergioR.jpg" alt="Sergio Radeglia" title="Sergio Radeglia">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://twitter.com/SergioRadeglia" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Sergio Radeglia</span>
+                    <span class="teamRole">Italy Ambassador</span>
+                    <p>
+                        Crypto investor and tech enthusiast. Sergio has been following and bought the idea of the project since its first steps, understanding the changemaker nature of WebDollar's technology and bringing people together to celebrate it.
                     </p>
                 </div>
 
