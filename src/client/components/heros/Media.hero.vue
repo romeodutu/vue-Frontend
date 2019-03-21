@@ -109,7 +109,7 @@
             <div class="mediaContentBox">
                 <a href ="" rel="noopener" target="_blank">
 
-                    <img alt="community meetup" title"community meetup" class="lazy" data-src="/public/assets/images/media/meetup.jpg">
+                    <img alt="community meetup" title="community meetup" class="lazy" data-src="/public/assets/images/media/meetup.jpg">
                     <h3>First WebDollar Community Meetup</h3>
                     <span>Romania, Bucharest</span>
 
