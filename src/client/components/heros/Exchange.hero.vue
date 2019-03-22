@@ -2,7 +2,7 @@
 
     <div id="exchangeSection">
 
-        <span class="alignCenter bigMarginTop pageTitle">Exchange WebDollar Cryptocurrency</span>
+        <span class="alignCenter bigMarginTop pageTitle">Exchange Cryptocurrency WebDollar</span>
 
         <div class="faqContainer sectionCenteredWidth">
             <div class="collapse-content">
