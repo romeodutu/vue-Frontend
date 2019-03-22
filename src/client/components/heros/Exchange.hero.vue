@@ -6,7 +6,7 @@
 
         <div class="faqContainer sectionCenteredWidth">
             <div class="collapse-content">
-			<p>Although the developers team worked on their own exchange to prepare the implementation code for the new exchanges and secondly to have a first exchange, and develop the code in general, things have evolved naturally.</p>
+			<p>The developers team worked on their own exchange to prepare the implementation code for the new exchanges and secondly to have a first exchange, and develop the code in general, things have evolved naturally.</p>
 			<p>Somebody in the community has listed the WebDollar cryptocurrency on its small exchange:</p>
 			<p><a href="https://gymbase.io" title="CryptoExchange Gymbase">gymbase.io - START TRADE NOW</a></p>
             <p>On 20 March 2019 WebDollar was listed on Top 15 CryptoExchange from CMC:</p>
