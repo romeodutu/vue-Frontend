@@ -6,13 +6,16 @@
 
         <div class="faqContainer sectionCenteredWidth">
             <div class="collapse-content">
-			<p>The developers team worked on their own exchange to prepare the implementation code for the new exchanges and secondly to have a first exchange, and develop the code in general, things have evolved naturally.</p>
-			<p>Somebody in the community has listed the WebDollar cryptocurrency on its small exchange:</p>
+			<p>GYMbase.io was the first exchange that saw the potential of our project and listed WebDollar without even being asked for it. 
+			<p>WebDollar started trading for its first time on GYMbase.io on February 8th of 2019, just a few days after hybrid (POW + POS) mining was implemented.</p>
+			<p>Because our community was eager for an exchange, GYMbase.io soon became overwhelmed by the impressive numbers of WebDollar's trades and volume.</p>
 			<p><a href="https://gymbase.io" title="CryptoExchange Gymbase">gymbase.io - START TRADE NOW</a></p>
-            <p>On 20 March 2019 WebDollar was listed on Top 15 CryptoExchange from CMC:</p>
+            <p><br></p>
+			<p>P2pb2b.io proved to be the perfect big step for WebDollar after hybrid (POW + POS) mining implementation. A top 20 by volume on cmc.io, p2pb2b.io is the fastest growing cryptocurrency exchange in the world.</p>
+            <p>WebDollar was listed and traded for the first time on the 20th of March 2019. Only a few days after the listing, our Telegram reached over 10k community members while our Twitter jumped over the 5k followers mark.</p>
+			<p>A trading market volume of almost half a billion US dollars made p2pb2b extremely appealing to WebDollar miners, enthusiasts, early adopters, and new owners, for in only a few days after the listing, more than 70 million WEBD was transferred towards the exchange.</p> 
+            <p>Pairings are also a true trader’s delight since WEBD is traded on p2pb2b against Ethereum, Bitcoin, and USD.</p>
 			<p><a href="https://p2pb2b.io" title="CryptoExchange P2pb2b">p2pb2b.io - START TRADE NOW</a></p>
-            <p>Soon will be listed on the biggest CryptoExchange in the world.</p>
-			<p>Open, secure, organized where buyers and sellers present the demand and offer and the price automatically balances. The price is also adjusted externally according to several criteria such as the utility given by cryptocurrency, mass adoption, simplicity, etc. The Exchange has a real-time transaction mechanism.</p>
             </div>
         </div>
     </div>
