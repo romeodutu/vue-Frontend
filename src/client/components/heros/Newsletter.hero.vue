@@ -32,6 +32,10 @@
                     <img data-src="/public/assets/images/SocialMedia/medium_white.png" alt="medium" class="linkIconSocialNormal lazy">
                     <img data-src="/public/assets/images/SocialMedia/medium_yellow.png" alt="medium" class="linkIconSocialHover lazy">
                 </a>
+                <a href="https://shang.qq.com/wpa/qunwpa?idkey=7021906277b183cdedb6567ea96d2170cef9b24b8bba09807570b0b5bf04da43" rel="noopener" target="_blank" class="linkIconSocial">
+					<img data-src="/public/assets/images/SocialMedia/qq_white.png" alt="qq" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/qq_yellow.png" alt="qq" class="linkIconSocialHover lazy">
+                </a>
             </div>
 
             <div id="newsletterContainer">
@@ -113,7 +117,7 @@
 
     .socialLinksNewsletter{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         max-width: 500px;
         margin: 0 auto;
         margin-bottom: 50px;
