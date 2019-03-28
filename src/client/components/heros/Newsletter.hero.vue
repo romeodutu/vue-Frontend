@@ -9,32 +9,32 @@
 
             <div class="socialLinksNewsletter">
                 <a href="https://facebook.com/webdollar.io" rel="noopener" target="_blank" class="linkIconSocial">
-                    <img data-src="/public/assets/images/SocialMedia/facebook_white.png" alt="Facebook CryptoCurrency WebDollar" title="Facebook CryptoCurrency WebDollar" class="linkIconSocialNormal lazy">
-                    <img data-src="/public/assets/images/SocialMedia/facebook_yellow.png" alt="Facebook CryptoCurrency WebDollar" title="Facebook CryptoCurrency WebDollar" class="linkIconSocialHover lazy">
+                    <img data-src="/public/assets/images/SocialMedia/facebook_white.png" alt="facebook" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/facebook_yellow.png" alt="facebook" class="linkIconSocialHover lazy">
                 </a>
                 <a href="https://twitter.com/webdollar_io" rel="noopener" target="_blank" class="linkIconSocial">
-                    <img data-src="/public/assets/images/SocialMedia/twitter_white.png" alt="Twitter WebDollar" title="Twitter WebDollar" class="linkIconSocialNormal lazy">
-                    <img data-src="/public/assets/images/SocialMedia/twitter_yellow.png" alt="Twitter WebDollar" title="Twitter WebDollar" class="linkIconSocialHover lazy">
+                    <img data-src="/public/assets/images/SocialMedia/twitter_white.png" alt="twitter" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/twitter_yellow.png" alt="twitter" class="linkIconSocialHover lazy">
                 </a>
                 <a href="https://t.me/WebDollar" rel="noopener" target="_blank" class="linkIconSocial">
-                    <img data-src="/public/assets/images/SocialMedia/telegram_white.png" alt="Telegram WebDollar" title="Telegram WebDollar" class="linkIconSocialNormal lazy">
-                    <img data-src="/public/assets/images/SocialMedia/telegram_yellow.png" alt="Telegram WebDollar" title="Telegram WebDollar" class="linkIconSocialHover lazy">
+                    <img data-src="/public/assets/images/SocialMedia/telegram_white.png" alt="telegram" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/telegram_yellow.png" alt="telegram" class="linkIconSocialHover lazy">
                 </a>
                 <a href="https://github.com/WebDollar" rel="noopener" target="_blank" class="linkIconSocial">
-                    <img data-src="/public/assets/images/SocialMedia/github_white.png" alt="Github CryptoCurrency WebDollar" title="Github CryptoCurrency WebDollar" class="linkIconSocialNormal lazy">
-                    <img data-src="/public/assets/images/SocialMedia/github_yellow.png" alt="Github CryptoCurrency WebDollar" title="Github CryptoCurrency WebDollar" class="linkIconSocialHover lazy">
+                    <img data-src="/public/assets/images/SocialMedia/github_white.png" alt="github" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/github_yellow.png" alt="github" class="linkIconSocialHover lazy">
                 </a>
                 <a href="https://www.reddit.com/r/webdollar/" rel="noopener" target="_blank"  class="linkIconSocial lazy">
-                    <img data-src="/public/assets/images/SocialMedia/reddit_white.png" alt="Reddit WebDollar" title="Reddit WebDollar" class="linkIconSocialNormal lazy">
-                    <img data-src="/public/assets/images/SocialMedia/reddit_yellow.png" alt="Reddit WebDollar" title="Reddit WebDollar" class="linkIconSocialHover lazy">
+                    <img data-src="/public/assets/images/SocialMedia/reddit_white.png" alt="reddit" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/reddit_yellow.png" alt="reddit" class="linkIconSocialHover lazy">
                 </a>
                 <a href="https://medium.com/@webdollar" rel="noopener" target="_blank" class="linkIconSocial">
-                    <img data-src="/public/assets/images/SocialMedia/medium_white.png" alt="Medium WebDollar" title="Medium WebDollar" class="linkIconSocialNormal lazy">
-                    <img data-src="/public/assets/images/SocialMedia/medium_yellow.png" alt="Medium WebDollar" title="Medium WebDollar" class="linkIconSocialHover lazy">
+                    <img data-src="/public/assets/images/SocialMedia/medium_white.png" alt="medium" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/medium_yellow.png" alt="medium" class="linkIconSocialHover lazy">
                 </a>
                 <a href="https://shang.qq.com/wpa/qunwpa?idkey=7021906277b183cdedb6567ea96d2170cef9b24b8bba09807570b0b5bf04da43" rel="noopener" target="_blank" class="linkIconSocial">
-					<img data-src="/public/assets/images/SocialMedia/qq_white.png" alt="QQ WebDollar" title="QQ WebDollar" class="linkIconSocialNormal lazy">
-                    <img data-src="/public/assets/images/SocialMedia/qq_yellow.png" alt="QQ WebDollar" title="QQ WebDollar" class="linkIconSocialHover lazy">
+					<img data-src="/public/assets/images/SocialMedia/qq_white.png" alt="qq" class="linkIconSocialNormal lazy">
+                    <img data-src="/public/assets/images/SocialMedia/qq_yellow.png" alt="qq" class="linkIconSocialHover lazy">
                 </a>
             </div>
 
