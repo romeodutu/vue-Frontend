@@ -6,7 +6,7 @@
 
             <div class="">
 
-                <h2 class="pageTitle bigMarginTop"> <center>Creators</center></h2>
+                <h1 class="pageTitle bigMarginTop"> <center>Creators</center></h1>
 
                 <div class="teamWrapper twoTeamColums">
 
