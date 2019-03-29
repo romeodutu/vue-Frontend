@@ -5,7 +5,7 @@
         <div id="networkSection">
             <div>
 
-                <h2 class="alignCenter">Peer-to-Peer Network</h2>
+                <h1 class="alignCenter">Peer-to-Peer Network</h1>
                 <h3 >See your Mining Group Connections in Real-Time </h3>
 
                 <div class="networkConnection">
