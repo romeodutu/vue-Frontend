@@ -38,6 +38,7 @@
     import BlocksExplorer from "client/components/heros/explorer/list/Blocks-List.vue";
     import AddressExplorer from "client/components/heros/explorer/list/AddressBalances-List.vue";
     import MultipleTabs from "../components/heros/Multiple-Tabs.hero.vue";
+    import WebDollarEmitter from "../../utils/WebDollarEmitter";
 
 
 
@@ -53,41 +54,27 @@
                 showElement: 'blocks'
             }
         },
-       mounted(){
 
-           window.addEventListener("load", () => {
+        mounted(){
+            const self = this;
 
-               if (typeof window === "undefined") return false;
+            this.$nextTick(() => {
+                self.selectNewItem(self.$route.params.a);
+                WebDollarEmitter.on('blockchain/status', self._blockchainStatus);
+            });
+        },
 
-               this.selectNewItem(this.$route.params.a);
-
-               WebDollar.StatusEvents.on("blockchain/status", (data) => {
-
-                   if (data.message === "Single Window") {
-
-                       this.protocolUsedOnMultipleTabs = false;
-
-                   } else if (data.message === "Multiple Windows Detected") {
-
-                       this.protocolUsedOnMultipleTabs = true;
-
-                   }
-
-               });
-
-           });
-
+        destroyed() {
+            WebDollarEmitter.off('blockchain/status', this._blockchainStatus);
         },
 
         methods:{
-
             selectNewItem(item){
+                let url = window.location.href;
+                let index = url.lastIndexOf("explorer");
+                let urlPrefix = url.substring(0, index+8);
 
-                var url = window.location.href;
-                var index = url.lastIndexOf("explorer");
-                var urlPrefix = url.substring(0, index+8);
-
-                if (item!==undefined) url = urlPrefix+'/'+item;
+                if (typeof item !== 'undefined') url = urlPrefix+'/'+item;
 
                 if (item === 'blocks') {
                     this.showElement = 'blocks';
@@ -97,11 +84,16 @@
                 }
 
                 window.history.pushState('','', url);
+            },
 
+            _blockchainStatus(data) {
+                if (data.message === "Single Window") {
+                   this.protocolUsedOnMultipleTabs = false;
+               } else if (data.message === "Multiple Windows Detected") {
+                   this.protocolUsedOnMultipleTabs = true;
+               }
             }
-
         }
-
     }
 
 </script>

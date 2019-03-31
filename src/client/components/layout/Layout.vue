@@ -6,7 +6,7 @@
 
         <div class="backgroundVideoWrap">
             <video autoplay loop class="backgroundVideo">
-                <source src="public/assets/video/file.mp4" type="video/mp4">
+                <source src="/public/assets/video/file.mp4" type="video/mp4">
             </video>
         </div>
 

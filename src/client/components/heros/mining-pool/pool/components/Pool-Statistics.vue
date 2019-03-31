@@ -55,6 +55,7 @@
 
     import Vue from 'vue';
     import Utils from 'src/utils/util-functions'
+    import WebDollarEmitter from "../../../../../../utils/WebDollarEmitter";
 
     export default{
 
@@ -224,7 +225,7 @@
 
             loadPoolData(){
 
-                if ( WebDollar.Blockchain.MinerPoolManagement === undefined){
+                if (typeof WebDollar.Blockchain.MinerPoolManagement === 'undefined') {
 
                 } else {
 
@@ -272,20 +273,16 @@
 
         },
 
-        mounted(){
-
-            window.addEventListener("load", () => {
-
-                if (typeof window === "undefined") return;
-
-                WebDollar.StatusEvents.on("miner-pool/settings", data => this.loadPoolData());
-
-                this.loadPoolData();
-
+        mounted() {
+            const self = this;
+            this.$nextTick(() => {
+                WebDollarEmitter.on('miner-pool/settings', self.loadPoolData);
+                self.loadPoolData();
             });
-
+        },
+        destroyed() {
+            WebDollarEmitter.off('miner-pool/settings', this.loadPoolData);
         }
-
     }
 
 </script>

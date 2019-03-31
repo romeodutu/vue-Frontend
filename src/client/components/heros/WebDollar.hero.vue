@@ -33,6 +33,7 @@
 <script>
 
     import LoadingSpinner from "client/components/UI/elements/Loading-Spinner.vue"
+    import WebDollarEmitter from "../../../utils/WebDollarEmitter";
 
     export default{
 
@@ -48,119 +49,116 @@
                 loaded: false,
                 maintenance: true,
                 randomReloader: 10,
+                minerPoolName: '',
             }
         },
 
         mounted(){
+            const self = this;
+            this.$nextTick(() => {
+                //pool
+                if (typeof WebDollar.Blockchain.MinerPoolManagement !== 'undefined' && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) {
+                    self.minerPoolName = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolName;
+                } else {
+                    self.minerPoolName = '';
+                }
 
-            window.addEventListener("load", () => {
+                if (WebDollar.Blockchain.synchronized) {
+                    self.loaded = true;
+                    self.status = "Mining Blockchain...";
+                }
+
+                WebDollarEmitter.on('miner-pools/status',    self._minerPoolsStatus);
+                WebDollarEmitter.on('blockchain/status',     self._blockchainStatus);
+                WebDollarEmitter.on('agent/status',          self._agentStatus);
+                WebDollarEmitter.on('mining/status-changed', self._miningStatusChanged);
+
+                setInterval(() => {
+                    if (WebDollar.Blockchain.Mining.started && WebDollar.Blockchain.Mining._hashesPerSecond === 0) {
+                        location.reload();
+                    }
+                }, 5 * 60 * 1000);
+            });
+        },
+
+        destroyed() {
+            WebDollarEmitter.off('miner-pool/status',     this._minerPoolsStatus);
+            WebDollarEmitter.off('blockchain/status',     this._blockchainStatus);
+            WebDollarEmitter.off('agent/status',          this._agentStatus);
+            WebDollarEmitter.off('mining/status-changed', this._miningStatusChanged);
+        },
+
+        methods: {
+
+            _agentStatus(data) {
+                if (!this.loaded) {
+
+                    this.status = data.message;
+
+                    if (typeof data.blockHeight !== 'undefined') {
+                        this.status = this.status + " " + data.blockHeight;
+                    }
+
+                    if (typeof data.blockHeightMax !== 'undefined') {
+                        this.status = this.status + " / " + (data.blockHeightMax - 1);
+                    }
+                }
+            },
+
+            _miningStatusChanged(data) {
+                if (data === true) {
+                    this.status = "Mining Blockchain...";
+                }
+                else {
+                    this.status = "Mining Blockchain has been suspended"
+                }
+            },
+
+            _blockchainStatus(data) {
+                if (data.message === "Blockchain Ready to Mine") {
+                    this.loaded = true;
+                }
+
+                this.status = data.message;
+            },
+
+            _minerPoolsStatus(data) {
+                if (data.message === "Miner Pool Started changed" || data.message === "Miner Pool Opened changed" || data.message === "Miner Pool Initialized changed")
+                    if (typeof WebDollar.Blockchain.MinerPoolManagement !== 'undefined' && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) {
+                        this.minerPoolName = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolName;
+                    }
+                    else {
+                        this.minerPoolName = '';
+                    }
+            },
+
+            scrollPassByLogo(){
 
                 if (typeof window === "undefined") return;
 
-                this.loadPoolInfo();
+                var logo = this.$el.querySelector('#WebDollarLogo');
+                var logoHeight = logo.height;
 
-                //            WebDollarUserInterface.initializeParams.createElements();
+                console.log( logoHeight + this.getPosition(logo).y );
+                console.log( window.scrollY )
 
-                if (WebDollar.Blockchain.synchronized) {
-                    this.loaded = true;
-                    this.status = "Mining Blockchain...";
+            },
+
+            getPosition(element) {
+
+                var xPosition = 0;
+                var yPosition = 0;
+
+                while(element) {
+                    xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+                    yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+                    element = element.offsetParent;
                 }
 
-                //if (process.env.NODE_ENV === 'development')
-                //WebDollarUserInterface.initializeParams.mining.startAutomatically = false;
+                return { x: xPosition, y: yPosition };
 
-                WebDollar.StatusEvents.on("blockchain/status", (data) => {
-                    this.status = data.message;
-                });
-
-                WebDollar.StatusEvents.on("agent/status", (data) => {
-
-                    if (!this.loaded) {
-
-                        this.status = data.message;
-
-                        if (data.blockHeight !== undefined) {
-                            this.status = this.status + " " + data.blockHeight;
-                        }
-
-                        if (data.blockHeightMax !== undefined) {
-                            this.status = this.status + " / " + (data.blockHeightMax - 1);
-                        }
-
-                    }
-
-                });
-
-                WebDollar.StatusEvents.emitter.on("blockchain/status", (data) => {
-
-                    if (data.message === "Blockchain Ready to Mine")
-                        this.loaded = true;
-
-                });
-
-                WebDollar.StatusEvents.emitter.on("mining/status-changed", (data) => {
-
-                    if (data === true)
-                        this.status = "Mining Blockchain...";
-                    else
-                        this.status = "Mining Blockchain has been suspended"
-
-                });
-
-                setInterval(() => {
-
-                    if (WebDollar.Blockchain.Mining.started && WebDollar.Blockchain.Mining._hashesPerSecond === 0)
-                        location.reload();
-
-                }, 5 * 60 * 1000);
-
-            })},
-
-            methods:{
-
-                scrollPassByLogo(){
-
-                    if (typeof window === "undefined") return;
-
-                    var logo = this.$el.querySelector('#WebDollarLogo');
-                    var logoHeight = logo.height;
-
-                    console.log( logoHeight + this.getPosition(logo).y );
-                    console.log( window.scrollY )
-
-                },
-
-                getPosition(element) {
-
-                    var xPosition = 0;
-                    var yPosition = 0;
-
-                    while(element) {
-                        xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
-                        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
-                        element = element.offsetParent;
-                    }
-
-                    return { x: xPosition, y: yPosition };
-
-                },
-
-                loadPoolInfo(){
-
-                    //pool
-                    if (WebDollar.Blockchain.MinerPoolManagement !== undefined && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted ) this.minerPoolName =  WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolName;
-                    else this.minerPoolName = '';
-
-                    WebDollar.StatusEvents.emitter.on("miner-pools/status", (data)=>{
-
-                        if (data.message === "Miner Pool Started changed" || data.message === "Miner Pool Opened changed" || data.message === "Miner Pool Initialized changed")
-                            if (WebDollar.Blockchain.MinerPoolManagement !== undefined && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) this.minerPoolName = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolName;
-                            else this.minerPoolName = '';
-                    });
-
-                }
-
-            }
+            },
+        }
 
     }
 

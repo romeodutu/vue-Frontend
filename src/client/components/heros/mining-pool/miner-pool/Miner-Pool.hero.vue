@@ -86,6 +86,7 @@
     import Vue from 'vue';
     import Clipboard from 'v-clipboard';
     import PoolStatistics from '../pool/components/Pool-Statistics.vue'
+    import WebDollarEmitter from "../../../../../utils/WebDollarEmitter";
 
     Vue.use(Clipboard);
 
@@ -120,7 +121,7 @@
 
                 subscribedMinerPoolStatistics:false,
                 networkHashRate: 0,
-                
+
             }
         },
 
@@ -185,7 +186,7 @@
 
             getPoolServers(){
 
-                let poolServers = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolServers;
+                let poolServers  = WebDollar.Blockchain.MinerPoolManagement.minerPoolSettings.poolServers;
                 this.poolServers = WebDollar.Applications.PoolsUtilsHelper.getPoolServersStatus(poolServers);
 
             },
@@ -217,47 +218,56 @@
 
                 });
 
+            },
+
+            _minerPoolReferralUrl(data) {
+                this.poolURLReferral = data.poolURLReferral
+            },
+
+            _minerPoolReferralConfirmedReward(data) {
+                this.rewardReferralConfirmed = data.referralConfirmedReward
+            },
+
+            _minerPoolReferralTotalReward(data) {
+                this.rewardReferralTotal = data.referralTotalReward
+            },
+
+            _blockchainNewNetworkHashRate(networkHashRate) {
+                this.networkHashRate = networkHashRate;
             }
-
-
         },
 
         mounted() {
+            const self = this;
+            this.$nextTick(() => {
+                WebDollarEmitter.on('miner-pool/status',       self.loadPoolData);
+                WebDollarEmitter.on('miner-pool/settings',     self.loadPoolData);
+                WebDollarEmitter.on('miner-pool/referral-url', self._minerPoolReferralUrl);
 
-            window.addEventListener("load", () => {
+                self.loadPoolData();
 
-                if (typeof window === "undefined") return;
+                WebDollarEmitter.on('miner-pool/referral-confirmed-reward', self._minerPoolReferralConfirmedReward);
+                WebDollarEmitter.on('miner-pool/referral-total-reward',     self._minerPoolReferralTotalReward);
 
-                WebDollar.StatusEvents.on("miner-pool/status", data => this.loadPoolData());
-
-                WebDollar.StatusEvents.on("miner-pool/settings", data => this.loadPoolData());
-
-                WebDollar.StatusEvents.on("miner-pool/referral-url", data => this.poolURLReferral = data.poolURLReferral);
-
-                this.loadPoolData();
-
-                WebDollar.StatusEvents.on("miner-pool/referral-confirmed-reward", data => this.rewardReferralConfirmed = data.referralConfirmedReward);
-                WebDollar.StatusEvents.on("miner-pool/referral-total-reward", data => this.rewardReferralTotal = data.referralTotalReward);
-
-                if (WebDollar.Blockchain.MinerPoolManagement !== undefined) {
-                    this.rewardReferralTotal = WebDollar.Blockchain.MinerPoolManagement.totalReferralReward;
-                    this.rewardReferralConfirmed = WebDollar.Blockchain.MinerPoolManagement.confirmedReferralReward;
+                if (typeof WebDollar.Blockchain.MinerPoolManagement !== 'undefined') {
+                    self.rewardReferralTotal = WebDollar.Blockchain.MinerPoolManagement.totalReferralReward;
+                    self.rewardReferralConfirmed = WebDollar.Blockchain.MinerPoolManagement.confirmedReferralReward;
                 }
 
                 //servers
-
-                WebDollar.StatusEvents.on("miner-pool/servers-connections", (data) => {
-                    this.getPoolServers();
-                });
-
-                WebDollar.StatusEvents.on("blockchain/new-network-hash-rate", (networkHashRate) => {
-
-                    this.networkHashRate = networkHashRate;
-
-                });
-
+                WebDollarEmitter.on('miner-pool/servers-connections',   self.getPoolServers);
+                WebDollarEmitter.on('blockchain/new-network-hash-rate', self._blockchainNewNetworkHashRate);
             });
+        },
 
+        destroyed() {
+            WebDollarEmitter.off('miner-pool/status',                    this.loadPoolData);
+            WebDollarEmitter.off('miner-pool/settings',                  this.loadPoolData);
+            WebDollarEmitter.off('miner-pool/referral-url',              this._minerPoolReferralUrl);
+            WebDollarEmitter.off('miner-pool/referral-confirmed-reward', this._minerPoolReferralConfirmedReward);
+            WebDollarEmitter.off('miner-pool/referral-total-reward',     this._minerPoolReferralTotalReward);
+            WebDollarEmitter.off('miner-pool/servers-connections',       this.getPoolServers);
+            WebDollarEmitter.off('blockchain/new-network-hash-rate',     this._blockchainNewNetworkHashRate);
         }
 
     }

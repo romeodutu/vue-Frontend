@@ -65,6 +65,7 @@
     import PoolMinersList from "./pool/components/Pool-Miners-List.vue"
     import PoolMinerDetails from "./pool/components/Pool-Miner-Details.vue"
     import SettingsPage from "./pool/components/Pool-Advanced-Settings.vue"
+    import WebDollarEmitter from "../../../../utils/WebDollarEmitter";
 
     export default{
 
@@ -83,7 +84,7 @@
                 advancedStatus: 'not initialized',
 
                 referralData: {},
-                
+
                 selectedIndex: -1,
 
 
@@ -239,8 +240,7 @@
 
                 this.selectedIndex = index;
                 this.$refs['referralDetails'].setReferee(this.referralData.referees[index]);
-            },
-
+            }
         },
 
         computed:{
@@ -262,18 +262,13 @@
         },
 
         async mounted() {
+            const self = this;
+            this.$nextTick(async () => {
+                WebDollarEmitter.on('miner-pool/status', self.loadAdminData);
+                WebDollarEmitter.on('pools/status',      self.loadAdminData);
 
-            window.addEventListener("load", async () => {
-
-                if (typeof window === 'undefined') return;
-
-                WebDollar.StatusEvents.on("miner-pool/status", (data) => this.loadAdminData());
-
-                WebDollar.StatusEvents.on("pools/status", (data) => this.loadAdminData());
-
-                this.loadAdminData();
-
-                this.selectUserStatus();
+                self.loadAdminData();
+                self.selectUserStatus();
 
 
                 await WebDollar.Blockchain.onLoaded;
@@ -281,13 +276,16 @@
                 WebDollar.Blockchain.MinerPoolManagement.minerPoolReferrals.requireReferrals = true;
                 WebDollar.Blockchain.MinerPoolManagement.minerPoolReferrals.requestReferrals();
 
-                WebDollar.StatusEvents.on("mining-pool/pool-referral-data-changed", (data) => this.loadMinerPoolReferralData());
-                this.loadMinerPoolReferralData();
-
+                WebDollarEmitter.on('mining-pool/pool-referral-data-changed', self.loadMinerPoolReferralData);
+                self.loadMinerPoolReferralData();
             });
-
         },
 
+        destroyed() {
+            WebDollarEmitter.off('miner-pool/status', this.loadAdminData);
+            WebDollarEmitter.off('pools/status',      this.loadAdminData);
+            WebDollarEmitter.off('mining-pool/pool-referral-data-changed', this.loadMinerPoolReferralData);
+        }
     }
 
 </script>

@@ -40,6 +40,7 @@
     import LoadingSpinner from "client/components/UI/elements/Loading-Spinner.vue";
     import Chart from "client/components/UI/elements/Chart.vue"
     import Utils from 'src/utils/util-functions'
+    import WebDollarEmitter from './../../../../../utils/WebDollarEmitter';
 
     export default{
 
@@ -120,6 +121,13 @@
 
                 this.loaded = true;
 
+            },
+
+            _blockchainStatus(data) {
+                if (data.message === "Blockchain Ready to Mine") {
+                    this.data = WebDollar.Blockchain.AccountantTree.getAccountantTreeList();
+                    this.updateChart();
+                }
             }
 
         },
@@ -133,29 +141,19 @@
         },
 
         mounted(){
-
-            window.addEventListener("load", () => {
-
-                if (typeof window === "undefined") return false;
-
+            const self = this;
+            this.$nextTick(() => {
                 if (WebDollar.Blockchain.synchronized) {
-                    this.data = WebDollar.Blockchain.AccountantTree.getAccountantTreeList();
-                    this.updateChart();
+                    self.data = WebDollar.Blockchain.AccountantTree.getAccountantTreeList();
+                    self.updateChart();
                 }
 
-                WebDollar.StatusEvents.emitter.on("blockchain/status", (data) => {
-
-                    if (data.message === "Blockchain Ready to Mine") {
-                        this.data = WebDollar.Blockchain.AccountantTree.getAccountantTreeList();
-                        this.updateChart();
-                    }
-
-                });
-
+                WebDollarEmitter.on('blockchain/status', self._blockchainStatus);
             });
-
+        },
+        destroyed() {
+            WebDollarEmitter.off('blockchain/status', this._blockchainStatus);
         }
-
     }
 
 </script>

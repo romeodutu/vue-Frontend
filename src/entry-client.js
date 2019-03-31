@@ -78,10 +78,9 @@ router.onReady(() => {
         next()
       })
       .catch(next)
-  })
+  });
 
   // actually mount to DOM
   app.$mount('#app')
-
 })
 

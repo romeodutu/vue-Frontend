@@ -176,6 +176,7 @@
 
     import slider from 'client/components/UI/elements/Slider.vue';
     import LoadingSpinner from "client/components/UI/elements/Loading-Spinner.vue"
+    import WebDollarEmitter from "../../../../../../utils/WebDollarEmitter";
 
     export default{
 
@@ -289,26 +290,8 @@
 
             },
 
-        },
-
-        mounted() {
-
-            if (typeof window === "undefined") return;
-
-            if (WebDollar.Blockchain.PoolManagement === undefined) this.initialized = false;
-            else this.initialized = WebDollar.Blockchain.PoolManagement.poolInitialized || false;
-
-            WebDollar.Blockchain.onLoaded.then((answer) => {
-
-                this.loaded = true;
-                this.loadData();
-
-            });
-
-            WebDollar.StatusEvents.on("pools/status", (data) => {
-
+            _poolsStatus(data) {
                 switch (data.message) {
-
                     case "Pool Initialization changed":
                         console.log("Pool Initialization changed");
                         this.initialized = data.result;
@@ -316,15 +299,35 @@
                         break;
 
                 }
+            },
 
+            _poolsSettings(data) {
+
+            }
+        },
+
+        mounted() {
+
+            const self = this;
+
+            this.$nextTick(() => {
+                if (typeof WebDollar.Blockchain.PoolManagement === 'undefined') self.initialized = false;
+                else self.initialized = WebDollar.Blockchain.PoolManagement.poolInitialized || false;
+
+                WebDollar.Blockchain.onLoaded.then((answer) => {
+                    self.loaded = true;
+                    self.loadData();
+                });
+
+                WebDollarEmitter.on('pools/status',   self._poolsStatus);
+                WebDollarEmitter.on('pools/settings', self._poolsSettings);
             });
+        },
 
-            WebDollar.StatusEvents.on("pools/settings",(data)=>{
-
-            });
-
+        destroyed() {
+            WebDollarEmitter.off('pools/status',   this._poolsStatus);
+            WebDollarEmitter.off('pools/settings', this._poolsSettings);
         }
-
     }
 
 </script>

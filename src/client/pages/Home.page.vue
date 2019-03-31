@@ -58,6 +58,7 @@
     import BlockchainDistributionHero from "client/components/heros/Blockchain-Distribution.hero.vue";
     import MultipleTabs from "../components/heros/Multiple-Tabs.hero.vue";
     import Paper from "../components/heros/Paper.hero.vue";
+    import WebDollarEmitter from "../../utils/WebDollarEmitter";
 
     export default {
 
@@ -89,77 +90,78 @@
         },
 
         mounted(){
+            const self = this;
 
-            window.addEventListener("load", () => {
+            this.$nextTick(() => {
+                WebDollarEmitter.on('blockchain/status', self._blockchainStatus);
+                WebDollarEmitter.on('main-pools/status', self.initializePool);
+                WebDollarEmitter.on('blockchain/logs',   self._blockchainLogs);
+                WebDollarEmitter.on('miner-pool/status', self._minerPoolStatus);
+                WebDollarEmitter.on("pools/status",      self._poolsStatus);
 
-                if (typeof window === "undefined") return false;
-
-                WebDollar.StatusEvents.on("blockchain/status", (data)=>{
-
-                    if (data.message === "Single Window") {
-
-                        this.protocolUsedOnMultipleTabs= false;
-
-                    }else
-                    if (data.message === "Multiple Windows Detected"){
-
-                        this.protocolUsedOnMultipleTabs=true;
-
-                    }
-
-                });
-
-                this.initializePool();
-
-                WebDollar.StatusEvents.on("blockchain/logs", (data)=> {
-
-                    switch (data.message) {
-
-                        case "Network Adjusted Time Error":
-
-                            setTimeout(()=>{
-                                location.reload();
-                            }, 12022*1000);
-
-                            break;
-
-                        case "You mined way too many blocks":
-
-                            setTimeout(()=>{
-                                location.reload();
-                            }, 15*1000);
-
-                            break;
-                    }
-
-                });
-
-
-                this.loadPoolSettings();
-
+                self.loadPoolSettings();
             });
+        },
 
+        destroyed() {
+            WebDollarEmitter.off('blockchain/status', this._blockchainStatus);
+            WebDollarEmitter.off('main-pools/status', this.initializePool);
+            WebDollarEmitter.off('blockchain/logs',   this._blockchainLogs);
+            WebDollarEmitter.off('miner-pool/status', this._minerPoolStatus);
+            WebDollarEmitter.off("pools/status",      this._poolsStatus);
         },
 
         methods:{
+            _blockchainStatus(data) {
+                if (data.message === "Single Window") {
+                    this.protocolUsedOnMultipleTabs= false;
+                } else if (data.message === "Multiple Windows Detected") {
+                    this.protocolUsedOnMultipleTabs=true;
+                }
+            },
 
-            async initializePool(){
-                
+            _blockchainLogs(data) {
+                switch (data.message) {
+                    case "Network Adjusted Time Error":
+                        setTimeout(()=>{
+                            location.reload();
+                        }, 12022*1000);
+
+                        break;
+
+                    case "You mined way too many blocks":
+                        setTimeout(()=>{
+                            location.reload();
+                        }, 15*1000);
+
+                        break;
+                }
+            },
+
+            _minerPoolStatus(data) {
+                if (data.message === "Miner Pool Started changed") {
+                    this.poolActivated = !data.result;
+                }
+            },
+
+            _poolsStatus(data) {
+                if (data.message === "Pool Started changed") {
+                    this.poolActivated = data.result;
+                }
+            },
+
+            async initializePool(data) {
+
 //                if (this.$store.state.route.params.a !== "pool" || this.$store.state.route.params['0'].length < 10 )
 //                    return false;
 
-                WebDollar.StatusEvents.on("main-pools/status", async (data)=> {
+                if (data.message === "Pool Initialized") {
 
-                    if (data.message === "Pool Initialized") {
+                    console.log("xxxx");
+                    await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$store.state.route.params['0']);
 
-                        console.log("xxxx");
-                        await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$store.state.route.params['0']);
-
-                        console.log(this.$store.state.route.params['0']);
-                    }
-
-                });
-
+                    console.log(this.$store.state.route.params['0']);
+                }
             },
 
             loadPoolSettings(){
@@ -167,21 +169,6 @@
                 if (WebDollar.Blockchain.PoolManagement !== undefined && WebDollar.Blockchain.PoolManagement.poolStarted) this.poolActivated = true;
                 else if (WebDollar.Blockchain.MinerPoolManagement !== undefined && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) this.poolActivated = false;
                 else this.poolActivated = false;
-
-                WebDollar.StatusEvents.on("miner-pool/status", (data) => {
-
-                    if (data.message === "Miner Pool Started changed")
-                        this.poolActivated = !data.result;
-
-                });
-
-                WebDollar.StatusEvents.on("pools/status", (data) => {
-
-                    if (data.message === "Pool Started changed")
-                        this.poolActivated = data.result;
-
-                });
-
             }
 
         },
