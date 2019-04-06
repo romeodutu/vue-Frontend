@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="timeline">
-                        <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+                        <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
                         <span class="year">Q1 2018</span>
                         <div class="timeline-content">
                             <h5 class="title">BUILT IN BOUNTY PROGRAM</h5>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="timeline">
-                        <div class="timeline-icon"><i class="fa fa-gift"></i></div>
+                        <div class="timeline-icon"><i class="fas fa-hammer"></i></div>
                         <span class="year">Q3 2018</span>
                         <div class="timeline-content">
                             <h5 class="title">MINING POOLS & REFERRAL SYSTEM</h5>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div class="timeline">
-                        <div class="timeline-icon"><i class="fa fa-gift"></i></div>
+                        <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
                         <span class="year">Q3 2018</span>
                         <div class="timeline-content">
                             <h5 class="title">Offline Transactions</h5>
@@ -89,8 +89,8 @@
                             </p>
                         </div>
                     </div>
-                    <div class="timeline timelineUnfinishedMilestones">
-                        <div class="timeline-icon"><i class="fa fa-gift"></i></div>
+                    <div class="timeline">
+                        <div class="timeline-icon"><i class="fas fa-hammer"></i></div>
                         <span class="year">Q1 2019</span>
                         <div class="timeline-content">
                             <h5 class="title">Hybrid Mining</h5>
@@ -100,9 +100,9 @@
                         </div>
                     </div>
 
-                    <div class="timeline timelineUnfinishedMilestones">
-                        <div class="timeline-icon unfinishedMilestones"><i class="fa fa-gift"></i></div>
-                        <span class="year">PLANNED</span>
+                    <div class="timeline">
+                        <div class="timeline-icon unfinishedMilestones"><i class="fa fa-rocket"></i></div>
+                        <span class="year">IN PROGRESS</span>
                         <div class="timeline-content">
                             <h5 class="title">EXCHANGE LISTING</h5>
                             <p class="description">
@@ -111,8 +111,8 @@
                         </div>
                     </div>
                     <div class="timeline timelineUnfinishedMilestones">
-                        <div class="timeline-icon unfinishedMilestones"><i class="fa fa-gift"></i></div>
-                        <span class="year">PLANNED</span>
+                        <div class="timeline-icon unfinishedMilestones"><i class="fa fa-rocket"></i></div>
+                        <span class="year">IN PROGRESS</span>
                         <div class="timeline-content">
                             <h5 class="title">EVANGELISM & MARKETING</h5>
                             <p class="description">
@@ -157,6 +157,16 @@
                             <h5 class="title">SMART CONTRACTS</h5>
                             <p class="description">
                                 Developing a Smart Contracts Platform that allows  users to create their own financial assets — Webdollar Tokens.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline timelineUnfinishedMilestones">
+                        <div class="timeline-icon unfinishedMilestones"><i class="fa fa-gift"></i></div>
+                        <span class="year">PLANNED</span>
+                        <div class="timeline-content">
+                            <h5 class="title">WEBDOLLAR INVESTMENT PLATFORM</h5>
+                            <p class="description">
+                              Developing WIP - WebDollar Investment Platform, a solution to the many cases of developers failing to spend the investors funds for product development. SIP will reinvent ICO.
                             </p>
                         </div>
                     </div>
