@@ -60,7 +60,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Developers</span>
 
-            <div class="teamWrapper">
+            <div class="teamWrapper twoTeamColums">
 
                 <div class="our-team ">
                     <div class="team-pic">
@@ -93,7 +93,8 @@
                         Ionut is a software developer with over 10 years of experience working with web and mobile technologies. He is a Consensys certified developer and founder of <a href="https://www.hostero.eu" target="_blank">Hostero.eu</a>, a mining software for cryptocurrencies.
                     </p>
                 </div>
-
+    </div>
+    <div class="teamWrapper threeTeamColums">
                 <div class="our-team ">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/ConstantinBusuioceanu.jpeg" alt="Constantin Busuioceanu" title="Constantin Busuioceanu">
@@ -212,7 +213,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Ambassadors</span>
 
-            <div class="teamWrapper threeTeamColums">
+            <div class="teamWrapper twoTeamColums">
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -246,7 +247,9 @@
                         Yang Chengming has over 11 years of doing various businesses in the digital space including cryptocurrencies and other forms of digital money. Excellent knowledge and experience on the Asian crypto market.
                     </p>
                 </div>
-
+                   </div>
+                   
+            <div class="teamWrapper threeTeamColums">
                 <div class="our-team">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/Jhonson.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
