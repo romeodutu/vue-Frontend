@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="timeline">
-                        <div class="timeline-icon"><i class="fas fa-hammer"></i></div>
+                        <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
                         <span class="year">Q1 2019</span>
                         <div class="timeline-content">
                             <h5 class="title">Hybrid Mining</h5>
@@ -101,8 +101,8 @@
                     </div>
 
                     <div class="timeline">
-                        <div class="timeline-icon unfinishedMilestones"><i class="fa fa-rocket"></i></div>
-                        <span class="year">IN PROGRESS</span>
+                        <div class="timeline-icon"><i class="fa fa-gift"></i></div>
+                        <span class="year">ONGOING</span>
                         <div class="timeline-content">
                             <h5 class="title">EXCHANGE LISTING</h5>
                             <p class="description">
@@ -111,8 +111,8 @@
                         </div>
                     </div>
                     <div class="timeline timelineUnfinishedMilestones">
-                        <div class="timeline-icon unfinishedMilestones"><i class="fa fa-rocket"></i></div>
-                        <span class="year">IN PROGRESS</span>
+                        <div class="timeline-icon"><i class="fa fa-gift"></i></div>
+                        <span class="year">ONGOING</span>
                         <div class="timeline-content">
                             <h5 class="title">EVANGELISM & MARKETING</h5>
                             <p class="description">
