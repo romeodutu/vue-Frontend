@@ -166,7 +166,7 @@
                         <div class="timeline-content">
                             <h5 class="title">WEBDOLLAR INVESTMENT PLATFORM</h5>
                             <p class="description">
-                              Developing WIP - WebDollar Investment Platform, a solution to the many cases of developers failing to spend the investors funds for product development. SIP will reinvent ICO.
+                              Developing WIP, a platform that aims to help startups to access all the financial support they need, and at the same time to minimise the investors risks.
                             </p>
                         </div>
                     </div>
