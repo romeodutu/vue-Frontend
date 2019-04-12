@@ -10,7 +10,7 @@ DEMO: http://webdollar.io
 `npm install`
 
 
-#Instructions to run
+# Instructions to run
 
 `npm run dev`
 
