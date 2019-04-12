@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <span class="teamName">Razvan Ceana</span>
-                    <span class="teamRole">Software Engineer</span>
+                    <span class="teamRole">Senior Technical Manager</span>
                     <p class="description">
                         Răzvan is a software engineer with extensive experience in developing high scalability and high availability applications. He is part of a team that develops software for public procurement involving real time data processing and Blockchain research integrations.
                     </p>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <span class="teamName">Ionut Moraru</span>
-                    <span class="teamRole">Automation Engineer</span>
+                    <span class="teamRole">Automation Specialist</span>
                     <p class="description">
                         Ionut is a software developer with over 10 years of experience working with web and mobile technologies. He is a Consensys certified developer and founder of <a href="https://www.hostero.eu" target="_blank">Hostero.eu</a>, a mining software for cryptocurrencies.
                     </p>
