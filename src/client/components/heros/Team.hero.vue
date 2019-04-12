@@ -158,6 +158,23 @@
 
                 <div class="our-team">
                     <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/GeorgeAlexandruSfica.jpg" alt="Alexandru Sfica" title="Alexandru Sfica">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://www.linkedin.com/in/george-a-sfica-4a961a67" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://twitter.com/GSfica" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">George A. Sfica</span>
+                    <span class="teamRole">Operations Manager</span>
+                    <p>
+                        George is a high-end architectural designer, student at the University of West London. Passionate about entrepreneurship and cryptocurrency, founder of wesomi.com, a reward based social network.
+                    </p>
+                </div>
+
+                <div class="our-team">
+                    <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/CristianScurtu.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
                         <div class="over-layer">
                             <ul class="social-link">
@@ -188,6 +205,10 @@
                     </p>
                 </div>
 
+            </div>
+
+            <div class="teamWrapper twoTeamColums">
+
                 <div class="our-team">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/CatherineTocci.jpg" alt="Catherine Tocci" title="Catherine Tocci">
@@ -199,9 +220,26 @@
                         </div>
                     </div>
                     <span class="teamName">Catherine Tocci</span>
-                    <span class="teamRole">Marketing Strategist</span>
+                    <span class="teamRole">Press Release Manager</span>
                     <p>
                         Catherine is a marketing and communications strategist passionate about technology, innovation, and new businesses. Student at the University of Brasilia, UNODC/Brazil Youth Ambassador, and a member of the Global Shapers Community, an initiative of the World Economic Forum.
+                    </p>
+                </div>
+
+                <div class="our-team">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/gabrielPasca.jpg" alt="Gabriel Pasca" title="Gabriel Pasca">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://www.linkedin.com/in/catherinedefreitastocci/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://twitter.com/cathytocci" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Gabriel Paşca</span>
+                    <span class="teamRole">Public Relationships Manager</span>
+                    <p>
+                        With over 17 years public relationships experience and 2 years experience in crypto trading, his mission is to help every person to get acquainted with the Webdollar Project. He is an blockchain enthusiast and blockchain technologies became an important part of his life.
                     </p>
                 </div>
 
@@ -214,23 +252,6 @@
             <span class="pageTitle alignCenter bigMarginTop" >Ambassadors</span>
 
             <div class="teamWrapper twoTeamColums">
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/GeorgeAlexandruSfica.jpg" alt="Alexandru Sfica" title="Alexandru Sfica">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/george-a-sfica-4a961a67" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                                <li><a href="https://twitter.com/GSfica" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">George A. Sfica</span>
-                    <span class="teamRole">United Kingdom Ambassador</span>
-                    <p>
-                        George is a high-end architectural designer, student at the University of West London. Passionate about entrepreneurship and cryptocurrency, founder of wesomi.com, a reward based social network.
-                    </p>
-                </div>
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -247,9 +268,7 @@
                         Yang Chengming has over 11 years of doing various businesses in the digital space including cryptocurrencies and other forms of digital money. Excellent knowledge and experience on the Asian crypto market.
                     </p>
                 </div>
-                   </div>
-                   
-            <div class="teamWrapper threeTeamColums">
+
                 <div class="our-team">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/Jhonson.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
@@ -262,6 +281,26 @@
                     <span class="teamRole">Korea Ambassador</span>
                     <p>
                         Jhonson Zheong has a solid marketing background on the Asian markets, with years of experience in both digital and traditional communication and customer relationship management.
+                    </p>
+                </div>
+
+            </div>
+                   
+            <div class="teamWrapper twoTeamColums">
+
+                <div class="our-team">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/sergioR.jpg" alt="Sergio Radeglia" title="Sergio Radeglia">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://twitter.com/SergioRadeglia" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Sergio Radeglia</span>
+                    <span class="teamRole">Italy Ambassador</span>
+                    <p>
+                        Crypto investor and tech enthusiast. Sergio has been following and bought the idea of the project since its first steps, understanding the changemaker nature of WebDollar's technology and bringing people together to celebrate it.
                     </p>
                 </div>
 
@@ -278,22 +317,6 @@
                     <span class="teamRole">Africa Ambassador</span>
                     <p>
                         Tochukwu Kennedy is an ambitious entrepreneur which has has a vast experience in the digital space from blogging to the blockchain technology and he also has web developing and marketing skills.
-                    </p>
-                </div>
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/sergioR.jpg" alt="Sergio Radeglia" title="Sergio Radeglia">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://twitter.com/SergioRadeglia" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Sergio Radeglia</span>
-                    <span class="teamRole">Italy Ambassador</span>
-                    <p>
-                        Crypto investor and tech enthusiast. Sergio has been following and bought the idea of the project since its first steps, understanding the changemaker nature of WebDollar's technology and bringing people together to celebrate it.
                     </p>
                 </div>
 
