@@ -1,5 +1,4 @@
 <template>
-
     <div id="mainSection" class="fullSection">
         <div class="verticalAlignMiddle alignCenter modifyTop verticalAlignMiddleMobileFix webSiteVerticalMiddle" @scroll="this.scrollPassByLogo()">
 
@@ -24,18 +23,16 @@
                 </div>
 
             </div>
-
         </div>
     </div>
-
 </template>
 
 <script>
 
-    import LoadingSpinner from "client/components/UI/elements/Loading-Spinner.vue"
-    import WebDollarEmitter from "../../../utils/WebDollarEmitter";
+    import LoadingSpinner   from '../UI/elements/Loading-Spinner.vue';
+    import WebDollarEmitter from '../../../utils/WebDollarEmitter';
 
-    export default{
+    export default {
 
         name: "WebDollarHero",
 
@@ -43,7 +40,7 @@
             LoadingSpinner,
         },
 
-        data: ()=>{
+        data: () => {
             return {
                 status: 'Starting...',
                 loaded: false,
@@ -53,7 +50,7 @@
             }
         },
 
-        mounted(){
+        mounted() {
             const self = this;
             this.$nextTick(() => {
                 //pool
@@ -136,8 +133,8 @@
 
                 if (typeof window === "undefined") return;
 
-                var logo = this.$el.querySelector('#WebDollarLogo');
-                var logoHeight = logo.height;
+                let logo       = this.$el.querySelector('#WebDollarLogo');
+                let logoHeight = logo.height;
 
                 console.log( logoHeight + this.getPosition(logo).y );
                 console.log( window.scrollY )
@@ -146,10 +143,10 @@
 
             getPosition(element) {
 
-                var xPosition = 0;
-                var yPosition = 0;
+                let xPosition = 0;
+                let yPosition = 0;
 
-                while(element) {
+                while (element) {
                     xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
                     yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
                     element = element.offsetParent;
@@ -159,7 +156,5 @@
 
             },
         }
-
     }
-
 </script>

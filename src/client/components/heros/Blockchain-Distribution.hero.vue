@@ -70,8 +70,8 @@
 
 <script>
 
-    import LoadingSpinner   from 'client/components/UI/elements/Loading-Spinner.vue';
-    import Utils            from 'src/utils/util-functions';
+    import LoadingSpinner   from './../UI/elements/Loading-Spinner.vue';
+    import Utils            from './../../../utils/util-functions';
     import WebDollarEmitter from './../../../utils/WebDollarEmitter';
 
     export default{
@@ -125,21 +125,24 @@
             },
 
             changeRound(){
-                if(this.isPos)
-                    if(this.roundJustChanged)
+                if (this.isPos)
+                {
+                    if (this.roundJustChanged)
                         return false;
                     else
                         return true;
-                else
-                    if(this.roundJustChanged)
+                } else
+                {
+                    if (this.roundJustChanged)
                         return true;
                     else
                         return false;
+                }
             }
 
         },
 
-        mounted(){
+        mounted() {
             const self = this;
             this.$nextTick(() => {
                 if (WebDollar.Blockchain.synchronized) {
@@ -160,56 +163,64 @@
             WebDollarEmitter.off('blockchain/new-network-hash-rate', this._blockchainNewNetworkHashRate);
         },
 
-        methods:{
+        methods: {
             _blockchainBlocksCountChanged(blocksLength) {
                 this.verifyIfContainData( WebDollar.Blockchain.Chain.accountantTree.calculateNodeCoins() / 10000 );
                 this.blocksLength = blocksLength;
 
-                if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength ) ){
-
-                    if(!this.isPos){
-                        if(this.roundJustChanged !== null && this.blocksLength%10===0)
+                if (WebDollar.Blockchain.blockchainGenesis.isPoSActivated(blocksLength)) {
+                    if (!this.isPos) {
+                        if (this.roundJustChanged !== null && this.blocksLength % 10 === 0) {
                             this.roundJustChanged=true;
+                        }
 
-                        if(this.blocksLastRoundChange!==0)
+                        if (this.blocksLastRoundChange!==0) {
                             this.blocksLastRoundChange = this.blocksLength;
-                    }else
-                        if(this.blocksLength%10!==0)
+                        }
+                    } else {
+                        if (this.blocksLength % 10 !== 0) {
                             this.roundJustChanged=false;
+                        }
+                    }
 
                     this.isPos = true;
 
                 }
-                else{
-                    if(this.isPos){
-                        if(this.roundJustChanged !== null && this.blocksLength%10===0)
+                else {
+                    if (this.isPos) {
+                        if (this.roundJustChanged !== null && this.blocksLength % 10 === 0) {
                             this.roundJustChanged=true;
+                        }
 
-                        if(this.blocksLastRoundChange!==0)
+                        if(this.blocksLastRoundChange!==0) {
                             this.blocksLastRoundChange = this.blocksLength;
-                    }else
-                        if(this.blocksLength%10!==0)
+                        }
+                    } else {
+                        if (this.blocksLength%10!==0) {
                             this.roundJustChanged=false;
+                        }
+                    }
 
                     this.isPos = false;
                 }
 
-                if( this.blocksLastRoundChange===0 ){
+                if (this.blocksLastRoundChange===0) {
                     this.blocksLastRoundChange = this.blocksLength - this.blocksLength%10;
 
-                    if( WebDollar.Blockchain.blockchainGenesis.isPoSActivated( blocksLength-10 ) )
+                    if (WebDollar.Blockchain.blockchainGenesis.isPoSActivated(blocksLength - 10)) {
                         this.blocksLastRoundChange -= 10;
+                    }
                 }
 
-                if(this.roundJustChanged)
+                if (this.roundJustChanged)
                     this.roundBarValue = 0;
                 else
                     this.roundBarValue = (this.blocksLength-this.blocksLastRoundChange) / (this.isPos ? 20 : 10) * 100;
 
-                if(this.roundJustChanged === null && this.blocksLength%10===0)
+                if (this.roundJustChanged === null && this.blocksLength%10===0)
                     this.roundBarValue = 0;
 
-                if(this.isPos)
+                if (this.isPos)
                     this.roundBarValue+=1;
                 else
                     this.roundBarValue-=1;
@@ -228,8 +239,7 @@
             },
 
             formatMoneyNumber(n, decimals=2) {
-
-                if (n === undefined) return '';
+                if (typeof n === 'undefined') return '';
 
                 return n.toFixed(decimals).replace(/./g, function(c, i, a) {
                     return i && c !== "." && ((a.length - i) % 3 === 0) ? ',' + c : c;
@@ -250,9 +260,6 @@
             getNumberSign(value){
                 return Utils.processHashesSignPoW(value);
             }
-
         }
-
     }
-
 </script>
