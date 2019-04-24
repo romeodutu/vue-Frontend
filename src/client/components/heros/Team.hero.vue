@@ -60,7 +60,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Developers</span>
 
-            <div class="teamWrapper">
+            <div class="teamWrapper twoTeamColums">
 
                 <div class="our-team ">
                     <div class="team-pic">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <span class="teamName">Razvan Ceana</span>
-                    <span class="teamRole">Software Engineer</span>
+                    <span class="teamRole">Senior Technical Manager</span>
                     <p class="description">
                         Răzvan is a software engineer with extensive experience in developing high scalability and high availability applications. He is part of a team that develops software for public procurement involving real time data processing and Blockchain research integrations.
                     </p>
@@ -88,12 +88,13 @@
                         </div>
                     </div>
                     <span class="teamName">Ionut Moraru</span>
-                    <span class="teamRole">Automation Engineer</span>
+                    <span class="teamRole">Automation Specialist</span>
                     <p class="description">
                         Ionut is a software developer with over 10 years of experience working with web and mobile technologies. He is a Consensys certified developer and founder of <a href="https://www.hostero.eu" target="_blank">Hostero.eu</a>, a mining software for cryptocurrencies.
                     </p>
                 </div>
-
+    </div>
+    <div class="teamWrapper threeTeamColums">
                 <div class="our-team ">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/ConstantinBusuioceanu.jpeg" alt="Constantin Busuioceanu" title="Constantin Busuioceanu">
@@ -157,6 +158,23 @@
 
                 <div class="our-team">
                     <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/GeorgeAlexandruSfica.jpg" alt="Alexandru Sfica" title="Alexandru Sfica">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://www.linkedin.com/in/george-a-sfica-4a961a67" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://twitter.com/GSfica" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">George A. Sfica</span>
+                    <span class="teamRole">Operations Manager</span>
+                    <p>
+                        George is a high-end architectural designer, student at the University of West London. Passionate about entrepreneurship and cryptocurrency, founder of wesomi.com, a reward based social network.
+                    </p>
+                </div>
+
+                <div class="our-team">
+                    <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/CristianScurtu.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
                         <div class="over-layer">
                             <ul class="social-link">
@@ -187,6 +205,10 @@
                     </p>
                 </div>
 
+            </div>
+
+            <div class="teamWrapper twoTeamColums">
+
                 <div class="our-team">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/CatherineTocci.jpg" alt="Catherine Tocci" title="Catherine Tocci">
@@ -198,9 +220,26 @@
                         </div>
                     </div>
                     <span class="teamName">Catherine Tocci</span>
-                    <span class="teamRole">Marketing Strategist</span>
+                    <span class="teamRole">Press Release Manager</span>
                     <p>
                         Catherine is a marketing and communications strategist passionate about technology, innovation, and new businesses. Student at the University of Brasilia, UNODC/Brazil Youth Ambassador, and a member of the Global Shapers Community, an initiative of the World Economic Forum.
+                    </p>
+                </div>
+
+                <div class="our-team">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/gabrielPasca.jpg" alt="Gabriel Pasca" title="Gabriel Pasca">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://www.linkedin.com/in/catherinedefreitastocci/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://twitter.com/cathytocci" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Gabriel Paşca</span>
+                    <span class="teamRole">Public Relationships Manager</span>
+                    <p>
+                        With over 17 years public relationships experience and 2 years experience in crypto trading, his mission is to help every person to get acquainted with the Webdollar Project. He is an blockchain enthusiast and blockchain technologies became an important part of his life.
                     </p>
                 </div>
 
@@ -212,24 +251,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Ambassadors</span>
 
-            <div class="teamWrapper threeTeamColums">
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/GeorgeAlexandruSfica.jpg" alt="Alexandru Sfica" title="Alexandru Sfica">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/george-a-sfica-4a961a67" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                                <li><a href="https://twitter.com/GSfica" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">George A. Sfica</span>
-                    <span class="teamRole">United Kingdom Ambassador</span>
-                    <p>
-                        George is a high-end architectural designer, student at the University of West London. Passionate about entrepreneurship and cryptocurrency, founder of wesomi.com, a reward based social network.
-                    </p>
-                </div>
+            <div class="teamWrapper twoTeamColums">
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -262,21 +284,9 @@
                     </p>
                 </div>
 
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/lordBruce.jpg" alt="Tochukwu Kennedy. M" title="Tochukwu Kennedy. M">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/teekay-tochukwu-kennedy-m-lord-bruce-0a2260102" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Tochukwu Kennedy. M</span>
-                    <span class="teamRole">Africa Ambassador</span>
-                    <p>
-                        Tochukwu Kennedy is an ambitious entrepreneur which has has a vast experience in the digital space from blogging to the blockchain technology and he also has web developing and marketing skills.
-                    </p>
-                </div>
+            </div>
+                   
+            <div class="teamWrapper twoTeamColums">
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -291,6 +301,22 @@
                     <span class="teamRole">Italy Ambassador</span>
                     <p>
                         Crypto investor and tech enthusiast. Sergio has been following and bought the idea of the project since its first steps, understanding the changemaker nature of WebDollar's technology and bringing people together to celebrate it.
+                    </p>
+                </div>
+
+                <div class="our-team">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/lordBruce.jpg" alt="Tochukwu Kennedy. M" title="Tochukwu Kennedy. M">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://www.linkedin.com/in/teekay-tochukwu-kennedy-m-lord-bruce-0a2260102" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Tochukwu Kennedy. M</span>
+                    <span class="teamRole">Africa Ambassador</span>
+                    <p>
+                        Tochukwu Kennedy is an ambitious entrepreneur which has has a vast experience in the digital space from blogging to the blockchain technology and he also has web developing and marketing skills.
                     </p>
                 </div>
 

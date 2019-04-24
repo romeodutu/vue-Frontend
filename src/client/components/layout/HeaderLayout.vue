@@ -43,7 +43,7 @@
                 <div v-on:click="this.collapseMenuBack">Referral</div>
             </router-link>
 
-            <a href="https://google.com" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
+            <a href="https://p2pb2b.io/trade/WEBD_ETH" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
                 <div v-on:click="this.collapseMenuBack">Exchange</div>
             </a>
 
