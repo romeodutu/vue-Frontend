@@ -1,198 +1,208 @@
 <template>
+<div>
 
-    <div>
+  <layout v-show="!protocolUsedOnMultipleTabs">
 
-        <layout v-show="!protocolUsedOnMultipleTabs">
+    <div slot="content">
 
-            <div slot="content">
+      <web-dollar-hero />
 
-                <web-dollar-hero/>
+      <what-is-hero />
 
-                <what-is-hero/>
+      <peer-to-peer-hero />
 
-                <peer-to-peer-hero/>
+      <newsletter-hero />
 
-                <newsletter-hero/>
+      <new-crypto-generation-hero />
 
-                <new-crypto-generation-hero/>
+      <blockchain-distribution-hero />
 
-                <blockchain-distribution-hero/>
+      <miner-pool-hero v-show="!poolActivated" />
 
-                <miner-pool-hero v-show="!poolActivated"/>
+      <pool-hero v-show="poolActivated" />
 
-                <pool-hero v-show="poolActivated"/>
+      <paper />
 
-                <paper/>
+      <timeline-hero />
 
-                <timeline-hero/>
+      <team-hero />
 
-                <team-hero/>
-
-                <know-us-hero/>
-
-            </div>
-
-        </layout>
-
-        <multiple-tabs v-show="protocolUsedOnMultipleTabs"/>
+      <know-us-hero />
 
     </div>
 
+  </layout>
+
+  <multiple-tabs v-show="protocolUsedOnMultipleTabs" />
+
+</div>
 </template>
 
 <script>
+import Layout from "client/components/layout/Layout.vue";
 
-    import Layout from "client/components/layout/Layout.vue";
+import PoolHero from "client/components/heros/mining-pool/pool/Pool.hero.vue";
+import MinerPoolHero from "client/components/heros/mining-pool/miner-pool/Miner-Pool.hero.vue";
+import NewsletterHero from "client/components/heros/Newsletter.hero.vue";
+import TeamHero from "client/components/heros/Team.hero.vue";
+import WebDollarHero from "client/components/heros/WebDollar.hero.vue";
+import WhatIsHero from "client/components/heros/About.hero.vue";
+import PeerToPeerHero from "client/components/heros/Peer-To-Peer.hero.vue";
+import TimelineHero from "client/components/heros/Timeline.hero.vue";
+import KnowUsHero from "client/components/heros/Media.hero.vue";
+import FaqHero from "client/components/heros/Faq.hero.vue";
+import PartnersHero from "client/components/heros/Partners.hero.vue";
+import NewCryptoGenerationHero from "client/components/heros/Features.hero.vue";
+import BlockchainDistributionHero from "client/components/heros/Blockchain-Distribution.hero.vue";
+import MultipleTabs from "../components/heros/Multiple-Tabs.hero.vue";
+import Paper from "../components/heros/Paper.hero.vue";
 
-    import PoolHero from "client/components/heros/mining-pool/pool/Pool.hero.vue";
-    import MinerPoolHero from "client/components/heros/mining-pool/miner-pool/Miner-Pool.hero.vue";
-    import NewsletterHero from "client/components/heros/Newsletter.hero.vue";
-    import TeamHero from "client/components/heros/Team.hero.vue";
-    import WebDollarHero from "client/components/heros/WebDollar.hero.vue";
-    import WhatIsHero from "client/components/heros/About.hero.vue";
-    import PeerToPeerHero from "client/components/heros/Peer-To-Peer.hero.vue";
-    import TimelineHero from "client/components/heros/Timeline.hero.vue";
-    import KnowUsHero from "client/components/heros/Media.hero.vue";
-    import FaqHero from "client/components/heros/Faq.hero.vue";
-    import NewCryptoGenerationHero from "client/components/heros/Features.hero.vue";
-    import BlockchainDistributionHero from "client/components/heros/Blockchain-Distribution.hero.vue";
-    import MultipleTabs from "../components/heros/Multiple-Tabs.hero.vue";
-    import Paper from "../components/heros/Paper.hero.vue";
+export default {
 
-    export default {
+  name: "ViewHome",
 
-        name: "ViewHome",
+  components: {
+    Layout,
+    TeamHero,
+    WebDollarHero,
+    WhatIsHero,
+    PeerToPeerHero,
+    TimelineHero,
+    KnowUsHero,
+    FaqHero,
+    PartnersHero,
+    NewCryptoGenerationHero,
+    BlockchainDistributionHero,
+    PoolHero,
+    MinerPoolHero,
+    MultipleTabs,
+    NewsletterHero,
+    Paper
+  },
 
-        components:{
-            Layout,
-            TeamHero,
-            WebDollarHero,
-            WhatIsHero,
-            PeerToPeerHero,
-            TimelineHero,
-            KnowUsHero,
-            FaqHero,
-            NewCryptoGenerationHero,
-            BlockchainDistributionHero,
-            PoolHero,
-            MinerPoolHero,
-            MultipleTabs,
-            NewsletterHero,
-            Paper
-        },
+  data: () => {
+    return {
+      protocolUsedOnMultipleTabs: false,
+      poolActivated: true,
+    }
+  },
 
-        data: () => {
-            return {
-                protocolUsedOnMultipleTabs: false,
-                poolActivated: true,
-            }
-        },
+  mounted() {
 
-        mounted(){
+    window.addEventListener("load", () => {
 
-            window.addEventListener("load", () => {
+      if (typeof window === "undefined") return false;
 
-                if (typeof window === "undefined") return false;
+      WebDollar.StatusEvents.on("blockchain/status", (data) => {
 
-                WebDollar.StatusEvents.on("blockchain/status", (data)=>{
+        if (data.message === "Single Window") {
 
-                    if (data.message === "Single Window") {
+          this.protocolUsedOnMultipleTabs = false;
 
-                        this.protocolUsedOnMultipleTabs= false;
+        } else
+        if (data.message === "Multiple Windows Detected") {
 
-                    }else
-                    if (data.message === "Multiple Windows Detected"){
+          this.protocolUsedOnMultipleTabs = true;
 
-                        this.protocolUsedOnMultipleTabs=true;
+        }
 
-                    }
+      });
 
-                });
+      this.initializePool();
 
-                this.initializePool();
+      WebDollar.StatusEvents.on("blockchain/logs", (data) => {
 
-                WebDollar.StatusEvents.on("blockchain/logs", (data)=> {
+        switch (data.message) {
 
-                    switch (data.message) {
+          case "Network Adjusted Time Error":
 
-                        case "Network Adjusted Time Error":
+            setTimeout(() => {
+              location.reload();
+            }, 12022 * 1000);
 
-                            setTimeout(()=>{
-                                location.reload();
-                            }, 12022*1000);
+            break;
 
-                            break;
+          case "You mined way too many blocks":
 
-                        case "You mined way too many blocks":
+            setTimeout(() => {
+              location.reload();
+            }, 15 * 1000);
 
-                            setTimeout(()=>{
-                                location.reload();
-                            }, 15*1000);
+            break;
+        }
 
-                            break;
-                    }
-
-                });
+      });
 
 
-                this.loadPoolSettings();
+      this.loadPoolSettings();
 
-            });
+    });
 
-        },
+  },
 
-        methods:{
+  methods: {
 
-            async initializePool(){
-                
-//                if (this.$store.state.route.params.a !== "pool" || this.$store.state.route.params['0'].length < 10 )
-//                    return false;
+    async initializePool() {
 
-                WebDollar.StatusEvents.on("main-pools/status", async (data)=> {
+      //                if (this.$store.state.route.params.a !== "pool" || this.$store.state.route.params['0'].length < 10 )
+      //                    return false;
 
-                    if (data.message === "Pool Initialized") {
+      WebDollar.StatusEvents.on("main-pools/status", async (data) => {
 
-                        console.log("xxxx");
-                        await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$store.state.route.params['0']);
+        if (data.message === "Pool Initialized") {
 
-                        console.log(this.$store.state.route.params['0']);
-                    }
+          console.log("xxxx");
+          await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$store.state.route.params['0']);
 
-                });
+          console.log(this.$store.state.route.params['0']);
+        }
 
-            },
+      });
 
-            loadPoolSettings(){
+    },
 
-                if (WebDollar.Blockchain.PoolManagement !== undefined && WebDollar.Blockchain.PoolManagement.poolStarted) this.poolActivated = true;
-                else if (WebDollar.Blockchain.MinerPoolManagement !== undefined && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) this.poolActivated = false;
-                else this.poolActivated = false;
+    loadPoolSettings() {
 
-                WebDollar.StatusEvents.on("miner-pool/status", (data) => {
+      if (WebDollar.Blockchain.PoolManagement !== undefined && WebDollar.Blockchain.PoolManagement.poolStarted) this.poolActivated = true;
+      else if (WebDollar.Blockchain.MinerPoolManagement !== undefined && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) this.poolActivated = false;
+      else this.poolActivated = false;
 
-                    if (data.message === "Miner Pool Started changed")
-                        this.poolActivated = !data.result;
+      WebDollar.StatusEvents.on("miner-pool/status", (data) => {
 
-                });
+        if (data.message === "Miner Pool Started changed")
+          this.poolActivated = !data.result;
 
-                WebDollar.StatusEvents.on("pools/status", (data) => {
+      });
 
-                    if (data.message === "Pool Started changed")
-                        this.poolActivated = data.result;
+      WebDollar.StatusEvents.on("pools/status", (data) => {
 
-                });
+        if (data.message === "Pool Started changed")
+          this.poolActivated = data.result;
 
-            }
-
-        },
-
-        async asyncData ({ store,  route: { params: { a,b, c, d, e, f }} }) {
-
-            return true;
-
-        },
-
+      });
 
     }
 
+  },
+
+  async asyncData({
+    store,
+    route: {
+      params: {
+        a,
+        b,
+        c,
+        d,
+        e,
+        f
+      }
+    }
+  }) {
+
+    return true;
+
+  },
+
+
+}
 </script>
