@@ -231,8 +231,8 @@
                         <img class="lazy" data-src="/public/assets/images/team/gabrielPasca.jpg" alt="Gabriel Pasca" title="Gabriel Pasca">
                         <div class="over-layer">
                             <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/catherinedefreitastocci/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                                <li><a href="https://twitter.com/cathytocci" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
+                                <li><a href="https://www.linkedin.com/in/gabriel-pasca-06792b184" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://twitter.com/gabriel_miruna" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
                             </ul>
                         </div>
                     </div>
