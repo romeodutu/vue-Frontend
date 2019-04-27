@@ -100,7 +100,7 @@
                         <img class="lazy" data-src="/public/assets/images/team/ConstantinBusuioceanu.jpeg" alt="Constantin Busuioceanu" title="Constantin Busuioceanu">
                             <div class="over-layer">
                                 <ul class="social-link">
-                                    <li><a href="https://www.linkedin.com/in/busuioceanu-constantin/" class="fa fa-linkedin" rel="noopener" target="_blank" aria-label="linkedin"></a></li>
+                                    <li><a href="https://www.linkedin.com/in/busuioceanu-constantin/" class="fa fa-linkedin2" rel="noopener" target="_blank" aria-label="linkedin"></a></li>
                                     <li><a href="https://www.facebook.com/cbusuioceanu" class="fa fa-facebook" rel="noopener" target="_blank" aria-label="facebook"></a></li>
                                     <li><a href="https://github.com/cbusuioceanu" class="fa fa-github" rel="noopener" target="_blank" aria-label="github"></a></li>
                                 </ul>
