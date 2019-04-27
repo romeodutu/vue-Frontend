@@ -7,7 +7,7 @@
 
     <div class="faqSection">
 
-      <collapse-faq :selected="false" ref="exchanges">
+      <collapse-faq :selected="false" ref="exchanges" id="exchanges">
         <div slot="collapse-header">
           EXCHANGES
         </div>
@@ -70,11 +70,10 @@
             </div>
           </div>
 
-
         </div>
       </collapse-faq>
 
-      <collapse-faq :selected="false" ref="trackers">
+      <collapse-faq :selected="false" ref="trackers" id="trackers">
         <div slot="collapse-header">
           TRACKERS
         </div>
@@ -212,7 +211,7 @@
         </div>
       </collapse-faq>
 
-      <collapse-faq :selected="false" ref="businesses">
+      <collapse-faq :selected="false" ref="businesses"  id="businesses">
         <div slot="collapse-header">
           BUSINESSES
         </div>
@@ -281,8 +280,6 @@
               <!-- <span class="business-name">Shop Aji</span> -->
             </div>
           </div>
-
-
         </div>
       </collapse-faq>
 
@@ -292,7 +289,7 @@
   </div>
 
   <center>
-    <!-- <h2 class="bottom-message">Want to become our partner? <a href="https://t.me/WebDollar">Talk to us on Telegram!</a></h2> -->
+    <h2 class="bottom-message">Want to become our partner? <a href="https://t.me/WebDollar">Talk to us on Telegram!</a></h2>
   </center>
 
 </div>
@@ -331,8 +328,11 @@ export default {
 }
 
 .partner-logo:hover {
-  transform: scale(1.2);
-  transition: .2s transform;
+  transform: scale(1.1);
+  -webkit-transition: transform .3s ease-out;
+  -moz-transition: transform .3s ease-out;
+  -o-transition: transform .3s ease-out;
+  transition: transform .3s ease-out;
 }
 
 @media only screen and (max-width: 600px) {
@@ -359,13 +359,16 @@ export default {
 
 .bottom-message {
 
-  width: auto;
+  /* width: auto;
   position: absolute;
   bottom: 10px;
   left: 0;
   right: 0;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
+  position: -webkit-sticky; /* Safari */
+position: sticky;
+top: 0;
 
 }
 
@@ -505,11 +508,12 @@ export default {
 }
 
 .business-name:hover {
-  /* font-size: 45px;
-  border: 3px solid; */
-  box-shadow: 2px 4px #1b1b1b;
+  color: #fec02c;
   border-color: #1b1b1b;
-  transform: scale(1.05);
-  transition: .2s transform;
+  background-color: #1b1b1b;
+  -webkit-transition: background-color .3s ease-out;
+  -moz-transition: background-color .3s ease-out;
+  -o-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
 }
 </style>
