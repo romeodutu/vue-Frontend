@@ -1489,6 +1489,12 @@ background-color:#ff2200}
   grid-column-gap: 30px;
 }
 
+.partnerContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 30px;
+}
+
 .textAlignCenter{
   text-align: center;
   letter-spacing: 1px;
