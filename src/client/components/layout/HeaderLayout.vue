@@ -42,12 +42,16 @@
       <div v-on:click="this.collapseMenuBack">Referral</div>
     </router-link>
 
-    <!-- <a href="https://p2pb2b.io/trade/WEBD_ETH" :class="mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-                <div v-on:click="this.collapseMenuBack">Exchange</div>
-            </a> -->
+    <a href="https://academy.webdollar.io" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " rel="noopener" target="_blank">
+      <div v-on:click="this.collapseMenuBack">Academy</div>
+    </a>
+
+    <router-link to="/partners/businesses" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
+      <div v-on:click="this.collapseMenuBack">Partners</div>
+    </router-link>
 
     <router-link to="/partners/exchanges" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">
-      <div v-on:click="this.collapseMenuBack">Partners</div>
+      <div v-on:click="this.collapseMenuBack">Exchange</div>
     </router-link>
 
     <a href="javascript:void(0);" style="font-size:15px;" :style="{display: (mobileMenuOpened || isMobile==false) ? 'none':'block'}" class="icon showMenu" @click="this.showMobileMenu" :class="mobileMenuOpened ? 'openedMenuLink' : '' ">&#9776;</a>
@@ -144,4 +148,5 @@ export default {
   }
 
 }
+
 </script>
