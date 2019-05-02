@@ -110,8 +110,11 @@
                 if (answer){
                     this.fetchingList = false;
 
-                    for (let i=0; i<answer.length; i++)
-                        Vue.set(this.list, answer[i].id, answer[i])
+                    for (let i=0; i<answer.length; i++) {
+                      var elem = answer[i];
+                      elem.url = 'https://twitter.com/' + elem.network_handle + '/status/' + elem.network_id;
+                      Vue.set(this.list, elem.id, elem)
+                    }
 
                     this.error = '';
                 } else {
