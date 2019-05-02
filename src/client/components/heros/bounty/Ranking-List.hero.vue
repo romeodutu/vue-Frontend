@@ -133,7 +133,8 @@
                   answer = answer.data;
 
                   if (answer.length > 0) {
-                    this.id = answer[0].id;
+                    // Get last bounty
+                    this.id = answer[answer.length-1].id;
                   } else {
                     this.id = 0;
                   }
