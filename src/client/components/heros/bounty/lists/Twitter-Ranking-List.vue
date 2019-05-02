@@ -27,19 +27,19 @@
                     </div>
                     <div class="mobileTableShow">
                         <span class="mobileTableShowTitle">Tweet content:</span>
-                        <div class="title">{{element.description.substr(0, 50).replace(/\n/g,'')}}</div>
+                        <div class="title">{{element.network_text.substr(0, 50).replace(/\n/g,'')}}</div>
                     </div>
                     <div class="mobileTableShow">
                         <span class="mobileTableShowTitle">UserName:</span>
-                        <div>{{element.username}}</div>
+                        <div>{{element.network_handle}}</div>
                     </div>
                     <div class="mobileTableShow">
                         <span class="mobileTableShowTitle">Likes:</span>
-                        <div>{{element.likes}}</div>
+                        <div>{{element.network_likes}}</div>
                     </div>
                     <div class="mobileTableShow">
                         <span class="mobileTableShowTitle">Tweets:</span>
-                        <div>{{element.shares}}</div>
+                        <div>{{element.network_shares}}</div>
                     </div>
                     <div class="mobileTableShow">
                         <span class="mobileTableShowTitle">Comments:</span>

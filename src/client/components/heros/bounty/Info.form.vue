@@ -40,10 +40,10 @@
         <div class="campaignInfo">
 
             <span class="infoLine">
-                <b>Bounty registration:</b> {{ this.info.type }}
+                <b>Bounty registration:</b> {{ this.info.registration }}
             </span>
             <span class="infoLine">
-                <b>Conditions of participation:</b> {{ this.info.requirement }}
+                <b>Conditions of participation:</b> {{ this.info.conditions }}
             </span>
             <span class="infoLine">
                 <b>Scoring formula:</b> {{this.info.formula}}
@@ -57,10 +57,10 @@
                 </div>
             </span>
             <span class="infoLine">
-                <b>Obtain the reward:</b> {{this.info.redeem}}
+                <b>Obtain the reward:</b> {{this.info.description}}
             </span>
             <span class="infoLine">
-                <b class="capitalize">{{this.type}} bounty Amount:</b> {{this.info.reward}}
+                <b class="capitalize">{{this.type}} bounty Amount:</b> {{this.info.amount}} WEBD
             </span>
 
         </div>
@@ -95,76 +95,76 @@
                 refreshCountDownSeconds: 0,
 
                 youtube:{
-                    type: "Automatic",
-                    requirement: 'Include "WebDollar" in description and title',
+                    registration: "Automatic",
+                    conditions: 'Include "WebDollar" in description and title',
                     formula: "( Views/10 + Comments*2 )*( ThumbsUp / ThumbsDown*2 )/40",
                     update: "",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "10.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "10.000",
+                    end_date: commonDeadline,
                 },
                 facebook:{
-                    type: "Register post link",
-                    requirement: 'Include WebDollar in the content',
+                    registration: "Register post link",
+                    conditions: 'Include WebDollar in the content',
                     formula: " (Likes + 3*shares + 1.5*comments)/30",
                     update: "",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "10.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "10.000",
+                    end_date: commonDeadline,
                 },
                 instagram:{
-                    type: "Automatic",
-                    requirement: 'Include #WebDollar in post',
+                    registration: "Automatic",
+                    conditions: 'Include #WebDollar in post',
                     formula: " (Likes + 2*comments)/10",
                     update: "",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "5.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "5.000",
+                    end_date: commonDeadline,
                 },
                 twitter:{
-                    type: "Automatic",
-                    requirement: 'Include #WebDollar in post',
+                    registration: "Automatic",
+                    conditions: 'Include #WebDollar in post',
                     formula: " (Followers/100 + Friends/100 + Likes + Shares*5)/10",
                     update: "",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "15.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "15.000",
+                    end_date: commonDeadline,
                 },
                 telegram:{
-                    type: "Automatic",
-                    requirement: 'Be a member in the group, promote meaningful conversations and invite people (maximum 2 at a time)',
+                    registration: "Automatic",
+                    conditions: 'Be a member in the group, promote meaningful conversations and invite people (maximum 2 at a time)',
                     formula: " (Messages/100 + Invitations) ",
                     update: "Every day",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "20.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "20.000",
+                    end_date: commonDeadline,
                 },
                 "telegram RO":{
-                    type: "Automatic",
-                    requirement: 'Be a member in the group, promote meaningful conversations and invite people (maximum 2 at a time)',
+                    registration: "Automatic",
+                    conditions: 'Be a member in the group, promote meaningful conversations and invite people (maximum 2 at a time)',
                     formula: " (Messages/100 + Invitations) ",
                     update: "Every day",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "5.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "5.000",
+                    end_date: commonDeadline,
                 },
                 reddit:{
-                    type: "Automatic",
-                    requirement: 'Discus on the /r/WebDollar subreddit',
+                    registration: "Automatic",
+                    conditions: 'Discus on the /r/WebDollar subreddit',
                     formula: " (RedditScore*2 + comments)/10 ",
                     update: "",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "10.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "10.000",
+                    end_date: commonDeadline,
                 },
                 website:{
-                    type: "Automatic",
-                    requirement: 'Discus on the WebDollar in Title and Description',
+                    registration: "Automatic",
+                    conditions: 'Discus on the WebDollar in Title and Description',
                     formula: " Google PageRank + Score*2 ",
                     update: "",
-                    redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
-                    reward: "1.000 WEBD",
-                    deadline: commonDeadline,
+                    description: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
+                    amount: "1.000",
+                    end_date: commonDeadline,
                 },
 
 
@@ -207,14 +207,14 @@
         props:{
             type: {default: ''},
             onLinkSubmitted: {default: ()=>{}},
-            deadline : {default: "Sep 5, 2018 15:37:25" },
+            end_date : {default: "Sep 5, 2018 15:37:25" },
         },
 
         methods:{
 
             countDown(){
 
-                let countDownDate = new Date(this.info.deadline).getTime();
+                let countDownDate = new Date(this.info.end_date).getTime();
 
                 // Get todays date and time
                 let now = new Date().getTime();
@@ -253,9 +253,18 @@
 
         },
 
-        mounted(){
+        async mounted(){
 
             if (typeof window === "undefined") return false;
+
+            let answer = await axios.get(consts.SERVER_API+"bounties?network=twitter");
+
+            if (answer.data.length > 0) {
+              // Get last bounty
+              let bounty = answer.data[answer.data.length-1];
+              this.twitter = bounty;
+              this.twitter.update = '';
+            }
 
             setInterval(()=>{
 
