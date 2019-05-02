@@ -100,7 +100,7 @@
                         <img class="lazy" data-src="/public/assets/images/team/ConstantinBusuioceanu.jpeg" alt="Constantin Busuioceanu" title="Constantin Busuioceanu">
                             <div class="over-layer">
                                 <ul class="social-link">
-                                    <li><a href="https://www.linkedin.com/in/busuioceanu-constantin/" class="fa fa-linkedin" rel="noopener" target="_blank" aria-label="linkedin"></a></li>
+                                    <li><a href="https://www.linkedin.com/in/busuioceanu-constantin/" class="fa fa-linkedin2" rel="noopener" target="_blank" aria-label="linkedin"></a></li>
                                     <li><a href="https://www.facebook.com/cbusuioceanu" class="fa fa-facebook" rel="noopener" target="_blank" aria-label="facebook"></a></li>
                                     <li><a href="https://github.com/cbusuioceanu" class="fa fa-github" rel="noopener" target="_blank" aria-label="github"></a></li>
                                 </ul>
@@ -231,8 +231,8 @@
                         <img class="lazy" data-src="/public/assets/images/team/gabrielPasca.jpg" alt="Gabriel Pasca" title="Gabriel Pasca">
                         <div class="over-layer">
                             <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/catherinedefreitastocci/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                                <li><a href="https://twitter.com/cathytocci" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
+                                <li><a href="https://www.linkedin.com/in/gabriel-pasca-06792b184" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+                                <li><a href="https://twitter.com/gabriel_miruna" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
                             </ul>
                         </div>
                     </div>
