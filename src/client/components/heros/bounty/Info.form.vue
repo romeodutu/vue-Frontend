@@ -128,7 +128,7 @@
                     update: "",
                     redeem: "At the end of the bounty campaign period, please send a email to bounties@webdollar.io with the post link and your position in the list and after the launch of the main net you will receive the reward",
                     reward: "15.000 WEBD",
-                    deadline: commonDeadline,
+                    deadline: 'May 24, 2019 00:00',
                 },
                 telegram:{
                     type: "Automatic",

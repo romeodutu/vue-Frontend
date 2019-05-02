@@ -1,5 +1,5 @@
 export default {
 
-    SERVER_API: "https://webdollar-vps2.ddns.net:8084/"
+    SERVER_API: "http://bounty.api.webdollar.io/v1/"
 
 };
