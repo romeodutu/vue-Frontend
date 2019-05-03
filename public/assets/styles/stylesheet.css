@@ -2149,7 +2149,7 @@ background-color:#ff2200}
 .normalSpan{
   width: auto;
   display: inline-block;
-  float: right;
+  float: right !important;
 }
 
 .redColor{
