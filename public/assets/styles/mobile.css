@@ -329,7 +329,7 @@
 
 
   #createPoolSection .distributionContainer{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .stat-columns {
@@ -433,7 +433,7 @@
         margin-top: 30px!important;
     }
 
-    .threeTeamColums, .twoTeamColums{
+    .fourTeamColums, .threeTeamColums, .twoTeamColums{
         grid-template-columns: 1fr!important;
     }
 
@@ -585,7 +585,7 @@
     }
 
     .createPoolSection .distributionContainer {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         grid-row-gap: 50px;
         padding-top: 0;
     }
