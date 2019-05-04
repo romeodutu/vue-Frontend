@@ -13,11 +13,11 @@
         </div>
         <div slot="collapse-body">
 
-          <div class="partnerWrapper threeTeamColums">
+          <div class="partnerWrapper twoTeamColums">
+
             <div>
               <div class="team-pic">
                 <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/p2pb2b.png" alt="P2PB2B" title="P2PB2B.io"></a>
-
                 <div class="partners-box">
                   <ul class="partner-list">
                     <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
@@ -34,11 +34,10 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/bitrabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
-
+                <a href="https://bitrabbit.com/markets/webd_eth" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/bitrabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
-                    <li><a href="https://bitrabbit.com" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                    <li><a href="https://bitrabbit.com/markets/webd_eth" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                     <li><a href="https://twitter.com/Bitrabbit_Team" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                   </ul>
                 </div>
@@ -50,10 +49,31 @@
               </p>
             </div>
 
+          </div>
+
+          <div class="partnerWrapper twoTeamColums">
+
             <div>
               <div class="team-pic">
-                <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/gymbase.png" alt="GymBase" title="GymBase.io"></a>
+                <a href="https://bitebtc.com/trade/webd_btc" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/bitebtc.jpg" alt="BiteBTC" title="BiteBTC.com"></a>
+                <div class="partners-box">
+                  <ul class="partner-list">
+                    <li><a href="https://bitebtc.com/trade/webd_btc" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                    <li><a href="https://twitter.com/bitebtccom" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <span class="teamName">BiteBTC</span>
+              <span class="teamRole">Crypto Exchange</span>
+              <p class="description">
+                BiteBTC is a crypto currency exchange platform that unites the main players of the market. BiteBTC always supports cooperation with the world's most popular crypto-currencies and makes it possible to profit from electronic money
+                transfer transactions.</a>
+              </p>
+            </div>
 
+            <div>
+              <div class="team-pic">
+                <a href="https://gymbase.io/exchange/?market=WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/gymbase.png" alt="GymBase" title="GymBase.io"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
                     <li><a href="https://gymbase.io/exchange/?market=WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
@@ -61,13 +81,14 @@
                   </ul>
                 </div>
               </div>
-
               <span class="teamName">GymBase</span>
               <span class="teamRole">Crypto Exchange</span>
               <p class="description">
                 GymBase Smart Trading allows you to setup your trades based on technical analysis and our Artificial Intelligence tools or just simple stop limits.</a>
               </p>
             </div>
+
+
           </div>
 
         </div>
@@ -80,10 +101,10 @@
         <div slot="collapse-body">
 
           <div class="partnerWrapper threeTeamColums">
+
             <div>
               <div class="team-pic">
                 <a href="https://coinmarketcap.com/currencies/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/coinmarketcap.png" alt="CoinMarketCap" title="CoinMarketCap"></a>
-
                 <div class="partners-box">
                 </div>
               </div>
@@ -94,7 +115,6 @@
               <div class="team-pic">
                 <a href="https://www.coingecko.com/en/coins/webdollar?utm_content=webdollar&utm_medium=search_coin&utm_source=coingecko" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinGecko.png" alt="CoinGecko"
                     title="CoinGecko"></a>
-
                 <div class="partners-box">
                 </div>
               </div>
@@ -103,30 +123,29 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://coinmarketcal.com/en/coin/webdollar" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinMarketCal.png" alt="CoinMarketCal" title="CoinMarketCal"></a>
-
+                <a href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Blockfolio.png" alt="Blockfolio" title="Blockfolio"></a>
                 <div class="partners-box">
                 </div>
               </div>
-              <span class="teamName">CoinMarketCal</span>
+              <span class="teamName">Blockfolio</span>
             </div>
+
           </div>
 
           <div class="partnerWrapper threeTeamColums">
+
             <div>
               <div class="team-pic">
-                <a href="https://neironix.io/cryptocurrency/webd" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Neironix.png" alt="Neironix" title="Neironix"></a>
-
+                <a href="https://play.google.com/store/apps/details?id=io.getdelta.android" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Delta.jpg" alt="Delta" title="Delta"></a>
                 <div class="partners-box">
                 </div>
               </div>
-              <span class="teamName">Neironix</span>
+              <span class="teamName">Delta</span>
             </div>
 
             <div>
               <div class="team-pic">
                 <a href="https://coincheckup.com/coins/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinCheckUp.png" alt="Coin Check Up" title="Coin Check Up"></a>
-
                 <div class="partners-box">
                 </div>
               </div>
@@ -136,7 +155,6 @@
             <div>
               <div class="team-pic">
                 <a href="https://coinmarketdaddy.com/currencies/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinMarketDaddy.png" alt="Coin Market Daddy" title="Coin Market Daddy"></a>
-
                 <div class="partners-box">
                 </div>
               </div>
@@ -145,14 +163,14 @@
           </div>
 
           <div class="partnerWrapper threeTeamColums">
+
             <div>
               <div class="team-pic">
-                <a href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Blockfolio.png" alt="Blockfolio" title="Blockfolio"></a>
-
+                <a href="https://coinmarketcal.com/en/coin/webdollar" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinMarketCal.png" alt="CoinMarketCal" title="CoinMarketCal"></a>
                 <div class="partners-box">
                 </div>
               </div>
-              <span class="teamName">Blockfolio</span>
+              <span class="teamName">CoinMarketCal</span>
             </div>
 
             <div>
@@ -168,7 +186,6 @@
             <div>
               <div class="team-pic">
                 <a href="https://www.livecoinwatch.com/price/WebDollar-WEBD" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Livecoinwatch.png" alt="Livecoinwatch" title="Livecoinwatch"></a>
-
                 <div class="partners-box">
                 </div>
               </div>
@@ -176,11 +193,10 @@
             </div>
           </div>
 
-          <div class="partnerWrapper threeTeamColums">
+          <div class="partnerWrapper fourTeamColums">
             <div>
               <div class="team-pic">
                 <a href="https://coincodex.com/crypto/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Coincodex.png" alt="Coincodex" title="Coincodex"></a>
-
                 <div class="partners-box">
                 </div>
               </div>
@@ -189,8 +205,16 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://coingolive.com/en/coins/webdollar/usd/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Coingolive.png" alt="Coingolive" title="Coingolive"></a>
+                <a href="https://neironix.io/cryptocurrency/webd" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Neironix.png" alt="Neironix" title="Neironix"></a>
+                <div class="partners-box">
+                </div>
+              </div>
+              <span class="teamName">Neironix</span>
+            </div>
 
+            <div>
+              <div class="team-pic">
+                <a href="https://coingolive.com/en/coins/webdollar/usd/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Coingolive.png" alt="Coingolive" title="Coingolive"></a>
                 <div class="partners-box">
                 </div>
               </div>
@@ -200,18 +224,18 @@
             <div>
               <div class="team-pic">
                 <a href="https://b.today/coin/webd/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/B.Today.png" alt="B.Today" title="B.Today"></a>
-
                 <div class="partners-box">
                 </div>
               </div>
               <span class="teamName">B.Today</span>
             </div>
+
           </div>
 
         </div>
       </collapse-faq>
 
-      <collapse-faq :selected="false" ref="businesses"  id="businesses">
+      <collapse-faq :selected="false" ref="businesses" id="businesses">
         <div slot="collapse-header">
           BUSINESSES
         </div>
@@ -366,9 +390,10 @@ export default {
   right: 0;
   margin-left: auto;
   margin-right: auto; */
-  position: -webkit-sticky; /* Safari */
-position: sticky;
-top: 0;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
 
 }
 
