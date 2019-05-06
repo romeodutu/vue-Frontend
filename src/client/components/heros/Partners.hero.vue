@@ -17,7 +17,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/p2pb2b.png" alt="P2PB2B" title="P2PB2B.io"></a>
+                <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
                     <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
@@ -34,7 +34,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://bitrabbit.com/markets/webd_eth" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/bitrabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
+                <a href="https://bitrabbit.com/markets/webd_eth" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitRabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
                     <li><a href="https://bitrabbit.com/markets/webd_eth" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
@@ -55,7 +55,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://bitebtc.com/trade/webd_btc" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/bitebtc.jpg" alt="BiteBTC" title="BiteBTC.com"></a>
+                <a href="https://bitebtc.com/trade/webd_btc" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BiteBTC.jpg" alt="BiteBTC" title="BiteBTC.com"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
                     <li><a href="https://bitebtc.com/trade/webd_btc" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
@@ -73,7 +73,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://gymbase.io/exchange/?market=WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/gymbase.png" alt="GymBase" title="GymBase.io"></a>
+                <a href="https://gymbase.io/exchange/?market=WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/GymBase.png" alt="GymBase" title="GymBase.io"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
                     <li><a href="https://gymbase.io/exchange/?market=WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
@@ -104,7 +104,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://coinmarketcap.com/currencies/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/coinmarketcap.png" alt="CoinMarketCap" title="CoinMarketCap"></a>
+                <a href="https://coinmarketcap.com/currencies/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinMarketCap.png" alt="CoinMarketCap" title="CoinMarketCap"></a>
                 <div class="partners-box">
                 </div>
               </div>
@@ -123,7 +123,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Blockfolio.png" alt="Blockfolio" title="Blockfolio"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BlockFolio.png" alt="Blockfolio" title="Blockfolio"></a>
                 <div class="partners-box">
                 </div>
               </div>
@@ -175,7 +175,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://coinranking.com/coin/webdollar-webd" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Coinranking.png" alt="Coinranking" title="Coinranking"></a>
+                <a href="https://coinranking.com/coin/webdollar-webd" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinRanking.png" alt="Coinranking" title="Coinranking"></a>
 
                 <div class="partners-box">
                 </div>
@@ -185,7 +185,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://www.livecoinwatch.com/price/WebDollar-WEBD" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Livecoinwatch.png" alt="Livecoinwatch" title="Livecoinwatch"></a>
+                <a href="https://www.livecoinwatch.com/price/WebDollar-WEBD" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/LiveCoinWatch.png" alt="LiveCoinWatch" title="LiveCoinWatch"></a>
                 <div class="partners-box">
                 </div>
               </div>
@@ -196,7 +196,7 @@
           <div class="partnerWrapper fourTeamColums">
             <div>
               <div class="team-pic">
-                <a href="https://coincodex.com/crypto/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Coincodex.png" alt="Coincodex" title="Coincodex"></a>
+                <a href="https://coincodex.com/crypto/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinCodex.png" alt="Coincodex" title="CoinCodex"></a>
                 <div class="partners-box">
                 </div>
               </div>
@@ -214,7 +214,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://coingolive.com/en/coins/webdollar/usd/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Coingolive.png" alt="Coingolive" title="Coingolive"></a>
+                <a href="https://coingolive.com/en/coins/webdollar/usd/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinGoLive.png" alt="CoinGoLive" title="CoinGoLive"></a>
                 <div class="partners-box">
                 </div>
               </div>
