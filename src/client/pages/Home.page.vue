@@ -1,5 +1,4 @@
 <template>
-
     <div>
 
         <layout v-show="!protocolUsedOnMultipleTabs">
@@ -37,11 +36,9 @@
         <multiple-tabs v-show="protocolUsedOnMultipleTabs"/>
 
     </div>
-
 </template>
 
 <script>
-
     import Layout from "client/components/layout/Layout.vue";
 
     import PoolHero from "client/components/heros/mining-pool/pool/Pool.hero.vue";
@@ -54,17 +51,18 @@
     import TimelineHero from "client/components/heros/Timeline.hero.vue";
     import KnowUsHero from "client/components/heros/Media.hero.vue";
     import FaqHero from "client/components/heros/Faq.hero.vue";
+    import PartnersHero from "client/components/heros/Partners.hero.vue";
     import NewCryptoGenerationHero from "client/components/heros/Features.hero.vue";
     import BlockchainDistributionHero from "client/components/heros/Blockchain-Distribution.hero.vue";
     import MultipleTabs from "../components/heros/Multiple-Tabs.hero.vue";
     import Paper from "../components/heros/Paper.hero.vue";
-    import WebDollarEmitter from "../../utils/WebDollarEmitter";
+    import WebDollarEmitter from './../../utils/WebDollarEmitter';
 
     export default {
 
         name: "ViewHome",
 
-        components:{
+        components: {
             Layout,
             TeamHero,
             WebDollarHero,
@@ -73,6 +71,7 @@
             TimelineHero,
             KnowUsHero,
             FaqHero,
+            PartnersHero,
             NewCryptoGenerationHero,
             BlockchainDistributionHero,
             PoolHero,
@@ -86,18 +85,18 @@
             return {
                 protocolUsedOnMultipleTabs: false,
                 poolActivated: true,
-            }
+            };
         },
 
-        mounted(){
+        mounted() {
             const self = this;
 
             this.$nextTick(() => {
                 WebDollarEmitter.on('blockchain/status', self._blockchainStatus);
                 WebDollarEmitter.on('main-pools/status', self.initializePool);
-                WebDollarEmitter.on('blockchain/logs',   self._blockchainLogs);
+                WebDollarEmitter.on('blockchain/logs', self._blockchainLogs);
                 WebDollarEmitter.on('miner-pool/status', self._minerPoolStatus);
-                WebDollarEmitter.on("pools/status",      self._poolsStatus);
+                WebDollarEmitter.on("pools/status", self._poolsStatus);
 
                 self.loadPoolSettings();
             });
@@ -106,33 +105,33 @@
         destroyed() {
             WebDollarEmitter.off('blockchain/status', this._blockchainStatus);
             WebDollarEmitter.off('main-pools/status', this.initializePool);
-            WebDollarEmitter.off('blockchain/logs',   this._blockchainLogs);
+            WebDollarEmitter.off('blockchain/logs', this._blockchainLogs);
             WebDollarEmitter.off('miner-pool/status', this._minerPoolStatus);
-            WebDollarEmitter.off("pools/status",      this._poolsStatus);
+            WebDollarEmitter.off("pools/status", this._poolsStatus);
         },
 
-        methods:{
+        methods: {
             _blockchainStatus(data) {
                 if (data.message === "Single Window") {
-                    this.protocolUsedOnMultipleTabs= false;
+                    this.protocolUsedOnMultipleTabs = false;
                 } else if (data.message === "Multiple Windows Detected") {
-                    this.protocolUsedOnMultipleTabs=true;
+                    this.protocolUsedOnMultipleTabs = true;
                 }
             },
 
             _blockchainLogs(data) {
                 switch (data.message) {
                     case "Network Adjusted Time Error":
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             location.reload();
-                        }, 12022*1000);
+                        }, 12022 * 1000);
 
                         break;
 
                     case "You mined way too many blocks":
-                        setTimeout(()=>{
+                        setTimeout(() => {
                             location.reload();
-                        }, 15*1000);
+                        }, 15 * 1000);
 
                         break;
                 }
@@ -164,22 +163,14 @@
                 }
             },
 
-            loadPoolSettings(){
-
+            loadPoolSettings() {
                 if (WebDollar.Blockchain.PoolManagement !== undefined && WebDollar.Blockchain.PoolManagement.poolStarted) this.poolActivated = true;
                 else if (WebDollar.Blockchain.MinerPoolManagement !== undefined && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) this.poolActivated = false;
                 else this.poolActivated = false;
             }
-
         },
-
-        async asyncData ({ store,  route: { params: { a,b, c, d, e, f }} }) {
-
+        async asyncData({ store, route: { params: { a, b, c, d, e, f }}}) {
             return true;
-
         },
-
-
-    }
-
+    };
 </script>

@@ -327,6 +327,21 @@
 
 @media only screen and (max-width : 831px) {
 
+
+  #createPoolSection .distributionContainer{
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  }
+
+  /* .stat-box, .stat-box-link {
+        font-size: 90% !important;
+  } */
+
     .backgroundVideoWrap{
         display: none;
     }
@@ -396,6 +411,9 @@
     #paper{
         padding-top: 100px;
     }
+.verticalAlignMiddle{
+
+}
 
 }
 
@@ -415,7 +433,7 @@
         margin-top: 30px!important;
     }
 
-    .threeTeamColums, .twoTeamColums{
+    .fourTeamColums, .threeTeamColums, .twoTeamColums{
         grid-template-columns: 1fr!important;
     }
 
@@ -461,6 +479,7 @@
     .fullSection .verticalAlignMiddle{
         top:auto;
         transform: none;
+
     }
 
     .infoSection{
@@ -566,7 +585,7 @@
     }
 
     .createPoolSection .distributionContainer {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         grid-row-gap: 50px;
         padding-top: 0;
     }

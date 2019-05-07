@@ -43,7 +43,7 @@
             <facebook-ranking-list v-if="this.type === 'facebook'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></facebook-ranking-list>
             <youtube-ranking-list v-if="this.type === 'youtube'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></youtube-ranking-list>
             <instagram-ranking-list v-if="this.type === 'instagram'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></instagram-ranking-list>
-            <twitter-ranking-list v-if="this.type === 'twitter'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></twitter-ranking-list>
+            <twitter-ranking-list v-if="this.type === 'twitter'" :list="this.sortedArray" :type="this.type" :id="this.id" :fetchingList="this.fetchingList"></twitter-ranking-list>
             <telegram-ranking-list v-if="this.type === 'telegram'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></telegram-ranking-list>
             <telegram-ranking-list v-if="this.type === 'telegram RO'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></telegram-ranking-list>
             <reddit-ranking-list v-if="this.type === 'reddit'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></reddit-ranking-list>
@@ -75,6 +75,7 @@
         data: () => {
             return {
                 type: 'youtube',
+                id: 0,
                 error: '',
                 list: {},
                 page:0,
@@ -102,16 +103,18 @@
 
                 this.fetchingList = true;
 
-                let answer = await axios.get(consts.SERVER_API+"get-ranking/"+this.type+"/"+page);
+                let answer = await axios.get(consts.SERVER_API+"submissions?bounty_id="+this.id);
 
                 answer = answer.data;
 
-                if (answer.result){
-
+                if (answer){
                     this.fetchingList = false;
 
-                    for (let i=0; i<answer.data.length; i++)
-                        Vue.set(this.list, answer.data[i].id, answer.data[i])
+                    for (let i=0; i<answer.length; i++) {
+                      var elem = answer[i];
+                      elem.url = 'https://twitter.com/' + elem.network_handle + '/status/' + elem.network_id;
+                      Vue.set(this.list, elem.id, elem)
+                    }
 
                     this.error = '';
                 } else {
@@ -120,15 +123,26 @@
 
             },
 
-            handleChangeType(type){
+            async handleChangeType(type){
 
                 if (this.type !== type){
 
-                    this.type = type;
-                    this.page = 0;
-                    this.list = {};
+                  this.type = type;
+                  this.page = 0;
+                  this.list = {};
 
-                    this.downloadList(this.page);
+                  let answer = await axios.get(consts.SERVER_API+"bounties?network="+type);
+
+                  answer = answer.data;
+
+                  if (answer.length > 0) {
+                    // Get last bounty
+                    this.id = answer[answer.length-1].id;
+                  } else {
+                    this.id = 0;
+                  }
+
+                  this.downloadList(this.page);
                 }
 
             },

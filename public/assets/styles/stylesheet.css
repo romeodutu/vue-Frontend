@@ -131,11 +131,19 @@ a:hover{
   /*-webkit-filter: grayscale(100%); !* Safari 6.0 - 9.0 *!*/
   /*filter: grayscale(100%);*/
 }
+.oneColumn{
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
 .twoColums{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.oneTeamColums{
+  grid-template-columns: 1fr !important;
+}
+
 
 .twoTeamColums{
   grid-template-columns: 1fr 1fr!important;
@@ -491,7 +499,7 @@ background-color:#ff2200}
 }
 
 .yellowColor{
-  color: #fcd26c;
+  color: #fec02c;
 }
 
 .main-timeline{
@@ -1278,7 +1286,7 @@ background-color:#ff2200}
   line-height: 20px;
   font-size: 16px;
   letter-spacing: 1px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .createPoolLink{
@@ -1374,10 +1382,11 @@ background-color:#ff2200}
 .createPoolSection .subtitle{
   text-align: center;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 20px;
-  color: #fec02c;
+  text-transform: uppercase !important;
+  font-size: 20px !important;
+  color: #ffc12c !important;
 }
+
 
 .createPoolSection .createPoolLink{
   width: 80%!important;
@@ -1486,6 +1495,12 @@ background-color:#ff2200}
 .faqContainer{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+}
+
+.partnerContainer{
+  display: grid;
+  grid-template-columns: 1fr;
   grid-column-gap: 30px;
 }
 
@@ -2128,12 +2143,13 @@ background-color:#ff2200}
 }
 
 .oneLineText{
-  display: block;
+  display: inline !important;
 }
 
 .normalSpan{
   width: auto;
   display: inline-block;
+  float: right !important;
 }
 
 .redColor{

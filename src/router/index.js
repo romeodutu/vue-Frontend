@@ -10,39 +10,76 @@ const Bounty = () => import('client/pages/Bounty.page.vue');
 const ExplorerBlocks = () => import('client/pages/Explorer.page.vue');
 const AdminPage = () => import('client/pages/Admin.page.vue');
 const FaqPage = () => import('client/pages/Faq.page.vue');
+const PartnersPage = () => import('client/pages/Partners.page.vue');
 const ClearIndexedDBPage = () => import('client/pages/ClearIndexedDB.page.vue');
 
-export function createRouter (){
+export function createRouter() {
 
-    return new Router({
-        mode: 'history',
-        scrollBehavior(to, from, savedPosition) {
-            //console.log('router scroll', to, from, to === from);
+  return new Router({
+    mode: 'history',
+    scrollBehavior(to, from, savedPosition) {
+      //console.log('router scroll', to, from, to === from);
 
-            if (savedPosition) {
-                return savedPosition
-            } else {
-                if (to.hash) {
-                    return {
-                        selector: to.hash
-                    }
-                }
-            }
+      if (savedPosition) {
+        return savedPosition
+      } else {
+        if (to.hash) {
+          return {
+            selector: to.hash
+          }
+        }
+      }
 
-        },
-        routes: [
+    },
+    routes: [
 
-            { path: '/explorer/:a?', component: ExplorerBlocks },
-            { path: '/explorer', component: ExplorerBlocks },
-            { path: '/bounties', component: Bounty },
-            { path: '/faq/:qHash?', component: FaqPage, name: 'faq' },
-            { path: '/pool', component: AdminPage },
-            { path: '/pool/:a?', component: AdminPage },
-            { path: '/clearIndexedDB', component: ClearIndexedDBPage },
-            { path: '/:a?/*', component: HomePage },
-            { path: '/:a?', component: HomePage },
-            { path: '/', component: HomePage },
+      {
+        path: '/explorer/:a?',
+        component: ExplorerBlocks
+      },
+      {
+        path: '/explorer',
+        component: ExplorerBlocks
+      },
+      {
+        path: '/bounties',
+        component: Bounty
+      },
+      {
+        path: '/faq/:qHash?',
+        component: FaqPage,
+        name: 'faq'
+      },
+      {
+        path: '/partners/:qHash?',
+        component: PartnersPage,
+        name: 'partners'
+      },
+      {
+        path: '/pool',
+        component: AdminPage
+      },
+      {
+        path: '/pool/:a?',
+        component: AdminPage
+      },
+      {
+        path: '/clearIndexedDB',
+        component: ClearIndexedDBPage
+      },
+      {
+        path: '/:a?/*',
+        component: HomePage
+      },
+      {
+        path: '/:a?',
+        component: HomePage
+      },
+      {
+        path: '/',
+        component: HomePage
+      },
 
-        ]
-    })
+    ]
+  })
 }
