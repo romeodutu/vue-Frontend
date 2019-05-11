@@ -25,23 +25,23 @@
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Title:</span>
-                    <div class="title">{{element.title.substring(0, 50)}}</div>
+                    <div class="title">{{element.network_text.substring(0, 50)}}</div>
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Views:</span>
-                    <div>{{numberWithCommas(element.views)}}</div>
+                    <div>{{numberWithCommas(element.network_views)}}</div>
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Comments:</span>
-                    <div>{{element.comments}}</div>
+                    <div>-</div>
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">T-Up:</span>
-                    <div>{{element.thumbsUp}}</div>
+                    <div>{{element.network_likes}}</div>
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">T-Down:</span>
-                    <div>{{element.thumbsDown}}</div>
+                    <div>{{element.network_dislikes}}</div>
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Score:</span>
