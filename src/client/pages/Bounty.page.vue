@@ -23,6 +23,7 @@
     import Layout from "client/components/layout/Layout.vue";
     import RankingList from "client/components/heros/bounty/Ranking-List.hero.vue";
     import MultipleTabs from "../components/heros/Multiple-Tabs.hero.vue";
+    import WebDollarEmitter from "../../utils/WebDollarEmitter";
 
     export default {
 
@@ -40,30 +41,27 @@
             }
         },
 
+        methods: {
+            _blockchainStatus(data) {
+                if (data.message === "Single Window") {
+                    this.protocolUsedOnMultipleTabs = false;
+                } else if (data.message === "Multiple Windows Detected") {
+                    this.protocolUsedOnMultipleTabs = true;
+                }
+            }
+        },
+
         mounted(){
+            const self = this;
 
-            window.addEventListener("load", () => {
-
-                if (typeof window === "undefined") return false;
-
-                WebDollar.StatusEvents.on("blockchain/status", (data) => {
-
-                    if (data.message === "Single Window") {
-
-                        this.protocolUsedOnMultipleTabs = false;
-
-                    } else if (data.message === "Multiple Windows Detected") {
-
-                        this.protocolUsedOnMultipleTabs = true;
-
-                    }
-
-                });
-
+            this.$nextTick(() => {
+                WebDollarEmitter.on('blockchain/status', self._blockchainStatus);
             });
+        },
 
+        destroyed() {
+            WebDollarEmitter.off('blockchain/status', this._blockchainStatus);
         }
-
     }
 
 </script>

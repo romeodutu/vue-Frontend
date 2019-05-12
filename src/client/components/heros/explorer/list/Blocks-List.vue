@@ -50,6 +50,7 @@
     import Chart from "client/components/UI/elements/Chart.vue"
     import Utils from 'src/utils/util-functions'
     import Transactions from './Transactions.vue'
+    import WebDollarEmitter from "../../../../../utils/WebDollarEmitter";
 
     export default{
 
@@ -74,7 +75,7 @@
 
             updateChart(blocks, start,stop){
 
-                var newData = [];
+                let newData = [];
 
                 for (let i=stop-1; i>=start; i--){
 
@@ -95,9 +96,9 @@
 
             addNewBlock(block){
 
-                var founded = false;
+                let founded = false;
 
-                for (var i =0 ;i<this.data.length;i++){
+                for (let i =0 ;i<this.data.length;i++){
 
                     if (this.data[i].height === block.height)
                         founded=true;
@@ -187,8 +188,8 @@
                         callbacks: {
                             label: (tooltipItems, data) => {
 
-                                var balance = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index];
-                                var address = data.labels[tooltipItems.index];
+                                let balance = data.datasets[tooltipItems.datasetIndex].data[tooltipItems.index];
+                                let address = data.labels[tooltipItems.index];
                                 balance = Utils.formatMoneyNumber(balance);
                                 return address + ' - ' + balance+' WEBD';
                             }
@@ -197,9 +198,9 @@
 
                 };
 
-                for(var i=0;i<chartData.length; i++){
+                for(let i=0;i<chartData.length; i++){
 
-                    var color = Utils.generateRandomcolor(chartData[i].address);
+                    let color = Utils.generateRandomcolor(chartData[i].address);
 
                     this.chartData.datasets[0].data.push(chartData[i].reward);
                     this.chartData.labels.push(chartData[i].address);
@@ -215,8 +216,23 @@
 
                 this.loaded = true;
 
-            }
+            },
 
+            _blockchainBlocksCountChanged(blocksLength) {
+                this.addNewBlock(WebDollar.Blockchain.blockchain.blocks[blocksLength - 1]);
+            },
+
+            _blockchainStatus(data) {
+                if (data.message === "Blockchain Ready to Mine") {
+
+                    let start  = WebDollar.Blockchain.blockchain.blocks.blocksStartingPoint;
+                    let stop   = WebDollar.Blockchain.blockchain.blocks.length;
+                    let blocks = WebDollar.Blockchain.blockchain.blocks;
+                    this.data  = this.updateChart(blocks, start, stop);
+
+                    this.createChardData(self.data);
+                }
+            }
         },
 
         computed:{
@@ -227,48 +243,28 @@
 
         },
 
-        mounted(){
-
-            window.addEventListener("load", () => {
-
-                if (typeof window === "undefined") return false;
-
+        mounted() {
+            const self = this;
+            this.$nextTick(() => {
                 if (WebDollar.Blockchain.synchronized) {
 
-                    var start = WebDollar.Blockchain.blockchain.blocks.blocksStartingPoint;
-                    var stop = WebDollar.Blockchain.blockchain.blocks.length;
-
+                    let start  = WebDollar.Blockchain.blockchain.blocks.blocksStartingPoint;
+                    let stop   = WebDollar.Blockchain.blockchain.blocks.length;
                     let blocks = WebDollar.Blockchain.blockchain.blocks;
-                    this.data = this.updateChart(blocks, start, stop);
-                    this.createChardData(this.data);
+                    self.data  = self.updateChart(blocks, start, stop);
+                    self.createChardData(this.data);
 
                 }
 
-                WebDollar.StatusEvents.emitter.on("blockchain/status", (data) => {
-
-                    if (data.message === "Blockchain Ready to Mine") {
-
-                        var start = WebDollar.Blockchain.blockchain.blocks.blocksStartingPoint;
-                        var stop = WebDollar.Blockchain.blockchain.blocks.length;
-
-                        let blocks = WebDollar.Blockchain.blockchain.blocks;
-                        this.data = this.updateChart(blocks, start, stop);
-                        this.createChardData(this.data);
-
-                        WebDollar.StatusEvents.on("blockchain/blocks-count-changed", (blocksLength) => {
-
-                            this.addNewBlock(WebDollar.Blockchain.blockchain.blocks[blocksLength - 1]);
-
-                        });
-
-                    }
-
-                });
-
+                WebDollarEmitter.on("blockchain/status",               self._blockchainStatus);
+                WebDollarEmitter.on("blockchain/blocks-count-changed", self._blockchainBlocksCountChanged);
             });
+        },
 
+        destroyed() {
+            WebDollarEmitter.off('blockchain/status',               this._blockchainStatus);
+            WebDollarEmitter.off('blockchain/blocks-count-changed', this._blockchainBlocksCountChanged);
         }
-
     }
 
 </script>

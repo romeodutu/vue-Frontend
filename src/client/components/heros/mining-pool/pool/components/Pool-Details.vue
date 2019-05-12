@@ -65,6 +65,8 @@
 
 <script>
 
+    import WebDollarEmitter from "../../../../../../utils/WebDollarEmitter";
+
     export default{
 
         props: {
@@ -81,47 +83,22 @@
         },
 
         mounted(){
+            const self = this;
 
-            if (typeof window === "undefined") return;
+            this.$nextTick(() => {
+                WebDollar.Blockchain.onLoaded.then((answer)=>{
+                    self.loaded = true;
+                    self.loadData();
+                });
 
-            WebDollar.Blockchain.onLoaded.then((answer)=>{
-
-                this.loaded = true;
-                this.loadData();
-
+                WebDollarEmitter.on('pools/status',   self._poolsStatus);
+                WebDollarEmitter.on('pools/settings', self._poolsSettings);
             });
+        },
 
-            WebDollar.StatusEvents.on("pools/status", (data)=>{
-
-                switch (data.message === ""){
-
-                    case "Pool Initialization changed":
-                        this.initialized = data.result;
-                        break;
-
-                    case "Pool Opened changed":
-                        this.open = data.result;
-                        break;
-
-                    case "Pool Started changed":
-                        this.started = data.result;
-                        break;
-
-                }
-
-            });
-
-            WebDollar.StatusEvents.on("pools/settings", (data)=>{
-
-
-                if (data.message === "Pool Settings were saved"){
-
-                    this.getPoolServers( data.poolServers );
-
-                }
-
-            });
-
+        destroyed() {
+            WebDollarEmitter.off('pools/status',   this._poolsStatus);
+            WebDollarEmitter.off('pools/settings', this._poolsSettings);
         },
 
         methods: {
@@ -137,13 +114,34 @@
 
             getPoolServers(poolServers){
 
-                if (poolServers === undefined)
+                if (typeof poolServers === 'undefined')
                     poolServers = WebDollar.Blockchain.PoolManagement.poolSettings.poolServers;
 
                 this.poolServers = WebDollar.Applications.PoolsUtilsHelper.getPoolServersStatus(poolServers);
 
-            }
+            },
 
+            _poolsStatus(data) {
+                switch (data.message) {
+                    case "Pool Initialization changed":
+                        this.initialized = data.result;
+                        break;
+
+                    case "Pool Opened changed":
+                        this.open = data.result;
+                        break;
+
+                    case "Pool Started changed":
+                        this.started = data.result;
+                        break;
+                }
+            },
+
+            _poolsSettings(data) {
+                if (data.message === "Pool Settings were saved") {
+                    this.getPoolServers( data.poolServers );
+                }
+            }
         },
 
     }
