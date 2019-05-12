@@ -10,7 +10,7 @@
                 <div>No.</div>
                 <div class="title">Title</div>
                 <div>Views</div>
-                <div>Comments</div>
+                <!--<div>Comments</div>-->
                 <div>T-Up</div>
                 <div>T-Down</div>
                 <div>Score</div>
@@ -31,10 +31,10 @@
                     <span class="mobileTableShowTitle">Views:</span>
                     <div>{{numberWithCommas(element.network_views)}}</div>
                 </div>
-                <div class="mobileTableShow">
-                    <span class="mobileTableShowTitle">Comments:</span>
-                    <div>-</div>
-                </div>
+                <!--<div class="mobileTableShow">-->
+                    <!--<span class="mobileTableShowTitle">Comments:</span>-->
+                    <!--<div>-</div>-->
+                <!--</div>-->
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">T-Up:</span>
                     <div>{{element.network_likes}}</div>
