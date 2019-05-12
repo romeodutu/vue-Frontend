@@ -257,13 +257,22 @@
 
             if (typeof window === "undefined") return false;
 
-            let answer = await axios.get(consts.SERVER_API+"bounties?network=twitter");
+            let twitter_call = await axios.get(consts.SERVER_API+"bounties?network=twitter");
 
-            if (answer.data.length > 0) {
+            if (twitter_call.data.length > 0) {
               // Get last bounty
-              let bounty = answer.data[answer.data.length-1];
+              let bounty = twitter_call.data[twitter_call.data.length-1];
               this.twitter = bounty;
               this.twitter.update = '';
+            }
+
+            let youtube_call = await axios.get(consts.SERVER_API+"bounties?network=youtube");
+
+            if (youtube_call.data.length > 0) {
+              // Get last bounty
+              let bounty = youtube_call.data[youtube_call.data.length-1];
+              this.youtube = bounty;
+              this.youtube.update = '';
             }
 
             setInterval(()=>{

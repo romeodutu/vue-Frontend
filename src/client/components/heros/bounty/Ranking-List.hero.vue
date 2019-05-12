@@ -41,7 +41,7 @@
             </div>
 
             <facebook-ranking-list v-if="this.type === 'facebook'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></facebook-ranking-list>
-            <youtube-ranking-list v-if="this.type === 'youtube'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></youtube-ranking-list>
+            <youtube-ranking-list v-if="this.type === 'youtube'" :list="this.sortedArray" :type="this.type" :id="this.id" :fetchingList="this.fetchingList"></youtube-ranking-list>
             <instagram-ranking-list v-if="this.type === 'instagram'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></instagram-ranking-list>
             <twitter-ranking-list v-if="this.type === 'twitter'" :list="this.sortedArray" :type="this.type" :id="this.id" :fetchingList="this.fetchingList"></twitter-ranking-list>
             <telegram-ranking-list v-if="this.type === 'telegram'" :list="this.sortedArray" :type="this.type" :fetchingList="this.fetchingList"></telegram-ranking-list>
@@ -75,7 +75,7 @@
         data: () => {
             return {
                 type: 'youtube',
-                id: 0,
+                id: 2,
                 error: '',
                 list: {},
                 page:0,
@@ -112,7 +112,21 @@
 
                     for (let i=0; i<answer.length; i++) {
                       var elem = answer[i];
-                      elem.url = 'https://twitter.com/' + elem.network_handle + '/status/' + elem.network_id;
+
+                      switch(this.type) {
+                        case 'twitter':
+                          elem.url = 'https://twitter.com/' + elem.network_handle + '/status/' + elem.network_id;
+                        break;
+
+                        case 'youtube':
+                          elem.url = 'https://www.youtube.com/watch?v=' + elem.network_id;
+                        break;
+
+                        default:
+                          elem.url = 'https://webdolar.io'
+                        break;
+                      }
+
                       Vue.set(this.list, elem.id, elem)
                     }
 

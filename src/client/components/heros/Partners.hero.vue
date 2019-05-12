@@ -55,7 +55,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://bitebtc.com/trade/webd_btc" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BiteBTC.jpg" alt="BiteBTC" title="BiteBTC.com"></a>
+                <a href="https://bitebtc.com/trade/webd_btc" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BiteBTC.png" alt="BiteBTC" title="BiteBTC.com"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
                     <li><a href="https://bitebtc.com/trade/webd_btc" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
@@ -136,7 +136,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://play.google.com/store/apps/details?id=io.getdelta.android" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Delta.jpg" alt="Delta" title="Delta"></a>
+                <a href="https://play.google.com/store/apps/details?id=io.getdelta.android" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Delta.png" alt="Delta" title="Delta"></a>
                 <div class="partners-box">
                 </div>
               </div>
