@@ -11,21 +11,21 @@
                 <!--<span @click="this.handleChangeToFacebook" :class="this.type==='facebook' ? 'selectedCampaign' : ''">-->
                     <!--<i class="fa fa-facebook2"></i>-->
                 <!--</span>-->
-                <span @click="this.handleChangeToInstagram" :class="this.type==='instagram' ? 'selectedCampaign' : ''" aria-label="instagram">
-                    <i class="fa fa-instagram"></i>
-                </span>
+                <!--<span @click="this.handleChangeToInstagram" :class="this.type==='instagram' ? 'selectedCampaign' : ''" aria-label="instagram">-->
+                    <!--<i class="fa fa-instagram"></i>-->
+                <!--</span>-->
                 <span @click="this.handleChangeToTwitter" :class="this.type==='twitter' ? 'selectedCampaign' : ''" aria-label="twitter">
                     <i class="fa fa-twitter"></i>
                 </span>
-                <span @click="this.handleChangeToTelegramWebDollar" :class="this.type==='telegram' ? 'selectedCampaign' : ''" aria-label="telegram">
-                    <i class="fa fa-telegram"></i>
-                </span>
-                <span @click="this.handleChangeToTelegramWebDollarRO" :class="this.type==='telegram RO' ? 'selectedCampaign' : ''" aria-label="telegram">
-                    <i class="fa fa-telegram"></i>
-                </span>
-                <span @click="this.handleChangeToReddit" :class="this.type==='reddit' ? 'selectedCampaign' : ''" aria-label="reddit">
-                    <i class="fa fa-reddit-alien"></i>
-                </span>
+                <!--<span @click="this.handleChangeToTelegramWebDollar" :class="this.type==='telegram' ? 'selectedCampaign' : ''" aria-label="telegram">-->
+                    <!--<i class="fa fa-telegram"></i>-->
+                <!--</span>-->
+                <!--<span @click="this.handleChangeToTelegramWebDollarRO" :class="this.type==='telegram RO' ? 'selectedCampaign' : ''" aria-label="telegram">-->
+                    <!--<i class="fa fa-telegram"></i>-->
+                <!--</span>-->
+                <!--<span @click="this.handleChangeToReddit" :class="this.type==='reddit' ? 'selectedCampaign' : ''" aria-label="reddit">-->
+                    <!--<i class="fa fa-reddit-alien"></i>-->
+                <!--</span>-->
                 <!--<span @click="this.handleChangeToWebsite" :class="this.type==='website' ? 'selectedCampaign' : ''">-->
                     <!--<i class="fa fa-earth"></i>-->
                 <!--</span>-->
