@@ -133,8 +133,8 @@ export default {
 
       });
 
-
       this.loadPoolSettings();
+      this.prefillPaymentIfPaymentPropsAreAvailable();
 
     });
 
@@ -181,8 +181,24 @@ export default {
 
       });
 
-    }
+    },
 
+    prefillPaymentIfPaymentPropsAreAvailable() {
+
+      WebDollar.StatusEvents.on("blockchain/mining/address", (data)=>{
+        
+          let toAddress = this.$route.params.toAddress;
+          let toAmount = this.$route.params.toAmount;
+
+          if (toAddress || toAmount) {
+            WebDollar.StatusEvents.emit('wallet/transfer', {
+              toAddress: toAddress, 
+              toAmount: toAmount
+            })
+          }
+          
+      })
+    }
   },
 
   async asyncData({
