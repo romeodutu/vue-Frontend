@@ -49,12 +49,15 @@
                 <b>Scoring formula:</b> {{this.info.formula}}
             </span>
             <span class="infoLine">
+                <b>List updated every hour</b>
+                <!--
                 <div v-if="this.info.update == ''">
                     <b>Next list update:</b> {{this.refreshCountDownSeconds + ' seconds left'}}
                 </div>
                 <div v-if="this.info.update != ''">
                     <b>Next list update:</b> {{this.info.update}}
                 </div>
+                -->
             </span>
             <span class="infoLine">
                 <b>Obtain the reward:</b> {{this.info.description}}
