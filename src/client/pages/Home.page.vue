@@ -133,8 +133,8 @@ export default {
 
       });
 
-
       this.loadPoolSettings();
+      this.prefillPaymentIfPaymentPropsAreAvailable();
 
     });
 
@@ -181,12 +181,34 @@ export default {
 
       });
 
-    }
+    },
 
+    prefillPaymentIfPaymentPropsAreAvailable() {
+
+      WebDollar.StatusEvents.once("blockchain/mining/address", (data) => {
+          
+          let toAddress = this.$route.params.toAddress;
+           if (!toAddress) {
+            return;
+          }
+          if (toAddress.length < 40) { // An unencoded address' length is always 40. A '#' shortens the address param.
+            this.$router.push('/'); // Hide params in Browser URL bar in case of wrong URLs.
+            alert('Please URL-encode the wallet address in the direct payment URL.');
+            return;
+          }
+          let toAmount = this.$route.params.toAmount ? this.$route.params.toAmount.replace(',', '.') : null;
+         
+          WebDollar.StatusEvents.emit('wallet/transfer', {
+            toAddress: toAddress, 
+            toAmount: toAmount
+          });          
+
+      });
+    },
   },
 
   async asyncData({
-    store,
+    store, 
     route: {
       params: {
         a,
