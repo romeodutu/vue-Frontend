@@ -103,7 +103,7 @@
 
                 this.fetchingList = true;
 
-                let answer = await axios.get(consts.SERVER_API+"submissions?bounty_id="+this.id);
+                let answer = await axios.get(consts.SERVER_API+"submissions?status=ready&bounty_id="+this.id);
 
                 answer = answer.data;
 
