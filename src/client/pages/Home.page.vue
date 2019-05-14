@@ -185,7 +185,7 @@ export default {
 
     prefillPaymentIfPaymentPropsAreAvailable() {
 
-      WebDollar.StatusEvents.on("blockchain/mining/address", (data)=>{
+      WebDollar.StatusEvents.once("blockchain/mining/address", (data)=>{
         
           let toAddress = this.$route.params.toAddress;
           let toAmount = this.$route.params.toAmount;
