@@ -1,5 +1,6 @@
 export default {
 
-    SERVER_API: "http://bounty.api.webdollar.io/v1/"
+    SERVER_API: "https://bounty.api.webdollar.io/v1/"
+    //SERVER_API: "http://localhost:8999/v1/"
 
 };

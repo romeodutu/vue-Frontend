@@ -56,6 +56,10 @@ export function createRouter() {
         name: 'partners'
       },
       {
+        path: '/payment/:toAddress/:toAmount?',
+        component: HomePage
+      },
+      {
         path: '/pool',
         component: AdminPage
       },

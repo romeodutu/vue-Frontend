@@ -12,6 +12,10 @@ class WebDollarEmitter
         this.getEmitter().once(eventName, fCallback);
     }
 
+    static emit(...args) {
+        return WebDollar.StatusEvents.emit.apply(null, args);
+    }
+
     static getEmitter() {
         return WebDollar.StatusEvents._emitter;
     }
