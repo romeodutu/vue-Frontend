@@ -40,7 +40,6 @@
 
 <script>
     import Layout from "client/components/layout/Layout.vue";
-
     import PoolHero from "client/components/heros/mining-pool/pool/Pool.hero.vue";
     import MinerPoolHero from "client/components/heros/mining-pool/miner-pool/Miner-Pool.hero.vue";
     import NewsletterHero from "client/components/heros/Newsletter.hero.vue";
@@ -96,7 +95,8 @@
                 WebDollarEmitter.on('main-pools/status', self.initializePool);
                 WebDollarEmitter.on('blockchain/logs', self._blockchainLogs);
                 WebDollarEmitter.on('miner-pool/status', self._minerPoolStatus);
-                WebDollarEmitter.on("pools/status", self._poolsStatus);
+                WebDollarEmitter.on('pools/status', self._poolsStatus);
+                WebDollarEmitter.once('blockchain/mining/address', self._prefillPaymentIfPaymentPropsAreAvailable);
 
                 self.loadPoolSettings();
             });
@@ -107,7 +107,8 @@
             WebDollarEmitter.off('main-pools/status', this.initializePool);
             WebDollarEmitter.off('blockchain/logs', this._blockchainLogs);
             WebDollarEmitter.off('miner-pool/status', this._minerPoolStatus);
-            WebDollarEmitter.off("pools/status", this._poolsStatus);
+            WebDollarEmitter.off('pools/status', this._poolsStatus);
+            WebDollarEmitter.off('blockchain/mining/address', this._prefillPaymentIfPaymentPropsAreAvailable);
         },
 
         methods: {
@@ -167,8 +168,30 @@
                 if (WebDollar.Blockchain.PoolManagement !== undefined && WebDollar.Blockchain.PoolManagement.poolStarted) this.poolActivated = true;
                 else if (WebDollar.Blockchain.MinerPoolManagement !== undefined && WebDollar.Blockchain.MinerPoolManagement.minerPoolStarted) this.poolActivated = false;
                 else this.poolActivated = false;
+            },
+
+            _prefillPaymentIfPaymentPropsAreAvailable() {
+                let toAddress = this.$route.params.toAddress;
+
+                if (!toAddress) {
+                    return;
+                }
+
+                if (toAddress.length < 40) { // An unencoded address' length is always 40. A '#' shortens the address param.
+                    this.$router.push('/'); // Hide params in Browser URL bar in case of wrong URLs.
+                    alert('Please URL-encode the wallet address in the direct payment URL.');
+                    return;
+                }
+
+                const toAmount = this.$route.params.toAmount ? this.$route.params.toAmount.replace(',', '.') : null;
+
+                WebDollarEmitter.emit('wallet/transfer', {
+                    toAddress: toAddress,
+                    toAmount : toAmount
+                });
             }
         },
+
         async asyncData({ store, route: { params: { a, b, c, d, e, f }}}) {
             return true;
         },
