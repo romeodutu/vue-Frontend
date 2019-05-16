@@ -59,23 +59,23 @@ export function createRouter() {
         path: '/payment/:toAddress/:toAmount?/:toFee?',
         component: HomePage,
         beforeEnter: (to, from, next) => {
-          // We need to re-do the matching because '#' from the
-          // WebDollar addresses are breaking up the original matcher
-          let pathParts = to.matched[0].regex.exec(to.fullPath)
+            // We need to re-do the matching because '#' from the
+            // WebDollar addresses are breaking up the original matcher
+            let pathParts = to.matched[0].regex.exec(to.fullPath);
 
-          to.params.toAddress = pathParts[1];
-          let toAmount = pathParts[2];
-          let toFee = pathParts[3];
+            to.params.toAddress = pathParts[1];
+            let toAmount = pathParts[2];
+            let toFee    = pathParts[3];
 
-          if (toAmount) {
-            to.params.toAmount = toAmount.replace(',', '.');
-          }
-          if (toFee) {
-            to.params.toFee = toFee.replace(',', '.');
-          }
+            if (toAmount) {
+               to.params.toAmount = toAmount.replace(',', '.');
+            }
+            if (toFee) {
+                to.params.toFee = toFee.replace(',', '.');
+            }
 
-          console.log(to)
-          next();
+            console.log(to)
+            next();
         }
       },
       {
