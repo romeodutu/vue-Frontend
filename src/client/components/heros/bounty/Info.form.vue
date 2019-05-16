@@ -49,7 +49,7 @@
                 <b>Scoring formula:</b> {{this.info.formula}}
             </span>
             <span class="infoLine">
-                <b>List updated every hour</b>
+                <b>List updated:</b> Every hour
                 <!--
                 <div v-if="this.info.update == ''">
                     <b>Next list update:</b> {{this.refreshCountDownSeconds + ' seconds left'}}

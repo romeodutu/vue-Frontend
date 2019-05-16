@@ -162,7 +162,16 @@
             </div>
           </div>
 
-          <div class="partnerWrapper threeTeamColums">
+          <div class="partnerWrapper fourTeamColums">
+
+            <div>
+              <div class="team-pic">
+                <a href="https://walletinvestor.com/forecast/webdollar-prediction" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/WalletInvestor.png" alt="Wallet Investor" title="Wallet Investor"></a>
+                <div class="partners-box">
+                </div>
+              </div>
+              <span class="teamName">Wallet Investor</span>
+            </div>
 
             <div>
               <div class="team-pic">
@@ -313,7 +322,7 @@
   </div>
 
   <center>
-    <h2 class="bottom-message">Want to become our partner? <a href="https://t.me/WebDollar">Talk to us on Telegram!</a></h2>
+    <h2 class="bottom-message">Want to become our partner? <br><a href="https://t.me/WebDollar">Talk to us on Telegram!</a></h2>
   </center>
 
 </div>
