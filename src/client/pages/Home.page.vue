@@ -186,16 +186,10 @@ export default {
            if (!toAddress) {
             return;
           }
-          if (toAddress.length < 40) { // An unencoded address' length is always 40. A '#' shortens the address param.
-            this.$router.push('/'); // Hide params in Browser URL bar in case of wrong URLs.
-            alert('Please URL-encode the wallet address in the direct payment URL.');
-            return;
-          }
-          let toAmount = this.$route.params.toAmount ? this.$route.params.toAmount.replace(',', '.') : null;
-         
           WebDollar.StatusEvents.emit('wallet/transfer', {
             toAddress: toAddress, 
-            toAmount: toAmount
+            toAmount: this.$route.params.toAmount,
+            toFee: this.$route.params.toFee
           });          
 
       });
