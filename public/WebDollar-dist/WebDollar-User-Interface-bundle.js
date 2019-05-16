@@ -499,6 +499,46 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+let Vue = null;
+
+class Notification{
+
+    setVueInstance (instance) { Vue = instance }
+
+    addAlert(statusId, statusType, title, statusMessage, timeoutDelete, href){
+
+        console.log("Vue.$notify", Vue.$notify)
+
+        Vue.$notify({
+            group: (statusId === undefined) ? 'all' : statusId,
+            title: title,
+            text: statusMessage,
+            type: statusType,
+            duration: timeoutDelete,
+            speed: 2000,
+            data: {id:statusId}
+        })
+
+    }
+
+    deleteAlert(arrayStatusId){
+
+        Vue.$notify({
+            group: arrayStatusId,
+            clean: true
+        })
+
+    }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (new Notification());
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 class BrowserHelpers{
 
     static addEvent (object, type, callback) {
@@ -571,46 +611,6 @@ class BrowserHelpers{
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (BrowserHelpers);
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-let Vue = null;
-
-class Notification{
-
-    setVueInstance (instance) { Vue = instance }
-
-    addAlert(statusId, statusType, title, statusMessage, timeoutDelete, href){
-
-        console.log("Vue.$notify", Vue.$notify)
-
-        Vue.$notify({
-            group: (statusId === undefined) ? 'all' : statusId,
-            title: title,
-            text: statusMessage,
-            type: statusType,
-            duration: timeoutDelete,
-            speed: 2000,
-            data: {id:statusId}
-        })
-
-    }
-
-    deleteAlert(arrayStatusId){
-
-        Vue.$notify({
-            group: arrayStatusId,
-            clean: true
-        })
-
-    }
-
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (new Notification());
 
 /***/ }),
 /* 6 */
@@ -9325,9 +9325,9 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_icons_icon_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Address_Address_vue__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Browser_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Browser_helpers__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Address_Balance_Balances_Show_Sum_Balances_vue__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_helpers_Notification_helpers__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Address_Modals_Main_Modal_Address_main_modal_offline_vue__ = __webpack_require__(108);
 //
 //
@@ -9860,8 +9860,8 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Modals_Lock_modal_vue__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Modals_Delete_modal_vue__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_components_Wallet_Address_Balance_Show_Balance_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Browser_helpers__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Browser_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -10127,7 +10127,7 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_UI_icons_icon_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parts_Request_part_vue__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parts_Transfer_part_vue__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -10391,7 +10391,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_elements_Loading_Spinner_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(5);
 //
 //
 //
@@ -10632,7 +10632,7 @@ if (false) {(function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_elements_Loading_Spinner_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(5);
 //
 //
 //
@@ -10778,6 +10778,7 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transactions_Transaction_element_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -10803,6 +10804,7 @@ if (false) {(function () {
 
 
 var Vue = __webpack_require__(3);
+
 
 
 
@@ -10837,7 +10839,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
             if( this.toAmount !== undefined){
 
                 this.errorToAddressMessage = undefined;
-                this.$clipboard('https://webdollar.io/payment/'+this.address+'/'+this.toAmount);
+
+                let link = 'https://webdollar.io/payment/'+this.address+'/'+this.toAmount;
+                this.$clipboard('Direct payment link successful copied');
+
+                __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", link);
 
             }
             else
@@ -11143,8 +11149,8 @@ if (false) {(function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_helpers_Browser_helpers__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_file_saver__);
 //
@@ -11910,7 +11916,7 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_file_saver__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -12135,7 +12141,7 @@ if (false) {(function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_UI_modal_Modal_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -12255,7 +12261,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard___default.a);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_UI_icons_icon_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__parts_Transactions_Transactions_part_vue__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__parts_Transfer_part_vue__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_helpers_Notification_helpers__ = __webpack_require__(4);
 //
 //
 //
@@ -12365,8 +12371,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transaction_element_vue__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_helpers_Browser_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_helpers_Browser_helpers__ = __webpack_require__(5);
 //
 //
 //
@@ -16799,7 +16805,7 @@ module.exports = bytesToUuid;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Notification_helpers__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_notification__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_notification___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_notification__);
 //
@@ -16995,7 +17001,7 @@ module.exports = bytesToUuid;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(4);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_initialize_params_Initialize_Params__ = __webpack_require__(48);
 
 
@@ -17028,7 +17034,7 @@ if ( typeof window !== 'undefined')
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__global_initialize_Global_Initialization__ = __webpack_require__(49);
 
 
@@ -17115,7 +17121,7 @@ class InitializeParams{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_Browser_helpers__ = __webpack_require__(5);
 
 
 class GlobalInitialization {
@@ -18574,7 +18580,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.transferListContainer{\n    list-style: none;\n    padding: 0;\n    max-height: 200px;\n    overflow: scroll;\n    overflow-x:hidden;\n}\n.transferListContainer::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferListContainer::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferListContainer::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferList::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferList::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferList::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferListElement{\n    font-size: 12px;\n    color: #fff;\n    list-style: none;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    white-space: nowrap ;\n    text-align: left;\n    background-color: #151515;\n    padding: 5px 10px;\n    border-bottom: solid 1px#262626;\n    border-top: solid 1px#262626;\n}\n.transferListElement:hover{\n    background-color: #1f1f1f!important;\n    transition: all 0.5s ease;\n}\n.destinations{\n    list-style: none;\n    padding: 0;\n}\n.money, .destinationAddress{\n    display: inline-block;\n}\n.destinationAddress{\n    width: 70%;\n    overflow: hidden;\n}\n.money{\n    width: 20%;\n    padding-left: 10px;\n    display: inline-block;\n    float: right;\n    text-align: right;\n}\n.currency{\n    margin-left: 5px;\n}\n.pairListElement{\n    background-color: #333333;\n}\n.transferListContainer .money{\n    color:#ffc12c;\n    line-height: 26px;\n}\n.transferListContainer .source{\n    color: #c5c5c5;\n}\n.transferList .title{\n    margin: 10px 0;\n}\n.transferList .headerTable{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    background-color: #262626;\n    color: #fff!important;\n    padding: 5px 0 5px 10px;\n}\n.headerTable span{\n    width: 100%!important;\n}\n.headerElement{\n    display: inline-block;\n    color: #d4d4d4!important;\n    font-size: 14px;\n    text-align: left;\n}\n.transactionElement{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 30px 1fr;\n        grid-template-columns: 30px 1fr;\n}\n.transactionElement img{\n    height: 26px!important;\n}\n.transferList .miningAddress{\n    color: #737373 !important;\n    padding: 7px 0;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 10px;\n    width: 90%;\n    margin: 0 auto;\n}\n.noTransactions .transferList .miningAddress{\n    letter-spacing: 1px!important;\n    width: 90%!important;\n}\n.noTransactions .miningAddress{\n    line-height: 18px;\n}\n.requestTransaction{\n    margin-top: 10px;\n}\n.thisError{\n    padding: 11px 0 5px 3px;\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/src/components/Wallet/Address/Modals/Main-Modal/parts/Request.part.vue"],"names":[],"mappings":";AA0EA;IACA,iBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,kBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,iBAAA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,qBAAA;IACA,iBAAA;IACA,0BAAA;IACA,kBAAA;IACA,gCAAA;IACA,6BAAA;CACA;AAEA;IACA,oCAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;IACA,WAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,iBAAA;CACA;AAGA;IACA,WAAA;IACA,mBAAA;IACA,sBAAA;IACA,aAAA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,0BAAA;IACA,sBAAA;IACA,wBAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,yBAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,0BAAA;IACA,eAAA;IACA,0BAAA;IACA,oBAAA;IACA,gBAAA;IACA,WAAA;IACA,eAAA;CACA;AAEA;IACA,8BAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,wBAAA;CACA","file":"Request.part.vue","sourcesContent":["<template>\n\n    <div class=\"transferList\" ref=\"refTransferList\">\n\n        <div class=\"transfer requestTransaction\">\n            <div>\n                <div >\n                    <input v-model=\"toAmount\" type=\"number\" class=\"amount\" placeholder=\"WEBD Amount\"/>\n                </div>\n\n                <span class=\"editError thisError\" v-html=\"this.errorToAddressMessage\" :class=\"this.errorToAddressMessage ? '' : 'hide'\"></span>\n\n                <button class=\"button marginBottomButton\" @click=\"copyToClipboard\" >\n                    COPY LINK\n                </button>\n            </div>\n        </div>\n\n    </div>\n\n</template>\n\n<script>\n\n    var Vue = require('vue/dist/vue.min.js');\n\n    import Clipboard from '../../../../../../../node_modules/v-clipboard/dist/index.min'\n    import Transaction from \"./Transactions/Transaction.element.vue\"\n\n    Vue.use(Clipboard);\n\n    export default {\n\n        components:{ Transaction },\n\n        props:{\n            address: {default: null},\n        },\n\n        data: ()=>{\n            return {\n                toAmount: undefined,\n                errorToAddressMessage: undefined\n            }\n        },\n\n        mounted(){\n\n            if (typeof window === \"undefined\") return false;\n\n        },\n\n        methods:{\n\n            copyToClipboard(){\n\n                if( this.toAmount !== undefined){\n\n                    this.errorToAddressMessage = undefined;\n                    this.$clipboard('https://webdollar.io/payment/'+this.address+'/'+this.toAmount);\n\n                }\n                else\n                    this.errorToAddressMessage = 'You need to fill the amount input'\n            },\n\n        }\n\n    }\n</script>\n\n\n<style>\n\n    .transferListContainer{\n        list-style: none;\n        padding: 0;\n        max-height: 200px;\n        overflow: scroll;\n        overflow-x:hidden;\n    }\n\n    .transferListContainer::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferListContainer::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferListContainer::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferList::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferList::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferList::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferListElement{\n        font-size: 12px;\n        color: #fff;\n        list-style: none;\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        white-space: nowrap ;\n        text-align: left;\n        background-color: #151515;\n        padding: 5px 10px;\n        border-bottom: solid 1px#262626;\n        border-top: solid 1px#262626;\n    }\n\n    .transferListElement:hover{\n        background-color: #1f1f1f!important;\n        transition: all 0.5s ease;\n    }\n\n    .destinations{\n        list-style: none;\n        padding: 0;\n    }\n\n    .money, .destinationAddress{\n        display: inline-block;\n    }\n\n    .destinationAddress{\n        width: 70%;\n        overflow: hidden;\n    }\n\n\n    .money{\n        width: 20%;\n        padding-left: 10px;\n        display: inline-block;\n        float: right;\n        text-align: right;\n    }\n\n    .currency{\n        margin-left: 5px;\n    }\n\n    .pairListElement{\n        background-color: #333333;\n    }\n\n    .transferListContainer .money{\n        color:#ffc12c;\n        line-height: 26px;\n    }\n\n    .transferListContainer .source{\n        color: #c5c5c5;\n    }\n\n    .transferList .title{\n        margin: 10px 0;\n    }\n\n    .transferList .headerTable{\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        background-color: #262626;\n        color: #fff!important;\n        padding: 5px 0 5px 10px;\n    }\n\n    .headerTable span{\n        width: 100%!important;\n    }\n\n    .headerElement{\n        display: inline-block;\n        color: #d4d4d4!important;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .transactionElement{\n        display: grid;\n        grid-template-columns: 30px 1fr;\n    }\n\n    .transactionElement img{\n        height: 26px!important;\n    }\n\n    .transferList .miningAddress{\n        color: #737373 !important;\n        padding: 7px 0;\n        text-transform: uppercase;\n        letter-spacing: 2px;\n        font-size: 10px;\n        width: 90%;\n        margin: 0 auto;\n    }\n\n    .noTransactions .transferList .miningAddress{\n        letter-spacing: 1px!important;\n        width: 90%!important;\n    }\n\n    .noTransactions .miningAddress{\n        line-height: 18px;\n    }\n\n    .requestTransaction{\n        margin-top: 10px;\n    }\n\n    .thisError{\n        padding: 11px 0 5px 3px;\n    }\n\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.transferListContainer{\n    list-style: none;\n    padding: 0;\n    max-height: 200px;\n    overflow: scroll;\n    overflow-x:hidden;\n}\n.transferListContainer::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferListContainer::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferListContainer::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferList::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferList::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferList::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferListElement{\n    font-size: 12px;\n    color: #fff;\n    list-style: none;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    white-space: nowrap ;\n    text-align: left;\n    background-color: #151515;\n    padding: 5px 10px;\n    border-bottom: solid 1px#262626;\n    border-top: solid 1px#262626;\n}\n.transferListElement:hover{\n    background-color: #1f1f1f!important;\n    transition: all 0.5s ease;\n}\n.destinations{\n    list-style: none;\n    padding: 0;\n}\n.money, .destinationAddress{\n    display: inline-block;\n}\n.destinationAddress{\n    width: 70%;\n    overflow: hidden;\n}\n.money{\n    width: 20%;\n    padding-left: 10px;\n    display: inline-block;\n    float: right;\n    text-align: right;\n}\n.currency{\n    margin-left: 5px;\n}\n.pairListElement{\n    background-color: #333333;\n}\n.transferListContainer .money{\n    color:#ffc12c;\n    line-height: 26px;\n}\n.transferListContainer .source{\n    color: #c5c5c5;\n}\n.transferList .title{\n    margin: 10px 0;\n}\n.transferList .headerTable{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    background-color: #262626;\n    color: #fff!important;\n    padding: 5px 0 5px 10px;\n}\n.headerTable span{\n    width: 100%!important;\n}\n.headerElement{\n    display: inline-block;\n    color: #d4d4d4!important;\n    font-size: 14px;\n    text-align: left;\n}\n.transactionElement{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 30px 1fr;\n        grid-template-columns: 30px 1fr;\n}\n.transactionElement img{\n    height: 26px!important;\n}\n.transferList .miningAddress{\n    color: #737373 !important;\n    padding: 7px 0;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 10px;\n    width: 90%;\n    margin: 0 auto;\n}\n.noTransactions .transferList .miningAddress{\n    letter-spacing: 1px!important;\n    width: 90%!important;\n}\n.noTransactions .miningAddress{\n    line-height: 18px;\n}\n.requestTransaction{\n    margin-top: 10px;\n}\n.thisError{\n    padding: 11px 0 5px 3px;\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/src/components/Wallet/Address/Modals/Main-Modal/parts/Request.part.vue"],"names":[],"mappings":";AA+EA;IACA,iBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,kBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,iBAAA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,qBAAA;IACA,iBAAA;IACA,0BAAA;IACA,kBAAA;IACA,gCAAA;IACA,6BAAA;CACA;AAEA;IACA,oCAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;IACA,WAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,iBAAA;CACA;AAGA;IACA,WAAA;IACA,mBAAA;IACA,sBAAA;IACA,aAAA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,0BAAA;IACA,sBAAA;IACA,wBAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,yBAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,0BAAA;IACA,eAAA;IACA,0BAAA;IACA,oBAAA;IACA,gBAAA;IACA,WAAA;IACA,eAAA;CACA;AAEA;IACA,8BAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,wBAAA;CACA","file":"Request.part.vue","sourcesContent":["<template>\n\n    <div class=\"transferList\" ref=\"refTransferList\">\n\n        <div class=\"transfer requestTransaction\">\n            <div>\n                <div >\n                    <input v-model=\"toAmount\" type=\"number\" class=\"amount\" placeholder=\"WEBD Amount\"/>\n                </div>\n\n                <span class=\"editError thisError\" v-html=\"this.errorToAddressMessage\" :class=\"this.errorToAddressMessage ? '' : 'hide'\"></span>\n\n                <button class=\"button marginBottomButton\" @click=\"copyToClipboard\" >\n                    COPY LINK\n                </button>\n            </div>\n        </div>\n\n    </div>\n\n</template>\n\n<script>\n\n    var Vue = require('vue/dist/vue.min.js');\n\n    import Clipboard from '../../../../../../../node_modules/v-clipboard/dist/index.min'\n    import Transaction from \"./Transactions/Transaction.element.vue\"\n    import Notification from \"helpers/Notification.helpers\"\n\n    Vue.use(Clipboard);\n\n    export default {\n\n        components:{ Transaction },\n\n        props:{\n            address: {default: null},\n        },\n\n        data: ()=>{\n            return {\n                toAmount: undefined,\n                errorToAddressMessage: undefined\n            }\n        },\n\n        mounted(){\n\n            if (typeof window === \"undefined\") return false;\n\n        },\n\n        methods:{\n\n            copyToClipboard(){\n\n                if( this.toAmount !== undefined){\n\n                    this.errorToAddressMessage = undefined;\n\n                    let link = 'https://webdollar.io/payment/'+this.address+'/'+this.toAmount;\n                    this.$clipboard('Direct payment link successful copied');\n\n                    Notification.addAlert(undefined, \"success\", link);\n\n                }\n                else\n                    this.errorToAddressMessage = 'You need to fill the amount input'\n            },\n\n        }\n\n    }\n</script>\n\n\n<style>\n\n    .transferListContainer{\n        list-style: none;\n        padding: 0;\n        max-height: 200px;\n        overflow: scroll;\n        overflow-x:hidden;\n    }\n\n    .transferListContainer::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferListContainer::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferListContainer::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferList::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferList::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferList::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferListElement{\n        font-size: 12px;\n        color: #fff;\n        list-style: none;\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        white-space: nowrap ;\n        text-align: left;\n        background-color: #151515;\n        padding: 5px 10px;\n        border-bottom: solid 1px#262626;\n        border-top: solid 1px#262626;\n    }\n\n    .transferListElement:hover{\n        background-color: #1f1f1f!important;\n        transition: all 0.5s ease;\n    }\n\n    .destinations{\n        list-style: none;\n        padding: 0;\n    }\n\n    .money, .destinationAddress{\n        display: inline-block;\n    }\n\n    .destinationAddress{\n        width: 70%;\n        overflow: hidden;\n    }\n\n\n    .money{\n        width: 20%;\n        padding-left: 10px;\n        display: inline-block;\n        float: right;\n        text-align: right;\n    }\n\n    .currency{\n        margin-left: 5px;\n    }\n\n    .pairListElement{\n        background-color: #333333;\n    }\n\n    .transferListContainer .money{\n        color:#ffc12c;\n        line-height: 26px;\n    }\n\n    .transferListContainer .source{\n        color: #c5c5c5;\n    }\n\n    .transferList .title{\n        margin: 10px 0;\n    }\n\n    .transferList .headerTable{\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        background-color: #262626;\n        color: #fff!important;\n        padding: 5px 0 5px 10px;\n    }\n\n    .headerTable span{\n        width: 100%!important;\n    }\n\n    .headerElement{\n        display: inline-block;\n        color: #d4d4d4!important;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .transactionElement{\n        display: grid;\n        grid-template-columns: 30px 1fr;\n    }\n\n    .transactionElement img{\n        height: 26px!important;\n    }\n\n    .transferList .miningAddress{\n        color: #737373 !important;\n        padding: 7px 0;\n        text-transform: uppercase;\n        letter-spacing: 2px;\n        font-size: 10px;\n        width: 90%;\n        margin: 0 auto;\n    }\n\n    .noTransactions .transferList .miningAddress{\n        letter-spacing: 1px!important;\n        width: 90%!important;\n    }\n\n    .noTransactions .miningAddress{\n        line-height: 18px;\n    }\n\n    .requestTransaction{\n        margin-top: 10px;\n    }\n\n    .thisError{\n        padding: 11px 0 5px 3px;\n    }\n\n</style>"],"sourceRoot":""}]);
 
 // exports
 
