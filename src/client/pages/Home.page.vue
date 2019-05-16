@@ -144,17 +144,12 @@ export default {
 
     async initializePool() {
 
-      //                if (this.$store.state.route.params.a !== "pool" || this.$store.state.route.params['0'].length < 10 )
-      //                    return false;
-
       WebDollar.StatusEvents.on("main-pools/status", async (data) => {
 
         if (data.message === "Pool Initialized") {
 
-          console.log("xxxx");
-          await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$store.state.route.params['0']);
+          await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$route.params.pathMatch);
 
-          console.log(this.$store.state.route.params['0']);
         }
 
       });
