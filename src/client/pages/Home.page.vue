@@ -152,15 +152,8 @@
 
             async initializePool(data) {
 
-//                if (this.$store.state.route.params.a !== "pool" || this.$store.state.route.params['0'].length < 10 )
-//                    return false;
-
                 if (data.message === "Pool Initialized") {
-
-                    console.log("xxxx");
-                    await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$store.state.route.params['0']);
-
-                    console.log(this.$store.state.route.params['0']);
+                    await WebDollar.Blockchain.MinerPoolManagement.setMinerInitialPoolURL(this.$route.params.pathMatch);
                 }
             },
 
@@ -177,17 +170,10 @@
                     return;
                 }
 
-                if (toAddress.length < 40) { // An unencoded address' length is always 40. A '#' shortens the address param.
-                    this.$router.push('/'); // Hide params in Browser URL bar in case of wrong URLs.
-                    alert('Please URL-encode the wallet address in the direct payment URL.');
-                    return;
-                }
-
-                const toAmount = this.$route.params.toAmount ? this.$route.params.toAmount.replace(',', '.') : null;
-
                 WebDollarEmitter.emit('wallet/transfer', {
                     toAddress: toAddress,
-                    toAmount : toAmount
+                    toAmount: this.$route.params.toAmount,
+                    toFee: this.$route.params.toFee
                 });
             }
         },
