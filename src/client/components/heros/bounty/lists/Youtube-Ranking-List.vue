@@ -49,7 +49,7 @@
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Reward WEBD:</span>
-                    <div class="score">{{element.reward !== undefined ? element.reward.toFixed(2) : 'na'}}</div>
+                    <div class="score">{{element.reward !== undefined && element.reward !== -1 ? element.reward.toFixed(2) : 'na'}}</div>
                 </div>
 
             </a>
