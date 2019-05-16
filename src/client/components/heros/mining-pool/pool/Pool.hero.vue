@@ -64,6 +64,7 @@
     import Vue from 'vue';
     import Clipboard from 'v-clipboard';
     import PoolStatistics from './components/Pool-Statistics.vue'
+    import WebDollarEmitter from "../../../../../utils/WebDollarEmitter";
 
     Vue.use(Clipboard);
 
@@ -100,11 +101,11 @@
         methods: {
 
             async handleChangePoolFee(fee){
-
                 this.poolFee = fee;
 
-                if (WebDollar.Blockchain.PoolManagement !== undefined)
+                if (typeof WebDollar.Blockchain.PoolManagement !== 'undefined') {
                     await WebDollar.Blockchain.PoolManagement.poolSettings.setPoolFee(this.poolFee/100);
+                }
             },
 
             copyToClipboard(){
@@ -113,11 +114,10 @@
 
             loadPoolData(){
 
-                if (WebDollar.Blockchain.PoolManagement === undefined){
-
+                if (typeof WebDollar.Blockchain.PoolManagement === 'undefined') {
                     this.poolStatus = "not initialized";
-
-                } else {
+                }
+                else {
 
                     if (WebDollar.Blockchain.PoolManagement.poolInitialized) this.poolStatus = "Initialized";
                     if (WebDollar.Blockchain.PoolManagement.poolOpened) this.poolStatus = "Configured";
@@ -134,10 +134,7 @@
                     this.poolWebsite = WebDollar.Blockchain.PoolManagement.poolSettings.poolWebsite;
 
                     this.subscribePoolStatistics();
-
                 }
-
-
             },
 
             getPoolServers(){
@@ -176,29 +173,21 @@
         },
 
         mounted() {
+            const self = this;
+            this.$nextTick(() => {
+                WebDollarEmitter.on('pools/status',              self.loadPoolData);
+                WebDollarEmitter.on('pools/settings',            self.loadPoolData);
+                WebDollarEmitter.on('pools/servers-connections', self.getPoolServers);
 
-            window.addEventListener("load", () => {
-
-                if (typeof window === 'undefined') return;
-
-                WebDollar.StatusEvents.on("pools/status", (data) => {
-                    this.loadPoolData();
-                });
-
-                WebDollar.StatusEvents.on("pools/settings", (data) => {
-                    this.loadPoolData();
-                });
-
-                this.loadPoolData();
-
-                WebDollar.StatusEvents.on("pools/servers-connections", (data) => {
-                    this.getPoolServers();
-                });
-
+                self.loadPoolData();
             });
+        },
 
+        destroyed() {
+            WebDollarEmitter.off('pools/status',              this.loadPoolData);
+            WebDollarEmitter.off('pools/settings',            this.loadPoolData);
+            WebDollarEmitter.off('pools/servers-connections', this.getPoolServers);
         }
-
     }
 
 </script>

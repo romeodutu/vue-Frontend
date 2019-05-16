@@ -39,6 +39,7 @@
 
     import slider from '../UI/elements/Slider.vue';
     import Clipboard from 'v-clipboard';
+    import WebDollarEmitter from './../../../utils/WebDollarEmitter';
 
     export default{
 
@@ -71,7 +72,7 @@
 
                             value = this.poolsList[key].poolURL;
 
-                            this.$router.replace('/pool/1/'+value, {silent:true});
+                            this.$router.replace('/pool/1/'+value);
 
                             break;
                         }
@@ -132,21 +133,21 @@
         },
 
         async mounted(){
-
-            window.addEventListener("load", async () => {
-
-                if (typeof window === "undefined") return;
-
-                WebDollar.StatusEvents.on("miner-pool/settings",data =>  this.loadData() );
-                WebDollar.StatusEvents.on("miner-pool/newPoolURL",data =>  this.loadData() );
+            const self = this;
+            this.$nextTick(async () => {
+                WebDollarEmitter.on('miner-pool/settings',   self.loadData);
+                WebDollarEmitter.on('miner-pool/newPoolURL', self.loadData);
 
                 await WebDollar.Blockchain.onPoolsInitialized;
 
-                this.loadData();
+                self.loadData();
+            });
+        },
 
-            })
-
-        }
+        destroyed() {
+            WebDollarEmitter.off('miner-pool/settings',   this.loadData);
+            WebDollarEmitter.off('miner-pool/newPoolURL', this.loadData);
+        },
 
     }
 
