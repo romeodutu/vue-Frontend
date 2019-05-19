@@ -178,11 +178,11 @@
 
                 await this.downloadList(this.page);
 
-                this.$store.dispatch('BOUNTY_COUNT_DOWN_FETCHING_NEW_LIST', {bountyCountDownDate: new Date().getTime() + 30*1000 })
+                this.$store.dispatch('BOUNTY_COUNT_DOWN_FETCHING_NEW_LIST', {bountyCountDownDate: new Date().getTime() + 30*1000*10 })
 
                 setTimeout( async ()=>{
                     await this.fetchNewData();
-                }, 30*1000);
+                }, 30*1000*10);
 
             }
         },
