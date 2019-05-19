@@ -1836,6 +1836,14 @@ background-color:#ff2200}
   color:#e2c98e!important
 }
 
+.bountyAuditWarning{
+  width: 100%;
+  text-align: center;
+  background-color: #9a9a9a24;
+  color: #ffc12c !important;
+  margin: 20px 0px 20px 0px;
+}
+
 #newsletterSection{
   display: block;
   padding: 40px 0;
