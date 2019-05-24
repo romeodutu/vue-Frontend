@@ -46,6 +46,7 @@
         <div style="display: inline-block">
           <select id="poolConnectionSelect" class="poolSelect" @change="handleConnectionSelect">
             <option class="poolSelectOption" >Current Round</option>
+            <option class="poolSelectOption" >12.05.2019 - 19.05.2019</option>
             <!--<option v-for="(poolListElement, index) in this.poolsList" class="poolSelectOption"  >-->
             <!--{{poolListElement.poolName}}-->
             <!--</option>-->
