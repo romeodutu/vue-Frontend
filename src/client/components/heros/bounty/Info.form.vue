@@ -39,9 +39,6 @@
     <div class="campaignInfo">
 
       <span class="infoLine">
-        <b>Bounty registration:</b> {{ this.info.registration }}
-      </span>
-      <span class="infoLine">
         <b>Bounty round:</b>
         <div style="display: inline-block">
           <select id="poolConnectionSelect" class="poolSelect" @change="handleConnectionSelect">
@@ -52,6 +49,9 @@
             <!--</option>-->
             </select>
         </div>
+      </span>
+      <span class="infoLine">
+        <b>Bounty registration:</b> {{ this.info.registration }}
       </span>
       <span class="infoLine">
         <b>Conditions of participation:</b> {{ this.info.conditions }}
