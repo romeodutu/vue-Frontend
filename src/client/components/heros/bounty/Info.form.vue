@@ -1,5 +1,6 @@
 <template>
 <div>
+
   <div class="infoBounty" :class="this.showSubscription ? 'infoBountyPlus' : ''">
 
     <div class="countDown">
@@ -39,6 +40,17 @@
 
       <span class="infoLine">
         <b>Bounty registration:</b> {{ this.info.registration }}
+      </span>
+      <span class="infoLine">
+        <b>Bounty round:</b>
+        <div style="display: inline-block">
+          <select id="poolConnectionSelect" class="poolSelect" @change="handleConnectionSelect">
+            <option class="poolSelectOption" >Current Round</option>
+            <!--<option v-for="(poolListElement, index) in this.poolsList" class="poolSelectOption"  >-->
+            <!--{{poolListElement.poolName}}-->
+            <!--</option>-->
+            </select>
+        </div>
       </span>
       <span class="infoLine">
         <b>Conditions of participation:</b> {{ this.info.conditions }}
