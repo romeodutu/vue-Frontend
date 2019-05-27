@@ -295,7 +295,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://psihosexolog.ro/" target="_blank"><span class="business-name">Psih. dr. Radu Balanean</span></a>
+                <a href="https://psihosexolog.ro/" target="_blank"><span class="business-name">dr. Radu Balanean</span></a>
 
                 <div class="partners-box">
                 </div>
@@ -306,6 +306,16 @@
             <div>
               <div class="team-pic">
                 <a href="https://shop.aji.ro/" target="_blank"><span class="business-name">Shop Aji</span></a>
+
+                <div class="partners-box">
+                </div>
+              </div>
+              <!-- <span class="business-name">Shop Aji</span> -->
+            </div>
+              
+            <div>
+              <div class="team-pic">
+                <a href="http://teajuta.ro/" target="_blank"><span class="business-name">teajuta.ro</span></a>
 
                 <div class="partners-box">
                 </div>
