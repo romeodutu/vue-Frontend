@@ -103,7 +103,6 @@
 
                 this.fetchingList = true;
 
-                /*
                 let bounty_call = await axios.get(consts.SERVER_API + "bounties?network="+this.type);
 
                 if (bounty_call.data.length > 0) {
@@ -111,7 +110,6 @@
                   let bounty = bounty_call.data[bounty_call.data.length - 1];
                   this.id = bounty.id;
                 }
-                */
 
                 let answer = await axios.get(consts.SERVER_API+"submissions?status=ready&bounty_id="+this.id);
 

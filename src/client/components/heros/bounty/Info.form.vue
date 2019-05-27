@@ -37,7 +37,7 @@
     </div>
 
     <div class="campaignInfo">
-
+      <!--
       <span class="infoLine">
         <b>Bounty round:</b>
         <div style="display: inline-block">
@@ -48,6 +48,7 @@
           </select>
         </div>
       </span>
+      -->
       <span class="infoLine">
         <b>Bounty registration:</b> {{ this.info.registration }}
       </span>
