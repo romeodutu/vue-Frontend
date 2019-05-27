@@ -10841,9 +10841,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0__node_modules_v_clipboard_dist_index_min___d
                 this.errorToAddressMessage = undefined;
 
                 let link = 'https://webdollar.io/payment/'+this.address+'/'+this.toAmount;
-                this.$clipboard('Direct payment link successful copied');
+                this.$clipboard(link);
 
-                __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", link);
+                __WEBPACK_IMPORTED_MODULE_2_helpers_Notification_helpers__["a" /* default */].addAlert(undefined, "success", 'Direct payment link successful copied', link, 8000);
 
             }
             else
@@ -12791,6 +12791,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slider_component__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_slider_component__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nosleep_js_dist_NoSleep__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nosleep_js_dist_NoSleep___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nosleep_js_dist_NoSleep__);
 //
 //
 //
@@ -12802,89 +12804,83 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1__node_modules_v_clipboard_dist_index_min___d
 //
 
 
-    
 
-    /* harmony default export */ __webpack_exports__["a"] = ({
 
-        name: 'slider',
 
-        components: {
-            "vueSlider": __WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+
+    name: 'slider',
+
+    components: {
+        "vueSlider": __WEBPACK_IMPORTED_MODULE_0_vue_slider_component___default.a
+    },
+
+    data() {
+        return {
+            value: localStorage.getItem("miner-settings-worker-count") || 0,
+            disabled: true,
+            screenWidth: window.innerWidth,
+            logicalProcessors: window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1,
+            sliderMobileWidth: 200,
+            disableHalving: false,
+            noSleep: new __WEBPACK_IMPORTED_MODULE_1_nosleep_js_dist_NoSleep__()
+        }
+    },
+
+    methods: {
+        change(value) {
+            if (value > 0) {
+                this.noSleep.enable();
+                console.log('Enabled screen sleep prevention.')
+            } else {
+                this.noSleep.disable();
+                console.log('Disabled screen sleep prevention.')
+            }
+            this.$emit('sliderChanged', value);
         },
-
-        data() {
-            return {
-                value: localStorage.getItem("miner-settings-worker-count") || 0,
-                disabled:true,
-                screenWidth: window.innerWidth,
-                logicalProcessors: window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1,
-                sliderMobileWidth: 200,
-                disableHalving: false,
+        addEvent(object, type, callback) {
+            if (object === null || typeof(object) === 'undefined') return;
+            if (object.addEventListener) {
+                object.addEventListener(type, callback, false);
+            } else if (object.attachEvent) {
+                object.attachEvent("on" + type, callback);
+            } else {
+                object["on" + type] = callback;
             }
         },
+    },
 
-        methods: {
-            change(value) {
+    mounted() {
 
-                console.log("value", value);
+        if (typeof window === "undefined") return false;
 
-                //TODO use halver
-
-//                if (this.disableHalving)
-//                    this.$refs['slider'].setValue(value);
-//                else
-//                    if (value > (this.value||1) *3){
-//
-//                        value = (this.value||1) *3;
-//                        this.$refs['slider'].setValue(value);
-//                        return;
-//
-//                    }
-
-                this.$emit('sliderChanged', value);
-            },
-            addEvent(object, type, callback) {
-                if (object === null || typeof(object) === 'undefined') return;
-                if (object.addEventListener) {
-                    object.addEventListener(type, callback, false);
-                } else if (object.attachEvent) {
-                    object.attachEvent("on" + type, callback);
-                } else {
-                    object["on" + type] = callback;
-                }
-            },
-        },
-
-        mounted() {
-
-            if (typeof window === "undefined") return false;
-
-            this.addEvent(window, "resize", (event) => {
-
-                this.screenWidth = window.innerWidth;
-
-                if (window.innerWidth<550){
-                    this.sliderMobileWidth = window.innerWidth-180+'px';
-                }else{
-                    this.sliderMobileWidth = '100%';
-                }
-
-            });
+        this.addEvent(window, "resize", (event) => {
 
             this.screenWidth = window.innerWidth;
+
             if (window.innerWidth<550){
                 this.sliderMobileWidth = window.innerWidth-180+'px';
             }else{
                 this.sliderMobileWidth = '100%';
             }
 
-            this.logicalProcessors = window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1;
+        });
 
-            this.$refs["slider"].refresh();
-
-
+        this.screenWidth = window.innerWidth;
+        if (window.innerWidth<550){
+            this.sliderMobileWidth = window.innerWidth-180+'px';
+        }else{
+            this.sliderMobileWidth = '100%';
         }
-    });
+
+        this.logicalProcessors = window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1;
+
+        this.$refs["slider"].refresh();
+
+
+    }
+});
 
 
 /***/ }),
@@ -14016,11 +14012,11 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_Circle_Map__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_Circles__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Maps_tester__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__res_Network_Native_Map_Canvas_vue__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__res_dialog_Network_Native_Map_Dialog_vue__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_Circle_Map__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_Circles__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Maps_tester__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__res_Network_Native_Map_Canvas_vue__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__res_dialog_Network_Native_Map_Dialog_vue__ = __webpack_require__(138);
 //
 //
 //
@@ -14039,7 +14035,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 
     
     
-    const uuid = __webpack_require__(145);
+    const uuid = __webpack_require__(146);
 
     /* harmony default export */ __webpack_exports__["a"] = ({
 
@@ -16612,7 +16608,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(141);
 //
 //
 //
@@ -17099,11 +17095,11 @@ class InitializeParams{
 
     createElements(){
 
-        let networkNativeMapMainVue =__webpack_require__(127).default;
+        let networkNativeMapMainVue =__webpack_require__(128).default;
         if (this.maps.activated)
             networkNativeMapMainVue(this.maps);
 
-        let alertsStickyBarMainVue = __webpack_require__(149).default;
+        let alertsStickyBarMainVue = __webpack_require__(150).default;
         if (this.alertsStickyBar.activated)
             alertsStickyBarMainVue(this.alertsStickyBar);
 
@@ -17585,7 +17581,7 @@ process.umask = function() { return 0; };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Dashboard_vue__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aae30ed8_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dashboard_vue__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aae30ed8_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dashboard_vue__ = __webpack_require__(127);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -18580,7 +18576,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.transferListContainer{\n    list-style: none;\n    padding: 0;\n    max-height: 200px;\n    overflow: scroll;\n    overflow-x:hidden;\n}\n.transferListContainer::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferListContainer::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferListContainer::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferList::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferList::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferList::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferListElement{\n    font-size: 12px;\n    color: #fff;\n    list-style: none;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    white-space: nowrap ;\n    text-align: left;\n    background-color: #151515;\n    padding: 5px 10px;\n    border-bottom: solid 1px#262626;\n    border-top: solid 1px#262626;\n}\n.transferListElement:hover{\n    background-color: #1f1f1f!important;\n    transition: all 0.5s ease;\n}\n.destinations{\n    list-style: none;\n    padding: 0;\n}\n.money, .destinationAddress{\n    display: inline-block;\n}\n.destinationAddress{\n    width: 70%;\n    overflow: hidden;\n}\n.money{\n    width: 20%;\n    padding-left: 10px;\n    display: inline-block;\n    float: right;\n    text-align: right;\n}\n.currency{\n    margin-left: 5px;\n}\n.pairListElement{\n    background-color: #333333;\n}\n.transferListContainer .money{\n    color:#ffc12c;\n    line-height: 26px;\n}\n.transferListContainer .source{\n    color: #c5c5c5;\n}\n.transferList .title{\n    margin: 10px 0;\n}\n.transferList .headerTable{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    background-color: #262626;\n    color: #fff!important;\n    padding: 5px 0 5px 10px;\n}\n.headerTable span{\n    width: 100%!important;\n}\n.headerElement{\n    display: inline-block;\n    color: #d4d4d4!important;\n    font-size: 14px;\n    text-align: left;\n}\n.transactionElement{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 30px 1fr;\n        grid-template-columns: 30px 1fr;\n}\n.transactionElement img{\n    height: 26px!important;\n}\n.transferList .miningAddress{\n    color: #737373 !important;\n    padding: 7px 0;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 10px;\n    width: 90%;\n    margin: 0 auto;\n}\n.noTransactions .transferList .miningAddress{\n    letter-spacing: 1px!important;\n    width: 90%!important;\n}\n.noTransactions .miningAddress{\n    line-height: 18px;\n}\n.requestTransaction{\n    margin-top: 10px;\n}\n.thisError{\n    padding: 11px 0 5px 3px;\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/src/components/Wallet/Address/Modals/Main-Modal/parts/Request.part.vue"],"names":[],"mappings":";AA+EA;IACA,iBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,kBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,iBAAA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,qBAAA;IACA,iBAAA;IACA,0BAAA;IACA,kBAAA;IACA,gCAAA;IACA,6BAAA;CACA;AAEA;IACA,oCAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;IACA,WAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,iBAAA;CACA;AAGA;IACA,WAAA;IACA,mBAAA;IACA,sBAAA;IACA,aAAA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,0BAAA;IACA,sBAAA;IACA,wBAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,yBAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,0BAAA;IACA,eAAA;IACA,0BAAA;IACA,oBAAA;IACA,gBAAA;IACA,WAAA;IACA,eAAA;CACA;AAEA;IACA,8BAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,wBAAA;CACA","file":"Request.part.vue","sourcesContent":["<template>\n\n    <div class=\"transferList\" ref=\"refTransferList\">\n\n        <div class=\"transfer requestTransaction\">\n            <div>\n                <div >\n                    <input v-model=\"toAmount\" type=\"number\" class=\"amount\" placeholder=\"WEBD Amount\"/>\n                </div>\n\n                <span class=\"editError thisError\" v-html=\"this.errorToAddressMessage\" :class=\"this.errorToAddressMessage ? '' : 'hide'\"></span>\n\n                <button class=\"button marginBottomButton\" @click=\"copyToClipboard\" >\n                    COPY LINK\n                </button>\n            </div>\n        </div>\n\n    </div>\n\n</template>\n\n<script>\n\n    var Vue = require('vue/dist/vue.min.js');\n\n    import Clipboard from '../../../../../../../node_modules/v-clipboard/dist/index.min'\n    import Transaction from \"./Transactions/Transaction.element.vue\"\n    import Notification from \"helpers/Notification.helpers\"\n\n    Vue.use(Clipboard);\n\n    export default {\n\n        components:{ Transaction },\n\n        props:{\n            address: {default: null},\n        },\n\n        data: ()=>{\n            return {\n                toAmount: undefined,\n                errorToAddressMessage: undefined\n            }\n        },\n\n        mounted(){\n\n            if (typeof window === \"undefined\") return false;\n\n        },\n\n        methods:{\n\n            copyToClipboard(){\n\n                if( this.toAmount !== undefined){\n\n                    this.errorToAddressMessage = undefined;\n\n                    let link = 'https://webdollar.io/payment/'+this.address+'/'+this.toAmount;\n                    this.$clipboard('Direct payment link successful copied');\n\n                    Notification.addAlert(undefined, \"success\", link);\n\n                }\n                else\n                    this.errorToAddressMessage = 'You need to fill the amount input'\n            },\n\n        }\n\n    }\n</script>\n\n\n<style>\n\n    .transferListContainer{\n        list-style: none;\n        padding: 0;\n        max-height: 200px;\n        overflow: scroll;\n        overflow-x:hidden;\n    }\n\n    .transferListContainer::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferListContainer::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferListContainer::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferList::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferList::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferList::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferListElement{\n        font-size: 12px;\n        color: #fff;\n        list-style: none;\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        white-space: nowrap ;\n        text-align: left;\n        background-color: #151515;\n        padding: 5px 10px;\n        border-bottom: solid 1px#262626;\n        border-top: solid 1px#262626;\n    }\n\n    .transferListElement:hover{\n        background-color: #1f1f1f!important;\n        transition: all 0.5s ease;\n    }\n\n    .destinations{\n        list-style: none;\n        padding: 0;\n    }\n\n    .money, .destinationAddress{\n        display: inline-block;\n    }\n\n    .destinationAddress{\n        width: 70%;\n        overflow: hidden;\n    }\n\n\n    .money{\n        width: 20%;\n        padding-left: 10px;\n        display: inline-block;\n        float: right;\n        text-align: right;\n    }\n\n    .currency{\n        margin-left: 5px;\n    }\n\n    .pairListElement{\n        background-color: #333333;\n    }\n\n    .transferListContainer .money{\n        color:#ffc12c;\n        line-height: 26px;\n    }\n\n    .transferListContainer .source{\n        color: #c5c5c5;\n    }\n\n    .transferList .title{\n        margin: 10px 0;\n    }\n\n    .transferList .headerTable{\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        background-color: #262626;\n        color: #fff!important;\n        padding: 5px 0 5px 10px;\n    }\n\n    .headerTable span{\n        width: 100%!important;\n    }\n\n    .headerElement{\n        display: inline-block;\n        color: #d4d4d4!important;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .transactionElement{\n        display: grid;\n        grid-template-columns: 30px 1fr;\n    }\n\n    .transactionElement img{\n        height: 26px!important;\n    }\n\n    .transferList .miningAddress{\n        color: #737373 !important;\n        padding: 7px 0;\n        text-transform: uppercase;\n        letter-spacing: 2px;\n        font-size: 10px;\n        width: 90%;\n        margin: 0 auto;\n    }\n\n    .noTransactions .transferList .miningAddress{\n        letter-spacing: 1px!important;\n        width: 90%!important;\n    }\n\n    .noTransactions .miningAddress{\n        line-height: 18px;\n    }\n\n    .requestTransaction{\n        margin-top: 10px;\n    }\n\n    .thisError{\n        padding: 11px 0 5px 3px;\n    }\n\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.transferListContainer{\n    list-style: none;\n    padding: 0;\n    max-height: 200px;\n    overflow: scroll;\n    overflow-x:hidden;\n}\n.transferListContainer::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferListContainer::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferListContainer::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferList::-webkit-scrollbar{\n    width:7px;height:7px\n}\n.transferList::-webkit-scrollbar-track{\n    background:rgba(100,100,100,0.1)!important;\n}\n.transferList::-webkit-scrollbar-thumb{\n    background: rgba(41, 41, 41, 0.5)!important;\n    border: solid 1px rgba(31, 31, 31, 0.5)!important;\n    border-radius: 4px;\n}\n.transferListElement{\n    font-size: 12px;\n    color: #fff;\n    list-style: none;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    white-space: nowrap ;\n    text-align: left;\n    background-color: #151515;\n    padding: 5px 10px;\n    border-bottom: solid 1px#262626;\n    border-top: solid 1px#262626;\n}\n.transferListElement:hover{\n    background-color: #1f1f1f!important;\n    transition: all 0.5s ease;\n}\n.destinations{\n    list-style: none;\n    padding: 0;\n}\n.money, .destinationAddress{\n    display: inline-block;\n}\n.destinationAddress{\n    width: 70%;\n    overflow: hidden;\n}\n.money{\n    width: 20%;\n    padding-left: 10px;\n    display: inline-block;\n    float: right;\n    text-align: right;\n}\n.currency{\n    margin-left: 5px;\n}\n.pairListElement{\n    background-color: #333333;\n}\n.transferListContainer .money{\n    color:#ffc12c;\n    line-height: 26px;\n}\n.transferListContainer .source{\n    color: #c5c5c5;\n}\n.transferList .title{\n    margin: 10px 0;\n}\n.transferList .headerTable{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 1fr 1fr 60px;\n        grid-template-columns: 1fr 1fr 60px;\n    background-color: #262626;\n    color: #fff!important;\n    padding: 5px 0 5px 10px;\n}\n.headerTable span{\n    width: 100%!important;\n}\n.headerElement{\n    display: inline-block;\n    color: #d4d4d4!important;\n    font-size: 14px;\n    text-align: left;\n}\n.transactionElement{\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns: 30px 1fr;\n        grid-template-columns: 30px 1fr;\n}\n.transactionElement img{\n    height: 26px!important;\n}\n.transferList .miningAddress{\n    color: #737373 !important;\n    padding: 7px 0;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 10px;\n    width: 90%;\n    margin: 0 auto;\n}\n.noTransactions .transferList .miningAddress{\n    letter-spacing: 1px!important;\n    width: 90%!important;\n}\n.noTransactions .miningAddress{\n    line-height: 18px;\n}\n.requestTransaction{\n    margin-top: 10px;\n}\n.thisError{\n    padding: 11px 0 5px 3px;\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Wallet/Address/Modals/Main-Modal/parts/src/components/Wallet/Address/Modals/Main-Modal/parts/Request.part.vue"],"names":[],"mappings":";AA+EA;IACA,iBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,kBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA,UAAA;CACA;AACA;IACA,2CAAA;CACA;AACA;IACA,4CAAA;IACA,kDAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,YAAA;IACA,iBAAA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,qBAAA;IACA,iBAAA;IACA,0BAAA;IACA,kBAAA;IACA,gCAAA;IACA,6BAAA;CACA;AAEA;IACA,oCAAA;IACA,0BAAA;CACA;AAEA;IACA,iBAAA;IACA,WAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,WAAA;IACA,iBAAA;CACA;AAGA;IACA,WAAA;IACA,mBAAA;IACA,sBAAA;IACA,aAAA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,0BAAA;CACA;AAEA;IACA,cAAA;IACA,kBAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,+BAAA;QAAA,oCAAA;IACA,0BAAA;IACA,sBAAA;IACA,wBAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,sBAAA;IACA,yBAAA;IACA,gBAAA;IACA,iBAAA;CACA;AAEA;IACA,kBAAA;IAAA,cAAA;IACA,2BAAA;QAAA,gCAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,0BAAA;IACA,eAAA;IACA,0BAAA;IACA,oBAAA;IACA,gBAAA;IACA,WAAA;IACA,eAAA;CACA;AAEA;IACA,8BAAA;IACA,qBAAA;CACA;AAEA;IACA,kBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,wBAAA;CACA","file":"Request.part.vue","sourcesContent":["<template>\n\n    <div class=\"transferList\" ref=\"refTransferList\">\n\n        <div class=\"transfer requestTransaction\">\n            <div>\n                <div >\n                    <input v-model=\"toAmount\" type=\"number\" class=\"amount\" placeholder=\"WEBD Amount\"/>\n                </div>\n\n                <span class=\"editError thisError\" v-html=\"this.errorToAddressMessage\" :class=\"this.errorToAddressMessage ? '' : 'hide'\"></span>\n\n                <button class=\"button marginBottomButton\" @click=\"copyToClipboard\" >\n                    COPY LINK\n                </button>\n            </div>\n        </div>\n\n    </div>\n\n</template>\n\n<script>\n\n    var Vue = require('vue/dist/vue.min.js');\n\n    import Clipboard from '../../../../../../../node_modules/v-clipboard/dist/index.min'\n    import Transaction from \"./Transactions/Transaction.element.vue\"\n    import Notification from \"helpers/Notification.helpers\"\n\n    Vue.use(Clipboard);\n\n    export default {\n\n        components:{ Transaction },\n\n        props:{\n            address: {default: null},\n        },\n\n        data: ()=>{\n            return {\n                toAmount: undefined,\n                errorToAddressMessage: undefined\n            }\n        },\n\n        mounted(){\n\n            if (typeof window === \"undefined\") return false;\n\n        },\n\n        methods:{\n\n            copyToClipboard(){\n\n                if( this.toAmount !== undefined){\n\n                    this.errorToAddressMessage = undefined;\n\n                    let link = 'https://webdollar.io/payment/'+this.address+'/'+this.toAmount;\n                    this.$clipboard(link);\n\n                    Notification.addAlert(undefined, \"success\", 'Direct payment link successful copied', link, 8000);\n\n                }\n                else\n                    this.errorToAddressMessage = 'You need to fill the amount input'\n            },\n\n        }\n\n    }\n</script>\n\n\n<style>\n\n    .transferListContainer{\n        list-style: none;\n        padding: 0;\n        max-height: 200px;\n        overflow: scroll;\n        overflow-x:hidden;\n    }\n\n    .transferListContainer::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferListContainer::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferListContainer::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferList::-webkit-scrollbar{\n        width:7px;height:7px\n    }\n    .transferList::-webkit-scrollbar-track{\n        background:rgba(100,100,100,0.1)!important;\n    }\n    .transferList::-webkit-scrollbar-thumb{\n        background: rgba(41, 41, 41, 0.5)!important;\n        border: solid 1px rgba(31, 31, 31, 0.5)!important;\n        border-radius: 4px;\n    }\n\n    .transferListElement{\n        font-size: 12px;\n        color: #fff;\n        list-style: none;\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        white-space: nowrap ;\n        text-align: left;\n        background-color: #151515;\n        padding: 5px 10px;\n        border-bottom: solid 1px#262626;\n        border-top: solid 1px#262626;\n    }\n\n    .transferListElement:hover{\n        background-color: #1f1f1f!important;\n        transition: all 0.5s ease;\n    }\n\n    .destinations{\n        list-style: none;\n        padding: 0;\n    }\n\n    .money, .destinationAddress{\n        display: inline-block;\n    }\n\n    .destinationAddress{\n        width: 70%;\n        overflow: hidden;\n    }\n\n\n    .money{\n        width: 20%;\n        padding-left: 10px;\n        display: inline-block;\n        float: right;\n        text-align: right;\n    }\n\n    .currency{\n        margin-left: 5px;\n    }\n\n    .pairListElement{\n        background-color: #333333;\n    }\n\n    .transferListContainer .money{\n        color:#ffc12c;\n        line-height: 26px;\n    }\n\n    .transferListContainer .source{\n        color: #c5c5c5;\n    }\n\n    .transferList .title{\n        margin: 10px 0;\n    }\n\n    .transferList .headerTable{\n        display: grid;\n        grid-template-columns: 1fr 1fr 60px;\n        background-color: #262626;\n        color: #fff!important;\n        padding: 5px 0 5px 10px;\n    }\n\n    .headerTable span{\n        width: 100%!important;\n    }\n\n    .headerElement{\n        display: inline-block;\n        color: #d4d4d4!important;\n        font-size: 14px;\n        text-align: left;\n    }\n\n    .transactionElement{\n        display: grid;\n        grid-template-columns: 30px 1fr;\n    }\n\n    .transactionElement img{\n        height: 26px!important;\n    }\n\n    .transferList .miningAddress{\n        color: #737373 !important;\n        padding: 7px 0;\n        text-transform: uppercase;\n        letter-spacing: 2px;\n        font-size: 10px;\n        width: 90%;\n        margin: 0 auto;\n    }\n\n    .noTransactions .transferList .miningAddress{\n        letter-spacing: 1px!important;\n        width: 90%!important;\n    }\n\n    .noTransactions .miningAddress{\n        line-height: 18px;\n    }\n\n    .requestTransaction{\n        margin-top: 10px;\n    }\n\n    .thisError{\n        padding: 11px 0 5px 3px;\n    }\n\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -20872,7 +20868,7 @@ if (false) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Mining_vue__ = __webpack_require__(37);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0954b78f_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mining_vue__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0954b78f_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Mining_vue__ = __webpack_require__(126);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -20968,7 +20964,7 @@ exports.push([module.i, "\n.hoverBalanceInfo{\n    position: fixed;\n    float: 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_slider_vue__ = __webpack_require__(38);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b39a900_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_slider_vue__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b39a900_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_slider_vue__ = __webpack_require__(125);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -21052,7 +21048,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.miningSlider {\n    padding-top: 15px !important;\n    padding-bottom: 15px !important;\n    padding-left: 20px !important;\n    background-color: #262626;\n}\n.vue-slider-component .vue-slider-piecewise {\n    background-color: #424242 !important;\n}\n.vue-slider-component .vue-slider-process {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fec02c+29,bc0505+100 */\n    background: #fec02c !important; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, #fec02c 29%, #bc0505 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fec02c', endColorstr='#bc0505', GradientType=1) !important; /* IE6-9 */\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Mining/src/components/Mining/slider.vue"],"names":[],"mappings":";AAkGA;IACA,6BAAA;IACA,gCAAA;IACA,8BAAA;IACA,0BAAA;CACA;AAEA;IACA,qCAAA;CACA;AAEA;IACA,kHAAA;IACA,+BAAA,CAAA,kBAAA,CACA,cAAA,CACA,6BAAA;IACA,4EAAA,CAAA,sDAAA;IACA,8HAAA,CAAA,WAAA;CACA","file":"slider.vue","sourcesContent":["<template>\n    <div>\n        <vue-slider id=\"miningWorkersSlider\" class=\"miningSlider\" ref=\"slider\" @callback=\"this.change\" :piecewise=\"true\"\n                    :width=\"this.screenWidth < 750 ? this.sliderMobileWidth : 330\" :tooltip=\"false\" :min=\"0\" :max=\"this.logicalProcessors\"\n                    v-model=\"value\" :disabled=\"this.disabled\"></vue-slider>\n    </div>\n</template>\n\n\n<script>\n\n    import vueSlider from 'vue-slider-component';\n\n    export default {\n\n        name: 'slider',\n\n        components: {\n            \"vueSlider\": vueSlider\n        },\n\n        data() {\n            return {\n                value: localStorage.getItem(\"miner-settings-worker-count\") || 0,\n                disabled:true,\n                screenWidth: window.innerWidth,\n                logicalProcessors: window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1,\n                sliderMobileWidth: 200,\n                disableHalving: false,\n            }\n        },\n\n        methods: {\n            change(value) {\n\n                console.log(\"value\", value);\n\n                //TODO use halver\n\n//                if (this.disableHalving)\n//                    this.$refs['slider'].setValue(value);\n//                else\n//                    if (value > (this.value||1) *3){\n//\n//                        value = (this.value||1) *3;\n//                        this.$refs['slider'].setValue(value);\n//                        return;\n//\n//                    }\n\n                this.$emit('sliderChanged', value);\n            },\n            addEvent(object, type, callback) {\n                if (object === null || typeof(object) === 'undefined') return;\n                if (object.addEventListener) {\n                    object.addEventListener(type, callback, false);\n                } else if (object.attachEvent) {\n                    object.attachEvent(\"on\" + type, callback);\n                } else {\n                    object[\"on\" + type] = callback;\n                }\n            },\n        },\n\n        mounted() {\n\n            if (typeof window === \"undefined\") return false;\n\n            this.addEvent(window, \"resize\", (event) => {\n\n                this.screenWidth = window.innerWidth;\n\n                if (window.innerWidth<550){\n                    this.sliderMobileWidth = window.innerWidth-180+'px';\n                }else{\n                    this.sliderMobileWidth = '100%';\n                }\n\n            });\n\n            this.screenWidth = window.innerWidth;\n            if (window.innerWidth<550){\n                this.sliderMobileWidth = window.innerWidth-180+'px';\n            }else{\n                this.sliderMobileWidth = '100%';\n            }\n\n            this.logicalProcessors = window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1;\n\n            this.$refs[\"slider\"].refresh();\n\n\n        }\n    }\n</script>\n\n<style>\n\n    .miningSlider {\n        padding-top: 15px !important;\n        padding-bottom: 15px !important;\n        padding-left: 20px !important;\n        background-color: #262626;\n    }\n\n    .vue-slider-component .vue-slider-piecewise {\n        background-color: #424242 !important;\n    }\n\n    .vue-slider-component .vue-slider-process {\n        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fec02c+29,bc0505+100 */\n        background: #fec02c !important; /* Old browsers */\n        background: -moz-linear-gradient(left, #fec02c 29%, #bc0505 100%) !important; /* FF3.6-15 */\n        background: -webkit-linear-gradient(left, #fec02c 29%, #bc0505 100%) !important; /* Chrome10-25,Safari5.1-6 */\n        background: linear-gradient(to right, #fec02c 29%, #bc0505 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fec02c', endColorstr='#bc0505', GradientType=1) !important; /* IE6-9 */\n    }\n\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.miningSlider {\n    padding-top: 15px !important;\n    padding-bottom: 15px !important;\n    padding-left: 20px !important;\n    background-color: #262626;\n}\n.vue-slider-component .vue-slider-piecewise {\n    background-color: #424242 !important;\n}\n.vue-slider-component .vue-slider-process {\n    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fec02c+29,bc0505+100 */\n    background: #fec02c !important; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */\n    background: linear-gradient(to right, #fec02c 29%, #bc0505 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fec02c', endColorstr='#bc0505', GradientType=1) !important; /* IE6-9 */\n}\n\n", "", {"version":3,"sources":["/home/alex/Desktop/User-Interface-WebDollar/src/components/Mining/src/components/Mining/slider.vue"],"names":[],"mappings":";AA4FA;IACA,6BAAA;IACA,gCAAA;IACA,8BAAA;IACA,0BAAA;CACA;AAEA;IACA,qCAAA;CACA;AAEA;IACA,kHAAA;IACA,+BAAA,CAAA,kBAAA,CACA,cAAA,CACA,6BAAA;IACA,4EAAA,CAAA,sDAAA;IACA,8HAAA,CAAA,WAAA;CACA","file":"slider.vue","sourcesContent":["<template>\n    <div>\n        <vue-slider id=\"miningWorkersSlider\" class=\"miningSlider\" ref=\"slider\" @callback=\"this.change\" :piecewise=\"true\"\n                    :width=\"this.screenWidth < 750 ? this.sliderMobileWidth : 330\" :tooltip=\"false\" :min=\"0\" :max=\"this.logicalProcessors\"\n                    v-model=\"value\" :disabled=\"this.disabled\"></vue-slider>\n    </div>\n</template>\n\n\n<script>\n\n    import vueSlider from 'vue-slider-component';\n    import * as NoSleep from 'nosleep.js/dist/NoSleep';\n\n\n    export default {\n\n        name: 'slider',\n\n        components: {\n            \"vueSlider\": vueSlider\n        },\n\n        data() {\n            return {\n                value: localStorage.getItem(\"miner-settings-worker-count\") || 0,\n                disabled: true,\n                screenWidth: window.innerWidth,\n                logicalProcessors: window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1,\n                sliderMobileWidth: 200,\n                disableHalving: false,\n                noSleep: new NoSleep()\n            }\n        },\n\n        methods: {\n            change(value) {\n                if (value > 0) {\n                    this.noSleep.enable();\n                    console.log('Enabled screen sleep prevention.')\n                } else {\n                    this.noSleep.disable();\n                    console.log('Disabled screen sleep prevention.')\n                }\n                this.$emit('sliderChanged', value);\n            },\n            addEvent(object, type, callback) {\n                if (object === null || typeof(object) === 'undefined') return;\n                if (object.addEventListener) {\n                    object.addEventListener(type, callback, false);\n                } else if (object.attachEvent) {\n                    object.attachEvent(\"on\" + type, callback);\n                } else {\n                    object[\"on\" + type] = callback;\n                }\n            },\n        },\n\n        mounted() {\n\n            if (typeof window === \"undefined\") return false;\n\n            this.addEvent(window, \"resize\", (event) => {\n\n                this.screenWidth = window.innerWidth;\n\n                if (window.innerWidth<550){\n                    this.sliderMobileWidth = window.innerWidth-180+'px';\n                }else{\n                    this.sliderMobileWidth = '100%';\n                }\n\n            });\n\n            this.screenWidth = window.innerWidth;\n            if (window.innerWidth<550){\n                this.sliderMobileWidth = window.innerWidth-180+'px';\n            }else{\n                this.sliderMobileWidth = '100%';\n            }\n\n            this.logicalProcessors = window.navigator.hardwareConcurrency === undefined ? 4 : window.navigator.hardwareConcurrency * 1;\n\n            this.$refs[\"slider\"].refresh();\n\n\n        }\n    }\n</script>\n\n<style>\n\n    .miningSlider {\n        padding-top: 15px !important;\n        padding-bottom: 15px !important;\n        padding-left: 20px !important;\n        background-color: #262626;\n    }\n\n    .vue-slider-component .vue-slider-piecewise {\n        background-color: #424242 !important;\n    }\n\n    .vue-slider-component .vue-slider-process {\n        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fec02c+29,bc0505+100 */\n        background: #fec02c !important; /* Old browsers */\n        background: -moz-linear-gradient(left, #fec02c 29%, #bc0505 100%) !important; /* FF3.6-15 */\n        background: -webkit-linear-gradient(left, #fec02c 29%, #bc0505 100%) !important; /* Chrome10-25,Safari5.1-6 */\n        background: linear-gradient(to right, #fec02c 29%, #bc0505 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fec02c', endColorstr='#bc0505', GradientType=1) !important; /* IE6-9 */\n    }\n\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -21065,6 +21061,203 @@ exports.push([module.i, "\n.miningSlider {\n    padding-top: 15px !important;\n 
 
 /***/ }),
 /* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*! NoSleep.js v0.9.0 - git.io/vfn01 - Rich Tibbett - MIT license */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["NoSleep"] = factory();
+	else
+		root["NoSleep"] = factory();
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var _require = __webpack_require__(1),
+    webm = _require.webm,
+    mp4 = _require.mp4;
+
+// Detect iOS browsers < version 10
+
+
+var oldIOS = typeof navigator !== 'undefined' && parseFloat(('' + (/CPU.*OS ([0-9_]{3,4})[0-9_]{0,1}|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0, ''])[1]).replace('undefined', '3_2').replace('_', '.').replace('_', '')) < 10 && !window.MSStream;
+
+var NoSleep = function () {
+  function NoSleep() {
+    var _this = this;
+
+    _classCallCheck(this, NoSleep);
+
+    if (oldIOS) {
+      this.noSleepTimer = null;
+    } else {
+      // Set up no sleep video element
+      this.noSleepVideo = document.createElement('video');
+
+      this.noSleepVideo.setAttribute('muted', '');
+      this.noSleepVideo.setAttribute('title', 'No Sleep');
+      this.noSleepVideo.setAttribute('playsinline', '');
+
+      this._addSourceToVideo(this.noSleepVideo, 'webm', webm);
+      this._addSourceToVideo(this.noSleepVideo, 'mp4', mp4);
+
+      this.noSleepVideo.addEventListener('loadedmetadata', function () {
+        if (_this.noSleepVideo.duration <= 1) {
+          // webm source
+          _this.noSleepVideo.setAttribute('loop', '');
+        } else {
+          // mp4 source
+          _this.noSleepVideo.addEventListener('timeupdate', function () {
+            if (_this.noSleepVideo.currentTime > 0.5) {
+              _this.noSleepVideo.currentTime = Math.random();
+            }
+          });
+        }
+      });
+    }
+  }
+
+  _createClass(NoSleep, [{
+    key: '_addSourceToVideo',
+    value: function _addSourceToVideo(element, type, dataURI) {
+      var source = document.createElement('source');
+      source.src = dataURI;
+      source.type = 'video/' + type;
+      element.appendChild(source);
+    }
+  }, {
+    key: 'enable',
+    value: function enable() {
+      if (oldIOS) {
+        this.disable();
+        console.warn('\n        NoSleep enabled for older iOS devices. This can interrupt\n        active or long-running network requests from completing successfully.\n        See https://github.com/richtr/NoSleep.js/issues/15 for more details.\n      ');
+        this.noSleepTimer = window.setInterval(function () {
+          if (!document.hidden) {
+            window.location.href = window.location.href.split('#')[0];
+            window.setTimeout(window.stop, 0);
+          }
+        }, 15000);
+      } else {
+        this.noSleepVideo.play();
+      }
+    }
+  }, {
+    key: 'disable',
+    value: function disable() {
+      if (oldIOS) {
+        if (this.noSleepTimer) {
+          console.warn('\n          NoSleep now disabled for older iOS devices.\n        ');
+          window.clearInterval(this.noSleepTimer);
+          this.noSleepTimer = null;
+        }
+      } else {
+        this.noSleepVideo.pause();
+      }
+    }
+  }]);
+
+  return NoSleep;
+}();
+
+;
+
+module.exports = NoSleep;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  webm: 'data:video/webm;base64,GkXfo0AgQoaBAUL3gQFC8oEEQvOBCEKCQAR3ZWJtQoeBAkKFgQIYU4BnQI0VSalmQCgq17FAAw9CQE2AQAZ3aGFtbXlXQUAGd2hhbW15RIlACECPQAAAAAAAFlSua0AxrkAu14EBY8WBAZyBACK1nEADdW5khkAFVl9WUDglhohAA1ZQOIOBAeBABrCBCLqBCB9DtnVAIueBAKNAHIEAAIAwAQCdASoIAAgAAUAmJaQAA3AA/vz0AAA=',
+  mp4: 'data:video/mp4;base64,AAAAIGZ0eXBtcDQyAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAACKBtZGF0AAAC8wYF///v3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE0MiByMjQ3OSBkZDc5YTYxIC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAxNCAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTEgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MToweDExMSBtZT1oZXggc3VibWU9MiBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0wIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MCA4eDhkY3Q9MCBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0wIHRocmVhZHM9NiBsb29rYWhlYWRfdGhyZWFkcz0xIHNsaWNlZF90aHJlYWRzPTAgbnI9MCBkZWNpbWF0ZT0xIGludGVybGFjZWQ9MCBibHVyYXlfY29tcGF0PTAgY29uc3RyYWluZWRfaW50cmE9MCBiZnJhbWVzPTMgYl9weXJhbWlkPTIgYl9hZGFwdD0xIGJfYmlhcz0wIGRpcmVjdD0xIHdlaWdodGI9MSBvcGVuX2dvcD0wIHdlaWdodHA9MSBrZXlpbnQ9MzAwIGtleWludF9taW49MzAgc2NlbmVjdXQ9NDAgaW50cmFfcmVmcmVzaD0wIHJjX2xvb2thaGVhZD0xMCByYz1jcmYgbWJ0cmVlPTEgY3JmPTIwLjAgcWNvbXA9MC42MCBxcG1pbj0wIHFwbWF4PTY5IHFwc3RlcD00IHZidl9tYXhyYXRlPTIwMDAwIHZidl9idWZzaXplPTI1MDAwIGNyZl9tYXg9MC4wIG5hbF9ocmQ9bm9uZSBmaWxsZXI9MCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAAOWWIhAA3//p+C7v8tDDSTjf97w55i3SbRPO4ZY+hkjD5hbkAkL3zpJ6h/LR1CAABzgB1kqqzUorlhQAAAAxBmiQYhn/+qZYADLgAAAAJQZ5CQhX/AAj5IQAD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'
+};
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21112,7 +21305,7 @@ if (false) {
 }
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21384,7 +21577,7 @@ if (false) {
 }
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21424,12 +21617,12 @@ if (false) {
 }
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_maps_Native_Map_Network_Native_Map_vue__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_maps_Native_Map_Network_Native_Map_vue__ = __webpack_require__(129);
 
 var Vue = __webpack_require__(3);
 
@@ -21448,13 +21641,13 @@ var Vue = __webpack_require__(3);
 });
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_vue__ = __webpack_require__(40);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f992934_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_vue__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f992934_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_vue__ = __webpack_require__(149);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -21500,11 +21693,11 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projection__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Projection__ = __webpack_require__(131);
 
 
 class CircleMap {
@@ -21693,7 +21886,7 @@ CircleMap.MAX_CELL_DISTANCE = 12; // in terms of cells
 /* harmony default export */ __webpack_exports__["a"] = (CircleMap);
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21757,7 +21950,7 @@ class Projection {
 /* harmony default export */ __webpack_exports__["a"] = (Projection);
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21792,7 +21985,7 @@ class Circles {
 /* harmony default export */ __webpack_exports__["a"] = (Circles);
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21844,17 +22037,17 @@ class MapsTester{
 /* unused harmony default export */ var _unused_webpack_default_export = (MapsTester);
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Canvas_vue__ = __webpack_require__(41);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_df567280_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Canvas_vue__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_df567280_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Canvas_vue__ = __webpack_require__(137);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(134)
+  __webpack_require__(135)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -21900,13 +22093,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(135);
+var content = __webpack_require__(136);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -21926,7 +22119,7 @@ if(false) {
 }
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -21940,7 +22133,7 @@ exports.push([module.i, "\n@keyframes connected {\n0% { opacity: 0\n}\n10% { opa
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27971,17 +28164,17 @@ if (false) {
 }
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Dialog_vue__ = __webpack_require__(42);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_05fc5bd9_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_vue__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_05fc5bd9_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_vue__ = __webpack_require__(145);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(138)
+  __webpack_require__(139)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -28027,13 +28220,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(139);
+var content = __webpack_require__(140);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28053,7 +28246,7 @@ if(false) {
 }
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -28067,17 +28260,17 @@ exports.push([module.i, "\n.map-dialog-description {\n    color: #ffc107;\n    h
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(43);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_094a8568_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_094a8568_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Network_Native_Map_Dialog_Element_vue__ = __webpack_require__(144);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(141)
+  __webpack_require__(142)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -28123,13 +28316,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(142);
+var content = __webpack_require__(143);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28149,7 +28342,7 @@ if(false) {
 }
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -28163,7 +28356,7 @@ exports.push([module.i, "\n.icon-connected{\n    filter: brightness(0) invert(1)
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28247,7 +28440,7 @@ if (false) {
 }
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28291,11 +28484,11 @@ if (false) {
 }
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var v1 = __webpack_require__(146);
-var v4 = __webpack_require__(147);
+var v1 = __webpack_require__(147);
+var v4 = __webpack_require__(148);
 
 var uuid = v4;
 uuid.v1 = v1;
@@ -28305,7 +28498,7 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rng = __webpack_require__(44);
@@ -28420,7 +28613,7 @@ module.exports = v1;
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rng = __webpack_require__(44);
@@ -28455,7 +28648,7 @@ module.exports = v4;
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28484,12 +28677,12 @@ if (false) {
 }
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_alerts_Notifications_vue__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_components_alerts_Notifications_vue__ = __webpack_require__(151);
 var Vue = __webpack_require__(3);
 
 
@@ -28511,17 +28704,17 @@ var Vue = __webpack_require__(3);
 });
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_Notifications_vue__ = __webpack_require__(46);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_87887140_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Notifications_vue__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_87887140_hasScoped_false_preserveWhitespace_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Notifications_vue__ = __webpack_require__(154);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(151)
+  __webpack_require__(152)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -28567,13 +28760,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(152);
+var content = __webpack_require__(153);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28593,7 +28786,7 @@ if(false) {
 }
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -28607,7 +28800,7 @@ exports.push([module.i, "\n.notificationsBox{\n    width:450px!important;\n    w
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
