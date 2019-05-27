@@ -37,19 +37,18 @@
     </div>
 
     <div class="campaignInfo">
-
+      <!--
       <span class="infoLine">
         <b>Bounty round:</b>
         <div style="display: inline-block">
-          <select id="poolConnectionSelect" class="poolSelect" @change="handleConnectionSelect">
-            <option class="poolSelectOption" >Current Round</option>
-            <option class="poolSelectOption" >12.05.2019 - 19.05.2019</option>
-            <!--<option v-for="(poolListElement, index) in this.poolsList" class="poolSelectOption"  >-->
-            <!--{{poolListElement.poolName}}-->
-            <!--</option>-->
-            </select>
+          <select id="poolConnectionSelect" class="poolSelect" @change="handleChange($event)">
+            <option v-for="(elem, index) in this[this.type].bounties" class="poolSelectOption">
+              {{elem.name}}
+            </option>
+          </select>
         </div>
       </span>
+      -->
       <span class="infoLine">
         <b>Bounty registration:</b> {{ this.info.registration }}
       </span>
@@ -228,6 +227,21 @@ export default {
   },
 
   methods: {
+    handleChange(event) {
+      let index = 0;
+      let selected = event.target.value;
+      let bounties = this[this.type].bounties;
+
+      for (var i=0; i<bounties.length; i++) {
+        if (bounties[i].name === selected) {
+          index = i;
+          break;
+        }
+      }
+
+      this[this.type] = bounties[index];
+      this[this.type].bounties = bounties;
+    },
 
     countDown() {
 
@@ -280,6 +294,7 @@ export default {
       // Get last bounty
       let bounty = twitter_call.data[twitter_call.data.length - 1];
       this.twitter = bounty;
+      this.twitter.bounties = twitter_call.data;
       this.twitter.update = '';
     }
 
@@ -289,6 +304,7 @@ export default {
       // Get last bounty
       let bounty = youtube_call.data[youtube_call.data.length - 1];
       this.youtube = bounty;
+      this.youtube.bounties = youtube_call.data;
       this.youtube.update = '';
     }
 
