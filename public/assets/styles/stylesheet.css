@@ -419,13 +419,13 @@ background-color:#ff2200}
 
 .mainLogo{
   width: 20%;
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
   opacity: 0.8;
   margin-bottom: 30px;
   padding: 5px;
-  -webkit-filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84));
-  filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84));
+  /* -webkit-filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84));
+  filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84)); */
 }
 
 #footer{
@@ -774,7 +774,7 @@ background-color:#ff2200}
   border: 3px solid white;
   color: white;
   text-decoration: none;
-  font-size: 1.125em;
+  font-size: 0.8em;
   font-family: 'lato', sans-serif;
   letter-spacing: 2px;
   -webkit-font-smoothing: antialiased;
