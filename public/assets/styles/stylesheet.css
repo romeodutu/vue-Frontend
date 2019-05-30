@@ -173,7 +173,6 @@ a:hover{
   width: 100%;
   top: 0!important;
   transform: none!important;
-<!--overflow-y: scroll;-->
 }
 
 .backgroundVideoWrap{
@@ -189,6 +188,7 @@ a:hover{
 }
 
 #websiteBody{
+  overflow: hidden;
   transition: all .5s linear;
 }
 
@@ -224,11 +224,6 @@ a:hover{
   background-color: #1f1f1f;
   z-index: 10;
   border-bottom: solid 1px;
-}
-
-#menu{
-  /*float: right;*/
-  /*padding: 28px 32px 21px 0;*/
 }
 
 #menu ul li{

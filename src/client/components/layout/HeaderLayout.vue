@@ -1,5 +1,5 @@
 <template>
-<div id="header" :style="{marginTop: this.alertsHeight}">
+<div id="header" :style="{marginTop: this.alertsHeight}" :ref="'header'">
   <!--<img src="public/WebDollar-logo-black.png" id="logo"/>-->
 
   <div class="topnav" id="menu">
@@ -85,13 +85,12 @@ export default {
   methods: {
 
     collapseMenuBack() {
-
+      this.$refs['header'].style.zIndex = 10;
       this.mobileMenuOpened = false;
-
     },
 
     showMobileMenu() {
-
+      this.$refs['header'].style.zIndex = 20;
       this.mobileMenuOpened = true;
 
     },
@@ -137,7 +136,7 @@ export default {
     this.addEvent(window, "scroll", (event) => {
 
       if (this.mobileMenuOpened == true) {
-        this.mobileMenuOpened = false;
+        this.collapseMenuBack();
       }
 
     });
