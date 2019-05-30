@@ -75,7 +75,7 @@
         data: () => {
             return {
                 type: 'youtube',
-                id: 2,
+                id: 0,
                 error: '',
                 list: {},
                 page:0,
@@ -102,6 +102,14 @@
                     page = 0;
 
                 this.fetchingList = true;
+
+                let bounty_call = await axios.get(consts.SERVER_API + "bounties?network="+this.type);
+
+                if (bounty_call.data.length > 0) {
+                  // Get last bounty
+                  let bounty = bounty_call.data[bounty_call.data.length - 1];
+                  this.id = bounty.id;
+                }
 
                 let answer = await axios.get(consts.SERVER_API+"submissions?status=ready&bounty_id="+this.id);
 

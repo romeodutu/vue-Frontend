@@ -295,7 +295,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://psihosexolog.ro/" target="_blank"><span class="business-name">Psih. dr. Radu Balanean</span></a>
+                <a href="https://psihosexolog.ro/" target="_blank"><span class="business-name">dr. Radu Balanean</span></a>
 
                 <div class="partners-box">
                 </div>
@@ -312,6 +312,27 @@
               </div>
               <!-- <span class="business-name">Shop Aji</span> -->
             </div>
+              
+            <div>
+              <div class="team-pic">
+                <a href="http://teajuta.ro/" target="_blank"><span class="business-name">teajuta.ro</span></a>
+
+                <div class="partners-box">
+                </div>
+              </div>
+              <!-- <span class="business-name">Shop Aji</span> -->
+            </div>
+            
+             <div>
+              <div class="team-pic">
+                <a href="https://cursformatori.ro/" target="_blank"><span class="business-name">ITSC</span></a>
+
+                <div class="partners-box">
+                </div>
+              </div>
+              <!-- <span class="business-name">ITSC</span> -->
+            </div>
+            
           </div>
         </div>
       </collapse-faq>
