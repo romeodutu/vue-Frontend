@@ -37,7 +37,6 @@
     </div>
 
     <div class="campaignInfo">
-      <!--
       <span class="infoLine">
         <b>Bounty round:</b>
         <div style="display: inline-block">
@@ -48,7 +47,6 @@
           </select>
         </div>
       </span>
-      -->
       <span class="infoLine">
         <b>Bounty registration:</b> {{ this.info.registration }}
       </span>
@@ -241,6 +239,9 @@ export default {
 
       this[this.type] = bounties[index];
       this[this.type].bounties = bounties;
+      this[this.type].update = '';
+
+      this.$emit('bountySelected', bounties[index]);
     },
 
     countDown() {
@@ -274,9 +275,9 @@ export default {
 
       // If the count down is finished, write some text
       if (distance < 0) {
-        clearInterval(this.interval);
-        this.interval = undefined;
         this.message = 'FINISHED';
+      } else {
+        this.message = '';
       }
 
     }
@@ -294,8 +295,10 @@ export default {
       // Get last bounty
       let bounty = twitter_call.data[twitter_call.data.length - 1];
       this.twitter = bounty;
-      this.twitter.bounties = twitter_call.data;
+      this.twitter.bounties = twitter_call.data.reverse();
       this.twitter.update = '';
+
+      this.$emit('bountySelected', bounty);
     }
 
     let youtube_call = await axios.get(consts.SERVER_API + "bounties?network=youtube");
@@ -304,8 +307,10 @@ export default {
       // Get last bounty
       let bounty = youtube_call.data[youtube_call.data.length - 1];
       this.youtube = bounty;
-      this.youtube.bounties = youtube_call.data;
+      this.youtube.bounties = youtube_call.data.reverse();
       this.youtube.update = '';
+
+      this.$emit('bountySelected', bounty);
     }
 
     setInterval(() => {
