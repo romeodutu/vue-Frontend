@@ -859,7 +859,8 @@
         padding: 70px 0 60px 0;
     }
     .mainLogo {
-        width: 50%;
+        margin-top:-15%;
+        /* width: 50%; */
     }
     .teamWrapper{
         grid-template-columns: 1fr;

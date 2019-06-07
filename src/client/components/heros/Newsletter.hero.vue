@@ -121,14 +121,14 @@
         max-width: 500px;
         margin: 0 auto;
         margin-bottom: 50px;
+        padding: 20px;
     }
 
     .linkIconSocial img{
-        width: 50px;
+        width: 40px;
         display: block;
         margin: 0 auto;
         margin-top: 20px;
-        transition: margin 0.5s ease;
     }
 
     .linkIconSocial .linkIconSocialHover{
@@ -137,8 +137,6 @@
 
     .linkIconSocial:hover .linkIconSocialHover{
         display: block;
-        margin-top: 0;
-        transition: margin 0.5s ease;
     }
 
     .linkIconSocial:hover .linkIconSocialNormal{
