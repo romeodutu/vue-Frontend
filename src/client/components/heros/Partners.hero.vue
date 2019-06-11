@@ -258,6 +258,162 @@
 
                         </div>
 
+                        <div class="partnerWrapper fourTeamColums">
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://cointobuy.io/webdollar" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinToBuy.png" alt="CoinToBuy" title="CoinToBuy"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CoinToBuy</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://coinutil.net/currencies/webdollar?hl=en" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinUtil.png" alt="CoinUtil" title="CoinUtil"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CoinUtil</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://pricemycoin.com/currencies/WEBD" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/PriceMyCoin.png" alt="PriceMyCoin" title="PriceMyCoin"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">PriceMyCoin</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://owlycoin.com/en/coins/webdollar/price-chart" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/OwlyCoin.png" alt="OwlyCoin" title="OwlyCoin"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">OwlyCoin</span>
+                            </div>
+
+                        </div>
+
+                        <div class="partnerWrapper fourTeamColums">
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://bitscreener.com/co/webdollar/chart-gallery" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitScreener.png" alt="BitScreener" title="BitScreener"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">BitScreener</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://cmc.io/coins/webdollar" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CMC.io.png" alt="CMC.io" title="CMC.io"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CMC.io</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://cryptocoinworld.io/webdollar-price/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CryptoCoinWorld.png" alt="CryptoCoinWorld" title="CryptoCoinWorld"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CryptoCoinWorld</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://coinexpressway.com/Coin/webdollar" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinExpressWay.png" alt="CoinExpressWay" title="CoinExpressWay"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CoinExpressWay</span>
+                            </div>
+
+                        </div>
+
+                        <div class="partnerWrapper fourTeamColums">
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://www.worldcoinindex.com/ro/moneda/webdollar" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/WorldCoinIndex.png" alt="WorldCoinIndex" title="WorldCoinIndex"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">WorldCoinIndex</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://tradingbeasts.com/live-price/webdollar" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/TradingBeasts.png" alt="TradingBeasts" title="TradingBeasts"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">TradingBeasts</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://coinkurs.com/webdollar-kurs-dollar.html" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinKurs.png" alt="CoinKurs" title="CoinKurs"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CoinKurs</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://www.marketbeat.com/cryptocurrencies/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/MarketBeat.png" alt="MarketBeat" title="MarketBeat"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">MarketBeat</span>
+                            </div>
+
+                        </div>
+
+                        <div class="partnerWrapper fourTeamColums">
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://wallmine.com/crypto/webd/charts" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/WallMine.png" alt="WallMine" title="WallMine"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">WallMine</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://www.coinmarkets.net/currencies/webdollar/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinMarkets.png" alt="CoinMarkets" title="CoinMarkets"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CoinMarkets</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://coin.market/crypto/webdollar-webd" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinMarket.png" alt="Coin.Market" title="Coin.Market"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">Coin.Market</span>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://www.kiranbachhav.com/coinmarketcap/coin/WEBD" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/CoinMarketLive.png" alt="CoinMarketLive" title="CoinMarketLive"></a>
+                                    <div class="partners-box">
+                                    </div>
+                                </div>
+                                <span class="teamName">CoinMarketLive</span>
+                            </div>
+
+                        </div>
+
                     </div>
                 </collapse-faq>
 
