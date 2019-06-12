@@ -328,19 +328,19 @@
 @media only screen and (max-width : 831px) {
 
 
-  #createPoolSection .distributionContainer{
-    grid-template-columns: 1fr !important;
-  }
+    #createPoolSection .distributionContainer{
+        grid-template-columns: 1fr !important;
+    }
 
-  .stat-columns {
-    display: grid;
-    grid-template-columns: 1fr;
-  grid-template-columns: 1fr;
-  }
+    .stat-columns {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
 
-  /* .stat-box, .stat-box-link {
-        font-size: 90% !important;
-  } */
+    /* .stat-box, .stat-box-link {
+          font-size: 90% !important;
+    } */
 
     .backgroundVideoWrap{
         display: none;
@@ -411,9 +411,9 @@
     #paper{
         padding-top: 100px;
     }
-.verticalAlignMiddle{
+    .verticalAlignMiddle{
 
-}
+    }
 
 }
 
@@ -433,8 +433,20 @@
         margin-top: 30px!important;
     }
 
-    .fourTeamColums, .threeTeamColums, .twoTeamColums{
+    .threeTeamColums, .twoTeamColums{
         grid-template-columns: 1fr!important;
+    }
+
+    .fourTeamColums{
+        grid-template-columns: 1fr 1fr!important;
+    }
+
+    .collapse .collapse-content-box{
+        padding-left: 5px!important;
+    }
+
+    .partnerWrapper {
+        margin-left: 20px!important;
     }
 
     .specialRaw{
@@ -591,7 +603,7 @@
     }
 
     .createPoolSection{
-         margin-bottom: 0;
+        margin-bottom: 0;
     }
 
     .distributionContainer{
@@ -818,12 +830,12 @@
     .stat-box .stat-box-small {
         font-size: 11px;
         font-weight: lighter;
-  }
+    }
 
     .stat-box-link .stat-box-small {
         font-size: 11px;
         font-weight: lighter;
-  }
+    }
 }
 
 /* Extra Small Devices, Phones */
@@ -853,7 +865,7 @@
         padding: 30px 20px 18px 80px;
     }
     .main-timeline .year, .main-timeline .timeline:nth-child(2n) .year {
-         padding: 10px 0 0 90px;
+        padding: 10px 0 0 90px;
     }
     #timeline {
         padding: 70px 0 60px 0;
