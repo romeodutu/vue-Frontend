@@ -7,6 +7,16 @@
         <div id="mediaContainer">
 
             <div class="mediaContentBox">
+                <a href ="https://medium.com/altcoin-magazine/co-founder-interview-with-alexandru-panait-from-webdollar-5d4222f560bf" title="Alexandru Panait Intervirew" rel="noopener" target="_blank">
+
+                    <img alt="Alexandru Panait Interview" title="Alexandru Panait Interview" class="lazy" data-src="/public/assets/images/media/AlexandruPanaitInterview.jpg">
+                    <h3>Alexandru Panait Interview</h3>
+                    <span>Medium</span>
+
+                </a>
+            </div>
+
+            <div class="mediaContentBox">
                 <a href ="https://www.youtube.com/watch?v=AO67T4jip3k" title="WebDollar presentation in Saudi Arabia" rel="noopener" target="_blank">
 
                     <img alt="Alexandru Budisteanu Saudi Arabia" title="Alexandru Budisteanu Saudi Arabia" class="lazy" data-src="/public/assets/images/media/webdollar-alexandru-budisteanu-human-machine-future.jpg">
