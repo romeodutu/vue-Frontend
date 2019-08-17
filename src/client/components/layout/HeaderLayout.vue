@@ -28,7 +28,7 @@
       <div v-on:click="this.collapseMenuBack">About</div>
     </router-link>
 
-    <a href="https://www.webdscan.io" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " rel="noopener" target="_blank">
+    <a href="https://www.webdscan.io/" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' " rel="noopener" target="_blank">
       <!--<router-link to="/explorer" :class="this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '' ">-->
       <div v-on:click="this.collapseMenuBack">Explorer</div>
       <!--</router-link>-->
