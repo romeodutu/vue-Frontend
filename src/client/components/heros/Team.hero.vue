@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <span class="teamName">Adrian Vladu</span>
-                    <span class="teamRole">Software Developer</span>
+                    <span class="teamRole">Blockchain Developer</span>
                     <p class="description">
                         With more than 6 years of open source activity, Adrian Vladu is a seasoned full stack developer with multiple contributions for projects under the OpenStack umbrella. He manages webdollar.network, an open source blockchain explorer for WebDollar.
                     </p>
