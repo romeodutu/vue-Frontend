@@ -66,10 +66,15 @@
 
 
             this.addEvent(window, "resize", (event) => {
+                if (this.$store.state.global.screenWidth == window.innerWidth) {
+                    // do not update if address bar hides on chrome.
+                    return;
+                } else {
+                    this.$store.dispatch('GLOBAL_SCREEN', {screenHeight : window.innerHeight, screenWidth : window.innerWidth});
 
-                this.$store.dispatch('GLOBAL_SCREEN', {screenHeight : window.innerHeight, screenWidth : window.innerWidth});
-
-                this.changeFullSectionHeight();
+                    this.changeFullSectionHeight();
+                }
+                
             });
 
         },

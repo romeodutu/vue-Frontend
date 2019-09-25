@@ -60,7 +60,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Developers</span>
 
-            <div class="teamWrapper twoTeamColums">
+            <div class="teamWrapper threeTeamColums">
 
                 <div class="our-team ">
                     <div class="team-pic">
@@ -93,8 +93,41 @@
                         Ionut is a software developer with over 10 years of experience working with web and mobile technologies. He is a Consensys certified developer and founder of <a href="https://www.hostero.eu" target="_blank">Hostero.eu</a>, a mining software for cryptocurrencies.
                     </p>
                 </div>
+
+                <div class="our-team ">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/AdrianVladu.jpeg" alt="Adrian Vladu" title="Adrian Vladu">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                                <li><a href="https://github.com/ader1990" rel="noopener" target="_blank" class="fa fa-github" aria-label="github"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Adrian Vladu</span>
+                    <span class="teamRole">Blockchain Developer</span>
+                    <p class="description">
+                        With more than 6 years of open source activity, Adrian Vladu is a seasoned full stack developer with multiple contributions for projects under the OpenStack umbrella. He manages webdollar.network, an open source blockchain explorer for WebDollar.
+                    </p>
+                </div>
     </div>
     <div class="teamWrapper threeTeamColums">
+
+                <div class="our-team ">
+                    <div class="team-pic">
+                        <img class="lazy" data-src="/public/assets/images/team/dani.jpg" alt="Dani WebDollar" title="Dani WebDollar">
+                        <div class="over-layer">
+                            <ul class="social-link">
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="teamName">Daniel</span>
+                    <span class="teamRole">Network Engineer</span>
+                    <p class="description">
+                        Daniel is a network engineer with over 20 years of experience in networking, servers, routing and firewall, he is highly passionate about technologies, cryptocurrency/blockchain, system monitoring.
+                    </p>
+                </div>
+
+
                 <div class="our-team ">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/ConstantinBusuioceanu.jpeg" alt="Constantin Busuioceanu" title="Constantin Busuioceanu">
@@ -110,22 +143,6 @@
                     <span class="teamRole">System Engineer</span>
                     <p class="description">
                         Constantin has 20 years experience in Information Technology and Communications. He brought 8192bit data encryption over the Internet in Romania and it's the president of an NGO that stands for the Freedom of the Internet.
-                    </p>
-                </div>
-
-                <div class="our-team ">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/AdrianVladu.jpeg" alt="Adrian Vladu" title="Adrian Vladu">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://github.com/ader1990" rel="noopener" target="_blank" class="fa fa-github" aria-label="github"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Adrian Vladu</span>
-                    <span class="teamRole">Software Developer</span>
-                    <p class="description">
-                        With more than 6 years of open source activity, Adrian Vladu is a seasoned full stack developer with multiple contributions for projects under the OpenStack umbrella. He manages webdollar.network, an open source blockchain explorer for WebDollar.
                     </p>
                 </div>
 

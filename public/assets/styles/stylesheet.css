@@ -153,6 +153,10 @@ a:hover{
   grid-template-columns: 1fr 1fr 1fr!important;
 }
 
+.fourTeamColums{
+  grid-template-columns: 1fr 1fr 1fr 1fr!important;
+}
+
 #whatContainer img{
   width: 170px;
   height: 170px;
@@ -173,7 +177,6 @@ a:hover{
   width: 100%;
   top: 0!important;
   transform: none!important;
-<!--overflow-y: scroll;-->
 }
 
 .backgroundVideoWrap{
@@ -189,6 +192,7 @@ a:hover{
 }
 
 #websiteBody{
+  overflow: hidden;
   transition: all .5s linear;
 }
 
@@ -224,11 +228,6 @@ a:hover{
   background-color: #1f1f1f;
   z-index: 10;
   border-bottom: solid 1px;
-}
-
-#menu{
-  /*float: right;*/
-  /*padding: 28px 32px 21px 0;*/
 }
 
 #menu ul li{
@@ -424,13 +423,13 @@ background-color:#ff2200}
 
 .mainLogo{
   width: 20%;
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
   opacity: 0.8;
   margin-bottom: 30px;
   padding: 5px;
-  -webkit-filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84));
-  filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84));
+  /* -webkit-filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84));
+  filter: drop-shadow(0px 2px 6px rgba(255, 255, 255, 0.84)); */
 }
 
 #footer{
@@ -779,7 +778,7 @@ background-color:#ff2200}
   border: 3px solid white;
   color: white;
   text-decoration: none;
-  font-size: 1.125em;
+  font-size: 0.8em;
   font-family: 'lato', sans-serif;
   letter-spacing: 2px;
   -webkit-font-smoothing: antialiased;
