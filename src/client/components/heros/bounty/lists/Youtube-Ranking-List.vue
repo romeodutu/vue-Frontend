@@ -12,7 +12,7 @@
                 <div>Views</div>
                 <!--<div>Comments</div>-->
                 <div>T-Up</div>
-                <div>T-Down</div>
+                <div>Subscribers</div>
                 <div>Score</div>
                 <div>Reward WEBD</div>
             </div>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">T-Down:</span>
-                    <div>{{element.network_dislikes}}</div>
+                    <div>{{element.network_subscribers}}</div>
                 </div>
                 <div class="mobileTableShow">
                     <span class="mobileTableShowTitle">Score:</span>
