@@ -51,23 +51,22 @@
 
                         </div>
 
-                        <div class="partnerWrapper twoTeamColums">
+                        <div class="partnerWrapper threeTeamColums">
 
                             <div>
                                 <div class="team-pic">
-                                    <a href="https://bitebtc.com/trade/webd_btc" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BiteBTC.png" alt="BiteBTC" title="BiteBTC.com"></a>
+                                    <a href="https://swaps.network" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Swaps-Network.png" alt="SwapsNetwork" title="swaps.network"></a>
                                     <div class="partners-box">
                                         <ul class="partner-list">
-                                            <li><a href="https://bitebtc.com/trade/webd_btc" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
-                                            <li><a href="https://twitter.com/bitebtccom" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                                            <li><a href="https://swaps.network" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://twitter.com/mywishplatform" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <span class="teamName">BiteBTC</span>
-                                <span class="teamRole">Crypto Exchange</span>
+                                <span class="teamName">Swaps Network</span>
+                                <span class="teamRole">OTC Global Liquidity Pool</span>
                                 <p class="description">
-                                    BiteBTC is a crypto currency exchange platform that unites the main players of the market. BiteBTC always supports cooperation with the world's most popular crypto-currencies and makes it possible to profit from electronic money
-                                    transfer transactions.</a>
+                                    SWAPS.NETWORK is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.</a>
                                 </p>
                             </div>
 
@@ -85,6 +84,23 @@
                                 <span class="teamRole">Crypto Exchange</span>
                                 <p class="description">
                                     GymBase Smart Trading allows you to setup your trades based on technical analysis and our Artificial Intelligence tools or just simple stop limits.</a>
+                                </p>
+                            </div>
+
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://fedlio.com/trade/webd_btc" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Fedlio.png" alt="Fedlio" title="Fedlio.com"></a>
+                                    <div class="partners-box">
+                                        <ul class="partner-list">
+                                            <li><a href="https://fedlio.com/trade/webd_btc" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://twitter.com/FedlioExchange" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="teamName">Fedlio</span>
+                                <span class="teamRole">Crypto Exchange</span>
+                                <p class="description">
+                                    Fedlio is a crypto currency exchange platform that unites the main players of the market. Fedlio always supports cooperation with the world's most popular crypto-currencies.</a>
                                 </p>
                             </div>
 
