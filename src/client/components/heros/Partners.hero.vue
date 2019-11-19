@@ -15,22 +15,6 @@
 
                         <div class="partnerWrapper twoTeamColums">
 
-                            <div>
-                                <div class="team-pic">
-                                    <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
-                                    <div class="partners-box">
-                                        <ul class="partner-list">
-                                            <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
-                                            <li><a href="https://twitter.com/p2pb2b" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <span class="teamName">P2PB2B</span>
-                                <span class="teamRole">Crypto Exchange</span>
-                                <p class="description">
-                                    p2pb2b‌ is an advanced cryptocurrency exchange that works for the benefit of its users. In order to make your trading even more convenient and safe, the platform has all the necessary features and tools.</a>
-                                </p>
-                            </div>
 
                             <div>
                                 <div class="team-pic">
@@ -48,10 +32,44 @@
                                     BitRabbit Exchange is a platform offering its clients trading services of cryptocurrency and cryptocurrency derivatives on the market anytime, anywhere with top level of security, liquidity and experience.</a>
                                 </p>
                             </div>
+                            
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
+                                    <div class="partners-box">
+                                        <ul class="partner-list">
+                                            <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://twitter.com/p2pb2b" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="teamName">P2PB2B</span>
+                                <span class="teamRole">Crypto Exchange</span>
+                                <p class="description">
+                                    p2pb2b‌ is an advanced cryptocurrency exchange that works for the benefit of its users. In order to make your trading even more convenient and safe, the platform has all the necessary features and tools.</a>
+                                </p>
+                            </div>
 
                         </div>
 
                         <div class="partnerWrapper threeTeamColums">
+                            
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://trade.bitmahavi.com/en" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitMahavi.png" alt="BitMahavi" title="BitMahavi"></a>
+                                    <div class="partners-box">
+                                        <ul class="partner-list">
+                                            <li><a href="https://trade.bitmahavi.com/en" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://twitter.com/BitMahavi" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="teamName">BitMahavi</span>
+                                <span class="teamRole">Crypto Exchange</span>
+                                <p class="description">
+                                    SWAPS.NETWORK is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.</a>
+                                </p>
+                            </div>
 
                             <div>
                                 <div class="team-pic">
@@ -69,8 +87,25 @@
                                     SWAPS.NETWORK is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.</a>
                                 </p>
                             </div>
-
+                            
                             <div>
+                                <div class="team-pic">
+                                    <a href="https://webd.timi.ro/cart.php?gid=1" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/WebDollarCarbon.png" alt="WebdTimi" title="WebdTimi"></a>
+                                    <div class="partners-box">
+                                        <ul class="partner-list">
+                                            <li><a href="https://webd.timi.ro/cart.php?gid=1" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://twitter.com/webdollar_io" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="teamName">WebD Timi</span>
+                                <span class="teamRole">Crypto Exchange</span>
+                                <p class="description">
+                                    Our mission is to deliver a 24/7 service for buying and selling WebD in the easiest way possible, with ins and outs via the most common fiat currencies among the WebDollar community members.</a>
+                                </p>
+                            </div>
+
+<!--                            <div>
                                 <div class="team-pic">
                                     <a href="https://gymbase.io/exchange/?market=WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/GymBase.png" alt="GymBase" title="GymBase.io"></a>
                                     <div class="partners-box">
@@ -102,7 +137,7 @@
                                 <p class="description">
                                     Fedlio is a crypto currency exchange platform that unites the main players of the market. Fedlio always supports cooperation with the world's most popular crypto-currencies.</a>
                                 </p>
-                            </div>
+                            </div>-->
 
                         </div>
 

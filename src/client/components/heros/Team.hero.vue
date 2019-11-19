@@ -171,7 +171,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Evangelists</span>
 
-            <div class="teamWrapper threeTeamColums">
+            <div class="teamWrapper twoTeamColums">
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -206,6 +206,12 @@
                     </p>
                 </div>
 
+
+            </div>
+
+            <div class="teamWrapper twoTeamColums">
+
+
                 <div class="our-team">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/GiulianoIfrim.jpg" alt="Giuliano Ifrim" title="Giuliano Ifrim">
@@ -219,27 +225,6 @@
                     <span class="teamRole">Community Manager</span>
                     <p>
                         Giuliano is a professional trader turned crypto enthusiast with a vast Forex and Crypto trading experience, Understanding both business and the vision, Giuliano is a key player for the WebDollar project, managing the Telegram community.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="teamWrapper twoTeamColums">
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/CatherineTocci.jpg" alt="Catherine Tocci" title="Catherine Tocci">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/catherinedefreitastocci/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                                <li><a href="https://twitter.com/cathytocci" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Catherine Tocci</span>
-                    <span class="teamRole">Press Release Manager</span>
-                    <p>
-                        Catherine is a marketing and communications strategist passionate about technology, innovation, and new businesses. Student at the University of Brasilia, UNODC/Brazil Youth Ambassador, and a member of the Global Shapers Community, an initiative of the World Economic Forum.
                     </p>
                 </div>
 
@@ -268,7 +253,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Ambassadors</span>
 
-            <div class="teamWrapper twoTeamColums">
+            <div class="teamWrapper threeTeamColums">
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -300,27 +285,7 @@
                         Jhonson Zheong has a solid marketing background on the Asian markets, with years of experience in both digital and traditional communication and customer relationship management.
                     </p>
                 </div>
-
-            </div>
-                   
-            <div class="teamWrapper twoTeamColums">
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/sergioR.jpg" alt="Sergio Radeglia" title="Sergio Radeglia">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://twitter.com/SergioRadeglia" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Sergio Radeglia</span>
-                    <span class="teamRole">Italy Ambassador</span>
-                    <p>
-                        Crypto investor and tech enthusiast. Sergio has been following and bought the idea of the project since its first steps, understanding the changemaker nature of WebDollar's technology and bringing people together to celebrate it.
-                    </p>
-                </div>
-
+                
                 <div class="our-team">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/lordBruce.jpg" alt="Tochukwu Kennedy. M" title="Tochukwu Kennedy. M">
@@ -338,7 +303,7 @@
                 </div>
 
             </div>
-
+                  
         </div>
 
     </div>
