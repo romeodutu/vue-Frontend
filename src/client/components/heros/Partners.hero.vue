@@ -18,10 +18,10 @@
 
                             <div>
                                 <div class="team-pic">
-                                    <a href="https://bitrabbit.com/markets/webd_eth" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitRabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
+                                    <a href="https://bitrabbit.io/en?open=signup&code=LNHROL&activity_id=1" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitRabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
                                     <div class="partners-box">
                                         <ul class="partner-list">
-                                            <li><a href="https://bitrabbit.com/markets/webd_eth" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://bitrabbit.io/en?open=signup&code=LNHROL&activity_id=1" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                                             <li><a href="https://twitter.com/Bitrabbit_Team" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                                         </ul>
                                     </div>
@@ -35,10 +35,10 @@
                             
                             <div>
                                 <div class="team-pic">
-                                    <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
+                                    <a href="https://p2pb2b.io/referral/adaf3939-8161-4fb6-8d55-5be9617bf0a4" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
                                     <div class="partners-box">
                                         <ul class="partner-list">
-                                            <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://p2pb2b.io/referral/adaf3939-8161-4fb6-8d55-5be9617bf0a4" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                                             <li><a href="https://twitter.com/p2pb2b" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                                         </ul>
                                     </div>
@@ -56,10 +56,10 @@
                             
                             <div>
                                 <div class="team-pic">
-                                    <a href="https://trade.bitmahavi.com/en" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitMahavi.png" alt="BitMahavi" title="BitMahavi"></a>
+                                    <a href="https://exchange.bitmahavi.com/ref/46" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitMahavi.png" alt="BitMahavi" title="BitMahavi"></a>
                                     <div class="partners-box">
                                         <ul class="partner-list">
-                                            <li><a href="https://trade.bitmahavi.com/en" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://exchange.bitmahavi.com/ref/46" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                                             <li><a href="https://twitter.com/BitMahavi" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                                         </ul>
                                     </div>
@@ -67,7 +67,7 @@
                                 <span class="teamName">BitMahavi</span>
                                 <span class="teamRole">Crypto Exchange</span>
                                 <p class="description">
-                                    SWAPS.NETWORK is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.</a>
+                                    bitMahavi provides an innovative live trading platform where you can instantly buy or sale cryptocurrencies like Bitcoin, WebDollar, Bitcoin Cash, Litecoin and Zcash at best prices, in a secure easy to use eco-system.</a>
                                 </p>
                             </div>
 
@@ -84,7 +84,7 @@
                                 <span class="teamName">Swaps Network</span>
                                 <span class="teamRole">OTC Global Liquidity Pool</span>
                                 <p class="description">
-                                    SWAPS.NETWORK is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.</a>
+                                    Swaps.Network is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.</a>
                                 </p>
                             </div>
                             
