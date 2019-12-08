@@ -13,15 +13,15 @@
                     </div>
                     <div slot="collapse-body">
 
-                        <div class="partnerWrapper twoTeamColums">
+                        <div class="partnerWrapper threeTeamColums">
 
 
                             <div>
                                 <div class="team-pic">
-                                    <a href="https://bitrabbit.io/en?open=signup&code=LNHROL&activity_id=1" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitRabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
+                                    <a href="https://bitrabbit.com/markets/webd_eth" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitRabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
                                     <div class="partners-box">
                                         <ul class="partner-list">
-                                            <li><a href="https://bitrabbit.io/en?open=signup&code=LNHROL&activity_id=1" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://bitrabbit.com/markets/webd_eth" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                                             <li><a href="https://twitter.com/Bitrabbit_Team" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                                         </ul>
                                     </div>
@@ -35,10 +35,10 @@
                             
                             <div>
                                 <div class="team-pic">
-                                    <a href="https://p2pb2b.io/referral/adaf3939-8161-4fb6-8d55-5be9617bf0a4" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
+                                    <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
                                     <div class="partners-box">
                                         <ul class="partner-list">
-                                            <li><a href="https://p2pb2b.io/referral/adaf3939-8161-4fb6-8d55-5be9617bf0a4" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                                             <li><a href="https://twitter.com/p2pb2b" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                                         </ul>
                                     </div>
@@ -49,17 +49,33 @@
                                     p2pb2b‌ is an advanced cryptocurrency exchange that works for the benefit of its users. In order to make your trading even more convenient and safe, the platform has all the necessary features and tools.</a>
                                 </p>
                             </div>
-
+                            
+                            <div>
+                                <div class="team-pic">
+                                    <a href="https://exchange.bitfare.io/trade/WEBD_BTC" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitFare.png" alt="BitFare" title="BitFare"></a>
+                                    <div class="partners-box">
+                                        <ul class="partner-list">
+                                            <li><a href="https://exchange.bitfare.io/trade/WEBD_BTC" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://twitter.com/bitfare_io" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="teamName">BitFare</span>
+                                <span class="teamRole">Crypto Exchange</span>
+                                <p class="description">
+                                    Bitfare Exchange is the world's leading cryptocurrency exchange, supports a variety of digital cryptocurrency transactions and it'is committed to discovering high-quality innovative digital asset investment opportunities</a>
+                                </p>
+                            </div>
                         </div>
 
                         <div class="partnerWrapper threeTeamColums">
                             
                             <div>
                                 <div class="team-pic">
-                                    <a href="https://exchange.bitmahavi.com/ref/46" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitMahavi.png" alt="BitMahavi" title="BitMahavi"></a>
+                                    <a href="https://exchange.bitmahavi.com/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitMahavi.png" alt="BitMahavi" title="BitMahavi"></a>
                                     <div class="partners-box">
                                         <ul class="partner-list">
-                                            <li><a href="https://exchange.bitmahavi.com/ref/46" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                                            <li><a href="https://exchange.bitmahavi.com/" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                                             <li><a href="https://twitter.com/BitMahavi" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                                         </ul>
                                     </div>
