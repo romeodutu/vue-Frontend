@@ -193,6 +193,7 @@ a:hover{
 
 #websiteBody{
   overflow: hidden;
+  min-height: 1000px;
   transition: all .5s linear;
 }
 
@@ -436,9 +437,12 @@ background-color:#ff2200}
   background-color: #1f1f1f;
   width: 100%;
   height: 52px;
-  display: block;
+  display: block !important;
   padding-bottom:35px;
+  margin-bottom: 35px;
   border-top: solid 1px #444444;
+  /* position: absolute;
+  bottom: 0; */
 }
 
 .bountyProgramPage #footer{
@@ -2123,9 +2127,6 @@ background-color:#ff2200}
   font-size: 12px;
 }
 
-#footer{
-  display: none;
-}
 
 #yourPoolSection{
   padding-top: 63px;
@@ -2288,4 +2289,37 @@ background-color:#ff2200}
   bottom: 1px;
   vertical-align:super;
   text-decoration:none;
+}
+
+
+/*FOOTER gs*/
+
+.footerItem{
+  margin-left: 5px;
+}
+
+.footer-socialImage{
+  width: 50px;
+  padding: 0px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.footer-poweredBy{
+  width: 50px;
+  padding: 7px 5px 5px 5px;
+  cursor: pointer;
+}
+
+
+#footerSection{
+  padding: 1px 0 80px 0;
+}
+#footerSection .footerContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  margin-bottom: 40px;
+}
+#footerSection .bigMarginTop{
+  margin-bottom: 100px;
 }
