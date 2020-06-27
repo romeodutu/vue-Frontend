@@ -171,7 +171,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Evangelists</span>
 
-            <div class="teamWrapper twoTeamColums">
+            <div class="teamWrapper threeTeamColums">
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -203,28 +203,6 @@
                     <span class="teamRole">Marketing Manager</span>
                     <p>
                         Cristian has over 13 years of creative output in 3 different countries: Romania, UAE and Germany. His work was published, shortlisted and awarded in both regional and international advertising festivals and publications.
-                    </p>
-                </div>
-
-
-            </div>
-
-            <div class="teamWrapper twoTeamColums">
-
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/GiulianoIfrim.jpg" alt="Giuliano Ifrim" title="Giuliano Ifrim">
-                        <div class="over-layer">
-                            <ul class="social-link">
-
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Giuliano Ifrim</span>
-                    <span class="teamRole">Community Manager</span>
-                    <p>
-                        Giuliano is a professional trader turned crypto enthusiast with a vast Forex and Crypto trading experience, Understanding both business and the vision, Giuliano is a key player for the WebDollar project, managing the Telegram community.
                     </p>
                 </div>
 
@@ -285,7 +263,7 @@
                         Jhonson Zheong has a solid marketing background on the Asian markets, with years of experience in both digital and traditional communication and customer relationship management.
                     </p>
                 </div>
-                
+
                 <div class="our-team">
                     <div class="team-pic">
                         <img class="lazy" data-src="/public/assets/images/team/lordBruce.jpg" alt="Tochukwu Kennedy. M" title="Tochukwu Kennedy. M">
@@ -303,7 +281,7 @@
                 </div>
 
             </div>
-                  
+
         </div>
 
     </div>
