@@ -192,18 +192,18 @@
 
                 <div class="our-team">
                     <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/CristianScurtu.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
+                        <img class="lazy" data-src="/public/assets/images/team/vladoiIonut.jpg" alt="Vladoi Ionut" title="Vladoi Ionut">
                         <div class="over-layer">
                             <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/shortafella/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+
+
                             </ul>
                         </div>
                     </div>
-                    <span class="teamName">Cristian Scurtu</span>
+                    <span class="teamName">Vladoi Ionut</span>
                     <span class="teamRole">Marketing Manager</span>
                     <p>
-                        Cristian has over 13 years of creative output in 3 different countries: Romania, UAE and Germany. His work was published, shortlisted and awarded in both regional and international advertising festivals and publications.
-                    </p>
+                        Specializing in marketing management with specific activities in Dubai and Venice, become a crypto enthusiast with 8 years of experience in the field! The main soil is to do together with the team, WebDollar, NR 1 team in the world!                    </p>
                 </div>
 
                 <div class="our-team">
