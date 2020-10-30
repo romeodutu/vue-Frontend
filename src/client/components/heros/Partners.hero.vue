@@ -595,7 +595,7 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://play.google.com/store/apps/details?id=com.app.videoclassroom" target="_blank"><span class="business-name">Video Classroom</span></a>
+                <a href="https://e-primariata.ro" target="_blank"><span class="business-name">E-primariaTa.ro</span></a>
                 <div class="partners-box">
                 </div>
               </div>

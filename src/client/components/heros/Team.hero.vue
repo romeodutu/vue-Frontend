@@ -47,7 +47,7 @@
                         </div>
                         <span class="teamName">Alexandru Ionut Panait</span>
                         <span class="teamRole">General Manager & Platform Dev.</span>
-                        <p>Alexandru is a young entrepreneur interested in technology and business. General Manager and Founder of a hiring Artificial Intelligence platform and a software agency.</p>
+                        <p>Alexandru is a young entrepreneur interested in technology and business. Founder of a digitization movement in Romania, called <a href="https://e-primariata.ro/auth/login-page">E-PrimariaTa.ro</a></p>
                     </div>
 
                 </div>

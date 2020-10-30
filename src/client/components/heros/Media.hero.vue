@@ -156,6 +156,16 @@
                 </a>
             </div>
 
+            <div class="mediaContentBox">
+                <a href ="https://aipss.ro/digitalizarea-romaniei/" title="" rel="noopener" target="_blank">
+
+                    <img alt="Alexandru Panait Antena 3" title="Alexandru Panait Antena 3" class="lazy" data-src="https://aipss.ro/wp-content/uploads/2020/03/AIPSS_Bluegreen2.png">
+                    <h3>Romanian Digitization</h3>
+                    <span>AIPSS</span>
+
+                </a>
+            </div>
+
         </div>
 
     </div>
