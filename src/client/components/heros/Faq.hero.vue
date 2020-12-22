@@ -48,7 +48,7 @@
                         How is WebDollar different, when compared to other cryptocurrencies?
                     </div>
                     <div slot="collapse-body">
-                        WebDollar is the easiest and fastest way to earn and use cryptocurrencies. You don’t need technical knowledge or dedicated hardware resources. WebDollar aims to make mining available for every laptop and smartphone, which is why we are using the Argon2d algorithm which makes mining with special hardware unprofitable because it is ASIC resistant and GPU unfriendly. We want to give everyone the opportunity to mine and take part in the new world of cryptocurrency.                    </div>
+                        WebDollar is the easiest and fastest way to use cryptocurrencies. You don’t need technical knowledge or dedicated hardware resources. WebDollar aims to make mining available for every laptop and smartphone, which is why we migrated to a hybrid POS 90% (Proof Of Stake) and POW 10% (Proof Of Work) system where is more important the amount you keep at stake, instead of the power your hardware has. POW is then using the Argon2d algorithm which makes mining with special hardware unprofitable because it is ASIC resistant and GPU unfriendly. We want to give everyone the opportunity to mine and take part in the new world of cryptocurrency.                    </div>
                 </collapse-faq>
 
                 <collapse-faq :selected="false" ref="WhereAreTheWalletsStored">
@@ -99,7 +99,7 @@
                         What's the percentage for hybrid mining PoS + PoW ?
                     </div>
                     <div slot="collapse-body">
-                        WebDollar's mining percentage is split between 66.(6)% PoS rounds and 33.(3)% PoW rounds.
+                        WebDollar's mining percentage is split between 90% PoS rounds and 10% PoW rounds.
                     </div>
                 </collapse-faq>
 
@@ -126,7 +126,7 @@
                         Can I mine in PoS rounds from scratch or do I need to buy in order to stake?
                     </div>
                     <div slot="collapse-body">
-                        If you're mining from scratch you won't be able to earn coins. You need to have an amount of WebDollars first to stake with, in the PoS rounds.
+                        If you're mining from scratch you won't be able to earn coins. You need to have an amount of WebDollars (100 WEBD) first to stake with, in the PoS rounds.
                     </div>
                 </collapse-faq>
 
@@ -309,7 +309,7 @@
                         Where can I see the source code?
                     </div>
                     <div slot="collapse-body">
-                        Because we like to be transparent all of our codebase is open source on our github (https://github.com/WebDollar). Anyone can see the code, contribute to it and verify if everything is working well.
+                        Because we like to be transparent all of our codebase is open source on our <a href="https://github.com/WebDollar" target="_blank">GitHub</a> . Anyone can see the code, contribute to it and verify if everything is working well.
                     </div>
                 </collapse-faq>
 
@@ -318,7 +318,7 @@
         </div>
 
         <Center>
-            <h2 style="margin-top: 40px; letter-spacing: 1px;">Do you still have questions? <a href="https://t.me/WebDollar">Ask us on Telegram!</a></h2>
+            <h2 style="margin-top: 40px; letter-spacing: 1px;">Do you still have questions? <a href="https://t.me/WebDollar" target="_blank">Ask us on Telegram!</a></h2>
         </Center>
 
     </div>
