@@ -28,7 +28,7 @@
               <span class="teamName">WebD Timi</span>
               <span class="teamRole">Crypto Exchange</span>
               <p class="description">
-                Our mission is to deliver a 24/7 service for buying and selling WebD in the easiest way possible, with ins and outs via the most common fiat currencies among the WebDollar community members.</a>
+                Our mission is to deliver a 24/7 service for buying and selling WebD in the easiest way possible, with ins and outs via the most common fiat currencies among the WebDollar community members.
               </p>
             </div>
 
@@ -45,7 +45,7 @@
               <span class="teamName">BitRabbit</span>
               <span class="teamRole">Crypto Exchange</span>
               <p class="description">
-                BitRabbit Exchange is a platform offering its clients trading services of cryptocurrency and cryptocurrency derivatives on the market anytime, anywhere with top level of security, liquidity and experience.</a>
+                BitRabbit Exchange is a platform offering its clients trading services of cryptocurrency and cryptocurrency derivatives on the market anytime, anywhere with top level of security, liquidity and experience.
               </p>
             </div>
 
@@ -62,13 +62,13 @@
               <span class="teamName">P2PB2B</span>
               <span class="teamRole">Crypto Exchange</span>
               <p class="description">
-                p2pb2b‌ is an advanced cryptocurrency exchange that works for the benefit of its users. In order to make your trading even more convenient and safe, the platform has all the necessary features and tools.</a>
+                p2pb2b‌ is an advanced cryptocurrency exchange that works for the benefit of its users. In order to make your trading even more convenient and safe, the platform has all the necessary features and tools.
               </p>
             </div>
 
           </div>
 
-          <div class="partnerWrapper twoTeamColums">
+          <div class="partnerWrapper threeTeamColums">
 
             <div>
               <div class="team-pic">
@@ -83,7 +83,7 @@
               <span class="teamName">BitMahavi</span>
               <span class="teamRole">Crypto Exchange</span>
               <p class="description">
-                bitMahavi provides an innovative live trading platform where you can instantly buy or sale cryptocurrencies like Bitcoin, WebDollar, Bitcoin Cash, Litecoin and Zcash at best prices, in a secure easy to use eco-system.</a>
+                bitMahavi provides an innovative live trading platform where you can instantly buy or sale cryptocurrencies like Bitcoin, WebDollar, Bitcoin Cash, Litecoin and Zcash at best prices, in a secure easy to use eco-system.
               </p>
             </div>
 
@@ -100,7 +100,24 @@
               <span class="teamName">Swaps Network</span>
               <span class="teamRole">OTC Global Liquidity Pool</span>
               <p class="description">
-                Swaps.Network is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.</a>
+                Swaps.Network is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.
+              </p>
+            </div>
+            
+            <div>
+              <div class="team-pic">
+                <a href="https://t.me/webdollar_tip_bot" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Tipbot.png" alt="WebDollarTipBot" title="WebDollar Tip Bot"></a>
+                <div class="partners-box">
+                  <ul class="partner-list">
+                    <li><a href="https://pay.hostero.eu/tipbot" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                    <li><a href="https://twitter.com/hosteroeu" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <span class="teamName">WebDollar Tip Bot</span>
+              <span class="teamRole">Telegram bot for making tips, buying, and staking</span>
+              <p class="description">
+                 Buy WEBD with your card or PayPal directly from our Telegram account. The amount you purchase is going to be credited instantly to your bot balance after you complete the payment.
               </p>
             </div>
 
