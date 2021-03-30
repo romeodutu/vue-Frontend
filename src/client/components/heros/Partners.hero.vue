@@ -117,7 +117,7 @@
               <span class="teamName">WebDollar Tip Bot</span>
               <span class="teamRole">Telegram bot for making tips, buying, and staking</span>
               <p class="description">
-                 Buy WEBD with your card or PayPal directly from our Telegram account. The amount you purchase is going to be credited instantly to your bot balance after you complete the payment.
+                 Buy WEBD with your card or PayPal directly from your Telegram account. The amount you purchase is going to be credited instantly to your bot balance after you complete the payment.
               </p>
             </div>
 
