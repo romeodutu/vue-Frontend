@@ -47,7 +47,7 @@
                         </div>
                         <span class="teamName">Alexandru Ionut Panait</span>
                         <span class="teamRole">General Manager & Platform Dev.</span>
-                        <p>Alexandru is a young entrepreneur interested in technology and business. General Manager and Founder of a hiring Artificial Intelligence platform and a software agency.</p>
+                        <p>Alexandru is a young entrepreneur interested in technology and business. Founder of a digitization movement in Romania, called <a href="https://e-primariata.ro/auth/login-page">E-PrimariaTa.ro</a></p>
                     </div>
 
                 </div>
@@ -192,55 +192,18 @@
 
                 <div class="our-team">
                     <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/CristianScurtu.jpg" alt="Cristian Scurtu" title="Cristian Scurtu">
+                        <img class="lazy" data-src="/public/assets/images/team/vladoiIonut.jpg" alt="Vladoi Ionut" title="Vladoi Ionut">
                         <div class="over-layer">
                             <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/shortafella/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
+
+
                             </ul>
                         </div>
                     </div>
-                    <span class="teamName">Cristian Scurtu</span>
+                    <span class="teamName">Vladoi Ionut</span>
                     <span class="teamRole">Marketing Manager</span>
                     <p>
-                        Cristian has over 13 years of creative output in 3 different countries: Romania, UAE and Germany. His work was published, shortlisted and awarded in both regional and international advertising festivals and publications.
-                    </p>
-                </div>
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/GiulianoIfrim.jpg" alt="Giuliano Ifrim" title="Giuliano Ifrim">
-                        <div class="over-layer">
-                            <ul class="social-link">
-
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Giuliano Ifrim</span>
-                    <span class="teamRole">Community Manager</span>
-                    <p>
-                        Giuliano is a professional trader turned crypto enthusiast with a vast Forex and Crypto trading experience, Understanding both business and the vision, Giuliano is a key player for the WebDollar project, managing the Telegram community.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="teamWrapper twoTeamColums">
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/CatherineTocci.jpg" alt="Catherine Tocci" title="Catherine Tocci">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://www.linkedin.com/in/catherinedefreitastocci/" rel="noopener" target="_blank"  class="fa fa-linkedin2" aria-label="linkedin"></a></li>
-                                <li><a href="https://twitter.com/cathytocci" rel="noopener" target="_blank" class="fa fa-twitter" aria-label="twitter"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Catherine Tocci</span>
-                    <span class="teamRole">Press Release Manager</span>
-                    <p>
-                        Catherine is a marketing and communications strategist passionate about technology, innovation, and new businesses. Student at the University of Brasilia, UNODC/Brazil Youth Ambassador, and a member of the Global Shapers Community, an initiative of the World Economic Forum.
-                    </p>
+                        Specializing in marketing management with specific activities in Dubai and Venice, become a crypto enthusiast with 8 years of experience in the field! The main soil is to do together with the team, WebDollar, NR 1 team in the world!                    </p>
                 </div>
 
                 <div class="our-team">
@@ -268,7 +231,7 @@
 
             <span class="pageTitle alignCenter bigMarginTop" >Ambassadors</span>
 
-            <div class="teamWrapper twoTeamColums">
+            <div class="teamWrapper threeTeamColums">
 
                 <div class="our-team">
                     <div class="team-pic">
@@ -298,26 +261,6 @@
                     <span class="teamRole">Korea Ambassador</span>
                     <p>
                         Jhonson Zheong has a solid marketing background on the Asian markets, with years of experience in both digital and traditional communication and customer relationship management.
-                    </p>
-                </div>
-
-            </div>
-                   
-            <div class="teamWrapper twoTeamColums">
-
-                <div class="our-team">
-                    <div class="team-pic">
-                        <img class="lazy" data-src="/public/assets/images/team/sergioR.jpg" alt="Sergio Radeglia" title="Sergio Radeglia">
-                        <div class="over-layer">
-                            <ul class="social-link">
-                                <li><a href="https://twitter.com/SergioRadeglia" rel="noopener" target="_blank"  class="fa fa-twitter" aria-label="twitter"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <span class="teamName">Sergio Radeglia</span>
-                    <span class="teamRole">Italy Ambassador</span>
-                    <p>
-                        Crypto investor and tech enthusiast. Sergio has been following and bought the idea of the project since its first steps, understanding the changemaker nature of WebDollar's technology and bringing people together to celebrate it.
                     </p>
                 </div>
 
