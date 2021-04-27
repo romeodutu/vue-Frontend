@@ -122,12 +122,6 @@
 
             _blockchainLogs(data) {
                 switch (data.message) {
-                    case "Network Adjusted Time Error":
-                        setTimeout(() => {
-                            location.reload();
-                        }, 12022 * 1000);
-
-                        break;
 
                     case "You mined way too many blocks":
                         setTimeout(() => {
