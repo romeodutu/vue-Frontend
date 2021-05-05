@@ -100,6 +100,7 @@
 
                 self.loadPoolSettings();
             });
+
         },
 
         destroyed() {
@@ -117,6 +118,20 @@
                     this.protocolUsedOnMultipleTabs = false;
                 } else if (data.message === "Multiple Windows Detected") {
                     this.protocolUsedOnMultipleTabs = true;
+                } else if (data.message === "Wallet Loaded Successfully") {
+                    // Now that wallet is loaded, check ?import= if we have a new address to add
+                    if (typeof this.$route.query.import === "string") {
+                        try {
+                            let wallet = window.atob(this.$route.query.import);
+                            let data = JSON.parse(wallet);
+                            let answer = WebDollar.Blockchain.Wallet.importAddressFromJSON(data);
+                            if (answer.result === true) {
+                                console.log("Query-string Address Import Successful!");
+                            }
+                        } catch (err) {
+                            console.log("Error decoding wallet-address import querystring: " + err);
+                        }
+                    }
                 }
             },
 
