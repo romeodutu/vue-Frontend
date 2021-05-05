@@ -124,17 +124,121 @@
                     // Now that wallet is loaded, check ?import= if we have a new address to add
                     if (typeof this.$route.query.import === "string") {
                         try {
+                            this._validateBase64String(this.$route.query.import);  // throws error if faulty
                             let wallet = window.atob(this.$route.query.import);
-                            let data = JSON.parse(wallet);
-                            let answer = WebDollar.Blockchain.Wallet.importAddressFromJSON(data);
-                            if (answer.result === true) {
-                                console.log("Query-string Address Import Successful!");
+                            // No matter if the wallet JSON is technically valid, if it doesn't start with
+                            // the version key, we're not looking at it.
+                            if (wallet.substring(0, 11) === '{"version":') {
+                                let data = JSON.parse(wallet);
+                                if (this._validateWalletObject(data)) {  // throws error if faulty
+                                    let answer = WebDollar.Blockchain.Wallet.importAddressFromJSON(data);
+                                    if (answer.result === true) {
+                                        console.log("Query-string Address Import Successful!");
+                                    }
+                                }
+                            } else {
+                                throw new Error("Wallet JSON does not start with version");
                             }
                         } catch (err) {
                             console.log("Error decoding wallet-address import querystring: " + err);
                         }
                     }
                 }
+            },
+
+            _validateBase64String(data) {
+                let i, c, valid;
+                for (i=0; i < data.length; i++) {
+                    valid = false;
+                    c = data[i];
+                    if (c >= 'A' && c <= 'Z') {
+                        valid = true;
+                    }
+                    if (c >= 'a' && c <= 'z') {
+                        valid = true;
+                    }
+                    if (c >= '1' && c <= '9') {
+                        valid = true;
+                    }
+                    if (c === '0' || c === '+' || c === '/' || c === '=') {
+                        valid = true;
+                    }
+                    if (!valid) {
+                        throw new Error("Invalid base64");
+                    }
+                }
+                return true;
+            },
+
+            _validateWalletObject(data) {
+                let errors = "";
+
+                if (typeof data.version === "undefined") {
+                    errors = errors + "missing version/";
+                } else {
+                    // Validation for version 0.1
+                    if (data.version === "0.1") {
+                        if (typeof data.address === "undefined") {
+                            errors = errors + "missing address/";
+                        } else if (data.address.length !== 40 ||
+                            data.address.substring(0,5) !== 'WEBD$' ||
+                            data.address[39] != '$') {
+                            errors = errors + "malformed address/";
+                        }
+                        if (typeof data.publicKey === "undefined") {
+                            errors = errors + "missing publicKey/";
+                        } else if (data.publicKey.length !== 64 ||
+                            !this._validateHexStream(data.publicKey)) {
+                            errors = errors + "malformed publicKey/";
+                        }
+                        if (typeof data.privateKey === "undefined") {
+                            errors = errors + "missing privateKey/";
+                        } else if (data.privateKey.length !== 138 ||
+                            !this._validateHexStream(data.privateKey)) {
+                            errors = errors + "malformed privateKey/";
+                        }
+                        let allKeys = Object.keys(data);
+                        let i;
+                        for (i=0; i < allKeys.length; i++) {
+                            if (allKeys[i] !== "version" &&
+                                allKeys[i] !== "address" &&
+                                allKeys[i] !== "publicKey" &&
+                                allKeys[i] !== "privateKey") {
+                                errors = errors + "unrecognized key: " + allKeys[i] + "/";
+                            }
+                        }
+                    } else {
+                        errors = errors + "invalid wallet version/";
+                    }
+                }
+                if (errors !== "") {
+                    throw new Error(errors);
+                }
+                return true;
+            },
+
+            _validateHexStream(data) {  // returns true or false, doesn't throw
+                let i, c, valid;
+                for (i=0; i < data.length; i++) {
+                    c = data[i];
+                    valid = false;
+                    if (c >= 'A' && c <= 'F') {
+                        valid = true;
+                    }
+                    if (c >= 'a' && c <= 'f') {
+                        valid = true;
+                    }
+                    if (c >= '1' && c <= '9') {
+                        valid = true;
+                    }
+                    if (c === '0') {
+                        valid = true;
+                    }
+                    if (!valid) {
+                        return false;
+                    }
+                }
+                return true;
             },
 
             _blockchainLogs(data) {
