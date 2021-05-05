@@ -114,7 +114,7 @@
 
         methods: {
             _blockchainStatus(data) {
-                console.log("blockchain/status - " + data.message);
+                //console.log("blockchain/status - " + data.message);
                 if (data.message === "Single Window") {
                     this.protocolUsedOnMultipleTabs = false;
                 } else if (data.message === "Multiple Windows Detected") {
