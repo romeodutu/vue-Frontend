@@ -114,11 +114,13 @@
 
         methods: {
             _blockchainStatus(data) {
+                console.log("blockchain/status - " + data.message);
                 if (data.message === "Single Window") {
                     this.protocolUsedOnMultipleTabs = false;
                 } else if (data.message === "Multiple Windows Detected") {
                     this.protocolUsedOnMultipleTabs = true;
-                } else if (data.message === "Wallet Loaded Successfully") {
+                } else if (data.message === "Wallet Loaded Successfully"
+                           || data.message === "Wallet Creating New Wallet") {
                     // Now that wallet is loaded, check ?import= if we have a new address to add
                     if (typeof this.$route.query.import === "string") {
                         try {
