@@ -716,6 +716,14 @@
         padding-bottom: 20px;
     }
 
+    .distributionContainer .footer{
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        width: 100%;
+        transform:translateX(0%);
+    }
+
     .bountyCampaigns span {
         width: 12%;
     }
@@ -813,6 +821,7 @@
     .distributionContainer .stats{
         grid-template-columns: 1fr;
     }
+
     #mediaContainer{
         grid-template-columns: 1fr;
         padding: 0 10px;

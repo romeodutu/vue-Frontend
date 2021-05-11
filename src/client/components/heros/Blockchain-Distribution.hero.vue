@@ -57,7 +57,38 @@
                     <span class="minValue">{{this.distributionProgressBarMinString}} WEBD</span>
                     <span class="maxValue">{{this.distributionProgressBarMaxString}} WEBD</span>
 
-                    <br/><br/><br/>
+                  <div class="footer" v-show="this.currentPriceLoaded">
+                    <div>
+                      <span class="value">{{currentPriceSymbol}} {{currentPrice}}</span>
+                      <span class="description">Current Price</span>
+                    </div>
+                    <div>
+                      <span class="value">{{change24hrSign}}{{change24hr}} %</span>
+                      <span class="description">24hr change</span>
+                    </div>
+                    <div class="hideOnMobile">
+                      <span class="value">{{volume24hr}}</span>
+                      <span class="description">24hr volume</span>
+                    </div>
+                    <div class="hideOnMobile">
+                      <span class="value">{{marketCap}}</span>
+                      <span class="description">Market Cap</span>
+                    </div>
+                    <div class="bottom-gutter">
+                      <div>
+                      <span class="description">All prices shown in
+                        <select v-model="coinGecko.currency" class="poolSelect">
+                          <option disabled value="">Please select one</option>
+                          <option v-for="currency in coinGecko.availableCurrencies">{{ currency }}</option>
+                        </select>
+                      </span>
+                      <span class="description-smaller"><sup>*</sup>Powered by CoinGecko API</span>
+                      <span class="description-smaller">Last Updated At {{this.lastUpdatedCoinGecko}}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br/><br/><br/>
 
                 </div>
 
@@ -73,6 +104,9 @@
     import LoadingSpinner   from './../UI/elements/Loading-Spinner.vue';
     import Utils            from './../../../utils/util-functions';
     import WebDollarEmitter from './../../../utils/WebDollarEmitter';
+    import moment from 'moment';
+
+    const axios = require('axios').default;
 
     export default{
 
@@ -97,6 +131,75 @@
 
                 networkHashRate: 0,
                 connected: false,
+                // price will be pulled by coin gecko.
+                coinGecko: {
+                  price: 0,
+                  currency: "usd",
+                  symbol: "$",
+                  marketCap: 0,
+                  volume24h: 0,
+                  change24h: 0,
+                  lastUpdatedAt: 0,
+                  loaded: false,
+                  timer: '',
+                  availableCurrencies: [],
+                },
+                // For symbols with a textual representation, map here. Otherwise use the ticker.
+                // All tickers come from Coin Gecko.
+                symbols: {
+                  btc: '₿',
+                  eth: 'Ξ',
+                  ltc: 'Ł',
+                  bch: 'Ƀ',
+                  eos: 'ε',
+                  xrp: '✕',
+                  usd: '$',
+                  aed: 'د.إ',
+                  ars: '$',
+                  aud: 'A$',
+                  bdt: '৳',
+                  bhd: '.د.ب',
+                  bmd: '$',
+                  brl: 'R$',
+                  cad: 'C$',
+                  chf: 'Fr.',
+                  clp: '$',
+                  cny: '¥',
+                  czk: 'Kč',
+                  dkk: 'Kr.',
+                  eur: '€',
+                  gbp: '£',
+                  hkd: 'HK$',
+                  huf: 'ft',
+                  idr: 'Rp',
+                  ils: '₪',
+                  inr: '₹',
+                  jpy: '¥',
+                  krw: '₩',
+                  kwd: 'د.ك',
+                  lkr: 'Rs',
+                  mmk: 'K',
+                  mxn: '$',
+                  myr: 'RM',
+                  ngn: '₦',
+                  nok: 'kr',
+                  nzd: '$',
+                  php: '₱',
+                  pkr: '₨',
+                  pln: 'zł',
+                  rub: '₽',
+                  sar: 'ر.س',
+                  sek: 'kr',
+                  sgd: '$',
+                  thb: '฿',
+                  try: '₺',
+                  twd: '$',
+                  uah: '₴',
+                  vef: 'Bs',
+                  vnd: '₫',
+                  zar: 'R',
+                  sats: 'S',
+                }
             }
         },
 
@@ -124,6 +227,45 @@
                 return Utils.showHashesSign(this.networkHashRate,this.isPos,this.roundJustChanged);
             },
 
+            selectedCurrency() {
+              return this.coinGecko.currency;
+            },
+
+            currentPriceLoaded() {
+              return this.coinGecko.loaded;
+            },
+
+            currentPriceSymbol() {
+              return this.coinGecko.symbol;
+            },
+
+            currentPrice() {
+              return this.coinGecko.price;
+            },
+
+            volume24hr() {
+              return Math.round(this.coinGecko.volume24h).toLocaleString();
+            },
+
+            change24hr() {
+              return (this.coinGecko.change24h).toFixed(2).toLocaleString();
+            },
+
+            change24hrSign() {
+              // if it's down, coin gecko adds a '-', so when it's up, insert a '+' for clarity.
+              return this.change24hr > 0 ? '+' : '';
+            },
+
+            marketCap() {
+              return this.coinGecko.marketCap.toLocaleString();
+            },
+
+            lastUpdatedCoinGecko() {
+              const lastUpdatedAt = new Date(this.coinGecko.lastUpdatedAt * 1000);
+              // date and time w/ seconds in current browser locale.
+              return moment(lastUpdatedAt).format('L LTS');
+            },
+
             changeRound(){
                 if (this.isPos)
                 {
@@ -144,6 +286,10 @@
 
         mounted() {
             const self = this;
+
+            this.retrieveSupportedCurrenciesFromCoinGecko();
+            this.retrievePriceFromCoinGecko();
+
             this.$nextTick(() => {
                 if (WebDollar.Blockchain.synchronized) {
 
@@ -158,10 +304,22 @@
             });
         },
 
+        created() {
+          this.initiateCoinGeckoRefreshTimer();
+        },
+
         destroyed() {
             WebDollarEmitter.off('blockchain/blocks-count-changed',  this._blockchainBlocksCountChanged);
             WebDollarEmitter.off('blockchain/new-network-hash-rate', this._blockchainNewNetworkHashRate);
+
+            this.clearCoinGeckoRefreshTimer();
         },
+
+        watch: {
+              selectedCurrency() {
+                this.retrievePriceFromCoinGecko();
+              }
+          },
 
         methods: {
             _blockchainBlocksCountChanged(blocksLength) {
@@ -259,7 +417,40 @@
 
             getNumberSign(value){
                 return Utils.processHashesSignPoW(value);
-            }
+            },
+
+            retrieveSupportedCurrenciesFromCoinGecko() {
+              return axios
+              .get(`https://api.coingecko.com/api/v3/simple/supported_vs_currencies`)
+              .then(response => this.coinGecko.availableCurrencies.push(...(response.data)));
+            },
+
+            retrievePriceFromCoinGecko() {
+              return axios
+                  .get(`https://api.coingecko.com/api/v3/simple/price?ids=webdollar&vs_currencies=${this.coinGecko.currency}&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true`)
+                  .then(response => {
+                    this.coinGecko.loaded = true;
+
+                    const currency = this.coinGecko.currency;
+                    const webdollar = response.data.webdollar;
+
+                    this.coinGecko.price = webdollar[currency];
+                    this.coinGecko.marketCap = webdollar[`${currency}_market_cap`];
+                    this.coinGecko.volume24h = webdollar[`${currency}_24h_vol`];
+                    this.coinGecko.change24h = webdollar[`${currency}_24h_change`];
+                    this.coinGecko.lastUpdatedAt = webdollar['last_updated_at'];
+                    this.coinGecko.symbol = this.symbols[currency] || currency.toLocaleUpperCase();
+                  });
+            },
+
+            initiateCoinGeckoRefreshTimer() {
+              this.coinGecko.timer = setInterval(this.retrievePriceFromCoinGecko, 90 * 1000 /* Refresh every 90 seconds */);
+            },
+
+            clearCoinGeckoRefreshTimer() {
+              clearInterval(this.coinGecko.timer);
+            },
+
         }
     }
 </script>

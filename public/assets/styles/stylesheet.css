@@ -1244,6 +1244,42 @@ background-color:#ff2200}
   width: 100%;
 }
 
+.distributionContainer .footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-bottom: 10px;
+  padding-top: 40px;
+  width: 120%;
+  transform:translateX(-10%);
+}
+
+.distributionContainer .footer .bottom-gutter{
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.distributionContainer .footer .value{
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bolder;
+  padding-bottom: 10px;
+}
+
+.distributionContainer .footer .description{
+  color: #ccc;
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+}
+
+.distributionContainer .footer .description-smaller{
+  color: #ccc;
+  text-align: center;
+  font-size: 8px;
+  width: 100%;
+}
+
 #newCryptoSection .featuresContainer{
   display: grid;
   grid-template-columns: 1fr 1fr;
