@@ -20,8 +20,8 @@
 
 <script>
 
-    import Layout from "client/components/layout/Layout.vue"
-    import AdminPanel from "client/components/heros/mining-pool/Admin.Panel.vue"
+    import Layout from "../components/layout/Layout.vue"
+    import AdminPanel from "../components/heros/mining-pool/Admin.Panel.vue"
     import MultipleTabs from "../components/heros/Multiple-Tabs.hero.vue";
     import WebDollarEmitter from "../../utils/WebDollarEmitter";
 

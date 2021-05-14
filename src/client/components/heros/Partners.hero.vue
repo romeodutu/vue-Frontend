@@ -17,6 +17,23 @@
 
             <div>
               <div class="team-pic">
+                <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
+                <div class="partners-box">
+                  <ul class="partner-list">
+                    <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                    <li><a href="https://twitter.com/p2pb2b" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <span class="teamName">P2PB2B</span>
+              <span class="teamRole">Crypto Exchange</span>
+              <p class="description">
+                p2pb2b‌ is an advanced cryptocurrency exchange that works for the benefit of its users. In order to make your trading even more convenient and safe, the platform has all the necessary features and tools.
+              </p>
+            </div>
+
+            <div>
+              <div class="team-pic">
                 <a href="https://webd.timi.ro/cart.php?gid=1" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/WebDollarCarbon.png" alt="WebdTimi" title="WebdTimi"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
@@ -34,35 +51,18 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://bitrabbit.com/markets/webd_eth" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitRabbit.png" alt="BITRABBIT" title="BitRabbit.com"></a>
+                <a href="https://bitrabbit.com/markets/webd_eth" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/IndoEx.png" alt="INDOEX" title="IndoEx"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
-                    <li><a href="https://bitrabbit.com/markets/webd_eth" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
-                    <li><a href="https://twitter.com/Bitrabbit_Team" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
+                    <li><a href="https://international.indoex.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                    <li><a href="https://twitter.com/Indoex_LTD" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                   </ul>
                 </div>
               </div>
-              <span class="teamName">BitRabbit</span>
+              <span class="teamName">IndoEx</span>
               <span class="teamRole">Crypto Exchange</span>
               <p class="description">
-                BitRabbit Exchange is a platform offering its clients trading services of cryptocurrency and cryptocurrency derivatives on the market anytime, anywhere with top level of security, liquidity and experience.
-              </p>
-            </div>
-
-            <div>
-              <div class="team-pic">
-                <a href="https://p2pb2b.io/trade/WEBD_ETH" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/P2PB2B.png" alt="P2PB2B" title="P2PB2B.io"></a>
-                <div class="partners-box">
-                  <ul class="partner-list">
-                    <li><a href="https://p2pb2b.io/trade/WEBD_ETH" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
-                    <li><a href="https://twitter.com/p2pb2b" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
-                  </ul>
-                </div>
-              </div>
-              <span class="teamName">P2PB2B</span>
-              <span class="teamRole">Crypto Exchange</span>
-              <p class="description">
-                p2pb2b‌ is an advanced cryptocurrency exchange that works for the benefit of its users. In order to make your trading even more convenient and safe, the platform has all the necessary features and tools.
+                IndoEx Exchange is a platform offering its clients trading services of cryptocurrency and cryptocurrency derivatives on the market anytime, anywhere with top level of security, liquidity and experience.
               </p>
             </div>
 
@@ -72,18 +72,18 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://exchange.bitmahavi.com/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/BitMahavi.png" alt="BitMahavi" title="BitMahavi"></a>
+                <a href="https://vindax.com/" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/VinDAX.jpeg" alt="VinDAX" title="VinDAX"></a>
                 <div class="partners-box">
                   <ul class="partner-list">
-                    <li><a href="https://exchange.bitmahavi.com/" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
+                    <li><a href="https://vindax.com/exchange-base.html?symbol=WEBD_ETH/" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
                     <li><a href="https://twitter.com/BitMahavi" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
                   </ul>
                 </div>
               </div>
-              <span class="teamName">BitMahavi</span>
+              <span class="teamName">VinDAX</span>
               <span class="teamRole">Crypto Exchange</span>
               <p class="description">
-                bitMahavi provides an innovative live trading platform where you can instantly buy or sale cryptocurrencies like Bitcoin, WebDollar, Bitcoin Cash, Litecoin and Zcash at best prices, in a secure easy to use eco-system.
+                VinDAX provides an innovative live trading platform where you can instantly buy or sale cryptocurrencies like Bitcoin, WebDollar, Bitcoin Cash, Litecoin and Zcash at best prices, in a secure easy to use eco-system.
               </p>
             </div>
 
@@ -103,7 +103,7 @@
                 Swaps.Network is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.
               </p>
             </div>
-            
+
             <div>
               <div class="team-pic">
                 <a href="https://t.me/webdollar_tip_bot" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Tipbot.png" alt="WebDollarTipBot" title="WebDollar Tip Bot"></a>

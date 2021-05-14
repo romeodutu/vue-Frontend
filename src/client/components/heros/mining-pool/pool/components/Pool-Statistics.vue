@@ -68,14 +68,14 @@
         </div>
 
         <div class='stat-box'>
-            <p v-if="this.statsType === 'miner'">
+            <div v-if="this.statsType === 'miner'">
                 <p class="stat-box-small">Your Ref. Potential Reward: </p>
                 <p class="normalSpan" :class="this.isNotNullColor"> {{this.referralPotential}} WEBD</p>
-            </p>
+            </div>
         </div>
 
-        <network ref="minerPool" :poolWebsite="poolWebsite">
-        </network>
+        <!--<network ref="minerPool" :poolWebsite="poolWebsite"> </network>-->
+
     </div>
 </template>
 
@@ -83,8 +83,11 @@
     import Vue from 'vue';
     import Utils from 'src/utils/util-functions';
     import WebDollarEmitter from './../../../../../../utils/WebDollarEmitter';
+    import Network from "src/client/components/heros/Network.hero.vue"
 
     export default {
+
+        components: {Network},
 
         data: () => {
             return {
