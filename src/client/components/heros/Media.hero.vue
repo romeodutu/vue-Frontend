@@ -127,10 +127,10 @@
             </div>
 
             <div class="mediaContentBox">
-                <a href ="https://www.facebook.com/webdollar.io/videos/127222761332489/" rel="noopener" title="Video tehnical presentation" target="_blank">
+                <a href ="https://www.facebook.com/webdollar.io/videos/127222761332489/" rel="noopener" title="Video technical presentation" target="_blank">
 
-                    <img alt="Video tehnical presentation" title="Video tehnical presentation" class="lazy" data-src="/public/assets/images/media/techhub.jpg">
-                    <h3>Tehnical presentation</h3>
+                    <img alt="Video technical presentation" title="Video technical presentation" class="lazy" data-src="/public/assets/images/media/techhub.jpg">
+                    <h3>Technical presentation</h3>
                     <span>Javascript Bucharest TechHub</span>
 
                 </a>
