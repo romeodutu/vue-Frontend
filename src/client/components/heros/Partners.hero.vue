@@ -89,23 +89,6 @@
 
             <div>
               <div class="team-pic">
-                <a href="https://swaps.network" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Swaps-Network.png" alt="SwapsNetwork" title="swaps.network"></a>
-                <div class="partners-box">
-                  <ul class="partner-list">
-                    <li><a href="https://swaps.network" class="fa fa-earth" rel="noopener" target="_blank" aria-label="website"></a></li>
-                    <li><a href="https://twitter.com/mywishplatform" class="fa fa-twitter" rel="noopener" target="_blank" aria-label="twitter"></a></li>
-                  </ul>
-                </div>
-              </div>
-              <span class="teamName">Swaps Network</span>
-              <span class="teamRole">OTC Global Liquidity Pool</span>
-              <p class="description">
-                Swaps.Network is an OTC Global Liquidity Pool. It accumulates all deals on the market and connects sellers and buyers from around the world.
-              </p>
-            </div>
-
-            <div>
-              <div class="team-pic">
                 <a href="https://t.me/webdollar_tip_bot" target="_blank"> <img class="partner-logo" src="/public/assets/images/partners/Tipbot.png" alt="WebDollarTipBot" title="WebDollar Tip Bot"></a>
                 <div class="partners-box">
                   <ul class="partner-list">

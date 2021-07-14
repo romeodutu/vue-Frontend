@@ -242,11 +242,11 @@
             },
 
             volume24hr() {
-              return Math.round(this.coinGecko.volume24h).toLocaleString();
+              return this.coinGecko.volume24h ? Math.round(this.coinGecko.volume24h).toLocaleString() : 0;
             },
 
             change24hr() {
-              return (this.coinGecko.change24h).toFixed(2).toLocaleString();
+              return this.coinGecko.change24h ? this.coinGecko.change24h.toFixed(2).toLocaleString() : 0;
             },
 
             change24hrSign() {
