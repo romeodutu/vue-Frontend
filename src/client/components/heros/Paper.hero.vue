@@ -42,7 +42,7 @@
 
                 </div>
 
-                <span>Tehnical presentation of the project</span>
+                <span>Technical presentation of the project</span>
 
             </a>
 
